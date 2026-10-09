@@ -6,3 +6,4 @@ export * from './components/icon/index.js';
 export * from './components/spinner/index.js';
 export * from './components/divider/index.js';
 export * from './components/button/index.js';
+export * from './components/text-field/index.js';
