@@ -182,6 +182,65 @@ const elevationLines = elevations.map(
       .join(', ')};`,
 );
 
+// --- Faqat kodda: layout, z-index, motion presetlari (src/constants.json) ---
+
+const constants = JSON.parse(readFileSync(join(root, 'src/constants.json'), 'utf8'));
+const constantLines = (groups) =>
+  Object.entries(groups)
+    .filter(([group]) => !group.startsWith('$'))
+    .flatMap(([group, values]) =>
+      Object.entries(values)
+        .filter(([key]) => !key.startsWith('$'))
+        .map(([key, value]) => `--bek-${group}-${key}: ${value};`),
+    );
+const { reducedMotion, ...constantGroups } = constants;
+
+// --- Glass materiallari (1.9 Materials): Glass/* effect styles → .bek-glass-* ---
+
+const glassStyles = styles.effectStyles.filter((s) => s.name.startsWith('Glass/'));
+const GLASS_FILL = {
+  Regular: 'linear-gradient(var(--bek-glass-tint-shade) 0 0), var(--bek-glass-tint)',
+  Small: 'var(--bek-glass-tint-clear)',
+  Clear: 'var(--bek-glass-tint-clear)',
+};
+const glassCss = [
+  HEADER,
+  '/* Web glass — backdrop-filter bilan yaqinlashuv; refraction va dispersion faqat Figma/native. */',
+  ...glassStyles.map((style) => {
+    const kind = style.name.replace('Glass/', '');
+    const blur = style.effects.find((e) => e.type === 'GLASS')?.radius ?? 0;
+    // Faqat tokenlarga bog'langan soyalar: ko'tarilish soyasi, 0.5px rim, yuqori chekka yorug'ligi.
+    const shadows = style.effects
+      .filter((e) => e.type.endsWith('SHADOW') && e.boundVariables?.color)
+      .map(shadow);
+    const filter = `blur(${blur}px)${kind === 'Regular' ? ' saturate(180%)' : ''}`;
+    return block(`.bek-glass-${kind.toLowerCase()}`, [
+      `background: ${GLASS_FILL[kind] ?? 'var(--bek-glass-tint)'};`,
+      `-webkit-backdrop-filter: ${filter};`,
+      `backdrop-filter: ${filter};`,
+      `box-shadow: ${shadows.join(', ')};`,
+    ]);
+  }),
+  `@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {\n${block(
+    glassStyles
+      .map((s) => `.bek-glass-${s.name.replace('Glass/', '').toLowerCase()}`)
+      .join(',\n  '),
+    ['background: var(--bek-surface-card);'],
+    '  ',
+  )}}\n`,
+  `@media (prefers-reduced-transparency: reduce) {\n${block(
+    glassStyles
+      .map((s) => `.bek-glass-${s.name.replace('Glass/', '').toLowerCase()}`)
+      .join(',\n  '),
+    [
+      'background: var(--bek-surface-card);',
+      '-webkit-backdrop-filter: none;',
+      'backdrop-filter: none;',
+    ],
+    '  ',
+  )}}\n`,
+].join('\n');
+
 const tokensCss = [
   HEADER,
   '/* Color — Light / Dark */',
@@ -192,6 +251,9 @@ const tokensCss = [
   ...responsive(collections.Typography),
   '/* Elevation (Figma effect styles) */',
   block(':root', elevationLines),
+  '/* Layout, z-index, motion presets — code-only (Figma 1.5, 1.10) */',
+  block(':root', constantLines(constantGroups)),
+  `@media (prefers-reduced-motion: reduce) {\n${block(':root', constantLines(reducedMotion), '  ')}}\n`,
 ].join('\n');
 
 const paletteCss = [
@@ -252,6 +314,9 @@ const tokensJson = {
   dimension: resolvedModes(collections.Dimension),
   typography: resolvedModes(collections.Typography),
   elevation: Object.fromEntries(elevationLines.map((l) => l.slice(0, -1).split(': '))),
+  constants: Object.fromEntries(
+    constantLines(constantGroups).map((l) => l.slice(0, -1).split(': ')),
+  ),
   textStyles: Object.fromEntries(
     styles.textStyles.map((s) => [
       textClass(s).slice(1),
@@ -264,6 +329,7 @@ mkdirSync(distDir, { recursive: true });
 writeFileSync(join(distDir, 'tokens.css'), tokensCss);
 writeFileSync(join(distDir, 'palette.css'), paletteCss);
 writeFileSync(join(distDir, 'typography.css'), typographyCss);
+writeFileSync(join(distDir, 'materials.css'), glassCss);
 writeFileSync(join(distDir, 'tokens.json'), JSON.stringify(tokensJson, null, 2) + '\n');
 
 const count = (c) => publicVars(c).length;

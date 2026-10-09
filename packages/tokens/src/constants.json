@@ -1,0 +1,40 @@
+{
+  "$description": "Code-only tokens documented in Figma but not stored as Figma variables. Sources: 1.5 Layout & Grid (layout, z), 1.10 Motion (motion). Durations reference Dimension → motion/duration/*.",
+  "layout": {
+    "breakpoint-tablet": "600px",
+    "breakpoint-web": "1024px",
+    "container-max": "1280px",
+    "container-text": "720px"
+  },
+  "z": {
+    "base": "0",
+    "dropdown": "1000",
+    "sticky": "1100",
+    "overlay": "1200",
+    "modal": "1300",
+    "popover": "1350",
+    "toast": "1400",
+    "tooltip": "1500"
+  },
+  "motion": {
+    "scale-enter": "0.96",
+    "overlay-anchored-shift": "4px",
+    "overlay-anchored-enter": "var(--bek-motion-duration-sm)",
+    "overlay-anchored-exit": "var(--bek-motion-duration-xs)",
+    "overlay-modal-enter": "var(--bek-motion-duration-md)",
+    "overlay-modal-exit": "var(--bek-motion-duration-sm)",
+    "overlay-slide": "var(--bek-motion-duration-lg)",
+    "feedback-shake": "var(--bek-motion-duration-md)"
+  },
+  "reducedMotion": {
+    "$description": "1.10 Motion: with prefers-reduced-motion every slide and scale becomes a 100 ms fade; shake is removed.",
+    "motion": {
+      "scale-enter": "1",
+      "overlay-anchored-shift": "0px",
+      "overlay-anchored-enter": "var(--bek-motion-duration-xs)",
+      "overlay-modal-enter": "var(--bek-motion-duration-xs)",
+      "overlay-slide": "var(--bek-motion-duration-xs)",
+      "feedback-shake": "0ms"
+    }
+  }
+}
