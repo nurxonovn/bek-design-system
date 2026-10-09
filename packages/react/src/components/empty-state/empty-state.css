@@ -1,0 +1,99 @@
+/* Empty state — Figma "5.3 Empty state". Markazlangan ustun, gap 16.
+   S: kenglik 320, padding 16, media 64, Title/M + Body/S, tugmalar M.
+   M: 440, padding 24, media 96, Headline/S + Body/M, tugmalar L.
+   L: 560, padding 32, media 200, Headline/M + Body/M, tugmalar L. Matn gap 8. */
+.bek-empty-state {
+  --bek-empty-media: var(--bek-scale-96);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-16);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+  padding: var(--bek-scale-24);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  text-align: center;
+}
+
+.bek-empty-state--s {
+  --bek-empty-media: var(--bek-scale-64);
+
+  max-width: 320px;
+  padding: var(--bek-scale-16);
+}
+
+.bek-empty-state--l {
+  --bek-empty-media: var(--bek-scale-200);
+
+  max-width: 560px;
+  padding: var(--bek-scale-32);
+}
+
+.bek-empty-state__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-empty-media);
+  height: var(--bek-empty-media);
+}
+
+.bek-empty-state__media > img,
+.bek-empty-state__media > svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bek-empty-state__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  width: 100%;
+}
+
+.bek-empty-state__title,
+.bek-empty-state__description {
+  margin: 0;
+}
+
+.bek-empty-state__title {
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-headline-sm-size);
+  line-height: var(--bek-type-headline-sm-line-height);
+  letter-spacing: var(--bek-type-headline-sm-tracking);
+}
+
+.bek-empty-state--s .bek-empty-state__title {
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+}
+
+.bek-empty-state--l .bek-empty-state__title {
+  font-size: var(--bek-type-headline-md-size);
+  line-height: var(--bek-type-headline-md-line-height);
+  letter-spacing: var(--bek-type-headline-md-tracking);
+}
+
+.bek-empty-state__description {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-empty-state--s .bek-empty-state__description {
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--bek-scale-8);
+}

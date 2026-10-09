@@ -200,3 +200,4 @@ export function FingerprintGlyph(props: GlyphProps) {
     </svg>
   );
 }
+export * from './status.js';

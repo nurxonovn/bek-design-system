@@ -1,0 +1,69 @@
+/* Notification bar — Figma "5.6 Notification bar". Doim Dark: surface/raised, Elevation/3,
+   gap 8, padding 12 × 16, radius surface/xl. Solid ikonka 20 (text/{tone}),
+   xabar Body/S text/primary, amal Label/S text/primary. */
+.bek-notification-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--bek-scale-12) var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-xl);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-3);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-notification-bar__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+  color: var(--bek-text-primary);
+}
+
+.bek-notification-bar__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-notification-bar--info .bek-notification-bar__icon {
+  color: var(--bek-text-info);
+}
+
+.bek-notification-bar--success .bek-notification-bar__icon {
+  color: var(--bek-text-success);
+}
+
+.bek-notification-bar--warning .bek-notification-bar__icon {
+  color: var(--bek-text-warning);
+}
+
+.bek-notification-bar--danger .bek-notification-bar__icon {
+  color: var(--bek-text-danger);
+}
+
+.bek-notification-bar__label {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-notification-bar__action {
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-sm);
+  background: none;
+  color: var(--bek-text-primary);
+  font: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  cursor: pointer;
+}

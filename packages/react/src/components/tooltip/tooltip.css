@@ -1,0 +1,284 @@
+/* Tooltip — Figma "5.2 Tooltip". Padding 12, gap 4, radius surface/sm, Elevation/2.
+   Dark: fill/inverse, sarlavha text/inverse, izoh text/disabled. Light: surface/raised,
+   text/primary · text/secondary. Sarlavha Label/M, izoh Caption/M. Strelka — 10 px kvadrat 45°. */
+.bek-tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+}
+
+.bek-tooltip {
+  --bek-tooltip-bg: var(--bek-fill-inverse);
+  --bek-tooltip-offset: calc(var(--bek-scale-8) + var(--bek-tooltip-arrow, 0px));
+
+  position: absolute;
+  z-index: var(--bek-z-tooltip);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 240px;
+  padding: var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-sm);
+  background: var(--bek-tooltip-bg);
+  box-shadow: var(--bek-elevation-2);
+  color: var(--bek-text-inverse);
+  font-family: var(--bek-family-sans);
+  text-align: start;
+  pointer-events: none;
+}
+
+.bek-tooltip[hidden] {
+  display: none;
+}
+
+.bek-tooltip--light {
+  --bek-tooltip-bg: var(--bek-surface-raised);
+
+  color: var(--bek-text-primary);
+}
+
+.bek-tooltip--arrow {
+  --bek-tooltip-arrow: 7px;
+}
+
+.bek-tooltip--top {
+  bottom: calc(100% + var(--bek-tooltip-offset));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bek-tooltip--bottom {
+  top: calc(100% + var(--bek-tooltip-offset));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bek-tooltip--left {
+  top: 50%;
+  right: calc(100% + var(--bek-tooltip-offset));
+  transform: translateY(-50%);
+}
+
+.bek-tooltip--right {
+  top: 50%;
+  left: calc(100% + var(--bek-tooltip-offset));
+  transform: translateY(-50%);
+}
+
+.bek-tooltip--arrow::before {
+  position: absolute;
+  width: var(--bek-scale-10);
+  height: var(--bek-scale-10);
+  background: inherit;
+  content: '';
+}
+
+.bek-tooltip--top::before,
+.bek-tooltip--bottom::before {
+  left: calc(50% - var(--bek-scale-10) / 2);
+}
+
+.bek-tooltip--left::before,
+.bek-tooltip--right::before {
+  top: calc(50% - var(--bek-scale-10) / 2);
+}
+
+.bek-tooltip--top::before {
+  bottom: calc(var(--bek-scale-10) / -2);
+  transform: rotate(45deg);
+}
+
+.bek-tooltip--bottom::before {
+  top: calc(var(--bek-scale-10) / -2);
+  transform: rotate(45deg);
+}
+
+.bek-tooltip--left::before {
+  right: calc(var(--bek-scale-10) / -2);
+  transform: rotate(45deg);
+}
+
+.bek-tooltip--right::before {
+  left: calc(var(--bek-scale-10) / -2);
+  transform: rotate(45deg);
+}
+
+.bek-tooltip__title {
+  position: relative;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-tooltip__description {
+  position: relative;
+  color: var(--bek-text-disabled);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-tooltip--light .bek-tooltip__description {
+  color: var(--bek-text-secondary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-tooltip {
+    animation: bek-tooltip-enter var(--bek-motion-overlay-anchored-enter)
+      var(--bek-motion-easing-standard);
+  }
+}
+
+@keyframes bek-tooltip-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Tooltip callout — doim Dark. Kontent padding 8 × 12, gap 2, radius surface/md, Elevation/3.
+   M: 280 px, matn Body/S, amal Label/M · S: 240 px, Caption/M, Label/S. Amal text/accent.
+   Dum: 12 px doira (kontentga 6 px kiradi) + 5 px nuqta. */
+.bek-tooltip-callout {
+  --bek-callout-bubble: var(--bek-scale-12);
+  --bek-callout-dot: 5px;
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 280px;
+  padding-block: 0 var(--bek-scale-12);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-tooltip-callout--s {
+  max-width: var(--bek-scale-240);
+}
+
+.bek-tooltip-callout--top-left,
+.bek-tooltip-callout--top-center,
+.bek-tooltip-callout--top-right {
+  padding-block: var(--bek-scale-12) 0;
+}
+
+.bek-tooltip-callout__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--bek-scale-2);
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-3);
+}
+
+.bek-tooltip-callout__text {
+  margin: 0;
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-tooltip-callout--s .bek-tooltip-callout__text {
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-tooltip-callout__action {
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-sm);
+  background: none;
+  color: var(--bek-text-accent);
+  font: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  cursor: pointer;
+}
+
+.bek-tooltip-callout--s .bek-tooltip-callout__action {
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}
+
+.bek-tooltip-callout__bubble,
+.bek-tooltip-callout__dot {
+  position: absolute;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-3);
+}
+
+.bek-tooltip-callout__bubble {
+  width: var(--bek-callout-bubble);
+  height: var(--bek-callout-bubble);
+}
+
+.bek-tooltip-callout__dot {
+  width: var(--bek-callout-dot);
+  height: var(--bek-callout-dot);
+}
+
+/* Vertikal: pastki dum — doira kontent ostiga 6 px kiradi, nuqta 1 px pastroqda. */
+.bek-tooltip-callout--bottom-left .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--bottom-center .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--bottom-right .bek-tooltip-callout__bubble {
+  bottom: var(--bek-scale-6);
+}
+
+.bek-tooltip-callout--bottom-left .bek-tooltip-callout__dot,
+.bek-tooltip-callout--bottom-center .bek-tooltip-callout__dot,
+.bek-tooltip-callout--bottom-right .bek-tooltip-callout__dot {
+  bottom: 0;
+}
+
+.bek-tooltip-callout--top-left .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--top-center .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--top-right .bek-tooltip-callout__bubble {
+  top: var(--bek-scale-6);
+}
+
+.bek-tooltip-callout--top-left .bek-tooltip-callout__dot,
+.bek-tooltip-callout--top-center .bek-tooltip-callout__dot,
+.bek-tooltip-callout--top-right .bek-tooltip-callout__dot {
+  top: 0;
+}
+
+/* Gorizontal: Left — 12 px, Center — o'rtada, Right — o'ngdan 16 px; nuqta tashqariga siljiydi. */
+.bek-tooltip-callout--top-left .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--bottom-left .bek-tooltip-callout__bubble {
+  left: var(--bek-scale-12);
+}
+
+.bek-tooltip-callout--top-left .bek-tooltip-callout__dot,
+.bek-tooltip-callout--bottom-left .bek-tooltip-callout__dot {
+  left: var(--bek-scale-6);
+}
+
+.bek-tooltip-callout--top-center .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--bottom-center .bek-tooltip-callout__bubble {
+  left: calc(50% - var(--bek-callout-bubble) / 2);
+}
+
+.bek-tooltip-callout--top-center .bek-tooltip-callout__dot,
+.bek-tooltip-callout--bottom-center .bek-tooltip-callout__dot {
+  left: calc(50% - var(--bek-callout-dot) / 2);
+}
+
+.bek-tooltip-callout--top-right .bek-tooltip-callout__bubble,
+.bek-tooltip-callout--bottom-right .bek-tooltip-callout__bubble {
+  right: var(--bek-scale-16);
+}
+
+.bek-tooltip-callout--top-right .bek-tooltip-callout__dot,
+.bek-tooltip-callout--bottom-right .bek-tooltip-callout__dot {
+  right: var(--bek-scale-10);
+}

@@ -1,0 +1,146 @@
+/* Alert — Figma "5.4 Alert". Padding 16, gap 12, radius surface/md, Stroke ikonka 20.
+   Subtle: fon status/{tone}/soft (neutral — fill/tertiary), ikonka text/{tone}, sarlavha
+   Title/S text/primary, izoh Body/S text/secondary. Solid: fon status/{tone}/default
+   (neutral — fill/inverse), matn text/on-color (warning — on-warning, neutral — inverse).
+   Amallar gap 8; Inline — matn yonida, Stacked — matn ostida. */
+.bek-alert {
+  --bek-alert-bg: var(--bek-status-info-soft);
+  --bek-alert-icon: var(--bek-text-info);
+  --bek-alert-fg: var(--bek-text-primary);
+  --bek-alert-muted: var(--bek-text-secondary);
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-alert-bg);
+  color: var(--bek-alert-fg);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-alert--subtle.bek-alert--neutral {
+  --bek-alert-bg: var(--bek-fill-tertiary);
+  --bek-alert-icon: var(--bek-text-primary);
+}
+
+.bek-alert--subtle.bek-alert--success {
+  --bek-alert-bg: var(--bek-status-success-soft);
+  --bek-alert-icon: var(--bek-text-success);
+}
+
+.bek-alert--subtle.bek-alert--warning {
+  --bek-alert-bg: var(--bek-status-warning-soft);
+  --bek-alert-icon: var(--bek-text-warning);
+}
+
+.bek-alert--subtle.bek-alert--danger {
+  --bek-alert-bg: var(--bek-status-danger-soft);
+  --bek-alert-icon: var(--bek-text-danger);
+}
+
+.bek-alert--solid {
+  --bek-alert-bg: var(--bek-status-info-default);
+  --bek-alert-fg: var(--bek-text-on-color);
+  --bek-alert-muted: var(--bek-text-on-color);
+  --bek-alert-icon: var(--bek-alert-fg);
+}
+
+.bek-alert--solid.bek-alert--neutral {
+  --bek-alert-bg: var(--bek-fill-inverse);
+  --bek-alert-fg: var(--bek-text-inverse);
+  --bek-alert-muted: var(--bek-text-inverse);
+}
+
+.bek-alert--solid.bek-alert--success {
+  --bek-alert-bg: var(--bek-status-success-default);
+}
+
+.bek-alert--solid.bek-alert--warning {
+  --bek-alert-bg: var(--bek-status-warning-default);
+  --bek-alert-fg: var(--bek-text-on-warning);
+  --bek-alert-muted: var(--bek-text-on-warning);
+}
+
+.bek-alert--solid.bek-alert--danger {
+  --bek-alert-bg: var(--bek-status-danger-default);
+}
+
+.bek-alert__icon,
+.bek-alert__close {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+.bek-alert__icon {
+  color: var(--bek-alert-icon);
+}
+
+.bek-alert__icon > svg,
+.bek-alert__close > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-alert__main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  min-width: 0;
+}
+
+.bek-alert--stacked .bek-alert__main {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bek-alert__body {
+  display: flex;
+  flex: 1 1 200px;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-width: 0;
+}
+
+.bek-alert--stacked .bek-alert__body {
+  flex-basis: auto;
+}
+
+.bek-alert__title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-sm-size);
+  line-height: var(--bek-type-title-sm-line-height);
+  letter-spacing: var(--bek-type-title-sm-tracking);
+}
+
+.bek-alert__description {
+  color: var(--bek-alert-muted);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-alert__description > p {
+  margin: 0;
+}
+
+.bek-alert__actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--bek-scale-8);
+}
+
+.bek-alert__close {
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: none;
+  color: var(--bek-alert-muted);
+  cursor: pointer;
+}
