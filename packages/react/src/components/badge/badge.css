@@ -1,0 +1,78 @@
+/* Badge — Figma "4.2 Badge". Balandlik scale/20·24·28, radius/full, Label/S (L — Label/M). */
+.bek-badge {
+  --bek-badge-height: var(--bek-scale-24);
+  --bek-badge-padding: var(--bek-scale-12);
+  --bek-badge-gap: var(--bek-scale-8);
+  --bek-badge-icon: var(--bek-icon-xs);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-badge-gap);
+  box-sizing: border-box;
+  height: var(--bek-badge-height);
+  padding-inline: var(--bek-badge-padding);
+  border-radius: var(--bek-radius-full);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.bek-badge--s {
+  --bek-badge-height: var(--bek-scale-20);
+  --bek-badge-padding: var(--bek-scale-8);
+  --bek-badge-gap: var(--bek-scale-4);
+}
+
+.bek-badge--l {
+  --bek-badge-height: var(--bek-scale-28);
+  --bek-badge-icon: var(--bek-icon-sm);
+
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-badge--filled {
+  background: var(--bek-tone-default);
+  color: var(--bek-tone-on);
+  --bek-badge-dot: currentColor;
+}
+
+.bek-badge--subtle {
+  background: var(--bek-tone-soft);
+  color: var(--bek-tone-text);
+  --bek-badge-dot: var(--bek-tone-dot);
+}
+
+/* Figma hujjati (Tokens): Outline — border/{tone}, 1px. Chiziq ichkarida, o'lchamni o'zgartirmaydi. */
+.bek-badge--outline {
+  background: var(--bek-tone-soft-outline);
+  color: var(--bek-tone-text);
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-tone-border);
+  --bek-badge-dot: var(--bek-tone-dot);
+}
+
+.bek-badge__dot {
+  flex-shrink: 0;
+  width: var(--bek-scale-6);
+  height: var(--bek-scale-6);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-badge-dot);
+}
+
+.bek-badge__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-badge-icon);
+  height: var(--bek-badge-icon);
+}
+
+.bek-badge__icon > svg {
+  width: 100%;
+  height: 100%;
+}
