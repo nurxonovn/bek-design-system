@@ -1,0 +1,105 @@
+/* Base selector — Figma "3.11 Base selector". Pill fill/secondary, padding 8 × 2, gap 8, rasm 48 px
+   doira (fill/tertiary), label Label/M. Overlay: fill/on-media, rasm fill/on-color-hover, matn on-color.
+   Loading: rasm va 72×12 chiziq — fill/soft-pressed. RTL'da strelkalar ko'zgulanadi. */
+.bek-base-selector {
+  --bek-base-bg: var(--bek-fill-secondary);
+  --bek-base-image: var(--bek-fill-tertiary);
+  --bek-base-skeleton: var(--bek-fill-soft-pressed);
+  --bek-base-fg: var(--bek-text-primary);
+  --bek-base-arrow: var(--bek-text-secondary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bek-scale-8);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-base-bg);
+  color: var(--bek-base-fg);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-base-selector--overlay {
+  --bek-base-bg: var(--bek-fill-on-media);
+  --bek-base-image: var(--bek-fill-on-color-hover);
+  --bek-base-skeleton: var(--bek-fill-on-color-hover);
+  --bek-base-fg: var(--bek-text-on-color);
+  --bek-base-arrow: var(--bek-text-on-color);
+}
+
+.bek-base-selector__arrow {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-24);
+  height: var(--bek-scale-24);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: transparent;
+  color: var(--bek-base-arrow);
+  cursor: pointer;
+}
+
+.bek-base-selector__arrow > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+[dir='rtl'] .bek-base-selector__arrow > svg {
+  transform: scaleX(-1);
+}
+
+.bek-base-selector__arrow:disabled {
+  color: var(--bek-text-disabled);
+  cursor: default;
+}
+
+.bek-base-selector__option {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+}
+
+.bek-base-selector__image {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-scale-48);
+  height: var(--bek-scale-48);
+  overflow: hidden;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-base-image);
+}
+
+.bek-base-selector__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-base-selector__label {
+  overflow: hidden;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bek-base-selector__skeleton {
+  width: var(--bek-scale-72);
+  height: var(--bek-scale-12);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-base-skeleton);
+}
+
+.bek-base-selector[aria-busy='true'] .bek-base-selector__image {
+  background: var(--bek-base-skeleton);
+}

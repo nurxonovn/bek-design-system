@@ -12,3 +12,7 @@ export * from './components/radio/index.js';
 export * from './components/switch/index.js';
 export * from './components/select/index.js';
 export * from './components/textarea/index.js';
+export * from './components/slider/index.js';
+export * from './components/stepper/index.js';
+export * from './components/segmented-control/index.js';
+export * from './components/base-selector/index.js';

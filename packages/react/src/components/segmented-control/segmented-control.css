@@ -1,0 +1,91 @@
+/* Segmented control — Figma "3.10 Segmented control". Yo'lak fill/secondary, padding 2, radius full;
+   tanlangan — surface/raised + Elevation 1, matn text/primary; boshqalari text/secondary.
+   Overlay: fill/on-media, tanlangan static/white + static/dark matn, boshqalari text/on-color. */
+.bek-segmented {
+  --bek-segmented-height: var(--bek-control-height-lg);
+  --bek-segmented-track: var(--bek-fill-secondary);
+  --bek-segmented-selected: var(--bek-surface-raised);
+  --bek-segmented-selected-fg: var(--bek-text-primary);
+  --bek-segmented-fg: var(--bek-text-secondary);
+  --bek-segmented-shadow: var(--bek-elevation-1);
+
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--bek-scale-2);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-segmented-track);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}
+
+.bek-segmented--l {
+  --bek-segmented-height: var(--bek-control-height-xl);
+
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-segmented--overlay {
+  --bek-segmented-track: var(--bek-fill-on-media);
+  --bek-segmented-selected: var(--bek-static-white);
+  --bek-segmented-selected-fg: var(--bek-static-dark);
+  --bek-segmented-fg: var(--bek-text-on-color);
+  --bek-segmented-shadow: none;
+}
+
+.bek-segmented__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.bek-segmented__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.bek-segmented__label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: var(--bek-segmented-height);
+  padding-inline: var(--bek-scale-8);
+  overflow: hidden;
+  border-radius: var(--bek-radius-full);
+  color: var(--bek-segmented-fg);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition:
+    background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
+    color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-segmented__input:checked + .bek-segmented__label {
+  background: var(--bek-segmented-selected);
+  box-shadow: var(--bek-segmented-shadow);
+  color: var(--bek-segmented-selected-fg);
+}
+
+.bek-segmented__input:focus-visible + .bek-segmented__label {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-segmented__input:disabled + .bek-segmented__label {
+  color: var(--bek-text-disabled);
+}
+
+.bek-segmented__input:disabled {
+  cursor: not-allowed;
+}

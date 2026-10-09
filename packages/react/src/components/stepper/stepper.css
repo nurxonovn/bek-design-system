@@ -1,0 +1,77 @@
+/* Stepper — Figma "3.9 Stepper". Pill, Filled — fill/tertiary (hover fill/tertiary-hover),
+   Outline — fill/soft (hover fill/soft-hover); ichida Flat icon-only tugmalar; qiymat Label/M (s) ·
+   Label/L (m, l), min kenglik scale/32. */
+.bek-stepper {
+  --bek-stepper-height: var(--bek-scale-36);
+  --bek-stepper-button: var(--bek-control-height-md);
+  --bek-stepper-bg: var(--bek-fill-tertiary);
+  --bek-stepper-hover-bg: var(--bek-fill-tertiary-hover);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-2);
+  box-sizing: border-box;
+  height: var(--bek-stepper-height);
+  padding-inline: calc((var(--bek-stepper-height) - var(--bek-stepper-button)) / 2);
+  border-radius: var(--bek-radius-control-pill);
+  background: var(--bek-stepper-bg);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-stepper--m {
+  --bek-stepper-height: var(--bek-scale-44);
+  --bek-stepper-button: var(--bek-control-height-lg);
+}
+
+.bek-stepper--l {
+  --bek-stepper-height: var(--bek-scale-56);
+  --bek-stepper-button: var(--bek-control-height-xl);
+}
+
+.bek-stepper--outline {
+  --bek-stepper-bg: var(--bek-fill-soft);
+  --bek-stepper-hover-bg: var(--bek-fill-soft-hover);
+}
+
+.bek-stepper:not(.bek-stepper--disabled):hover {
+  background: var(--bek-stepper-hover-bg);
+}
+
+.bek-stepper:focus-within:has(.bek-stepper__value:focus-visible) {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-stepper__value {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--bek-scale-2);
+  min-width: var(--bek-scale-32);
+  outline: none;
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-stepper--m .bek-stepper__value,
+.bek-stepper--l .bek-stepper__value {
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-stepper__unit {
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+.bek-stepper--disabled .bek-stepper__value,
+.bek-stepper--disabled .bek-stepper__unit {
+  color: var(--bek-text-disabled);
+}
