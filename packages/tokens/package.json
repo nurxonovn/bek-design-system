@@ -9,10 +9,15 @@
   ],
   "exports": {
     "./tokens.css": "./dist/tokens.css",
+    "./palette.css": "./dist/palette.css",
+    "./typography.css": "./dist/typography.css",
     "./tokens.json": "./dist/tokens.json"
   },
   "scripts": {
     "build": "node scripts/build.mjs",
     "typecheck": "node --check scripts/build.mjs"
-  }
+  },
+  "sideEffects": [
+    "*.css"
+  ]
 }

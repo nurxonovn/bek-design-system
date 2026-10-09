@@ -1,0 +1,1432 @@
+{
+  "collection": "Color",
+  "modes": ["Light", "Dark"],
+  "variables": [
+    {
+      "name": "fill/primary",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-primary)"
+      },
+      "description": "Eng och neytral to'ldiruvchi fon (Light #F8F8F9). Neytral tugma, karusel tugmalari, kichik bloklar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/50"
+        }
+      }
+    },
+    {
+      "name": "fill/secondary",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-secondary)"
+      },
+      "description": "Secondary fill inside a sheet or card: chips, secondary buttons, inputs. Light #F1F3F6 · Dark #27272B.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/85"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/125"
+        }
+      }
+    },
+    {
+      "name": "fill/tertiary",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-tertiary)"
+      },
+      "description": "Tertiary fill: stronger inner blocks, tracks, skeletons and disabled fills. Light #E2E2E9 · Dark #2D2D31.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/155"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/155"
+        }
+      }
+    },
+    {
+      "name": "fill/tertiary-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-tertiary-hover)"
+      },
+      "description": "fill/tertiary ustida hover; mahsulot media foni, ikonka plitkasi.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/200"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/200"
+        }
+      }
+    },
+    {
+      "name": "fill/strong",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-strong)"
+      },
+      "description": "Selected or pressed neutral fill: selected list row, active segment, pressed chip.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/300"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/300"
+        }
+      }
+    },
+    {
+      "name": "accent/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-accent-default)"
+      },
+      "description": "Asosiy brend amali: primary tugma, tanlangan holat, aktiv indikator.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/550"
+        }
+      }
+    },
+    {
+      "name": "accent/hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-accent-hover)"
+      },
+      "description": "accent/default hover.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/500"
+        }
+      }
+    },
+    {
+      "name": "accent/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-accent-soft)"
+      },
+      "description": "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/150"
+        }
+      }
+    },
+    {
+      "name": "text/primary",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-primary)"
+      },
+      "description": "Asosiy matn va ikonka rangi.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/1000"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/1000"
+        }
+      }
+    },
+    {
+      "name": "text/secondary",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-secondary)"
+      },
+      "description": "Ikkinchi darajali matn: tavsif, label, yordamchi matn.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/850"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/850"
+        }
+      }
+    },
+    {
+      "name": "text/tertiary",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-tertiary)"
+      },
+      "description": "Uchinchi darajali matn: placeholder, meta, vaqt.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/750"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/650"
+        }
+      }
+    },
+    {
+      "name": "text/disabled",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-disabled)"
+      },
+      "description": "O'chirilgan holatdagi matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/500"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/500"
+        }
+      }
+    },
+    {
+      "name": "text/accent",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-accent)"
+      },
+      "description": "Accent matn: havola, aktiv tab, outline tugma matni.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/700"
+        }
+      }
+    },
+    {
+      "name": "border/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-default)"
+      },
+      "description": "Default neutral border and scrollbar track (exceptions only: unchecked checkbox/radio).",
+      "scopes": ["FRAME_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/150"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/150"
+        }
+      }
+    },
+    {
+      "name": "border/strong",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-strong)"
+      },
+      "description": "Kuchli chegara: input outline, ajratuvchi kuchli chiziq.",
+      "scopes": ["FRAME_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/500"
+        }
+      }
+    },
+    {
+      "name": "border/accent",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-accent)"
+      },
+      "description": "Accent chegara: outline tugma, tanlangan karta.",
+      "scopes": ["STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/500"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/500"
+        }
+      }
+    },
+    {
+      "name": "status/danger/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-danger-default)"
+      },
+      "description": "Danger solid fon: xavfli amal tugmasi, solid alert/toast.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/450"
+        }
+      }
+    },
+    {
+      "name": "status/danger/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-danger-soft)"
+      },
+      "description": "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/150"
+        }
+      }
+    },
+    {
+      "name": "text/danger",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-danger)"
+      },
+      "description": "Danger matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/750"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/600"
+        }
+      }
+    },
+    {
+      "name": "border/danger",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-danger)"
+      },
+      "description": "Danger chegara: xato input, outline danger.",
+      "scopes": ["STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/450"
+        }
+      }
+    },
+    {
+      "name": "status/success/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-success-default)"
+      },
+      "description": "Success solid fon.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/800"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/350"
+        }
+      }
+    },
+    {
+      "name": "status/success/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-success-soft)"
+      },
+      "description": "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/150"
+        }
+      }
+    },
+    {
+      "name": "text/success",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-success)"
+      },
+      "description": "Success matn va ikonka. Light green/850 (#206F34) — bg/sheet 6.2:1, success/soft 5.5:1.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/850"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/550"
+        }
+      }
+    },
+    {
+      "name": "border/success",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-success)"
+      },
+      "description": "Success chegara.",
+      "scopes": ["STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/450"
+        }
+      }
+    },
+    {
+      "name": "status/warning/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-warning-default)"
+      },
+      "description": "Warning solid fon (ustida text/on-warning).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/550"
+        }
+      }
+    },
+    {
+      "name": "status/warning/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-warning-soft)"
+      },
+      "description": "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/150"
+        }
+      }
+    },
+    {
+      "name": "text/warning",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-warning)"
+      },
+      "description": "Warning matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/800"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/550"
+        }
+      }
+    },
+    {
+      "name": "border/warning",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-warning)"
+      },
+      "description": "Warning chegara.",
+      "scopes": ["STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/450"
+        }
+      }
+    },
+    {
+      "name": "status/info/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-info-default)"
+      },
+      "description": "Info solid fon.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/450"
+        }
+      }
+    },
+    {
+      "name": "status/info/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-info-soft)"
+      },
+      "description": "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/150"
+        }
+      }
+    },
+    {
+      "name": "text/info",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-info)"
+      },
+      "description": "Info matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/750"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/550"
+        }
+      }
+    },
+    {
+      "name": "border/info",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-info)"
+      },
+      "description": "Info chegara.",
+      "scopes": ["STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/450"
+        }
+      }
+    },
+    {
+      "name": "text/utility",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-utility)"
+      },
+      "description": "Utility (binafsha) matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/700"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/600"
+        }
+      }
+    },
+    {
+      "name": "text/on-color-muted",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-on-color-muted)"
+      },
+      "description": "Accent fon ustidagi ikkinchi darajali matn.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/50"
+        },
+        "Dark": {
+          "$alias": "Palette/light/indigo/50"
+        }
+      }
+    },
+    {
+      "name": "text/on-warning",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-on-warning)"
+      },
+      "description": "Warning (to'q sariq) fon ustidagi qorong'i matn — kontrast uchun.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/1000"
+        },
+        "Dark": {
+          "$alias": "Palette/light/gray/1000"
+        }
+      }
+    },
+    {
+      "name": "text/on-color",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-on-color)"
+      },
+      "description": "Rangli (accent/status) yoki qorong'i fon ustidagi oq matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white"
+        },
+        "Dark": {
+          "$alias": "Palette/white"
+        }
+      }
+    },
+    {
+      "name": "text/inverse",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-inverse)"
+      },
+      "description": "Teskari fon (fill/inverse) ustidagi matn va ikonka.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/50"
+        }
+      }
+    },
+    {
+      "name": "accent/active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-accent-active)"
+      },
+      "description": "accent/default pressed/active.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/450"
+        }
+      }
+    },
+    {
+      "name": "status/danger/hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-danger-hover)"
+      },
+      "description": "status/danger/default hover.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/700"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/400"
+        }
+      }
+    },
+    {
+      "name": "status/danger/active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-danger-active)"
+      },
+      "description": "status/danger/default pressed.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/750"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/350"
+        }
+      }
+    },
+    {
+      "name": "status/utility/default",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-utility-default)"
+      },
+      "description": "Utility (binafsha) solid fon.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/450"
+        }
+      }
+    },
+    {
+      "name": "status/utility/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-utility-soft)"
+      },
+      "description": "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/150"
+        }
+      }
+    },
+    {
+      "name": "border/utility",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-utility)"
+      },
+      "description": "Utility chegara.",
+      "scopes": ["STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/500"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/500"
+        }
+      }
+    },
+    {
+      "name": "bg/overlay",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-bg-overlay)"
+      },
+      "description": "Scrim behind modals and sheets. Black 60% in both modes.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/650"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/650"
+        }
+      }
+    },
+    {
+      "name": "fill/scrollbar",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-scrollbar)"
+      },
+      "description": "Scrollbar thumb — default. Track ustida 3.4:1 (Light) / 4.3:1 (Dark) — WCAG 1.4.11 dan yuqori. (gray-alpha/550)",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/550"
+        }
+      }
+    },
+    {
+      "name": "fill/scrollbar-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-scrollbar-hover)"
+      },
+      "description": "Scrollbar thumb — hover. (gray-alpha/650)",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/650"
+        }
+      }
+    },
+    {
+      "name": "fill/scrollbar-active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-scrollbar-active)"
+      },
+      "description": "Scrollbar thumb — bosilgan / sudralayotgan holat. (gray-alpha/850)",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/850"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/850"
+        }
+      }
+    },
+    {
+      "name": "shadow/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-shadow-soft)"
+      },
+      "description": "Soft shadow layer — cards and raised controls. Light 2% · Dark off.",
+      "scopes": ["EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/50"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/0"
+        }
+      }
+    },
+    {
+      "name": "shadow/float",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-shadow-float)"
+      },
+      "description": "Float shadow layer — popovers, menus, modals, drag. Light 7% · Dark off.",
+      "scopes": ["EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/100"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/0"
+        }
+      }
+    },
+    {
+      "name": "border/focus",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-focus)"
+      },
+      "description": "Focus ring for every interactive element (2 px, outside). Light #3A5CCD · Dark #6482E4.",
+      "scopes": ["STROKE_COLOR", "EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/650"
+        }
+      }
+    },
+    {
+      "name": "glass/tint",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-tint)"
+      },
+      "description": "Liquid Glass Regular tint. Surface fill under Glass/Regular.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white-a/550"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/500"
+        }
+      }
+    },
+    {
+      "name": "glass/tint-shade",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-tint-shade)"
+      },
+      "description": "Second tint layer — adds depth/contrast to Regular glass.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/50"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/50"
+        }
+      }
+    },
+    {
+      "name": "glass/tint-clear",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-tint-clear)"
+      },
+      "description": "Liquid Glass Clear tint — nearly transparent, over rich media.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white-a/150"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/50"
+        }
+      }
+    },
+    {
+      "name": "glass/rim",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-rim)"
+      },
+      "description": "0.5px outer rim that separates glass from its backdrop.",
+      "scopes": ["STROKE_COLOR", "EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/100"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/200"
+        }
+      }
+    },
+    {
+      "name": "glass/edge-light",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-edge-light)"
+      },
+      "description": "Specular top-edge highlight (inner).",
+      "scopes": ["STROKE_COLOR", "EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white-a/1000"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/300"
+        }
+      }
+    },
+    {
+      "name": "glass/shadow",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-shadow)"
+      },
+      "description": "Soft lift shadow under Regular glass.",
+      "scopes": ["EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/250"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/450"
+        }
+      }
+    },
+    {
+      "name": "glass/shadow-clear",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-shadow-clear)"
+      },
+      "description": "Barely-there lift shadow under Clear / Small glass.",
+      "scopes": ["EFFECT_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/50"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/100"
+        }
+      }
+    },
+    {
+      "name": "bg/sheet",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-bg-sheet)"
+      },
+      "description": "Floor 1 — main background of every screen, window, sheet and modal. Light #FFFFFF · Dark #0E0E10.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/40"
+        }
+      }
+    },
+    {
+      "name": "surface/card",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-surface-card)"
+      },
+      "description": "Card, panel or sidebar on bg/sheet. Separated by colour, no border. Light #F1F3F6 · Dark #18181A.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/85"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/75"
+        }
+      }
+    },
+    {
+      "name": "surface/raised",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-surface-raised)"
+      },
+      "description": "Floating layer above the page: modal, sheet, drawer, popover, menu, tooltip. Light #FFFFFF (with a barely visible shadow) · Dark #27272B.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/125"
+        }
+      }
+    },
+    {
+      "name": "bg/base",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-bg-base)"
+      },
+      "description": "Floor 0 — lowest layer under the sheet; grouped page background. Light #F1F3F6 · Dark #000000.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/85"
+        },
+        "Dark": {
+          "$alias": "Palette/black"
+        }
+      }
+    },
+    {
+      "name": "surface/grouped",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-surface-grouped)"
+      },
+      "description": "Card on bg/base (grouped layout, settings, lists). Light #FFFFFF · Dark #18181A.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/75"
+        }
+      }
+    },
+    {
+      "name": "border/hairline",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-border-hairline)"
+      },
+      "description": "The only divider: list and table rows, hairline separators.",
+      "scopes": ["FRAME_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/75"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/75"
+        }
+      }
+    },
+    {
+      "name": "brand/logo-start",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-brand-logo-start)"
+      },
+      "description": "Logo gradient — first stop (top-left, 135°). Same in Light and Dark.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL"],
+      "values": {
+        "Light": "#a78bfa",
+        "Dark": "#a78bfa"
+      }
+    },
+    {
+      "name": "brand/logo-end",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-brand-logo-end)"
+      },
+      "description": "Logo gradient — last stop (bottom-right, 135°). Same in Light and Dark.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL"],
+      "values": {
+        "Light": "#6c9bf5",
+        "Dark": "#6c9bf5"
+      }
+    },
+    {
+      "name": "brand/logo-solid",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-brand-logo-solid)"
+      },
+      "description": "Single-colour logo: print, stamps, engraving, where a gradient cannot be reproduced.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL"],
+      "values": {
+        "Light": "#7b8bf7",
+        "Dark": "#7b8bf7"
+      }
+    },
+    {
+      "name": "fill/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-soft)"
+      },
+      "description": "Yumshoq shaffof fon (eng ko'p ishlatiladigan): doc kartalar, ghost/soft tugma, filled input, qatorlar. Har qanday fon ustida moslashadi.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/100"
+        }
+      }
+    },
+    {
+      "name": "fill/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-soft-hover)"
+      },
+      "description": "fill/soft hover.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/150"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/150"
+        }
+      }
+    },
+    {
+      "name": "fill/soft-pressed",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-soft-pressed)"
+      },
+      "description": "fill/soft pressed/active; filled input foni, avatar, scrollbar track.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/200"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/200"
+        }
+      }
+    },
+    {
+      "name": "fill/disabled",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-disabled)"
+      },
+      "description": "O'chirilgan (disabled) boshqaruv elementlari foni: checkbox, radio, switch, tugma.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/300"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/300"
+        }
+      }
+    },
+    {
+      "name": "fill/control",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-control)"
+      },
+      "description": "Boshqaruv izi: switch track (off), tab indikatori.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/350"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/350"
+        }
+      }
+    },
+    {
+      "name": "fill/control-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-control-hover)"
+      },
+      "description": "fill/control hover.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray-alpha/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray-alpha/450"
+        }
+      }
+    },
+    {
+      "name": "fill/on-color",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-on-color)"
+      },
+      "description": "Rangli/qorong'i fon ustidagi oq shaffof qatlam (tugma, alert action).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white-a/100"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/100"
+        }
+      }
+    },
+    {
+      "name": "fill/on-color-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-on-color-hover)"
+      },
+      "description": "fill/on-color hover.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white-a/150"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/150"
+        }
+      }
+    },
+    {
+      "name": "fill/on-color-pressed",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-on-color-pressed)"
+      },
+      "description": "fill/on-color pressed.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white-a/300"
+        },
+        "Dark": {
+          "$alias": "Palette/white-a/300"
+        }
+      }
+    },
+    {
+      "name": "accent/disabled",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-accent-disabled)"
+      },
+      "description": "Disabled primary (accent) tugma foni.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo-alpha/300"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo-alpha/300"
+        }
+      }
+    },
+    {
+      "name": "fill/inverse",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-inverse)"
+      },
+      "description": "Teskari (kontrast) fon: tooltip, solid toast/alert, flat-contrast tugma. Ustida text/inverse.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/1000"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/1000"
+        }
+      }
+    },
+    {
+      "name": "fill/inverse-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-inverse-hover)"
+      },
+      "description": "fill/inverse hover.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/850"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/850"
+        }
+      }
+    },
+    {
+      "name": "glass/tint-neutral",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-glass-tint-neutral)"
+      },
+      "description": "Glass/Fill/Tinted/Neutral uchun neytral tus.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/550"
+        }
+      }
+    },
+    {
+      "name": "static/white",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-static-white)"
+      },
+      "description": "Har ikki rejimda ham oq: switch knob va boshqa doimiy oq elementlar.",
+      "scopes": ["ALL_FILLS"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/white"
+        },
+        "Dark": {
+          "$alias": "Palette/white"
+        }
+      }
+    },
+    {
+      "name": "static/dark",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-static-dark)"
+      },
+      "description": "Har ikki rejimda qorong'i (#323233): static/white ustidagi matn va ikonka (overlay segment, media ustidagi tugmalar).",
+      "scopes": ["ALL_FILLS"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/gray/1000"
+        },
+        "Dark": {
+          "$alias": "Palette/light/gray/1000"
+        }
+      }
+    },
+    {
+      "name": "fill/on-media",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-fill-on-media)"
+      },
+      "description": "Rasm/video ustidagi boshqaruv elementlari foni (qora 30%, ikkala rejimda). Overlay segment, base selector, media tugmalari.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/black-a/300"
+        },
+        "Dark": {
+          "$alias": "Palette/black-a/300"
+        }
+      }
+    },
+    {
+      "name": "_doc/grid",
+      "type": "COLOR",
+      "description": "Hujjat: grid chiziqlari.",
+      "hiddenFromPublishing": true,
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": "#ff000020",
+        "Dark": "#ff000020"
+      }
+    },
+    {
+      "name": "_doc/padding",
+      "type": "COLOR",
+      "description": "Hujjat: padding o'lchov belgisi.",
+      "hiddenFromPublishing": true,
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": "#e5484d",
+        "Dark": "#e5484d"
+      }
+    },
+    {
+      "name": "_doc/gap",
+      "type": "COLOR",
+      "description": "Hujjat: gap o'lchov belgisi.",
+      "hiddenFromPublishing": true,
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": "#30a46c",
+        "Dark": "#30a46c"
+      }
+    },
+    {
+      "name": "_doc/size",
+      "type": "COLOR",
+      "description": "Hujjat: o'lcham belgisi.",
+      "hiddenFromPublishing": true,
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": "#6e6e6e",
+        "Dark": "#6e6e6e"
+      }
+    }
+  ]
+}

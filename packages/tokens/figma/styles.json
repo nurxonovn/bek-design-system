@@ -1,0 +1,862 @@
+{
+  "textStyles": [
+    {
+      "name": "Display/L",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 36,
+      "lineHeight": 40,
+      "letterSpacing": -0.7900000214576721,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/display/lg/tracking",
+        "fontSize": "type/display/lg/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/display/lg/line-height"
+      },
+      "description": "Hero and landing headline. Once per page.\nMobile 36/40 · -2.2% · Tablet 58/64 · -2.2% · Web 76/84 · -2.2%\nCode: --bek-type-display-lg-*"
+    },
+    {
+      "name": "Display/M",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 32,
+      "lineHeight": 36,
+      "letterSpacing": -0.699999988079071,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/display/md/tracking",
+        "fontSize": "type/display/md/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/display/md/line-height"
+      },
+      "description": "Large hero, empty states, 404.\nMobile 32/36 · -2.2% · Tablet 48/52 · -2.2% · Web 62/68 · -2.2%\nCode: --bek-type-display-md-*"
+    },
+    {
+      "name": "Display/S",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 28,
+      "lineHeight": 32,
+      "letterSpacing": -0.5899999737739563,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/display/sm/tracking",
+        "fontSize": "type/display/sm/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/display/sm/line-height"
+      },
+      "description": "Section hero, marketing cards.\nMobile 28/32 · -2.1% · Tablet 40/44 · -2.2% · Web 48/52 · -2.2%\nCode: --bek-type-display-sm-*"
+    },
+    {
+      "name": "Headline/L",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 26,
+      "lineHeight": 32,
+      "letterSpacing": -0.5199999809265137,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/headline/lg/tracking",
+        "fontSize": "type/headline/lg/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/headline/lg/line-height"
+      },
+      "description": "Page title (H1).\nMobile 26/32 · -2% · Tablet 34/44 · -2.2% · Web 40/52 · -2.2%\nCode: --bek-type-headline-lg-*"
+    },
+    {
+      "name": "Headline/M",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 22,
+      "lineHeight": 28,
+      "letterSpacing": -0.4000000059604645,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/headline/md/tracking",
+        "fontSize": "type/headline/md/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/headline/md/line-height"
+      },
+      "description": "Section title (H2).\nMobile 22/28 · -1.8% · Tablet 28/36 · -2.1% · Web 32/40 · -2.2%\nCode: --bek-type-headline-md-*"
+    },
+    {
+      "name": "Headline/S",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 20,
+      "lineHeight": 24,
+      "letterSpacing": -0.3400000035762787,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/headline/sm/tracking",
+        "fontSize": "type/headline/sm/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/headline/sm/line-height"
+      },
+      "description": "Subsection title (H3).\nMobile 20/24 · -1.7% · Tablet 24/32 · -2% · Web 24/32 · -2%\nCode: --bek-type-headline-sm-*"
+    },
+    {
+      "name": "Title/L",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 18,
+      "lineHeight": 24,
+      "letterSpacing": -0.25,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/title/lg/tracking",
+        "fontSize": "type/title/lg/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/title/lg/line-height"
+      },
+      "description": "Dialog, sheet and large card titles.\nMobile 18/24 · -1.4% · Tablet 20/28 · -1.7% · Web 20/28 · -1.7%\nCode: --bek-type-title-lg-*"
+    },
+    {
+      "name": "Title/M",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": -0.18000000715255737,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/title/md/tracking",
+        "fontSize": "type/title/md/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/title/md/line-height"
+      },
+      "description": "Card, list and panel titles.\nMobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%\nCode: --bek-type-title-md-*"
+    },
+    {
+      "name": "Title/S",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": -0.07999999821186066,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/title/sm/tracking",
+        "fontSize": "type/title/sm/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/title/sm/line-height"
+      },
+      "description": "Small card titles, table headers.\nMobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%\nCode: --bek-type-title-sm-*"
+    },
+    {
+      "name": "Body/L",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 18,
+      "lineHeight": 28,
+      "letterSpacing": -0.25,
+      "paragraphSpacing": 20,
+      "boundVariables": {
+        "letterSpacing": "type/body/lg/tracking",
+        "fontSize": "type/body/lg/size",
+        "fontStyle": "weight/regular",
+        "fontFamily": "family/sans",
+        "paragraphSpacing": "type/body/lg/paragraph-spacing",
+        "lineHeight": "type/body/lg/line-height"
+      },
+      "description": "Lead and intro text.\nMobile 18/28 · -1.4% · Tablet 18/28 · -1.4% · Web 18/28 · -1.4%\nCode: --bek-type-body-lg-*"
+    },
+    {
+      "name": "Body/M",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": -0.18000000715255737,
+      "paragraphSpacing": 16,
+      "boundVariables": {
+        "letterSpacing": "type/body/md/tracking",
+        "fontSize": "type/body/md/size",
+        "fontStyle": "weight/regular",
+        "fontFamily": "family/sans",
+        "paragraphSpacing": "type/body/md/paragraph-spacing",
+        "lineHeight": "type/body/md/line-height"
+      },
+      "description": "Default reading text.\nMobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%\nCode: --bek-type-body-md-*"
+    },
+    {
+      "name": "Body/S",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": -0.07999999821186066,
+      "paragraphSpacing": 12,
+      "boundVariables": {
+        "letterSpacing": "type/body/sm/tracking",
+        "fontSize": "type/body/sm/size",
+        "fontStyle": "weight/regular",
+        "fontFamily": "family/sans",
+        "paragraphSpacing": "type/body/sm/paragraph-spacing",
+        "lineHeight": "type/body/sm/line-height"
+      },
+      "description": "Dense UI text: tables, sidebars.\nMobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%\nCode: --bek-type-body-sm-*"
+    },
+    {
+      "name": "Body/L Strong",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 18,
+      "lineHeight": 28,
+      "letterSpacing": -0.25,
+      "paragraphSpacing": 20,
+      "boundVariables": {
+        "letterSpacing": "type/body/lg/tracking",
+        "fontSize": "type/body/lg/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "paragraphSpacing": "type/body/lg/paragraph-spacing",
+        "lineHeight": "type/body/lg/line-height"
+      },
+      "description": "Inline emphasis in Body/L.\nMobile 18/28 · -1.4% · Tablet 18/28 · -1.4% · Web 18/28 · -1.4%\nCode: --bek-type-body-lg-*"
+    },
+    {
+      "name": "Body/M Strong",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": -0.18000000715255737,
+      "paragraphSpacing": 16,
+      "boundVariables": {
+        "letterSpacing": "type/body/md/tracking",
+        "fontSize": "type/body/md/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "paragraphSpacing": "type/body/md/paragraph-spacing",
+        "lineHeight": "type/body/md/line-height"
+      },
+      "description": "Inline emphasis in Body/M.\nMobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%\nCode: --bek-type-body-md-*"
+    },
+    {
+      "name": "Body/S Strong",
+      "fontFamily": "Inter",
+      "fontStyle": "Semi Bold",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": -0.07999999821186066,
+      "paragraphSpacing": 12,
+      "boundVariables": {
+        "letterSpacing": "type/body/sm/tracking",
+        "fontSize": "type/body/sm/size",
+        "fontStyle": "weight/semibold",
+        "fontFamily": "family/sans",
+        "paragraphSpacing": "type/body/sm/paragraph-spacing",
+        "lineHeight": "type/body/sm/line-height"
+      },
+      "description": "Inline emphasis in Body/S.\nMobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%\nCode: --bek-type-body-sm-*"
+    },
+    {
+      "name": "Label/L",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 16,
+      "lineHeight": 20,
+      "letterSpacing": -0.18000000715255737,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/label/lg/tracking",
+        "fontSize": "type/label/lg/size",
+        "fontStyle": "weight/medium",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/label/lg/line-height"
+      },
+      "description": "XL/2XL buttons, large tabs.\nMobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 16/20 · -1.1%\nCode: --bek-type-label-lg-*"
+    },
+    {
+      "name": "Label/M",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": -0.07999999821186066,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/label/md/tracking",
+        "fontSize": "type/label/md/size",
+        "fontStyle": "weight/medium",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/label/md/line-height"
+      },
+      "description": "M buttons, tabs, menu items.\nMobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%\nCode: --bek-type-label-md-*"
+    },
+    {
+      "name": "Label/S",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0.0,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/label/sm/tracking",
+        "fontSize": "type/label/sm/size",
+        "fontStyle": "weight/medium",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/label/sm/line-height"
+      },
+      "description": "XS/S buttons, badges, chips.\nMobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%\nCode: --bek-type-label-sm-*"
+    },
+    {
+      "name": "Label/Input",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "lineHeight": 20,
+      "letterSpacing": -0.18000000715255737,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/control/value/tracking",
+        "fontSize": "type/control/value/size",
+        "fontStyle": "weight/regular",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/control/value/line-height"
+      },
+      "description": "Input, select and textarea values. ≥16 px on Mobile and Tablet to stop iOS zoom.\nMobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 14/20 · -0.6%\nCode: --bek-type-control-value-*"
+    },
+    {
+      "name": "Caption/L",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": -0.07999999821186066,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/caption/lg/tracking",
+        "fontSize": "type/caption/lg/size",
+        "fontStyle": "weight/regular",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/caption/lg/line-height"
+      },
+      "description": "Helper text on Web.\nMobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%\nCode: --bek-type-caption-lg-*"
+    },
+    {
+      "name": "Caption/M",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0.0,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/caption/md/tracking",
+        "fontSize": "type/caption/md/size",
+        "fontStyle": "weight/regular",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/caption/md/line-height"
+      },
+      "description": "Timestamps, meta, helper text. Smallest reading size.\nMobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%\nCode: --bek-type-caption-md-*"
+    },
+    {
+      "name": "Caption/S",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 11,
+      "lineHeight": 16,
+      "letterSpacing": 0.05999999865889549,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/caption/sm/tracking",
+        "fontSize": "type/caption/sm/size",
+        "fontStyle": "weight/medium",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/caption/sm/line-height"
+      },
+      "description": "Counters and badge numbers only — never paragraphs.\nMobile 11/16 · 0.5% · Tablet 11/16 · 0.5% · Web 11/16 · 0.5%\nCode: --bek-type-caption-sm-*"
+    },
+    {
+      "name": "Code/M",
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0.0,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "lineHeight": "type/code/md/line-height",
+        "letterSpacing": "type/code/md/tracking",
+        "fontFamily": "family/mono",
+        "fontSize": "type/code/md/size"
+      },
+      "description": "Code snippets and token names.\nMobile 14/20 · 0% · Tablet 14/20 · 0% · Web 14/20 · 0%\nCode: --bek-type-code-md-*"
+    },
+    {
+      "name": "Code/S",
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0.0,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "lineHeight": "type/code/sm/line-height",
+        "letterSpacing": "type/code/sm/tracking",
+        "fontFamily": "family/mono",
+        "fontSize": "type/code/sm/size"
+      },
+      "description": "Inline code in dense tables.\nMobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%\nCode: --bek-type-code-sm-*"
+    },
+    {
+      "name": "Label/XL",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 18,
+      "lineHeight": 24,
+      "letterSpacing": -0.25,
+      "paragraphSpacing": 0,
+      "boundVariables": {
+        "letterSpacing": "type/label/xl/tracking",
+        "fontSize": "type/label/xl/size",
+        "fontStyle": "weight/medium",
+        "fontFamily": "family/sans",
+        "lineHeight": "type/label/xl/line-height"
+      },
+      "description": "3XL buttons, hero CTAs.\nMobile 18/24 · -1.4% · Tablet 18/24 · -1.4% · Web 18/24 · -1.4%\nCode: --bek-type-label-xl-*"
+    }
+  ],
+  "effectStyles": [
+    {
+      "name": "Elevation/Inset",
+      "description": "Inset: botiq input, pressed holat, track. CSS: inset 0 0 0 1px ring, inset 0 2px 2px key.",
+      "effects": [
+        {
+          "type": "INNER_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 2],
+          "radius": 2,
+          "spread": 0,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elevation/1 Raised",
+      "description": "Card (tinch), secondary Button, Segmented. Surface: color/surface/raised · z/base",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000005",
+          "offset": [0, 1],
+          "radius": 2,
+          "spread": 0,
+          "boundVariables": {
+            "color": "shadow/soft"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000005",
+          "offset": [0, 1],
+          "radius": 4,
+          "spread": 0,
+          "boundVariables": {
+            "color": "shadow/soft"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elevation/2 Raised-hover",
+      "description": "Interaktiv Card hover, sticky header. Surface: color/surface/raised · z/base | z/sticky",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000005",
+          "offset": [0, 2],
+          "radius": 4,
+          "spread": -2,
+          "boundVariables": {
+            "color": "shadow/soft"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000005",
+          "offset": [0, 4],
+          "radius": 12,
+          "spread": -4,
+          "boundVariables": {
+            "color": "shadow/soft"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elevation/3 Floating",
+      "description": "Dropdown, Popover, Tooltip, Hover card, Toast, Context menu. Surface: color/surface/overlay · z/dropdown..tooltip",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 12],
+          "radius": 32,
+          "spread": -16,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 8],
+          "radius": 40,
+          "spread": 0,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elevation/4 Overlay",
+      "description": "Modal, Alert dialog, Drawer, Sheet (+ scrim color/background/overlay). Surface: color/surface/overlay · z/modal",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 12],
+          "radius": 32,
+          "spread": -16,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 12],
+          "radius": 64,
+          "spread": 0,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elevation/5 Drag",
+      "description": "Drag & drop paytida sudralayotgan element. Surface: color/surface/raised · z/popover",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 16],
+          "radius": 32,
+          "spread": -16,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 16],
+          "radius": 64,
+          "spread": 0,
+          "boundVariables": {
+            "color": "shadow/float"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glass/Regular",
+      "description": "Liquid Glass · Regular. Cards, headers, panels, sheets — any surface ≥ 44px. Pair with fill Glass/Fill/Regular. Source recipe: Apple iOS 27 kit (Liquid Glass Regular). CSS: backdrop-filter: blur(16px) saturate(180%); background: var(--bek-color-glass-tint); box-shadow: 0 8px 48px var(--bek-color-glass-shadow), 0 0 0 .5px var(--bek-color-glass-rim), inset 0 1px 0 var(--bek-color-glass-edge-light).",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000037",
+          "offset": [0, 8],
+          "radius": 48,
+          "spread": 0,
+          "boundVariables": {
+            "color": "glass/shadow"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 0],
+          "radius": 0,
+          "spread": 0.5,
+          "boundVariables": {
+            "color": "glass/rim"
+          }
+        },
+        {
+          "type": "GLASS",
+          "radius": 16,
+          "spread": 0
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#e6e6e6ff",
+          "offset": [0, 40],
+          "radius": 30,
+          "spread": -40
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#282828ff",
+          "offset": [0, -40],
+          "radius": 10,
+          "spread": -40
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#282828ff",
+          "offset": [0, 40],
+          "radius": 10,
+          "spread": -40
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#fffffff0",
+          "offset": [0, 1],
+          "radius": 0,
+          "spread": 0,
+          "boundVariables": {
+            "color": "glass/edge-light"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glass/Small",
+      "description": "Liquid Glass · Small. Pills, badges, tags, chips, icon buttons (< 44px tall). Pair with Glass/Fill/Clear or a Glass/Fill/Tinted/* style. CSS: backdrop-filter: blur(6px); box-shadow: 0 2px 8px var(--bek-color-glass-shadow-clear), 0 0 0 .5px var(--bek-color-glass-rim), inset 0 .5px 0 var(--bek-color-glass-edge-light).",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000005",
+          "offset": [0, 2],
+          "radius": 8,
+          "spread": 0,
+          "boundVariables": {
+            "color": "glass/shadow-clear"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 0],
+          "radius": 0,
+          "spread": 0.5,
+          "boundVariables": {
+            "color": "glass/rim"
+          }
+        },
+        {
+          "type": "GLASS",
+          "radius": 6,
+          "spread": 0
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#fffffff0",
+          "offset": [0, 0.5],
+          "radius": 0,
+          "spread": 0,
+          "boundVariables": {
+            "color": "glass/edge-light"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Glass/Clear",
+      "description": "Liquid Glass · Clear. Over photos, video, logos and rich media where content must stay visible. Pair with Glass/Fill/Clear. CSS: backdrop-filter: blur(6px); background: var(--bek-color-glass-tint-clear).",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000005",
+          "offset": [0, 8],
+          "radius": 15,
+          "spread": 0,
+          "boundVariables": {
+            "color": "glass/shadow-clear"
+          }
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": "#00000011",
+          "offset": [0, 0],
+          "radius": 0,
+          "spread": 0.5,
+          "boundVariables": {
+            "color": "glass/rim"
+          }
+        },
+        {
+          "type": "GLASS",
+          "radius": 6,
+          "spread": 0
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#e6e6e6ff",
+          "offset": [0, 40],
+          "radius": 30,
+          "spread": -40
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#282828ff",
+          "offset": [0, -40],
+          "radius": 10,
+          "spread": -40
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#282828ff",
+          "offset": [0, 40],
+          "radius": 10,
+          "spread": -40
+        },
+        {
+          "type": "INNER_SHADOW",
+          "color": "#fffffff0",
+          "offset": [0, 1],
+          "radius": 0,
+          "spread": 0,
+          "boundVariables": {
+            "color": "glass/edge-light"
+          }
+        }
+      ]
+    }
+  ],
+  "paintStyles": [
+    {
+      "name": "Glass/Fill/Regular",
+      "description": "Fill for Glass/Regular surfaces.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 0.5040000081062317,
+          "c": "#ffffff"
+        },
+        {
+          "t": "SOLID",
+          "o": 0.019999999552965164,
+          "c": "#000000"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Fill/Clear",
+      "description": "Fill for Glass/Clear and neutral Glass/Small.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 0.11699999868869781,
+          "c": "#ffffff"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Fill/Tinted/Accent",
+      "description": "Prominent (tinted) glass — accent. Pair with Glass/Small; text uses color/foreground/on-accent/default.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 1,
+          "c": "#3e63dd"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Fill/Tinted/Success",
+      "description": "Prominent (tinted) glass — success. Pair with Glass/Small; text uses color/foreground/on-accent/default.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 1,
+          "c": "#247e3a"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Fill/Tinted/Warning",
+      "description": "Prominent (tinted) glass — warning. Pair with Glass/Small; text uses color/foreground/on-accent/default.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 1,
+          "c": "#ff8d28"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Fill/Tinted/Danger",
+      "description": "Prominent (tinted) glass — danger. Pair with Glass/Small; text uses color/foreground/on-accent/default.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 1,
+          "c": "#d93134"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Fill/Tinted/Neutral",
+      "description": "Prominent (tinted) glass — neutral. Pair with Glass/Small; text uses color/foreground/on-accent/default.",
+      "paints": [
+        {
+          "t": "SOLID",
+          "o": 1,
+          "c": "#8e8e93"
+        }
+      ]
+    },
+    {
+      "name": "Glass/Backdrop/Light",
+      "description": "Page/board backdrop that lets Liquid Glass read. Glass needs colour or texture behind it — never place glass on a flat grey canvas.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#99acedff"],
+            [0.44999998807907104, "#e8a5f1ff"],
+            [0.75, "#ffb7c5ff"],
+            [1, "#ffd8b5ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Glass/Backdrop/Dark",
+      "description": "Dark variant of the glass backdrop.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#253979ff"],
+            [0.44999998807907104, "#641c6eff"],
+            [0.75, "#5c1926ff"],
+            [1, "#1f1f1fff"]
+          ]
+        }
+      ]
+    }
+  ]
+}
