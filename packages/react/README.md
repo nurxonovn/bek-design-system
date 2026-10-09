@@ -16,49 +16,51 @@ import { Badge, BekLogo, Button, Tag } from '@bek/react';
 
 ## Komponentlar
 
-| Komponent                    | Figma sahifasi         | Hujjat                                               |
-| ---------------------------- | ---------------------- | ---------------------------------------------------- |
-| `BekLogo`                    | 2.2 Logo & Brand       | [README](src/components/logo/README.md)              |
-| `Button`                     | 3.1 Button             | [README](src/components/button/README.md)            |
-| `TextField`                  | 3.2 Text field         | [README](src/components/text-field/README.md)        |
-| `Select`                     | 3.3 Select             | [README](src/components/select/README.md)            |
-| `Checkbox`                   | 3.4 Checkbox           | [README](src/components/checkbox/README.md)          |
-| `Radio`                      | 3.5 Radio              | [README](src/components/radio/README.md)             |
-| `Switch`                     | 3.6 Switch             | [README](src/components/switch/README.md)            |
-| `Textarea`                   | 3.7 Textarea           | [README](src/components/textarea/README.md)          |
-| `Slider` · `RangeSlider`     | 3.8 Slider             | [README](src/components/slider/README.md)            |
-| `Stepper`                    | 3.9 Stepper            | [README](src/components/stepper/README.md)           |
-| `SegmentedControl`           | 3.10 Segmented control | [README](src/components/segmented-control/README.md) |
-| `BaseSelector`               | 3.11 Base selector     | [README](src/components/base-selector/README.md)     |
-| `SearchBar`                  | 3.12 Search bar        | [README](src/components/search-bar/README.md)        |
-| `Chip`                       | 3.13 Chip              | [README](src/components/chip/README.md)              |
-| `DatePicker`                 | 3.14 Date picker       | [README](src/components/date-picker/README.md)       |
-| `TimeSlotPicker`             | 3.15 Time slot picker  | [README](src/components/time-slot/README.md)         |
-| `Avatar`                     | 4.1 Avatar             | [README](src/components/avatar/README.md)            |
-| `Badge`                      | 4.2 Badge              | [README](src/components/badge/README.md)             |
-| `Tag`                        | 4.2 Badge              | [README](src/components/tag/README.md)               |
-| `Card`                       | 4.3 Card               | [README](src/components/card/README.md)              |
-| `ListItem`                   | 4.4 List item          | [README](src/components/list-item/README.md)         |
-| `Table`                      | 4.5 Table              | [README](src/components/table/README.md)             |
-| `ProgressBar`                | 4.6 Progress           | [README](src/components/progress/README.md)          |
-| `CodeInput` · `Pinpad`       | 4.7 Pincode            | [README](src/components/pincode/README.md)           |
-| `Price`                      | 4.9 Price              | [README](src/components/price/README.md)             |
-| `Rating`                     | 4.10 Rating            | [README](src/components/rating/README.md)            |
-| `Carousel`                   | 4.11 Carousel          | [README](src/components/carousel/README.md)          |
-| `Accordion`                  | 4.12 Accordion         | [README](src/components/accordion/README.md)         |
-| `Separator`                  | 4.13 Separator         | [README](src/components/separator/README.md)         |
-| `ProductCard`                | 4.14 Product card      | [README](src/components/product-card/README.md)      |
-| `OrderWidget`                | 4.15 Widget            | [README](src/components/order-widget/README.md)      |
-| `Toast` · `ToastViewport`    | 5.1 Toast              | [README](src/components/toast/README.md)             |
-| `Tooltip` · `TooltipCallout` | 5.2 Tooltip            | [README](src/components/tooltip/README.md)           |
-| `EmptyState`                 | 5.3 Empty state        | [README](src/components/empty-state/README.md)       |
-| `Alert`                      | 5.4 Alert              | [README](src/components/alert/README.md)             |
-| `InfoWrap`                   | 5.5 Info wrap          | [README](src/components/info-wrap/README.md)         |
-| `NotificationBar`            | 5.6 Notification bar   | [README](src/components/notification-bar/README.md)  |
-| `Loader` · `PullToRefresh`   | 5.7 Loading            | [README](src/components/loader/README.md)            |
-| `Skeleton`                   | 5.7 Loading            | [README](src/components/skeleton/README.md)          |
-| `Icon`                       | 9.1 Slots & Helpers    | [README](src/components/icon/README.md)              |
-| `Spinner`                    | 9.1 Slots & Helpers    | [README](src/components/spinner/README.md)           |
-| `Divider`                    | 9.1 Slots & Helpers    | [README](src/components/divider/README.md)           |
+| Komponent                                                                                  | Figma sahifasi         | Hujjat                                               |
+| ------------------------------------------------------------------------------------------ | ---------------------- | ---------------------------------------------------- |
+| `BekLogo`                                                                                  | 2.2 Logo & Brand       | [README](src/components/logo/README.md)              |
+| `Button`                                                                                   | 3.1 Button             | [README](src/components/button/README.md)            |
+| `TextField`                                                                                | 3.2 Text field         | [README](src/components/text-field/README.md)        |
+| `Select`                                                                                   | 3.3 Select             | [README](src/components/select/README.md)            |
+| `Checkbox`                                                                                 | 3.4 Checkbox           | [README](src/components/checkbox/README.md)          |
+| `Radio`                                                                                    | 3.5 Radio              | [README](src/components/radio/README.md)             |
+| `Switch`                                                                                   | 3.6 Switch             | [README](src/components/switch/README.md)            |
+| `Textarea`                                                                                 | 3.7 Textarea           | [README](src/components/textarea/README.md)          |
+| `Slider` · `RangeSlider`                                                                   | 3.8 Slider             | [README](src/components/slider/README.md)            |
+| `Stepper`                                                                                  | 3.9 Stepper            | [README](src/components/stepper/README.md)           |
+| `SegmentedControl`                                                                         | 3.10 Segmented control | [README](src/components/segmented-control/README.md) |
+| `BaseSelector`                                                                             | 3.11 Base selector     | [README](src/components/base-selector/README.md)     |
+| `SearchBar`                                                                                | 3.12 Search bar        | [README](src/components/search-bar/README.md)        |
+| `Chip`                                                                                     | 3.13 Chip              | [README](src/components/chip/README.md)              |
+| `DatePicker`                                                                               | 3.14 Date picker       | [README](src/components/date-picker/README.md)       |
+| `TimeSlotPicker`                                                                           | 3.15 Time slot picker  | [README](src/components/time-slot/README.md)         |
+| `Avatar`                                                                                   | 4.1 Avatar             | [README](src/components/avatar/README.md)            |
+| `Badge`                                                                                    | 4.2 Badge              | [README](src/components/badge/README.md)             |
+| `Tag`                                                                                      | 4.2 Badge              | [README](src/components/tag/README.md)               |
+| `Card`                                                                                     | 4.3 Card               | [README](src/components/card/README.md)              |
+| `ListItem`                                                                                 | 4.4 List item          | [README](src/components/list-item/README.md)         |
+| `Table`                                                                                    | 4.5 Table              | [README](src/components/table/README.md)             |
+| `ProgressBar`                                                                              | 4.6 Progress           | [README](src/components/progress/README.md)          |
+| `CodeInput` · `Pinpad`                                                                     | 4.7 Pincode            | [README](src/components/pincode/README.md)           |
+| `Price`                                                                                    | 4.9 Price              | [README](src/components/price/README.md)             |
+| `Rating`                                                                                   | 4.10 Rating            | [README](src/components/rating/README.md)            |
+| `Carousel`                                                                                 | 4.11 Carousel          | [README](src/components/carousel/README.md)          |
+| `Accordion`                                                                                | 4.12 Accordion         | [README](src/components/accordion/README.md)         |
+| `Separator`                                                                                | 4.13 Separator         | [README](src/components/separator/README.md)         |
+| `ProductCard`                                                                              | 4.14 Product card      | [README](src/components/product-card/README.md)      |
+| `OrderWidget`                                                                              | 4.15 Widget            | [README](src/components/order-widget/README.md)      |
+| `Toast` · `ToastViewport`                                                                  | 5.1 Toast              | [README](src/components/toast/README.md)             |
+| `Tooltip` · `TooltipCallout`                                                               | 5.2 Tooltip            | [README](src/components/tooltip/README.md)           |
+| `EmptyState`                                                                               | 5.3 Empty state        | [README](src/components/empty-state/README.md)       |
+| `Alert`                                                                                    | 5.4 Alert              | [README](src/components/alert/README.md)             |
+| `InfoWrap`                                                                                 | 5.5 Info wrap          | [README](src/components/info-wrap/README.md)         |
+| `NotificationBar`                                                                          | 5.6 Notification bar   | [README](src/components/notification-bar/README.md)  |
+| `Loader` · `PullToRefresh`                                                                 | 5.7 Loading            | [README](src/components/loader/README.md)            |
+| `Skeleton`                                                                                 | 5.7 Loading            | [README](src/components/skeleton/README.md)          |
+| `Tabs` · `TabList` · `Tab` · `TabPanel`                                                    | 6.1 Tabs               | [README](src/components/tabs/README.md)              |
+| `NavItem` · `NavGroup` · `MenuPanel` · `ModuleRail` · `NavRail` · `NavDrawer` · `AppShell` | 6.2 Navigation         | [README](src/components/navigation/README.md)        |
+| `Icon`                                                                                     | 9.1 Slots & Helpers    | [README](src/components/icon/README.md)              |
+| `Spinner`                                                                                  | 9.1 Slots & Helpers    | [README](src/components/spinner/README.md)           |
+| `Divider`                                                                                  | 9.1 Slots & Helpers    | [README](src/components/divider/README.md)           |
 
 Har komponent `src/components/<nom>/` ichida: `.tsx`, `.css`, `README.md`. CSS fayllar build paytida `dist/styles.css` ga yig'iladi.

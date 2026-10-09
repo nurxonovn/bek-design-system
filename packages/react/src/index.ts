@@ -41,3 +41,5 @@ export * from './components/info-wrap/index.js';
 export * from './components/notification-bar/index.js';
 export * from './components/loader/index.js';
 export * from './components/skeleton/index.js';
+export * from './components/tabs/index.js';
+export * from './components/navigation/index.js';
