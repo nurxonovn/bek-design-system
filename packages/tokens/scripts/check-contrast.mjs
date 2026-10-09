@@ -24,10 +24,7 @@ for (const b of NEUTRAL_BG) pairs.push(['border/focus', b, 3]);
 
 // Known gaps that live in Figma, not in this package. Each is reported on every run;
 // remove the entry once the Figma token is fixed and re-exported.
-const KNOWN = {
-  'light text/success on status/success/soft':
-    'Figma: text/success Light = light/green/800 gives 4.49:1 on the soft fill. Proposed fix: light/green/850 (5.46:1).',
-};
+const KNOWN = {};
 
 let fails = 0;
 const rows = [];

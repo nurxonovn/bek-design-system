@@ -24,7 +24,7 @@
     ["border/danger", ["{light/red/450}", "{dark/red/450}"], "Danger chegara: xato input, outline danger."],
     ["status/success/default", ["{light/green/800}", "{dark/green/350}"], "Success solid fon."],
     ["status/success/soft", ["{light/green/100}", "{dark/green/150}"], "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat."],
-    ["text/success", ["{light/green/800}", "{dark/green/550}"], "Success matn va ikonka."],
+    ["text/success", ["{light/green/850}", "{dark/green/550}"], "Success matn va ikonka. Light green/850 (#206F34) — bg/sheet 6.2:1, success/soft 5.5:1."],
     ["border/success", ["{light/green/450}", "{dark/green/450}"], "Success chegara."],
     ["status/warning/default", ["{light/orange/550}", "{dark/orange/550}"], "Warning solid fon (ustida text/on-warning)."],
     ["status/warning/soft", ["{light/orange/100}", "{dark/orange/150}"], "Yumshoq rangli fon: badge, soft tugma, alert, tanlangan holat."],

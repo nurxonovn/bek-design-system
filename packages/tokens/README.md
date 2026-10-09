@@ -62,6 +62,5 @@ Figma's GLASS effect and its decorative inner shadows have no CSS equivalent;
 2. `pnpm --filter @bek/tokens build` (or `node scripts/build.mjs`).
 3. `pnpm --filter @bek/tokens test` — WCAG contrast check of the semantic pairs.
 
-Known gap (reported by the test, not hidden): Light `text/success` on
-`status/success/soft` is 4.49 : 1. Fix in Figma: `text/success` Light →
-`light/green/850` (5.46 : 1).
+Add an entry to `KNOWN` in `scripts/check-contrast.mjs` only for a gap that
+is acknowledged in Figma; the test prints every such entry on each run.
