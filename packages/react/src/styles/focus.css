@@ -1,0 +1,6 @@
+/* _Focus ring — Figma "9.1 Slots & Helpers": 2 px, element tashqarisida, border/focus.
+   Har interaktiv komponent shu klassni oladi; outline element radiusiga moslashadi. */
+.bek-focus-ring:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}

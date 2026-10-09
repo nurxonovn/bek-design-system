@@ -1,0 +1,36 @@
+/* _Spinner — Figma "9.1 Slots & Helpers". 16 · 20 · 24 px; rang matndan (currentColor). */
+.bek-spinner {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+  color: inherit;
+}
+
+.bek-spinner--20 {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+.bek-spinner--24 {
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-spinner > svg {
+  width: 100%;
+  height: 100%;
+  animation: bek-spinner-rotate 0.8s steps(8) infinite;
+}
+
+@keyframes bek-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-spinner > svg {
+    animation-duration: 2.4s;
+  }
+}

@@ -1,0 +1,17 @@
+/* _Divider — Figma "9.1 Slots & Helpers". Yagona ajratuvchi: border/hairline, stroke/default. */
+.bek-divider {
+  flex-shrink: 0;
+  background: var(--bek-border-hairline);
+}
+
+.bek-divider--horizontal {
+  align-self: stretch;
+  width: auto;
+  height: var(--bek-stroke-default);
+}
+
+.bek-divider--vertical {
+  align-self: stretch;
+  width: var(--bek-stroke-default);
+  min-height: 1em;
+}
