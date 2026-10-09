@@ -1,0 +1,141 @@
+/* Accordion — Figma "4.12 Accordion". Sarlavha min 48 (s) / 56 (m), gap 12; Plain — padding 8,
+   pastda border/hairline; Card — fill/secondary (hover fill/tertiary), radius surface/md, padding 16.
+   Sarlavha Label/M (s) · Label/L (m), kontent Body/S · Body/M text/secondary, padding-block 16. */
+.bek-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+}
+
+.bek-accordion:has(> .bek-accordion-item--plain) {
+  gap: 0;
+}
+
+.bek-accordion-item {
+  --bek-accordion-min: var(--bek-scale-56);
+  --bek-accordion-px: var(--bek-scale-8);
+
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-accordion-item--s {
+  --bek-accordion-min: var(--bek-scale-48);
+}
+
+.bek-accordion-item--plain {
+  border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-accordion-item--card {
+  --bek-accordion-px: var(--bek-scale-16);
+
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-secondary);
+}
+
+.bek-accordion-item__header {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  min-height: var(--bek-accordion-min);
+  padding: var(--bek-scale-8) var(--bek-accordion-px);
+  border-radius: var(--bek-radius-control-md);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-accordion-item__header::-webkit-details-marker {
+  display: none;
+}
+
+.bek-accordion-item--card > .bek-accordion-item__header {
+  border-radius: var(--bek-radius-surface-md);
+}
+
+.bek-accordion-item--plain > .bek-accordion-item__header:hover {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-accordion-item--card > .bek-accordion-item__header:hover {
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-accordion-item__header:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-accordion-item__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.bek-accordion-item__icon > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+.bek-accordion-item__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-width: 0;
+}
+
+.bek-accordion-item__title {
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-accordion-item--s .bek-accordion-item__title {
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-accordion-item__description {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+.bek-accordion-item__chevron {
+  flex-shrink: 0;
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+  color: var(--bek-text-secondary);
+  transition: transform var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-accordion-item[open] > .bek-accordion-item__header .bek-accordion-item__chevron {
+  transform: rotate(180deg);
+}
+
+.bek-accordion-item__content {
+  padding: var(--bek-scale-16) var(--bek-accordion-px);
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-accordion-item--s .bek-accordion-item__content {
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-accordion-item--disabled > .bek-accordion-item__header {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-accordion-item--disabled > .bek-accordion-item__header:hover {
+  background: transparent;
+}

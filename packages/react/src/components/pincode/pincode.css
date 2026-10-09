@@ -1,0 +1,148 @@
+/* Pincode — Figma "4.7 Pincode". Nuqta 12 px (36 px katak, gap 8): bo'sh fill/tertiary, to'lgan
+   accent/default, xato status/danger, muvaffaqiyat status/success; yordamchi Body/S.
+   Pinpad: 72 px doira fill/secondary (bosilganda fill/strong), Headline/L raqam, qator gap 16, ustun 32. */
+.bek-code-input {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-code-input__dots {
+  position: relative;
+  display: inline-flex;
+  gap: var(--bek-scale-8);
+  cursor: text;
+}
+
+.bek-code-input__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-36);
+  height: var(--bek-scale-36);
+}
+
+.bek-code-input__dot::after {
+  content: '';
+  width: var(--bek-scale-12);
+  height: var(--bek-scale-12);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-tertiary);
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-code-input__dot.is-filled::after {
+  background: var(--bek-accent-default);
+}
+
+.bek-code-input--error .bek-code-input__dot::after {
+  background: var(--bek-status-danger-default);
+}
+
+.bek-code-input--success .bek-code-input__dot::after {
+  background: var(--bek-status-success-default);
+}
+
+.bek-code-input__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  opacity: 0;
+  caret-color: transparent;
+}
+
+.bek-code-input__dots:has(.bek-code-input__input:focus-visible) {
+  border-radius: var(--bek-radius-control-md);
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-code-input__helper {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-code-input--error .bek-code-input__helper {
+  color: var(--bek-text-danger);
+}
+
+.bek-code-input--success .bek-code-input__helper {
+  color: var(--bek-text-success);
+}
+
+.bek-pinpad {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--bek-scale-16);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-pinpad__row {
+  display: flex;
+  gap: var(--bek-scale-32);
+}
+
+.bek-pinpad__key {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-72);
+  height: var(--bek-scale-72);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: transparent;
+  color: var(--bek-text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bek-pinpad__key--digit {
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-primary);
+  font: inherit;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-headline-lg-size);
+  line-height: var(--bek-type-headline-lg-line-height);
+  letter-spacing: var(--bek-type-headline-lg-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-pinpad__key--digit:active:not(:disabled) {
+  background: var(--bek-fill-strong);
+}
+
+.bek-pinpad__key--icon:active:not(:disabled),
+.bek-pinpad__key--text:active:not(:disabled) {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-pinpad__key > svg {
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-pinpad__key--text {
+  font: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+}
+
+.bek-pinpad__key:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-pinpad__key:disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}

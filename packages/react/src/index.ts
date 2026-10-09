@@ -28,3 +28,8 @@ export * from './components/table/index.js';
 export * from './components/separator/index.js';
 export * from './components/price/index.js';
 export * from './components/rating/index.js';
+export * from './components/accordion/index.js';
+export * from './components/pincode/index.js';
+export * from './components/carousel/index.js';
+export * from './components/product-card/index.js';
+export * from './components/order-widget/index.js';

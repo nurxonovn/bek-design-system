@@ -1,0 +1,137 @@
+/* Product card — Figma "4.14 Product card". Rasm fill/secondary, radius surface/lg (vertical — kvadrat,
+   horizontal — 112 px); nom Title/S, tavsif Caption/L text/secondary; badge accent/default pill
+   Caption/S; amal — Outline-action Button, savatda — Stepper, mavjud emas — Flat disabled. */
+.bek-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-product-card--horizontal {
+  flex-direction: row;
+  gap: var(--bek-scale-12);
+  padding-block: var(--bek-scale-12);
+}
+
+.bek-product-card--featured {
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-xl);
+  background: var(--bek-surface-card);
+}
+
+.bek-product-card__image {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-tertiary);
+}
+
+.bek-product-card--horizontal .bek-product-card__image {
+  width: var(--bek-scale-104);
+  height: var(--bek-scale-104);
+}
+
+.bek-product-card--featured .bek-product-card__image {
+  aspect-ratio: 16 / 9;
+}
+
+.bek-product-card__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-product-card__badge {
+  position: absolute;
+  top: var(--bek-scale-8);
+  inset-inline-start: var(--bek-scale-8);
+  display: inline-flex;
+  align-items: center;
+  height: var(--bek-scale-20);
+  padding-inline: var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-default);
+  color: var(--bek-text-on-color);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+}
+
+.bek-product-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  min-width: 0;
+}
+
+.bek-product-card__title {
+  overflow: hidden;
+  color: inherit;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-sm-size);
+  line-height: var(--bek-type-title-sm-line-height);
+  letter-spacing: var(--bek-type-title-sm-tracking);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-product-card--featured .bek-product-card__title {
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+}
+
+a.bek-product-card__title:focus-visible {
+  border-radius: var(--bek-radius-control-sm);
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-product-card__description {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.bek-product-card__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--bek-scale-8);
+  margin-top: auto;
+}
+
+.bek-product-card--horizontal .bek-product-card__footer,
+.bek-product-card--featured .bek-product-card__footer {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bek-product-card--vertical .bek-product-card__action {
+  width: 100%;
+}
+
+.bek-product-card--unavailable .bek-product-card__image,
+.bek-product-card--unavailable .bek-product-card__title,
+.bek-product-card--unavailable .bek-price {
+  opacity: 0.48;
+}
