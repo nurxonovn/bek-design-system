@@ -3,4 +3,4 @@
 '@bek/react': minor
 ---
 
-Figma faylidan birinchi to'lqin: tokenlar (rang, o'lcham, shrift, soya, matn uslublari) va komponentlar — BekLogo, Badge, Tag, Icon, Spinner, Divider, focus ring.
+Figma "BEK Design System" faylidan birinchi to'liq to'lqin: tokenlar (rang, o'lcham, shrift, soya, glass, z-index, motion) va Foundations → Overlays bo'limlaridagi React komponentlari (Inputs, Data display, Feedback, Navigation, Overlays), `.bek-cursor-*` yordamchi klasslari va `apps/templates` namuna ekranlari.

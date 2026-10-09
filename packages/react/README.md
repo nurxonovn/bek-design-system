@@ -71,3 +71,14 @@ import { Badge, BekLogo, Button, Tag } from '@bek/react';
 | `Divider`                                                                                                                                                       | 9.1 Slots & Helpers    | [README](src/components/divider/README.md)           |
 
 Har komponent `src/components/<nom>/` ichida: `.tsx`, `.css`, `README.md`. CSS fayllar build paytida `dist/styles.css` ga yig'iladi.
+
+## Yordamchi klasslar
+
+| Klass                                                        | Figma             | Vazifa                                          |
+| ------------------------------------------------------------ | ----------------- | ----------------------------------------------- |
+| `.bek-focus-ring`                                            | 1.6 Accessibility | klaviatura fokusida 2 px `border/focus` halqa   |
+| `.bek-visually-hidden`                                       | 1.6 Accessibility | matnni faqat ekran o'quvchi uchun qoldirish     |
+| `.bek-scrollbar`                                             | 4.13 Separator    | ingichka, tokenlangan scrollbar                 |
+| `.bek-cursor-*` (`pointer`, `grab`, `resize-x`, `zoom-in` …) | 9.2 Cursor        | Figma kursor holatlarining CSS `cursor` mosligi |
+
+Namuna ekranlar (Figma 8 · Templates) — [`apps/templates`](../../apps/templates/README.md).
