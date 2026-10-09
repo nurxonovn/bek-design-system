@@ -1,0 +1,304 @@
+/* Anchored overlays — Figma "7.3 Popover", "7.4 Dropdown menu", "7.5 Context menu", "7.8 Hover card".
+   Hammasi `position: fixed` + portal (document.body); joyni useAnchoredPosition hisoblaydi. */
+.bek-anchor {
+  display: inline-flex;
+}
+
+/* Popover: S 280 · L 360, surface/raised, radius 12, Elevation/2, padding 16, gap 12.
+   Sarlavha Title/S, izoh Caption/M text/secondary; yopish 20 (ikonka 16, radius 4);
+   amallar o'ngda gap 8 (Flat + Action, M). Dum 12×6. */
+.bek-popover {
+  position: fixed;
+  z-index: var(--bek-z-popover);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  width: 280px;
+  max-width: calc(100vw - var(--bek-scale-16));
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-2);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  outline: none;
+}
+
+.bek-popover--l {
+  width: 360px;
+}
+
+.bek-popover__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bek-scale-8);
+}
+
+.bek-popover__title {
+  flex: 1;
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-sm-size);
+  line-height: var(--bek-type-title-sm-line-height);
+  letter-spacing: var(--bek-type-title-sm-tracking);
+}
+
+.bek-popover__header:not(:has(.bek-popover__title)) {
+  justify-content: flex-end;
+}
+
+.bek-popover__description {
+  margin: 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-popover__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--bek-scale-8);
+}
+
+.bek-overlay-close--small {
+  width: var(--bek-scale-20);
+  height: var(--bek-scale-20);
+  border-radius: var(--bek-radius-control-sm);
+}
+
+.bek-overlay-close--small > svg {
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+}
+
+.bek-popover--tail::before {
+  position: absolute;
+  width: var(--bek-scale-12);
+  height: 6px;
+  background: inherit;
+  content: '';
+}
+
+.bek-popover--tail[data-side='bottom']::before {
+  bottom: 100%;
+  left: calc(50% - var(--bek-scale-6));
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.bek-popover--tail[data-side='top']::before {
+  top: 100%;
+  left: calc(50% - var(--bek-scale-6));
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.bek-popover--tail[data-side='right']::before,
+.bek-popover--tail[data-side='left']::before {
+  top: calc(50% - var(--bek-scale-6));
+  width: 6px;
+  height: var(--bek-scale-12);
+}
+
+.bek-popover--tail[data-side='right']::before {
+  right: 100%;
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+
+.bek-popover--tail[data-side='left']::before {
+  left: 100%;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Menu: 240 kenglik (submenu 200), surface/raised, radius 8, Elevation/2, padding 4.
+   Element S 32 (Caption/M) · M 40 (Body/S), padding 0 8, gap 8, radius 8, ikonka 16;
+   Hover/fokus — fill/tertiary-hover; Selected — fill/strong; Danger — text/danger,
+   hover status/danger/soft; Disabled — text/disabled; hotkey Caption/M text/tertiary.
+   Guruh sarlavhasi 28 (Label/S text/tertiary); ajratuvchi 1 px border/hairline, padding 4 0. */
+.bek-menu {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 240px;
+  max-width: calc(100vw - var(--bek-scale-16));
+  max-height: calc(100dvh - var(--bek-scale-16));
+  padding: var(--bek-scale-4);
+  overflow-y: auto;
+  border-radius: var(--bek-radius-control-md);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-2);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  outline: none;
+}
+
+.bek-menu:has(> .bek-menu-item > .bek-menu--nested) {
+  overflow: visible;
+}
+
+.bek-menu--floating {
+  position: fixed;
+  z-index: var(--bek-z-dropdown);
+}
+
+.bek-menu--nested {
+  position: absolute;
+  top: calc(var(--bek-scale-4) * -1);
+  left: calc(100% + var(--bek-scale-4) + var(--bek-scale-4));
+  z-index: 1;
+  width: 200px;
+  overflow: visible;
+}
+
+.bek-menu--nested-flip {
+  right: calc(100% + var(--bek-scale-4) + var(--bek-scale-4));
+  left: auto;
+}
+
+.bek-menu-item {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  min-height: var(--bek-scale-40);
+  padding: 0 var(--bek-scale-8);
+  border-radius: var(--bek-radius-control-md);
+  outline: none;
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  cursor: pointer;
+  user-select: none;
+}
+
+.bek-menu--s .bek-menu-item {
+  min-height: var(--bek-scale-32);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-menu-item:focus,
+.bek-menu-item[aria-expanded='true'] {
+  background: var(--bek-fill-tertiary-hover);
+}
+
+.bek-menu-item:focus-visible {
+  box-shadow: inset 0 0 0 var(--bek-stroke-focus) var(--bek-border-focus);
+}
+
+.bek-menu-item--selected {
+  background: var(--bek-fill-strong);
+}
+
+.bek-menu-item--danger {
+  color: var(--bek-text-danger);
+}
+
+.bek-menu-item--danger:focus {
+  background: var(--bek-status-danger-soft);
+}
+
+.bek-menu-item[aria-disabled='true'] {
+  background: transparent;
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-menu-item__icon,
+.bek-menu-item__arrow {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+}
+
+.bek-menu-item__icon > svg,
+.bek-menu-item__arrow > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-menu-item__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-menu-item__hotkey {
+  color: var(--bek-text-tertiary);
+  font-family: inherit;
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+.bek-menu-item__arrow {
+  color: var(--bek-text-tertiary);
+}
+
+[dir='rtl'] .bek-menu-item__arrow > svg {
+  transform: scaleX(-1);
+}
+
+.bek-menu-label {
+  flex-shrink: 0;
+  padding: var(--bek-scale-6) var(--bek-scale-8);
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  text-transform: uppercase;
+}
+
+.bek-menu-separator {
+  flex-shrink: 0;
+  height: var(--bek-stroke-default);
+  margin: var(--bek-scale-4) 0;
+  background: var(--bek-border-hairline);
+}
+
+.bek-context-area {
+  display: contents;
+}
+
+/* Hover card: 320, fill/primary, radius 12, Elevation/3, padding 16, gap 12, z/dropdown. */
+.bek-hover-card {
+  position: fixed;
+  z-index: var(--bek-z-dropdown);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  width: 320px;
+  max-width: calc(100vw - var(--bek-scale-16));
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-primary);
+  box-shadow: var(--bek-elevation-3);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-popover,
+  .bek-menu--floating,
+  .bek-hover-card {
+    animation: bek-anchored-enter var(--bek-motion-overlay-anchored-enter)
+      var(--bek-motion-easing-standard);
+  }
+}
+
+@keyframes bek-anchored-enter {
+  from {
+    opacity: 0;
+    transform: scale(var(--bek-motion-scale-enter));
+  }
+}

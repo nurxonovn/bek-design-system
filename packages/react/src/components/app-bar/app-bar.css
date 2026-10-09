@@ -1,0 +1,63 @@
+/* App bar — Figma "6.5 App bar". S 56 · M 64; fill/primary, gap 12, yon padding
+   layout/page-margin; sarlavha Title/M (M — Title/L) text/primary; amallar gap 2.
+   Scrolled — Glass/Regular. Sticky, z/sticky. */
+.bek-app-bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--bek-z-sticky);
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  height: var(--bek-scale-56);
+  padding: 0 var(--bek-layout-page-margin);
+  background: var(--bek-fill-primary);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  transition:
+    background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
+    box-shadow var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-app-bar--m {
+  height: var(--bek-scale-64);
+}
+
+.bek-app-bar__main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+}
+
+.bek-app-bar__title {
+  margin: 0;
+  overflow: hidden;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-app-bar--m .bek-app-bar__title {
+  font-size: var(--bek-type-title-lg-size);
+  line-height: var(--bek-type-title-lg-line-height);
+  letter-spacing: var(--bek-type-title-lg-tracking);
+}
+
+.bek-app-bar__main > :not(.bek-app-bar__title) {
+  flex: 1;
+}
+
+.bek-app-bar__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-2);
+}
+
+[dir='rtl'] .bek-app-bar__back svg {
+  transform: scaleX(-1);
+}

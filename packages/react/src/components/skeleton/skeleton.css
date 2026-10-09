@@ -1,0 +1,123 @@
+/* Skeleton — Figma "5.7 Loading → Skeleton". Suyaklar fill/soft-pressed, shimmer:
+   shaffoflik 1 → 0.5 → 1, 1.2 s ease-in-out. Text: 12 px qatorlar (r6), gap 8, oxirgisi 2/3.
+   Title 24 (r8, 180) · Circle 40 · Rect 140 (r12) · List row 48 · Card 168 (media 140). */
+.bek-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  width: 100%;
+}
+
+.bek-skeleton__bone {
+  display: block;
+  width: 100%;
+  height: var(--bek-scale-12);
+  border-radius: var(--bek-scale-6);
+  background: var(--bek-fill-soft-pressed);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-skeleton__bone {
+    animation: bek-skeleton-shimmer 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes bek-skeleton-shimmer {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.bek-skeleton--text > .bek-skeleton__bone:last-child:not(:first-child) {
+  width: 66%;
+}
+
+.bek-skeleton--title {
+  width: 180px;
+}
+
+.bek-skeleton--title > .bek-skeleton__bone {
+  height: var(--bek-scale-24);
+  border-radius: var(--bek-radius-surface-sm);
+}
+
+.bek-skeleton--circle {
+  width: var(--bek-scale-40);
+}
+
+.bek-skeleton--circle > .bek-skeleton__bone,
+.bek-skeleton__avatar,
+.bek-skeleton__button {
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: var(--bek-radius-full);
+}
+
+.bek-skeleton--rect > .bek-skeleton__bone,
+.bek-skeleton__media {
+  height: var(--bek-scale-140);
+  border-radius: var(--bek-radius-surface-md);
+}
+
+.bek-skeleton--list-row {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--bek-scale-12);
+}
+
+.bek-skeleton--list-row > .bek-skeleton__avatar {
+  flex-shrink: 0;
+  width: var(--bek-scale-48);
+}
+
+.bek-skeleton__lines {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+}
+
+.bek-skeleton__lines > .bek-skeleton__bone:first-child {
+  height: var(--bek-scale-14);
+  border-radius: 7px;
+}
+
+.bek-skeleton__lines > .bek-skeleton__bone:last-child {
+  width: 60%;
+}
+
+.bek-skeleton__trailing {
+  flex-shrink: 0;
+  width: var(--bek-scale-56);
+  height: var(--bek-scale-24);
+  border-radius: var(--bek-radius-surface-md);
+}
+
+.bek-skeleton--card {
+  gap: var(--bek-scale-12);
+  width: 168px;
+}
+
+.bek-skeleton--card > .bek-skeleton__bone:nth-child(2) {
+  height: var(--bek-scale-14);
+  border-radius: 7px;
+}
+
+.bek-skeleton--card > .bek-skeleton__bone:nth-child(3) {
+  width: 65%;
+}
+
+.bek-skeleton__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bek-skeleton__footer > .bek-skeleton__bone:first-child {
+  width: var(--bek-scale-64);
+  height: var(--bek-scale-20);
+}
+
+.bek-skeleton__footer > .bek-skeleton__button {
+  width: var(--bek-scale-32);
+}

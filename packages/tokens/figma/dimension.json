@@ -1,0 +1,1472 @@
+{
+  "collection": "Dimension",
+  "modes": ["Mobile", "Tablet", "Web"],
+  "variables": [
+    {
+      "name": "scale/0",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-0)"
+      },
+      "description": "0px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 0,
+        "Tablet": 0,
+        "Web": 0
+      }
+    },
+    {
+      "name": "scale/1",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-1)"
+      },
+      "description": "1px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 1,
+        "Tablet": 1,
+        "Web": 1
+      }
+    },
+    {
+      "name": "scale/2",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-2)"
+      },
+      "description": "2px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 2,
+        "Tablet": 2,
+        "Web": 2
+      }
+    },
+    {
+      "name": "scale/4",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-4)"
+      },
+      "description": "4px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 4,
+        "Tablet": 4,
+        "Web": 4
+      }
+    },
+    {
+      "name": "scale/6",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-6)"
+      },
+      "description": "6px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 6,
+        "Tablet": 6,
+        "Web": 6
+      }
+    },
+    {
+      "name": "scale/8",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-8)"
+      },
+      "description": "8px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 8,
+        "Tablet": 8,
+        "Web": 8
+      }
+    },
+    {
+      "name": "scale/10",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-10)"
+      },
+      "description": "10px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 10,
+        "Tablet": 10,
+        "Web": 10
+      }
+    },
+    {
+      "name": "scale/12",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-12)"
+      },
+      "description": "12px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 12,
+        "Tablet": 12,
+        "Web": 12
+      }
+    },
+    {
+      "name": "scale/14",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-14)"
+      },
+      "description": "14px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 14,
+        "Tablet": 14,
+        "Web": 14
+      }
+    },
+    {
+      "name": "scale/16",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-16)"
+      },
+      "description": "16px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 16,
+        "Tablet": 16,
+        "Web": 16
+      }
+    },
+    {
+      "name": "scale/20",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-20)"
+      },
+      "description": "20px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 20,
+        "Tablet": 20,
+        "Web": 20
+      }
+    },
+    {
+      "name": "scale/24",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-24)"
+      },
+      "description": "24px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 24,
+        "Tablet": 24,
+        "Web": 24
+      }
+    },
+    {
+      "name": "scale/28",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-28)"
+      },
+      "description": "28px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 28,
+        "Tablet": 28,
+        "Web": 28
+      }
+    },
+    {
+      "name": "scale/32",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-32)"
+      },
+      "description": "32px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 32,
+        "Tablet": 32,
+        "Web": 32
+      }
+    },
+    {
+      "name": "scale/36",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-36)"
+      },
+      "description": "36px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 36,
+        "Tablet": 36,
+        "Web": 36
+      }
+    },
+    {
+      "name": "scale/40",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-40)"
+      },
+      "description": "40px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 40,
+        "Tablet": 40,
+        "Web": 40
+      }
+    },
+    {
+      "name": "scale/44",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-44)"
+      },
+      "description": "44px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 44,
+        "Tablet": 44,
+        "Web": 44
+      }
+    },
+    {
+      "name": "scale/48",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-48)"
+      },
+      "description": "48px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 48,
+        "Tablet": 48,
+        "Web": 48
+      }
+    },
+    {
+      "name": "scale/52",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-52)"
+      },
+      "description": "52px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 52,
+        "Tablet": 52,
+        "Web": 52
+      }
+    },
+    {
+      "name": "scale/56",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-56)"
+      },
+      "description": "56px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 56,
+        "Tablet": 56,
+        "Web": 56
+      }
+    },
+    {
+      "name": "scale/60",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-60)"
+      },
+      "description": "60px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 60,
+        "Tablet": 60,
+        "Web": 60
+      }
+    },
+    {
+      "name": "scale/64",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-64)"
+      },
+      "description": "64px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 64,
+        "Tablet": 64,
+        "Web": 64
+      }
+    },
+    {
+      "name": "scale/72",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-72)"
+      },
+      "description": "72px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 72,
+        "Tablet": 72,
+        "Web": 72
+      }
+    },
+    {
+      "name": "scale/80",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-80)"
+      },
+      "description": "80px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 80,
+        "Tablet": 80,
+        "Web": 80
+      }
+    },
+    {
+      "name": "scale/96",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-96)"
+      },
+      "description": "96px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 96,
+        "Tablet": 96,
+        "Web": 96
+      }
+    },
+    {
+      "name": "scale/104",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-104)"
+      },
+      "description": "104px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 104,
+        "Tablet": 104,
+        "Web": 104
+      }
+    },
+    {
+      "name": "scale/128",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-128)"
+      },
+      "description": "128px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 128,
+        "Tablet": 128,
+        "Web": 128
+      }
+    },
+    {
+      "name": "scale/140",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-140)"
+      },
+      "description": "140px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 140,
+        "Tablet": 140,
+        "Web": 140
+      }
+    },
+    {
+      "name": "scale/160",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-160)"
+      },
+      "description": "160px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 160,
+        "Tablet": 160,
+        "Web": 160
+      }
+    },
+    {
+      "name": "scale/200",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-200)"
+      },
+      "description": "200px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 200,
+        "Tablet": 200,
+        "Web": 200
+      }
+    },
+    {
+      "name": "scale/240",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-240)"
+      },
+      "description": "240px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 240,
+        "Tablet": 240,
+        "Web": 240
+      }
+    },
+    {
+      "name": "scale/280",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-280)"
+      },
+      "description": "280px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 280,
+        "Tablet": 280,
+        "Web": 280
+      }
+    },
+    {
+      "name": "scale/304",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-304)"
+      },
+      "description": "304px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 304,
+        "Tablet": 304,
+        "Web": 304
+      }
+    },
+    {
+      "name": "scale/320",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-320)"
+      },
+      "description": "320px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 320,
+        "Tablet": 320,
+        "Web": 320
+      }
+    },
+    {
+      "name": "scale/360",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-360)"
+      },
+      "description": "360px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 360,
+        "Tablet": 360,
+        "Web": 360
+      }
+    },
+    {
+      "name": "scale/375",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-375)"
+      },
+      "description": "375px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 375,
+        "Tablet": 375,
+        "Web": 375
+      }
+    },
+    {
+      "name": "scale/400",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-400)"
+      },
+      "description": "400px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 400,
+        "Tablet": 400,
+        "Web": 400
+      }
+    },
+    {
+      "name": "scale/480",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-480)"
+      },
+      "description": "480px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 480,
+        "Tablet": 480,
+        "Web": 480
+      }
+    },
+    {
+      "name": "scale/640",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-640)"
+      },
+      "description": "640px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 640,
+        "Tablet": 640,
+        "Web": 640
+      }
+    },
+    {
+      "name": "scale/720",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-720)"
+      },
+      "description": "720px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 720,
+        "Tablet": 720,
+        "Web": 720
+      }
+    },
+    {
+      "name": "scale/900",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-900)"
+      },
+      "description": "900px — asosiy o'lcham shkalasi. Padding, gap, o'lcham, radius uchun to'g'ridan-to'g'ri ishlating.",
+      "scopes": ["CORNER_RADIUS", "WIDTH_HEIGHT", "GAP", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": 900,
+        "Tablet": 900,
+        "Web": 900
+      }
+    },
+    {
+      "name": "scale/full",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-scale-full)"
+      },
+      "description": "9999 — to'liq yumaloq (pill, doira).",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": 9999,
+        "Tablet": 9999,
+        "Web": 9999
+      }
+    },
+    {
+      "name": "layout/page-margin",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-page-margin)"
+      },
+      "description": "Sahifa chetidagi bo'shliq. Qurilmaga qarab o'zgaradi.",
+      "scopes": ["WIDTH_HEIGHT", "GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/32"
+        }
+      }
+    },
+    {
+      "name": "layout/section-gap",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-section-gap)"
+      },
+      "description": "Bo'limlar orasidagi masofa.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/48"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/64"
+        }
+      }
+    },
+    {
+      "name": "layout/grid/columns",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-grid-columns)"
+      },
+      "description": "Grid ustunlar soni.",
+      "values": {
+        "Mobile": 4,
+        "Tablet": 8,
+        "Web": 12
+      }
+    },
+    {
+      "name": "layout/grid/gutter",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-grid-gutter)"
+      },
+      "description": "Grid ustunlar orasi.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "layout/gap/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-gap-sm)"
+      },
+      "description": "Layout darajasidagi kichik gap.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "layout/gap/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-gap-md)"
+      },
+      "description": "Layout darajasidagi o'rta gap.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/32"
+        }
+      }
+    },
+    {
+      "name": "layout/sidebar/width",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-sidebar-width)"
+      },
+      "description": "Sidebar kengligi.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/280"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/240"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/280"
+        }
+      }
+    },
+    {
+      "name": "layout/header/height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-header-height)"
+      },
+      "description": "Header balandligi.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/56"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/64"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/64"
+        }
+      }
+    },
+    {
+      "name": "layout/drawer/width",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-layout-drawer-width)"
+      },
+      "description": "Drawer kengligi.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/304"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/360"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/360"
+        }
+      }
+    },
+    {
+      "name": "control/height/xs",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-xs)"
+      },
+      "description": "Tugma, input, select balandligi — xs.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/20"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/20"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/20"
+        }
+      }
+    },
+    {
+      "name": "control/height/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-sm)"
+      },
+      "description": "Tugma, input, select balandligi — sm.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "control/height/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-md)"
+      },
+      "description": "Tugma, input, select balandligi — md.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/28"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/28"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/28"
+        }
+      }
+    },
+    {
+      "name": "control/height/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-lg)"
+      },
+      "description": "Tugma, input, select balandligi — lg.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/36"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/36"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/36"
+        }
+      }
+    },
+    {
+      "name": "control/height/xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-xl)"
+      },
+      "description": "Tugma, input, select balandligi — xl.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/44"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/44"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/44"
+        }
+      }
+    },
+    {
+      "name": "control/height/2xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-2xl)"
+      },
+      "description": "Tugma, input, select balandligi — 2xl.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/52"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/52"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/52"
+        }
+      }
+    },
+    {
+      "name": "control/height/3xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-height-3xl)"
+      },
+      "description": "Tugma, input, select balandligi — 3xl.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/60"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/60"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/60"
+        }
+      }
+    },
+    {
+      "name": "control/padding/xs",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-xs)"
+      },
+      "description": "control/height/xs bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "control/padding/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-sm)"
+      },
+      "description": "control/height/sm bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "control/padding/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-md)"
+      },
+      "description": "control/height/md bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/12"
+        }
+      }
+    },
+    {
+      "name": "control/padding/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-lg)"
+      },
+      "description": "control/height/lg bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/16"
+        }
+      }
+    },
+    {
+      "name": "control/padding/xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-xl)"
+      },
+      "description": "control/height/xl bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "control/padding/2xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-2xl)"
+      },
+      "description": "control/height/2xl bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/32"
+        }
+      }
+    },
+    {
+      "name": "control/padding/3xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-control-padding-3xl)"
+      },
+      "description": "control/height/3xl bilan juft gorizontal padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/40"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/40"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/40"
+        }
+      }
+    },
+    {
+      "name": "icon/xs",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-icon-xs)"
+      },
+      "description": "Ikonka o'lchami — xs.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/12"
+        }
+      }
+    },
+    {
+      "name": "icon/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-icon-sm)"
+      },
+      "description": "Ikonka o'lchami — sm.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/16"
+        }
+      }
+    },
+    {
+      "name": "icon/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-icon-md)"
+      },
+      "description": "Ikonka o'lchami — md.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/20"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/20"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/20"
+        }
+      }
+    },
+    {
+      "name": "icon/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-icon-lg)"
+      },
+      "description": "Ikonka o'lchami — lg.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "icon/xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-icon-xl)"
+      },
+      "description": "Ikonka o'lchami — xl.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/32"
+        }
+      }
+    },
+    {
+      "name": "radius/control/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-control-sm)"
+      },
+      "description": "Kontrollar radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/4"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/4"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/4"
+        }
+      }
+    },
+    {
+      "name": "radius/control/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-control-md)"
+      },
+      "description": "Kontrollar radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "radius/control/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-control-lg)"
+      },
+      "description": "Kontrollar radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/12"
+        }
+      }
+    },
+    {
+      "name": "radius/control/pill",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-control-pill)"
+      },
+      "description": "Kontrollar radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/full"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/full"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/full"
+        }
+      }
+    },
+    {
+      "name": "radius/surface/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-surface-sm)"
+      },
+      "description": "Karta, modal, panel radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "radius/surface/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-surface-md)"
+      },
+      "description": "Karta, modal, panel radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/12"
+        }
+      }
+    },
+    {
+      "name": "radius/surface/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-surface-lg)"
+      },
+      "description": "Karta, modal, panel radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/16"
+        }
+      }
+    },
+    {
+      "name": "radius/surface/xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-surface-xl)"
+      },
+      "description": "Karta, modal, panel radiusi.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "radius/full",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-radius-full)"
+      },
+      "description": "To'liq yumaloq.",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/full"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/full"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/full"
+        }
+      }
+    },
+    {
+      "name": "stroke/default",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-stroke-default)"
+      },
+      "description": "Standart chegara qalinligi.",
+      "scopes": ["STROKE_FLOAT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/1"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/1"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/1"
+        }
+      }
+    },
+    {
+      "name": "stroke/strong",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-stroke-strong)"
+      },
+      "description": "Qalin chegara (tanlangan, input active).",
+      "scopes": ["STROKE_FLOAT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/2"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/2"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/2"
+        }
+      }
+    },
+    {
+      "name": "stroke/focus",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-stroke-focus)"
+      },
+      "description": "Focus ring qalinligi.",
+      "scopes": ["STROKE_FLOAT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/2"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/2"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/2"
+        }
+      }
+    },
+    {
+      "name": "target/min",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-target-min)"
+      },
+      "description": "Minimal bosiladigan maydon (a11y).",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/44"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/44"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/44"
+        }
+      }
+    },
+    {
+      "name": "motion/duration/xs",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-duration-xs)"
+      },
+      "description": "Animatsiya davomiyligi, ms.",
+      "values": {
+        "Mobile": 100,
+        "Tablet": 100,
+        "Web": 100
+      }
+    },
+    {
+      "name": "motion/duration/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-duration-sm)"
+      },
+      "description": "Animatsiya davomiyligi, ms.",
+      "values": {
+        "Mobile": 150,
+        "Tablet": 150,
+        "Web": 150
+      }
+    },
+    {
+      "name": "motion/duration/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-duration-md)"
+      },
+      "description": "Animatsiya davomiyligi, ms.",
+      "values": {
+        "Mobile": 200,
+        "Tablet": 200,
+        "Web": 200
+      }
+    },
+    {
+      "name": "motion/duration/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-duration-lg)"
+      },
+      "description": "Animatsiya davomiyligi, ms.",
+      "values": {
+        "Mobile": 250,
+        "Tablet": 250,
+        "Web": 250
+      }
+    },
+    {
+      "name": "motion/easing/standard",
+      "type": "STRING",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-easing-standard)"
+      },
+      "description": "Standart easing.",
+      "values": {
+        "Mobile": "cubic-bezier(0.2, 0, 0, 1)",
+        "Tablet": "cubic-bezier(0.2, 0, 0, 1)",
+        "Web": "cubic-bezier(0.2, 0, 0, 1)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+/* Slider — Figma "3.8 Slider". Yo'lak fill/tertiary 6/8/10, to'ldirish accent/default (hover —
+   accent/hover, disabled — text/disabled), thumb 14/16/20 + Elevation/Inset. */
+.bek-slider {
+  --bek-slider-track: var(--bek-scale-6);
+  --bek-slider-thumb: var(--bek-scale-14);
+  --bek-slider-fill: var(--bek-accent-default);
+  --bek-slider-thumb-bg: var(--bek-fill-secondary);
+
+  width: 100%;
+  height: calc(var(--bek-slider-thumb) + 4px);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.bek-slider--m {
+  --bek-slider-track: var(--bek-scale-8);
+  --bek-slider-thumb: var(--bek-scale-16);
+}
+
+.bek-slider--l {
+  --bek-slider-track: var(--bek-scale-10);
+  --bek-slider-thumb: var(--bek-scale-20);
+}
+
+.bek-slider:hover {
+  --bek-slider-fill: var(--bek-accent-hover);
+}
+
+.bek-slider:disabled {
+  --bek-slider-fill: var(--bek-text-disabled);
+  --bek-slider-thumb-bg: var(--bek-fill-tertiary);
+
+  cursor: not-allowed;
+}
+
+.bek-slider::-webkit-slider-runnable-track {
+  height: var(--bek-slider-track);
+  border-radius: var(--bek-radius-full);
+  background: linear-gradient(
+    to right,
+    var(--bek-slider-fill) var(--bek-slider-progress, 0%),
+    var(--bek-fill-tertiary) var(--bek-slider-progress, 0%)
+  );
+}
+
+.bek-slider::-moz-range-track {
+  height: var(--bek-slider-track);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-slider::-moz-range-progress {
+  height: var(--bek-slider-track);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-slider-fill);
+}
+
+.bek-slider::-webkit-slider-thumb {
+  width: var(--bek-slider-thumb);
+  height: var(--bek-slider-thumb);
+  margin-top: calc((var(--bek-slider-track) - var(--bek-slider-thumb)) / 2);
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-slider-thumb-bg);
+  box-shadow:
+    var(--bek-elevation-inset),
+    0 0 0 var(--bek-stroke-default) var(--bek-border-default);
+  appearance: none;
+}
+
+.bek-slider::-moz-range-thumb {
+  width: var(--bek-slider-thumb);
+  height: var(--bek-slider-thumb);
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-slider-thumb-bg);
+  box-shadow:
+    var(--bek-elevation-inset),
+    0 0 0 var(--bek-stroke-default) var(--bek-border-default);
+}
+
+.bek-slider:focus-visible {
+  outline: none;
+}
+
+.bek-slider:focus-visible::-webkit-slider-thumb {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-slider:focus-visible::-moz-range-thumb {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+/* Range — ikki input bir yo'lak ustida; to'ldirish thumb'lar orasida. */
+.bek-range {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  width: 100%;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-range__labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-range__track {
+  position: relative;
+  height: calc(var(--bek-slider-thumb, var(--bek-scale-14)) + 4px);
+}
+
+.bek-range--m .bek-range__track {
+  --bek-slider-thumb: var(--bek-scale-16);
+}
+
+.bek-range--l .bek-range__track {
+  --bek-slider-thumb: var(--bek-scale-20);
+}
+
+.bek-range__input {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  --bek-slider-thumb-bg: var(--bek-fill-primary);
+}
+
+.bek-range__input::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.bek-range__input::-moz-range-thumb {
+  pointer-events: auto;
+}
+
+.bek-range__input::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    transparent var(--bek-slider-from),
+    var(--bek-slider-fill) var(--bek-slider-from),
+    var(--bek-slider-fill) var(--bek-slider-to),
+    transparent var(--bek-slider-to)
+  );
+}
+
+.bek-range__input:first-child::-webkit-slider-runnable-track {
+  background:
+    linear-gradient(
+      to right,
+      transparent var(--bek-slider-from),
+      var(--bek-slider-fill) var(--bek-slider-from),
+      var(--bek-slider-fill) var(--bek-slider-to),
+      transparent var(--bek-slider-to)
+    ),
+    var(--bek-fill-tertiary);
+}
+
+.bek-range__input::-moz-range-track {
+  background: transparent;
+}
+
+.bek-range__input:first-child::-moz-range-track {
+  background:
+    linear-gradient(
+      to right,
+      transparent var(--bek-slider-from),
+      var(--bek-slider-fill) var(--bek-slider-from),
+      var(--bek-slider-fill) var(--bek-slider-to),
+      transparent var(--bek-slider-to)
+    ),
+    var(--bek-fill-tertiary);
+}
+
+.bek-range__input::-moz-range-progress {
+  background: transparent;
+}

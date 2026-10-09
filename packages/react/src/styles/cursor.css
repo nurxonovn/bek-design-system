@@ -1,0 +1,63 @@
+/* Kursorlar — Figma "9.2 Cursor" holatlarining CSS mosligi. Figma'dagi kursor rasmlari faqat
+   prototip uchun; brauzerda tizim kursorlari ishlatiladi. Circle-Poof va Typing (GIF) — CSS'da yo'q. */
+.bek-cursor-pointer {
+  cursor: pointer;
+}
+
+.bek-cursor-arrow {
+  cursor: default;
+}
+
+.bek-cursor-text,
+.bek-cursor-typing {
+  cursor: text;
+}
+
+.bek-cursor-move {
+  cursor: move;
+}
+
+.bek-cursor-grab,
+.bek-cursor-move-hand {
+  cursor: grab;
+}
+
+.bek-cursor-grabbing {
+  cursor: grabbing;
+}
+
+.bek-cursor-copy {
+  cursor: copy;
+}
+
+.bek-cursor-loading {
+  cursor: progress;
+}
+
+.bek-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.bek-cursor-resize {
+  cursor: nesw-resize;
+}
+
+.bek-cursor-resize-x {
+  cursor: ew-resize;
+}
+
+.bek-cursor-resize-y {
+  cursor: ns-resize;
+}
+
+.bek-cursor-resize-diagonal {
+  cursor: nwse-resize;
+}
+
+.bek-cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.bek-cursor-zoom-out {
+  cursor: zoom-out;
+}

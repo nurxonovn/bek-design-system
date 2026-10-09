@@ -1,0 +1,6 @@
+/* _Focus ring — Figma "9.1 Slots & Helpers" + "1.6 Accessibility": faqat klaviatura fokusida
+   (:focus-visible), 2 px border/focus, element chetidan 2 px tashqarida; outline radiusga moslashadi. */
+.bek-focus-ring:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}

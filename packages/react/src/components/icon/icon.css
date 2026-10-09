@@ -1,0 +1,35 @@
+/* _Icon — Figma "9.1 Slots & Helpers". O'lcham icon/* tokenlaridan, rang — currentColor. */
+.bek-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-icon-size, var(--bek-icon-sm));
+  height: var(--bek-icon-size, var(--bek-icon-sm));
+  color: inherit;
+}
+
+.bek-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-icon--12 {
+  --bek-icon-size: var(--bek-icon-xs);
+}
+
+.bek-icon--16 {
+  --bek-icon-size: var(--bek-icon-sm);
+}
+
+.bek-icon--20 {
+  --bek-icon-size: var(--bek-icon-md);
+}
+
+.bek-icon--24 {
+  --bek-icon-size: var(--bek-icon-lg);
+}
+
+.bek-icon--32 {
+  --bek-icon-size: var(--bek-icon-xl);
+}

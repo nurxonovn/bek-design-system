@@ -1,0 +1,114 @@
+/* Time slot picker — Figma "3.15 Time slot picker" + "Time slot". Oyna: balandlik control/height/3xl,
+   radius surface/lg, fill/secondary; vaqt Label/M, izoh Caption/M text/secondary. Tanlangan —
+   accent/default + text/on-color (izoh on-color-muted); o'chirilgan — fill/soft + text/disabled;
+   Express — chaqmoq + text/warning izoh. To'r: qatorda 3 ta, oraliq 8. */
+.bek-time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-16);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-time-slots__title {
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-headline-sm-size);
+  line-height: var(--bek-type-headline-sm-line-height);
+  letter-spacing: var(--bek-type-headline-sm-tracking);
+}
+
+.bek-time-slots__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--bek-scale-8);
+}
+
+.bek-time-slots__note {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+.bek-time-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-scale-2);
+  box-sizing: border-box;
+  height: var(--bek-control-height-3xl);
+  padding-inline: var(--bek-scale-8);
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-primary);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-time-slot:hover {
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-time-slot__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.bek-time-slot__time {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-2);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  white-space: nowrap;
+}
+
+.bek-time-slot__flash {
+  width: var(--bek-scale-14);
+  height: var(--bek-scale-14);
+  color: var(--bek-text-warning);
+}
+
+.bek-time-slot__note {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-time-slot--express .bek-time-slot__note {
+  color: var(--bek-text-warning);
+}
+
+.bek-time-slot:has(.bek-time-slot__input:checked) {
+  background: var(--bek-accent-default);
+  color: var(--bek-text-on-color);
+}
+
+.bek-time-slot:has(.bek-time-slot__input:checked) .bek-time-slot__note,
+.bek-time-slot:has(.bek-time-slot__input:checked) .bek-time-slot__flash {
+  color: var(--bek-text-on-color-muted);
+}
+
+.bek-time-slot:has(.bek-time-slot__input:focus-visible) {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-time-slot--disabled,
+.bek-time-slot--disabled:hover {
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-time-slot--disabled .bek-time-slot__note {
+  color: var(--bek-text-disabled);
+}

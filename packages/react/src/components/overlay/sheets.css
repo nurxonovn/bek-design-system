@@ -1,0 +1,406 @@
+/* Command palette — Figma "7.7 Command palette". Web 640, yuqoridan 12vh; fill/primary,
+   radius surface/lg, Elevation/4. Qidiruv 56 (padding 12 16, gap 12, Body/M), ostida
+   border/hairline; natijalar padding 8; footer fill/secondary, padding 8 16, gap 16, Caption/M.
+   Mobile (< 600): to'liq kenglik, ekran yuqorisida, ishoralarsiz. */
+.bek-command {
+  width: 640px;
+  max-height: min(560px, calc(100dvh - 24vh));
+  margin: 12vh auto auto;
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-fill-primary);
+}
+
+.bek-command__search {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-12) var(--bek-scale-16);
+  border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-command__search-icon {
+  display: inline-flex;
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+  color: var(--bek-text-secondary);
+}
+
+.bek-command__search-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-command__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--bek-text-primary);
+  font-family: inherit;
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-command__input::placeholder {
+  color: var(--bek-text-tertiary);
+}
+
+.bek-command__esc {
+  padding: var(--bek-scale-2) var(--bek-scale-6);
+  border-radius: var(--bek-radius-control-sm);
+  background: var(--bek-fill-tertiary);
+  color: var(--bek-text-secondary);
+  font-family: inherit;
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+}
+
+.bek-command__results {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: var(--bek-scale-8);
+  overflow-y: auto;
+}
+
+.bek-command__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.bek-command__item[data-active] {
+  background: var(--bek-fill-strong);
+}
+
+.bek-command__item[aria-disabled='true'] {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-command__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  padding: var(--bek-scale-24) 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  text-align: center;
+}
+
+.bek-command__footer {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--bek-scale-16);
+  padding: var(--bek-scale-8) var(--bek-scale-16);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+@media (max-width: 599px) {
+  .bek-command {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 auto;
+    border-radius: 0 0 var(--bek-radius-surface-lg) var(--bek-radius-surface-lg);
+  }
+
+  .bek-command__footer {
+    display: none;
+  }
+}
+
+/* Action sheet — Figma "7.10 Action sheet".
+   Android (Material 3): bg/sheet, yuqori radius 28, dastak; sarlavha Title/M + xabar Body/S
+   (padding 8 24); qatorlar 56, padding 0 24, gap 16, ikonka 24, Body/L; destructive text/danger.
+   iOS: karta (pastda 8 px chetdan), bg/sheet, radius 34, padding 14; sarlavha markazda;
+   amallar — 48 px pill, fill/tertiary, gap 8, Semibold markazda. */
+.bek-action-sheet {
+  width: 100%;
+  max-width: 480px;
+  margin: auto auto 0;
+  background: var(--bek-bg-sheet);
+}
+
+.bek-action-sheet--android {
+  padding-bottom: max(var(--bek-scale-24), env(safe-area-inset-bottom));
+  border-radius: 28px 28px 0 0;
+}
+
+.bek-action-sheet--ios {
+  width: calc(100% - var(--bek-scale-16));
+  max-width: 400px;
+  margin-bottom: max(var(--bek-scale-8), env(safe-area-inset-bottom));
+  padding: 14px;
+  border-radius: 34px;
+}
+
+.bek-action-sheet__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  padding: var(--bek-scale-8) var(--bek-scale-24);
+}
+
+.bek-action-sheet--ios .bek-action-sheet__header {
+  gap: 10px;
+  padding: var(--bek-scale-8) var(--bek-scale-8) var(--bek-scale-24);
+  text-align: center;
+}
+
+.bek-action-sheet__title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+}
+
+.bek-action-sheet__message {
+  margin: 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-action-sheet__actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.bek-action-sheet--ios .bek-action-sheet__actions {
+  gap: var(--bek-scale-8);
+}
+
+.bek-action-sheet__action {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-16);
+  min-height: var(--bek-scale-56);
+  padding: 0 var(--bek-scale-24);
+  border: 0;
+  background: transparent;
+  color: var(--bek-text-primary);
+  font-family: inherit;
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  letter-spacing: var(--bek-type-body-lg-tracking);
+  text-align: start;
+  cursor: pointer;
+}
+
+.bek-action-sheet--android .bek-action-sheet__action:hover,
+.bek-action-sheet--android .bek-action-sheet__action:active {
+  background: var(--bek-fill-soft);
+}
+
+.bek-action-sheet--ios .bek-action-sheet__action {
+  justify-content: center;
+  min-height: var(--bek-scale-48);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-tertiary);
+  font-weight: var(--bek-weight-semibold);
+}
+
+.bek-action-sheet--ios .bek-action-sheet__action:active {
+  background: var(--bek-fill-tertiary-hover);
+}
+
+.bek-action-sheet__action--destructive {
+  color: var(--bek-text-danger);
+}
+
+.bek-action-sheet__action:disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-action-sheet__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-action-sheet__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Share sheet — Figma "7.11 Share sheet". bg/sheet, yuqori radius 24; ko'rinish: eskiz 48
+   (fill/tertiary, radius 12), sarlavha Title/S, havola Caption/M text/tertiary, yopish 32;
+   odamlar va ilovalar — 56 doira (ilova fill/secondary, ikonka 24), nom Caption/M, gap 16;
+   havola maydoni — 44 pill fill/secondary, Copy — surface/raised pill, Label/M text/accent. */
+.bek-share-sheet {
+  width: 100%;
+  max-width: 480px;
+  margin: auto auto 0;
+  padding-bottom: max(var(--bek-scale-24), env(safe-area-inset-bottom));
+  border-radius: var(--bek-radius-surface-xl) var(--bek-radius-surface-xl) 0 0;
+  background: var(--bek-bg-sheet);
+}
+
+.bek-share-sheet__preview {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: 0 var(--bek-scale-16) var(--bek-scale-16);
+  border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-share-sheet__thumb {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-48);
+  height: var(--bek-scale-48);
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-share-sheet__thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-share-sheet__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.bek-share-sheet__title {
+  margin: 0;
+  overflow: hidden;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-sm-size);
+  line-height: var(--bek-type-title-sm-line-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-share-sheet__link {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+.bek-share-sheet__row {
+  display: flex;
+  gap: var(--bek-scale-16);
+  padding: var(--bek-scale-16) var(--bek-scale-16) 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.bek-share-sheet__target {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-4);
+  width: var(--bek-scale-56);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-md);
+  background: none;
+  color: var(--bek-text-secondary);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.bek-share-sheet__circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-56);
+  height: var(--bek-scale-56);
+  overflow: hidden;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-soft);
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+}
+
+.bek-share-sheet__row--app .bek-share-sheet__circle {
+  background: var(--bek-fill-secondary);
+}
+
+.bek-share-sheet__circle > svg {
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-share-sheet__name {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-share-sheet__field {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  height: 44px;
+  margin: var(--bek-scale-24) var(--bek-scale-16) 0;
+  padding: 0 var(--bek-scale-8) 0 var(--bek-scale-16);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-secondary);
+}
+
+.bek-share-sheet__url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-share-sheet__copy {
+  height: var(--bek-scale-32);
+  padding: 0 var(--bek-scale-12);
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-surface-raised);
+  color: var(--bek-text-accent);
+  font-family: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-command[open] {
+    animation: bek-overlay-scale var(--bek-motion-overlay-modal-enter)
+      var(--bek-motion-easing-standard);
+  }
+
+  .bek-action-sheet[open],
+  .bek-share-sheet[open] {
+    animation: bek-overlay-from-bottom var(--bek-motion-overlay-slide)
+      var(--bek-motion-easing-standard);
+  }
+}

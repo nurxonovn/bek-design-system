@@ -1,0 +1,100 @@
+/* Carousel — Figma "4.11 Carousel". Viewport radius surface/lg, slaydlar orasi 12; strelkalar Raised
+   icon-only Button (L, 36); nuqta: faol 24×8 accent/default pill, nofaol 8×8 border/default;
+   rasm ustida — text/on-color va glass/tint-clear. */
+.bek-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-carousel__frame {
+  position: relative;
+}
+
+.bek-carousel__viewport {
+  display: flex;
+  gap: var(--bek-scale-12);
+  overflow-x: auto;
+  border-radius: var(--bek-radius-surface-lg);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.bek-carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.bek-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.bek-carousel--peek .bek-carousel__slide {
+  flex-basis: 85%;
+}
+
+.bek-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bek-carousel__arrow--prev {
+  inset-inline-start: var(--bek-scale-12);
+}
+
+.bek-carousel__arrow--next {
+  inset-inline-end: var(--bek-scale-12);
+}
+
+.bek-carousel__arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[dir='rtl'] .bek-carousel__arrow svg {
+  transform: scaleX(-1);
+}
+
+.bek-carousel__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-scale-8);
+}
+
+.bek-carousel--inside .bek-carousel__dots {
+  position: relative;
+  margin-top: calc(-1 * (var(--bek-scale-24) + var(--bek-scale-12)));
+  margin-bottom: var(--bek-scale-24);
+}
+
+.bek-carousel__dot {
+  width: var(--bek-scale-8);
+  height: var(--bek-scale-8);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-border-default);
+  cursor: pointer;
+  transition:
+    width var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
+    background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-carousel__dot.is-active {
+  width: var(--bek-scale-24);
+  background: var(--bek-accent-default);
+}
+
+.bek-carousel__dots--on-media .bek-carousel__dot {
+  background: var(--bek-glass-tint-clear);
+}
+
+.bek-carousel__dots--on-media .bek-carousel__dot.is-active {
+  background: var(--bek-text-on-color);
+}

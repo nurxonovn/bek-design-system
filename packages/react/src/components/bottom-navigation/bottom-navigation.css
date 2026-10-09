@@ -1,0 +1,106 @@
+/* Bottom navigation — Figma "6.7 Bottom navigation". Bar: 64 + safe area, surface/raised,
+   Elevation/1, padding 0 8. Floating: pill, 16 px chetdan, Elevation/3.
+   Element: 56 balandlik, gap 2, radius 8, ikonka 24, nom Caption/S text/secondary;
+   Selected — text/accent; Pressed — fill/soft + text/primary; Disabled — text/disabled.
+   Dot 8 px, Count 16 px — status/danger/default. */
+.bek-bottom-nav {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--bek-z-sticky);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--bek-scale-64);
+  padding: 0 var(--bek-scale-8) env(safe-area-inset-bottom);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-1);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-bottom-nav--floating {
+  bottom: max(var(--bek-scale-16), env(safe-area-inset-bottom));
+  margin: 0 var(--bek-scale-16);
+  padding-bottom: 0;
+  border-radius: var(--bek-radius-full);
+  box-shadow: var(--bek-elevation-3);
+}
+
+.bek-bottom-nav-item {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-scale-2);
+  min-width: var(--bek-scale-48);
+  height: var(--bek-scale-56);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-md);
+  background: transparent;
+  color: var(--bek-text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bek-bottom-nav-item:active:not(:disabled) {
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-primary);
+}
+
+.bek-bottom-nav-item[data-selected] {
+  color: var(--bek-text-accent);
+}
+
+.bek-bottom-nav-item:disabled,
+.bek-bottom-nav-item[aria-disabled='true'] {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-bottom-nav-item__icon {
+  position: relative;
+  display: inline-flex;
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-bottom-nav-item__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-bottom-nav-item__label {
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+}
+
+.bek-bottom-nav-item__dot,
+.bek-bottom-nav-item__count {
+  position: absolute;
+  inset-inline-start: calc(100% - var(--bek-scale-6));
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-status-danger-default);
+}
+
+.bek-bottom-nav-item__dot {
+  top: 0;
+  width: var(--bek-scale-8);
+  height: var(--bek-scale-8);
+}
+
+.bek-bottom-nav-item__count {
+  top: calc(var(--bek-scale-4) * -1);
+  box-sizing: border-box;
+  min-width: var(--bek-scale-16);
+  height: var(--bek-scale-16);
+  padding: 0 var(--bek-scale-4);
+  color: var(--bek-text-on-color);
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-scale-16);
+  text-align: center;
+}

@@ -1,0 +1,169 @@
+/* Tabs — Figma "6.1 Tabs". Tab item balandligi s 32 · m 40 · l 48; padding 12 / 16 / 16,
+   gap 8 / 8 / 12; ikonka 16 / 20 / 24; matn Label/M (l — Label/L), text/secondary.
+   Underline: qator gap 24, pastda border/default 1 px; Active — text/accent + 2 px accent/default
+   indikator; Hover — fill/soft + fill/control indikator.
+   Pill: gap 8; Active — accent/default + text/on-color; Hover — fill/soft-hover.
+   Segmented: konteyner fill/soft-hover, padding 2, gap 2, radius 8; Active — surface/raised,
+   text/primary, Elevation/1; Hover — fill/soft. Disabled — text/disabled. */
+.bek-tab-list {
+  --bek-tab-h: var(--bek-scale-40);
+  --bek-tab-px: var(--bek-scale-16);
+  --bek-tab-gap: var(--bek-scale-8);
+  --bek-tab-icon: var(--bek-icon-md);
+
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+  font-family: var(--bek-family-sans);
+  scrollbar-width: none;
+}
+
+.bek-tab-list::-webkit-scrollbar {
+  display: none;
+}
+
+.bek-tab-list--s {
+  --bek-tab-h: var(--bek-scale-32);
+  --bek-tab-px: var(--bek-scale-12);
+  --bek-tab-icon: var(--bek-icon-sm);
+}
+
+.bek-tab-list--l {
+  --bek-tab-h: var(--bek-scale-48);
+  --bek-tab-gap: var(--bek-scale-12);
+  --bek-tab-icon: var(--bek-icon-lg);
+}
+
+.bek-tab-list--underline {
+  gap: var(--bek-scale-24);
+  box-shadow: inset 0 calc(var(--bek-stroke-default) * -1) 0 var(--bek-border-default);
+}
+
+.bek-tab-list--pill {
+  gap: var(--bek-scale-8);
+}
+
+.bek-tab-list--segmented {
+  gap: var(--bek-scale-2);
+  padding: var(--bek-scale-2);
+  border-radius: var(--bek-radius-control-md);
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-tab-list--hug.bek-tab-list--segmented {
+  width: fit-content;
+}
+
+.bek-tab-list--fill > .bek-tab {
+  flex: 1 1 0;
+}
+
+.bek-tab {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-tab-gap);
+  box-sizing: border-box;
+  height: var(--bek-tab-h);
+  padding: 0 var(--bek-tab-px);
+  border: 0;
+  background: transparent;
+  color: var(--bek-text-secondary);
+  font: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard),
+    color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-tab-list--l > .bek-tab {
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-tab:hover:not(:disabled) {
+  color: var(--bek-text-primary);
+}
+
+.bek-tab:disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-tab__icon {
+  display: inline-flex;
+  width: var(--bek-tab-icon);
+  height: var(--bek-tab-icon);
+}
+
+.bek-tab__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Underline */
+.bek-tab-list--underline > .bek-tab {
+  padding-bottom: var(--bek-scale-2);
+}
+
+.bek-tab-list--underline > .bek-tab::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: var(--bek-scale-2);
+  border-radius: var(--bek-scale-2) var(--bek-scale-2) 0 0;
+  content: '';
+}
+
+.bek-tab-list--underline > .bek-tab:hover:not(:disabled) {
+  background: var(--bek-fill-soft);
+}
+
+.bek-tab-list--underline > .bek-tab:hover:not(:disabled)::after {
+  background: var(--bek-fill-control);
+}
+
+.bek-tab-list--underline > .bek-tab[aria-selected='true'] {
+  background: transparent;
+  color: var(--bek-text-accent);
+}
+
+.bek-tab-list--underline > .bek-tab[aria-selected='true']::after {
+  background: var(--bek-accent-default);
+}
+
+/* Pill */
+.bek-tab-list--pill > .bek-tab {
+  border-radius: var(--bek-radius-full);
+}
+
+.bek-tab-list--pill > .bek-tab:hover:not(:disabled) {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-tab-list--pill > .bek-tab[aria-selected='true'] {
+  background: var(--bek-accent-default);
+  color: var(--bek-text-on-color);
+}
+
+/* Segmented */
+.bek-tab-list--segmented > .bek-tab {
+  border-radius: var(--bek-radius-control-md);
+}
+
+.bek-tab-list--segmented > .bek-tab:hover:not(:disabled) {
+  background: var(--bek-fill-soft);
+}
+
+.bek-tab-list--segmented > .bek-tab[aria-selected='true'] {
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-1);
+  color: var(--bek-text-primary);
+}

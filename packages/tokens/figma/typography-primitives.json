@@ -1,0 +1,276 @@
+{
+  "collection": "Typography primitives",
+  "modes": ["Value"],
+  "variables": [
+    {
+      "name": "font/size/11",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 11
+      }
+    },
+    {
+      "name": "font/size/12",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 12
+      }
+    },
+    {
+      "name": "font/size/14",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 14
+      }
+    },
+    {
+      "name": "font/size/16",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 16
+      }
+    },
+    {
+      "name": "font/size/18",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 18
+      }
+    },
+    {
+      "name": "font/size/20",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 20
+      }
+    },
+    {
+      "name": "font/size/22",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 22
+      }
+    },
+    {
+      "name": "font/size/24",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 24
+      }
+    },
+    {
+      "name": "font/size/26",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 26
+      }
+    },
+    {
+      "name": "font/size/28",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 28
+      }
+    },
+    {
+      "name": "font/size/32",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 32
+      }
+    },
+    {
+      "name": "font/size/34",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 34
+      }
+    },
+    {
+      "name": "font/size/36",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 36
+      }
+    },
+    {
+      "name": "font/size/40",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 40
+      }
+    },
+    {
+      "name": "font/size/48",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 48
+      }
+    },
+    {
+      "name": "font/size/58",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 58
+      }
+    },
+    {
+      "name": "font/size/62",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 62
+      }
+    },
+    {
+      "name": "font/size/76",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Value": 76
+      }
+    },
+    {
+      "name": "font/line-height/16",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 16
+      }
+    },
+    {
+      "name": "font/line-height/20",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 20
+      }
+    },
+    {
+      "name": "font/line-height/24",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 24
+      }
+    },
+    {
+      "name": "font/line-height/28",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 28
+      }
+    },
+    {
+      "name": "font/line-height/32",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 32
+      }
+    },
+    {
+      "name": "font/line-height/36",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 36
+      }
+    },
+    {
+      "name": "font/line-height/40",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 40
+      }
+    },
+    {
+      "name": "font/line-height/44",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 44
+      }
+    },
+    {
+      "name": "font/line-height/52",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 52
+      }
+    },
+    {
+      "name": "font/line-height/64",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 64
+      }
+    },
+    {
+      "name": "font/line-height/68",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 68
+      }
+    },
+    {
+      "name": "font/line-height/84",
+      "type": "FLOAT",
+      "hiddenFromPublishing": true,
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Value": 84
+      }
+    }
+  ]
+}

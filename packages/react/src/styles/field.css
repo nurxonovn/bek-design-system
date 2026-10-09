@@ -1,0 +1,235 @@
+/* Maydon qobig'i — Figma "3.2 Text field" (Select va Textarea ham shu qobiqdan foydalanadi).
+   Balandlik scale/36·44·56·64, padding 12·16·16·24, radius control/md (s, m) · control/lg (l, xl),
+   ikonka slot 32 (s, m) · 40 (l, xl). Label: Caption/M (suzuvchi) · Body/M (tinch); qiymat Body/M
+   (s — Label/Input). Chegara yo'q — qatlamlar fon bilan ajraladi; xato — 1px border/danger. */
+.bek-field {
+  --bek-field-height: var(--bek-scale-44);
+  --bek-field-padding: var(--bek-scale-16);
+  --bek-field-gap: var(--bek-scale-8);
+  --bek-field-radius: var(--bek-radius-control-md);
+  --bek-field-slot: var(--bek-scale-32);
+  --bek-field-icon: var(--bek-icon-md);
+  --bek-field-label-lh: var(--bek-type-caption-md-line-height);
+  --bek-field-value-size: var(--bek-type-body-md-size);
+  --bek-field-value-lh: var(--bek-type-body-md-line-height);
+  --bek-field-value-tracking: var(--bek-type-body-md-tracking);
+  --bek-field-bg: var(--bek-fill-soft);
+  --bek-field-hover-bg: var(--bek-fill-soft-pressed);
+  --bek-field-focus-bg: var(--bek-fill-soft);
+  --bek-field-error-bg: var(--bek-fill-soft-hover);
+  --bek-field-border: transparent;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-field--s {
+  --bek-field-height: var(--bek-scale-36);
+  --bek-field-padding: var(--bek-scale-12);
+  --bek-field-icon: var(--bek-icon-sm);
+  --bek-field-value-size: var(--bek-type-control-value-size);
+  --bek-field-value-lh: var(--bek-type-control-value-line-height);
+  --bek-field-value-tracking: var(--bek-type-control-value-tracking);
+}
+
+.bek-field--l,
+.bek-field--xl {
+  --bek-field-gap: var(--bek-scale-12);
+  --bek-field-radius: var(--bek-radius-control-lg);
+  --bek-field-slot: var(--bek-scale-40);
+  --bek-field-icon: var(--bek-icon-lg);
+}
+
+.bek-field--l {
+  --bek-field-height: var(--bek-scale-56);
+}
+
+.bek-field--xl {
+  --bek-field-height: var(--bek-scale-64);
+  --bek-field-padding: var(--bek-scale-24);
+}
+
+.bek-field--outlined {
+  --bek-field-hover-bg: var(--bek-fill-soft-hover);
+  --bek-field-focus-bg: var(--bek-fill-primary);
+  --bek-field-error-bg: var(--bek-fill-primary);
+}
+
+.bek-field--plain {
+  --bek-field-bg: transparent;
+  --bek-field-hover-bg: var(--bek-fill-soft);
+  --bek-field-focus-bg: transparent;
+  --bek-field-error-bg: transparent;
+}
+
+.bek-field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--bek-field-gap);
+  box-sizing: border-box;
+  min-height: var(--bek-field-height);
+  padding-inline: var(--bek-field-padding);
+  border-radius: var(--bek-field-radius);
+  background: var(--bek-field-bg);
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-field-border);
+  cursor: text;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-field:not(.bek-field--disabled) .bek-field__control:hover {
+  background: var(--bek-field-hover-bg);
+}
+
+.bek-field__control:focus-within {
+  background: var(--bek-field-focus-bg);
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-field--error {
+  --bek-field-bg: var(--bek-field-error-bg);
+  --bek-field-border: var(--bek-border-danger);
+}
+
+.bek-field__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-field-slot);
+  height: var(--bek-field-slot);
+  margin-inline: calc((var(--bek-field-slot) - var(--bek-field-icon)) / -2);
+  color: var(--bek-text-secondary);
+}
+
+.bek-field__icon > svg,
+.bek-field__icon > .bek-icon,
+.bek-field__icon > .bek-spinner {
+  width: var(--bek-field-icon);
+  height: var(--bek-field-icon);
+}
+
+.bek-field__content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.bek-field--labelled .bek-field__content {
+  padding-top: var(--bek-field-label-lh);
+}
+
+.bek-field__input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--bek-text-primary);
+  font: inherit;
+  font-size: var(--bek-field-value-size);
+  line-height: var(--bek-field-value-lh);
+  letter-spacing: var(--bek-field-value-tracking);
+}
+
+.bek-field__input::placeholder {
+  color: var(--bek-text-tertiary);
+  opacity: 1;
+}
+
+/* Label: suzuvchi (Caption/M) — default; tinch (qiymat Body/M o'lchamida) — bo'sh va focussiz maydonda. */
+.bek-field__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  transition:
+    top var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
+    font-size var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-field:not(.bek-field--floating)
+  .bek-field__input:placeholder-shown:not(:focus)
+  + .bek-field__label {
+  top: calc(var(--bek-field-label-lh) / 2);
+  font-size: var(--bek-field-value-size);
+  line-height: var(--bek-field-value-lh);
+  letter-spacing: var(--bek-field-value-tracking);
+}
+
+.bek-field__supporting {
+  padding: var(--bek-scale-4) var(--bek-field-padding) 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-field--error .bek-field__supporting {
+  color: var(--bek-text-danger);
+}
+
+.bek-field--disabled .bek-field__control {
+  cursor: not-allowed;
+}
+
+.bek-field--disabled .bek-field__input,
+.bek-field--disabled .bek-field__input::placeholder,
+.bek-field--disabled .bek-field__label,
+.bek-field--disabled .bek-field__icon,
+.bek-field--disabled .bek-field__supporting {
+  color: var(--bek-text-disabled);
+}
+
+.bek-field--filled[aria-busy='true']:not(.bek-field--skeleton) {
+  --bek-field-bg: var(--bek-fill-soft-hover);
+}
+
+/* Skeleton: faqat maydon shakli, kontent yashirin. */
+.bek-field--skeleton .bek-field__control {
+  --bek-field-bg: var(--bek-fill-soft-hover);
+  background: var(--bek-field-bg);
+  pointer-events: none;
+}
+
+.bek-field--skeleton .bek-field__control > *,
+.bek-field--skeleton .bek-field__supporting {
+  visibility: hidden;
+}
+
+/* Select va Textarea uchun bo'sh holat klassi (input'dagi :placeholder-shown o'rnida). */
+.bek-field--empty:not(.bek-field--floating)
+  .bek-field__control:not(:focus-within)
+  .bek-field__label {
+  top: calc(var(--bek-field-label-lh) / 2);
+  font-size: var(--bek-field-value-size);
+  line-height: var(--bek-field-value-lh);
+  letter-spacing: var(--bek-field-value-tracking);
+}
+
+/* Select va Textarea Figma'da Filled fonni bir pog'ona to'qroq oladi. */
+.bek-field--select.bek-field--filled,
+.bek-field--textarea.bek-field--filled {
+  --bek-field-bg: var(--bek-fill-soft-hover);
+}
+
+.bek-field--textarea.bek-field--plain {
+  --bek-field-bg: var(--bek-fill-soft);
+  --bek-field-hover-bg: var(--bek-fill-soft);
+  --bek-field-focus-bg: var(--bek-fill-soft);
+  --bek-field-error-bg: var(--bek-fill-soft);
+}

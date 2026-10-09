@@ -1,0 +1,117 @@
+/* Switch — Figma "3.6 Switch". Yo'lak 32×20 / 40×24 / 48×28, padding scale/2, thumb 16/20/24
+   static/white + Elevation 1. Off — fill/control, On — accent/default. */
+.bek-switch {
+  --bek-switch-width: var(--bek-scale-32);
+  --bek-switch-height: var(--bek-scale-20);
+  --bek-switch-thumb: var(--bek-scale-16);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  cursor: pointer;
+}
+
+.bek-switch--m {
+  --bek-switch-width: var(--bek-scale-40);
+  --bek-switch-height: var(--bek-scale-24);
+  --bek-switch-thumb: var(--bek-scale-20);
+}
+
+.bek-switch--l {
+  --bek-switch-width: var(--bek-scale-48);
+  --bek-switch-height: var(--bek-scale-28);
+  --bek-switch-thumb: var(--bek-scale-24);
+
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-switch__control {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.bek-switch__input {
+  position: absolute;
+  inset: min(0px, calc((var(--bek-scale-24) - var(--bek-switch-height)) / -2)) 0;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.bek-switch__track {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: var(--bek-switch-width);
+  height: var(--bek-switch-height);
+  padding: var(--bek-scale-2);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-control);
+  transition: background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-switch__thumb {
+  width: var(--bek-switch-thumb);
+  height: var(--bek-switch-thumb);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-static-white);
+  box-shadow: var(--bek-elevation-1);
+  transition: transform var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-switch__input:hover + .bek-switch__track {
+  background: var(--bek-fill-control-hover);
+}
+
+.bek-switch__input:checked + .bek-switch__track {
+  background: var(--bek-accent-default);
+}
+
+.bek-switch__input:checked:hover + .bek-switch__track {
+  background: var(--bek-accent-hover);
+}
+
+.bek-switch__input:checked + .bek-switch__track .bek-switch__thumb {
+  transform: translateX(
+    calc(var(--bek-switch-width) - var(--bek-switch-thumb) - 2 * var(--bek-scale-2))
+  );
+}
+
+[dir='rtl'] .bek-switch__input:checked + .bek-switch__track .bek-switch__thumb {
+  transform: translateX(
+    calc(-1 * (var(--bek-switch-width) - var(--bek-switch-thumb) - 2 * var(--bek-scale-2)))
+  );
+}
+
+.bek-switch__input:focus-visible + .bek-switch__track {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-switch--disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-switch__input:disabled + .bek-switch__track {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-switch__input:disabled:checked + .bek-switch__track {
+  background: var(--bek-fill-disabled);
+}
+
+.bek-switch__input:disabled + .bek-switch__track .bek-switch__thumb {
+  background: var(--bek-fill-soft-pressed);
+  box-shadow: none;
+}

@@ -1,0 +1,69 @@
+/* Progress bar — Figma "4.6 Progress". Yo'lak fill/tertiary 4/6/8, to'liq radius; chiziq rangi
+   status bo'yicha (neutral — text/secondary); sarlavha Label/M: yorliq text/primary, qiymat text/secondary. */
+.bek-progress {
+  --bek-progress-height: var(--bek-scale-6);
+  --bek-progress-bar: var(--bek-accent-default);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  width: 100%;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-progress--s {
+  --bek-progress-height: var(--bek-scale-4);
+}
+
+.bek-progress--l {
+  --bek-progress-height: var(--bek-scale-8);
+}
+
+.bek-progress--neutral {
+  --bek-progress-bar: var(--bek-text-secondary);
+}
+
+.bek-progress--success {
+  --bek-progress-bar: var(--bek-status-success-default);
+}
+
+.bek-progress--warning {
+  --bek-progress-bar: var(--bek-status-warning-default);
+}
+
+.bek-progress--danger {
+  --bek-progress-bar: var(--bek-status-danger-default);
+}
+
+.bek-progress__header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--bek-scale-8);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-progress__label {
+  color: var(--bek-text-primary);
+}
+
+.bek-progress__value {
+  color: var(--bek-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-progress__track {
+  height: var(--bek-progress-height);
+  overflow: hidden;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-progress__bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bek-progress-bar);
+  transition: width var(--bek-motion-duration-md) var(--bek-motion-easing-standard);
+}

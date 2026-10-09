@@ -1,0 +1,1289 @@
+{
+  "collection": "Typography",
+  "modes": ["Mobile", "Tablet", "Web"],
+  "variables": [
+    {
+      "name": "family/sans",
+      "type": "STRING",
+      "codeSyntax": {
+        "WEB": "var(--bek-family-sans)"
+      },
+      "scopes": ["FONT_FAMILY"],
+      "values": {
+        "Mobile": "Inter",
+        "Tablet": "Inter",
+        "Web": "Inter"
+      }
+    },
+    {
+      "name": "family/mono",
+      "type": "STRING",
+      "codeSyntax": {
+        "WEB": "var(--bek-family-mono)"
+      },
+      "scopes": ["FONT_FAMILY"],
+      "values": {
+        "Mobile": "Roboto Mono",
+        "Tablet": "Roboto Mono",
+        "Web": "Roboto Mono"
+      }
+    },
+    {
+      "name": "weight/regular",
+      "type": "STRING",
+      "codeSyntax": {
+        "WEB": "var(--bek-weight-regular)"
+      },
+      "scopes": ["FONT_STYLE"],
+      "values": {
+        "Mobile": "Regular",
+        "Tablet": "Regular",
+        "Web": "Regular"
+      }
+    },
+    {
+      "name": "weight/medium",
+      "type": "STRING",
+      "codeSyntax": {
+        "WEB": "var(--bek-weight-medium)"
+      },
+      "scopes": ["FONT_STYLE"],
+      "values": {
+        "Mobile": "Medium",
+        "Tablet": "Medium",
+        "Web": "Medium"
+      }
+    },
+    {
+      "name": "weight/semibold",
+      "type": "STRING",
+      "codeSyntax": {
+        "WEB": "var(--bek-weight-semibold)"
+      },
+      "scopes": ["FONT_STYLE"],
+      "values": {
+        "Mobile": "Semi Bold",
+        "Tablet": "Semi Bold",
+        "Web": "Semi Bold"
+      }
+    },
+    {
+      "name": "type/display/lg/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-lg-size)"
+      },
+      "description": "display/lg: Mobile 36/40 · -2.2% · Tablet 58/64 · -2.2% · Web 76/84 · -2.2%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/36"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/58"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/76"
+        }
+      }
+    },
+    {
+      "name": "type/display/lg/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-lg-line-height)"
+      },
+      "description": "display/lg: Mobile 36/40 · -2.2% · Tablet 58/64 · -2.2% · Web 76/84 · -2.2%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/40"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/64"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/84"
+        }
+      }
+    },
+    {
+      "name": "type/display/lg/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-lg-tracking)"
+      },
+      "description": "display/lg: Mobile 36/40 · -2.2% · Tablet 58/64 · -2.2% · Web 76/84 · -2.2%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.7900000214576721,
+        "Tablet": -1.2799999713897705,
+        "Web": -1.6699999570846558
+      }
+    },
+    {
+      "name": "type/display/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-md-size)"
+      },
+      "description": "display/md: Mobile 32/36 · -2.2% · Tablet 48/52 · -2.2% · Web 62/68 · -2.2%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/32"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/48"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/62"
+        }
+      }
+    },
+    {
+      "name": "type/display/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-md-line-height)"
+      },
+      "description": "display/md: Mobile 32/36 · -2.2% · Tablet 48/52 · -2.2% · Web 62/68 · -2.2%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/36"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/52"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/68"
+        }
+      }
+    },
+    {
+      "name": "type/display/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-md-tracking)"
+      },
+      "description": "display/md: Mobile 32/36 · -2.2% · Tablet 48/52 · -2.2% · Web 62/68 · -2.2%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.699999988079071,
+        "Tablet": -1.059999942779541,
+        "Web": -1.3600000143051147
+      }
+    },
+    {
+      "name": "type/display/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-sm-size)"
+      },
+      "description": "display/sm: Mobile 28/32 · -2.1% · Tablet 40/44 · -2.2% · Web 48/52 · -2.2%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/28"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/40"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/48"
+        }
+      }
+    },
+    {
+      "name": "type/display/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-sm-line-height)"
+      },
+      "description": "display/sm: Mobile 28/32 · -2.1% · Tablet 40/44 · -2.2% · Web 48/52 · -2.2%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/32"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/44"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/52"
+        }
+      }
+    },
+    {
+      "name": "type/display/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-display-sm-tracking)"
+      },
+      "description": "display/sm: Mobile 28/32 · -2.1% · Tablet 40/44 · -2.2% · Web 48/52 · -2.2%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.5899999737739563,
+        "Tablet": -0.8799999952316284,
+        "Web": -1.059999942779541
+      }
+    },
+    {
+      "name": "type/headline/lg/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-lg-size)"
+      },
+      "description": "headline/lg: Mobile 26/32 · -2% · Tablet 34/44 · -2.2% · Web 40/52 · -2.2%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/26"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/34"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/40"
+        }
+      }
+    },
+    {
+      "name": "type/headline/lg/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-lg-line-height)"
+      },
+      "description": "headline/lg: Mobile 26/32 · -2% · Tablet 34/44 · -2.2% · Web 40/52 · -2.2%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/32"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/44"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/52"
+        }
+      }
+    },
+    {
+      "name": "type/headline/lg/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-lg-tracking)"
+      },
+      "description": "headline/lg: Mobile 26/32 · -2% · Tablet 34/44 · -2.2% · Web 40/52 · -2.2%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.5199999809265137,
+        "Tablet": -0.75,
+        "Web": -0.8799999952316284
+      }
+    },
+    {
+      "name": "type/headline/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-md-size)"
+      },
+      "description": "headline/md: Mobile 22/28 · -1.8% · Tablet 28/36 · -2.1% · Web 32/40 · -2.2%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/22"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/28"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/32"
+        }
+      }
+    },
+    {
+      "name": "type/headline/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-md-line-height)"
+      },
+      "description": "headline/md: Mobile 22/28 · -1.8% · Tablet 28/36 · -2.1% · Web 32/40 · -2.2%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/28"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/36"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/40"
+        }
+      }
+    },
+    {
+      "name": "type/headline/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-md-tracking)"
+      },
+      "description": "headline/md: Mobile 22/28 · -1.8% · Tablet 28/36 · -2.1% · Web 32/40 · -2.2%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.4000000059604645,
+        "Tablet": -0.5899999737739563,
+        "Web": -0.699999988079071
+      }
+    },
+    {
+      "name": "type/headline/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-sm-size)"
+      },
+      "description": "headline/sm: Mobile 20/24 · -1.7% · Tablet 24/32 · -2% · Web 24/32 · -2%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/24"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/24"
+        }
+      }
+    },
+    {
+      "name": "type/headline/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-sm-line-height)"
+      },
+      "description": "headline/sm: Mobile 20/24 · -1.7% · Tablet 24/32 · -2% · Web 24/32 · -2%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/32"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/32"
+        }
+      }
+    },
+    {
+      "name": "type/headline/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-headline-sm-tracking)"
+      },
+      "description": "headline/sm: Mobile 20/24 · -1.7% · Tablet 24/32 · -2% · Web 24/32 · -2%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.3400000035762787,
+        "Tablet": -0.47999998927116394,
+        "Web": -0.47999998927116394
+      }
+    },
+    {
+      "name": "type/title/lg/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-lg-size)"
+      },
+      "description": "title/lg: Mobile 18/24 · -1.4% · Tablet 20/28 · -1.7% · Web 20/28 · -1.7%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/18"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/20"
+        }
+      }
+    },
+    {
+      "name": "type/title/lg/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-lg-line-height)"
+      },
+      "description": "title/lg: Mobile 18/24 · -1.4% · Tablet 20/28 · -1.7% · Web 20/28 · -1.7%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/28"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/28"
+        }
+      }
+    },
+    {
+      "name": "type/title/lg/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-lg-tracking)"
+      },
+      "description": "title/lg: Mobile 18/24 · -1.4% · Tablet 20/28 · -1.7% · Web 20/28 · -1.7%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.25,
+        "Tablet": -0.3400000035762787,
+        "Web": -0.3400000035762787
+      }
+    },
+    {
+      "name": "type/title/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-md-size)"
+      },
+      "description": "title/md: Mobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/16"
+        }
+      }
+    },
+    {
+      "name": "type/title/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-md-line-height)"
+      },
+      "description": "title/md: Mobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/24"
+        }
+      }
+    },
+    {
+      "name": "type/title/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-md-tracking)"
+      },
+      "description": "title/md: Mobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.18000000715255737,
+        "Tablet": -0.18000000715255737,
+        "Web": -0.18000000715255737
+      }
+    },
+    {
+      "name": "type/title/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-sm-size)"
+      },
+      "description": "title/sm: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/14"
+        }
+      }
+    },
+    {
+      "name": "type/title/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-sm-line-height)"
+      },
+      "description": "title/sm: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/title/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-title-sm-tracking)"
+      },
+      "description": "title/sm: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.07999999821186066,
+        "Tablet": -0.07999999821186066,
+        "Web": -0.07999999821186066
+      }
+    },
+    {
+      "name": "type/body/lg/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-lg-size)"
+      },
+      "description": "body/lg: Mobile 18/28 · -1.4% · Tablet 18/28 · -1.4% · Web 18/28 · -1.4%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/18"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/18"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/18"
+        }
+      }
+    },
+    {
+      "name": "type/body/lg/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-lg-line-height)"
+      },
+      "description": "body/lg: Mobile 18/28 · -1.4% · Tablet 18/28 · -1.4% · Web 18/28 · -1.4%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/28"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/28"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/28"
+        }
+      }
+    },
+    {
+      "name": "type/body/lg/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-lg-tracking)"
+      },
+      "description": "body/lg: Mobile 18/28 · -1.4% · Tablet 18/28 · -1.4% · Web 18/28 · -1.4%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.25,
+        "Tablet": -0.25,
+        "Web": -0.25
+      }
+    },
+    {
+      "name": "type/body/lg/paragraph-spacing",
+      "type": "FLOAT",
+      "scopes": ["PARAGRAPH_SPACING"],
+      "values": {
+        "Mobile": 20,
+        "Tablet": 20,
+        "Web": 20
+      }
+    },
+    {
+      "name": "type/body/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-md-size)"
+      },
+      "description": "body/md: Mobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/16"
+        }
+      }
+    },
+    {
+      "name": "type/body/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-md-line-height)"
+      },
+      "description": "body/md: Mobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/24"
+        }
+      }
+    },
+    {
+      "name": "type/body/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-md-tracking)"
+      },
+      "description": "body/md: Mobile 16/24 · -1.1% · Tablet 16/24 · -1.1% · Web 16/24 · -1.1%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.18000000715255737,
+        "Tablet": -0.18000000715255737,
+        "Web": -0.18000000715255737
+      }
+    },
+    {
+      "name": "type/body/md/paragraph-spacing",
+      "type": "FLOAT",
+      "scopes": ["PARAGRAPH_SPACING"],
+      "values": {
+        "Mobile": 16,
+        "Tablet": 16,
+        "Web": 16
+      }
+    },
+    {
+      "name": "type/body/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-sm-size)"
+      },
+      "description": "body/sm: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/14"
+        }
+      }
+    },
+    {
+      "name": "type/body/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-sm-line-height)"
+      },
+      "description": "body/sm: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/body/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-body-sm-tracking)"
+      },
+      "description": "body/sm: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.07999999821186066,
+        "Tablet": -0.07999999821186066,
+        "Web": -0.07999999821186066
+      }
+    },
+    {
+      "name": "type/body/sm/paragraph-spacing",
+      "type": "FLOAT",
+      "scopes": ["PARAGRAPH_SPACING"],
+      "values": {
+        "Mobile": 12,
+        "Tablet": 12,
+        "Web": 12
+      }
+    },
+    {
+      "name": "type/label/lg/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-lg-size)"
+      },
+      "description": "label/lg: Mobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 16/20 · -1.1%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/16"
+        }
+      }
+    },
+    {
+      "name": "type/label/lg/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-lg-line-height)"
+      },
+      "description": "label/lg: Mobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 16/20 · -1.1%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/label/lg/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-lg-tracking)"
+      },
+      "description": "label/lg: Mobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 16/20 · -1.1%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.18000000715255737,
+        "Tablet": -0.18000000715255737,
+        "Web": -0.18000000715255737
+      }
+    },
+    {
+      "name": "type/label/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-md-size)"
+      },
+      "description": "label/md: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/14"
+        }
+      }
+    },
+    {
+      "name": "type/label/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-md-line-height)"
+      },
+      "description": "label/md: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/label/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-md-tracking)"
+      },
+      "description": "label/md: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.07999999821186066,
+        "Tablet": -0.07999999821186066,
+        "Web": -0.07999999821186066
+      }
+    },
+    {
+      "name": "type/label/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-sm-size)"
+      },
+      "description": "label/sm: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/12"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/12"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/12"
+        }
+      }
+    },
+    {
+      "name": "type/label/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-sm-line-height)"
+      },
+      "description": "label/sm: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/16"
+        }
+      }
+    },
+    {
+      "name": "type/label/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-sm-tracking)"
+      },
+      "description": "label/sm: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": 0,
+        "Tablet": 0,
+        "Web": 0
+      }
+    },
+    {
+      "name": "type/caption/lg/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-lg-size)"
+      },
+      "description": "caption/lg: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/14"
+        }
+      }
+    },
+    {
+      "name": "type/caption/lg/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-lg-line-height)"
+      },
+      "description": "caption/lg: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/caption/lg/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-lg-tracking)"
+      },
+      "description": "caption/lg: Mobile 14/20 · -0.6% · Tablet 14/20 · -0.6% · Web 14/20 · -0.6%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.07999999821186066,
+        "Tablet": -0.07999999821186066,
+        "Web": -0.07999999821186066
+      }
+    },
+    {
+      "name": "type/caption/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-md-size)"
+      },
+      "description": "caption/md: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/12"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/12"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/12"
+        }
+      }
+    },
+    {
+      "name": "type/caption/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-md-line-height)"
+      },
+      "description": "caption/md: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/16"
+        }
+      }
+    },
+    {
+      "name": "type/caption/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-md-tracking)"
+      },
+      "description": "caption/md: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": 0,
+        "Tablet": 0,
+        "Web": 0
+      }
+    },
+    {
+      "name": "type/caption/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-sm-size)"
+      },
+      "description": "caption/sm: Mobile 11/16 · 0.5% · Tablet 11/16 · 0.5% · Web 11/16 · 0.5%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/11"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/11"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/11"
+        }
+      }
+    },
+    {
+      "name": "type/caption/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-sm-line-height)"
+      },
+      "description": "caption/sm: Mobile 11/16 · 0.5% · Tablet 11/16 · 0.5% · Web 11/16 · 0.5%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/16"
+        }
+      }
+    },
+    {
+      "name": "type/caption/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-caption-sm-tracking)"
+      },
+      "description": "caption/sm: Mobile 11/16 · 0.5% · Tablet 11/16 · 0.5% · Web 11/16 · 0.5%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": 0.05999999865889549,
+        "Tablet": 0.05999999865889549,
+        "Web": 0.05999999865889549
+      }
+    },
+    {
+      "name": "type/code/md/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-code-md-size)"
+      },
+      "description": "code/md: Mobile 14/20 · 0% · Tablet 14/20 · 0% · Web 14/20 · 0%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/14"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/14"
+        }
+      }
+    },
+    {
+      "name": "type/code/md/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-code-md-line-height)"
+      },
+      "description": "code/md: Mobile 14/20 · 0% · Tablet 14/20 · 0% · Web 14/20 · 0%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/code/md/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-code-md-tracking)"
+      },
+      "description": "code/md: Mobile 14/20 · 0% · Tablet 14/20 · 0% · Web 14/20 · 0%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": 0,
+        "Tablet": 0,
+        "Web": 0
+      }
+    },
+    {
+      "name": "type/code/sm/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-code-sm-size)"
+      },
+      "description": "code/sm: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/12"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/12"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/12"
+        }
+      }
+    },
+    {
+      "name": "type/code/sm/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-code-sm-line-height)"
+      },
+      "description": "code/sm: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/16"
+        }
+      }
+    },
+    {
+      "name": "type/code/sm/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-code-sm-tracking)"
+      },
+      "description": "code/sm: Mobile 12/16 · 0% · Tablet 12/16 · 0% · Web 12/16 · 0%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": 0,
+        "Tablet": 0,
+        "Web": 0
+      }
+    },
+    {
+      "name": "type/control/value/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-control-value-size)"
+      },
+      "description": "control/value: Mobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 14/20 · -0.6%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/16"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/14"
+        }
+      }
+    },
+    {
+      "name": "type/control/value/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-control-value-line-height)"
+      },
+      "description": "control/value: Mobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 14/20 · -0.6%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/20"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/20"
+        }
+      }
+    },
+    {
+      "name": "type/control/value/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-control-value-tracking)"
+      },
+      "description": "control/value: Mobile 16/20 · -1.1% · Tablet 16/20 · -1.1% · Web 14/20 · -0.6%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.18000000715255737,
+        "Tablet": -0.18000000715255737,
+        "Web": -0.07999999821186066
+      }
+    },
+    {
+      "name": "type/label/xl/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-xl-size)"
+      },
+      "description": "label/xl: Mobile 18/24 · -1.4% · Tablet 18/24 · -1.4% · Web 18/24 · -1.4%",
+      "scopes": ["FONT_SIZE"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/size/18"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/size/18"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/size/18"
+        }
+      }
+    },
+    {
+      "name": "type/label/xl/line-height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-xl-line-height)"
+      },
+      "description": "label/xl: Mobile 18/24 · -1.4% · Tablet 18/24 · -1.4% · Web 18/24 · -1.4%",
+      "scopes": ["LINE_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Tablet": {
+          "$alias": "Typography primitives/font/line-height/24"
+        },
+        "Web": {
+          "$alias": "Typography primitives/font/line-height/24"
+        }
+      }
+    },
+    {
+      "name": "type/label/xl/tracking",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-type-label-xl-tracking)"
+      },
+      "description": "label/xl: Mobile 18/24 · -1.4% · Tablet 18/24 · -1.4% · Web 18/24 · -1.4%",
+      "scopes": ["LETTER_SPACING"],
+      "values": {
+        "Mobile": -0.25,
+        "Tablet": -0.25,
+        "Web": -0.25
+      }
+    }
+  ]
+}

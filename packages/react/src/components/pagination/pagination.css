@@ -1,0 +1,105 @@
+/* Pagination — Figma "6.4 Pagination". Qator gap 16, sahifalar gap 2. Element: S 36 · M 44
+   (min-width = balandlik), padding 0 8, radius 8, Label/M (M — Label/L) text/primary;
+   Hover — fill/tertiary; Selected — accent/default + text/on-color; Ellipsis — text/secondary.
+   Xulosa Body/S text/secondary. Load more: gap 12, Progress S + Outline tugma. */
+.bek-pagination {
+  --bek-pagination-h: 36px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bek-scale-16);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-pagination--m {
+  --bek-pagination-h: 44px;
+}
+
+.bek-pagination__summary {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-2);
+}
+
+.bek-pagination__page-size {
+  margin-inline-start: auto;
+}
+
+.bek-pagination__item,
+.bek-pagination__position {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--bek-pagination-h);
+  height: var(--bek-pagination-h);
+  padding: 0 var(--bek-scale-8);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-pagination--m .bek-pagination__item,
+.bek-pagination--m .bek-pagination__position {
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-pagination__item {
+  border: 0;
+  border-radius: var(--bek-radius-control-md);
+  background: transparent;
+  color: var(--bek-text-primary);
+  font-family: inherit;
+}
+
+button.bek-pagination__item {
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+button.bek-pagination__item:hover {
+  background: var(--bek-fill-tertiary);
+}
+
+button.bek-pagination__item[aria-current='page'] {
+  background: var(--bek-accent-default);
+  color: var(--bek-text-on-color);
+}
+
+button.bek-pagination__item:disabled {
+  background: transparent;
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-pagination__ellipsis {
+  color: var(--bek-text-secondary);
+}
+
+[dir='rtl'] .bek-pagination__arrow svg {
+  transform: scaleX(-1);
+}
+
+.bek-load-more {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  width: 100%;
+}
+
+.bek-load-more__button {
+  width: 100%;
+}

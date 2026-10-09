@@ -1,0 +1,50 @@
+/* Separator — Figma "4.13 Separator". Line — border/hairline 1 px; Block — 8 px bg/base;
+   Labeled — chiziq · Caption/M text/tertiary · chiziq, gap 12; inset 16. */
+.bek-separator {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: stretch;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-separator--inset-leading {
+  padding-inline-start: var(--bek-scale-16);
+}
+
+.bek-separator--inset-both {
+  padding-inline: var(--bek-scale-16);
+}
+
+.bek-separator__line {
+  flex: 1;
+  height: var(--bek-stroke-default);
+  background: var(--bek-border-hairline);
+}
+
+.bek-separator--vertical {
+  flex-direction: column;
+  padding-inline: 0;
+}
+
+.bek-separator--vertical .bek-separator__line {
+  width: var(--bek-stroke-default);
+  height: auto;
+  min-height: var(--bek-scale-24);
+}
+
+.bek-separator--block {
+  height: var(--bek-scale-8);
+  background: var(--bek-bg-base);
+}
+
+.bek-separator--labeled {
+  gap: var(--bek-scale-12);
+}
+
+.bek-separator__label {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}

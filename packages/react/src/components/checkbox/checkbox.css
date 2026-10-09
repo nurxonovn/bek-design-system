@@ -1,0 +1,122 @@
+/* Checkbox — Figma "3.4 Checkbox". Belgi 16/20/24 (scale), radius control/sm (l — control/md),
+   label Body/S (l — Body/M), gap 8. Bosish maydoni kamida 24 px (1.6 Accessibility). */
+.bek-checkbox {
+  --bek-checkbox-size: var(--bek-scale-16);
+  --bek-checkbox-radius: var(--bek-radius-control-sm);
+  --bek-checkbox-dash: var(--bek-scale-8);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  cursor: pointer;
+}
+
+.bek-checkbox--m {
+  --bek-checkbox-size: var(--bek-scale-20);
+  --bek-checkbox-dash: var(--bek-scale-10);
+}
+
+.bek-checkbox--l {
+  --bek-checkbox-size: var(--bek-scale-24);
+  --bek-checkbox-radius: var(--bek-radius-control-md);
+  --bek-checkbox-dash: var(--bek-scale-12);
+
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-checkbox__control {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-checkbox-size);
+  height: var(--bek-checkbox-size);
+}
+
+.bek-checkbox__input {
+  position: absolute;
+  inset: min(0px, calc((var(--bek-scale-24) - var(--bek-checkbox-size)) / -2));
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.bek-checkbox__box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--bek-checkbox-radius);
+  background: var(--bek-fill-primary);
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-strong);
+  color: var(--bek-text-on-color);
+  transition:
+    background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard),
+    box-shadow var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-checkbox__check {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.bek-checkbox__dash {
+  display: none;
+  width: var(--bek-checkbox-dash);
+  height: var(--bek-scale-2);
+  border-radius: var(--bek-scale-1);
+  background: currentColor;
+}
+
+.bek-checkbox__input:hover + .bek-checkbox__box {
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-accent);
+}
+
+.bek-checkbox__input:checked + .bek-checkbox__box,
+.bek-checkbox__input:indeterminate + .bek-checkbox__box {
+  background: var(--bek-accent-default);
+  box-shadow: none;
+}
+
+.bek-checkbox__input:checked:hover + .bek-checkbox__box,
+.bek-checkbox__input:indeterminate:hover + .bek-checkbox__box {
+  background: var(--bek-accent-hover);
+}
+
+.bek-checkbox__input:checked:not(:indeterminate) + .bek-checkbox__box .bek-checkbox__check,
+.bek-checkbox__input:indeterminate + .bek-checkbox__box .bek-checkbox__dash {
+  display: block;
+}
+
+.bek-checkbox__input:focus-visible + .bek-checkbox__box {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-checkbox--disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-checkbox__input:disabled + .bek-checkbox__box {
+  background: var(--bek-fill-soft-hover);
+  box-shadow: none;
+}
+
+.bek-checkbox__input:disabled:checked + .bek-checkbox__box,
+.bek-checkbox__input:disabled:indeterminate + .bek-checkbox__box {
+  background: var(--bek-fill-disabled);
+}
+
+.bek-checkbox__input:disabled:indeterminate + .bek-checkbox__box {
+  color: var(--bek-text-disabled);
+}

@@ -1,0 +1,418 @@
+/* Overlays — Figma "7.1 Modal / Sheet", "7.2 Drawer", "7.6 Alert dialog", "7.9 Bottom sheet".
+   Sirt surface/raised, chegarasiz, Elevation/4; scrim bg/overlay (Figma "Scrim").
+   Sarlavha Headline/S text/primary, izoh Body/S text/secondary; header padding 24 24 16,
+   body 0 24, footer 24 (gap 12, o'ngga tekislangan). Yopish tugmasi 32, radius 8, ikonka 20. */
+.bek-overlay {
+  z-index: var(--bek-z-modal);
+  box-sizing: border-box;
+  max-width: calc(100vw - var(--bek-scale-32));
+  max-height: calc(100dvh - var(--bek-scale-32));
+  padding: 0;
+  border: 0;
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-4);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-overlay[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.bek-overlay::backdrop {
+  background: var(--bek-bg-overlay);
+}
+
+.bek-overlay__header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-24) var(--bek-scale-24) var(--bek-scale-16);
+}
+
+.bek-overlay__heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  min-width: 0;
+}
+
+.bek-overlay__title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-headline-sm-size);
+  line-height: var(--bek-type-headline-sm-line-height);
+  letter-spacing: var(--bek-type-headline-sm-tracking);
+}
+
+.bek-overlay__description {
+  margin: 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-overlay__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  min-height: 0;
+  padding: 0 var(--bek-scale-24);
+  overflow-y: auto;
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-overlay__footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-24);
+}
+
+.bek-overlay-close {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-32);
+  height: var(--bek-scale-32);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-md);
+  background: transparent;
+  color: var(--bek-text-secondary);
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-overlay-close:hover {
+  background: var(--bek-fill-tertiary);
+  color: var(--bek-text-primary);
+}
+
+.bek-overlay-close--round {
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-secondary);
+}
+
+.bek-overlay-close > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+/* Modal: S 480 · M 720 · L 900, radius 16, markazda. */
+.bek-modal {
+  width: 720px;
+  margin: auto;
+  border-radius: var(--bek-radius-surface-lg);
+}
+
+.bek-modal--s {
+  width: 480px;
+}
+
+.bek-modal--l {
+  width: 900px;
+}
+
+.bek-modal:not(:has(.bek-overlay__footer)) > .bek-overlay__body {
+  padding-bottom: var(--bek-scale-24);
+}
+
+/* Drawer: S 360 · M 480 · L 640, butun balandlik; ichki burchaklar radius 16. */
+.bek-drawer {
+  width: 480px;
+  height: 100dvh;
+  max-height: none;
+  margin: 0 0 0 auto;
+  border-radius: var(--bek-radius-surface-lg) 0 0 var(--bek-radius-surface-lg);
+}
+
+.bek-drawer--left {
+  margin: 0 auto 0 0;
+  border-radius: 0 var(--bek-radius-surface-lg) var(--bek-radius-surface-lg) 0;
+}
+
+.bek-drawer--s {
+  width: 360px;
+}
+
+.bek-drawer--l {
+  width: 640px;
+}
+
+.bek-drawer > .bek-overlay__header {
+  padding-bottom: var(--bek-scale-24);
+}
+
+.bek-drawer--divider > .bek-overlay__header {
+  border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-drawer > .bek-overlay__body {
+  padding: var(--bek-scale-24);
+}
+
+.bek-drawer > .bek-overlay__footer {
+  padding-top: 0;
+}
+
+/* Bottom sheet: to'liq kenglik, yuqori radius 24, dastak 36×4 (fill/control),
+   body padding 4 16 16, gap 16; footer padding 8 16 + home indicator, gap 8. */
+.bek-bottom-sheet {
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100dvh - var(--bek-scale-48));
+  margin: auto auto 0;
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-xl) var(--bek-radius-surface-xl) 0 0;
+}
+
+.bek-bottom-sheet__handle {
+  flex-shrink: 0;
+  align-self: center;
+  width: 36px;
+  height: var(--bek-scale-4);
+  margin: var(--bek-scale-8) 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-control);
+}
+
+.bek-bottom-sheet--promo .bek-bottom-sheet__handle {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 18px);
+  background: var(--bek-fill-on-color-pressed);
+}
+
+.bek-bottom-sheet__hero {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+  overflow: hidden;
+  background: var(--bek-accent-soft);
+}
+
+.bek-bottom-sheet__hero > svg {
+  width: var(--bek-scale-48);
+  height: var(--bek-scale-48);
+  color: var(--bek-text-accent);
+}
+
+.bek-bottom-sheet__hero > img,
+.bek-bottom-sheet__media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-bottom-sheet__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-16);
+  min-height: 0;
+  padding: var(--bek-scale-4) var(--bek-scale-16) var(--bek-scale-16);
+  overflow-y: auto;
+}
+
+.bek-bottom-sheet--promo .bek-bottom-sheet__body {
+  padding-top: var(--bek-scale-24);
+  text-align: center;
+}
+
+.bek-bottom-sheet:not(:has(.bek-bottom-sheet__handle)) .bek-bottom-sheet__body {
+  padding-top: var(--bek-scale-16);
+}
+
+.bek-bottom-sheet__header {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+}
+
+.bek-bottom-sheet__header > .bek-overlay__title {
+  flex: 1;
+}
+
+.bek-bottom-sheet__promo-title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-headline-md-size);
+  line-height: var(--bek-type-headline-md-line-height);
+  letter-spacing: var(--bek-type-headline-md-tracking);
+}
+
+.bek-bottom-sheet__media {
+  height: 180px;
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-bottom-sheet__description {
+  margin: 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-bottom-sheet__footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  padding: var(--bek-scale-8) var(--bek-scale-16)
+    max(var(--bek-scale-16), env(safe-area-inset-bottom));
+}
+
+.bek-bottom-sheet__footer > .bek-button {
+  width: 100%;
+}
+
+/* Alert dialog: 400 kenglik, padding 24, gap 16, radius 16. Belgi 48 (status/{tone}/soft,
+   ikonka 24 text/{tone}); sarlavha Title/L; tugmalar Inline — M, o'ngda, gap 12;
+   Stacked — L, to'liq kenglik, gap 8 (avval Confirm). */
+.bek-alert-dialog {
+  --bek-alert-dialog-soft: var(--bek-status-info-soft);
+  --bek-alert-dialog-icon: var(--bek-text-info);
+
+  gap: var(--bek-scale-16);
+  width: 400px;
+  margin: auto;
+  padding: var(--bek-scale-24);
+  border-radius: var(--bek-radius-surface-lg);
+}
+
+.bek-alert-dialog--success {
+  --bek-alert-dialog-soft: var(--bek-status-success-soft);
+  --bek-alert-dialog-icon: var(--bek-text-success);
+}
+
+.bek-alert-dialog--warning {
+  --bek-alert-dialog-soft: var(--bek-status-warning-soft);
+  --bek-alert-dialog-icon: var(--bek-text-warning);
+}
+
+.bek-alert-dialog--danger {
+  --bek-alert-dialog-soft: var(--bek-status-danger-soft);
+  --bek-alert-dialog-icon: var(--bek-text-danger);
+}
+
+.bek-alert-dialog__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-48);
+  height: var(--bek-scale-48);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-alert-dialog-soft);
+  color: var(--bek-alert-dialog-icon);
+}
+
+.bek-alert-dialog__badge > svg {
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-alert-dialog__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+}
+
+.bek-alert-dialog__title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-lg-size);
+  line-height: var(--bek-type-title-lg-line-height);
+  letter-spacing: var(--bek-type-title-lg-tracking);
+}
+
+.bek-alert-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--bek-scale-12);
+}
+
+.bek-alert-dialog--stacked .bek-alert-dialog__actions {
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+}
+
+.bek-alert-dialog--stacked .bek-alert-dialog__actions > .bek-button {
+  width: 100%;
+}
+
+/* Harakat: Modal/Alert — scale 0.96 + fade (motion/overlay/modal/enter); Drawer — chetdan;
+   Bottom sheet — pastdan (motion/overlay/slide). */
+@media (prefers-reduced-motion: no-preference) {
+  .bek-modal[open],
+  .bek-alert-dialog[open] {
+    animation: bek-overlay-scale var(--bek-motion-overlay-modal-enter)
+      var(--bek-motion-easing-standard);
+  }
+
+  .bek-drawer--right[open] {
+    animation: bek-overlay-from-right var(--bek-motion-overlay-slide)
+      var(--bek-motion-easing-standard);
+  }
+
+  .bek-drawer--left[open] {
+    animation: bek-overlay-from-left var(--bek-motion-overlay-slide)
+      var(--bek-motion-easing-standard);
+  }
+
+  .bek-bottom-sheet[open] {
+    animation: bek-overlay-from-bottom var(--bek-motion-overlay-slide)
+      var(--bek-motion-easing-standard);
+  }
+
+  .bek-overlay[open]::backdrop {
+    animation: bek-overlay-fade var(--bek-motion-overlay-modal-enter)
+      var(--bek-motion-easing-standard);
+  }
+}
+
+@keyframes bek-overlay-scale {
+  from {
+    opacity: 0;
+    transform: scale(var(--bek-motion-scale-enter));
+  }
+}
+
+@keyframes bek-overlay-from-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes bek-overlay-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes bek-overlay-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes bek-overlay-fade {
+  from {
+    opacity: 0;
+  }
+}

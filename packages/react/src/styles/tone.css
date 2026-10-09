@@ -1,0 +1,72 @@
+/* Rang ohanglari (Figma "Color" xossasi) — Badge va Tag uchun umumiy.
+   --bek-tone-default: to'q fon · -soft: yumshoq fon · -text: matn · -border: chegara ·
+   -on: to'q fon ustidagi matn · -dot: yumshoq fon ustidagi nuqta. */
+.bek-tone--neutral {
+  --bek-tone-default: var(--bek-fill-control);
+  --bek-tone-soft: var(--bek-fill-soft-hover);
+  --bek-tone-soft-outline: var(--bek-fill-soft);
+  --bek-tone-text: var(--bek-text-primary);
+  --bek-tone-border: var(--bek-border-default);
+  --bek-tone-on: var(--bek-text-primary);
+  --bek-tone-dot: var(--bek-text-secondary);
+}
+
+.bek-tone--accent {
+  --bek-tone-default: var(--bek-accent-default);
+  --bek-tone-soft: var(--bek-accent-soft);
+  --bek-tone-text: var(--bek-text-accent);
+  --bek-tone-border: var(--bek-border-accent);
+  --bek-tone-soft-outline: var(--bek-tone-soft);
+  --bek-tone-on: var(--bek-text-on-color);
+  --bek-tone-dot: var(--bek-tone-default);
+}
+
+.bek-tone--success {
+  --bek-tone-default: var(--bek-status-success-default);
+  --bek-tone-soft: var(--bek-status-success-soft);
+  --bek-tone-text: var(--bek-text-success);
+  --bek-tone-border: var(--bek-border-success);
+  --bek-tone-soft-outline: var(--bek-tone-soft);
+  --bek-tone-on: var(--bek-text-on-color);
+  --bek-tone-dot: var(--bek-tone-default);
+}
+
+.bek-tone--warning {
+  --bek-tone-default: var(--bek-status-warning-default);
+  --bek-tone-soft: var(--bek-status-warning-soft);
+  --bek-tone-text: var(--bek-text-warning);
+  --bek-tone-border: var(--bek-border-warning);
+  --bek-tone-soft-outline: var(--bek-tone-soft);
+  --bek-tone-on: var(--bek-text-on-warning);
+  --bek-tone-dot: var(--bek-tone-default);
+}
+
+.bek-tone--danger {
+  --bek-tone-default: var(--bek-status-danger-default);
+  --bek-tone-soft: var(--bek-status-danger-soft);
+  --bek-tone-text: var(--bek-text-danger);
+  --bek-tone-border: var(--bek-border-danger);
+  --bek-tone-soft-outline: var(--bek-tone-soft);
+  --bek-tone-on: var(--bek-text-on-color);
+  --bek-tone-dot: var(--bek-tone-default);
+}
+
+.bek-tone--info {
+  --bek-tone-default: var(--bek-status-info-default);
+  --bek-tone-soft: var(--bek-status-info-soft);
+  --bek-tone-text: var(--bek-text-info);
+  --bek-tone-border: var(--bek-border-info);
+  --bek-tone-soft-outline: var(--bek-tone-soft);
+  --bek-tone-on: var(--bek-text-on-color);
+  --bek-tone-dot: var(--bek-tone-default);
+}
+
+.bek-tone--utility {
+  --bek-tone-default: var(--bek-status-utility-default);
+  --bek-tone-soft: var(--bek-status-utility-soft);
+  --bek-tone-text: var(--bek-text-utility);
+  --bek-tone-border: var(--bek-border-utility);
+  --bek-tone-soft-outline: var(--bek-tone-soft);
+  --bek-tone-on: var(--bek-text-on-color);
+  --bek-tone-dot: var(--bek-tone-default);
+}

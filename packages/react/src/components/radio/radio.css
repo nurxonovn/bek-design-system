@@ -1,0 +1,105 @@
+/* Radio — Figma "3.5 Radio". Doira 16/20/24, nuqta 6/8/10, radius/full, label Body/S (l — Body/M). */
+.bek-radio {
+  --bek-radio-size: var(--bek-scale-16);
+  --bek-radio-dot: var(--bek-scale-6);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  cursor: pointer;
+}
+
+.bek-radio--m {
+  --bek-radio-size: var(--bek-scale-20);
+  --bek-radio-dot: var(--bek-scale-8);
+}
+
+.bek-radio--l {
+  --bek-radio-size: var(--bek-scale-24);
+  --bek-radio-dot: var(--bek-scale-10);
+
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-radio__control {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-radio-size);
+  height: var(--bek-radio-size);
+}
+
+.bek-radio__input {
+  position: absolute;
+  inset: min(0px, calc((var(--bek-scale-24) - var(--bek-radio-size)) / -2));
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.bek-radio__circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-primary);
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-strong);
+  color: var(--bek-text-on-color);
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-radio__circle::after {
+  content: '';
+  display: none;
+  width: var(--bek-radio-dot);
+  height: var(--bek-radio-dot);
+  border-radius: var(--bek-radius-full);
+  background: currentColor;
+}
+
+.bek-radio__input:hover + .bek-radio__circle {
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-accent);
+}
+
+.bek-radio__input:checked + .bek-radio__circle {
+  background: var(--bek-accent-default);
+  box-shadow: none;
+}
+
+.bek-radio__input:checked:hover + .bek-radio__circle {
+  background: var(--bek-accent-hover);
+}
+
+.bek-radio__input:checked + .bek-radio__circle::after {
+  display: block;
+}
+
+.bek-radio__input:focus-visible + .bek-radio__circle {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-radio--disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-radio__input:disabled + .bek-radio__circle {
+  background: var(--bek-fill-soft-hover);
+  box-shadow: none;
+}
+
+.bek-radio__input:disabled:checked + .bek-radio__circle {
+  background: var(--bek-fill-disabled);
+  color: var(--bek-text-disabled);
+}

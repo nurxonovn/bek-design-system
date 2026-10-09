@@ -1,0 +1,441 @@
+/* Button — Figma "3.1 Button". 21 Variant × 5 Size × holatlar.
+   Ranglar komponentdan; bosilgan (:active) holat Figma'dagi Tokens jadvalidan.
+   Holat qatlami: variant → hover → :active → selected (aria-pressed) → disabled. */
+.bek-button {
+  --bek-button-height: var(--bek-control-height-md);
+  --bek-button-padding: var(--bek-control-padding-md);
+  --bek-button-gap: var(--bek-scale-8);
+  --bek-button-icon: var(--bek-icon-sm);
+  --bek-button-current-bg: var(--bek-button-bg);
+  --bek-button-current-overlay: transparent;
+  --bek-button-current-fg: var(--bek-button-fg);
+  --bek-button-current-shadow: var(--bek-button-shadow);
+
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-button-gap);
+  box-sizing: border-box;
+  height: var(--bek-button-height);
+  margin: 0;
+  padding: 0 var(--bek-button-padding);
+  border: 0;
+  border-radius: var(--bek-radius-control-pill);
+  background: linear-gradient(var(--bek-button-current-overlay) 0 0), var(--bek-button-current-bg);
+  box-shadow: var(--bek-button-current-shadow);
+  color: var(--bek-button-current-fg);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard),
+    box-shadow var(--bek-motion-duration-xs) var(--bek-motion-easing-standard),
+    color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-button--l {
+  --bek-button-height: var(--bek-control-height-lg);
+  --bek-button-padding: var(--bek-control-padding-lg);
+}
+
+.bek-button--xl,
+.bek-button--2xl,
+.bek-button--3xl {
+  --bek-button-gap: var(--bek-scale-12);
+
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-button--xl {
+  --bek-button-height: var(--bek-control-height-xl);
+  --bek-button-padding: var(--bek-control-padding-xl);
+  --bek-button-icon: var(--bek-icon-md);
+}
+
+.bek-button--2xl {
+  --bek-button-height: var(--bek-control-height-2xl);
+  --bek-button-padding: var(--bek-control-padding-2xl);
+  --bek-button-icon: var(--bek-icon-lg);
+}
+
+.bek-button--3xl {
+  --bek-button-height: var(--bek-control-height-3xl);
+  --bek-button-padding: var(--bek-control-padding-3xl);
+  --bek-button-icon: var(--bek-icon-lg);
+
+  font-size: var(--bek-type-label-xl-size);
+  line-height: var(--bek-type-label-xl-line-height);
+  letter-spacing: var(--bek-type-label-xl-tracking);
+}
+
+.bek-button--icon-only {
+  width: var(--bek-button-height);
+  padding: 0;
+}
+
+.bek-button__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-button-icon);
+  height: var(--bek-button-icon);
+}
+
+.bek-button__icon > svg,
+.bek-button__icon > .bek-spinner,
+.bek-button__icon > .bek-icon {
+  width: 100%;
+  height: 100%;
+}
+
+/* Holatlar */
+.bek-button:hover:not(:disabled, [aria-busy='true'], [aria-pressed='true']) {
+  --bek-button-current-bg: var(--bek-button-hover-bg);
+  --bek-button-current-overlay: var(--bek-button-hover-overlay);
+  --bek-button-current-shadow: var(--bek-button-hover-shadow);
+}
+
+.bek-button:active:not(:disabled, [aria-busy='true'], [aria-pressed='true']) {
+  --bek-button-current-bg: var(--bek-button-active-bg);
+  --bek-button-current-overlay: var(--bek-button-active-overlay);
+  --bek-button-current-shadow: none;
+}
+
+.bek-button[aria-pressed='true'] {
+  --bek-button-current-bg: var(--bek-button-selected-bg);
+  --bek-button-current-overlay: transparent;
+  --bek-button-current-fg: var(--bek-button-selected-fg);
+  --bek-button-current-shadow: none;
+}
+
+.bek-button:disabled {
+  --bek-button-current-bg: var(--bek-button-disabled-bg);
+  --bek-button-current-overlay: transparent;
+  --bek-button-current-fg: var(--bek-text-disabled);
+  --bek-button-current-shadow: none;
+
+  cursor: not-allowed;
+}
+
+.bek-button[aria-busy='true'] {
+  cursor: progress;
+}
+
+/* Variantlar — default qiymatlar va hover / active / selected / disabled fonlari */
+.bek-button--normal {
+  --bek-button-bg: var(--bek-fill-soft-hover);
+  --bek-button-fg: var(--bek-text-primary);
+  --bek-button-hover-bg: var(--bek-fill-soft-pressed);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-disabled);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-accent-soft);
+  --bek-button-selected-fg: var(--bek-text-accent);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--action {
+  --bek-button-bg: var(--bek-accent-default);
+  --bek-button-fg: var(--bek-text-on-color);
+  --bek-button-hover-bg: var(--bek-accent-hover);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-accent-active);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-accent-active);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--danger {
+  --bek-button-bg: var(--bek-status-danger-default);
+  --bek-button-fg: var(--bek-text-on-color);
+  --bek-button-hover-bg: var(--bek-status-danger-hover);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-status-danger-active);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-status-danger-active);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--raised {
+  --bek-button-bg: var(--bek-fill-primary);
+  --bek-button-fg: var(--bek-text-primary);
+  --bek-button-hover-bg: var(--bek-fill-secondary);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-tertiary);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-accent-soft);
+  --bek-button-selected-fg: var(--bek-text-accent);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: var(--bek-elevation-1);
+  --bek-button-hover-shadow: var(--bek-elevation-2);
+}
+
+.bek-button--outline {
+  --bek-button-bg: var(--bek-fill-soft);
+  --bek-button-fg: var(--bek-text-primary);
+  --bek-button-hover-bg: var(--bek-fill-soft-hover);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-soft-pressed);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-accent-soft);
+  --bek-button-selected-fg: var(--bek-text-accent);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-primary);
+  --bek-button-hover-bg: var(--bek-fill-soft-hover);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-soft-pressed);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-accent-soft);
+  --bek-button-selected-fg: var(--bek-text-accent);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-secondary {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-secondary);
+  --bek-button-hover-bg: var(--bek-fill-soft-hover);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-soft-pressed);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-accent-soft);
+  --bek-button-selected-fg: var(--bek-text-accent);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-action {
+  --bek-button-bg: var(--bek-accent-soft);
+  --bek-button-fg: var(--bek-text-accent);
+  --bek-button-hover-bg: var(--bek-accent-soft);
+  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-active-bg: var(--bek-accent-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft-hover);
+  --bek-button-selected-bg: var(--bek-accent-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-action {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-accent);
+  --bek-button-hover-bg: var(--bek-accent-soft);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-accent-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft);
+  --bek-button-selected-bg: var(--bek-accent-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-info {
+  --bek-button-bg: var(--bek-status-info-soft);
+  --bek-button-fg: var(--bek-text-info);
+  --bek-button-hover-bg: var(--bek-status-info-soft);
+  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-active-bg: var(--bek-status-info-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft-hover);
+  --bek-button-selected-bg: var(--bek-status-info-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-info {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-info);
+  --bek-button-hover-bg: var(--bek-status-info-soft);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-status-info-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft);
+  --bek-button-selected-bg: var(--bek-status-info-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-success {
+  --bek-button-bg: var(--bek-status-success-soft);
+  --bek-button-fg: var(--bek-text-success);
+  --bek-button-hover-bg: var(--bek-status-success-soft);
+  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-active-bg: var(--bek-status-success-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft-hover);
+  --bek-button-selected-bg: var(--bek-status-success-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-success {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-success);
+  --bek-button-hover-bg: var(--bek-status-success-soft);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-status-success-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft);
+  --bek-button-selected-bg: var(--bek-status-success-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-warning {
+  --bek-button-bg: var(--bek-status-warning-soft);
+  --bek-button-fg: var(--bek-text-warning);
+  --bek-button-hover-bg: var(--bek-status-warning-soft);
+  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-active-bg: var(--bek-status-warning-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft-hover);
+  --bek-button-selected-bg: var(--bek-status-warning-default);
+  --bek-button-selected-fg: var(--bek-text-on-warning);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-warning {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-warning);
+  --bek-button-hover-bg: var(--bek-status-warning-soft);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-status-warning-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft);
+  --bek-button-selected-bg: var(--bek-status-warning-default);
+  --bek-button-selected-fg: var(--bek-text-on-warning);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-danger {
+  --bek-button-bg: var(--bek-status-danger-soft);
+  --bek-button-fg: var(--bek-text-danger);
+  --bek-button-hover-bg: var(--bek-status-danger-soft);
+  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-active-bg: var(--bek-status-danger-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft-hover);
+  --bek-button-selected-bg: var(--bek-status-danger-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-danger {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-danger);
+  --bek-button-hover-bg: var(--bek-status-danger-soft);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-status-danger-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft);
+  --bek-button-selected-bg: var(--bek-status-danger-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-utility {
+  --bek-button-bg: var(--bek-status-utility-soft);
+  --bek-button-fg: var(--bek-text-utility);
+  --bek-button-hover-bg: var(--bek-status-utility-soft);
+  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-active-bg: var(--bek-status-utility-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft-hover);
+  --bek-button-selected-bg: var(--bek-status-utility-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-soft);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-utility {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-utility);
+  --bek-button-hover-bg: var(--bek-status-utility-soft);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-status-utility-soft);
+  --bek-button-active-overlay: var(--bek-fill-soft);
+  --bek-button-selected-bg: var(--bek-status-utility-default);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--normal-contrast {
+  --bek-button-bg: var(--bek-fill-on-color-hover);
+  --bek-button-fg: var(--bek-text-on-color);
+  --bek-button-hover-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-on-color);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--outline-contrast {
+  --bek-button-bg: var(--bek-fill-on-color);
+  --bek-button-fg: var(--bek-text-on-color);
+  --bek-button-hover-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: var(--bek-fill-on-color);
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
+
+.bek-button--flat-contrast {
+  --bek-button-bg: transparent;
+  --bek-button-fg: var(--bek-text-on-color);
+  --bek-button-hover-bg: var(--bek-fill-on-color-hover);
+  --bek-button-hover-overlay: transparent;
+  --bek-button-active-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-active-overlay: transparent;
+  --bek-button-selected-bg: var(--bek-fill-on-color-pressed);
+  --bek-button-selected-fg: var(--bek-text-on-color);
+  --bek-button-disabled-bg: transparent;
+  --bek-button-shadow: none;
+  --bek-button-hover-shadow: none;
+}
