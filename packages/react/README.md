@@ -59,6 +59,12 @@ import { Badge, BekLogo, Button, Tag } from '@bek/react';
 | `Skeleton`                                                                                 | 5.7 Loading            | [README](src/components/skeleton/README.md)          |
 | `Tabs` · `TabList` · `Tab` · `TabPanel`                                                    | 6.1 Tabs               | [README](src/components/tabs/README.md)              |
 | `NavItem` · `NavGroup` · `MenuPanel` · `ModuleRail` · `NavRail` · `NavDrawer` · `AppShell` | 6.2 Navigation         | [README](src/components/navigation/README.md)        |
+| `Breadcrumb`                                                                               | 6.3 Breadcrumb         | [README](src/components/breadcrumb/README.md)        |
+| `Pagination` · `LoadMore`                                                                  | 6.4 Pagination         | [README](src/components/pagination/README.md)        |
+| `AppBar`                                                                                   | 6.5 App bar            | [README](src/components/app-bar/README.md)           |
+| `TopNavigation`                                                                            | 6.6 Top navigation     | [README](src/components/top-navigation/README.md)    |
+| `BottomNavigation` · `BottomNavItem`                                                       | 6.7 Bottom navigation  | [README](src/components/bottom-navigation/README.md) |
+| `CheckoutBar` · `CartPill`                                                                 | 6.8 Checkout bar       | [README](src/components/checkout-bar/README.md)      |
 | `Icon`                                                                                     | 9.1 Slots & Helpers    | [README](src/components/icon/README.md)              |
 | `Spinner`                                                                                  | 9.1 Slots & Helpers    | [README](src/components/spinner/README.md)           |
 | `Divider`                                                                                  | 9.1 Slots & Helpers    | [README](src/components/divider/README.md)           |

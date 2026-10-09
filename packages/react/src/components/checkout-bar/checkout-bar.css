@@ -1,0 +1,116 @@
+/* Checkout bar — Figma "6.8 Checkout bar". surface/raised, Elevation/1, gap 12,
+   padding 12 16 + home indicator. Checkout: jami Caption/L text/secondary + Title/L,
+   qator gap 16; huquqiy matn Caption/M text/tertiary. Floating pill: 60 balandlik,
+   accent/default, padding 0 24 0 8, gap 12, Elevation/3; ikonka doirasi 44 fill/on-color-hover;
+   matn Label/L text/on-color. */
+.bek-checkout-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--bek-z-sticky);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-12) var(--bek-scale-16)
+    max(var(--bek-scale-12), env(safe-area-inset-bottom));
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-1);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-checkout-bar--cart .bek-checkout-bar__button {
+  width: 100%;
+}
+
+.bek-checkout-bar__row {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-16);
+}
+
+.bek-checkout-bar__row > .bek-checkout-bar__button {
+  flex: 1;
+}
+
+.bek-checkout-bar__total {
+  display: flex;
+  flex-direction: column;
+}
+
+.bek-checkout-bar__total-label {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+}
+
+.bek-checkout-bar__amount {
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-lg-size);
+  line-height: var(--bek-type-title-lg-line-height);
+  letter-spacing: var(--bek-type-title-lg-tracking);
+  white-space: nowrap;
+}
+
+.bek-checkout-bar__legal {
+  margin: 0;
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-cart-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 0 var(--bek-scale-24) 0 var(--bek-scale-8);
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-default);
+  box-shadow: var(--bek-elevation-3);
+  color: var(--bek-text-on-color);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+  cursor: pointer;
+}
+
+.bek-cart-pill:hover {
+  background: var(--bek-accent-hover);
+}
+
+.bek-cart-pill__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-44);
+  height: var(--bek-scale-44);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-on-color-hover);
+}
+
+.bek-cart-pill__icon > svg {
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-cart-pill__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-cart-pill__total {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
