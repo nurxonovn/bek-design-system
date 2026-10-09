@@ -16,3 +16,7 @@ export * from './components/slider/index.js';
 export * from './components/stepper/index.js';
 export * from './components/segmented-control/index.js';
 export * from './components/base-selector/index.js';
+export * from './components/search-bar/index.js';
+export * from './components/chip/index.js';
+export * from './components/date-picker/index.js';
+export * from './components/time-slot/index.js';

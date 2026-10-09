@@ -1,0 +1,101 @@
+/* Chip — Figma "3.13 Chip". Pill, balandlik 32/40, padding 12/16, gap 4, Label/S (m — Label/M).
+   Fon fill/secondary → hover fill/tertiary; tanlangan fill/inverse + text/inverse; o'chirilgan
+   fill/disabled + text/disabled. Chegara yo'q. */
+.bek-chip {
+  --bek-chip-height: var(--bek-scale-32);
+  --bek-chip-padding: var(--bek-scale-12);
+  --bek-chip-icon: var(--bek-icon-sm);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-4);
+  box-sizing: border-box;
+  height: var(--bek-chip-height);
+  margin: 0;
+  padding-inline: var(--bek-chip-padding);
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-chip--m {
+  --bek-chip-height: var(--bek-scale-40);
+  --bek-chip-padding: var(--bek-scale-16);
+  --bek-chip-icon: var(--bek-icon-md);
+
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+button.bek-chip {
+  cursor: pointer;
+}
+
+.bek-chip:not(.bek-chip--disabled):hover {
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-chip[aria-pressed='true'] {
+  background: var(--bek-fill-inverse);
+  color: var(--bek-text-inverse);
+}
+
+.bek-chip[aria-pressed='true']:hover {
+  background: var(--bek-fill-inverse-hover);
+}
+
+.bek-chip--disabled {
+  background: var(--bek-fill-disabled);
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-chip__icon,
+.bek-chip__remove {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-chip-icon);
+  height: var(--bek-chip-icon);
+}
+
+.bek-chip__icon > svg,
+.bek-chip__remove > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-chip__count {
+  color: var(--bek-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-chip[aria-pressed='true'] .bek-chip__count,
+.bek-chip--disabled .bek-chip__count {
+  color: inherit;
+}
+
+.bek-chip__remove {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: transparent;
+  color: var(--bek-text-secondary);
+  cursor: pointer;
+}
+
+.bek-chip__remove:disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}

@@ -1,0 +1,167 @@
+/* Date picker — Figma "3.14 Date picker" + "_Date cell". Karta surface/raised, radius surface/xl,
+   padding 16 × 8; sarlavha Title/M; nav tugmalari 40 px fill/secondary; hafta kunlari Caption/M
+   text/tertiary; katak 48 × 44, kun doirasi 40; tanlangan accent/default + text/on-color (Label/L);
+   oraliq tasmasi accent/soft; bugun — text/accent + 4 px nuqta. */
+.bek-date-picker {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  box-sizing: border-box;
+  padding: var(--bek-scale-16) var(--bek-scale-8);
+  border-radius: var(--bek-radius-surface-xl);
+  background: var(--bek-surface-raised);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-date-picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--bek-scale-40);
+  padding-inline: var(--bek-scale-8);
+}
+
+.bek-date-picker__month {
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+  text-transform: capitalize;
+}
+
+.bek-date-picker__nav {
+  display: flex;
+  gap: var(--bek-scale-8);
+}
+
+.bek-date-picker__nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-40);
+  height: var(--bek-scale-40);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-primary);
+  cursor: pointer;
+}
+
+.bek-date-picker__nav-button:hover {
+  background: var(--bek-fill-tertiary);
+}
+
+.bek-date-picker__nav-button > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+[dir='rtl'] .bek-date-picker__nav-button > svg {
+  transform: scaleX(-1);
+}
+
+.bek-date-picker__weekdays,
+.bek-date-picker__week {
+  display: grid;
+  grid-template-columns: repeat(7, var(--bek-scale-48));
+  padding-inline: var(--bek-scale-8);
+}
+
+.bek-date-picker__weekday {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-scale-24);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  text-align: center;
+}
+
+.bek-date-picker__cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--bek-scale-44);
+}
+
+.bek-date-picker__cell.is-in-range {
+  background: var(--bek-accent-soft);
+}
+
+.bek-date-picker__cell.is-range-start::before,
+.bek-date-picker__cell.is-range-end::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--bek-scale-2);
+  width: 50%;
+  background: var(--bek-accent-soft);
+}
+
+.bek-date-picker__cell.is-range-start::before {
+  inset-inline-end: 0;
+}
+
+.bek-date-picker__cell.is-range-end::before {
+  inset-inline-start: 0;
+}
+
+.bek-date-picker__day {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-40);
+  height: var(--bek-scale-40);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: transparent;
+  color: var(--bek-text-primary);
+  font: inherit;
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  letter-spacing: var(--bek-type-body-lg-tracking);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.bek-date-picker__day:hover:not(:disabled) {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-date-picker__day:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.is-today > .bek-date-picker__day {
+  color: var(--bek-text-accent);
+  font-weight: var(--bek-weight-medium);
+}
+
+.is-today > .bek-date-picker__day::after {
+  content: '';
+  position: absolute;
+  bottom: var(--bek-scale-4);
+  width: var(--bek-scale-4);
+  height: var(--bek-scale-4);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-default);
+}
+
+.is-selected > .bek-date-picker__day,
+.is-selected > .bek-date-picker__day:hover {
+  background: var(--bek-accent-default);
+  color: var(--bek-text-on-color);
+  font-weight: var(--bek-weight-medium);
+}
+
+.is-selected > .bek-date-picker__day::after {
+  background: var(--bek-text-on-color);
+}
+
+.is-muted > .bek-date-picker__day {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
