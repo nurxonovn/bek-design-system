@@ -1,0 +1,128 @@
+/* List item — Figma "4.4 List item". Fon fill/primary → hover fill/soft-hover, tanlangan
+   accent/soft + sarlavha text/accent. S: min 48, py 12, gap 12, Label/M + Caption/M, ikonka 20;
+   M: min 56, py 16, Label/L + Body/S, ikonka 24; L: min 72, py 24, gap 16. */
+.bek-list-item {
+  --bek-list-min: var(--bek-scale-56);
+  --bek-list-py: var(--bek-scale-16);
+  --bek-list-gap: var(--bek-scale-12);
+  --bek-list-icon: var(--bek-icon-lg);
+
+  display: flex;
+  align-items: center;
+  gap: var(--bek-list-gap);
+  box-sizing: border-box;
+  min-height: var(--bek-list-min);
+  padding: var(--bek-list-py) var(--bek-scale-16);
+  background: var(--bek-fill-primary);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  text-decoration: none;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-list-item--s {
+  --bek-list-min: var(--bek-scale-48);
+  --bek-list-py: var(--bek-scale-12);
+  --bek-list-icon: var(--bek-icon-md);
+}
+
+.bek-list-item--l {
+  --bek-list-min: var(--bek-scale-72);
+  --bek-list-py: var(--bek-scale-24);
+  --bek-list-gap: var(--bek-scale-16);
+}
+
+.bek-list-item--interactive {
+  cursor: pointer;
+}
+
+.bek-list-item--interactive:hover {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-list-item--interactive:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-list-item--selected,
+.bek-list-item--selected:hover {
+  background: var(--bek-accent-soft);
+}
+
+.bek-list-item__leading,
+.bek-list-item__trailing {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+.bek-list-item__leading > svg,
+.bek-list-item__chevron {
+  flex-shrink: 0;
+  width: var(--bek-list-icon);
+  height: var(--bek-list-icon);
+  color: var(--bek-text-secondary);
+}
+
+.bek-list-item__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-width: 0;
+}
+
+.bek-list-item__title {
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-list-item__description {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-list-item--s .bek-list-item__title {
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-list-item--s .bek-list-item__description {
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-list-item--selected .bek-list-item__title {
+  color: var(--bek-text-accent);
+}
+
+.bek-list-item--disabled {
+  cursor: not-allowed;
+}
+
+.bek-list-item--disabled:hover {
+  background: var(--bek-fill-primary);
+}
+
+.bek-list-item--disabled .bek-list-item__title,
+.bek-list-item--disabled .bek-list-item__description,
+.bek-list-item--disabled .bek-list-item__chevron {
+  color: var(--bek-text-disabled);
+}
+
+[dir='rtl'] .bek-list-item__chevron {
+  transform: scaleX(-1);
+}
+
+/* Qatorlar orasida yagona ajratuvchi — border/hairline. */
+.bek-list-item + .bek-list-item {
+  box-shadow: inset 0 var(--bek-stroke-default) 0 var(--bek-border-hairline);
+}

@@ -1,0 +1,90 @@
+/* Avatar — Figma "4.1 Avatar". 32/40/48/64 doira; Initials/Icon — accent/soft + text/accent
+   (Label/S · M · M · L, ikonka 16/20/24/32); Image — fill/soft-pressed fon.
+   Holat nuqtasi 8/10/12/16 px, 2 px fill/primary halqa bilan. */
+.bek-avatar {
+  --bek-avatar-size: var(--bek-scale-40);
+  --bek-avatar-icon: var(--bek-icon-md);
+  --bek-avatar-status: var(--bek-scale-10);
+
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-avatar-size);
+  height: var(--bek-avatar-size);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-soft);
+  color: var(--bek-text-accent);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  vertical-align: middle;
+  user-select: none;
+}
+
+.bek-avatar--s {
+  --bek-avatar-size: var(--bek-scale-32);
+  --bek-avatar-icon: var(--bek-icon-sm);
+  --bek-avatar-status: var(--bek-scale-8);
+
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}
+
+.bek-avatar--l {
+  --bek-avatar-size: var(--bek-scale-48);
+  --bek-avatar-icon: var(--bek-icon-lg);
+  --bek-avatar-status: var(--bek-scale-12);
+}
+
+.bek-avatar--xl {
+  --bek-avatar-size: var(--bek-scale-64);
+  --bek-avatar-icon: var(--bek-icon-xl);
+  --bek-avatar-status: var(--bek-scale-16);
+
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-avatar:has(.bek-avatar__image) {
+  background: var(--bek-fill-soft-pressed);
+}
+
+.bek-avatar__image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.bek-avatar__icon {
+  width: var(--bek-avatar-icon);
+  height: var(--bek-avatar-icon);
+}
+
+.bek-avatar__status {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 0;
+  width: var(--bek-avatar-status);
+  height: var(--bek-avatar-status);
+  border-radius: var(--bek-radius-full);
+  box-shadow: 0 0 0 var(--bek-stroke-strong) var(--bek-fill-primary);
+}
+
+.bek-avatar__status--online {
+  background: var(--bek-status-success-default);
+}
+
+.bek-avatar__status--away {
+  background: var(--bek-status-warning-default);
+}
+
+.bek-avatar__status--busy {
+  background: var(--bek-status-danger-default);
+}

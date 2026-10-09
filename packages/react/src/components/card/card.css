@@ -1,0 +1,160 @@
+/* Card — Figma "4.3 Card". Radius surface/md; S/M/L: padding 16/24/32, gap 12/16/24;
+   sarlavha Title/M · Title/L · Headline/S, tavsif va matn Body/S (l — Body/M).
+   Elevated — surface/card + Elevation 1 (hover — 2, 1.8 Elevation bo'yicha);
+   Outlined — surface/card + hairline chiziq (hover surface/raised); Filled — fill/secondary
+   (hover fill/soft-hover). Tanlangan — accent/soft + border/accent. */
+.bek-card {
+  --bek-card-padding: var(--bek-scale-24);
+  --bek-card-gap: var(--bek-scale-16);
+  --bek-card-bg: var(--bek-surface-card);
+  --bek-card-hover-bg: var(--bek-card-bg);
+  --bek-card-shadow: none;
+  --bek-card-hover-shadow: var(--bek-card-shadow);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-card-gap);
+  box-sizing: border-box;
+  padding: var(--bek-card-padding);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-card-bg);
+  box-shadow: var(--bek-card-shadow);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  text-decoration: none;
+  transition:
+    background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
+    box-shadow var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+.bek-card--s {
+  --bek-card-padding: var(--bek-scale-16);
+  --bek-card-gap: var(--bek-scale-12);
+}
+
+.bek-card--l {
+  --bek-card-padding: var(--bek-scale-32);
+  --bek-card-gap: var(--bek-scale-24);
+}
+
+.bek-card--elevated {
+  --bek-card-shadow: var(--bek-elevation-1);
+  --bek-card-hover-shadow: var(--bek-elevation-2);
+}
+
+.bek-card--outlined {
+  --bek-card-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-hairline);
+  --bek-card-hover-bg: var(--bek-surface-raised);
+}
+
+.bek-card--filled {
+  --bek-card-bg: var(--bek-fill-secondary);
+  --bek-card-hover-bg: var(--bek-fill-soft-hover);
+}
+
+.bek-card--interactive {
+  cursor: pointer;
+}
+
+.bek-card--interactive:hover {
+  background: var(--bek-card-hover-bg);
+  box-shadow: var(--bek-card-hover-shadow);
+}
+
+.bek-card--interactive:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-card--selected,
+.bek-card--selected:hover {
+  background: var(--bek-accent-soft);
+  box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-accent);
+}
+
+.bek-card__media {
+  overflow: hidden;
+  border-radius: var(--bek-radius-control-md);
+  background: var(--bek-fill-soft-pressed);
+}
+
+.bek-card__media > img,
+.bek-card__media > video {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bek-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bek-scale-12);
+}
+
+.bek-card__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.bek-card__icon > svg {
+  width: var(--bek-icon-xl);
+  height: var(--bek-icon-xl);
+}
+
+.bek-card__heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  min-width: 0;
+}
+
+.bek-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+.bek-card__title {
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-lg-size);
+  line-height: var(--bek-type-title-lg-line-height);
+  letter-spacing: var(--bek-type-title-lg-tracking);
+}
+
+.bek-card--s .bek-card__title {
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+}
+
+.bek-card--l .bek-card__title {
+  font-size: var(--bek-type-headline-sm-size);
+  line-height: var(--bek-type-headline-sm-line-height);
+  letter-spacing: var(--bek-type-headline-sm-tracking);
+}
+
+.bek-card__description,
+.bek-card__body {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-card--l .bek-card__description,
+.bek-card--l .bek-card__body {
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-card__action {
+  flex-shrink: 0;
+}
+
+.bek-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-8);
+}

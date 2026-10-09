@@ -20,3 +20,7 @@ export * from './components/search-bar/index.js';
 export * from './components/chip/index.js';
 export * from './components/date-picker/index.js';
 export * from './components/time-slot/index.js';
+export * from './components/avatar/index.js';
+export * from './components/card/index.js';
+export * from './components/list-item/index.js';
+export * from './components/progress/index.js';
