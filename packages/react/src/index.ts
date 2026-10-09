@@ -49,3 +49,4 @@ export * from './components/app-bar/index.js';
 export * from './components/top-navigation/index.js';
 export * from './components/bottom-navigation/index.js';
 export * from './components/checkout-bar/index.js';
+export * from './components/overlay/index.js';

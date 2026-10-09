@@ -1,8 +1,9 @@
-import { useEffect, useRef, type HTMLAttributes, type MouseEvent, type ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { ChevronDownGlyph, ChevronRightGlyph, CloseGlyph } from '../../icons/index.js';
 import { Badge } from '../badge/Badge.js';
 import { Button } from '../button/Button.js';
+import { useDialog } from '../overlay/useDialog.js';
 import { NavAction, type NavActionProps } from './NavAction.js';
 
 export interface DrawerItemProps extends NavActionProps {
@@ -78,27 +79,9 @@ export function NavDrawer({
   children,
   ...rest
 }: NavDrawerProps) {
-  const ref = useRef<HTMLDialogElement>(null);
-  useEffect(() => {
-    const dialog = ref.current;
-    if (!dialog) return;
-    if (open && !dialog.open) dialog.showModal();
-    if (!open && dialog.open) dialog.close();
-  }, [open]);
-  const onBackdrop = (event: MouseEvent<HTMLDialogElement>) => {
-    if (event.target === event.currentTarget) onClose();
-  };
+  const dialog = useDialog({ open, onClose });
   return (
-    <dialog
-      ref={ref}
-      {...rest}
-      className={cx('bek-nav-drawer', className)}
-      onCancel={(event) => {
-        event.preventDefault();
-        onClose();
-      }}
-      onClick={onBackdrop}
-    >
+    <dialog {...rest} {...dialog} className={cx('bek-nav-drawer', className)}>
       <div className="bek-nav-drawer__header">
         <div className="bek-nav-drawer__brand">{header}</div>
         <Button variant="flat" size="xl" iconOnly startIcon={<CloseGlyph />} onClick={onClose}>
