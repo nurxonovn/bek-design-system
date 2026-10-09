@@ -1,0 +1,28 @@
+/* Select — Figma "3.3 Select". Qobiq: styles/field.css. */
+.bek-field__select {
+  appearance: none;
+  min-width: 0;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.bek-field--select .bek-field__control {
+  cursor: pointer;
+}
+
+.bek-field--empty .bek-field__select {
+  color: var(--bek-text-tertiary);
+}
+
+/* Label tinch holatda turganda bo'sh select matnini yashiramiz (Figma: faqat label ko'rinadi). */
+.bek-field--labelled.bek-field--empty .bek-field__control:not(:focus-within) .bek-field__select {
+  color: transparent;
+}
+
+.bek-field__chevron {
+  pointer-events: none;
+}
+
+.bek-field__select:disabled {
+  cursor: not-allowed;
+}

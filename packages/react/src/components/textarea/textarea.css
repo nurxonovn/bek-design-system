@@ -1,0 +1,44 @@
+/* Textarea — Figma "3.7 Textarea". Min balandlik scale/80·104·128, padding 12 (s) · 16 (m, l)
+   har tomondan; hisoblagich yordamchi qatorning o'ng tomonida. Qobiq: styles/field.css. */
+.bek-field--textarea {
+  --bek-field-min: var(--bek-scale-104);
+}
+
+.bek-field--textarea.bek-field--s {
+  --bek-field-min: var(--bek-scale-80);
+}
+
+.bek-field--textarea.bek-field--l {
+  --bek-field-min: var(--bek-scale-128);
+}
+
+.bek-field--textarea .bek-field__control {
+  align-items: stretch;
+  min-height: var(--bek-field-min);
+  padding-block: var(--bek-field-padding);
+}
+
+.bek-field__textarea {
+  flex: 1;
+  min-height: calc(var(--bek-field-value-lh) * 2);
+  resize: vertical;
+}
+
+/* Tinch label birinchi qator o'rnida turadi. */
+.bek-field--textarea:not(.bek-field--floating)
+  .bek-field__textarea:placeholder-shown:not(:focus)
+  + .bek-field__label {
+  top: 0;
+}
+
+.bek-field--textarea .bek-field__supporting {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--bek-scale-8);
+}
+
+.bek-field__counter {
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  font-variant-numeric: tabular-nums;
+}

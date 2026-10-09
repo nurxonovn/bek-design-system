@@ -210,3 +210,26 @@
 .bek-field--skeleton .bek-field__supporting {
   visibility: hidden;
 }
+
+/* Select va Textarea uchun bo'sh holat klassi (input'dagi :placeholder-shown o'rnida). */
+.bek-field--empty:not(.bek-field--floating)
+  .bek-field__control:not(:focus-within)
+  .bek-field__label {
+  top: calc(var(--bek-field-label-lh) / 2);
+  font-size: var(--bek-field-value-size);
+  line-height: var(--bek-field-value-lh);
+  letter-spacing: var(--bek-field-value-tracking);
+}
+
+/* Select va Textarea Figma'da Filled fonni bir pog'ona to'qroq oladi. */
+.bek-field--select.bek-field--filled,
+.bek-field--textarea.bek-field--filled {
+  --bek-field-bg: var(--bek-fill-soft-hover);
+}
+
+.bek-field--textarea.bek-field--plain {
+  --bek-field-bg: var(--bek-fill-soft);
+  --bek-field-hover-bg: var(--bek-fill-soft);
+  --bek-field-focus-bg: var(--bek-fill-soft);
+  --bek-field-error-bg: var(--bek-fill-soft);
+}

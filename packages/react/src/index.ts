@@ -10,3 +10,5 @@ export * from './components/text-field/index.js';
 export * from './components/checkbox/index.js';
 export * from './components/radio/index.js';
 export * from './components/switch/index.js';
+export * from './components/select/index.js';
+export * from './components/textarea/index.js';
