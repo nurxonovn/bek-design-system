@@ -1,0 +1,95 @@
+/* BekLogo — Figma "2.2 Logo & Brand". O'lchamlar Figma komponentidan: belgi 24/40/64,
+   wordmark 17/28/46, mahsulot nomi wordmark'ning ~50 %i. */
+.bek-logo {
+  --bek-logo-mark: var(--bek-scale-24);
+  --bek-logo-wordmark: 17px;
+  --bek-logo-product: 9px;
+  --bek-logo-gap: 5px;
+  --bek-logo-mark-color: var(--bek-brand-logo-solid);
+  --bek-logo-wordmark-color: var(--bek-text-primary);
+  --bek-logo-product-color: var(--bek-text-tertiary);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-logo-gap);
+  font-family: var(--bek-family-sans);
+  line-height: 1;
+  letter-spacing: -0.016em;
+  white-space: nowrap;
+}
+
+.bek-logo--m {
+  --bek-logo-mark: var(--bek-scale-40);
+  --bek-logo-wordmark: 28px;
+  --bek-logo-product: 14px;
+  --bek-logo-gap: 9px;
+}
+
+.bek-logo--l {
+  --bek-logo-mark: var(--bek-scale-64);
+  --bek-logo-wordmark: 46px;
+  --bek-logo-product: 23px;
+  --bek-logo-gap: var(--bek-scale-14);
+}
+
+.bek-logo--vertical {
+  flex-direction: column;
+  --bek-logo-gap: var(--bek-scale-4);
+}
+
+.bek-logo--vertical.bek-logo--m {
+  --bek-logo-gap: var(--bek-scale-8);
+}
+
+.bek-logo--vertical.bek-logo--l {
+  --bek-logo-gap: var(--bek-scale-12);
+}
+
+.bek-logo__mark {
+  display: block;
+  flex-shrink: 0;
+  width: var(--bek-logo-mark);
+  height: var(--bek-logo-mark);
+  color: var(--bek-logo-mark-color);
+}
+
+.bek-logo__stop-start {
+  stop-color: var(--bek-brand-logo-start);
+}
+
+.bek-logo__stop-end {
+  stop-color: var(--bek-brand-logo-end);
+}
+
+.bek-logo__name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bek-logo--vertical .bek-logo__name {
+  align-items: center;
+}
+
+.bek-logo__wordmark {
+  font-size: var(--bek-logo-wordmark);
+  font-weight: 800;
+  color: var(--bek-logo-wordmark-color);
+}
+
+.bek-logo__product {
+  font-size: var(--bek-logo-product);
+  font-weight: 700;
+  color: var(--bek-logo-product-color);
+}
+
+.bek-logo--mono {
+  --bek-logo-mark-color: var(--bek-text-primary);
+}
+
+.bek-logo--reversed {
+  --bek-logo-mark-color: var(--bek-text-on-color);
+  --bek-logo-wordmark-color: var(--bek-text-on-color);
+  --bek-logo-product-color: var(--bek-text-on-color);
+}

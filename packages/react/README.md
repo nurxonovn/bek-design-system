@@ -6,4 +6,18 @@ BEK Design System React komponentlari. Uslub — oddiy CSS va `@bek/tokens` o'zg
 - RTL — `dir="rtl"` va CSS logical properties.
 - Accessibility asosi — Radix primitives.
 
-> Holat: skelet. Komponentlar to'lqinlar bo'yicha qo'shiladi (`bek-code-reja.md`).
+## Ishlatish
+
+```tsx
+import '@bek/tokens/tokens.css';
+import '@bek/react/styles.css';
+import { BekLogo } from '@bek/react';
+```
+
+## Komponentlar
+
+| Komponent | Figma sahifasi   | Hujjat                                  |
+| --------- | ---------------- | --------------------------------------- |
+| `BekLogo` | 2.2 Logo & Brand | [README](src/components/logo/README.md) |
+
+Har komponent `src/components/<nom>/` ichida: `.tsx`, `.css`, `README.md`. CSS fayllar build paytida `dist/styles.css` ga yig'iladi.
