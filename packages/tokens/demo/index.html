@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>@bek/tokens — preview</title>
+<link rel="stylesheet" href="../dist/tokens.css" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bek-bg-base);
+    color: var(--bek-text-primary);
+    font-family: var(--bek-family-sans);
+  }
+  .page { max-width: 1200px; margin: 0 auto; padding: var(--bek-layout-page-margin); display: grid; gap: var(--bek-layout-section-gap); }
+  .sheet { background: var(--bek-bg-sheet); border-radius: var(--bek-radius-surface-lg); padding: var(--bek-scale-24); display: grid; gap: var(--bek-scale-16); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--bek-scale-12); align-items: center; }
+  .muted { color: var(--bek-text-secondary); }
+  .meta { color: var(--bek-text-tertiary); }
+  .card { background: var(--bek-surface-card); border-radius: var(--bek-radius-surface-md); padding: var(--bek-scale-16); }
+  .raised { background: var(--bek-surface-raised); border-radius: var(--bek-radius-surface-md); padding: var(--bek-scale-16); box-shadow: var(--bek-elevation-3); }
+  .btn {
+    height: var(--bek-control-height-xl); padding-inline: var(--bek-control-padding-lg);
+    border: 0; border-radius: var(--bek-radius-control-pill); cursor: pointer;
+    transition: background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+  }
+  .btn-primary { background: var(--bek-accent-default); color: var(--bek-text-on-color); }
+  .btn-primary:hover { background: var(--bek-accent-hover); }
+  .btn-soft { background: var(--bek-fill-soft); color: var(--bek-text-primary); }
+  .btn-soft:hover { background: var(--bek-fill-soft-hover); }
+  .btn-danger { background: var(--bek-status-danger-default); color: var(--bek-text-on-color); }
+  .badge { padding: var(--bek-scale-2) var(--bek-scale-8); border-radius: var(--bek-radius-full); }
+  .ok { background: var(--bek-status-success-soft); color: var(--bek-text-success); }
+  .warn { background: var(--bek-status-warning-soft); color: var(--bek-text-warning); }
+  .err { background: var(--bek-status-danger-soft); color: var(--bek-text-danger); }
+  .info { background: var(--bek-status-info-soft); color: var(--bek-text-info); }
+  .input {
+    height: var(--bek-control-height-xl); padding-inline: var(--bek-control-padding-md);
+    border: 0; border-radius: var(--bek-radius-control-lg); background: var(--bek-fill-soft); color: var(--bek-text-primary);
+    font: inherit; min-width: 240px;
+  }
+  .input::placeholder { color: var(--bek-text-tertiary); }
+  .grid { display: grid; grid-template-columns: repeat(var(--bek-layout-grid-columns), 1fr); gap: var(--bek-layout-grid-gutter); }
+  .col { height: var(--bek-scale-40); background: var(--bek-accent-soft); border-radius: var(--bek-radius-control-sm); }
+  hr { border: 0; border-top: var(--bek-stroke-default) solid var(--bek-border-hairline); margin: 0; width: 100%; }
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="sheet">
+    <div class="row" style="justify-content: space-between">
+      <h1 class="bek-text-display-s" style="margin: 0">BEK tokens</h1>
+      <span class="bek-text-caption-m meta" id="device"></span>
+    </div>
+    <p class="bek-text-body-m muted" style="margin: 0">Every value on this page comes from <code class="bek-text-code-s">@bek/tokens/tokens.css</code>. Resize the window to switch Mobile → Tablet → Web, toggle the theme for Light/Dark.</p>
+    <div class="row">
+      <button class="btn btn-primary bek-text-label-l bek-focus-ring">Primary</button>
+      <button class="btn btn-soft bek-text-label-l bek-focus-ring">Soft</button>
+      <button class="btn btn-danger bek-text-label-l bek-focus-ring">Delete</button>
+      <button class="btn btn-soft bek-text-label-l bek-focus-ring" id="theme">Toggle theme</button>
+    </div>
+    <div class="row">
+      <input class="input bek-text-label-input bek-focus-ring" placeholder="Plain input, no border" />
+      <span class="badge ok bek-text-label-s">Success</span>
+      <span class="badge warn bek-text-label-s">Warning</span>
+      <span class="badge err bek-text-label-s">Error</span>
+      <span class="badge info bek-text-label-s">Info</span>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <h2 class="bek-text-headline-s" style="margin: 0">Surfaces</h2>
+    <div class="row">
+      <div class="card"><span class="bek-text-title-s">surface/card</span><br /><span class="bek-text-caption-m meta">on bg/sheet, no border</span></div>
+      <div class="raised"><span class="bek-text-title-s">surface/raised</span><br /><span class="bek-text-caption-m meta">elevation-3</span></div>
+    </div>
+    <hr />
+    <h2 class="bek-text-headline-s" style="margin: 0">Layout grid</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="sheet">
+    <h2 class="bek-text-headline-s" style="margin: 0">Type scale</h2>
+    <div id="type" style="display: grid; gap: var(--bek-scale-8)"></div>
+  </section>
+</main>
+<script>
+  const styles = ['Display/L','Display/M','Display/S','Headline/L','Headline/M','Headline/S','Title/L','Title/M','Title/S','Body/L','Body/M','Body/S','Label/L','Label/M','Label/S','Caption/L','Caption/M','Caption/S','Code/M'];
+  const type = document.getElementById('type');
+  for (const s of styles) {
+    const el = document.createElement('div');
+    el.className = 'bek-text-' + s.toLowerCase().replace(/[ /]+/g, '-');
+    el.textContent = s + ' — Oʻzbekiston dizayn tizimi';
+    type.append(el);
+  }
+  const grid = document.getElementById('grid');
+  const cssv = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const paint = () => {
+    const n = +cssv('--bek-layout-grid-columns');
+    grid.replaceChildren(...Array.from({ length: n }, () => Object.assign(document.createElement('div'), { className: 'col' })));
+    const w = innerWidth;
+    document.getElementById('device').textContent =
+      (w >= 1024 ? 'Web' : w >= 600 ? 'Tablet' : 'Mobile') + ' · ' + n + ' columns · margin ' + cssv('--bek-layout-page-margin') + ' · Display/L ' + cssv('--bek-type-display-lg-size');
+  };
+  addEventListener('resize', paint); paint();
+  document.getElementById('theme').onclick = () => {
+    const r = document.documentElement;
+    const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    r.dataset.theme = dark ? 'light' : 'dark';
+  };
+</script>
+</body>
+</html>

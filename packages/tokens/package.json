@@ -1,0 +1,38 @@
+{
+  "name": "@bek/tokens",
+  "version": "0.1.0",
+  "description": "BEK Design System tokens (Tokens v3): CSS variables, Tailwind v4 theme, DTCG JSON and typed JS — generated from Figma.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/check-contrast.mjs",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nurxonovn/bek-design-system.git",
+    "directory": "packages/tokens"
+  }
+}

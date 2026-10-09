@@ -1,0 +1,73 @@
+{
+  "textStyles": [
+    ["Display/L", "display/lg", "semibold", "sans"],
+    ["Display/M", "display/md", "semibold", "sans"],
+    ["Display/S", "display/sm", "semibold", "sans"],
+    ["Headline/L", "headline/lg", "semibold", "sans"],
+    ["Headline/M", "headline/md", "semibold", "sans"],
+    ["Headline/S", "headline/sm", "semibold", "sans"],
+    ["Title/L", "title/lg", "semibold", "sans"],
+    ["Title/M", "title/md", "semibold", "sans"],
+    ["Title/S", "title/sm", "semibold", "sans"],
+    ["Body/L", "body/lg", "regular", "sans"],
+    ["Body/M", "body/md", "regular", "sans"],
+    ["Body/S", "body/sm", "regular", "sans"],
+    ["Body/L Strong", "body/lg", "semibold", "sans"],
+    ["Body/M Strong", "body/md", "semibold", "sans"],
+    ["Body/S Strong", "body/sm", "semibold", "sans"],
+    ["Label/XL", "label/xl", "medium", "sans"],
+    ["Label/L", "label/lg", "medium", "sans"],
+    ["Label/M", "label/md", "medium", "sans"],
+    ["Label/S", "label/sm", "medium", "sans"],
+    ["Label/Input", "control/value", "regular", "sans"],
+    ["Caption/L", "caption/lg", "regular", "sans"],
+    ["Caption/M", "caption/md", "regular", "sans"],
+    ["Caption/S", "caption/sm", "medium", "sans"],
+    ["Code/M", "code/md", "regular", "mono"],
+    ["Code/S", "code/sm", "regular", "mono"]
+  ],
+  "effectStyles": {
+    "Elevation/Inset": [
+      { "type": "inner", "x": 0, "y": 2, "blur": 2, "spread": 0, "color": "shadow/float" }
+    ],
+    "Elevation/1 Raised": [
+      { "type": "drop", "x": 0, "y": 1, "blur": 2, "spread": 0, "color": "shadow/soft" },
+      { "type": "drop", "x": 0, "y": 1, "blur": 4, "spread": 0, "color": "shadow/soft" }
+    ],
+    "Elevation/2 Raised-hover": [
+      { "type": "drop", "x": 0, "y": 2, "blur": 4, "spread": -2, "color": "shadow/soft" },
+      { "type": "drop", "x": 0, "y": 4, "blur": 12, "spread": -4, "color": "shadow/soft" }
+    ],
+    "Elevation/3 Floating": [
+      { "type": "drop", "x": 0, "y": 12, "blur": 32, "spread": -16, "color": "shadow/float" },
+      { "type": "drop", "x": 0, "y": 8, "blur": 40, "spread": 0, "color": "shadow/float" }
+    ],
+    "Elevation/4 Overlay": [
+      { "type": "drop", "x": 0, "y": 12, "blur": 32, "spread": -16, "color": "shadow/float" },
+      { "type": "drop", "x": 0, "y": 12, "blur": 64, "spread": 0, "color": "shadow/float" }
+    ],
+    "Elevation/5 Drag": [
+      { "type": "drop", "x": 0, "y": 16, "blur": 32, "spread": -16, "color": "shadow/float" },
+      { "type": "drop", "x": 0, "y": 16, "blur": 64, "spread": 0, "color": "shadow/float" }
+    ],
+    "Glass/Regular": [
+      { "type": "drop", "x": 0, "y": 8, "blur": 48, "spread": 0, "color": "glass/shadow" },
+      { "type": "drop", "x": 0, "y": 0, "blur": 0, "spread": 0.5, "color": "glass/rim" },
+      { "type": "inner", "x": 0, "y": 1, "blur": 0, "spread": 0, "color": "glass/edge-light" },
+      { "type": "backdrop", "blur": 16, "fill": "glass/tint" }
+    ],
+    "Glass/Small": [
+      { "type": "drop", "x": 0, "y": 2, "blur": 8, "spread": 0, "color": "glass/shadow-clear" },
+      { "type": "drop", "x": 0, "y": 0, "blur": 0, "spread": 0.5, "color": "glass/rim" },
+      { "type": "inner", "x": 0, "y": 0.5, "blur": 0, "spread": 0, "color": "glass/edge-light" },
+      { "type": "backdrop", "blur": 6, "fill": "glass/tint" }
+    ],
+    "Glass/Clear": [
+      { "type": "drop", "x": 0, "y": 8, "blur": 15, "spread": 0, "color": "glass/shadow-clear" },
+      { "type": "drop", "x": 0, "y": 0, "blur": 0, "spread": 0.5, "color": "glass/rim" },
+      { "type": "inner", "x": 0, "y": 1, "blur": 0, "spread": 0, "color": "glass/edge-light" },
+      { "type": "backdrop", "blur": 6, "fill": "glass/tint-clear" }
+    ]
+  },
+  "_notes": "Exported from Figma 6ADJMMCbBHzYiIW0MBxJqh on 2026-10-09. Figma GLASS effect and its decorative grey inner shadows have no CSS equivalent; they are approximated with backdrop-filter blur + tint."
+}
