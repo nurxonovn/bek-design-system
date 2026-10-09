@@ -24,3 +24,7 @@ export * from './components/avatar/index.js';
 export * from './components/card/index.js';
 export * from './components/list-item/index.js';
 export * from './components/progress/index.js';
+export * from './components/table/index.js';
+export * from './components/separator/index.js';
+export * from './components/price/index.js';
+export * from './components/rating/index.js';

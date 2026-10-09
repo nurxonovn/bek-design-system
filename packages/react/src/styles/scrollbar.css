@@ -1,0 +1,43 @@
+/* Scrollbar — Figma "4.8 Scrollbar": track border/default, thumb fill/scrollbar → hover → active,
+   M 12 px (thumb 8) · S 8 px (thumb 4), padding 2, to'liq radius. Scroll bo'ladigan elementga
+   .bek-scrollbar (yoki .bek-scrollbar--s) qo'ying. */
+.bek-scrollbar {
+  --bek-scrollbar-size: var(--bek-scale-12);
+
+  scrollbar-color: var(--bek-fill-scrollbar) var(--bek-border-default);
+}
+
+.bek-scrollbar--s {
+  --bek-scrollbar-size: var(--bek-scale-8);
+
+  scrollbar-width: thin;
+}
+
+.bek-scrollbar::-webkit-scrollbar {
+  width: var(--bek-scrollbar-size);
+  height: var(--bek-scrollbar-size);
+}
+
+.bek-scrollbar::-webkit-scrollbar-track {
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-border-default);
+}
+
+.bek-scrollbar::-webkit-scrollbar-thumb {
+  min-height: var(--bek-scale-32);
+  border: var(--bek-scale-2) solid transparent;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-scrollbar) padding-box;
+}
+
+.bek-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bek-fill-scrollbar-hover);
+}
+
+.bek-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: var(--bek-fill-scrollbar-active);
+}
+
+.bek-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
