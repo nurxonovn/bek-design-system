@@ -1,0 +1,18 @@
+{
+  "name": "@bek/tokens",
+  "version": "0.0.0",
+  "description": "BEK Design System tokens — CSS variables, TypeScript and Tailwind theme generated from Figma variables",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "node --check scripts/build.mjs"
+  }
+}
