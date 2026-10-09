@@ -7,3 +7,6 @@ export * from './components/spinner/index.js';
 export * from './components/divider/index.js';
 export * from './components/button/index.js';
 export * from './components/text-field/index.js';
+export * from './components/checkbox/index.js';
+export * from './components/radio/index.js';
+export * from './components/switch/index.js';
