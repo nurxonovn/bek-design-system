@@ -1,0 +1,71 @@
+{
+  "page": "3.19 Fieldset",
+  "components": [
+    {
+      "name": "Fieldset",
+      "id": "1050:861",
+      "page": "3.19 Fieldset",
+      "pageId": "1050:464",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Message": ["None", "Helper", "Error", "Success"],
+        "Show hint": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show optional": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Layout": ["Vertical", "Horizontal"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 16,
+      "size": {
+        "w": 360,
+        "h": 76
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "fill/secondary",
+          "text/danger",
+          "text/secondary",
+          "text/success",
+          "text/tertiary"
+        ],
+        "text": ["Caption/L", "Label/M"],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/12", "scale/24", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24],
+      "rawColors": [],
+      "nested": [],
+      "description": "One label, one control (or a group of controls), one message. Swap the “Control” slot for a Chip row, Checkbox or Radio group, Segmented control, Slider, Date picker or Uploader. Do not wrap Text field or Select — their label is built in. Message: Helper (text/tertiary), Error (text/danger + alert icon), Success (text/success + check). React: &lt;Fieldset label message status&gt;."
+    }
+  ],
+  "doc": {
+    "3.19 Fieldset": {
+      "tokens": [
+        "scale/24",
+        "scale/4",
+        "scale/8",
+        "text/danger",
+        "text/secondary",
+        "text/success",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.19 Fieldset\nOne label, one control, one message. Wraps any control that has no label of its own — chips, checkboxes, radios, segmented control, slider, date picker, uploader. 2 layouts × 4 message types, LTR and RTL — 16 variants.\nOverview\nThe Control slot is swapped for a real component.\nDelivery\nCourier\nPickup\nCourier arrives within 2 hours\nBudget, so‘m\nMinimum is 500 000\nAgreement\nI accept the terms of use\nAccept the terms to continue\nPromo code\nOptional\nControl — swap me\n−15% applied\nAnatomy\nVertical, Error, hint and optional on.\nBudget, so‘m\nOptional\nControl — swap me\nMinimum is 500 000\n1\nlabel\n· Label/M · text/secondary · TEXT prop “Label”\n2\nhint\n· information-circle 16 · text/tertiary · opens a Tooltip\n3\noptional\n· Caption/L · text/tertiary — mark the rare optional field, not the many required ones\n4\ncontrol\n· _Slot · swap for any control · gap scale/8\n5\nmessage\n· Caption/L · Helper / Error / Success · icon 16 · gap scale/8\nVariants\nLayout × Message. LTR shown; RTL mirrors the order and alignment.\nVertical\nNone\nLabel\nControl — swap me\nHelper\nLabel\nControl — swap me\nHelper message\nError\nLabel\nControl — swap me\nError message\nSuccess\nLabel\nControl — swap me\nSuccess message\nHorizontal\nNone\nLabel\nControl — swap me\nHelper\nLabel\nControl — swap me\nHelper message\nError\nLabel\nControl — swap me\nError message\nSuccess\nLabel\nControl — swap me\nSuccess message\nMessages\nOne message per fieldset. It replaces, never stacks.\nMessage\nColour · icon\nWhen\nExample\nNone\n—\nSelf-explanatory controls\nTheme: Light / Dark\nHelper\ntext/tertiary · no icon\nFormat, limits, what happens next\nUp to 10 photos, JPG or PNG\nError\ntext/danger · alert-circle\nAfter validation (1.12). Says how to fix it\nChoose at least one option\nSuccess\ntext/success · checkmark-circle-02\nAsync checks that passed — promo codes, usernames\nUsername is free\nStates\nA fieldset has no state of its own. Hover, Focus and Disabled come from the control inside; Error comes from Message = Error.\nDevices\nVertical on Mobile and Tablet. Horizontal only on Web forms with many short fields (1.12).\nMobile · 390\nDelivery\nCourier\nPickup\nCourier arrives within 2 hours\nBudget, so‘m\nFrom 500 000 to 5 000 000\nTablet · 834\nDelivery\nCourier\nPickup\nCourier arrives within 2 hours\nBudget, so‘m\nFrom 500 000 to 5 000 000\nWeb · 1440\nDelivery\nCourier\nPickup\nCourier arrives within 2 hours\nBudget, so‘m\nFrom 500 000 to 5 000 000\nDark\nSame tokens, Dark mode.\nDelivery\nCourier\nPickup\nHelper message\nDelivery\nCourier\nPickup\nError message\nDelivery\nCourier\nPickup\nSuccess message\nProps\nProp\nType\nValues\nDefault\nLayout\nVariant\nVertical · Horizontal\nVertical\nMessage\nVariant\nNone · Helper · Error · Success\nNone\nDirection\nVariant\nLTR · RTL\nLTR\nLabel\nText\nany\nLabel\nMessage\nText\nany\nMessage\nShow hint\nBoolean\non / off\noff\nShow optional\nBoolean\non / off\noff\nControl\nNested instance (_Slot)\nswap for any control\n_Slot\nTokens\nProperty\nToken\nValue\nCSS\nLabel\nLabel/M · text/secondary\n14/20\n--bek-text-secondary\nOptional · Helper\nCaption/L · text/tertiary\n14/20\n--bek-text-tertiary\nError\ntext/danger\nred/750 · Light\n--bek-text-danger\nSuccess\ntext/success\ngreen/850 · Light\n--bek-text-success\nLabel → control · control → message\nscale/"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-secondary",
+      "reason": "fill/secondary — Figma'dagi \"Control — swap me\" _Slot placeholder foni; React'da control children orqali keladi, fieldset'ning o'z foni yo'q."
+    }
+  ]
+}

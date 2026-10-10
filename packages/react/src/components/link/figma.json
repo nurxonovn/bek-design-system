@@ -1,0 +1,77 @@
+{
+  "page": "3.18 Link",
+  "components": [
+    {
+      "name": "Link",
+      "id": "1048:5741",
+      "page": "3.18 Link",
+      "pageId": "1048:3796",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Link text"
+        },
+        "Start icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "End icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": ["Inherit", "Accent", "Neutral", "Subtle"],
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Focus", "Disabled"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 96,
+      "size": {
+        "w": 56,
+        "h": 20
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "border/focus",
+          "text/accent",
+          "text/accent-hover",
+          "text/disabled",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/L", "Body/M", "Body/S"],
+        "effect": [],
+        "dimension": ["radius/control/sm", "scale/4", "scale/6", "stroke/default"]
+      },
+      "sizes": [1, 2, 4, 6, 16, 32, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Text link for navigation. Inherit — inside running text, takes the text colour; Accent — standalone link (“Show all”); Neutral — card and item titles; Subtle — legal and footer. Size follows Body/S·M·L. Underline is part of the variant (always on for Inherit/Subtle, on hover for Accent/Neutral). Not a button: for an action in place use Button Flat. React: &lt;Link variant size&gt;."
+    }
+  ],
+  "doc": {
+    "3.18 Link": {
+      "tokens": [
+        "border/focus",
+        "radius/control/sm",
+        "scale/4",
+        "scale/6",
+        "text/accent",
+        "text/accent-hover",
+        "text/disabled",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.18 Link\nA text link that takes the user somewhere. Four variants × three sizes × four states, LTR and RTL — 96 variants. No padding, no background: it is text, not a button.\nOverview\nThe same component in the four places links usually live.\nInherit · in running text\nBy paying you accept the\noffer terms\nand the\nprivacy policy.\nNeutral · item title\nFigma UI kit, 2026\n149 000 so‘m\nAccent · standalone\nPopular components\nShow all\nChange city\nSubtle · legal and footer\nTerms of use\nPrivacy policy\nCookie settings\n© 2026 BEK Design System\nAnatomy\nLTR, Accent M, both icons on.\nShow all components\n1\nstart icon\n· optional · _Icon 16/20 · same colour as the text\n2\nlabel\n· Body/S · M · L · TEXT prop “Label”\n3\nunderline\n· 1 px · stroke/default · same colour as the text · per variant\n4\nend icon\n· optional · chevron → (flips in RTL) or external link\n5\nfocus ring\n· _Focus ring · radius/control/sm + 2\nVariants\nPick by context, not by taste. Size M, Default and Hover shown.\nInherit\nLink text\nLink text\nInside running text. Takes the colour of the text around it; always underlined.\nAccent\nLink text\nLink text\nStandalone navigation: “Show all”, “Change city”, “Read more”. Underline appears on hover.\nNeutral\nLink text\nLink text\nTitles of cards, list items and search results that open a page.\nSubtle\nLink text\nLink text\nLegal lines, footer, secondary meta. Always underlined.\nSizes\nA link is as big as the text it sits in.\nShow all\nS · Body/S · 14/20\nicon/sm 16 · gap 4\nShow all\nM · Body/M · 16/24\nicon/md 20 · gap 6\nShow all\nL · Body/L · 18/28\nicon/md 20 · gap 6\nStates\nHover is Web only. Touch shows no pressed state for links — the page simply changes.\n\nDefault\nHover\nFocus\nDisabled\nInherit\nLink text\nLink text\nLink text\nLink text\nAccent\nLink text\nLink text\nLink text\nLink text\nNeutral\nLink text\nLink text\nLink text\nLink text\nSubtle\nLink text\nLink text\nLink text\nLink text\nOn coloured surfaces\nAccent blue disappears on tinted blocks. Use Inherit or Neutral — always underlined there.\nAddress saved with the old format\nEdit it so deliveries arrive on time.\nYour plan ends in 3 days.\nRenew now\nDevices\nSame component everywhere — the size follows Typography modes; touch targets come from the row around it.\nMobile · 390\nRecently viewed\nShow all\nTerms\nPrivacy\nHelp\nTablet · 834\nRecently viewed\nShow all\nTerms\nPrivacy\nHelp\nWeb · 1440\nRecently viewed\nShow all\nTerms\nPrivacy\nHelp\nOn touch, give a standalone link a hit area of at least 44 px (target/min) through the padding of its row — not by enlarging the text.\nDark\nAll four variants in Dark mode.\nInherit\nLink text\nLink text\nLink text\nLink text\nAccent\nLink text\nLink text\nLink text\nLink text\nNeutral\nLink text\nLink text\nLink text\nLink text\nSubtle\nLink text\nLink text\nLink text\nLink text\nProps\nProp\nType\nValues\nDefault\nVariant\nVariant\nInherit · Accent · Neutral · Subtle\nInherit\nSize\nVariant\nS · M · L\nS\nState\nVariant\nDefault · Hover · Focus · Disabled\nDefault\nDirection\nVariant\nLTR · RTL\nLTR\nLabel\nText\nany\nLink text\nStart icon\nBoolean + nested _Icon\nany BEK icon\nOff · information-circle\nEnd icon\nBoolean + nested _Icon\nany BEK icon\nOff · arrow-right-01 (arrow-left-01 in RTL)\nTokens\nProperty\nToken\nValue\nCSS\nText · Inherit"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-unmapped",
+      "match": "text/accent-hover",
+      "reason": "Figma Variables'da text/accent-hover uchun codeSyntax (WEB) yo'q — tokens paketida --bek-text-accent-hover hali yo'q. Kod var(--bek-text-accent-hover, var(--bek-accent-hover)) fallback bilan yozilgan; Figma'da code syntax to'ldirilib token eksport qilinganda fallback olib tashlanadi."
+    }
+  ]
+}

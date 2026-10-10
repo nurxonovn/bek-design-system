@@ -122,7 +122,7 @@
 
 .bek-pinpad__key--icon:active:not(:disabled),
 .bek-pinpad__key--text:active:not(:disabled) {
-  background: var(--bek-fill-soft-hover);
+  background: var(--bek-fill-tertiary);
 }
 
 .bek-pinpad__key > svg {

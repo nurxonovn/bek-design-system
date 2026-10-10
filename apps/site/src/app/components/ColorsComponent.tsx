@@ -213,7 +213,7 @@ export function ColorsComponent({ onNavigate }: { onNavigate?: (page: string) =>
             <h1 className="text-2xl font-medium">Rang Tokenlari</h1>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-            SQB Business dizayn tizimi uchun to'liq rang tokenlari va palitralari. 
+            BEK Business dizayn tizimi uchun to'liq rang tokenlari va palitralari. 
             Har bir rang accessibility standartlariga mos va light/dark mode uchun optimallashtirilgan.
           </p>
         </div>
@@ -274,7 +274,7 @@ export function ColorsComponent({ onNavigate }: { onNavigate?: (page: string) =>
           <CardHeader className="pb-3">
             <CardTitle className="text-lg">Brand Colors</CardTitle>
             <p className="text-sm text-muted-foreground">
-              SQB brand ranglari - #2E90FA asosiy rang
+              BEK brand ranglari - #2E90FA asosiy rang
             </p>
           </CardHeader>
           <CardContent>

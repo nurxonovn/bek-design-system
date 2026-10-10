@@ -1,0 +1,79 @@
+{
+  "page": "6.8 Checkout bar",
+  "components": [
+    {
+      "name": "Checkout bar",
+      "id": "797:285",
+      "page": "6.8 Checkout bar",
+      "pageId": "793:67",
+      "props": {
+        "Show info": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show legal": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Type": ["Cart", "Checkout", "Floating"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 390,
+        "h": 140
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/base",
+          "fill/on-color-hover",
+          "surface/raised",
+          "text/on-color",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Label/L", "Title/L"],
+        "effect": ["Elevation/1 Raised", "Elevation/3 Floating"],
+        "dimension": [
+          "control/height/3xl",
+          "radius/full",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/32",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 16, 24, 32, 40],
+      "rawColors": [],
+      "nested": ["Button", "Info wrap", "shopping-bag-01"],
+      "description": "Checkout bar — the sticky bottom bar that moves the order forward. Cart: Info wrap + full-width “Go to cart · total”. Checkout: total + Pay with a legal line. Floating: a compact accent pill over the menu while items are in the cart. Bottom padding includes the home indicator."
+    }
+  ],
+  "doc": {
+    "6.8 Checkout bar": {
+      "tokens": [
+        "Elevation/2",
+        "accent/default",
+        "bg/sheet",
+        "radius/control/lg",
+        "radius/full",
+        "scale/16",
+        "scale/24",
+        "scale/8",
+        "text/on-color",
+        "text/tertiary"
+      ],
+      "text": "NAVIGATION\nBEK\nDesign System\n6.8 Checkout bar\nThe sticky bottom bar that moves the order forward. 6 variants · Type × Direction.\nOverview\nOne per screen, pinned to the bottom above the home indicator. It always shows the total and one primary action.\nCart\nFree delivery on this order\nGo to cart · 147 000 soʻm\nMenu screens. Info wrap (free delivery progress) + “Go to cart · total”.\nCheckout\nTotal\n159 000 soʻm\nPay\nBy tapping Pay you agree to the Terms\nCheckout screen. Total + Pay button + legal line.\nFloating\nCart · 3 items\n147 000 soʻm\nCompact accent pill over the menu while the cart is not empty.\nAnatomy\nCart shown.\nFree delivery on this order\nGo to cart · 147 000 soʻm\n1\ninfo\n· Info wrap · optional (Show info)\n2\nbutton\n· Button Action XL · label + total\n3\ntotal\n· Price M · text/on-color\n4\nlegal\n· Caption/M · Checkout only (Show legal)\n5\nsafe area\n· bottom padding includes Home indicator 34\nVariants\nTypes\nCart\nFree delivery on this order\nGo to cart · 147 000 soʻm\nCheckout\nTotal\n159 000 soʻm\nPay\nBy tapping Pay you agree to the Terms\nFloating\nCart · 3 items\n147 000 soʻm\nDark mode\nCart\nFree delivery on this order\nGo to cart · 147 000 soʻm\nFloating\nCart · 3 items\n147 000 soʻm\nRTL — total and label swap sides\nCart · RTL\nأضف 49 لتوصيل مجاني\nإلى السلة · ١٤٧\nFloating · RTL\n١٤٧\nالسلة · ٣\nProps\nProp\nType\nValues\nDefault\nType\nVariant\nCart · Checkout · Floating\nCart\nDirection\nVariant\nLTR · RTL\nLTR\nShow info\nBoolean\ntrue · false\ntrue\nShow legal\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nValue\nBar\nbg/sheet · Elevation/2 (barely visible)\nno border\nButton\naccent/default · text/on-color · radius/control/lg\nXL · 56\nFloating pill\naccent/default · radius/full\npadding scale/24 · scale/8\nPadding\nscale/16\n16 + safe area\nLegal\nCaption/M · text/tertiary\n—\nDevices\nMobile · 390\nFree delivery on this order\nGo to cart · 147 000 soʻm\nFull width, pinned to the bottom.\nTablet · 834\nCart · 3 items\n147 000 soʻm\nFloating pill, centred, max 480.\nWeb · 1440\nTotal\n159 000 soʻm\nPay\nBy tapping Pay you agree to the Terms\nNot a bar: the cart is a side column with the same total and button.\nDo / Don’t\nFree delivery on this order\nGo to cart · 147 000 soʻm\nDo\nPut the total inside the button so the price is part of the decision.\nCart · 3 items\n147 000 soʻm\nCart · 3 items\n147 000 soʻm\nDon’t\nDon’t show two checkout bars or a bar on top of a Bottom navigation without spacing."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base — Figma'da Checkout bar variant frame'i ortidagi ekran foni (demo); bar o'zi surface/raised + Elevation/1. Doc'da esa \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga moslanishi kerak."
+    }
+  ]
+}

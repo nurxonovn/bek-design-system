@@ -50,6 +50,22 @@ test('DatePicker range: band between start and end', () => {
   assert.equal(html.match(/is-in-range/g).length, 2);
   assert.match(html, /is-range-start/);
   assert.match(html, /is-range-end/);
+  assert.match(
+    html,
+    /<p class="bek-date-picker__summary" aria-live="polite">October 5\s*[–-]\s*8 · 4 days<\/p>/,
+  );
+  assert.doesNotMatch(
+    r(DatePicker, {
+      mode: 'range',
+      defaultValue: [new Date(2026, 9, 5), new Date(2026, 9, 8)],
+      formatRange: null,
+    }),
+    /bek-date-picker__summary/,
+  );
+  assert.doesNotMatch(
+    r(DatePicker, { mode: 'range', defaultValue: [new Date(2026, 9, 5), null], locale: 'en' }),
+    /bek-date-picker__summary/,
+  );
 });
 
 test('TimeSlotPicker: radio cards, express note, disabled slot', () => {

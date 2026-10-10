@@ -1,0 +1,130 @@
+{
+  "page": "4.5 Table",
+  "components": [
+    {
+      "name": "Table header cell",
+      "id": "124:780",
+      "page": "4.5 Table",
+      "pageId": "10:86",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Column"
+        },
+        "Show checkbox": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Size": ["S", "M", "L"],
+        "Sort": ["None", "Asc", "Desc"]
+      },
+      "variants": 9,
+      "size": {
+        "w": 240,
+        "h": 40
+      },
+      "tokens": {
+        "color": ["fill/secondary", "text/secondary"],
+        "text": ["Label/L", "Label/M"],
+        "effect": [],
+        "dimension": ["scale/12", "scale/16", "scale/40", "scale/48", "scale/56"]
+      },
+      "sizes": [1, 5, 12, 16, 40],
+      "rawColors": [],
+      "nested": ["Checkbox", "arrow-down-01"],
+      "description": "Table header cell. Size × Sort = 9 variants."
+    },
+    {
+      "name": "Table cell",
+      "id": "147:2489",
+      "page": "4.5 Table",
+      "pageId": "10:86",
+      "props": {
+        "Text": {
+          "type": "TEXT",
+          "default": "Text value"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Supporting note"
+        },
+        "Show tag 2": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show tag 3": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Index": {
+          "type": "TEXT",
+          "default": "1"
+        },
+        "Type": [
+          "Select",
+          "Index",
+          "Text",
+          "Text + description",
+          "Media",
+          "Tags",
+          "Status",
+          "Actions"
+        ],
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Zebra", "Hover", "Selected", "Disabled"]
+      },
+      "variants": 120,
+      "size": {
+        "w": 56,
+        "h": 48
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "border/hairline",
+          "fill/primary",
+          "fill/secondary",
+          "fill/soft-hover",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/M", "Body/S", "Caption/M", "Label/L", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/40",
+          "scale/48",
+          "scale/56",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 8, 12, 16, 40],
+      "rawColors": [],
+      "nested": ["Avatar", "Avatar/XS/Initials/None", "Button", "Checkbox", "Tag"],
+      "description": "Table cell. Type × Size × State = 120 variants. A separate Type for each column type."
+    }
+  ],
+  "doc": {
+    "4.5 Table": {
+      "tokens": [
+        "accent/soft",
+        "border/default",
+        "border/hairline",
+        "fill/secondary",
+        "fill/soft",
+        "fill/soft-hover",
+        "scale/12",
+        "scale/16",
+        "scale/40",
+        "text/accent",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nRow height\nscale/40–3\n40 / 48 / 56\nHorizontal padding\nscale/16\n16\nInner gap\nscale/12 · scale/16\n12 / 16\nHeader background\nfill/secondary\n—\nHeader border\nborder/default\n1px, pastda\nRow divider\nborder/hairline\n1px, pastda\nHover background\nfill/soft-hover\n—\nSelected background\naccent/soft\n—\nHeader text\ntext/secondary\nMedium\nCell text\ntext/primary\nRegular\nSort icon\ntext/accent\nWhen active\nFont\nBody/S · Body/M\n14/20 · 16/24 (L)\nProps\nComponent\nProp\nType\nValues\nDefault\nTable header cell\nSize\nvariant\nS (40), M (48), L (56)\nM\nTable header cell\nSort\nvariant\nNone, Asc, Desc\nNone\nTable header cell\nLabel\ntext\nColumn name\nColumn\nTable header cell\nShow checkbox\nboolean\ntrue / false\nfalse\nTable cell\nSize\nvariant\nS (40), M (48), L (56)\nM\nTable cell\nState\nvariant\nDefault, Hover, Selected, Disabled\nDefault\nTable cell\nText\ntext\nCell text\nCell text\nTable cell\nShow checkbox\nboolean\ntrue / false\nfalse\nTable cell\nShow avatar\nboolean\ntrue / false\nfalse\nTable cell\nShow badge\nboolean\ntrue / false\nfalse\nTable cell\nShow actions\nboolean\ntrue / false\nfalse\nDo / Don’t\nDo\nNN\nNurbek Nurxonov\n\nThe action column goes last, with a single icon button. Everything else goes in a menu.\nDon’t\nNN\nNurbek\n\n\n\nSeveral buttons in every row — the table becomes unreadable."
+    }
+  },
+  "accepted": []
+}

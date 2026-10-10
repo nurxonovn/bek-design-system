@@ -35,13 +35,17 @@ export function Rating({
   const stars =
     variant === 'compact'
       ? [<StarGlyph key="c" amount={1} className="bek-rating__star" />]
-      : [0, 1, 2, 3, 4].map((i) => (
-          <StarGlyph
-            key={i}
-            amount={rounded >= i + 1 ? 1 : rounded >= i + 0.5 ? 0.5 : 0}
-            className="bek-rating__star"
-          />
-        ));
+      : [0, 1, 2, 3, 4].map((i) => {
+          /** Figma ".Rating/Star → Fill": full · half · empty. */
+          const fill = rounded >= i + 1 ? 'full' : rounded >= i + 0.5 ? 'half' : 'empty';
+          return (
+            <StarGlyph
+              key={i}
+              amount={fill === 'full' ? 1 : fill === 'half' ? 0.5 : 0}
+              className={cx('bek-rating__star', `bek-rating__star--${fill}`)}
+            />
+          );
+        });
   return (
     <span
       role="img"

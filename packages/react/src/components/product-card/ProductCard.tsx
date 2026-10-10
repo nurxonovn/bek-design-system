@@ -78,7 +78,9 @@ export function ProductCard({
       )}
       {...rest}
     >
-      <div className="bek-product-card__image">
+      <div
+        className={cx('bek-product-card__image', !image && 'bek-product-card__image--placeholder')}
+      >
         {image}
         {badge && <span className="bek-product-card__badge">{badge}</span>}
       </div>

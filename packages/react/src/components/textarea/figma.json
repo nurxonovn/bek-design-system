@@ -1,0 +1,100 @@
+{
+  "page": "3.7 Textarea",
+  "components": [
+    {
+      "name": "Textarea",
+      "id": "79:1274",
+      "page": "3.7 Textarea",
+      "pageId": "10:80",
+      "props": {
+        "Label text": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Placeholder text": {
+          "type": "TEXT",
+          "default": "Enter text"
+        },
+        "Input text": {
+          "type": "TEXT",
+          "default": "A field for longer text. Multi-line comments or descriptions go here."
+        },
+        "Supporting text": {
+          "type": "TEXT",
+          "default": "Supporting text"
+        },
+        "Counter": {
+          "type": "TEXT",
+          "default": "0/500"
+        },
+        "Show supporting text": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show counter": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Filled", "Outlined", "Plain"],
+        "Size": ["S", "M", "L"],
+        "State": ["Enabled", "Hovered", "Error", "Disabled", "Skeleton", "Focus"],
+        "Text configurations": ["Label text", "Placeholder text", "Input text"]
+      },
+      "variants": 162,
+      "size": {
+        "w": 360,
+        "h": 100
+      },
+      "tokens": {
+        "color": [
+          "border/danger",
+          "border/focus",
+          "fill/primary",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "text/danger",
+          "text/disabled",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/M", "Label/Input"],
+        "effect": [],
+        "dimension": [
+          "radius/control/lg",
+          "radius/control/md",
+          "scale/104",
+          "scale/12",
+          "scale/128",
+          "scale/16",
+          "scale/4",
+          "scale/80"
+        ]
+      },
+      "sizes": [1, 2, 4, 5, 8, 10, 12, 14, 16, 40, 80, 104, 128],
+      "rawColors": [],
+      "nested": [],
+      "description": "Multi-line text field. Variant × Size × State × Text configurations = 162 variants. Character counter in the supporting row."
+    }
+  ],
+  "doc": {
+    "3.7 Textarea": {
+      "tokens": [
+        "border/danger",
+        "border/default",
+        "border/focus",
+        "radius/control/",
+        "radius/control/sm",
+        "scale/12",
+        "scale/16",
+        "scale/4",
+        "scale/80",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nMinimum height\nscale/80–3\n80 / 104 / 128\nPadding\nscale/12 · scale/16\n12 / 16\nCorner radius\nradius/control/sm – lg\n10 / 12 / 16\nSupporting top spacing\nscale/4\n4\nBorder — default\nborder/default\n—\nBorder — Focused\nborder/focus\n2px\nBorder — Error\nborder/danger\n2px\nText — value\ntext/primary\n—\nText — placeholder\ntext/tertiary\n—\nSupporting and counter\nCaption/M\n12/16\nText font\nBody/S · Body/M\n14/20 · 16/24\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nFilled, Outlined, Underlined\nFilled\nSize\nvariant\nS (80), M (104), L (128)\nM\nState\nvariant\nEnabled, Hovered, Focused, Error, Disabled, Skeleton\nEnabled\nText configurations\nvariant\nLabel text, Placeholder text, Input text\nPlaceholder text\nLabel text\ntext\nAny text\nLabel\nPlaceholder text\ntext\nAny text\nEnter text\nInput text\ntext\nAny text\n—\nSupporting text\ntext\nAny text\nSupporting text\nCounter\ntext\nMasalan 84/500\n0/500\nShow supporting text\nboolean\ntrue / false\ntrue\nShow counter\nboolean\ntrue / false\ntrue\nDo / Don’t\nDo\nLabel\nA field for longer text. Multi-line comments or descriptions go here.\nSupporting text\n84/500\nIf there is a character limit, show the counter so the user knows how much is left.\nDon’t\nLabel\nA field for longer text. Multi-line comments or descriptions go here.\nSupporting text\nThere is a limit but the counter is hidden — the user is stopped without warning."
+    }
+  },
+  "accepted": []
+}

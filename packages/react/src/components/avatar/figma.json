@@ -1,0 +1,71 @@
+{
+  "page": "4.1 Avatar",
+  "components": [
+    {
+      "name": "Avatar",
+      "id": "87:390",
+      "page": "4.1 Avatar",
+      "pageId": "10:82",
+      "props": {
+        "Initials": {
+          "type": "TEXT",
+          "default": "NN"
+        },
+        "Size": ["S", "M", "L", "XL"],
+        "Type": ["Image", "Initials", "Icon"],
+        "Status": ["None", "Online", "Away", "Busy"]
+      },
+      "variants": 48,
+      "size": {
+        "w": 32,
+        "h": 32
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "fill/primary",
+          "fill/soft-pressed",
+          "status/danger/default",
+          "status/success/default",
+          "status/warning/default",
+          "text/accent"
+        ],
+        "text": ["Label/L", "Label/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "scale/10",
+          "scale/12",
+          "scale/16",
+          "scale/32",
+          "scale/40",
+          "scale/48",
+          "scale/64",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 24, 40],
+      "rawColors": [],
+      "nested": ["Mascot", "user-02"],
+      "description": "User image. Size × Type × Status = 60 variants. For the Image type, replace the avatar fill with a real image."
+    }
+  ],
+  "doc": {
+    "4.1 Avatar": {
+      "tokens": [
+        "accent/soft",
+        "fill/primary",
+        "fill/soft-pressed",
+        "radius/full",
+        "scale/24",
+        "scale/8",
+        "status/danger/default",
+        "status/success/default",
+        "status/warning/default",
+        "text/accent"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nSize\nscale/24–5\n24 / 32 / 40 / 48 / 64\nCorner radius\nradius/full\n9999\nStatus dot\nscale/8–4\n8 / 10 / 12 / 16\nStatus ring\nfill/primary\n2px, outside\nBackground — Initials and Icon\naccent/soft\n—\nBackground — Image placeholder\nfill/soft-pressed\nReplaced by the image\nText and icon\ntext/accent\n—\nOnline\nstatus/success/default\n—\nAway\nstatus/warning/default\n—\nBusy\nstatus/danger/default\n—\nInitials font\nLabel/S · Label/M · Label/L\nDepends on size\nProps\nProp\nType\nValues\nDefault\nSize\nvariant\nXS (24), S (32), M (40), L (48), XL (64)\nM\nType\nvariant\nImage, Initials, Icon\nImage\nStatus\nvariant\nNone, Online, Away, Busy\nNone\nInitials\ntext\n1–2 harf\nNN\nDo / Don’t\nDo\nNN\nIf there is no image, show initials — not an empty circle.\nDon’t\nNN\nNN\nDon’t use the status dot at XS and S — it isn’t legible."
+    }
+  },
+  "accepted": []
+}

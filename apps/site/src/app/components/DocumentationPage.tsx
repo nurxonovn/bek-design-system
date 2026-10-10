@@ -160,7 +160,7 @@ export function DocumentationPage() {
     </LinearLayout>
     
 </com.sqb.components.SqbCard>` :
-                        `let cardView = SQBCardView()
+                        `let cardView = BEKCardView()
 cardView.title = "Title"
 cardView.content = "Card content goes here."
 view.addSubview(cardView)`

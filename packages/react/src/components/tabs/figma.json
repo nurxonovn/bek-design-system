@@ -1,0 +1,129 @@
+{
+  "page": "6.1 Tabs",
+  "components": [
+    {
+      "name": "Tab item",
+      "id": "150:1296",
+      "page": "6.1 Tabs",
+      "pageId": "10:91",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Tab"
+        },
+        "Show icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show badge": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Type": ["Underline", "Pill", "Segmented"],
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Active", "Disabled", "Focus"]
+      },
+      "variants": 45,
+      "size": {
+        "w": 140,
+        "h": 32
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "border/focus",
+          "fill/control",
+          "fill/soft",
+          "fill/soft-hover",
+          "surface/raised",
+          "text/accent",
+          "text/disabled",
+          "text/on-color",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Label/L", "Label/M"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "radius/control/md",
+          "radius/full",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/32",
+          "scale/40",
+          "scale/48",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 8, 10, 12, 16, 40],
+      "rawColors": [],
+      "nested": ["Badge"],
+      "description": "A single tab. Type × Size × State = 36 variants. The indicator lives in the item, not the container."
+    },
+    {
+      "name": "Tabs",
+      "id": "183:1275",
+      "page": "6.1 Tabs",
+      "pageId": "10:91",
+      "props": {
+        "Show tab 4": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show tab 5": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Type": ["Underline", "Pill", "Segmented"],
+        "Width": ["Hug", "Fill"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 640,
+        "h": 41
+      },
+      "tokens": {
+        "color": ["accent/default", "border/default", "fill/soft-hover", "surface/raised"],
+        "text": [],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "radius/control/md",
+          "radius/full",
+          "scale/2",
+          "scale/24",
+          "scale/40",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 8, 24, 32, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "A row of tabs. Type × Width = 6 variants. Contains 5 Tab items; the last two are switched on with booleans."
+    }
+  ],
+  "doc": {
+    "6.1 Tabs": {
+      "tokens": [
+        "Elevation/1",
+        "accent/default",
+        "border/default",
+        "fill/primary",
+        "fill/soft-hover",
+        "radius/control/md",
+        "radius/full",
+        "scale/10",
+        "scale/12",
+        "scale/16",
+        "scale/2",
+        "scale/24",
+        "scale/32",
+        "scale/8",
+        "text/accent",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/32–3\n32 / 40 / 48\nHorizontal padding\nscale/12 · scale/16\n12 / 16\nInner gap\nscale/8 · scale/12\n8 / 12\nIndicator thickness\nscale/2\n2\nSpace between tabs — Underline\nscale/24\n24\nSpace between tabs — Pill\nscale/8\n8\nSpace between tabs — Segmented\nscale/2\n2\nSegmented container\nfill/soft-hover · scale/10\nbackground and 10px radius\nPill radius\nradius/full\n9999\nSegmented item radius\nradius/control/md\n8\nActive text — Underline\ntext/accent\n—\nActive background — Pill\naccent/default\n—\nActive background — Segmented\nfill/primary\nwith Elevation/1\nInactive text\ntext/secondary\n—\nBottom line\nborder/default\n1px, Underline only\nProps\nComponent\nProp\nType\nValues\nDefault\nTab item\nType\nvariant\nUnderline, Pill, Segmented\nUnderline\nTab item\nSize\nvariant\nS (32), M (40), L (48)\nM\nTab item\nState\nvariant\nDefault, Hover, Active, Disabled\nDefault\nTab item\nLabel\ntext\nTab name\nTab\nTab item\nShow icon\nboolean\ntrue / false\nfalse\nTab item\nShow badge\nboolean\ntrue / false\nfalse\nTabs\nType\nvariant\nUnderline, Pill, Segmented\nUnderline\nTabs\nWidth\nvariant\nHug, Fill\nHug\nTabs\nShow tab 4\nboolean\ntrue / false\nfalse\nTabs\nShow tab 5\nboolean\ntrue / false\nfalse\nRules\nOne active tab at a time\nTabs follow radio logic, not checkbox logic.\nText weight doesn’t change\nMedium in every state. Otherwise the active tab widens and the others shift.\nMobilda Width=Fill\n2–4 tabs fill the full width of the screen. With more than 5, use horizontal scroll.\nKeep tab names short\n1–2 words. A long name belongs in a side menu, not in Tabs.\nDon’t add the content panel to the component\nThe panel is different every time. Tabs provide navigation only.\nSegmented is for 2–3 options only\nFor more, use Underline or Pill.\nDo / Don’t\nDo\nGeneral\nSettings\nMembers\nUse Underline for sections of one page; labels are one or two words.\nDon’t\nGeneral\nSettings\nMembers\nDon’t use Pill tabs as page navigation — they read as filters.\nDo\nGeneral\nSettings\nMembers\nSegmented for 2–5 short, equal options.\nDon’t\nGeneral\nSettings\nMembers\nDon’t stretch Segmented with long labels or more than 5 options — use Underline."
+    }
+  },
+  "accepted": []
+}

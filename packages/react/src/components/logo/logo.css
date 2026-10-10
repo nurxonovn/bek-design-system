@@ -21,8 +21,8 @@
 
 .bek-logo--m {
   --bek-logo-mark: var(--bek-scale-40);
-  --bek-logo-wordmark: 28px;
-  --bek-logo-product: 14px;
+  --bek-logo-wordmark: var(--bek-scale-28);
+  --bek-logo-product: var(--bek-scale-14);
   --bek-logo-gap: 9px;
 }
 

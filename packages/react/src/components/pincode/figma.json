@@ -1,0 +1,153 @@
+{
+  "page": "4.7 Pincode",
+  "components": [
+    {
+      "name": "Pin dot",
+      "id": "325:1333",
+      "page": "4.7 Pincode",
+      "pageId": "137:21249",
+      "props": {
+        "State": ["Empty", "Filled", "Error", "Success"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 36,
+        "h": 36
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "fill/tertiary",
+          "status/danger/default",
+          "status/success/default"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/12", "scale/24"]
+      },
+      "sizes": [1, 5, 12, 24],
+      "rawColors": [],
+      "nested": [],
+      "description": "A single cell in the PIN row. State shows the input state: Empty, Filled, Error, Success. Used only inside Code input."
+    },
+    {
+      "name": "Code input",
+      "id": "325:1463",
+      "page": "4.7 Pincode",
+      "pageId": "137:21249",
+      "props": {
+        "Helper text": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Length": ["4", "6"],
+        "State": ["Empty", "Typing", "Error", "Success"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 144,
+        "h": 64
+      },
+      "tokens": {
+        "color": ["text/danger", "text/secondary", "text/success"],
+        "text": ["Body/S"],
+        "effect": [],
+        "dimension": ["scale/12", "scale/8"]
+      },
+      "sizes": [1, 5, 8, 12, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "The PIN row — shows how many digits have been entered and the result. Length: 4 or 6 cells. State: Empty, Typing, Error, Success. Helper text is switched on with a boolean."
+    },
+    {
+      "name": "Pinpad key",
+      "id": "327:228",
+      "page": "4.7 Pincode",
+      "pageId": "137:21249",
+      "props": {
+        "Digit": {
+          "type": "TEXT",
+          "default": "1"
+        },
+        "Label": {
+          "type": "TEXT",
+          "default": "Cancel"
+        },
+        "Element": ["Digit", "Clear", "Face", "Finger", "Text", "Empty"],
+        "State": ["Default", "Pressed", "Focus"]
+      },
+      "variants": 18,
+      "size": {
+        "w": 72,
+        "h": 72
+      },
+      "tokens": {
+        "color": [
+          "border/focus",
+          "fill/secondary",
+          "fill/strong",
+          "fill/tertiary",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Headline/L", "Label/S"],
+        "effect": [],
+        "dimension": ["icon/lg", "radius/full", "scale/72"]
+      },
+      "sizes": [1, 1.5, 2, 5, 40],
+      "rawColors": [],
+      "nested": ["face-id", "finger-print"],
+      "description": "A single key of the Pinpad keypad. Element: Digit, Clear, Face, Finger, Text, Empty. State: Default, Pressed."
+    },
+    {
+      "name": "Pinpad",
+      "id": "327:47598",
+      "page": "4.7 Pincode",
+      "pageId": "137:21249",
+      "props": {
+        "Bottom left": ["Face", "Finger", "Text", "Empty"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 376,
+        "h": 384
+      },
+      "tokens": {
+        "color": ["fill/secondary", "text/primary", "text/secondary"],
+        "text": ["Headline/L", "Label/S"],
+        "effect": [],
+        "dimension": ["radius/full", "scale/16", "scale/24", "scale/32", "scale/48", "scale/72"]
+      },
+      "sizes": [1, 5, 16, 24, 32, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "A numeric keypad for entering a PIN. Bottom left is the bottom-left key: Face (Face ID), Finger (Touch ID), Text (a text action) or Empty. The bottom-right key is always Clear."
+    }
+  ],
+  "doc": {
+    "4.7 Pincode": {
+      "tokens": [
+        "accent/default",
+        "fill/secondary",
+        "fill/strong",
+        "fill/tertiary",
+        "radius/full",
+        "scale/10",
+        "scale/12",
+        "scale/16",
+        "scale/24",
+        "scale/32",
+        "scale/48",
+        "scale/72",
+        "scale/8",
+        "status/danger/default",
+        "status/success/default",
+        "text/danger",
+        "text/secondary",
+        "text/success"
+      ],
+      "text": "\nDesign tokens\nWhich token each visual property comes from.\nProperty\nToken\nValue\nPin dot · dot size\nscale/12\n12\nPin dot · cell padding\nscale/10\n10\nPin dot · Empty background\nfill/tertiary\n—\nPin dot · Filled background\naccent/default\n—\nPin dot · Error background\nstatus/danger/default\n—\nPin dot · Success background\nstatus/success/default\n—\nCode input · row-to-helper spacing\nscale/8\n8\nCode input · helper text\nBody/S\n14 / 20\nCode input · helper colour (Error)\ntext/danger\n—\nCode input · helper colour (Success)\ntext/success\n—\nPinpad key · size\nscale/72\n72\nPinpad key · radius\nradius/full\nfull\nPinpad key · Digit background\nfill/secondary\n—\nPinpad key · Pressed background (Digit)\nfill/strong\n—\nPinpad key · Pressed background (other)\nfill/tertiary\n—\nPinpad key · digit text\nHeadline/L\n28 / 34\nPinpad key · text key\nLabel/S\n12 / 16\nPinpad key · icon colour\ntext/secondary\n—\nPinpad key · icon size\nicon/lg\n24\nPinpad · column gap\nscale/32\n32\nPinpad · row gap\nscale/16\n16\nPinpad · side padding\nscale/48\n48\nPinpad · top/bottom padding\nscale/24\n24\nDo / Don’t\nTwo pairs — reporting errors and the bottom-left key.\nDo\nIncorrect code\nIn the error state, add a short message as well as colour. The message shows for 0.5 seconds, then the row clears and the user enters the code again.\nDon’t\nDon’t show an error by colour alone. A user who can’t distinguish colours won’t know what went wrong.\nDo\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0\nIf the device supports biometrics, offer Face ID or Touch ID on the bottom-left key — it is the fastest route.\nDon’t\n1\n2\n3\n4\n5\n6\n7\n8\n9\nForgotten your password?\n0\nDon’t put long text on the bottom-left key. It won’t fit on a 72px key and won’t be legible — place longer actions as a separate link at the bottom of the screen."
+    }
+  },
+  "accepted": []
+}

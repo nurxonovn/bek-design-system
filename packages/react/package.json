@@ -22,7 +22,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node --test \"test/*.test.mjs\""
+    "test": "node --test \"test/*.test.mjs\"",
+    "check:figma": "node scripts/check-figma.mjs"
   },
   "peerDependencies": {
     "react": ">=18",

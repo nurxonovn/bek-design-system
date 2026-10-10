@@ -10,7 +10,7 @@ export type { PopoverProps } from './Popover.js';
 export { ContextMenu, DropdownMenu, MenuGroupLabel, MenuItem, MenuSeparator } from './Menu.js';
 export type { ContextMenuProps, DropdownMenuProps, MenuItemProps, MenuSize } from './Menu.js';
 export { HoverCard } from './HoverCard.js';
-export type { HoverCardProps } from './HoverCard.js';
+export type { HoverCardProps, HoverCardStat, HoverCardVariant } from './HoverCard.js';
 export type { Placement } from './anchored.js';
 export { CommandGroup, CommandItem, CommandPalette } from './CommandPalette.js';
 export type { CommandGroupProps, CommandItemProps, CommandPaletteProps } from './CommandPalette.js';

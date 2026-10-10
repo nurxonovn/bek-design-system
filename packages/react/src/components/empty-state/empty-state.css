@@ -22,7 +22,7 @@
 .bek-empty-state--s {
   --bek-empty-media: var(--bek-scale-64);
 
-  max-width: 320px;
+  max-width: var(--bek-scale-320);
   padding: var(--bek-scale-16);
 }
 

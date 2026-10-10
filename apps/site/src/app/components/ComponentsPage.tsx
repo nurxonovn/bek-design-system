@@ -593,7 +593,7 @@ export function ComponentsPage({ onNavigate }: { onNavigate?: (page: string) => 
           </div>
           <div className="space-y-2">
             <p className="text-muted-foreground leading-relaxed max-w-2xl text-center" style={{ fontSize: 'var(--text-sm)' }}>
-              SQB dizayn tizimi {currentPlatform === 'web' ? 'Angular' : currentPlatform === 'android' ? 'Android' : 'iOS'} komponent kutubxonasi. 
+              BEK dizayn tizimi {currentPlatform === 'web' ? 'Angular' : currentPlatform === 'android' ? 'Android' : 'iOS'} komponent kutubxonasi. 
               Barcha komponentlar production-ready va bank standartlariga moslashtirilgan. Har bir komponent barcha variant va holatlarini ko'rish uchun "Barcha variantlar" tugmasini bosing.
             </p>
             <div className="flex items-center gap-4 text-muted-foreground" style={{ fontSize: 'var(--text-xs)' }}>
@@ -601,7 +601,7 @@ export function ComponentsPage({ onNavigate }: { onNavigate?: (page: string) => 
               <span>• TypeScript Support</span>
               <span>• Light/Dark Mode</span>
               <span>• Token-Based Design</span>
-              <span>• Angular Ready</span>
+              <span>• React Ready</span>
             </div>
           </div>
         </div>

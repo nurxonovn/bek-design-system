@@ -1,0 +1,733 @@
+{
+  "page": "6.2 Navigation",
+  "components": [
+    {
+      "name": "Nav item · Web",
+      "id": "598:3717",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Menu item"
+        },
+        "Badge": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Chevron": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Icon": {
+          "type": "INSTANCE_SWAP",
+          "default": "962:2716"
+        },
+        "Mode": ["Expanded", "Collapsed", "Module", "Sub"],
+        "State": ["Default", "Hover", "Selected", "Selected hover", "Focus", "Disabled"]
+      },
+      "variants": 24,
+      "size": {
+        "w": 240,
+        "h": 40
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/hover",
+          "accent/soft",
+          "border/focus",
+          "fill/tertiary",
+          "surface/card",
+          "text/accent",
+          "text/disabled",
+          "text/on-color",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/S", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "radius/control/md",
+          "scale/12",
+          "scale/240",
+          "scale/32",
+          "scale/40",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12],
+      "rawColors": [],
+      "nested": ["Badge", "dashboard-square-01"],
+      "description": "Web navigation row. Mode: Expanded (240×40) · Collapsed (40×40) · Module (40×40, module rail) · Sub (240×32, second level, no icon). State: Default · Hover · Selected · Selected hover · Focus · Disabled. Props: Label, Badge, Chevron; swap the icon through the nested icon instance."
+    },
+    {
+      "name": "Nav group · Web",
+      "id": "599:55410",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Title": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "↳ Title text": {
+          "type": "TEXT",
+          "default": "Workspace"
+        },
+        "Item 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 3": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 4": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 5": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Item 6": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Item 7": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Item 8": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "↳ Item 1 subs": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "↳ Item 2 subs": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "↳ Item 3 subs": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "↳ Item 4 subs": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Divider": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Mode": ["Expanded", "Collapsed"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 240,
+        "h": 196
+      },
+      "tokens": {
+        "color": ["border/hairline", "surface/card", "text/tertiary"],
+        "text": [],
+        "effect": [],
+        "dimension": [
+          "radius/control/md",
+          "scale/12",
+          "scale/2",
+          "scale/240",
+          "scale/32",
+          "scale/4",
+          "scale/40",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 24, 32, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "A titled block of web Nav items. Title + Title text, Item 1–8, ↳ Item 1–4 subs (four Sub rows, indented 32 so their labels line up under the parent label — turn on that item’s Chevron too), Divider. Title and sub lists hide in Collapsed; the layer tree is the same in both modes, so overrides survive the switch."
+    },
+    {
+      "name": "Module rail · Web",
+      "id": "601:3086",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Title": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "↳ Title text": {
+          "type": "TEXT",
+          "default": "Apps"
+        },
+        "Module 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 3": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 4": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 5": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 6": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 7": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Module 8": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Bottom item": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Labels": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "↳ Label 1": {
+          "type": "TEXT",
+          "default": "Home"
+        },
+        "↳ Label 2": {
+          "type": "TEXT",
+          "default": "Projects"
+        },
+        "↳ Label 3": {
+          "type": "TEXT",
+          "default": "Inbox"
+        },
+        "↳ Label 4": {
+          "type": "TEXT",
+          "default": "Calendar"
+        },
+        "↳ Label 5": {
+          "type": "TEXT",
+          "default": "People"
+        },
+        "↳ Label 6": {
+          "type": "TEXT",
+          "default": "Docs"
+        },
+        "↳ Label 7": {
+          "type": "TEXT",
+          "default": "Tasks"
+        },
+        "↳ Label 8": {
+          "type": "TEXT",
+          "default": "Favorites"
+        },
+        "↳ Bottom label": {
+          "type": "TEXT",
+          "default": "Settings"
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 64,
+        "h": 800
+      },
+      "tokens": {
+        "color": ["accent/default", "surface/raised", "text/primary", "text/tertiary"],
+        "text": ["Caption/S", "Label/S"],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/control/md", "scale/12", "scale/4", "scale/40", "scale/8"]
+      },
+      "sizes": [1, 4, 8, 12],
+      "rawColors": [],
+      "nested": [],
+      "description": "Web module rail: the narrow left rail that picks the module. Width hugs 40 + 2×12. Module 1–8 + Bottom item use Nav item Mode=Module (selected = solid accent). Labels shows every module name in a chip 8 px to the right (hover state); each chip lives inside its module, so hiding a module hides its name. Height is fixed in the component — set it to Fill in a layout; the bottom item stays pinned."
+    },
+    {
+      "name": "Menu panel · Web",
+      "id": "602:60869",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Search": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Group 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Group 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Group 3": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Collapse button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Flyout": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "↳ Flyout title": {
+          "type": "TEXT",
+          "default": "Projects"
+        },
+        "Mode": ["Expanded", "Collapsed"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 256,
+        "h": 800
+      },
+      "tokens": {
+        "color": ["accent/soft", "bg/sheet", "surface/card", "surface/raised", "text/tertiary"],
+        "text": [],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": [
+          "radius/control/md",
+          "radius/surface/md",
+          "scale/12",
+          "scale/2",
+          "scale/200",
+          "scale/240",
+          "scale/32",
+          "scale/4",
+          "scale/40",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 24, 240, 280],
+      "rawColors": [],
+      "nested": [],
+      "description": "Web menu panel: the pages of the selected module. Mode: Expanded 256 · Collapsed 56 (40 item + 2×8). Top (Search) hugs, Middle fills and clips, Bottom (Collapse button) hugs and stays pinned. Props: Search, Group 1–3, Collapse button, Flyout + ↳ Flyout title. Flyout is the collapsed-mode sub-menu: a floating panel 8 px to the right of the rail (surface/overlay, radius/surface/md, Elevation/3 Float"
+    },
+    {
+      "name": "Header · Web",
+      "id": "603:4503",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Logo": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Language": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Theme": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Notifications": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "↳ Count": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Profile": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "↳ Name": {
+          "type": "TEXT",
+          "default": "Alex Brown"
+        },
+        "↳ Role": {
+          "type": "TEXT",
+          "default": "Administrator"
+        },
+        "Logout": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 1440,
+        "h": 64
+      },
+      "tokens": {
+        "color": ["border/hairline", "surface/card", "text/primary", "text/tertiary"],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": ["layout/header/height", "scale/16", "scale/24", "scale/8"]
+      },
+      "sizes": [1, 8, 16, 24],
+      "rawColors": [],
+      "nested": ["Avatar", "Badge", "Button", "Logo"],
+      "description": "Web top bar. Height = layout/header/height (64 on Web), width fills the screen. Logo · Language · Theme · Notifications (+ count) · Profile (avatar, name, role) · Log out. Separate the header from the page by surface colour, not a border."
+    },
+    {
+      "name": "App shell · Web",
+      "id": "603:13909",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Menu": ["Expanded", "Collapsed"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 1440,
+        "h": 900
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "fill/secondary",
+          "surface/card",
+          "surface/raised",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "layout/header/height",
+          "layout/page-margin",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 16, 24, 32, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Web app shell (1024 px and up): Header + Module rail + Menu panel + Content. Menu: Expanded / Collapsed. Place it, resize it to the screen (default 1440 × 900), put the page inside Content. Body stacks first-on-top so the collapsed flyout paints above Content."
+    },
+    {
+      "name": "Rail item · Tablet",
+      "id": "650:4029",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Home"
+        },
+        "Badge": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Icon": {
+          "type": "INSTANCE_SWAP",
+          "default": "651:24517"
+        },
+        "State": ["Default", "Pressed", "Selected", "Focus", "Disabled"]
+      },
+      "variants": 5,
+      "size": {
+        "w": 56,
+        "h": 60
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "border/focus",
+          "fill/tertiary",
+          "surface/raised",
+          "text/accent",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": ["radius/control/pill", "scale/32", "scale/4", "scale/56"]
+      },
+      "sizes": [1, 2, 4, 12, 24, 32],
+      "rawColors": [],
+      "nested": ["Badge", "home-01"],
+      "description": "Tablet rail item: one module. 56 × 32 pill indicator (size/nav-rail/indicator-w/h) with a 24 icon, label (Label/S) underneath, always visible. Selected = solid accent pill, same language as the web module rail. State: Default · Pressed · Selected · Focus · Disabled. Props: Label, Icon, Badge (count on the pill)."
+    },
+    {
+      "name": "Nav rail · Tablet",
+      "id": "650:4030",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Item 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 3": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 4": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 5": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 6": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Bottom item": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 72,
+        "h": 1130
+      },
+      "tokens": {
+        "color": ["surface/raised", "text/accent", "text/secondary"],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": ["scale/12", "scale/4", "scale/56", "scale/72", "scale/8"]
+      },
+      "sizes": [1, 4, 8, 12],
+      "rawColors": [],
+      "nested": [],
+      "description": "Tablet navigation rail: modules, always visible, labels always on. Width size/nav-rail/width (72). Item 1–6 + Bottom item (pinned). Use up to 6 modules; move the rest to the drawer. Height is fixed in the component — set it to Fill in a layout."
+    },
+    {
+      "name": "Nav item · Touch",
+      "id": "650:60656",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Menu item"
+        },
+        "Badge": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Chevron": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Icon": {
+          "type": "INSTANCE_SWAP",
+          "default": "962:2716"
+        },
+        "Mode": ["Item", "Sub"],
+        "State": ["Default", "Pressed", "Selected", "Focus", "Disabled"]
+      },
+      "variants": 10,
+      "size": {
+        "w": 328,
+        "h": 48
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "border/focus",
+          "fill/tertiary",
+          "surface/raised",
+          "text/accent",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/M", "Label/L"],
+        "effect": [],
+        "dimension": ["radius/control/lg", "scale/16", "scale/48", "scale/8", "target/min"]
+      },
+      "sizes": [1, 2, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Badge", "dashboard-square-01"],
+      "description": "Touch navigation row for drawers on tablet and mobile. Mode: Item (48 tall, size/nav-item; 24 icon; Label/L) · Sub (44 tall, size/touch-target/min; no icon; Body/M; indent 40 from the container so its label lines up under the parent label). State: Default · Pressed · Selected · Focus · Disabled. Width fills the drawer. Props: Label, Icon, Badge, Chevron."
+    },
+    {
+      "name": "Nav drawer",
+      "id": "650:61396",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Group 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Group 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Footer": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "↳ Name": {
+          "type": "TEXT",
+          "default": "Alex Brown"
+        },
+        "↳ Role": {
+          "type": "TEXT",
+          "default": "Administrator"
+        },
+        "Device": ["Tablet", "Mobile"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 360,
+        "h": 1194
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/overlay",
+          "surface/card",
+          "surface/raised",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/L"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": [
+          "layout/drawer/width",
+          "layout/header/height",
+          "radius/control/lg",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/48",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 16, 24, 80],
+      "rawColors": [],
+      "nested": ["Avatar", "Button", "Logo"],
+      "description": "Navigation drawer for tablet and mobile: the pages of the selected module. Width layout/drawer/width (Tablet 360 · Mobile 304 = smallest phone 360 − 56 so the scrim stays tappable). Header height = layout/header/height. Body scrolls; Footer (profile, Settings, Log out) stays pinned. Props: Group 1–2, Footer, ↳ Name, ↳ Role. Opens from the menu button over a color/background/overlay scrim; closes o"
+    },
+    {
+      "name": "Header · Tablet",
+      "id": "650:76771",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Menu button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Logo": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Search": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Notifications": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "↳ Count": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Avatar": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 834,
+        "h": 64
+      },
+      "tokens": {
+        "color": ["surface/card"],
+        "text": [],
+        "effect": [],
+        "dimension": ["layout/header/height", "scale/12", "scale/16", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Avatar", "Badge", "Button", "Logo"],
+      "description": "Tablet top bar. Height layout/header/height (64 on Tablet). Menu button (opens the Nav drawer) · Logo · Search · Notifications (+ count) · Avatar. Language, theme, name, role and Log out live in the drawer footer or settings."
+    }
+  ],
+  "doc": {
+    "6.2 Navigation": {
+      "tokens": [
+        "Elevation/3",
+        "Elevation/4",
+        "accent/default",
+        "accent/soft",
+        "bg/overlay",
+        "bg/sheet",
+        "border/focus",
+        "fill/tertiary",
+        "fill/tertiary-hover",
+        "layout/drawer/width",
+        "layout/header/height",
+        "layout/page-margin",
+        "radius/control/lg",
+        "radius/control/md",
+        "radius/surface/lg",
+        "radius/surface/md",
+        "scale/12",
+        "scale/16",
+        "scale/2",
+        "scale/200",
+        "scale/240",
+        "scale/32",
+        "scale/40",
+        "scale/48",
+        "scale/56",
+        "scale/64",
+        "scale/72",
+        "scale/8",
+        "surface/card",
+        "surface/raised",
+        "text/accent",
+        "text/disabled",
+        "text/on-color",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "NAVIGATION\nBEK\nDesign System\n6.2 Navigation\nHow people move between modules and pages, standardised for three devices. Web (1024 px and up) uses two rails and a header. Tablet (600–1023) uses a rail of modules and an overlay drawer. Mobile (360–599) uses a top bar, a bottom navigation bar and a drawer. The model stays the same everywhere: modules first, then the pages of the selected module.\nDevices\nOne navigation model, three shapes. Pick the section for the device you design for.\nDevice\nBreakpoint · frame\nModules\nPages of a module\nGlobal actions\nWeb\n1024+ · 1440 × 900\nModule rail (64)\nMenu panel 256 / 56 + flyout\nHeader 64\nTablet\n600–1023 · 834 × 1194\nNav rail (72) with labels\nOverlay drawer 360\nHeader 64 + menu button\nMobile\n360–599 · 390 × 844\nBottom nav 64 (up to 5)\nDrawer 304 from the menu button\nTop bar 56\nWeb · 1024 px and up\n6.2 A\nNav item\nOne navigation row. Mode (Expanded · Collapsed · Module · Sub) × State (Default · Hover · Selected · Selected hover · Focus · Disabled) = 24 variants.\nMenu item\nNew\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nMenu item\nDefault\nHover\nSelected\nSelected hover\nFocus\nDisabled\nExpanded\nCollapsed\nModule\nSub\nNav group\nA titled block of Nav items. Items 1–4 can open a list of Sub rows; the title hides when the panel is collapsed.\nWorkspace\nOverview\nProjects\nAll items\nArchived\nShared with me\nTasks\nCalendar\nMessages\nPeople\nDocuments\nFavorites\nWorkspace\nModule rail\nThe narrow left rail that picks the module. Selected module is a solid accent square; Labels shows every module name on hover.\nApps\nHome\nProjects\nInbox\nCalendar\nPeople\nDocs\nTasks\nFavorites\nSettings\nApps\nHome\nProjects\nInbox\nCalendar\nPeople\nDocs\nTasks\nFavorites\nSettings\nMenu panel\nThe second rail: pages of the selected module. Expanded 256 · Collapsed 56. The collapse button stays pinned to the bottom at any height.\nSearch\n⌘K\nWorkspace\nOverview\nProjects\nTasks\nCalendar\nManage\nMessages\nPeople\nDocuments\nFavorites\nCollapse\nProjects\nProjects\nAll items\nActive\nArchived\nShared with me\nSearch\n⌘K\nWorkspace\nOverview\nProjects\nAll items\nActive\nArchived\nShared with me\nTasks\nCalendar\nManage\nMessages\nPeople\nDocuments\nFavorites\nCollapse\nProjects\nAll items\nActive\nArchived\nShared with me\nHeader\nTop bar, 64 tall, fills the width. Logo · Language · Theme · Notifications · Profile · Log out.\nBEK\nDesign System\nEN\n3\nAB\nAlex Brown\nAdministrator\nApp shell\nHeader + Module rail + Menu panel + Content. Drop it, resize it to the screen, fill Content.\nBEK\nDesign System\nEN\n3\nAB\nAlex Brown\nAdministrator\nApps\nSearch\n⌘K\nWorkspace\nOverview\nProjects\nTasks\nCalendar\nManage\nMessages\nPeople\nDocuments\nFavorites\nCollapse\nPage content\nSwap with any component\nBEK\nDesign System\nEN\n3\nAB\nAlex Brown\nAdministrator\nApps\nPage content\nSwap with any component\nDark · Menu collapsed, flyout open\nBEK\nDesign System\nEN\n3\nAB\nAlex Brown\nAdministrator\nApps\nProjects\nAll items\nActive\nArchived\nShared with me\nPage content\nSwap with any component\nTokens\nEvery visual property maps to a BEK variable. Use these names in code.\nProperty\nToken\nWeb va"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-secondary",
+      "reason": "App shell · Web'dagi fill/secondary — \"Page content · Swap with any component\" placeholder frame'ining foni (demo); kodda kontent `children` orqali, shell foni bg/base. Figma'da placeholder'ni komponentdan chiqarish yoki uni bg/base ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-bg-base",
+      "reason": "AppShell sahifa foni bg/base — doc \"Separate the header from the page by surface colour, not a border\" qoidasi uchun header/menu (surface/card) dan ajralishi kerak; Figma'da App shell o'rami bg/sheet, kontent esa demo placeholder (fill/secondary). Figma'da Content slot foniga bg/base berish kerak."
+    }
+  ]
+}

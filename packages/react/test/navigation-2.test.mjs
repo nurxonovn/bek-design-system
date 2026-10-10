@@ -63,8 +63,14 @@ test('Pagination: current page, disabled arrows, compact position', () => {
 
 test('AppBar and TopNavigation', () => {
   const bar = r(h(AppBar, { title: 'Orders', onBack() {}, scrolled: true }));
-  assert.match(bar, /class="bek-app-bar bek-app-bar--s bek-app-bar--scrolled bek-glass-regular"/);
+  assert.match(
+    bar,
+    /class="bek-app-bar bek-app-bar--s bek-app-bar--title bek-app-bar--scrolled bek-glass-regular"/,
+  );
   assert.match(bar, /<h1 class="bek-app-bar__title">Orders<\/h1>/);
+  const search = r(h(AppBar, { variant: 'search', title: 'Catalog' }, h('input')));
+  assert.match(search, /bek-app-bar--search/);
+  assert.match(search, /<h1 class="bek-visually-hidden">Catalog<\/h1><input\/>/);
   const top = r(h(TopNavigation, { type: 'large-title', title: 'Profile', leading: 'close' }));
   assert.match(top, /bek-top-nav__large-title">Profile/);
   assert.match(top, /Close/);

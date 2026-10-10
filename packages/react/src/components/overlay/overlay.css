@@ -111,17 +111,17 @@
 
 /* Modal: S 480 · M 720 · L 900, radius 16, markazda. */
 .bek-modal {
-  width: 720px;
+  width: var(--bek-scale-720);
   margin: auto;
   border-radius: var(--bek-radius-surface-lg);
 }
 
 .bek-modal--s {
-  width: 480px;
+  width: var(--bek-scale-480);
 }
 
 .bek-modal--l {
-  width: 900px;
+  width: var(--bek-scale-900);
 }
 
 .bek-modal:not(:has(.bek-overlay__footer)) > .bek-overlay__body {
@@ -130,7 +130,7 @@
 
 /* Drawer: S 360 · M 480 · L 640, butun balandlik; ichki burchaklar radius 16. */
 .bek-drawer {
-  width: 480px;
+  width: var(--bek-scale-480);
   height: 100dvh;
   max-height: none;
   margin: 0 0 0 auto;
@@ -143,11 +143,11 @@
 }
 
 .bek-drawer--s {
-  width: 360px;
+  width: var(--bek-scale-360);
 }
 
 .bek-drawer--l {
-  width: 640px;
+  width: var(--bek-scale-640);
 }
 
 .bek-drawer > .bek-overlay__header {
@@ -166,11 +166,12 @@
   padding-top: 0;
 }
 
-/* Bottom sheet: to'liq kenglik, yuqori radius 24, dastak 36×4 (fill/control),
+/* Bottom sheet: to'liq kenglik (max 640), yuqori radius 24, dastak 36×4 (fill/control),
+   promo rasm 260 · content rasm 180 (Figma'da balandlik tokensiz),
    body padding 4 16 16, gap 16; footer padding 8 16 + home indicator, gap 8. */
 .bek-bottom-sheet {
   width: 100%;
-  max-width: 640px;
+  max-width: var(--bek-scale-640);
   max-height: calc(100dvh - var(--bek-scale-48));
   margin: auto auto 0;
   overflow: hidden;
@@ -180,7 +181,7 @@
 .bek-bottom-sheet__handle {
   flex-shrink: 0;
   align-self: center;
-  width: 36px;
+  width: var(--bek-scale-36);
   height: var(--bek-scale-4);
   margin: var(--bek-scale-8) 0;
   border-radius: var(--bek-radius-full);
@@ -190,7 +191,7 @@
 .bek-bottom-sheet--promo .bek-bottom-sheet__handle {
   position: absolute;
   top: 0;
-  left: calc(50% - 18px);
+  left: calc(50% - var(--bek-scale-36) / 2);
   background: var(--bek-fill-on-color-pressed);
 }
 
@@ -290,7 +291,7 @@
   --bek-alert-dialog-icon: var(--bek-text-info);
 
   gap: var(--bek-scale-16);
-  width: 400px;
+  width: var(--bek-scale-400);
   margin: auto;
   padding: var(--bek-scale-24);
   border-radius: var(--bek-radius-surface-lg);

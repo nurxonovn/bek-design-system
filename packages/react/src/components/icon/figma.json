@@ -1,0 +1,40 @@
+{
+  "page": "9.1 Slots & Helpers",
+  "components": [
+    {
+      "name": "_Icon",
+      "id": "21:73",
+      "page": "9.1 Slots & Helpers",
+      "pageId": "10:100",
+      "props": {
+        "Icon": {
+          "type": "INSTANCE_SWAP",
+          "default": "808:3930"
+        },
+        "Size": ["16", "20", "24", "32", "12"]
+      },
+      "variants": 5,
+      "size": {
+        "w": 12,
+        "h": 12
+      },
+      "tokens": {
+        "color": [],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/24"]
+      },
+      "sizes": [1, 5, 24],
+      "rawColors": [],
+      "nested": ["circle"],
+      "description": "Icon slot. From the BEK - Icons library. Default style: Style=Stroke, Type=Standard."
+    }
+  ],
+  "doc": {
+    "9.1 Slots & Helpers": {
+      "tokens": [],
+      "text": ""
+    }
+  },
+  "accepted": []
+}

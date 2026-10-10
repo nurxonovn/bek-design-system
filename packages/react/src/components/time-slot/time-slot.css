@@ -1,5 +1,6 @@
 /* Time slot picker — Figma "3.15 Time slot picker" + "Time slot". Oyna: balandlik control/height/3xl,
-   radius surface/lg, fill/secondary; vaqt Label/M, izoh Caption/M text/secondary. Tanlangan —
+   radius surface/lg, fill/secondary; vaqt Label/M, izoh Caption/M text/secondary; ro'yxat osti
+   izohi Caption/M text/tertiary. Tanlangan —
    accent/default + text/on-color (izoh on-color-muted); o'chirilgan — fill/soft + text/disabled;
    Express — chaqmoq + text/warning izoh. To'r: qatorda 3 ta, oraliq 8. */
 .bek-time-slots {
@@ -24,7 +25,7 @@
 }
 
 .bek-time-slots__note {
-  color: var(--bek-text-secondary);
+  color: var(--bek-text-tertiary);
   font-size: var(--bek-type-caption-md-size);
   line-height: var(--bek-type-caption-md-line-height);
 }

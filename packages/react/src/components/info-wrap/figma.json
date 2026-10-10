@@ -1,0 +1,66 @@
+{
+  "page": "5.5 Info wrap",
+  "components": [
+    {
+      "name": "Info wrap",
+      "id": "770:263",
+      "page": "5.5 Info wrap",
+      "pageId": "765:67",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Delivery 12 000 soʻm"
+        },
+        "Text": {
+          "type": "TEXT",
+          "default": "Free delivery on this order"
+        },
+        "Show leading icon": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show info": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Lines": ["1", "2"],
+        "Style": ["Default", "Emphasis"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 343,
+        "h": 40
+      },
+      "tokens": {
+        "color": ["bg/sheet", "fill/secondary", "fill/tertiary", "text/accent", "text/primary"],
+        "text": ["Caption/L", "Label/M"],
+        "effect": [],
+        "dimension": ["radius/surface/xl", "scale/12", "scale/16", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["delivery-truck-01", "information-circle"],
+      "description": "Info wrap — a soft, full-width info strip above a CTA or cart (delivery terms, free-delivery threshold, promo note). Lines=1 for one fact; Lines=2 adds an accent title. Info icon opens details. Not an alert: no status colours, never dismissible."
+    }
+  ],
+  "doc": {
+    "5.5 Info wrap": {
+      "tokens": [
+        "bg/base",
+        "fill/secondary",
+        "fill/tertiary",
+        "fill/tertiary-hover",
+        "radius/surface/xl",
+        "scale/12",
+        "scale/16",
+        "scale/8",
+        "text/accent",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "FEEDBACK\nBEK\nDesign System\n5.5 Info wrap\nA soft, full-width strip with one fact about the order or the screen — delivery terms, thresholds, promo notes. 8 variants · Lines × Style × Direction.\nOverview\nSits above a cart, checkout or CTA. Calm and neutral: no status colours, never dismissible.\nOne line\nFree delivery on this order\nOne fact.\nTwo lines\nDelivery 12 000 soʻm\nFree delivery on this order\nAccent title + explanation.\nEmphasis\nFree delivery on this order\nfill/tertiary — on bg/base pages.\nAnatomy\nLines=2 shown.\nDelivery 12 000 soʻm\nFree delivery on this order\n1\nicon leading\n· 16 · text/accent (2 lines) / text/primary (1 line)\n2\ntitle\n· Label/M · text/accent\n3\ntext\n· Caption/L · text/primary, centred\n4\nicon info\n· information-circle 16 · text/tertiary · opens details\n5\ncontainer\n· fill/secondary · radius/surface/xl · padding 12 / 16\nVariants\nDefault and Emphasis\nDefault · 1\nFree delivery on this order\nDefault · 2\nDelivery 12 000 soʻm\nFree delivery on this order\nEmphasis · 1\nFree delivery on this order\nEmphasis · 2\nDelivery 12 000 soʻm\nFree delivery on this order\nDark mode\nDefault · 1\nFree delivery on this order\nDefault · 2\nDelivery 12 000 soʻm\nFree delivery on this order\nRTL\nRTL · 1\nأضف 49 لتوصيل مجاني\nRTL · 2\nتوصيل 249\nأضف 49 لتوصيل مجاني\nSizes\nHeight hugs content: 40 (1 line) · 56 (2 lines). Width fills the parent minus page margins.\nPart\nValue\nToken\nNotes\nPadding\n12 / 16\nscale/12 · scale/16\n—\nGap\n8\nscale/8\n—\nIcons\n16\nicon/sm\n—\nRadius\n24\nradius/surface/xl\nPill-like on one line\nStates\nStatic by default. When the info icon is shown, the whole strip is a button: pressed = fill/tertiary-hover.\nTap target\nIf the strip opens details, make the whole strip tappable (min 44 high with surrounding spacing) — not only the 16px info icon.\nProps\nProp\nType\nValues\nDefault\nLines\nVariant\n1 · 2\n1\nStyle\nVariant\nDefault · Emphasis\nDefault\nDirection\nVariant\nLTR · RTL\nLTR\nTitle / Text\nText\nShort strings\nDelivery … / Free delivery …\nShow leading icon · Show info\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nLight\nDark\nBackground\nfill/secondary · fill/tertiary\n#F1F3F6 · #E2E2E9\n#27272B · #2D2D31\nTitle\ntext/accent\nindigo/850\nindigo/850 (dark)\nText\ntext/primary\ngray/1000\ngray/1000 (dark)\nInfo icon\ntext/tertiary\ngray/750\ngray/650\nRadius\nradius/surface/xl\n24\n24\nDevices\nMobile · 390\nDelivery 12 000 soʻm\nFree delivery on this order\nFull width above the cart button, 12 side margins.\nTablet · 834\nFree delivery on this order\nInside the cart panel, full panel width.\nWeb · 1440\nFree delivery on this order\nIn the order summary column; max width 480.\nDo / Don’t\nDelivery 12 000 soʻm\nFree delivery on this order\nDo\nOne short, useful fact that helps the user decide — how much more for free delivery.\nFree delivery on this order\nFree delivery on this order\nDon’t\nDon’t stack several strips or use it for errors — use Alert for problems and Notification bar for confirmations."
+    }
+  },
+  "accepted": []
+}

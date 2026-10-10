@@ -11,6 +11,16 @@ import { SortAscGlyph, SortDescGlyph } from '../../icons/index.js';
 /** Qator balandligi: s 40 · m 48 · l 56 px. */
 export type TableSize = 's' | 'm' | 'l';
 export type SortDirection = 'asc' | 'desc' | 'none';
+/** Figma "Table cell → Type": ustun turi. `text-description` — `description` berilganda avtomatik. */
+export type TableCellType =
+  | 'select'
+  | 'index'
+  | 'text'
+  | 'text-description'
+  | 'media'
+  | 'tags'
+  | 'status'
+  | 'actions';
 
 export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
   size?: TableSize;
@@ -34,7 +44,7 @@ export interface TableHeaderCellProps extends ThHTMLAttributes<HTMLTableCellElem
   onSort?: () => void;
 }
 
-/** Ustun sarlavhasi (Figma "Table header cell"): `fill/secondary`, Label/M `text/secondary`. */
+/** Ustun sarlavhasi (Figma "Table header cell"): `fill/secondary`, Label/M (L — Label/L) `text/secondary`. */
 export function TableHeaderCell({
   sort,
   onSort,
@@ -87,28 +97,48 @@ export function TableRow({
   );
 }
 
+/** Ichida bir nechta element yonma-yon turadigan katak turlari (Avatar + matn, Tag'lar, tugmalar). */
+const INLINE_TYPES = new Set<TableCellType>(['media', 'tags', 'status', 'actions']);
+
 export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
+  /**
+   * Figma "Type": `select` (Checkbox), `index` (tartib raqami), `text`, `media` (Avatar + matn),
+   * `tags` / `status` (Tag), `actions` (icon-only Button, oxirgi ustun).
+   */
+  type?: TableCellType;
   /** Ikkinchi qator (Figma "Text + description"). */
   description?: ReactNode;
   /** Raqamlar uchun: o'ngga tekislash va tabular raqamlar. */
   numeric?: boolean;
 }
 
-/** Katak (Figma "Table cell"): Body/S, padding 16, gap 12, pastida `border/hairline`. */
+/** Katak (Figma "Table cell"): Body/S (L — Body/M), padding 16, gap 12, pastida `border/hairline`. */
 export function TableCell({
+  type,
   description,
   numeric = false,
   className,
   children,
   ...rest
 }: TableCellProps) {
+  const cellType = type ?? (description ? 'text-description' : undefined);
   return (
-    <td className={cx('bek-table__td', numeric && 'bek-table__td--numeric', className)} {...rest}>
+    <td
+      className={cx(
+        'bek-table__td',
+        cellType && cellType !== 'text' && `bek-table__td--${cellType}`,
+        numeric && 'bek-table__td--numeric',
+        className,
+      )}
+      {...rest}
+    >
       {description ? (
         <span className="bek-table__stack">
           <span className="bek-table__primary">{children}</span>
           <span className="bek-table__description">{description}</span>
         </span>
+      ) : cellType && INLINE_TYPES.has(cellType) ? (
+        <span className="bek-table__inline">{children}</span>
       ) : (
         children
       )}

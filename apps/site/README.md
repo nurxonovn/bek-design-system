@@ -1,10 +1,32 @@
 # @bek/site
 
-BEK Design System hujjat sayti (landing, Foundations, tokenlar, ikonkalar, komponentlar katalogi).
-
-Hozircha "Design System - Pure" (Figma Make) prototipidan ko'chirilgan Vite ilovasi.
-Keyingi bosqich: Next.js App Router, `/uz/` va `/en/` marshrutlari, SQB kontentini BEK'ga almashtirish.
+BEK Design System hujjat sayti — Figma «BEK Design System» faylidagi har bir bo'limni jonli ko'rsatadi:
+landing, Foundations (tokenlar), komponentlar katalogi, ikonkalar.
 
 ```bash
-pnpm --filter @bek/site dev
+pnpm --filter @bek/site dev      # http://localhost:5173
+pnpm --filter @bek/site build    # dist/ (GitHub Pages: .github/workflows/deploy-site.yml)
 ```
+
+## Manba — bitta haqiqat
+
+- **Komponentlar katalogi** `scripts/build-catalog.mjs` bilan `packages/react/src/components/*/`
+  dan yig'iladi: `README.md` (hujjat), `figma.json` (Figma spetsifikatsiyasi: prop'lar, variantlar,
+  tokenlar, `accepted` farqlar), `index.ts` (eksportlar) → `src/app/data/catalog.generated.json`.
+  Yangi komponent qo'shilsa katalogda o'zi paydo bo'ladi.
+- **Jonli namunalar** — `src/app/demos/index.tsx`: har komponent papkasi uchun `@bek/react` dan
+  bitta demo. Demo yo'q bo'lsa karta «Namuna tez orada» ko'rsatadi.
+- **Tokenlar** (`#/tokens`) — `@bek/tokens/tokens.json` dan: ranglar (Light/Dark), tipografika,
+  o'lchamlar (Mobile/Tablet/Web), soya, layout.
+- Sayt qobig'i Pure (Figma Make) prototipidan; shadcn o'zgaruvchilari `src/styles/bek-bridge.css`
+  orqali BEK tokenlariga bog'langan, Dark rejim `data-theme="dark"` bilan sinxron.
+
+## Marshrutlar
+
+Hash-marshrutlar (GitHub Pages'da server sozlamasiz ishlaydi): `#/`, `#/components`,
+`#/components/<papka>` (masalan `#/components/button`), `#/tokens`, `#/docs`, `#/icons`.
+
+## Joylash
+
+`main` ga push → GitHub Pages (`Settings → Pages → Source: GitHub Actions`). Boshqa branch'ni
+ko'rish uchun workflow'ni qo'lda ishga tushiring (`workflow_dispatch`). `VITE_BASE` — repo nomi.

@@ -14,21 +14,21 @@ export function Footer({ onNavigate }: FooterProps) {
   const { t } = useTranslation();
 
   const handleSettingsClick = () => {
-    console.log('Footer Settings clicked - SQB internal settings');
+    console.log('Footer Settings clicked - BEK internal settings');
     // Bu yerda settings sahifasiga yo'naltirish
     onNavigate('theming');
   };
 
   const handleHelpClick = () => {
-    console.log('Footer Help clicked - SQB internal help');
+    console.log('Footer Help clicked - BEK internal help');
     // Bu yerda help sahifasiga yo'naltirish
     onNavigate('docs');
   };
 
   const handleMailClick = () => {
-    console.log('Footer Mail clicked - SQB internal contact');
-    // Bu yerda SQB ichki email yoki contact form ochish
-    // Real loyihada SQB teams channel yoki email ochiladi
+    console.log('Footer Mail clicked - BEK internal contact');
+    // Bu yerda BEK ichki email yoki contact form ochish
+    // Real loyihada BEK teams channel yoki email ochiladi
   };
 
   return (
@@ -51,7 +51,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 size="sm" 
                 className="h-10 w-10 p-0 hover:bg-primary/10 transition-all duration-300 hover:scale-110"
                 onClick={handleSettingsClick}
-                title="SQB ichki sozlamalar"
+                title="BEK ichki sozlamalar"
               >
                 <Settings className="h-5 w-5" />
               </Button>
@@ -71,7 +71,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 size="sm" 
                 className="h-10 w-10 p-0 hover:bg-primary/10 transition-all duration-300 hover:scale-110"
                 onClick={handleMailClick}
-                title="SQB ichki aloqa"
+                title="BEK ichki aloqa"
               >
                 <Mail className="h-5 w-5" />
               </Button>
@@ -110,19 +110,19 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-lg font-semibold text-[rgb(34,34,34)] text-[16px]">{t.internalResources}</h4>
             <nav className="space-y-4">
               <button
-                onClick={() => console.log('GitLab repository link clicked')}
+                onClick={() => window.open('https://github.com/nurxonovn/bek-design-system', '_blank', 'noreferrer')}
                 className="block w-full text-left text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-300"
               >
                 {t.sqbGitlab}
               </button>
               <button
-                onClick={() => console.log('Internal package registry clicked')}
+                onClick={() => window.open('https://github.com/nurxonovn/bek-design-system/tree/main/packages', '_blank', 'noreferrer')}
                 className="block w-full text-left text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-300"
               >
                 {t.internalPackage}
               </button>
               <button
-                onClick={() => console.log('Change log clicked')}
+                onClick={() => window.open('https://github.com/nurxonovn/bek-design-system/blob/main/packages/react/CHANGELOG.md', '_blank', 'noreferrer')}
                 className="block w-full text-left text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-300"
               >
                 {t.changeLog}
@@ -141,7 +141,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-lg font-semibold text-[rgb(34,34,34)] text-[16px]">{t.internalSupport}</h4>
             <nav className="space-y-4">
               <button
-                onClick={() => console.log('SQB Teams channel clicked')}
+                onClick={() => window.open('https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System', '_blank', 'noreferrer')}
                 className="block w-full text-left text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-300"
               >
                 {t.sqbTeamsChannel}
