@@ -36,5 +36,11 @@
       "text": ""
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-accent",
+      "reason": "_Spinner Button va Input ichida ishlatiladi — rang `currentColor` (ota elementdan), Figma'dagi text/accent faqat demo rang. Standalone holat uchun Loader (5.7) ishlatiladi."
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 /* Accordion — Figma "4.12 Accordion". Sarlavha min 48 (s) / 56 (m), gap 12; Plain — padding 8,
-   pastda border/hairline; Card — fill/secondary (hover fill/tertiary), radius surface/md, padding 16.
+   pastda border/hairline (hover fill/tertiary-hover); Card — fill/secondary (hover fill/tertiary), radius surface/md, padding 16.
    Sarlavha Label/M (s) · Label/L (m), kontent Body/S · Body/M text/secondary, padding-block 16. */
 .bek-accordion {
   display: flex;
@@ -25,6 +25,11 @@
 
 .bek-accordion-item--plain {
   border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+/* Figma "Show divider" = false */
+.bek-accordion-item--no-divider {
+  border-bottom: 0;
 }
 
 .bek-accordion-item--card {
@@ -56,7 +61,7 @@
 }
 
 .bek-accordion-item--plain > .bek-accordion-item__header:hover {
-  background: var(--bek-fill-soft-hover);
+  background: var(--bek-fill-tertiary-hover);
 }
 
 .bek-accordion-item--card > .bek-accordion-item__header:hover {

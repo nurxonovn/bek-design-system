@@ -110,5 +110,11 @@
       "text": "\nDesign tokens\nProperty\nToken\nValue\nPadding\nscale/16 · scale/24 · scale/32\n16 / 24 / 32\nGap between blocks\nscale/12 · scale/16 · scale/24\n12 / 16 / 24\nCorner radius\nradius/surface/md · radius/surface/lg · scale/20\n12 / 16 / 20\nMedia radius\nradius/control/md\n8\nBackground — Elevated\nfill/primary\nwith Elevation/1\nBackground — Outlined\nfill/primary\n1px border\nBackground — Filled\nfill/secondary\nno border\nSelected\naccent/soft\nwith an accent border\nTitle\nTitle/S · Title/M · Title/L\nSemibold\nText\nBody/S · Body/M\ntext/secondary\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nElevated, Outlined, Filled\nElevated\nSize\nvariant\nS (16), M (24), L (32)\nM\nState\nvariant\nDefault, Hover, Selected\nDefault\nTitle\ntext\nAny text\nCard title\nDescription\ntext\nAny text\nShort description text\nBody\ntext\nAny text\n—\nShow media\nboolean\ntrue / false\nfalse\nShow header\nboolean\ntrue / false\ntrue\nShow description\nboolean\ntrue / false\ntrue\nShow badge\nboolean\ntrue / false\nfalse\nShow action\nboolean\ntrue / false\nfalse\nShow body\nboolean\ntrue / false\ntrue\nShow footer\nboolean\ntrue / false\nfalse\nDo / Don’t\nDo\nReport\nA single variant keeps things consistent.\nUse one Variant per screen — Elevated or Outlined; don’t mix them.\nDon’t\nNested\nShadows stack on shadows and depth stops making sense.\nDon’t put a card inside a card — the hierarchy is lost."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-border-hairline",
+      "reason": "Figma doc Outlined variantida \"1px border\" deydi, lekin komponentda chiziq rangi tokenga bog'lanmagan (spec tokens.color ichida border/* yo'q). Kodda border/hairline ishlatiladi; Figma'da Outlined stroke'ni border/hairline variable'ga bog'lash kerak."
+    }
+  ]
 }

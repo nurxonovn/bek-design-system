@@ -49,5 +49,26 @@
       "text": "ASSETS\nBEK\nDesign System\n2.2 Logo & Brand\nOne logo for every BEK product. The mark and the word BEK never change — only the product name under BEK does (Design System, Academy, E-Store, Icons, Digital Legacy …). Every logo on this page is an instance of the Logo component, coloured by tokens.\nPrimary lockup\nHorizontal arrangement. The gap between the mark and the wordmark is 22% of the mark’s width.\nLight\nBEK\nDesign System\nDark\nBEK\nDesign System\nBrand architecture — BEK + product\nA branded house: one mark, one colour, one wordmark. Products are told apart only by the name under BEK — for now they share the same gradient on purpose.\nBEK\nAcademy\n1\nMark\nFixed. Four petals, gradient brand/logo-start → logo-end. Never redrawn per product.\n2\nMasterbrand — “BEK”\nFixed. Inter Extra Bold, colour follows the theme (text/primary). Always the largest word.\n3\nProduct name\nThe only variable part. Inter Bold at 50 % of the BEK font size, text/secondary. Set with the Product property.\nBEK\nBEK — masterbrand\nShow product = off Company level: footer credit, merch, social avatar.\nBEK\nDesign System\nDesign System\nproduct=\"Design System\" Default value of the component.\nBEK\nAcademy\nAcademy\nproduct=\"Academy\"\nBEK\nE-Store\nE-Store\nproduct=\"E-Store\"\nBEK\nIcons\nIcons\nproduct=\"Icons\"\nBEK\nDigital Legacy\nDigital Legacy\nproduct=\"Digital Legacy\" Longest name today (14 characters).\nBEK\nNew Product\nAny new product\nproduct=\"…\" No design work: type the name, follow the naming rules below.\nProduct name rules\nThe name is the only thing a new product brings. These rules keep every lockup the same shape.\nTitle Case\nBEK\nDigital Legacy\n✓\nDo\nBEK\ndigital legacy\n✕\nDon’t\nEvery word starts with a capital — never all lower- or upper-case.\nSay BEK once\nBEK\nAcademy\n✓\nDo\nBEK\nBEK Academy\n✕\nDon’t\nBEK is already in the wordmark. Type only the product.\nShort\nBEK\nE-Store\n✓\nDo\nBEK\nElectronic Commerce Store\n✕\nDon’t\n1–3 words, ≤ 18 characters. Too long? Shorten the name — never shrink or wrap the text.\nRule\nCorrect\nWrong\nTitle Case\nDigital Legacy\ndigital legacy · DIGITAL LEGACY\nBEK appears once — in the wordmark\nAcademy\nBEK Academy · Bek Academy\n1–3 words, ≤ 18 characters\nE-Store\nElectronic Commerce Store\nLetters, digits, spaces, one hyphen\nE-Store · Icons\nE.Store · Icons™ · Store!\nNot translated — same name in /uz/ and /en/\nAcademy (both)\nAkademiya in /uz/\nSame font, weight, colour and size for every product\nSet by the component\nAccent-coloured or bold product name\nMark\nUsed without the wordmark. Vector at every size; the gradient runs across the whole shape.\n180px\n96px\n64px\n48px\n32px\n24px\n16px\nConstruction\nThe mark is not drawn at random. Each petal is formed by the shared intersection of four circles.\n1\nFour circles\nØ218 circles whose centres form a square with 109px sides.\n2\nOne petal\nThe shared intersection of all four — an 80×80 squircle.\n3\nFour petals\nIn a 180×180 area, 20px apart, with a cross-shaped gap in the centre.\nMeaning of the mark\nFour overlapping areas\nThe mark refers to the popular four-circle Ikigai model: what you love, what you are good at, what the world needs and what you can be paid for. The answer lies where the circles overlap — the four petals of the mark are exactly those over"
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "figma-raw-color",
+      "match": "#d9d9d9",
+      "reason": "Logo komponenti ichidagi yordamchi to'rtburchak (placeholder/bo'sh joy chegarasi) tokensiz #d9d9d9 bilan bo'yalgan; kodda bunday qatlam yo'q. Figma'da shu qatlamni o'chirish yoki fill/soft tokeniga bog'lash kerak."
+    },
+    {
+      "rule": "px-figma",
+      "match": "17px",
+      "reason": "S wordmark font-size (Inter Extra Bold 17 px) — Figma matn qatlamining o'lchami, `sizes` (padding/gap/radius) ga tushmaydi va scale/17 tokeni yo'q. Belgi 24 px bilan nisbat Figma'dan olingan."
+    },
+    {
+      "rule": "px-figma",
+      "match": "46px",
+      "reason": "L wordmark font-size (46 px) — Figma matn qatlamining o'lchami, `sizes` ga tushmaydi va scale/46 tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "23px",
+      "reason": "L mahsulot nomi font-size (23 px = wordmark 46 ning 50 %i, Figma doc qoidasi) — matn o'lchami, scale/23 tokeni yo'q."
+    }
+  ]
 }

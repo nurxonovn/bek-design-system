@@ -1,0 +1,131 @@
+/* Pure (Figma Make, shadcn o'zgaruvchilari) → BEK tokenlari ko'prigi.
+   Sayt qobig'i (header, kartalar, tugmalar) BEK ranglari, radius va shriftini oladi; Light/Dark
+   @bek/tokens'dagi [data-theme="dark"] orqali almashadi (ThemeProvider .dark bilan birga qo'yadi). */
+:root,
+.dark {
+  --font-family: var(--bek-family-sans);
+  --background: var(--bek-bg-base);
+  --foreground: var(--bek-text-primary);
+  --card: var(--bek-surface-card);
+  --card-foreground: var(--bek-text-primary);
+  --popover: var(--bek-surface-raised);
+  --popover-foreground: var(--bek-text-primary);
+  --primary: var(--bek-accent-default);
+  --primary-foreground: var(--bek-text-on-color);
+  --secondary: var(--bek-fill-secondary);
+  --secondary-foreground: var(--bek-text-primary);
+  --muted: var(--bek-fill-secondary);
+  --muted-foreground: var(--bek-text-secondary);
+  --accent: var(--bek-fill-soft);
+  --accent-foreground: var(--bek-text-primary);
+  --destructive: var(--bek-status-danger-default);
+  --destructive-foreground: var(--bek-text-on-color);
+  --border: var(--bek-border-default);
+  --input: var(--bek-border-default);
+  --input-background: var(--bek-fill-primary);
+  --switch-background: var(--bek-fill-tertiary);
+  --ring: var(--bek-border-focus);
+  --radius: var(--bek-radius-control-md);
+  --sidebar: var(--bek-surface-card);
+  --sidebar-foreground: var(--bek-text-primary);
+  --sidebar-primary: var(--bek-accent-default);
+  --sidebar-primary-foreground: var(--bek-text-on-color);
+  --sidebar-accent: var(--bek-fill-soft);
+  --sidebar-accent-foreground: var(--bek-text-primary);
+  --sidebar-border: var(--bek-border-hairline);
+  --sidebar-ring: var(--bek-border-focus);
+}
+
+/* Katalogdagi jonli namunalar — BEK fon ustida, Light/Dark almashinuvi bilan. */
+.bek-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-24);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-bg-sheet);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-preview--thumb {
+  align-items: flex-start;
+  max-height: 220px;
+  overflow: hidden;
+  zoom: 0.85;
+}
+
+.bek-preview--column {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.bek-preview--phone {
+  max-width: 390px;
+}
+
+/* README (markdown) — BEK tipografikasi */
+.bek-readme {
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-readme h1 {
+  display: none;
+}
+
+.bek-readme h2,
+.bek-readme h3 {
+  margin: var(--bek-scale-24) 0 var(--bek-scale-8);
+  font-weight: var(--bek-weight-semibold);
+}
+
+.bek-readme p,
+.bek-readme li {
+  color: var(--bek-text-secondary);
+  line-height: var(--bek-type-body-md-line-height);
+}
+
+.bek-readme ul {
+  padding-inline-start: var(--bek-scale-20);
+  list-style: disc;
+}
+
+.bek-readme li + li {
+  margin-top: var(--bek-scale-4);
+}
+
+.bek-readme code {
+  padding: 0 var(--bek-scale-4);
+  border-radius: var(--bek-radius-control-sm);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-code-md-size, 0.9em);
+}
+
+.bek-readme pre {
+  overflow-x: auto;
+  margin: var(--bek-scale-12) 0;
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-secondary);
+}
+
+.bek-readme pre code {
+  padding: 0;
+  background: none;
+}
+
+.bek-readme table {
+  width: 100%;
+  margin: var(--bek-scale-12) 0;
+  border-collapse: collapse;
+}
+
+.bek-readme th,
+.bek-readme td {
+  padding: var(--bek-scale-8);
+  border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+  text-align: start;
+}

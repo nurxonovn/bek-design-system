@@ -152,5 +152,36 @@
       "text": "\nDesign tokens\nProperty\nToken\nValue\nViewport radius\nradius/surface/lg\n—\nActive dot width\nscale/24\n24\nInactive dot\nscale/8\ncircle\nDot colour\naccent/default · border/default; On media: white alpha\n—\nThumb size\nscale/56 · 4\n56 · 64\nThumb Hover / Active ring\nborder/strong · border/accent\n2 px\nGap\nspace/gap/*\n—\nDo / Don't\nDo\nSlot\nSwap with any component\nSlot\nOn touch screens show a peek of the next slide — it tells people they can swipe.\nDon't\nSlot\nSwap with any component\nDon’t remove every control. Without dots or arrows people don’t know there is more."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-secondary",
+      "reason": "Carousel set'idagi fill/secondary — Slide INSTANCE_SWAP'ning _Slot placeholder foni (\"Slot / Swap with any component\"), komponentning o'zi emas; kodda slayd — children."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "_Slot placeholder matni (\"Slot\", Label/M) rangi — demo slayd, Carousel'ning o'z qismi emas."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-tertiary",
+      "reason": "_Slot placeholder matni (\"Swap with any component\", Caption/M) rangi — demo slayd, Carousel'ning o'z qismi emas."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/M",
+      "reason": "_Slot placeholder sarlavhasi (\"Slot\") — demo slayd matni, kodda slayd children orqali keladi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/M",
+      "reason": "_Slot placeholder izohi (\"Swap with any component\") — demo slayd matni, kodda slayd children orqali keladi."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-border-strong",
+      "reason": "Figma doc \"Thumb Hover ring — border/strong (2 px)\" deydi, lekin .Carousel/Thumb komponentida hover halqasi variable'ga bog'lanmagan (tokens.color: faqat border/focus, fill/tertiary). Figma'da Hover holat stroke'ini border/strong ga bog'lash kerak."
+    }
+  ]
 }

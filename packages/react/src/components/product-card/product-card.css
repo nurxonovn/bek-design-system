@@ -1,6 +1,7 @@
-/* Product card — Figma "4.14 Product card". Rasm fill/secondary, radius surface/lg (vertical — kvadrat,
+/* Product card — Figma "4.14 Product card". Rasm fill/secondary (slot bo'sh — fill/tertiary placeholder), radius surface/lg (vertical — kvadrat,
    horizontal — 112 px); nom Title/S, tavsif Caption/L text/secondary; badge accent/default pill
-   Caption/S; amal — Outline-action Button, savatda — Stepper, mavjud emas — Flat disabled. */
+   Caption/S; amal — Outline-action Button, savatda — Stepper, mavjud emas — Flat disabled,
+   rasm va narx 50 % shaffof, matn text/disabled. */
 .bek-product-card {
   display: flex;
   flex-direction: column;
@@ -34,6 +35,11 @@
   border-radius: var(--bek-radius-surface-lg);
   background: var(--bek-fill-secondary);
   color: var(--bek-text-tertiary);
+}
+
+/* Rasm berilmagan — Figma "image · slot · fill/tertiary placeholder". */
+.bek-product-card__image--placeholder {
+  background: var(--bek-fill-tertiary);
 }
 
 .bek-product-card--horizontal .bek-product-card__image {
@@ -131,7 +137,11 @@ a.bek-product-card__title:focus-visible {
 }
 
 .bek-product-card--unavailable .bek-product-card__image,
-.bek-product-card--unavailable .bek-product-card__title,
 .bek-product-card--unavailable .bek-price {
   opacity: 0.48;
+}
+
+.bek-product-card--unavailable .bek-product-card__title,
+.bek-product-card--unavailable .bek-product-card__description {
+  color: var(--bek-text-disabled);
 }

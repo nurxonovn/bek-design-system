@@ -101,7 +101,7 @@
 
 .bek-alert__body {
   display: flex;
-  flex: 1 1 200px;
+  flex: 1 1 var(--bek-scale-200);
   flex-direction: column;
   gap: var(--bek-scale-2);
   min-width: 0;

@@ -12,7 +12,7 @@ import { InfoWrap } from '@bek/react';
 | Prop        | Qiymatlar                                     | Default     |
 | ----------- | --------------------------------------------- | ----------- |
 | `emphasis`  | `true` — `fill/tertiary` fon                  | `false`     |
-| `icon`      | boshidagi 16 px ikonka                        | —           |
+| `icon`      | boshidagi (leading) 16 px ikonka              | —           |
 | `title`     | ikki qatorli ko'rinish, Label/M `text/accent` | —           |
 | `children`  | matn, Caption/L `text/primary`                | —           |
 | `onInfo`    | berilsa — oxirida "info" tugmasi (16 px)      | —           |

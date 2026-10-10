@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, type KeyboardEvent } from 'react';
+import { useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { ChevronLeftGlyph, ChevronRightGlyph } from '../../icons/index.js';
 
@@ -29,6 +29,8 @@ export interface RangeDatePickerProps extends DatePickerBase {
   value?: DateRange;
   defaultValue?: DateRange;
   onChange?: (value: DateRange) => void;
+  /** To'r ostidagi xulosa ("12 – 16 oktyabr · 5 kun"). Default — Intl; `null` — yashiradi. */
+  formatRange?: ((from: Date, to: Date) => ReactNode) | null;
 }
 
 export type DatePickerProps = SingleDatePickerProps | RangeDatePickerProps;
@@ -43,6 +45,28 @@ const same = (a: Date | null | undefined, b: Date | null | undefined) =>
   a.getMonth() === b.getMonth() &&
   a.getDate() === b.getDate();
 const key = (d: Date) => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/** Figma Range xulosasi: "12 – 16 October · 5 days" (Intl formatRange + unit "day"). */
+function defaultFormatRange(from: Date, to: Date, locale?: string): string {
+  const dates = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long' });
+  const period =
+    typeof dates.formatRange === 'function'
+      ? dates.formatRange(from, to)
+      : `${dates.format(from)} – ${dates.format(to)}`;
+  const days = Math.round((startOfDay(to).getTime() - startOfDay(from).getTime()) / DAY_MS) + 1;
+  let count: string;
+  try {
+    count = new Intl.NumberFormat(locale, {
+      style: 'unit',
+      unit: 'day',
+      unitDisplay: 'long',
+    }).format(days);
+  } catch {
+    count = String(days);
+  }
+  return `${period} · ${count}`;
+}
 
 /** Figma "3.14 Date picker" (Single · Range): dushanbadan boshlanadigan oy to'ri, bugun nuqtasi,
  *  oraliq tasmasi. Klaviatura: ← → kun, ↑ ↓ hafta, PageUp/PageDown oy, Home/End hafta boshi/oxiri. */
@@ -135,6 +159,13 @@ export function DatePicker(props: DatePickerProps) {
 
   const [from, to] = range;
   const weeks = Array.from({ length: 6 }, (_, w) => cells.slice(w * 7, w * 7 + 7));
+  const formatRange = isRange ? (props as RangeDatePickerProps).formatRange : undefined;
+  const summary =
+    isRange && from && to && formatRange !== null
+      ? formatRange
+        ? formatRange(from, to)
+        : defaultFormatRange(from, to, locale)
+      : null;
 
   return (
     <div className={cx('bek-date-picker', className)}>
@@ -214,6 +245,11 @@ export function DatePicker(props: DatePickerProps) {
           </div>
         ))}
       </div>
+      {summary && (
+        <p className="bek-date-picker__summary" aria-live="polite">
+          {summary}
+        </p>
+      )}
     </div>
   );
 }

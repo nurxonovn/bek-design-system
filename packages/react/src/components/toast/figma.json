@@ -86,5 +86,16 @@
       "text": "\nDesign tokens\nProperty\nToken\nValue\nPadding\nscale/16\n16\nInner gap\nscale/12\n12\nCorner radius\nradius/surface/lg\n16\nIcon\nicon/md\n20\nShadow\nElevation/3\nThe topmost layer\nLayer\nz-index toast (code only)\n1400\nSolid background\nstatus/{status}/default\n—\nSubtle background\nstatus/{status}/soft\nWith a 1px border\nSolid text\ntext/on-color\nDark colour on Warning\nSubtle title\ntext/primary\n—\nSubtle description\ntext/secondary\n—\nFont\nBody/S\n14/20\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nSolid, Subtle\nSolid\nStatus\nvariant\nNeutral, Info, Success, Warning, Danger\nNeutral\nTitle\ntext\nShort title\nMessage title\nDescription\ntext\nOne or two sentences\nAdditional explanatory text.\nShow icon\nboolean\ntrue / false\ntrue\nShow description\nboolean\ntrue / false\ntrue\nShow action\nboolean\ntrue / false\nfalse\nShow close\nboolean\ntrue / false\ntrue\nIcon (swap)\ninstance swap\nAdded manually in Figma\n—\nBehaviour\nA Toast is time-limited — that is what sets it apart from Modal and Alert.\nCase\nDuration\nNote\nInfo and Success\n4 soniya\nCloses automatically\nWarning\n6 soniya\nLonger — it needs time to be read\nDanger\nDoes not close automatically\nThe user closes it\nWith an action button\nDoes not close automatically\nOtherwise the user won’t have time\nAt once\n3 at most\nA new toast pushes out the oldest one\nPosition — web\nTop-right corner\n—\nPosition — mobile\nFrom the bottom\nWithin thumb reach\nDo / Don’t\nDo\nMessage archived\nYou can find it in Archive.\nOne line: what happened + at most one action (Undo).\nDon’t\nFill in your delivery address\nName, street, city, postcode, phone, comment…\nDon’t put a form or several buttons in a toast — use 7.6 Alert dialog.\nDo\nPayment failed\nCheck your card details and try again.\nDanger toast for failed actions; it stays until the user closes it.\nDon’t\nPayment failed\nCheck your card details and try again.\nDon’t use Subtle Danger for errors — it is too quiet to notice."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "px-figma",
+      "match": "420px",
+      "reason": "Toast kengligi 420 — Figma komponent frame kengligi (size.w = 420); sizes faqat padding/gap/radius'ni oladi, scale/420 tokeni yo'q."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-accent",
+      "reason": "Subtle variantdagi amal matni text/accent — Figma'da amal nested Button (Flat) orqali, uning tokeni Toast spec'ida ko'rinmaydi. Figma'da Subtle toast amalining rangi Button Flat bilan bir xil (text/accent)."
+    }
+  ]
 }

@@ -23,4 +23,16 @@ Figma: **4.5 Table** — native `<table>` + `TableHeaderCell` (saralash), `Table
 </Table>
 ```
 
-Figma'dagi katak turlari: Select → `Checkbox`, Media → `Avatar`, Tags/Status → `Tag`, Actions → icon-only `Button`. Saralanadigan sarlavha — tugma va `aria-sort`.
+`TableCell` `type` — Figma "Type": `select` → `Checkbox`, `index` → tartib raqami (`text/secondary`), `text`, `text-description` (`description` berilganda avtomatik), `media` → `Avatar` + matn, `tags` / `status` → `Tag`, `actions` → icon-only `Button` (oxirgi ustun, bitta tugma — qolgani menyuda). Saralanadigan sarlavha — tugma va `aria-sort`. `l` o'lchamda matn Body/M, sarlavha Label/L.
+
+```tsx
+<TableCell type="select">
+  <Checkbox aria-label="Qatorni tanlash" />
+</TableCell>
+<TableCell type="media">
+  <Avatar size="xs" name="Nurbek" /> Nurbek
+</TableCell>
+<TableCell type="actions">
+  <Button variant="flat" size="s" iconOnly startIcon={<MoreIcon />}>Amallar</Button>
+</TableCell>
+```

@@ -11,4 +11,4 @@ Figma: **4.12 Accordion** — yig'iladigan bo'limlar. `variant`: `plain` (ajratu
 </Accordion>
 ```
 
-Native `<details>/<summary>`: Enter/Space ochadi, holatni brauzer e'lon qiladi, JS kerak emas. Boshqarish: `open` + `onToggle`. `icon`, `badge`, `disabled` qo'llab-quvvatlanadi.
+Native `<details>/<summary>`: Enter/Space ochadi, holatni brauzer e'lon qiladi, JS kerak emas. Boshqarish: `open` + `onToggle`. `icon` (Figma "Show leading icon"), `badge`, `disabled`, `divider` (Figma "Show divider"; `false` — `plain` variantda pastki chiziqsiz) qo'llab-quvvatlanadi. Slot — `children`.

@@ -34,7 +34,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
     {
       icon: <CheckCircle className="h-8 w-8" />,
       title: "Consistency",
-      description: "Unified styles and components across all SQB applications"
+      description: "Barcha BEK mahsulotlarida bir xil uslub va komponentlar"
     },
     {
       icon: <Zap className="h-8 w-8" />,
@@ -74,7 +74,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       preview: (
         <div className="text-right">
           <div className="font-medium" style={{ fontSize: 'var(--text-lg)' }}>Aa</div>
-          <div className="text-muted-foreground" style={{ fontSize: 'var(--text-xs)' }}>ttinterphases Pro</div>
+          <div className="text-muted-foreground" style={{ fontSize: 'var(--text-xs)' }}>Inter</div>
         </div>
       )
     },
@@ -129,20 +129,20 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           <div className="max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-8 px-4 py-2 bg-primary/10 text-primary border-primary/20">
               <Shield className="h-4 w-4 mr-2" />
-              SQB Internal Design System
+              BEK Design System · Figma ↔ kod
             </Badge>
             
             <h1 className="font-medium tracking-tight mb-6" style={{ fontSize: 'var(--text-6xl)', lineHeight: '1.1' }}>
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent text-[56px] font-bold">
-                Pure
+                BEK
               </span>
               <span className="block text-foreground mt-2 font-normal" style={{ fontSize: 'var(--text-4xl)' }}>
-                SQB Design System
+                Design System
               </span>
             </h1>
             
             <p className="text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-center" style={{ fontSize: 'var(--text-xl)' }}>
-              Clear. Consistent. Scalable.
+              Figma'dagi har bir komponent — kodda aynan o'zi. Tokenlar, variantlar, qoidalar.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -152,7 +152,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 className="px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{ borderRadius: 'var(--radius)' }}
               >
-                Explore Components
+                Komponentlar
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
@@ -162,7 +162,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 className="px-8 py-4 border-2 border-border hover:bg-accent transition-all duration-300"
                 style={{ borderRadius: 'var(--radius)' }}
               >
-                Get Started
+                Boshlash
               </Button>
             </div>
           </div>
@@ -172,10 +172,10 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       {/* About Pure Section */}
       <section className="container mx-auto px-6 py-24">
         <div className="text-center mb-16">
-          <h2 className="font-medium mb-6" style={{ fontSize: 'var(--text-5xl)' }}>What is Pure?</h2>
+          <h2 className="font-medium mb-6" style={{ fontSize: 'var(--text-5xl)' }}>BEK Design System nima?</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed text-center" style={{ fontSize: 'var(--text-lg)' }}>
-            Pure is the unified design system for SQB. It simplifies, accelerates, 
-            and unifies banking interfaces across all platforms and products.
+            BEK mahsulotlari uchun yagona dizayn-tizim: Figma manba, @bek/tokens va @bek/react — bitta haqiqat.
+            Har komponent Figma spetsifikatsiyasi bilan avtomatik tekshiriladi.
           </p>
         </div>
         
@@ -263,7 +263,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
               <h2 className="font-medium mb-6" style={{ fontSize: 'var(--text-5xl)' }}>Documentation & Portal</h2>
               <p className="text-muted-foreground mb-8 leading-relaxed text-center" style={{ fontSize: 'var(--text-lg)' }}>
                 Centralized guidelines and components for designers and developers. 
-                Everything you need to build consistent SQB experiences.
+                Izchil BEK interfeyslari uchun kerak bo'lgan hamma narsa.
               </p>
               
               <div className="space-y-4 mb-8">
@@ -312,11 +312,11 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                       </div>
                       <div className="bg-muted/50 rounded-lg p-4">
                         <code className="text-muted-foreground" style={{ fontSize: 'var(--text-sm)' }}>
-                          {'<sqb-button variant="primary">'}
+                          {'<Button variant="action">'}
                           <br />
                           {'  Submit Application'}
                           <br />
-                          {'</sqb-button>'}
+                          {'</Button>'}
                         </code>
                       </div>
                       <div className="flex space-x-2">
@@ -338,7 +338,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           <div className="max-w-3xl mx-auto">
             <h2 className="font-medium mb-6" style={{ fontSize: 'var(--text-5xl)' }}>Community & Governance</h2>
             <p className="text-muted-foreground mb-12 leading-relaxed text-center" style={{ fontSize: 'var(--text-lg)' }}>
-              Built by SQB designers and developers, for the whole ecosystem. 
+              BEK dizaynerlari va dasturchilari tomonidan, butun ekotizim uchun. 
               Collaborative development ensures quality and consistency.
             </p>
             
@@ -394,7 +394,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
             </span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-center" style={{ fontSize: 'var(--text-xl)' }}>
-            Transform your SQB applications with our comprehensive design system. 
+            BEK ilovalaringizni yagona dizayn-tizim bilan tezroq va izchil quring. 
             Built for scale, designed for success.
           </p>
           
@@ -404,7 +404,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
             className="px-12 py-6 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
             style={{ fontSize: 'var(--text-lg)', borderRadius: 'var(--radius)' }}
           >
-            Get Started
+            Boshlash
             <ArrowRight className="ml-3 h-6 w-6" />
           </Button>
           
@@ -420,7 +420,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
             </div>
             <div className="text-center">
               <div className="font-medium text-primary mb-2" style={{ fontSize: 'var(--text-4xl)' }}>100%</div>
-              <div className="text-[rgb(136,136,136)]">SQB Brand</div>
+              <div className="text-[rgb(136,136,136)]">BEK Brand</div>
             </div>
           </div>
         </div>

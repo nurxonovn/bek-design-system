@@ -61,5 +61,21 @@
       "text": "FEEDBACK\nBEK\nDesign System\n5.6 Notification bar\nA short, floating, always-dark bar that confirms an action, with an optional one-word action. 8 variants · Status × Direction.\nOverview\nConfirms what just happened — added, saved, copied, removed. Appears above the bottom bar on mobile, top-centre on web.\nSuccess\nAdded to your order\nUndo\nAction completed.\nError\nAdded to your order\nUndo\nAction failed — offer Retry.\nInfo\nAdded to your order\nUndo\nNeutral update.\nNeutral\nAdded to your order\nUndo\nReminder or system note.\nAnatomy\nAdded to your order\nUndo\n1\nicon\n· 20 · status colour (text/success · text/danger · text/info · text/secondary)\n2\nlabel\n· Body/S · text/primary · 1–2 lines\n3\naction\n· Label/S · text/primary · one word\n4\ncontainer\n· surface/raised · Elevation/3 Floating · radius/surface/xl · fixed Dark mode\nVariants\nThe component is fixed to Dark mode — it reads the same on light and dark pages.\nOn a light page\nSuccess\nAdded to your order\nUndo\nError\nAdded to your order\nUndo\nOn a dark page\nInfo\nAdded to your order\nUndo\nNeutral\nAdded to your order\nUndo\nRTL\nSuccess · RTL\nتراجع\nتمت إضافة المنتج\nError · RTL\nتراجع\nتمت إضافة المنتج\nSizes\nOne size. Height hugs: 48 for one line.\nPart\nValue\nToken\nNotes\nPadding\n12 / 16\nscale/12 · scale/16\n—\nGap\n8\nscale/8\n—\nIcon\n20\nicon/md\n—\nWidth\n358 mobile · max 480\n—\nCentred\nStates\nPhase\nDuration\nEasing\nNotes\nEnter\n250 ms\nemphasised decelerate\nSlides 16px + fades in\nVisible\n4 s (6 s with action)\n—\nPauses while hovered or focused\nExit\n200 ms\naccelerate\nSwipe down / up to dismiss early\nQueue\n—\n—\nOne at a time; newer replaces older\nProps\nProp\nType\nValues\nDefault\nStatus\nVariant\nSuccess · Error · Info · Neutral\nSuccess\nDirection\nVariant\nLTR · RTL\nLTR\nLabel\nText\nUp to ~60 characters\nAdded to your order\nAction\nText\nOne word\nUndo\nShow icon · Show action\nBoolean\ntrue · false\ntrue\nTokens\nColours resolve in Dark mode on purpose.\nProperty\nToken (Dark)\nValue\nNotes\nBackground\nsurface/raised\n#27272B\nElevation/3 Floating\nLabel · action\ntext/primary\ngray/1000 dark\n—\nIcons\ntext/success · danger · info · secondary\ndark palette 850\n≥ 3:1 on #27272B\nRadius\nradius/surface/xl\n24\n—\nDevices\nMobile · 390\nAdded to your order\nUndo\n16 above the tab bar or CTA; full width minus 16 margins.\nTablet · 834\nAdded to your order\nUndo\nBottom-centre, max 480.\nWeb · 1440\nAdded to your order\nUndo\nTop-centre under the header, max 480. Esc dismisses.\nDo / Don’t\nAdded to your order\nUndo\nDo\nConfirm a completed action in a few words and offer Undo when it can be reversed.\nAdded to your order\nUndo\nAdded to your order\nUndo\nDon’t\nDon’t stack bars or use them for errors that need a decision — use Alert dialog or an inline error."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-success",
+      "reason": "Figma doc ikonka rangini \"text/success · text/danger · text/info · text/secondary\" deb beradi, lekin Success variantida ikonka rangi variable'ga bog'lanmagan (spec'da faqat text/info). Figma'da Success ikonkasini text/success ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-danger",
+      "reason": "Figma Error varianti ikonkasi doc bo'yicha text/danger, lekin variable'ga bog'lanmagan (spec'da faqat text/info). Figma'da Error ikonkasini text/danger ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-warning",
+      "reason": "Kodda `tone` umumiy StatusTone (Toast/Alert bilan bir xil) bo'lgani uchun warning holati ham bor; Figma Notification bar'da Warning varianti yo'q — ataylab qo'shimcha."
+    }
+  ]
 }

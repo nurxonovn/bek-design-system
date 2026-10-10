@@ -17,7 +17,7 @@
   gap: var(--bek-scale-4);
   box-sizing: border-box;
   width: max-content;
-  max-width: 240px;
+  max-width: var(--bek-scale-240);
   padding: var(--bek-scale-12);
   border-radius: var(--bek-radius-surface-sm);
   background: var(--bek-tooltip-bg);
@@ -38,8 +38,9 @@
   color: var(--bek-text-primary);
 }
 
+/* Figma: 10×10 kvadrat 45° burilgan — ko'rinadigan balandligi diagonalning yarmi (10 / √2 ≈ 7). */
 .bek-tooltip--arrow {
-  --bek-tooltip-arrow: 7px;
+  --bek-tooltip-arrow: calc(var(--bek-scale-10) / 1.4142);
 }
 
 .bek-tooltip--top {
@@ -147,7 +148,7 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  max-width: 280px;
+  max-width: var(--bek-scale-280);
   padding-block: 0 var(--bek-scale-12);
   color: var(--bek-text-primary);
   font-family: var(--bek-family-sans);

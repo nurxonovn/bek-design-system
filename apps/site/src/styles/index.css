@@ -3,3 +3,8 @@
 @import 'tw-animate-css';
 @import './default_theme.css';
 @import './globals.css';
+@import '@bek/tokens/tokens.css';
+@import '@bek/tokens/typography.css';
+@import '@bek/tokens/materials.css';
+@import '@bek/react/styles.css';
+@import './bek-bridge.css';

@@ -6,8 +6,11 @@ export interface AccordionItemProps
   extends Omit<DetailsHTMLAttributes<HTMLDetailsElement>, 'title'> {
   title: ReactNode;
   description?: ReactNode;
+  /** Figma "Show leading icon" — sarlavha boshidagi ikonka. */
   icon?: ReactNode;
   badge?: ReactNode;
+  /** Figma "Show divider": `plain` variantda pastki chiziq (`border/hairline`). */
+  divider?: boolean;
   /** `plain` — ajratuvchi chiziq bilan; `card` — fill/secondary kartochka. */
   variant?: 'plain' | 'card';
   /** Sarlavha balandligi: s 48 · m 56 px. */
@@ -25,6 +28,7 @@ export function AccordionItem({
   badge,
   variant = 'plain',
   size = 'm',
+  divider = true,
   disabled = false,
   className,
   children,
@@ -39,6 +43,7 @@ export function AccordionItem({
         'bek-accordion-item',
         `bek-accordion-item--${variant}`,
         `bek-accordion-item--${size}`,
+        !divider && 'bek-accordion-item--no-divider',
         disabled && 'bek-accordion-item--disabled',
         className,
       )}

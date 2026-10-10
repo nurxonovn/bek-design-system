@@ -33,6 +33,10 @@ test('Accordion: details/summary, open state and disabled', () => {
   );
   assert.match(html, /<summary class="bek-accordion-item__header">/);
   assert.match(html, /aria-disabled="true"/);
+  assert.match(
+    r(h(AccordionItem, { title: 'No line', divider: false }, 'x')),
+    /bek-accordion-item--plain bek-accordion-item--m bek-accordion-item--no-divider/,
+  );
 });
 
 test('CodeInput: dots reflect value length, numeric one-time-code input', () => {
@@ -74,6 +78,43 @@ test('Carousel: region with labelled slides, arrows and dots', () => {
   assert.match(html, /aria-label="2 \/ 3"/);
   assert.equal(html.match(/bek-carousel__dot/g).length, 3 + 1);
   assert.match(html, /Previous slide/);
+  assert.match(html, /class="bek-carousel bek-carousel--inside bek-carousel--dots"/);
+});
+
+test('Carousel: fraction, progress and thumbnail indicators', () => {
+  const slides = [h('img', { alt: 'a' }), h('img', { alt: 'b' })];
+  const fraction = r(
+    h(Carousel, { 'aria-label': 'x', controls: 'dots', indicator: 'fraction' }, ...slides),
+  );
+  assert.match(fraction, /bek-carousel__fraction" aria-live="polite">1 \/ 2</);
+  assert.doesNotMatch(fraction, /bek-carousel__arrow/);
+  const progress = r(h(Carousel, { 'aria-label': 'x', indicator: 'progress' }, ...slides));
+  assert.match(progress, /role="progressbar"[^>]*aria-valuemax="2"[^>]*aria-valuenow="1"/);
+  assert.match(progress, /bek-carousel__progress-bar" style="width:50%"/);
+  const thumbs = r(
+    h(
+      Carousel,
+      {
+        'aria-label': 'x',
+        indicator: 'thumbnails',
+        orientation: 'vertical',
+        thumbSize: 'm',
+        thumbnails: [h('img', { alt: '' }), h('img', { alt: '' })],
+      },
+      ...slides,
+    ),
+  );
+  assert.match(thumbs, /bek-carousel--thumbnails bek-carousel--vertical/);
+  assert.match(thumbs, /bek-carousel__thumbs bek-carousel__thumbs--vertical/);
+  assert.equal(thumbs.match(/bek-carousel__thumb bek-carousel__thumb--m/g).length, 2);
+  assert.match(
+    thumbs,
+    /aria-label="1 \/ 2" aria-current="true" class="bek-carousel__thumb bek-carousel__thumb--m is-active"/,
+  );
+  assert.match(
+    r(h(Carousel, { 'aria-label': 'x', controls: 'none', indicator: 'fraction' }, ...slides)),
+    /^<section[^>]*><div class="bek-carousel__frame">[\s\S]*<\/div><\/section>$/,
+  );
 });
 
 test('ProductCard: add button, stepper in cart, disabled when unavailable', () => {

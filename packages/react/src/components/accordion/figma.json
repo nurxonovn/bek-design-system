@@ -133,5 +133,11 @@
       "text": "\nDesign tokens\nProperty\nToken\nValue\nHeader min-height\nscale/48 · 2\n48 · 56\nTitle\nLabel/M · Label/L · text/primary\n—\nDescription · content\nBody/S · Body/M · text/secondary\n—\nDivider (Plain)\nborder/hairline\n1 px\nCard fill\nfill/tertiary\nradius/surface/md\nHover\nfill/tertiary-hover\n—\nChevron\narrow-down-01 · text/tertiary\nicon/md\nDo / Don't\nDo\nCan I change my plan later?\nWrite titles people can scan — a question or a clear topic.\nDon't\nMore\nDon’t use vague titles like “More” or “Details” — nobody knows what is inside.\nDo\nSection title\nPanel content. Keep each panel focused on one topic so people can scan the titles and open only what they need.\nKeep one topic per panel, a few short paragraphs at most.\nDon't\nContinue\nDon’t hide required steps or the main action inside an accordion."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "prop-missing",
+      "match": "Show slot",
+      "reason": "Figma Slot (ixtiyoriy komponent) React'da `children` orqali beriladi — matn ham, komponent ham bitta kontent slotida; alohida `slot` prop'i kerak emas."
+    }
+  ]
 }
