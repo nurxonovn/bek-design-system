@@ -1,6 +1,8 @@
 /* App bar — Figma "6.5 App bar". S 56 · M 64; fill/primary, gap 12, yon padding
    layout/page-margin; sarlavha Title/M (M — Title/L) text/primary; amallar gap 2.
-   Scrolled — Glass/Regular. Sticky, z/sticky. */
+   Variant: Title (orqaga + sarlavha) · Search (qidiruv maydoni 36, fill/secondary — SearchBar) ·
+   Brand (logo + qidiruv). Scrolled — Glass/Regular (glass/tint + glass/tint-shade, blur 16) +
+   Elevation/1. Sticky, z/sticky. */
 .bek-app-bar {
   position: sticky;
   top: 0;
@@ -21,6 +23,29 @@
 
 .bek-app-bar--m {
   height: var(--bek-scale-64);
+}
+
+/* Scrolled=On — Glass/Regular: tint + shade ustma-ust, backdrop blur; soya Elevation/1.
+   .bek-glass-regular (materials.css) bilan birga ishlaydi, soyasini Elevation/1 bosib o'tadi. */
+.bek-app-bar.bek-app-bar--scrolled {
+  background: linear-gradient(var(--bek-glass-tint-shade) 0 0), var(--bek-glass-tint);
+  box-shadow: var(--bek-elevation-1);
+  -webkit-backdrop-filter: blur(var(--bek-scale-16)) saturate(180%);
+  backdrop-filter: blur(var(--bek-scale-16)) saturate(180%);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .bek-app-bar.bek-app-bar--scrolled {
+    background: var(--bek-fill-primary);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .bek-app-bar.bek-app-bar--scrolled {
+    background: var(--bek-fill-primary);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }
 
 .bek-app-bar__main {
@@ -49,6 +74,12 @@
 
 .bek-app-bar__main > :not(.bek-app-bar__title) {
   flex: 1;
+}
+
+/* Search · Brand: qidiruv maydoni (SearchBar, 36 px pill) sarlavha o'rnida kenglikni to'ldiradi. */
+.bek-app-bar--search .bek-app-bar__main,
+.bek-app-bar--brand .bek-app-bar__main {
+  gap: var(--bek-scale-12);
 }
 
 .bek-app-bar__actions {

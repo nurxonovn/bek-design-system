@@ -8,7 +8,20 @@ Figma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600)
 import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek/react';
 
 <AppShell
-  header={<AppHeader start={<BekLogo size="s" />} end={<Button variant="flat">Log out</Button>} />}
+  header={
+    <AppHeader
+      start={<BekLogo size="s" />}
+      end={
+        <>
+          <Button variant="flat" size="l">EN</Button>                                {/* Language */}
+          <Button variant="flat" size="l" iconOnly startIcon={<MoonIcon />}>Theme</Button>
+          <Button variant="flat" size="l" iconOnly startIcon={<BellIcon />}>Notifications</Button>
+          <NavProfile avatar={<Avatar name="Alex Brown" size="s" />} name="Alex Brown" role="Administrator" />
+          <Button variant="flat" size="l" iconOnly startIcon={<LogoutIcon />}>Log out</Button>
+        </>
+      }
+    />
+  }
   rail={
     <ModuleRail title="Apps" bottom={<NavItem mode="module" icon={<SettingsIcon />}>Settings</NavItem>}>
       <NavItem mode="module" icon={<HomeIcon />} href="/" selected>Home</NavItem>
@@ -31,16 +44,18 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
 </AppShell>
 ```
 
-| Komponent    | Asosiy prop'lar                                                                                                                                   |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href` |
-| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                    |
-| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                         |
-| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                         |
-| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                       |
-| `AppHeader`  | `start`, `end`, `children`; balandlik `layout/header/height`, `surface/card`                                                                      |
-| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                        |
+| Komponent    | Asosiy prop'lar                                                                                                                                                            |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                          |
+| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                             |
+| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                                  |
+| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                                                  |
+| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                                                |
+| `AppHeader`  | `start` (Menu button, Logo), `end` (Language, Theme, Notifications + Count, Profile/Avatar, Logout), `children` (Search); balandlik `layout/header/height`, `surface/card` |
+| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                        |
+| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                                                 |
 
+- Header · Web (Figma): Logo · Language · Theme · Notifications (+ Count — tugma ustidagi Badge) · Profile (`NavProfile`: Avatar, Name, Role) · Logout — barchasi `start`/`end` slotlari orqali; Header · Tablet: Menu button · Logo · Search (`children`) · Notifications · Avatar.
 - Nav item ranglari: Default `text/secondary` · Hover `fill/tertiary` + `text/primary` · Selected `accent/soft` + `text/accent` · Module Selected `accent/default` + `text/on-color` (hover `accent/hover`) · Disabled `text/disabled`. Radius 8, ikonka 20, Label/M (Sub — Body/S).
 - `collapsed`/`module` da nom ekran o'quvchi uchun yashirin matn va hover/fokusda chip (`surface/raised`, `Elevation/3`, 8 px o'ngda).
 - `href` berilsa — `<a>`, aks holda `<button>`; `selected` → `aria-current="page"`; `expanded` → `aria-expanded` + aylanadigan chevron.
@@ -67,7 +82,16 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
   open={open}
   onClose={() => setOpen(false)}
   header={<BekLogo size="s" />}
-  footer={<DrawerItem icon={<LogoutIcon />}>Log out</DrawerItem>}
+  footer={
+    <>
+      <NavProfile
+        avatar={<Avatar name="Alex Brown" size="s" />}
+        name="Alex Brown"
+        role="Administrator"
+      />
+      <DrawerItem icon={<LogoutIcon />}>Log out</DrawerItem>
+    </>
+  }
 >
   <NavGroup title="Menu" variant="touch">
     <DrawerItem icon={<HomeIcon />} href="/" selected>
@@ -80,7 +104,7 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
 </NavDrawer>
 ```
 
-- Kenglik `layout/drawer/width` (Tablet 360 · Mobile 304), `surface/card`, `Elevation/4`; sarlavha `layout/header/height`; body scroll (padding 8 12, gap 16); footer `surface/raised` qotirilgan.
+- Kenglik `layout/drawer/width` (Tablet 360 · Mobile 304 — token qurilmaga ko'ra o'zgaradi, Figma `Device` prop'i kodda alohida emas), `surface/card`, `Elevation/4`; sarlavha `layout/header/height`; body scroll (padding 8 12, gap 16); footer `surface/raised` qotirilgan (profil — `NavProfile`, Settings, Log out).
 - DrawerItem: `item` 48 px (ikonka 24, Label/L) · `sub` 44 px (Body/M); radius 12; Pressed `fill/tertiary`, Selected `accent/soft` + `text/accent`.
 - Native `<dialog>` (`showModal`): fokus ichida, Esc va scrim (`bg/overlay`) bosilganda `onClose`; ochilish — chapdan siljish (`motion/overlay/slide`).
 

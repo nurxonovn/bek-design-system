@@ -80,5 +80,26 @@
       "text": "NAVIGATION\nBEK\nDesign System\n6.6 Top navigation\nThe bar at the top of a mobile or tablet screen — Menu/Back/Close, title, up to two actions and an optional avatar. 48 variants · Type × Leading × Background × Direction.\nOverview\nEvery pushed screen has one. Pair it with the Status bar above (10.2). On web the same role is played by Header · Web (6.2).\nStandard\nTitle\nCentred title, Back, two actions.\nLarge title\nTitle\nRoot screens of a tab. Collapses to Standard on scroll.\nSearch\nSearch\nCatalogue and search screens.\nTransparent — over a photo or map\nTransparent\nTitle\nButtons on fill/on-media; becomes Solid after 56px of scroll.\nAnatomy\nTitle\n1\nleading\n· 88 slot · Back (arrow-left-01) or Close (cancel-01) · 40 target\n2\ntitle\n· Title/M · text/primary · centred, 1 line, truncates\n3\ntrailing\n· 88 slot · up to 2 icon buttons 40 (scale/40)\n4\nbar\n· 56 (scale/56) · bg/sheet · padding 8\nVariants\nLeading — Back · Close · Menu · None\nBack\nTitle\nClose\nTitle\nNone\nTitle\nType — Large title · Search\nLarge title\nTitle\nSearch · no leading\nSearch\nDark mode\nStandard\nTitle\nSearch\nSearch\nRTL — Back points right, actions move left\nStandard · RTL\nالعنوان\nLarge · RTL\nالعنوان\nSizes\nType\nHeight\nTokens\nNotes\nStandard · Search\n56\nscale/56\n+ Status bar 54 (iOS) / 32 (Android) above\nLarge title\n96\nscale/56 + Headline/L\nCollapses to 56 on scroll\nButtons\n40\nscale/40\nHit area 44 with bar padding\nTablet\n64\nscale/64\nSame component, bar padding 16\nStates\nState\nBackground\nContent\nTrigger\nRest\nbg/sheet or transparent\ntext/primary\n—\nScrolled\nbg/sheet + Elevation/1\ntext/primary\nContent scrolled under the bar\nOver media\ntransparent\nfill/on-media buttons, text/on-color\nHero photo / map\nButton pressed\nfill/soft-pressed\n—\nTouch feedback on 40 circle\nProps\nProp\nType\nValues\nDefault\nType\nVariant\nStandard · Large title · Search\nStandard\nLeading\nVariant\nBack · Close · Menu · None\nBack\nBackground\nVariant\nSolid · Transparent\nSolid\nDirection\nVariant\nLTR · RTL\nLTR\nTitle\nText\nScreen name\nTitle\nShow action 1 · 2\nBoolean (Button XL, exposed)\ntrue · false\ntrue\nShow avatar\nBoolean\ntrue · false\nfalse\nTokens\nProperty\nToken\nLight\nDark\nBar\nbg/sheet\n#FFFFFF\n#0E0E10\nTitle\nTitle/M · Headline/L · text/primary\n—\n—\nIcons\ntext/primary · text/on-color (Transparent)\n—\n—\nButton over media\nfill/on-media\nblack 30%\nblack 30%\nSearch field\nfill/secondary · text/tertiary\n#F1F3F6\n#27272B\nDevices\nMobile · 390\n9:41\nTitle\nStatus bar + Top navigation 56; title centred.\nTablet · 834\nTitle\nHeight 64 (scale/64); left-aligned title in split views.\nWeb · 1440\nSearch\nNot used — use Header · Web (6.2) with breadcrumbs.\nDo / Don’t\nTitle\nDo\nOne short title and at most two icon actions; put the rest into “more”.\nTitle\nDon’t\nDon’t use Transparent on plain surfaces or keep it transparent once content scrolls under it."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-secondary",
+      "reason": "Type=Search qidiruv maydoni Figma'da inline chizilgan (fill/secondary fon, text/tertiary placeholder, Body/M matn, fill/strong ikonka); kodda bu SearchBar (3.12) komponenti `children` orqali qo'yiladi. Figma'da Search bar instance ishlatish kerak."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-strong",
+      "reason": "Qidiruv maydoni ikonkasi/ajratgichi — SearchBar komponentiga tegishli (qarang: fill/secondary sababi)."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-tertiary",
+      "reason": "Qidiruv maydoni placeholder rangi — SearchBar komponentiga tegishli (qarang: fill/secondary sababi)."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Body/M",
+      "reason": "Body/M — qidiruv maydoni matni, SearchBar komponentida; TopNavigation'ning o'z matnlari Title/M va Headline/L."
+    }
+  ]
 }

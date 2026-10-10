@@ -9,6 +9,7 @@ import {
   NavDrawer,
   NavGroup,
   NavItem,
+  NavProfile,
   NavRail,
   NavSubList,
   RailItem,
@@ -100,4 +101,10 @@ test('NavRail / RailItem and NavDrawer / DrawerItem', () => {
   assert.match(drawer, /aria-label|Close menu/);
   assert.match(drawer, /bek-drawer-item bek-drawer-item--sub/);
   assert.match(drawer, /bek-nav-drawer__footer">F/);
+  const profile = r(h(NavProfile, { avatar: h('svg'), name: 'Alex', role: 'Admin', action: 'X' }));
+  assert.match(
+    profile,
+    /^<div class="bek-nav-profile"><span class="bek-nav-profile__avatar" aria-hidden="true"><svg><\/svg><\/span><span class="bek-nav-profile__text"><span class="bek-nav-profile__name">Alex<\/span><span class="bek-nav-profile__role">Admin<\/span><\/span>X<\/div>$/,
+  );
+  assert.doesNotMatch(r(h(NavProfile, { name: 'A' })), /__role|__avatar/);
 });

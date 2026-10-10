@@ -76,5 +76,11 @@
       "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/56 · 2\nmobile · tablet/web\nSide padding\nlayout/page-margin\n16 · 24 · 32\nSurface (Off)\nfill/primary\nno border\nSurface (On)\nGlass/Regular effect · Glass/Fill/Regular\n1.9 Materials\nTitle\nTitle/M · text/primary\n—\nSearch field\nscale/36 · 2 · radius/control/pill · fill/tertiary\n—\nLayer\nlayout/z/sticky\n1100\nDo / Don't\nDo\nTitle\n3\nKeep the title short and put at most three actions in the bar.\nDon't\nNotification settings and preferences\n3\nDon’t let a long title push the actions out — shorten it or move detail into the page."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-secondary",
+      "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchBar (3.12) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
+    }
+  ]
 }

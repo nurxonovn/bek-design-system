@@ -1060,5 +1060,31 @@
       "text": "OVERLAYS\nBEK\nDesign System\n7.11 Share sheet\nShares the current item — preview, recent contacts, share actions and a copyable link. 2 variants · Direction.\nOverview\nOpened from a Share button. In native apps prefer the OS share sheet; this one is the in-app fallback and the web version.\nShare sheet\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nAll rows on.\nAnatomy\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\n1\npreview\n· thumbnail 48 · Title/S · link Caption/M · close 32\n2\ncontacts\n· 56 avatars + name · optional (Show contacts)\n3\nactions\n· 56 circles fill/secondary · Copy · Link · Save · More\n4\nlink field\n· fill/secondary pill 44 · Copy button surface/raised · optional\n5\nsheet\n· surface/raised · top radius 24 · handle\nVariants\nDark mode\nLTR\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nRTL\nRTL\nعنوان العنصر\nbek.uz/p/1024\nJT\nJasur\nNB\nNodira\nSR\nSardor\nDM\nDilnoza\nAK\nAziz\nالمزيد\nحفظ\nرابط\nنسخ\nنسخ\nhttps://bek.uz/p/1024\nSizes\nPart\nValue\nToken\nNotes\nAvatar / action\n56\nscale/64 (64) · 56 custom\nHit area 56 × 80 with label\nRow gap\n16\nscale/16\nScrolls horizontally if more\nLink field\n44\nscale/44\n—\nBottom\n32\nscale/32\nHome indicator\nStates\nEvent\nFeedback\nComponent\nNotes\nCopy\n“Link copied”\nNotification bar 5.6\nSheet stays open\nContact tap\nSends + closes\n—\nSuccess → Notification bar\nSave\nDownload progress\nProgress 4.6\n—\nMore\nOS share sheet\n—\nNative only\nProps\nProp\nType\nValues\nDefault\nDirection\nVariant\nLTR · RTL\nLTR\nTitle · Link\nText\nItem name · short URL\nMargherita pizza · bek.uz/p/1024\nShow contacts\nBoolean\ntrue · false\ntrue\nShow link field\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nLight\nDark\nSheet\nsurface/raised\n#FFFFFF\n#27272B\nAction circles · field\nfill/secondary\n#F1F3F6\n#27272B\nAvatars\naccent/soft · status/*/soft\n—\n—\nCopy\ntext/accent on surface/raised\n—\n—\nDevices\nMobile · 390\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nBottom sheet, full width.\nTablet · 834\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nPopover 390 wide anchored to the Share button.\nWeb · 1440\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nModal 390 wide, or a popover from Share.\nDo / Don’t\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nDo\nShow what is being shared and confirm the copy with a Notification bar.\nعنوان العنصر\nbek.uz/p/1024\nJT\nJasur\nNB\nNodira\nSR\nSardor\nDM\nDilnoza\nAK\nAziz\nالمزيد\nحفظ\nرابط\nنسخ\nنسخ\nhttps://bek.uz/p/1024\nDon’t\nDon’t add social logos that are not installed or fill the sheet with every possible app."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-bg-sheet",
+      "reason": "Action sheet (iOS 27 / Material 3 native instance) va Share sheet sirti Figma'da bg/sheet (nested native komponent, spec tokenlariga tushmagan); doc'da \"Card / sheet: surface/raised\" deyilgan — doc yoki native instance tokenini moslashtirish kerak. Kod komponentga ergashadi (bg/sheet)."
+    },
+    {
+      "rule": "px-figma",
+      "match": "260px",
+      "reason": "Bottom sheet · Promo rasm balandligi 260 — Figma'da `height` qiymati sizes'ga yozilmaydi va scale/260 tokeni yo'q; Figma rasm frame'iga mos."
+    },
+    {
+      "rule": "px-figma",
+      "match": "180px",
+      "reason": "Bottom sheet · Content rasm balandligi 180 — Figma'da `height` sizes'ga yozilmaydi, scale/180 tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "560px",
+      "reason": "Command palette maksimal balandligi 560 — ro'yxat uchun UI cheklovi (8 natija + qidiruv + footer); Figma'da max-height yo'q, doc \"at most 8 visible before scrolling\" qoidasidan."
+    },
+    {
+      "rule": "px-figma",
+      "match": "34px",
+      "reason": "iOS 27 action sheet kartasining radiusi (34) — Figma'da native iOS instance ichida, spec sizes'ga tushmagan; scale/34 tokeni yo'q. Figma'da radiusni tokenga bog'lash yoki doc'dagi \"12 (cards)\" qiymatini native kartaga moslash kerak."
+    }
+  ]
 }

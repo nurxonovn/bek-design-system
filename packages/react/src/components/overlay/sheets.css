@@ -3,7 +3,7 @@
    border/hairline; natijalar padding 8; footer fill/secondary, padding 8 16, gap 16, Caption/M.
    Mobile (< 600): to'liq kenglik, ekran yuqorisida, ishoralarsiz. */
 .bek-command {
-  width: 640px;
+  width: var(--bek-scale-640);
   max-height: min(560px, calc(100dvh - 24vh));
   margin: 12vh auto auto;
   overflow: hidden;
@@ -120,27 +120,31 @@
 }
 
 /* Action sheet — Figma "7.10 Action sheet".
-   Android (Material 3): bg/sheet, yuqori radius 28, dastak; sarlavha Title/M + xabar Body/S
+   Android (Material 3): bg/sheet, yuqori radius radius/surface/xl (24), dastak fill/strong; sarlavha Title/M + xabar Body/S
    (padding 8 24); qatorlar 56, padding 0 24, gap 16, ikonka 24, Body/L; destructive text/danger.
-   iOS: karta (pastda 8 px chetdan), bg/sheet, radius 34, padding 14; sarlavha markazda;
+   iOS 27: karta (pastda 8 px chetdan), bg/sheet, radius 34 (native karta), padding 14; sarlavha markazda;
    amallar — 48 px pill, fill/tertiary, gap 8, Semibold markazda. */
 .bek-action-sheet {
   width: 100%;
-  max-width: 480px;
+  max-width: var(--bek-scale-480);
   margin: auto auto 0;
   background: var(--bek-bg-sheet);
 }
 
 .bek-action-sheet--android {
   padding-bottom: max(var(--bek-scale-24), env(safe-area-inset-bottom));
-  border-radius: 28px 28px 0 0;
+  border-radius: var(--bek-radius-surface-xl) var(--bek-radius-surface-xl) 0 0;
+}
+
+.bek-action-sheet--android .bek-bottom-sheet__handle {
+  background: var(--bek-fill-strong);
 }
 
 .bek-action-sheet--ios {
   width: calc(100% - var(--bek-scale-16));
-  max-width: 400px;
+  max-width: var(--bek-scale-400);
   margin-bottom: max(var(--bek-scale-8), env(safe-area-inset-bottom));
-  padding: 14px;
+  padding: var(--bek-scale-14);
   border-radius: 34px;
 }
 
@@ -152,7 +156,7 @@
 }
 
 .bek-action-sheet--ios .bek-action-sheet__header {
-  gap: 10px;
+  gap: var(--bek-scale-10);
   padding: var(--bek-scale-8) var(--bek-scale-8) var(--bek-scale-24);
   text-align: center;
 }
@@ -239,11 +243,12 @@
 
 /* Share sheet — Figma "7.11 Share sheet". bg/sheet, yuqori radius 24; ko'rinish: eskiz 48
    (fill/tertiary, radius 12), sarlavha Title/S, havola Caption/M text/tertiary, yopish 32;
-   odamlar va ilovalar — 56 doira (ilova fill/secondary, ikonka 24), nom Caption/M, gap 16;
+   odamlar va ilovalar — 56 doira (kontakt accent/soft yoki status/{tone}/soft — `tone`;
+   ilova fill/secondary, ikonka 24), nom Caption/M, gap 16;
    havola maydoni — 44 pill fill/secondary, Copy — surface/raised pill, Label/M text/accent. */
 .bek-share-sheet {
   width: 100%;
-  max-width: 480px;
+  max-width: var(--bek-scale-480);
   margin: auto auto 0;
   padding-bottom: max(var(--bek-scale-24), env(safe-area-inset-bottom));
   border-radius: var(--bek-radius-surface-xl) var(--bek-radius-surface-xl) 0 0;
@@ -342,6 +347,22 @@
   background: var(--bek-fill-secondary);
 }
 
+.bek-share-sheet__circle--info {
+  background: var(--bek-status-info-soft);
+}
+
+.bek-share-sheet__circle--success {
+  background: var(--bek-status-success-soft);
+}
+
+.bek-share-sheet__circle--warning {
+  background: var(--bek-status-warning-soft);
+}
+
+.bek-share-sheet__circle--utility {
+  background: var(--bek-status-utility-soft);
+}
+
 .bek-share-sheet__circle > svg {
   width: var(--bek-icon-lg);
   height: var(--bek-icon-lg);
@@ -360,7 +381,7 @@
   display: flex;
   align-items: center;
   gap: var(--bek-scale-8);
-  height: 44px;
+  height: var(--bek-scale-44);
   margin: var(--bek-scale-24) var(--bek-scale-16) 0;
   padding: 0 var(--bek-scale-8) 0 var(--bek-scale-16);
   border-radius: var(--bek-radius-full);

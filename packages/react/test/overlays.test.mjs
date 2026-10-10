@@ -125,6 +125,17 @@ test('Anchored overlays render only the trigger until opened', () => {
     r(h(HoverCard, { trigger: h('a', { href: '#' }, '@a') }, 'Card')),
     /^<span class="bek-anchor"><a href="#">@a<\/a><\/span>$/,
   );
+  assert.match(
+    r(
+      h(HoverCard, {
+        trigger: h('a', { href: '#' }, '@a'),
+        variant: 'profile',
+        title: 'Alex',
+        stats: [{ value: '128', label: 'Projects' }],
+      }),
+    ),
+    /^<span class="bek-anchor">/,
+  );
 });
 
 test('CommandPalette: combobox + listbox, empty state', () => {
@@ -172,11 +183,12 @@ test('ActionSheet and ShareSheet', () => {
       onClose: noop,
       title: 'Item',
       link: 'https://bek.uz/p/1',
-      contacts: [{ label: 'Aziz', icon: 'AK' }],
+      contacts: [{ label: 'Aziz', icon: 'AK', tone: 'utility' }],
       targets: [{ label: 'Copy', icon: h('svg') }],
     }),
   );
   assert.match(share, /bek-share-sheet__link">bek.uz\/p\/1/);
   assert.match(share, /bek-share-sheet__row--contact/);
+  assert.match(share, /bek-share-sheet__circle bek-share-sheet__circle--utility/);
   assert.match(share, /bek-share-sheet__copy[^>]*><span aria-live="polite">Copy/);
 });
