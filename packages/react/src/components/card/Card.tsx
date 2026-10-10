@@ -1,3 +1,5 @@
+'use client';
+
 import type { HTMLAttributes, KeyboardEvent, ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 
