@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, type ButtonHTMLAttributes, type MouseEvent, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { Spinner, type SpinnerSize } from '../spinner/Spinner.js';

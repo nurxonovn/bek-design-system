@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, type HTMLAttributes, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { useDialog } from './useDialog.js';

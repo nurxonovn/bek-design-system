@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { ChevronLeftGlyph, ChevronRightGlyph } from '../../icons/index.js';

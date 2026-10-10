@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { BackspaceGlyph, FaceIdGlyph, FingerprintGlyph } from '../../icons/index.js';

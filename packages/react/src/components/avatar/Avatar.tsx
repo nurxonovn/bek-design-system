@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, type HTMLAttributes } from 'react';
 import { cx } from '../../utils/cx.js';
 import { UserGlyph } from '../../icons/index.js';

@@ -1,3 +1,5 @@
+'use client';
+
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { CloseGlyph } from '../../icons/index.js';

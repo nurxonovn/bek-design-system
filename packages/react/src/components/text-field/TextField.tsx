@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { Spinner } from '../spinner/Spinner.js';
