@@ -1,0 +1,156 @@
+{
+  "page": "4.11 Carousel",
+  "components": [
+    {
+      "name": ".Carousel/Dot",
+      "id": "549:41911",
+      "page": "4.11 Carousel",
+      "pageId": "549:41822",
+      "props": {
+        "State": ["Active", "Inactive"],
+        "Variant": ["Default", "On media"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 24,
+        "h": 8
+      },
+      "tokens": {
+        "color": ["accent/default", "border/default", "glass/tint-clear", "text/on-color"],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/24", "scale/8", "scale/full"]
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "Carousel pagination dot. State = Active | Inactive × Variant = Default | On media = 4 variants. Active is a pill (size/carousel-dot/active), inactive a circle (size/status-dot/1). Use Variant=On media when dots sit over an image."
+    },
+    {
+      "name": ".Carousel/Thumb",
+      "id": "549:41924",
+      "page": "4.11 Carousel",
+      "pageId": "549:41822",
+      "props": {
+        "State": ["Default", "Hover", "Active", "Focus"],
+        "Size": ["S", "M"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 56,
+        "h": 56
+      },
+      "tokens": {
+        "color": ["border/focus", "fill/tertiary"],
+        "text": [],
+        "effect": [],
+        "dimension": ["radius/control/md", "scale/56", "scale/64"]
+      },
+      "sizes": [1, 2, 5, 8, 10],
+      "rawColors": [],
+      "nested": [],
+      "description": "Gallery thumbnail for Carousel. State = Default | Hover | Active × Size = S (size/field/3) | M (size/field/4) = 6 variants. Replace the Image layer fill with a product photo. Default has no border (GEN-02). Hover = 2 px neutral/strong ring, Active = 2 px accent ring — state indicators only."
+    },
+    {
+      "name": ".Carousel/Indicator",
+      "id": "549:41957",
+      "page": "4.11 Carousel",
+      "pageId": "549:41822",
+      "props": {
+        "Show item 4": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show item 5": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Fraction": {
+          "type": "TEXT",
+          "default": "1 / 5"
+        },
+        "Type": ["Dots", "Fraction", "Progress", "Thumbnails"],
+        "Orientation": ["Horizontal", "Vertical"]
+      },
+      "variants": 5,
+      "size": {
+        "w": 72,
+        "h": 8
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/overlay",
+          "border/default",
+          "border/hairline",
+          "fill/tertiary",
+          "text/on-color"
+        ],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": [
+          "radius/control/md",
+          "scale/2",
+          "scale/24",
+          "scale/4",
+          "scale/56",
+          "scale/8",
+          "scale/full"
+        ]
+      },
+      "sizes": [1, 2, 4, 5, 8],
+      "rawColors": [],
+      "nested": [],
+      "description": "Carousel position indicator. Type = Dots | Fraction | Progress | Thumbnails; Thumbnails also has Orientation = Horizontal | Vertical (5 variants). Show item 4/5 toggles the count; Fraction text is editable. Nest inside Carousel; swap nested Dot Variant to On media over images."
+    },
+    {
+      "name": "Carousel",
+      "id": "558:190",
+      "page": "4.11 Carousel",
+      "pageId": "549:41822",
+      "props": {
+        "Slide": {
+          "type": "INSTANCE_SWAP",
+          "default": "549:41832"
+        },
+        "Show peek": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Controls": ["Arrows", "Dots only", "None"],
+        "Placement": ["Inside", "Below"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 720,
+        "h": 240
+      },
+      "tokens": {
+        "color": ["fill/secondary", "text/secondary", "text/tertiary"],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": ["radius/surface/lg", "radius/surface/md", "scale/12", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 5, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "Content carousel. Controls = Arrows | Dots only | None × Placement = Inside | Below = 6 variants. Slide is an INSTANCE_SWAP (default _Slot) — swap it for any content — image, card, testimonial, onboarding step; Show peek reveals the next slide (mobile). Arrows are Raised icon Buttons; Indicator is an exposed .Carousel/Indicator (switch Type to Fraction / Progress / Thumbnails). Inside dots use Var"
+    }
+  ],
+  "doc": {
+    "4.11 Carousel": {
+      "tokens": [
+        "accent/default",
+        "border/accent",
+        "border/default",
+        "border/strong",
+        "radius/surface/lg",
+        "scale/24",
+        "scale/56",
+        "scale/8"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nViewport radius\nradius/surface/lg\n—\nActive dot width\nscale/24\n24\nInactive dot\nscale/8\ncircle\nDot colour\naccent/default · border/default; On media: white alpha\n—\nThumb size\nscale/56 · 4\n56 · 64\nThumb Hover / Active ring\nborder/strong · border/accent\n2 px\nGap\nspace/gap/*\n—\nDo / Don't\nDo\nSlot\nSwap with any component\nSlot\nOn touch screens show a peek of the next slide — it tells people they can swipe.\nDon't\nSlot\nSwap with any component\nDon’t remove every control. Without dots or arrows people don’t know there is more."
+    }
+  },
+  "accepted": []
+}

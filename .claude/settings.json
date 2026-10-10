@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR:-.}/packages/react/scripts/check-figma.mjs\" --hook 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Figma ↔ kod tekshiruvi"
+          }
+        ]
+      }
+    ]
+  }
+}

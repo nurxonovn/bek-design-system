@@ -1,0 +1,80 @@
+{
+  "page": "4.14 Product card",
+  "components": [
+    {
+      "name": "Product card",
+      "id": "793:1160",
+      "page": "4.14 Product card",
+      "pageId": "793:63",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Product name"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Short description of the product"
+        },
+        "Show badge": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Layout": ["Horizontal", "Vertical", "Featured"],
+        "State": ["Default", "In cart", "Unavailable"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 18,
+      "size": {
+        "w": 358,
+        "h": 136
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/sheet",
+          "fill/secondary",
+          "fill/tertiary",
+          "surface/card",
+          "text/disabled",
+          "text/on-color",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S", "Title/M", "Title/S"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "radius/surface/lg",
+          "radius/surface/xl",
+          "scale/0",
+          "scale/12",
+          "scale/16",
+          "scale/20",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24, 40, 144, 280],
+      "rawColors": [],
+      "nested": ["Button", "Price", "Stepper", "image-01"],
+      "description": "Product card — one product with picture, name, short description, price and an add action. Horizontal for menu lists, Vertical for 2-column grids, Featured for promos and recommendations. In cart swaps the button for a Stepper; Unavailable dims the card and disables the action. Image is a slot."
+    }
+  ],
+  "doc": {
+    "4.14 Product card": {
+      "tokens": [
+        "accent/default",
+        "fill/tertiary",
+        "radius/surface/lg",
+        "radius/surface/md",
+        "scale/12",
+        "surface/card",
+        "text/on-color",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "DATA DISPLAY\nBEK\nDesign System\n4.14 Product card\nOne product with picture, name, short description, price and an add action. 18 variants · Layout × State × Direction.\nOverview\nUse in menus, catalogues and recommendations — anywhere a product can be added to the cart in one tap.\nHorizontal\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nMenu lists. Picture on the leading side, text and price on the trailing side.\nVertical\nNew\nProduct name\n49 000\nsoʻm\nAdd\n2-column grids on mobile, 4–6 columns on web.\nFeatured\nNew\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nPromos and “Recommended for you” rails. Large picture, badge on top.\nAnatomy\nVertical · Default shown.\nNew\nProduct name\n49 000\nsoʻm\nAdd\n1\nimage\n· slot · fill/tertiary placeholder · radius/surface/md\n2\nbadge\n· optional (Show badge) · New / Hit / −20%\n3\ntitle\n· Title/S · text/primary · max 2 lines\n4\ndescription\n· Body/S · text/secondary · max 2 lines\n5\nprice\n· Price M Inline · currency soʻm\n6\naction\n· Button Outline-action M · becomes Stepper S when In cart\nVariants\nLayout × State.\nHorizontal\nDefault\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nIn cart\nProduct name\nShort description of the product\n49 000\nsoʻm\n2\nUnavailable\nProduct name\nShort description of the product\n49 000\nsoʻm\nSold out\nVertical\nDefault\nNew\nProduct name\n49 000\nsoʻm\nAdd\nIn cart\nNew\nProduct name\n49 000\nsoʻm\n2\nUnavailable\nNew\nProduct name\n49 000\nsoʻm\nSold out\nFeatured\nDefault\nNew\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nIn cart\nNew\nProduct name\nShort description of the product\n49 000\nsoʻm\n2\nDark mode\nHorizontal\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nVertical · In cart\nNew\nProduct name\n49 000\nsoʻm\n2\nRTL — picture and action swap sides, price stays with the action\nHorizontal · RTL\nProduct name\nShort description of the product\nأضف\n٤٩\nد.إ\nVertical · RTL\nجديد\nProduct name\n٤٩\nد.إ\nأضف\nStates\nState\nAction\nCard\nNotes\nDefault\nButton Outline-action M (+ / Add)\nsurface/card\nTap the card opens the product sheet\nIn cart\nStepper Filled S with quantity\nsurface/card\nQuantity 0 returns to Default\nUnavailable\nButton Flat M Disabled “Sold out”\nimage and text at 50%\nNot tappable; keep it in the list, sorted last\nProps\nProp\nType\nValues\nDefault\nLayout\nVariant\nHorizontal · Vertical · Featured\nHorizontal\nState\nVariant\nDefault · In cart · Unavailable\nDefault\nDirection\nVariant\nLTR · RTL\nLTR\nTitle\nText\nProduct name\nMargherita\nDescription\nText\n1–2 lines\n—\nShow badge\nBoolean\ntrue · false\nfalse\nTokens\nProperty\nToken\nValue\nCard\nsurface/card · radius/surface/lg\nno border, no shadow\nImage placeholder\nfill/tertiary · radius/surface/md\n—\nTitle / description\ntext/primary · text/secondary\nTitle/S · Body/S\nPadding / gap\nscale/12 · scale/12\n12 · 12\nBadge\naccent/default · text/on-color\nLabel/S\nDevices\nMobile · 390\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nHorizontal in menu lists (fill width); Vertical in 2-column grids.\nTablet · 834\nNew\nProduct name\n49 000\nsoʻm\nAdd\nNew\nProduct name\n49 000\nsoʻm\n2\nNew\nProduct name\n49 000\nsoʻm\nAdd\nVertical, 3–4 columns.\nWeb · 1440\nNew\nProduct name\nShort description of the product\n49 000\nsoʻm\nAdd\nNew\nProduct name\n49 000\nsoʻm\nAd"
+    }
+  },
+  "accepted": []
+}

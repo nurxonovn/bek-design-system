@@ -1,0 +1,68 @@
+{
+  "page": "5.3 Empty state",
+  "components": [
+    {
+      "name": "Empty state",
+      "id": "551:311",
+      "page": "5.3 Empty state",
+      "pageId": "549:41824",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Nothing here yet"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "When you add something, it will appear here."
+        },
+        "Show mascot": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show action": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show secondary action": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["S", "M", "L"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 320,
+        "h": 228
+      },
+      "tokens": {
+        "color": ["text/primary", "text/secondary"],
+        "text": ["Body/M", "Body/S", "Headline/M", "Headline/S", "Title/M"],
+        "effect": [],
+        "dimension": ["scale/16", "scale/24", "scale/32", "scale/8"]
+      },
+      "sizes": [1, 5, 8, 16, 24, 32],
+      "rawColors": [],
+      "nested": ["Button", "Mascot"],
+      "description": "Empty, no-results or offline state. Size = S (inside a card) | M (page section) | L (full screen) = 3 variants. Mascot (2.3, exposed; default Pose = sleepy for empty states, dizzy for errors/offline, success for completion; size S→M 64, M→L 96, L→2XL 200), Title, Description and up to two Buttons (exposed; Primary = Action, Secondary = Outline). Text max width follows the variant width; keep copy "
+    }
+  ],
+  "doc": {
+    "5.3 Empty state": {
+      "tokens": [
+        "fill/primary",
+        "fill/tertiary-hover",
+        "scale/200",
+        "scale/64",
+        "scale/96",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nMascot size\nscale/64 · 4 · 6\n64 · 96 · 200\nTitle\nS Title/M · M Headline/S · L Headline/M · text/primary\n—\nDescription\nS Body/S · M Body/M · L Body/M · text/secondary\n—\nGaps\nspace/gap/*\nmascot → text → buttons\nText width\nfollows variant width\nmax ~ 40 characters per line\nDo / Don't\nDo\nNothing here yet\nWhen you add something, it will appear here.\nCreate new\nLearn more\nSay what is missing and give one clear next step.\nDon't\nNo data\nDon’t leave a dead end — “No data” with nothing to do next.\nDo\nSomething went wrong\nCheck your connection and try again.\nTry again\nContact support\nMatch the pose to the situation — dizzy for errors.\nDon't\nSomething went wrong\nCheck your connection and try again.\nTry again\nContact support\nDon’t pair a happy pose with bad news — it reads as mocking the user."
+    }
+  },
+  "accepted": []
+}

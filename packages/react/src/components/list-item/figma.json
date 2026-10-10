@@ -1,0 +1,100 @@
+{
+  "page": "4.4 List item",
+  "components": [
+    {
+      "name": "List item",
+      "id": "92:321",
+      "page": "4.4 List item",
+      "pageId": "10:85",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Title"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Supporting description text"
+        },
+        "Show checkbox": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show leading icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show avatar": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show badge": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show switch": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show chevron": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Selected", "Disabled", "Focus"]
+      },
+      "variants": 15,
+      "size": {
+        "w": 420,
+        "h": 48
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "border/focus",
+          "fill/primary",
+          "fill/soft-hover",
+          "text/accent",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/L", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/24",
+          "scale/48",
+          "scale/56",
+          "scale/72"
+        ]
+      },
+      "sizes": [1, 2, 5, 12, 16, 20, 24, 40, 48, 56, 72],
+      "rawColors": [],
+      "nested": ["Avatar", "Badge", "Checkbox", "Switch", "arrow-right-01"],
+      "description": "List row. Size × State = 12 variants. Left and right slots are toggled with booleans."
+    }
+  ],
+  "doc": {
+    "4.4 List item": {
+      "tokens": [
+        "accent/soft",
+        "fill/primary",
+        "fill/soft-hover",
+        "scale/12",
+        "scale/16",
+        "scale/24",
+        "scale/48",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nMinimum height\nscale/48–3\n48 / 56 / 72\nVertical padding\nscale/12 · scale/16 · scale/24\n12 / 16 / 24\nHorizontal padding\nscale/16\n16\nGap between slots\nscale/12 · scale/16\n12 / 16\nTitle-to-description spacing\n2px\n—\nBackground — Default\nfill/primary\n—\nBackground — Hover\nfill/soft-hover\n—\nBackground — Selected\naccent/soft\n—\nTitle\ntext/primary\nAccent when Selected\nDescription\ntext/secondary\n—\nTitle font\nBody/S · Body/M\nMedium\nDescription font\nCaption/M · Body/S\nRegular\nProps\nProp\nType\nValues\nDefault\nSize\nvariant\nS (48), M (56), L (72)\nM\nState\nvariant\nDefault, Hover, Selected, Disabled\nDefault\nTitle\ntext\nAny text\nTitle\nDescription\ntext\nAny text\nSupporting description text\nShow checkbox\nboolean\ntrue / false\nfalse\nShow leading icon\nboolean\ntrue / false\nfalse\nShow avatar\nboolean\ntrue / false\ntrue\nShow description\nboolean\ntrue / false\ntrue\nShow badge\nboolean\ntrue / false\nfalse\nShow switch\nboolean\ntrue / false\nfalse\nShow chevron\nboolean\ntrue / false\ntrue\nDo / Don’t\nDo\nNotifications\nLabel\nOne element on the right: a chevron, a switch or a badge.\nDon’t\nNotifications\nLabel\nA chevron and a switch together — the user can’t tell whether to tap the row or the control."
+    }
+  },
+  "accepted": []
+}

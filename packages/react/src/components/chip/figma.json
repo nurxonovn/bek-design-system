@@ -1,0 +1,80 @@
+{
+  "page": "3.13 Chip",
+  "components": [
+    {
+      "name": "Chip",
+      "id": "785:404",
+      "page": "3.13 Chip",
+      "pageId": "782:64",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Show icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Count": {
+          "type": "TEXT",
+          "default": "12"
+        },
+        "Show count": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Type": ["Filter", "Input"],
+        "State": ["Default", "Selected", "Disabled", "Hover", "Focus"],
+        "Size": ["S", "M"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 36,
+      "size": {
+        "w": 56,
+        "h": 32
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "border/focus",
+          "fill/disabled",
+          "fill/inverse",
+          "fill/secondary",
+          "fill/tertiary",
+          "text/disabled",
+          "text/inverse",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Label/M", "Label/S"],
+        "effect": [],
+        "dimension": ["radius/full", "scale/12", "scale/16", "scale/32", "scale/4", "scale/40"]
+      },
+      "sizes": [1, 2, 4, 12, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["cancel-01", "favourite"],
+      "description": "Chip — compact pill the user toggles (Filter) or removes (Input). Filter: Default · Hover · Selected (fill/inverse) · Disabled · Focus, optional Count. Input: Default · Hover · Disabled · Focus with a remove (×). Size S 32 for dense rows, M 40 for touch; Direction LTR / RTL. Fill-separated, no border; Focus uses the shared _Focus ring. Use Tag/Badge for static labels; place chips in a horizontally"
+    }
+  ],
+  "doc": {
+    "3.13 Chip": {
+      "tokens": [
+        "border/focus",
+        "fill/disabled",
+        "fill/inverse",
+        "fill/secondary",
+        "fill/tertiary",
+        "fill/tertiary-hover",
+        "radius/full",
+        "scale/32",
+        "scale/40",
+        "text/disabled",
+        "text/inverse",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.13 Chip\nA compact pill for filters and user-added values. 20 variants · Type (Filter / Input) × State × Size × Direction.\nOverview\nFilter chips narrow a list; Input chips show values the user added (tags, recipients) and can be removed.\nFilter\nLabel\nOff.\nFilter · Selected\nLabel\nOn — fill/inverse.\nInput\nLabel\nRemovable value.\nDisabled\nLabel\nNot available now.\nAnatomy\nLabel\n1\nicon leading\n· optional (Show icon) · 20 (M) / 16 (S)\n2\nlabel\n· Label/M (M) · Label/S (S)\n3\nremove\n· cancel-01 · Input only\n4\ncontainer\n· fill/secondary · radius/full · height 40 / 32\nVariants\nSize S\nFilter\nLabel\nSelected\nLabel\nInput\nLabel\nDark mode\nFilter\nLabel\nSelected\nLabel\nInput\nLabel\nRTL\nFilter · RTL\nLabel\nInput · RTL\nLabel\nSizes\nSize\nHeight\nPadding · text\nUse\nS\n32 (scale/32)\n12 · Label/S\nDense rows, web\nM\n40 (scale/40)\n16 · Label/M\nTouch default (row 56 with spacing)\nStates\nState\nFill\nContent\nNotes\nDefault\nfill/secondary\ntext/primary\n—\nSelected (Filter)\nfill/inverse\ntext/inverse\nToggle; multiple can be on\nPressed\nfill/tertiary-hover\n—\n—\nDisabled\nfill/disabled\ntext/disabled\n—\nHover\nfill/tertiary\ntext/primary\nPointer only (web, desktop); touch skips it\nFocus\nfill/secondary + _Focus ring\ntext/primary\nKeyboard focus — ring 2 px outside, border/focus\nCount (Filter)\n—\ntext/secondary · text/inverse on Selected\nShow count + Count — results per filter\nLabel\n12\nLabel\nLabel\n12\nLabel\nLabel\nLabel\nLabel\nLabel\nLabel\nProps\nProp\nType\nValues\nDefault\nType\nVariant\nFilter · Input\nFilter\nState\nVariant\nDefault · Selected (Filter) · Disabled\nDefault\nSize\nVariant\nS · M\nS\nDirection\nVariant\nLTR · RTL\nLTR\nLabel\nText\n1–2 words\nVegetarian\nShow icon\nBoolean\ntrue · false\nfalse\nTokens\nProperty\nToken\nLight\nDark\nFill\nfill/secondary\n#F1F3F6\n#27272B\nSelected\nfill/inverse · text/inverse\n#323233 · #F8F8F9\n#F3F3F3 · #111111\nDisabled\nfill/disabled · text/disabled\n—\n—\nRadius\nradius/full\n9999\n9999\nDevices\nMobile · 390\nLabel\nLabel\nM in a horizontally scrolling row; 8 gap; first chip 16 from the edge.\nTablet · 834\nLabel\nLabel\nM; wrap to two lines at most.\nWeb · 1440\nLabel\nLabel\nS above tables and results; Input chips inside fields.\nDo / Don’t\nLabel\nLabel\nLabel\nDo\nShort, parallel labels in one scrolling row; selected chips stay first.\nLabel\nLabel\nDon’t\nDon’t mix Filter and Input chips in one row or use chips as primary buttons."
+    }
+  },
+  "accepted": []
+}

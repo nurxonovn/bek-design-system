@@ -1,0 +1,121 @@
+/* Link — Figma "3.18 Link". Matn havolasi: padding va fon yo'q. Variant: inherit (matn rangi, doim
+   chizilgan) · accent (text/accent, hover'da chizilgan) · neutral (text/primary, hover'da chizilgan) ·
+   subtle (text/tertiary, doim chizilgan). Size: Body/S·M·L, ikonka icon/sm 16 gap 4 (S) · icon/md 20 gap 6.
+   Tag chizig'i 1 px stroke/default, matn rangida. Fokus — _Focus ring, radius/control/sm. */
+.bek-link {
+  --bek-link-icon: var(--bek-icon-sm);
+  --bek-link-gap: var(--bek-scale-4);
+
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border-radius: var(--bek-radius-control-sm);
+  color: inherit;
+  font-family: inherit;
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--bek-stroke-default);
+  text-underline-offset: var(--bek-scale-2);
+  text-decoration-color: currentColor;
+  cursor: pointer;
+  transition: color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-link--m {
+  --bek-link-icon: var(--bek-icon-md);
+  --bek-link-gap: var(--bek-scale-6);
+
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-link--l {
+  --bek-link-icon: var(--bek-icon-md);
+  --bek-link-gap: var(--bek-scale-6);
+
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  letter-spacing: var(--bek-type-body-lg-tracking);
+}
+
+/* Variantlar */
+.bek-link--inherit {
+  color: inherit;
+}
+
+.bek-link--accent {
+  color: var(--bek-text-accent);
+  text-decoration-line: none;
+}
+
+.bek-link--neutral {
+  color: var(--bek-text-primary);
+  text-decoration-line: none;
+}
+
+.bek-link--subtle {
+  color: var(--bek-text-tertiary);
+}
+
+/* Hover — faqat Web (hover qurilmalarda); touch'da bosilgan holat yo'q, sahifa o'zgaradi. */
+@media (hover: hover) {
+  .bek-link--accent:hover {
+    color: var(--bek-text-accent-hover, var(--bek-accent-hover));
+    text-decoration-line: underline;
+  }
+
+  .bek-link--neutral:hover {
+    text-decoration-line: underline;
+  }
+
+  .bek-link--subtle:hover {
+    color: var(--bek-text-secondary);
+  }
+}
+
+.bek-link--disabled,
+.bek-link--disabled:hover {
+  color: var(--bek-text-disabled);
+  text-decoration-line: none;
+  cursor: not-allowed;
+}
+
+/* Ikonka birinchi qator balandligidagi qutida markazlanadi (1.11 Optical rules). */
+.bek-link__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-link-icon);
+  height: var(--bek-link-icon);
+  vertical-align: text-bottom;
+  text-decoration: none;
+}
+
+.bek-link__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-link__icon--start {
+  margin-inline-end: var(--bek-link-gap);
+}
+
+.bek-link__icon--end {
+  margin-inline-start: var(--bek-link-gap);
+}
+
+[dir='rtl'] .bek-link__icon--end > svg {
+  transform: scaleX(-1);
+}
+
+/* Rangli fonda (tinted blok) accent ko'k yo'qoladi — inherit/neutral ishlating; u yerda doim chizilgan. */
+.bek-tone--accent .bek-link--neutral,
+.bek-tone--success .bek-link--neutral,
+.bek-tone--warning .bek-link--neutral,
+.bek-tone--danger .bek-link--neutral,
+.bek-tone--info .bek-link--neutral {
+  text-decoration-line: underline;
+}

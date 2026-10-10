@@ -1,0 +1,80 @@
+{
+  "page": "6.5 App bar",
+  "components": [
+    {
+      "name": "App bar",
+      "id": "557:1074",
+      "page": "6.5 App bar",
+      "pageId": "549:41827",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Title"
+        },
+        "Show back": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show action 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show action 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show action 3": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show count": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Title", "Search", "Brand"],
+        "Size": ["S", "M"],
+        "Scrolled": ["Off", "On"]
+      },
+      "variants": 12,
+      "size": {
+        "w": 390,
+        "h": 56
+      },
+      "tokens": {
+        "color": [
+          "fill/primary",
+          "fill/secondary",
+          "glass/tint",
+          "glass/tint-shade",
+          "text/primary"
+        ],
+        "text": ["Title/L", "Title/M"],
+        "effect": ["Elevation/1 Raised", "Glass/Regular"],
+        "dimension": ["layout/page-margin", "scale/12", "scale/2", "scale/56", "scale/64"]
+      },
+      "sizes": [1, 2, 5, 12, 16],
+      "rawColors": [],
+      "nested": ["Badge", "Button", "Logo", "Text field"],
+      "description": "Top app bar. Variant = Title (back + title + actions) | Search (back + search field) | Brand (logo + search + actions) × Size = S (size/nav-top/1, mobile) | M (size/nav-top/2, tablet/web) × Scrolled = Off | On = 12 variants. Scrolled=On uses Glass/Regular + Glass/Fill/Regular (1.9 Materials). Side padding = layout/page-margin (mode-aware). Actions (1 favourite, 2 notifications with Count, 3 accoun"
+    }
+  ],
+  "doc": {
+    "6.5 App bar": {
+      "tokens": [
+        "Glass/Fill",
+        "Glass/Regular",
+        "fill/primary",
+        "fill/tertiary",
+        "layout/page-margin",
+        "layout/z/sticky",
+        "radius/control/pill",
+        "scale/36",
+        "scale/56",
+        "scale/64",
+        "text/primary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/56 · 2\nmobile · tablet/web\nSide padding\nlayout/page-margin\n16 · 24 · 32\nSurface (Off)\nfill/primary\nno border\nSurface (On)\nGlass/Regular effect · Glass/Fill/Regular\n1.9 Materials\nTitle\nTitle/M · text/primary\n—\nSearch field\nscale/36 · 2 · radius/control/pill · fill/tertiary\n—\nLayer\nlayout/z/sticky\n1100\nDo / Don't\nDo\nTitle\n3\nKeep the title short and put at most three actions in the bar.\nDon't\nNotification settings and preferences\n3\nDon’t let a long title push the actions out — shorten it or move detail into the page."
+    }
+  },
+  "accepted": []
+}

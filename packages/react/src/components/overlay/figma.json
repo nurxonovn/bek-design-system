@@ -1,0 +1,1064 @@
+{
+  "page": "7.1 Modal / Sheet / 7.2 Drawer / 7.3 Popover / 7.4 Dropdown menu / 7.5 Context menu / 7.6 Alert dialog / 7.7 Command palette / 7.8 Hover card / 7.9 Bottom sheet / 7.10 Action sheet / 7.11 Share sheet",
+  "components": [
+    {
+      "name": "Modal",
+      "id": "250:887",
+      "page": "7.1 Modal / Sheet",
+      "pageId": "10:94",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Modal title"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "Short description text."
+        },
+        "Content": {
+          "type": "TEXT",
+          "default": "Modal body."
+        },
+        "Description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Close button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Footer": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Cancel button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["M", "S", "L"],
+        "Variant": ["Default", "Danger"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 720,
+        "h": 184
+      },
+      "tokens": {
+        "color": ["surface/raised", "text/primary", "text/secondary"],
+        "text": ["Body/S", "Headline/S"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": [
+          "radius/control/md",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/32",
+          "scale/4",
+          "scale/480",
+          "scale/720",
+          "scale/900"
+        ]
+      },
+      "sizes": [1, 4, 5, 8, 12, 16, 24, 32, 64],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "BEK Modal — a blocking overlay that opens in the centre. Size (S 480 / M 720 / L 900) × Variant (Default / Danger). The surface has no border: layers are separated by shadow and the color/background/neutral/elevated difference."
+    },
+    {
+      "name": "Sheet",
+      "id": "251:761",
+      "page": "7.1 Modal / Sheet",
+      "pageId": "10:94",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Sheet title"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "Slides up from the bottom on mobile."
+        },
+        "Content": {
+          "type": "TEXT",
+          "default": "Sheet body."
+        },
+        "Description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Handle": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Footer": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Cancel button": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 375,
+        "h": 244
+      },
+      "tokens": {
+        "color": ["fill/tertiary", "surface/raised", "text/primary", "text/secondary"],
+        "text": ["Body/S", "Headline/S"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": [
+          "radius/full",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/36",
+          "scale/375",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "BEK Sheet — a blocking overlay that slides up from the bottom on mobile. Drag handle, full-width buttons, radius on the top corners only."
+    },
+    {
+      "name": "Scrim",
+      "id": "251:814",
+      "page": "7.1 Modal / Sheet",
+      "pageId": "10:94",
+      "props": {},
+      "variants": 1,
+      "size": {
+        "w": 375,
+        "h": 812
+      },
+      "tokens": {
+        "color": ["bg/overlay"],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1],
+      "rawColors": [],
+      "nested": [],
+      "description": "BEK Scrim — the blocking layer beneath Modal, Sheet and Drawer. Clicking it closes the overlay (except in an Alert dialog)."
+    },
+    {
+      "name": "Drawer",
+      "id": "282:46037",
+      "page": "7.2 Drawer",
+      "pageId": "281:45749",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Drawer title"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "A short note in the side panel."
+        },
+        "Content": {
+          "type": "TEXT",
+          "default": "Drawer body."
+        },
+        "Description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Close button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Divider": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Footer": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Cancel button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Side": ["Right", "Left"],
+        "Size": ["M", "S", "L"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 480,
+        "h": 720
+      },
+      "tokens": {
+        "color": ["border/hairline", "surface/raised", "text/primary", "text/secondary"],
+        "text": ["Body/S", "Headline/S"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": [
+          "radius/control/md",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/24",
+          "scale/32",
+          "scale/360",
+          "scale/4",
+          "scale/480",
+          "scale/640",
+          "scale/720"
+        ]
+      },
+      "sizes": [1, 4, 5, 8, 12, 16, 24, 64],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "BEK Drawer — a blocking panel that slides in from the edge of the screen. Side (Left / Right) × Size (S 360 / M 480 / L 640). The surface has no border — shadow and the elevated surface colour set it apart. For a panel that opens from the bottom, use Sheet (7.1)."
+    },
+    {
+      "name": "Popover",
+      "id": "283:46321",
+      "page": "7.3 Popover",
+      "pageId": "281:45750",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Popover title"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "A short contextual note."
+        },
+        "Header": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Close button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Actions": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Secondary action": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["S", "L"],
+        "Tail": ["Top", "None", "Right", "Bottom", "Left"]
+      },
+      "variants": 10,
+      "size": {
+        "w": 280,
+        "h": 120
+      },
+      "tokens": {
+        "color": ["surface/raised", "text/primary", "text/secondary"],
+        "text": ["Caption/M", "Title/S"],
+        "effect": ["Elevation/2 Raised-hover"],
+        "dimension": [
+          "control/height/xs",
+          "radius/control/sm",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/280",
+          "scale/360",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 5, 8, 12, 16, 24, 64],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "BEK Popover — a lightweight overlay anchored to a trigger element. Size (S 280 / L 360) × Tail (None / Top / Right / Bottom / Left). The surface has no border — shadow/3 and the elevated surface colour set it apart. Tooltip, Dropdown menu and Context menu inherit this surface."
+    },
+    {
+      "name": "Menu item",
+      "id": "315:48275",
+      "page": "7.4 Dropdown menu",
+      "pageId": "315:47899",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Menu item"
+        },
+        "Hotkey text": {
+          "type": "TEXT",
+          "default": "⌘K"
+        },
+        "Start icon": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Hotkey": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Submenu arrow": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Size": ["M", "S"],
+        "State": ["Default", "Hover", "Selected", "Disabled", "Focus"],
+        "Variant": ["Normal", "Danger"]
+      },
+      "variants": 20,
+      "size": {
+        "w": 232,
+        "h": 40
+      },
+      "tokens": {
+        "color": [
+          "border/focus",
+          "fill/strong",
+          "fill/tertiary-hover",
+          "status/danger/soft",
+          "text/danger",
+          "text/disabled",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M"],
+        "effect": [],
+        "dimension": ["radius/surface/sm", "scale/24", "scale/32", "scale/40", "scale/8"]
+      },
+      "sizes": [1, 2, 5, 8, 10, 24, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "BEK Menu item — the core item of Dropdown menu and Context menu. Size (S 32 / M 40) × State (Default / Hover / Selected / Disabled) × Variant (Normal / Danger) = 16 variants."
+    },
+    {
+      "name": "Menu group label",
+      "id": "315:48310",
+      "page": "7.4 Dropdown menu",
+      "pageId": "315:47899",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "GURUH"
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 232,
+        "h": 28
+      },
+      "tokens": {
+        "color": ["text/tertiary"],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": ["scale/8"]
+      },
+      "sizes": [1, 8],
+      "rawColors": [],
+      "nested": [],
+      "description": "BEK Menu group label — the heading for a group of items inside a Dropdown menu."
+    },
+    {
+      "name": "Menu separator",
+      "id": "315:48312",
+      "page": "7.4 Dropdown menu",
+      "pageId": "315:47899",
+      "props": {},
+      "variants": 1,
+      "size": {
+        "w": 232,
+        "h": 8
+      },
+      "tokens": {
+        "color": ["border/hairline"],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/4", "stroke/default"]
+      },
+      "sizes": [1, 4],
+      "rawColors": [],
+      "nested": [],
+      "description": "BEK Menu separator — separates groups of menu items. Used only where a group with different content begins."
+    },
+    {
+      "name": "Dropdown menu",
+      "id": "315:48314",
+      "page": "7.4 Dropdown menu",
+      "pageId": "315:47899",
+      "props": {
+        "Group label": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 3": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 4": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Separator": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Danger item": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 240,
+        "h": 244
+      },
+      "tokens": {
+        "color": [
+          "fill/tertiary-hover",
+          "surface/raised",
+          "text/danger",
+          "text/disabled",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/S"],
+        "effect": ["Elevation/2 Raised-hover"],
+        "dimension": ["radius/surface/sm", "scale/240", "scale/4", "scale/40", "scale/8"]
+      },
+      "sizes": [1, 4, 8],
+      "rawColors": [],
+      "nested": [],
+      "description": "BEK Dropdown menu — a list of items that opens when the trigger is clicked. Inherits the Popover surface: radius/7, shadow/3, no border. Width size/menu/w = 240. Items are instances of the Menu item component."
+    },
+    {
+      "name": "Context menu",
+      "id": "344:48172",
+      "page": "7.5 Context menu",
+      "pageId": "341:32",
+      "props": {
+        "Submenu item": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Separator 1": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item 5": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Separator 2": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Danger item": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 240,
+        "h": 264
+      },
+      "tokens": {
+        "color": ["surface/raised"],
+        "text": [],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/surface/sm", "scale/240", "scale/4"]
+      },
+      "sizes": [1, 4, 8],
+      "rawColors": [],
+      "nested": ["Menu item", "Menu separator"],
+      "description": "BEK Context menu — a menu opened by right-click (or long-press on mobile). Uses the same surface and Menu item component as Dropdown menu (7.4); the only differences are the trigger and positioning: it opens from the cursor point."
+    },
+    {
+      "name": "Context submenu",
+      "id": "344:48263",
+      "page": "7.5 Context menu",
+      "pageId": "341:32",
+      "props": {
+        "Item 3": {
+          "type": "BOOLEAN",
+          "default": true
+        }
+      },
+      "variants": 1,
+      "size": {
+        "w": 200,
+        "h": 128
+      },
+      "tokens": {
+        "color": ["surface/raised"],
+        "text": [],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/surface/sm", "scale/200", "scale/4"]
+      },
+      "sizes": [1, 4, 8],
+      "rawColors": [],
+      "nested": ["Menu item"],
+      "description": "BEK Context submenu — the inner panel that opens from an item with a Submenu arrow. Width size/menu/w-sub = 200; it opens 4 px from the right edge of the parent menu and flips to the left if there isn’t room."
+    },
+    {
+      "name": "Alert dialog",
+      "id": "368:309",
+      "page": "7.6 Alert dialog",
+      "pageId": "366:49597",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Are you sure?"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "Check the details before you confirm."
+        },
+        "Icon badge": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Cancel button": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Danger", "Info", "Success", "Warning"],
+        "Layout": ["Inline", "Stacked"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 400,
+        "h": 208
+      },
+      "tokens": {
+        "color": [
+          "status/danger/soft",
+          "status/info/soft",
+          "status/success/soft",
+          "status/warning/soft",
+          "surface/raised",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/S", "Title/L"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/400",
+          "scale/48",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 5, 8, 12, 16, 24, 48],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "BEK Alert dialog — an interrupting dialog that requires a response. Unlike Modal, it has no close button and doesn’t close with Esc or by clicking the scrim — only through a button. Variant (Info / Success / Warning / Danger) × Layout (Inline / Stacked) = 8 variants."
+    },
+    {
+      "name": "Command palette",
+      "id": "640:66072",
+      "page": "7.7 Command palette",
+      "pageId": "640:65790",
+      "props": {
+        "Query": {
+          "type": "TEXT",
+          "default": "Type a command or search…"
+        },
+        "Device": ["Web", "Mobile"],
+        "State": ["Results", "Empty"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 640,
+        "h": 361
+      },
+      "tokens": {
+        "color": [
+          "border/hairline",
+          "fill/primary",
+          "fill/secondary",
+          "fill/tertiary",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/L", "Caption/M", "Caption/S", "Title/S"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": [
+          "radius/control/sm",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/16",
+          "scale/32",
+          "scale/640",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 5, 6, 8, 12, 16, 32, 56],
+      "rawColors": [],
+      "nested": ["Menu group label", "Menu item"],
+      "description": "Keyboard-first launcher opened with ⌘K / Ctrl K. Device = Web (640, centred, footer with key hints) | Mobile (390, full width under the status bar, no key hints) × State = Results | Empty = 4 variants. Built from Menu item (7.4) and Menu group label. Surface background/neutral/elevated, radius/surface/lg, Elevation/4 Overlay, z = layout/z/modal. Motion: motion/overlay/modal/enter · exit."
+    },
+    {
+      "name": "Hover card",
+      "id": "640:66184",
+      "page": "7.8 Hover card",
+      "pageId": "640:65791",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Title"
+        },
+        "Subtitle": {
+          "type": "TEXT",
+          "default": "Supporting text"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "A short description of the person, page or item behind the link."
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show stats": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Profile", "Link"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 320,
+        "h": 164
+      },
+      "tokens": {
+        "color": [
+          "fill/primary",
+          "fill/tertiary-hover",
+          "text/accent",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/S", "Caption/L", "Caption/M", "Label/M", "Title/S"],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/surface/md", "radius/surface/sm", "scale/12", "scale/16", "scale/320"]
+      },
+      "sizes": [1, 2, 4, 5, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Avatar"],
+      "description": "Read-only preview that opens when the pointer rests on a link, name or avatar (open delay 500 ms, close delay 300 ms). Variant = Profile | Link. Width 320, background/neutral/elevated, radius/surface/md, Elevation/3 Floating, z = layout/z/dropdown. No buttons inside — if the user must act, use Popover (7.3). Not available on touch: on mobile, tap goes straight to the target."
+    },
+    {
+      "name": "Bottom sheet",
+      "id": "787:421",
+      "page": "7.9 Bottom sheet",
+      "pageId": "787:63",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Sheet title"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "A short description that explains the content and helps the user decide what to do next."
+        },
+        "Show handle": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show close": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Type": ["Default", "Content", "Promo"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 390,
+        "h": 332
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/overlay",
+          "fill/control",
+          "fill/on-color-pressed",
+          "fill/secondary",
+          "fill/soft",
+          "fill/tertiary",
+          "surface/raised",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/M", "Headline/M", "Headline/S"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/xl",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/32",
+          "scale/36",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24, 32, 40],
+      "rawColors": [],
+      "nested": ["Button", "cancel-01", "image-01"],
+      "description": "Bottom sheet — a panel that slides up over the page for a focused task. Default: title + close + content slot + sticky button. Content: picture, text and CTA (item details, explanations). Promo: full-bleed image, centred headline, primary + “Not now”. surface/raised, top radius 24, handle 36×4. Scrim = bg/overlay. Footer padding includes the home indicator."
+    },
+    {
+      "name": "Action sheet",
+      "id": "788:322",
+      "page": "7.10 Action sheet",
+      "pageId": "787:64",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Options"
+        },
+        "Message": {
+          "type": "TEXT",
+          "default": "Choose an action"
+        },
+        "Show header": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Action 1": {
+          "type": "TEXT",
+          "default": "Edit"
+        },
+        "Action 2": {
+          "type": "TEXT",
+          "default": "Duplicate"
+        },
+        "Destructive action": {
+          "type": "TEXT",
+          "default": "Delete"
+        },
+        "Platform": ["iOS", "Android"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 390,
+        "h": 314
+      },
+      "tokens": {
+        "color": ["bg/overlay", "text/danger", "text/primary", "text/secondary"],
+        "text": ["Body/L", "Body/S", "Title/M"],
+        "effect": [],
+        "dimension": [
+          "radius/surface/xl",
+          "scale/16",
+          "scale/2",
+          "scale/24",
+          "scale/32",
+          "scale/56",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 14, 16, 24, 32, 36, 40],
+      "rawColors": [],
+      "nested": ["copy-01", "delete-02", "edit-02"],
+      "description": "Action sheet — a short list of actions for the current item, raised from the bottom. Built on the real platform components: iOS 27 action sheet card (Title, message, actions; destructive in text/danger) and Material 3 modal bottom sheet (drag handle, surface) with BEK action rows (icon + label). Painted with BEK tokens; Direction LTR / RTL. Scrim comes from the overlay, not the sheet."
+    },
+    {
+      "name": "Share sheet",
+      "id": "789:317",
+      "page": "7.11 Share sheet",
+      "pageId": "787:65",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Item title"
+        },
+        "Link": {
+          "type": "TEXT",
+          "default": "bek.uz/p/1024"
+        },
+        "Show contacts": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show link field": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 390,
+        "h": 377
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/overlay",
+          "border/hairline",
+          "fill/secondary",
+          "fill/tertiary",
+          "status/info/soft",
+          "status/success/soft",
+          "status/utility/soft",
+          "status/warning/soft",
+          "surface/raised",
+          "text/accent",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/M", "Label/L", "Label/M", "Title/S"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/xl",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/32",
+          "scale/4",
+          "scale/44",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 20, 24, 32, 40],
+      "rawColors": [],
+      "nested": ["cancel-01", "copy-01", "download-04", "image-01", "link-01", "more-horizontal"],
+      "description": "Share sheet — preview, people, app targets and a copy-link field for sharing an item. The system draws it in code; this mockup sits on the native iOS 27 sheet surface (grabber, inset rounded sheet) painted with BEK tokens, with BEK content on top. Direction LTR / RTL; Show contacts and Show link field toggle the optional rows."
+    }
+  ],
+  "doc": {
+    "7.1 Modal / Sheet": {
+      "tokens": [
+        "Elevation/4",
+        "bg/overlay",
+        "border/hairline",
+        "fill/primary",
+        "fill/tertiary",
+        "layout/z/modal",
+        "layout/z/toast",
+        "radius/control/md",
+        "radius/full",
+        "radius/surface/lg",
+        "scale/1",
+        "scale/12",
+        "scale/16",
+        "scale/20",
+        "scale/24",
+        "scale/32",
+        "scale/36",
+        "scale/375",
+        "scale/480",
+        "scale/720",
+        "scale/8",
+        "scale/900",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.1 Modal / Sheet\nThe blocking overlay family. Modal — centred, for desktop/web; Sheet — from the bottom, for mobile; Scrim — the layer beneath both. Modal: Size (S/M/L) × Variant (Default/Danger) = 6 variants.\nOverview\nThree components at a glance: Modal S, Modal L (Danger) and the mobile Sheet.\nModal title\nShort description text.\nModal body.\nCancel\nSave\nDelete project\nThis action can’t be undone.\nThe project and all its files will be permanently deleted.\nCancel\nDelete\nSheet title\nSlides up from the bottom on mobile.\nSheet body.\nConfirm\nCancel\nAnatomy\nA modal has three blocks: Header, Body and Footer. Focus is trapped inside the modal (focus trap), and Esc closes it.\nModal title\nShort description text.\nModal body.\nCancel\nSave\n1\nHeader\nTitle + Description + Close button. Description and Close are boolean props.\n2\nBody\nThe content area. Height grows with the content; beyond the limit it scrolls internally.\n3\nFooter\nRight-aligned Action and Cancel buttons. The whole block can be turned off.\n4\nSurface\nfill/primary + radius/surface/lg + Elevation/4 + 1px hairline border.\n5\nScrim\nA separate component. bg/overlay, sitting beneath the Modal.\nVariants\nThe Variant axis sets the meaning of the primary footer button. Shown at Size M with the same content.\nVariant = Default\nModal title\nShort description text.\nModal body.\nCancel\nSave\nOrdinary confirmation and save flows.\nVariant = Danger\nModal title\nShort description text.\nModal body.\nCancel\nDelete\nIrreversible actions: deleting, cancelling.\nSheet\nSheet title\nSlides up from the bottom on mobile.\nSheet body.\nConfirm\nCancel\nMobile screens. Used instead of Modal.\nSizes\nWidth is bound to the scale/* tokens; height always grows with the content.\nSize\nWidth\nInner padding\nToken\nWhen to use\nS\n480 px\n24 px\nscale/480\nConfirmations, forms with one or two fields\nM\n720 px\n24 px\nscale/720\nMedium-sized forms — the default choice\nL\n900 px\n32 px\nscale/900\nLots of information, tables, multi-step flows\nSheet\n375 px (mobile)\n24 px\nscale/375\nInstead of Modal on mobile\nStates\nModal has no State variant axis — state is expressed through the footer button. The focus ring is applied with the _Focus ring component.\nDefault\nModal title\nShort description text.\nModal body.\nCancel\nSave\nReady to act.\nDisabled action\nModal title\nShort description text.\nModal body.\nCancel\nSave\nRequired fields are not filled in.\nLoading action\nModal title\nShort description text.\nModal body.\nCancel\nSave\nThe request is in progress; the modal doesn’t close.\nDark mode\nThere is no separate variant — all colours come automatically from the Dark mode of the Color collection.\nModal title\nShort description text.\nModal body.\nCancel\nSave\nModal title\nShort description text.\nModal body.\nCancel\nDelete\nSheet title\nSlides up from the bottom on mobile.\nSheet body.\nConfirm\nCancel\nDevices\nMobile · 390\nSheet title\nSlot — replace with content\nContinue\nNo centred modal — content opens as 7.9 Bottom sheet, full width.\nTablet · 834\nModal title\nShort description text.\nModal body.\nCancel\nSave\nS (480) centred; scrim bg/overlay; Esc and tap outside close.\nWeb · 1440\nModal title\nShort description text.\nModal body.\nCancel\nSave\nM (720) centred, L (900) for fo"
+    },
+    "7.2 Drawer": {
+      "tokens": [
+        "Elevation/4",
+        "border/hairline",
+        "fill/primary",
+        "layout/z/modal",
+        "radius/control/md",
+        "radius/surface/lg",
+        "scale/1",
+        "scale/12",
+        "scale/24",
+        "scale/32",
+        "scale/360",
+        "scale/480",
+        "scale/640",
+        "scale/720",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.2 Drawer\nA blocking panel that slides in from the edge of the screen. Side (Left / Right) × Size (S 360 / M 480 / L 640) = 6 variants. Height is always the full viewport; for a panel that opens from the bottom, use Sheet (7.1).\nOverview\nVariants opening from the left and right, at different widths.\nFilters\nNarrow down the list.\nFilter by date, status and owner.\nCancel\nApply\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nRecord details\nThe row selected in the table.\nFull information, history and comments.\nCancel\nApply\nAnatomy\nFour blocks: Header, Divider, Body, Footer. Only Body scrolls — Header and Footer stay in place.\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\n1\nHeader\nTitle + Description + Close button. Always visible; doesn’t scroll.\n2\nDivider\nThe _Divider component. Turned off with a boolean prop.\n3\nBody\nThe only scrolling block. Filters, forms or details.\n4\nFooter\nRight-aligned Action and Cancel. Always visible.\n5\nSurface\nThe two inner corners are rounded; the outer edge is straight.\n6\nScrim\nThe Scrim component from 7.1 sits beneath the Drawer.\nVariants\nThe Side axis sets which edge the panel attaches to and which corners are rounded.\nSide = Left\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nNavigation, filters, categories. Right corners rounded.\nSide = Right\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nDetails, editing, settings. Left corners rounded.\nSizes\nWidth is bound to the scale/* tokens. Height is always the full viewport — shown in the library at scale/720 = 720 px.\nSize\nWidth\nToken\nMobile behaviour\nWhen to use\nS\n360 px\nscale/360\nFull screen width\nFilters, categories, short lists\nM\n480 px\nscale/480\nFull screen width\nForms, details — the default choice\nL\n640 px\nscale/640\nSwitches to Sheet\nTables, side-by-side comparison, editing\nHeight\n720 px (sample)\nscale/720\n100% viewport\nAlways full height\nStates\nDrawer has no State variant axis — its structure changes through boolean props. Focus is provided by _Focus ring and trapped inside the panel.\nFull\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nHeader, Divider, Body, Footer — all in place.\nWithout footer\nDrawer title\nA short note in the side panel.\nDrawer body.\nA view-only mode where no action is required.\nWithout divider\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nWhen Header and Body read as one piece.\nMinimal\nDrawer title\nDrawer body.\nApply\nA simple panel with a single action.\nDark mode\nThere is no separate variant — colours come from the Dark mode of the Color collection.\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nDevices\nMobile · 390\nSheet title\nSlot — replace with content\nContinue\nNo side drawer — content opens as 7.9 Bottom sheet; navigation uses Nav drawer (6.2).\nTablet · 834\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nS (360) from the right over a scrim; swipe or Esc closes.\nWeb · 1440\nDrawer title\nA short note in the side panel.\nDrawer body.\nCancel\nApply\nM (480) or L ("
+    },
+    "7.3 Popover": {
+      "tokens": [
+        "Elevation/3",
+        "Elevation/4",
+        "border/hairline",
+        "control/height/xs",
+        "fill/primary",
+        "layout/z/dropdown",
+        "radius/control/sm",
+        "radius/surface/md",
+        "scale/1",
+        "scale/12",
+        "scale/16",
+        "scale/24",
+        "scale/280",
+        "scale/360",
+        "scale/8",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.3 Popover\nA lightweight overlay anchored to a trigger element. Size (S 280 / L 360) × Tail (None / Top / Right / Bottom / Left) = 10 variants. It doesn’t block the page; Tooltip, Dropdown menu and Context menu inherit this surface.\nOverview\nFull (title + description + actions), description-only and large-size versions.\nPopover title\nA short contextual note.\nLater\nGot it\nWhat’s changed\nAn information-only popover — no action button.\nNew export format\nReports can now be downloaded as XLSX and CSV. Choose a format in Settings.\nLater\nGot it\nAnatomy\nA popup surface plus an optional tail. Every block can be turned off with a boolean prop, so one component stretches from a Tooltip to a full card.\nPopover title\nA short contextual note.\nLater\nGot it\n1\nHeader\nTitle + Close button. With the Header turned off completely, it becomes a description-only popover.\n2\nDescription\nBody text. text/secondary.\n3\nActions\nRight-aligned Secondary + Primary buttons (Size S).\n4\nSurface\nradius/surface/md + Elevation/3 + 1px hairline border. A lighter shadow than Modal.\n5\nTail\nA 12 × 6 triangle pointing towards the trigger. Tail=None — no tail.\n6\nPlacement\nThe Tail axis shows which side of the trigger the popover sits on.\nVariants · Tail\nFive tail states. The tail name is the side of the popover facing the trigger — for example, with Tail = Top the popover sits below the trigger.\nTail = None\nPopover title\nA short contextual note.\nLater\nGot it\nWhen placed away from the trigger or inside a container.\nTail = Top\nPopover title\nA short contextual note.\nLater\nGot it\nPopover below the trigger.\nTail = Right\nPopover title\nA short contextual note.\nLater\nGot it\nPopover to the left of the trigger.\nTail = Bottom\nPopover title\nA short contextual note.\nLater\nGot it\nPopover above the trigger.\nTail = Left\nPopover title\nA short contextual note.\nLater\nGot it\nPopover to the right of the trigger.\nSizes\nWidth is fixed; height grows with the content. Maximum width is 360 px — anything wider is a job for Modal or Drawer.\nSize\nWidth\nToken\nInner padding\nWhen to use\nS\n280 px\nscale/280\nscale/16 · 16 px\nA one- or two-line note, one action\nL\n360 px\nscale/360\nscale/24 · 24 px\nTitle + longer text + two actions\nTail\n12 × 6 px\nscale/12 · h\n—\nA triangle pointing towards the trigger\nStates\nPopover has no State variant axis — its content changes through boolean props. When opened on hover, a 100 ms delay lets the pointer move into the popover.\nFull\nPopover title\nA short contextual note.\nLater\nGot it\nTitle, description, two actions and close.\nWithout actions\nPopover title\nA short contextual note.\nAn information-only popover.\nWithout title\nA short contextual note.\nLater\nGot it\nA simple look, close to a Tooltip.\nSingle action\nPopover title\nA short contextual note.\nGot it\nFor onboarding and announcements.\nDark mode\nThe surface and tail draw from the same token, so they match in Dark mode as well.\nPopover title\nA short contextual note.\nLater\nGot it\nPopover title\nA short contextual note.\nLater\nGot it\nDevices\nMobile · 390\nSheet title\nSlot — replace with content\nContinue\nOpens as 7.9 Bottom sheet instead of a floating popover.\nTablet · 834\nPopover title\nA short contextual note.\nLater\nGot"
+    },
+    "7.4 Dropdown menu": {
+      "tokens": [
+        "Elevation/3",
+        "border/hairline",
+        "fill/primary",
+        "fill/strong",
+        "fill/tertiary-hover",
+        "layout/z/dropdown",
+        "radius/surface/md",
+        "scale/1",
+        "scale/2",
+        "scale/240",
+        "scale/32",
+        "scale/4",
+        "scale/40",
+        "scale/6",
+        "scale/8",
+        "status/danger/soft",
+        "text/danger",
+        "text/disabled",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.4 Dropdown menu\nA list of items that opens when the trigger is clicked. Made of four components: Menu item (Size × State × Variant = 16 variants), Menu group label, Menu separator and the Dropdown menu container. Inherits the Popover (7.3) surface.\nOverview\nA full menu, a simple menu without groups, and a menu with one destructive action.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nEdit\n⌘E\nCopy\n⌘D\nDelete\n⌫\nAnatomy\nContainer + items. Each item is a separate component instance, so menu length and content can be assembled freely.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\n1\nContainer\nradius/surface/md + Elevation/3 + scale/4 inner padding. No border — surface colour and shadow set it apart.\n2\nMenu group label\n12 px Medium, subtle colour. Only when a group name is needed.\n3\nMenu item\nStart icon + Label + Hotkey + Submenu arrow. Each can be turned off with a boolean.\n4\nMenu separator\nA 1 px line. Only where a group with different content begins.\n5\nDanger item\nVariant = Danger. Usually at the end of the list, after a separator.\n6\nLayer\nlayout/z/dropdown = 1000. Also opens inside a Modal.\nVariants\nThe Menu item’s Variant axis. The rest of the structure is the same.\nVariant = Normal\nMenu item\n⌘K\nOrdinary actions.\nVariant = Danger\nMenu item\n⌘K\nIrreversible actions.\nSubmenu\nMenu item\n⌘K\nThe arrow indicates a submenu.\nSizes\nItem height is bound to the scale/* tokens. Container width is fixed — long text is truncated with an ellipsis.\nElement\nValue\nToken\nText\nWhen\nItem — S\n32 px\nscale/32\n13 px Regular\nDense interfaces, toolbar menus\nItem — M\n40 px\nscale/40\n14 px Regular\nThe default choice, touch screens\nGroup label\n28 px\n—\n12 px Medium\nGroup heading\nSeparator\n1 px + 2 px padding\nscale/1 · scale/2\n—\nGap between groups\nContainer\n240 px\nscale/240\n—\nWidened on the instance for longer text\nStates\nDefault → Hover → Selected → Disabled. Keyboard navigation uses the Hover state; no separate focus ring is added.\nNormal · Default\nEdit\n⌘E\nNormal · Hover\nEdit\n⌘E\nNormal · Selected\nEdit\n⌘E\nNormal · Disabled\nEdit\n⌘E\nDanger · Default\nDelete\n⌫\nDanger · Hover\nDelete\n⌫\nDanger · Selected\nDelete\n⌫\nDanger · Disabled\nDelete\n⌫\nDark mode\nThe container and items draw from the same role tokens — no separate variant is needed.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\nEdit\n⌘E\nCopy\n⌘D\nMove to\nDelete\n⌫\nDevices\nMobile · 390\nMenu item\n⌘K\nM items (44) inside 7.10 Action sheet from the bottom.\nTablet · 834\nMenu item\n⌘K\nM items in a dropdown under the trigger, 240 wide.\nWeb · 1440\nMenu item\n⌘K\nS items (32), hover + arrow keys, shortcuts on the right.\nProps\nProperties of two components: the item itself and the container that holds it.\nMenu item\nProp\nType\nValues\nDefault\nSize\nVariant\nS · M\nM\nState\nVariant\nDefault · Hover · Selected · Disabled\nDefault\nVariant\nVariant\nNormal · Danger\nNormal\nLabel\nText\nFree text\nMenu item\nHotkey text\nText\nFree text\n⌘K\nStart icon\nBoolean\ntrue · false\ntrue\nHotkey\nBoolean\ntrue · false\ntrue\nSubmenu arrow\nBoolean\ntrue · false\nfalse\nIcon swap\nInstance swap\nFrom the Hugeicons library\n— added manually\nDropdown menu\nProp\nType\nValues\nDefault\nGroup label\nBoolean\ntrue · false\ntrue\nItem 3\nBoolean\ntrue "
+    },
+    "7.5 Context menu": {
+      "tokens": [
+        "Elevation/3",
+        "fill/primary",
+        "layout/z/dropdown",
+        "radius/surface/md",
+        "scale/200",
+        "scale/240",
+        "scale/4",
+        "scale/40",
+        "scale/8"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.5 Context menu\nA menu opened by right-click (long-press on mobile). It uses the same surface and Menu item component as Dropdown menu (7.4) — the difference is the trigger and positioning: the menu opens from the cursor point, not from a trigger element.\nOverview\nA full menu, the state with a submenu open, and a shortened three-item variant.\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nProperties\n⌘I\nDelete\n⌫\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nProperties\n⌘I\nDelete\n⌫\nDocuments\nPictures\nNew folder…\nOpen\n⌘O\nCopy\n⌘C\nRename\nF2\nDelete\n⌫\nAnatomy\nNo new elements — everything is assembled from the components in 7.4. The only new part is the submenu panel.\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nProperties\n⌘I\nDelete\n⌫\n1\nContainer\nSame as Dropdown menu: scale/240 = 240, radius/surface/md, Elevation/3, scale/4 padding, no border.\n2\nMenu item\nAn instance of the component from 7.4. No new variants added.\n3\nSubmenu item\nSubmenu arrow = true. The inner panel opens on Hover.\n4\nMenu separator\nBetween logical groups. A context menu usually has two: after the submenu and before the destructive action.\n5\nContext submenu\nA separate panel, 200 px wide. Opens 4 px from the right edge of the parent menu.\n6\nCursor point\nThe menu is anchored to the point where the mouse was clicked, not to a trigger.\nVariants\nContext menu has no variant axis — content is assembled with boolean props. Three typical compositions.\nFull\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nProperties\n⌘I\nDelete\n⌫\nThe full set of actions on a file or record.\nWithout submenu\nOpen\n⌘O\nCopy\n⌘C\nRename\nF2\nProperties\n⌘I\nDelete\n⌫\nWhen no submenu is needed — the most common case.\nShort\nOpen\n⌘O\nCopy\n⌘C\nRename\nF2\nDelete\n⌫\nWith fewer than three items, use inline buttons instead of a context menu.\nPlacement\nThe menu opens 4 px from the cursor point. If it hits the screen edge, it flips along that axis — it is never clipped and never leaves the screen.\nDefault\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nDelete\n⌫\nDown and to the right of the cursor. The default case.\nAt the right edge\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nDelete\n⌫\nIf there isn’t room, it flips horizontally — to the left of the cursor.\nAt the bottom edge\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nDelete\n⌫\nFlips vertically — above the cursor.\nIn the corner\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\nF2\nDelete\n⌫\nFlips on both axes.\nSizes\nSizes are inherited from 7.4. A new token was added only for the submenu width.\nElement\nValue\nToken\nNote\nContainer width\n240 px\nscale/240\nSame as Dropdown menu\nSubmenu width\n200 px\nscale/200\nNarrower than the parent menu, so the hierarchy is visible\nItem height\n40 px\nscale/40\nAlways M in a context menu; S only in dense toolbars\nCursor distance\n4 px\nscale/4\nSo the menu doesn’t stick to the cursor\nSubmenu distance\n4 px\nscale/4\nFrom the right edge of the parent menu\nScreen edge\n8 px\nscale/8\nThis minimum distance is kept even after a flip\nStates\nItem states are inherited from 7.4 — only the two states specific to context menus are shown here: submenu open and keyboard navigation.\nSubmenu closed\nOpen\n⌘O\nCopy\n⌘C\nCopy\nRename\nF2\nProperties\n⌘I\nDelete\n⌫\nA submenu item in its default state. The arrow indicates a submenu.\nSubmenu open\nOpen\n⌘O\nCopy\n⌘C\nMove to\nRename\n"
+    },
+    "7.6 Alert dialog": {
+      "tokens": [
+        "Elevation/4",
+        "bg/overlay",
+        "control/height/lg",
+        "fill/primary",
+        "layout/z/modal",
+        "radius/full",
+        "radius/surface/lg",
+        "scale/16",
+        "scale/24",
+        "scale/4",
+        "scale/400",
+        "scale/48",
+        "scale/6",
+        "scale/8",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.6 Alert dialog\nAn interrupting dialog that requires a response. Unlike Modal (7.1), it has no close button and doesn’t close with Esc or by clicking the scrim — the user can only leave through a button. Variant (Info / Success / Warning / Danger) × Layout (Inline / Stacked) = 8 variants.\nOverview\nThree typical cases: a destructive confirmation, a warning, and the stacked layout for mobile.\nDelete this project?\nThis action can’t be undone. All files in the project will be removed.\nCancel\nDelete\nDiscard unsaved changes?\nYou have edits that haven’t been saved. They’ll be lost if you leave now.\nCancel\nContinue\nBefore you continue\nYou’re about to switch workspaces. Unsaved filters will be reset.\nGot it\nCancel\nAnatomy\nThree blocks in a fixed order. The missing Close button is deliberate: the user can’t leave without answering the question.\nDelete this project?\nThis action can’t be undone. All files in the project will be removed.\nCancel\nDelete\n1\nIcon badge\nA 48 × 48 circle with a status/*/soft background and a status/*/default icon. It signals the weight of the message at a glance.\n2\nTitle\n18 px Semi Bold. A question or a result — “Delete this?”, “Sent”.\n3\nDescription\n14 px Regular, muted. States the consequence: what will be lost, what will change.\n4\nActions\nConfirm and Cancel. There is never a third button.\n5\nNo Close button\nEsc and clicking the scrim don’t work either — the key difference from Modal.\n6\nScrim\nThe Scrim component from 7.1. Clicking it doesn’t close the dialog; the dialog just shakes.\nVariants\nThe Variant axis changes only the icon badge and the look of the confirm button — the structure stays the same.\nVariant = Info\nBefore you continue\nYou’re about to switch workspaces. Unsaved filters will be reset.\nCancel\nGot it\nA neutral message with light consequences.\nVariant = Success\nChanges saved\nYour settings are live. You can change them at any time.\nCancel\nClose\nConfirms a completed action.\nVariant = Warning\nDiscard unsaved changes?\nYou have edits that haven’t been saved. They’ll be lost if you leave now.\nCancel\nContinue\nReversible, but something will be lost.\nVariant = Danger\nDelete this project?\nThis action can’t be undone. All files in the project will be removed.\nCancel\nDelete\nAn irreversible action.\nLayout\nInline — for desktop, with buttons side by side on the right. Stacked — for mobile, with full-width buttons and confirm on top.\nLayout = Inline\nDelete this project?\nThis action can’t be undone. All files in the project will be removed.\nCancel\nDelete\nButton width follows its text. Cancel on the left, confirm on the right.\nLayout = Stacked\nDelete this project?\nThis action can’t be undone. All files in the project will be removed.\nDelete\nCancel\nButtons at size L with a 44 px touch target. Confirm on top — within thumb reach.\nSizes\nOne width. Alert dialog has no S / M / L — if the content doesn’t fit in 400 px, it isn’t an Alert, it’s a Modal.\nElement\nValue\nToken\nNote\nWidth\n400 px\nscale/400\nSingle size\nIcon badge\n48 × 48 px\nscale/48\nInner icon icon/lg = 24 px\nPadding\n24 px\nscale/24\nOn every side\nGap between blocks\n16 px\nscale/16\nBadge ↔ text ↔ buttons\nTitle ↔ Description\n8 px\nscale/8\n—\nGap between button"
+    },
+    "7.7 Command palette": {
+      "tokens": [
+        "Elevation/4",
+        "border/hairline",
+        "fill/primary",
+        "fill/soft",
+        "layout/z/modal",
+        "motion/overlay/modal/enter",
+        "radius/surface/lg",
+        "scale/12",
+        "scale/16",
+        "scale/640",
+        "scale/8",
+        "surface/raised",
+        "text/tertiary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nSurface\nfill/primary\nElevation/4 Overlay\nRadius\nradius/surface/lg\n16\nWidth\nscale/640\n640 web · 390 mobile\nSearch padding\nscale/16 · scale/12\n16 · 12, min height 56\nDivider\nborder/hairline\n1\nList padding\nscale/8\n8\nLayer\nlayout/z/modal\n1300\nMotion\nmotion/overlay/modal/enter · exit\n200 · 150 ms\nUsage\nOffer the palette in addition to the normal navigation — never as the only way to reach a page.\nWrite results as verbs (“Create project”, “Invite teammate”), not nouns.\nShow a hotkey only when it really exists in the product.\nGroup results (Suggestions, Pages, Settings) and keep at most 8 visible before scrolling.\nAccessibility\nrole=\"dialog\" with aria-modal; the field is role=\"combobox\" controlling a role=\"listbox\"; the selected result is announced with aria-activedescendant. Focus is trapped until the palette closes.\nDo / Don’t\nDo\nType a command or search…\nesc\nSuggestions\nCreate new project\n⌘N\nSearch files\n⌘P\nInvite teammate\n⌘I\nSettings\nAppearance\nKeyboard shortcuts\n⌘/\n↑ ↓ Navigate\n↵ Open\nesc Close\nOpen with ⌘K / Ctrl K; show recent items before the user types.\nDon’t\nType a command or search…\nesc\nNo results for “billing”\nTry another word, or open Settings to browse everything.\n↑ ↓ Navigate\n↵ Open\nesc Close\nDon’t leave an empty box — suggest commands or recent pages.\nDo\nType a command or search…\nesc\nSuggestions\nCreate new project\n⌘N\nSearch files\n⌘P\nInvite teammate\n⌘I\nSettings\nAppearance\nKeyboard shortcuts\n⌘/\nOn mobile open full screen from the search icon.\nDon’t\nType a command or search…\nesc\nSuggestions\nCreate new project\n⌘N\nSearch files\n⌘P\nInvite teammate\n⌘I\nSettings\nAppearance\nKeyboard shortcuts\n⌘/\n↑ ↓ Navigate\n↵ Open\nesc Close\nDon’t run destructive commands straight away — confirm with 7.6 Alert dialog."
+    },
+    "7.8 Hover card": {
+      "tokens": [
+        "Elevation/3",
+        "fill/primary",
+        "fill/tertiary-hover",
+        "layout/z/dropdown",
+        "motion/overlay/anchored/enter",
+        "radius/surface/md",
+        "scale/12",
+        "scale/16",
+        "scale/320",
+        "surface/raised",
+        "text/accent"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nSurface\nfill/primary\nElevation/3 Floating\nRadius\nradius/surface/md\n12\nPadding\nscale/16\n16\nGap\nscale/12\n12\nWidth\nscale/320\n320\nLayer\nlayout/z/dropdown\n1000\nMotion\nmotion/overlay/anchored/enter · exit\n150 · 100 ms\nUsage\nOnly preview what is behind the link — the card must never be the only place with that information.\nNo buttons or inputs inside; if the user must act, use Popover (7.3).\nKeep it short: title, one line of context, up to two lines of description.\nOne hover card at a time.\nAccessibility\nThe trigger stays a normal link. The card is supplementary: connect it with aria-describedby, keep it open while hovered or focused, and dismiss it with Esc (WCAG 1.4.13 Content on hover or focus).\nDo / Don’t\nDo\nAB\nTitle\nSupporting text\nA short description of the person, page or item behind the link.\n128\nProjects\n2.4k\nFollowers\nShow the card after a short delay (~500 ms) on hover or keyboard focus.\nDon’t\nAB\nTitle\nSupporting text\nA short description of the person, page or item behind the link.\n128\nProjects\n2.4k\nFollowers\nDon’t hide the only way to an action inside a hover card — touch users never see it.\nDo\nTitle\nSupporting text\nA short description of the person, page or item behind the link.\nLink preview: title, source and a one-line summary.\nDon’t\nTitle\nSupporting text\nA short description of the person, page or item behind the link.\nDon’t use hover cards on touch devices — tap opens the full page."
+    },
+    "7.9 Bottom sheet": {
+      "tokens": [
+        "accent/soft",
+        "bg/overlay",
+        "fill/control",
+        "fill/secondary",
+        "radius/surface/md",
+        "radius/surface/xl",
+        "surface/raised",
+        "text/secondary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.9 Bottom sheet\nA panel that slides up over the page for one focused task. 6 variants · Type (Default / Content / Promo) × Direction.\nOverview\nDefault carries any content in a slot; Content explains an item; Promo announces something new. Scrim behind = bg/overlay.\nDefault\nSheet title\nSlot — replace with content\nContinue\nTitle, close, content slot, sticky button.\nContent\nSheet title\nA short description that explains the content and helps the user decide what to do next.\nContinue\nPicture + text + CTA — item details, how-it-works.\nPromo\nNew this week\nA short description that explains the content and helps the user decide what to do next.\nTry it\nNot now\nFull-bleed image, centred headline, Try it / Not now.\nAnatomy\nContent type shown.\nSheet title\nA short description that explains the content and helps the user decide what to do next.\nContinue\n1\nhandle\n· 36 × 4 (scale/*) · fill/control · drag to resize/close\n2\nheader\n· title Headline/S + close 32 (fill/secondary)\n3\nimage / slot\n· radius/surface/md · replace with content\n4\ndescription\n· Body/M · text/secondary\n5\nfooter\n· Button Action XL full width · bottom padding 32 incl. home indicator\n6\nsheet\n· surface/raised · top radius 24 (radius/surface/xl)\nVariants\nDark mode\nDefault\nSheet title\nSlot — replace with content\nContinue\nPromo\nNew this week\nA short description that explains the content and helps the user decide what to do next.\nTry it\nNot now\nRTL\nContent · RTL\nالعنوان\nنص قصير يشرح المحتوى ويساعد المستخدم على اتخاذ القرار.\nمتابعة\nPromo · RTL\nعرض جديد\nنص قصير يشرح المحتوى ويساعد المستخدم على اتخاذ القرار.\nمتابعة\nلاحقًا\nSizes\nHeight hugs content up to 90% of the screen, then the body scrolls and the footer stays sticky.\nDetent\nHeight\nUse\nNotes\nHug\ncontent (≈ 330–530)\nDefault for all types\nDrag down to close\nHalf\n50%\nLists, filters\nDrag up to Full\nFull\nscreen − 56\nLong forms\nTop navigation replaces the handle\nWidth\n390 → max 640\nTablet & web: centred\nWeb uses Modal (7.1) instead\nStates\nPhase\nDuration\nEasing\nNotes\nOpen\n300 ms\nemphasised decelerate\nSlides up, scrim fades to bg/overlay\nDrag\n—\nfollows finger\nSnap to nearest detent\nClose\n250 ms\naccelerate\nSwipe down, tap scrim, close button, Esc\nKeyboard\n—\n—\nSheet lifts above the keyboard\nProps\nContent slot: replace the slot frame with your own layout (keep 16 side padding).\nProp\nType\nValues\nDefault\nType\nVariant\nDefault · Content · Promo\nDefault\nDirection\nVariant\nLTR · RTL\nLTR\nTitle · Description\nText\nShort strings\nSheet title · …\nShow handle · Show close\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nLight\nDark\nSheet\nsurface/raised\n#FFFFFF\n#27272B\nScrim\nbg/overlay\nblack 60%\nblack 60%\nHandle\nfill/control\ngray-alpha/350\nwhite-alpha/350\nRadius\nradius/surface/xl (top)\n24\n24\nPromo image\naccent/soft (placeholder)\nindigo/150\nindigo/150 (dark)\nDevices\nMobile · 390\nSheet title\nA short description that explains the content and helps the user decide what to do next.\nContinue\nFull width from the bottom edge; footer above the home indicator.\nTablet · 834\nSheet title\nSlot — replace with content\nContinue\nMax 640 wide, centred, bottom-anchored; or a popover from its trigger.\nWeb · 1440\nNew this week\nA short description that explains the cont"
+    },
+    "7.10 Action sheet": {
+      "tokens": [
+        "border/hairline",
+        "fill/soft-pressed",
+        "radius/surface/md",
+        "scale/32",
+        "scale/56",
+        "scale/8",
+        "surface/raised",
+        "text/accent",
+        "text/danger",
+        "text/disabled",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.10 Action sheet\nA short list of actions about the current item. 4 variants · Platform (iOS / Android) × Direction.\nOverview\nOpened from a “more” button or long-press. 2–6 actions; the destructive one goes last.\niOS\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nGrouped card, centred actions, separate Cancel.\nAndroid\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nBottom sheet with icon rows; tap outside to cancel.\nAnatomy\niOS shown.\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\n1\nheader\n· title Label/M text/secondary + message Caption/M · optional\n2\naction\n· 56 (scale/56) · Body/L text/accent, centred\n3\nseparator\n· border/hairline 1px between actions\n4\ndestructive\n· text/danger · always last\n5\ncancel\n· separate card · Label/L text/accent\nVariants\nDark mode\niOS\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nAndroid\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nRTL\niOS · RTL\nخيارات\nاختر إجراءً\nتعديل\nتكرار\nحذف\nAndroid · RTL\nخيارات الطلب\nاختر ما تريد فعله\nتعديل\nتكرار\nحذف\nSizes\nPart\niOS\nAndroid\nToken\nAction row\n56\n56\nscale/56\nSide inset\n8\n0 (full width)\nscale/8\nRadius\n12 (cards)\n24 top\nradius/surface/md · xl\nBottom\n32 incl. home indicator\n24\nscale/32 · lg\nStates\nState\nRow fill\nText\nNotes\nDefault\n—\ntext/accent / text/primary\n—\nPressed\nfill/soft-pressed\n—\n—\nDestructive\n—\ntext/danger\nConfirm with Alert dialog if irreversible\nDisabled\n—\ntext/disabled\nPrefer hiding the action\nProps\nProp\nType\nValues\nDefault\nPlatform\nVariant\niOS · Android\niOS\nDirection\nVariant\nLTR · RTL\nLTR\nTitle · Message\nText\nShort strings\nOrder options · …\nAction 1 · Action 2 · Destructive action\nText\nVerbs\nEdit · Duplicate · Delete\nShow header\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nLight\nDark\nCard / sheet\nsurface/raised\n#FFFFFF\n#27272B\nAction (iOS)\ntext/accent\nindigo/850\nindigo (dark)\nAction (Android)\ntext/primary · icons text/secondary\n—\n—\nDestructive\ntext/danger\nred/850\nred (dark)\nSeparator\nborder/hairline\ngray-alpha/75\ngray-alpha/75\nDevices\nMobile · 390\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nBottom of the screen, above the home indicator.\nTablet · 834\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nShown as a popover next to the trigger (Dropdown menu 7.4).\nWeb · 1440\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nUse Dropdown menu (7.4) or Context menu (7.5).\nDo / Don’t\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nDo\nShort verbs (Edit, Share, Delete); destructive last in red.\nOptions\nChoose an action\nEdit\nDuplicate\nDelete\nDon’t\nDon’t use it for navigation or for more than six actions — use a list screen instead."
+    },
+    "7.11 Share sheet": {
+      "tokens": [
+        "accent/soft",
+        "fill/secondary",
+        "scale/16",
+        "scale/32",
+        "scale/44",
+        "scale/64",
+        "surface/raised",
+        "text/accent"
+      ],
+      "text": "OVERLAYS\nBEK\nDesign System\n7.11 Share sheet\nShares the current item — preview, recent contacts, share actions and a copyable link. 2 variants · Direction.\nOverview\nOpened from a Share button. In native apps prefer the OS share sheet; this one is the in-app fallback and the web version.\nShare sheet\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nAll rows on.\nAnatomy\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\n1\npreview\n· thumbnail 48 · Title/S · link Caption/M · close 32\n2\ncontacts\n· 56 avatars + name · optional (Show contacts)\n3\nactions\n· 56 circles fill/secondary · Copy · Link · Save · More\n4\nlink field\n· fill/secondary pill 44 · Copy button surface/raised · optional\n5\nsheet\n· surface/raised · top radius 24 · handle\nVariants\nDark mode\nLTR\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nRTL\nRTL\nعنوان العنصر\nbek.uz/p/1024\nJT\nJasur\nNB\nNodira\nSR\nSardor\nDM\nDilnoza\nAK\nAziz\nالمزيد\nحفظ\nرابط\nنسخ\nنسخ\nhttps://bek.uz/p/1024\nSizes\nPart\nValue\nToken\nNotes\nAvatar / action\n56\nscale/64 (64) · 56 custom\nHit area 56 × 80 with label\nRow gap\n16\nscale/16\nScrolls horizontally if more\nLink field\n44\nscale/44\n—\nBottom\n32\nscale/32\nHome indicator\nStates\nEvent\nFeedback\nComponent\nNotes\nCopy\n“Link copied”\nNotification bar 5.6\nSheet stays open\nContact tap\nSends + closes\n—\nSuccess → Notification bar\nSave\nDownload progress\nProgress 4.6\n—\nMore\nOS share sheet\n—\nNative only\nProps\nProp\nType\nValues\nDefault\nDirection\nVariant\nLTR · RTL\nLTR\nTitle · Link\nText\nItem name · short URL\nMargherita pizza · bek.uz/p/1024\nShow contacts\nBoolean\ntrue · false\ntrue\nShow link field\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nLight\nDark\nSheet\nsurface/raised\n#FFFFFF\n#27272B\nAction circles · field\nfill/secondary\n#F1F3F6\n#27272B\nAvatars\naccent/soft · status/*/soft\n—\n—\nCopy\ntext/accent on surface/raised\n—\n—\nDevices\nMobile · 390\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nBottom sheet, full width.\nTablet · 834\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nPopover 390 wide anchored to the Share button.\nWeb · 1440\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nModal 390 wide, or a popover from Share.\nDo / Don’t\nItem title\nbek.uz/p/1024\nAK\nAziz\nDM\nDilnoza\nSR\nSardor\nNB\nNodira\nJT\nJasur\nCopy\nLink\nSave\nMore\nhttps://bek.uz/p/1024\nCopy\nDo\nShow what is being shared and confirm the copy with a Notification bar.\nعنوان العنصر\nbek.uz/p/1024\nJT\nJasur\nNB\nNodira\nSR\nSardor\nDM\nDilnoza\nAK\nAziz\nالمزيد\nحفظ\nرابط\nنسخ\nنسخ\nhttps://bek.uz/p/1024\nDon’t\nDon’t add social logos that are not installed or fill the sheet with every possible app."
+    }
+  },
+  "accepted": []
+}

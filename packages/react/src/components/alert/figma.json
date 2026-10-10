@@ -1,0 +1,93 @@
+{
+  "page": "5.4 Alert",
+  "components": [
+    {
+      "name": "Alert",
+      "id": "635:63472",
+      "page": "5.4 Alert",
+      "pageId": "635:61553",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Heads up"
+        },
+        "Description text": {
+          "type": "TEXT",
+          "default": "A short message about something that needs attention on this page."
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show icon": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show actions": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show secondary action": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show close": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Subtle", "Solid"],
+        "Status": ["Neutral", "Info", "Success", "Warning", "Danger"],
+        "Layout": ["Inline", "Stacked"]
+      },
+      "variants": 20,
+      "size": {
+        "w": 640,
+        "h": 96
+      },
+      "tokens": {
+        "color": [
+          "fill/inverse",
+          "fill/tertiary",
+          "status/danger/default",
+          "status/danger/soft",
+          "status/info/default",
+          "status/info/soft",
+          "status/success/default",
+          "status/success/soft",
+          "status/warning/default",
+          "status/warning/soft",
+          "text/inverse",
+          "text/on-color",
+          "text/on-warning",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/S", "Title/S"],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/12", "scale/16", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 5, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "Inline banner that stays on the page until the problem is solved or the user dismisses it. Variant = Subtle | Solid × Status = Neutral | Info | Success | Warning | Danger × Layout = Inline (web, tablet — actions on the right, 640) | Stacked (mobile — actions under the text, 358) = 20 variants. Props: Title, Description text, Show description, Show icon, Show actions, Show secondary action, Show cl"
+    }
+  ],
+  "doc": {
+    "5.4 Alert": {
+      "tokens": [
+        "fill/inverse",
+        "fill/tertiary",
+        "radius/surface/md",
+        "scale/12",
+        "scale/16",
+        "scale/4",
+        "scale/8",
+        "text/on-color",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nSurface · Subtle\nstatus/{status}/soft · Neutral: fill/tertiary\nStatus tint, no border\nSurface · Solid\nstatus/{status}/default · Neutral: fill/inverse\nAA with on-{status}\nTitle\ntext/primary · Solid: text/on-color\nTitle/S · 14 / 20\nDescription\ntext/secondary · Solid: text/on-color\nBody/S · 14 / 20\nIcon\ntext/{status} · Solid: on-{status}\nicon/md · 20\nPadding\nscale/16\n16\nGap\nscale/12 (row) · scale/4 (title → text) · scale/8 (actions)\n12 · 4 · 8\nRadius\nradius/surface/md\n12\nDo / Don't\nDo\nStorage almost full\nYou have used 92% of your plan. Free up space or upgrade.\nTake action\nLearn more\nName the problem in the title and make the fix the first action.\nDon't\nError\nSomething went wrong.\nDon’t write a vague title — “Error” tells the user nothing and offers no way out.\nDo\nPayment failed\nWe couldn’t charge your card. Update your billing details.\nTake action\nLearn more\nUse Solid for the one critical, page-wide message — and keep it until it is solved.\nDon't\nStorage almost full\nNew version available\nImport complete\nDon’t stack several Solid alerts — nothing stands out any more. Merge them or use Subtle."
+    }
+  },
+  "accepted": []
+}

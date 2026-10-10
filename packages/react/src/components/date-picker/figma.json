@@ -1,0 +1,104 @@
+{
+  "page": "3.14 Date picker",
+  "components": [
+    {
+      "name": "_Date cell",
+      "id": "795:90",
+      "page": "3.14 Date picker",
+      "pageId": "793:65",
+      "props": {
+        "Day": {
+          "type": "TEXT",
+          "default": "12"
+        },
+        "State": [
+          "Default",
+          "Today",
+          "Selected",
+          "In range",
+          "Range start",
+          "Range end",
+          "Disabled",
+          "Outside"
+        ]
+      },
+      "variants": 8,
+      "size": {
+        "w": 48,
+        "h": 44
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "surface/raised",
+          "text/accent",
+          "text/disabled",
+          "text/on-color",
+          "text/primary"
+        ],
+        "text": ["Body/L", "Label/L"],
+        "effect": [],
+        "dimension": ["radius/full"]
+      },
+      "sizes": [1, 16, 24],
+      "rawColors": [],
+      "nested": [],
+      "description": "_Date cell — internal building block of Date picker (48 × 44, 40 circle). Not for direct use."
+    },
+    {
+      "name": "Date picker",
+      "id": "795:823",
+      "page": "3.14 Date picker",
+      "pageId": "793:65",
+      "props": {
+        "Type": ["Single", "Range", "Wheel"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 368,
+        "h": 376
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/base",
+          "fill/secondary",
+          "fill/soft",
+          "surface/raised",
+          "text/disabled",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/L", "Caption/M", "Label/M", "Title/M"],
+        "effect": [],
+        "dimension": ["radius/full", "radius/surface/xl", "scale/16", "scale/40", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["arrow-left-01", "arrow-right-01"],
+      "description": "Date picker — choose a date (Single), a period (Range) or scroll a wheel (Wheel, compact for birthdays and far dates). Month grid Monday-first with today dot, past dates disabled, range band in accent/subtle. Lives in a Bottom sheet on mobile and a Popover on web."
+    }
+  ],
+  "doc": {
+    "3.14 Date picker": {
+      "tokens": [
+        "accent/default",
+        "accent/soft",
+        "fill/soft",
+        "radius/control/md",
+        "radius/full",
+        "radius/surface/lg",
+        "scale/16",
+        "surface/raised",
+        "text/disabled",
+        "text/on-color",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.14 Date picker\nChoose a date, a period or scroll a wheel. 6 variants · Type × Direction, built from _Date cell (8 states).\nOverview\nUse when the date matters for the task — delivery day, booking, report period. For birthdays and far dates use Wheel.\nSingle\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\nOne date. Month grid, Monday first, today marked with a dot.\nRange\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\n12 – 16 October · 5 days\nStart and end. Band between them in accent/soft.\nWheel\n10\n11\n12\n13\n14\nAugust\nSeptember\nOctober\nNovember\nDecember\n2024\n2025\n2026\n2027\n2028\nDay · Month · Year wheels. Compact; good for dates far from today.\nAnatomy\nSingle shown.\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\n1\nheader\n· month + year Title/S · arrow buttons 36\n2\nweekdays\n· Caption/M · text/tertiary · Mon–Sun\n3\ndate cell\n· _Date cell 48 × 44 · circle 40\n4\ntoday\n· dot accent/default under the number\n5\nselected\n· accent/default circle · text/on-color\n6\ndisabled\n· past dates · text/disabled\nVariants\nTypes\nSingle\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\nRange\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\n12 – 16 October · 5 days\nWheel\n10\n11\n12\n13\n14\nAugust\nSeptember\nOctober\nNovember\nDecember\n2024\n2025\n2026\n2027\n2028\nDark mode\nSingle\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\nRange\nOctober 2026\nMo\nTu\nWe\nTh\nFr\nSa\nSu\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n1\n2\n3\n4\n5\n6\n7\n8\n12 – 16 October · 5 days\nRTL — week starts on the right, arrows mirror, range caps swap\nSingle · RTL\nأكتوبر ٢٠٢٦\nح\nس\nج\nخ\nر\nث\nن\n4\n3\n2\n1\n30\n29\n28\n11\n10\n9\n8\n7\n6\n5\n18\n17\n16\n15\n14\n13\n12\n25\n24\n23\n22\n21\n20\n19\n1\n31\n30\n29\n28\n27\n26\n8\n7\n6\n5\n4\n3\n2\nRange · RTL\nأكتوبر ٢٠٢٦\nح\nس\nج\nخ\nر\nث\nن\n4\n3\n2\n1\n30\n29\n28\n11\n10\n9\n8\n7\n6\n5\n18\n17\n16\n15\n14\n13\n12\n25\n24\n23\n22\n21\n20\n19\n1\n31\n30\n29\n28\n27\n26\n8\n7\n6\n5\n4\n3\n2\n١٢ – ١٦ أكتوبر · ٥ أيام\nStates\n_Date cell — the building block of the grid.\nDefault\n12\nToday\n12\nSelected\n12\nIn range\n12\nRange start\n12\nRange end\n12\nDisabled\n12\nOutside\n12\nProps\nProp\nType\nValues\nDefault\nType\nVariant\nSingle · Range · Wheel\nSingle\nDirection\nVariant\nLTR · RTL\nLTR\n_Date cell · State\nVariant\nDefault · Today · Selected · In range · Range start · Range end · Disabled · Outside\nDefault\n_Date cell · Day\nText\n1–31\n12\nTokens\nProperty\nToken\nValue\nContainer\nsurface/raised · radius/surface/lg\npadding scale/16\nSelected / caps\naccent/default · text/on-color\ncircle 40 · radius/full\nRange band\naccent/soft\nheight 40\nToday dot\naccent/default\n4 × 4\nDisabled / outside\ntext/disabled · text/tertiary\n—\nWheel highlight\nfill/soft · radius/control/md\nheight 40\nDevices"
+    }
+  },
+  "accepted": []
+}

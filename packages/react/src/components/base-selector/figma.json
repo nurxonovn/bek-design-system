@@ -1,0 +1,68 @@
+{
+  "page": "3.11 Base selector",
+  "components": [
+    {
+      "name": "Base selector",
+      "id": "767:291",
+      "page": "3.11 Base selector",
+      "pageId": "765:65",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Classic"
+        },
+        "Show image": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Style": ["Solid", "Overlay"],
+        "State": ["Default", "Loading"],
+        "Arrows": ["On", "Off"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 16,
+      "size": {
+        "w": 240,
+        "h": 52
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "fill/on-color-hover",
+          "fill/on-media",
+          "fill/secondary",
+          "fill/soft-pressed",
+          "fill/tertiary",
+          "text/on-color",
+          "text/primary"
+        ],
+        "text": ["Label/M"],
+        "effect": [],
+        "dimension": ["radius/full", "scale/2", "scale/48", "scale/8"]
+      },
+      "sizes": [1, 2, 8, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["arrow-left-01", "arrow-right-01"],
+      "description": "Base selector — steps through a short list of base options one at a time (dough, size, ice, roast…) with prev/next arrows and an image of the option. Arrows=Off when only one option exists. Loading shows a skeleton while options load. Overlay sits on product photos (fill/on-media)."
+    }
+  ],
+  "doc": {
+    "3.11 Base selector": {
+      "tokens": [
+        "fill/on-color-hover",
+        "fill/on-media",
+        "fill/secondary",
+        "fill/soft-pressed",
+        "fill/tertiary",
+        "radius/full",
+        "scale/2",
+        "scale/48",
+        "text/on-color",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.11 Base selector\nSteps through a short list of base options one at a time — image, name and prev/next arrows. 16 variants · Style × State × Arrows × Direction.\nOverview\nPick one base for a product (dough, size, roast, ice, crust) while the photo stays visible. 2–6 options; the list loops.\nSolid\nClassic\nOn cards and sheets.\nSingle option\nClassic\nArrows=Off when only one base is available.\nLoading\nSkeleton while options load.\nOverlay — on top of the product photo\nOverlay\nClassic\nfill/on-media, white label and arrows.\nOverlay · Loading\nAnatomy\nSolid · arrows on.\nClassic\n1\nprev\n· arrow-left-01, 20 · text/secondary\n2\nimage\n· 48 (scale/48), radius/full · optional (Show image)\n3\nlabel\n· Label/M · text/primary\n4\nnext\n· arrow-right-01, 20 · text/primary\n5\ntrack\n· fill/secondary · radius/full · padding 2 / 8\nVariants\nStyle × Arrows × Direction.\nSolid\nArrows On\nClassic\nArrows Off\nClassic\nRTL\nتقليدي\nOverlay\nArrows On\nClassic\nArrows Off\nClassic\nRTL\nتقليدي\nDark mode · Solid\nSolid\nClassic\nLoading\nSizes\nOne size: 52 high (48 image + 2 + 2). Width 240 by default; stretch to fill on mobile.\nPart\nValue\nToken\nNotes\nHeight\n52\nscale/48 + scale/2 ×2\nTouch target ≥ 44\nImage\n48\nscale/48\nHide with Show image = false → 44 high\nArrow\n20\nicon/md\nTap area = full half of the track\nRadius\nfull\nradius/full\n—\nStates\nDefault\nClassic\nLoading\nImage and label become skeletons (fill/soft-pressed). Arrows stay visible but inactive.\nProps\nImage is a slot: replace the image layer with a product photo (48 × 48).\nProp\nType\nValues\nDefault\nStyle\nVariant\nSolid · Overlay\nSolid\nState\nVariant\nDefault · Loading\nDefault\nArrows\nVariant\nOn · Off\nOn\nDirection\nVariant\nLTR · RTL\nLTR\nLabel\nText\nOption name\nClassic\nShow image\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nLight\nDark\nTrack (Solid)\nfill/secondary\n#F1F3F6\n#27272B\nTrack (Overlay)\nfill/on-media\nblack 30%\nblack 30%\nLabel · next\ntext/primary (Solid) · text/on-color (Overlay)\n—\n—\nPrev arrow\ntext/secondary (Solid)\n—\n—\nImage placeholder\nfill/tertiary · fill/on-color-hover\n—\n—\nSkeleton\nfill/soft-pressed\n—\n—\nDevices\nMobile · 390\nClassic\nOverlay on the product photo, or Solid full width under it.\nTablet · 834\nClassic\nSolid, 240–320 wide, next to the size control.\nWeb · 1440\nClassic\nSolid in the product modal. Arrow keys ← → change the option.\nDo / Don’t\nClassic\nDo\nUse for 2–6 visual base options the user can flip through quickly.\nClassic\nClassic\nDon’t\nDon’t stack several selectors for long lists or free choices — use Select, Radio or a list instead."
+    }
+  },
+  "accepted": []
+}

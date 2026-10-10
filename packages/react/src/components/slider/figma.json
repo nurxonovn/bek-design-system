@@ -1,0 +1,86 @@
+{
+  "page": "3.8 Slider",
+  "components": [
+    {
+      "name": "Slider",
+      "id": "299:68",
+      "page": "3.8 Slider",
+      "pageId": "299:31",
+      "props": {
+        "Show value labels": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show inputs": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Min": {
+          "type": "TEXT",
+          "default": "20"
+        },
+        "Max": {
+          "type": "TEXT",
+          "default": "80"
+        },
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Disabled", "Focus"],
+        "Type": ["Range", "Single"]
+      },
+      "variants": 24,
+      "size": {
+        "w": 140,
+        "h": 18
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/hover",
+          "bg/sheet",
+          "border/focus",
+          "fill/primary",
+          "fill/secondary",
+          "fill/tertiary",
+          "text/disabled",
+          "text/secondary"
+        ],
+        "text": ["Caption/M"],
+        "effect": ["Elevation/Inset"],
+        "dimension": [
+          "scale/10",
+          "scale/14",
+          "scale/16",
+          "scale/20",
+          "scale/32",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 8, 32, 40],
+      "rawColors": [],
+      "nested": ["Text field"],
+      "description": "Range input. Type = Single | Range × Size = S | M | L × State = Default | Hover | Disabled = 18 variants. Range has two thumbs, optional value labels above (Show value labels) and &quot;From / To&quot; Text fields below (Show inputs, exposed). Min / Max edit the labels. Existing Single instances are unchanged. Active track = color/background/accent/default (hover …/hover), so the selected value me"
+    }
+  ],
+  "doc": {
+    "3.8 Slider": {
+      "tokens": [
+        "accent/default",
+        "border/default",
+        "border/focus",
+        "fill/primary",
+        "fill/secondary",
+        "fill/tertiary",
+        "scale/14",
+        "scale/6",
+        "scale/8",
+        "shadow/float",
+        "shadow/soft",
+        "text/disabled",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nEvery visual property is bound to a BEK variable, effect or text style.\nProperty\nToken\nValue\nTrack\nfill/tertiary\nradius full\nActive track\naccent/default · …/hover\nDisabled: text/disabled\nThumb fill\nfill/primary\n—\nThumb border\nborder/default · Hover border/focus\n1 px\nThumb shadow\nshadow/soft · shadow/float\neffect\nValue labels\nCaption/M · text/secondary\n—\nInputs gap\nscale/8\n—\nTrack height\nscale/6 · 2 · 3\n6 · 8 · 10\nThumb size\nscale/14 · 2 · 3\n14 · 16 · 20; touch area 44 in code\nDo / Don't\nDo\n20\n80\nFrom\n20\nTo\n80\nTurn on Show inputs when people need an exact number. The fields and the thumbs stay in sync.\nDon't\nDon’t hide the values of a range. Without labels the user cannot tell what they selected.\nDo\nUse Single for continuous values where a rough position is enough — volume, opacity.\nDon't\nDon’t use a slider for three named options or on mobile at size S — use Radio or Tabs, and L on touch."
+    }
+  },
+  "accepted": []
+}

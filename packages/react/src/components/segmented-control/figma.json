@@ -1,0 +1,82 @@
+{
+  "page": "3.10 Segmented control",
+  "components": [
+    {
+      "name": "Segmented control",
+      "id": "766:246",
+      "page": "3.10 Segmented control",
+      "pageId": "765:64",
+      "props": {
+        "Label 1": {
+          "type": "TEXT",
+          "default": "Label 1"
+        },
+        "Label 2": {
+          "type": "TEXT",
+          "default": "Label 2"
+        },
+        "Label 3": {
+          "type": "TEXT",
+          "default": "Label 3"
+        },
+        "Label 4": {
+          "type": "TEXT",
+          "default": "Label 4"
+        },
+        "Style": ["Solid", "Overlay"],
+        "Size": ["M", "L"],
+        "Items": ["2", "3", "4"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 24,
+      "size": {
+        "w": 240,
+        "h": 40
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "fill/on-media",
+          "fill/secondary",
+          "static/dark",
+          "static/white",
+          "surface/raised",
+          "text/on-color",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Label/M", "Label/S"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": ["control/height/lg", "control/height/xl", "radius/full", "scale/2", "scale/8"]
+      },
+      "sizes": [1, 2, 8, 16, 24, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Segmented control — switches between 2–4 mutually exclusive views or options (size, mode, period). Solid on surfaces; Overlay on photos and video (fill/on-media track, static/white selected pill). Selected item is always the first slot in the main component — change it per instance. RTL mirrors the order."
+    }
+  ],
+  "doc": {
+    "3.10 Segmented control": {
+      "tokens": [
+        "Elevation/1",
+        "control/height/lg",
+        "control/height/xl",
+        "fill/on-media",
+        "fill/secondary",
+        "fill/soft-hover",
+        "fill/soft-pressed",
+        "radius/full",
+        "scale/2",
+        "static/dark",
+        "static/white",
+        "surface/raised",
+        "text/disabled",
+        "text/on-color",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.10 Segmented control\nA pill track with 2–4 options where exactly one is selected. 24 variants · Style × Size × Items × Direction.\nOverview\nUse for 2–4 short, mutually exclusive options that change the view in place — size, period, mode.\nSolid · 2\nLabel 1\nLabel 2\nOn surfaces. Selected pill = surface/raised + Elevation/1.\nSolid · 3 · M\nLabel 1\nLabel 2\nLabel 3\nCompact size for toolbars and filters.\nSolid · 4\nLabel 1\nLabel 2\nLabel 3\nLabel 4\nMaximum four options — more becomes Tabs or a Select.\nOverlay — on photos and video\nOverlay · 3\nLabel 1\nLabel 2\nLabel 3\nfill/on-media track, static/white pill, static/dark label.\nOverlay · 2 · M\nLabel 1\nLabel 2\nAnatomy\nSolid · L · 3 items shown.\nLabel 1\nLabel 2\nLabel 3\n1\ntrack\n· fill/secondary · radius/full · padding scale/2 (2)\n2\nitem · selected\n· surface/raised · Elevation/1 Raised · label text/primary\n3\nitem\n· transparent · label text/secondary\n4\nlabel\n· Label/M (L) · Label/S (M), centred\nVariants\nStyle × Items. Size L shown.\nSolid\n2 items\nLabel 1\nLabel 2\n3 items\nLabel 1\nLabel 2\nLabel 3\n4 items\nLabel 1\nLabel 2\nLabel 3\nLabel 4\nOverlay\n2 items\nLabel 1\nLabel 2\n3 items\nLabel 1\nLabel 2\nLabel 3\n4 items\nLabel 1\nLabel 2\nLabel 3\nLabel 4\nDark mode · Solid\n3 items\nLabel 1\nLabel 2\nLabel 3\nRTL — order is mirrored, selected slot starts on the right\nSolid · RTL\nتسمية\nتسمية\nتسمية\nOverlay · RTL\nتسمية\nتسمية\nتسمية\nSizes\nM · 40\nLabel 1\nLabel 2\nLabel 3\nItem 36 (control/height/lg), Label/S. Desktop toolbars, dense filters.\nL · 48\nLabel 1\nLabel 2\nLabel 3\nItem 44 (control/height/xl), Label/M. Default on touch — meets 44px target.\nStates\nSelected is shown by the pill. Focus uses _Focus ring around the item.\nState\nItem fill\nLabel\nNotes\nDefault\ntransparent\ntext/secondary\n—\nHover (web)\nfill/soft-hover\ntext/primary\nNot on the selected item\nPressed\nfill/soft-pressed\ntext/primary\nTouch feedback\nSelected\nsurface/raised (Solid) · static/white (Overlay)\ntext/primary · static/dark\nPill slides 200 ms, standard easing\nDisabled\n—\ntext/disabled\nWhole control; never one item\nProps\nProp\nType\nValues\nDefault\nStyle\nVariant\nSolid · Overlay\nSolid\nSize\nVariant\nM · L\nL\nItems\nVariant\n2 · 3 · 4\n2\nDirection\nVariant\nLTR · RTL\nLTR\nLabel 1–4\nText\nShort label, 1–2 words\nLabel 1…4\nTokens\nProperty\nToken\nLight\nDark\nTrack (Solid)\nfill/secondary\n#F1F3F6\n#27272B\nTrack (Overlay)\nfill/on-media\nblack 30%\nblack 30%\nSelected (Solid)\nsurface/raised + Elevation/1\n#FFFFFF\n#27272B (no shadow)\nSelected (Overlay)\nstatic/white · label static/dark\n#FFFFFF\n#FFFFFF\nLabel\ntext/primary · text/secondary · text/on-color\n—\n—\nPadding / radius\nscale/2 · radius/full\n2 · 9999\n2 · 9999\nItem height\ncontrol/height/lg · control/height/xl\n36 · 44\n36 · 44\nDevices\nMobile · 390\nLabel 1\nLabel 2\nLabel 3\nSize L, full width (fill). 2–3 items; labels of 1 word.\nTablet · 834\nLabel 1\nLabel 2\nLabel 3\nSize L, hug width, centred above the content it switches.\nWeb · 1440\nLabel 1\nLabel 2\nLabel 3\nLabel 4\nSize M in toolbars and table headers; L in hero areas.\nDo / Don’t\nLabel 1\nLabel 2\nLabel 3\nDo\nUse 2–4 short options that switch content on the same screen.\nLabel 1\nLabel 2\nLabel 3\nDon’t\nDon’t use Overlay on plain surfaces — it is for photos and video only. Don’t use the control to navi"
+    }
+  },
+  "accepted": []
+}

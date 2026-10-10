@@ -1,0 +1,92 @@
+{
+  "page": "4.2 Badge",
+  "components": [
+    {
+      "name": "Badge",
+      "id": "89:388",
+      "page": "4.2 Badge",
+      "pageId": "10:83",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Show dot": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": ["Filled", "Subtle", "Outline"],
+        "Color": ["Neutral", "Accent", "Success", "Warning", "Danger", "Info"],
+        "Size": ["S", "M", "L"]
+      },
+      "variants": 54,
+      "size": {
+        "w": 48,
+        "h": 20
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "fill/control",
+          "fill/soft",
+          "fill/soft-hover",
+          "status/danger/default",
+          "status/danger/soft",
+          "status/info/default",
+          "status/info/soft",
+          "status/success/default",
+          "status/success/soft",
+          "status/warning/default",
+          "status/warning/soft",
+          "text/accent",
+          "text/danger",
+          "text/info",
+          "text/on-color",
+          "text/on-warning",
+          "text/primary",
+          "text/secondary",
+          "text/success",
+          "text/warning"
+        ],
+        "text": ["Label/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "scale/12",
+          "scale/20",
+          "scale/24",
+          "scale/28",
+          "scale/4",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 5, 8, 12, 16, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Status and label. Variant × Color × Size = 54 variants. Pill-shaped — the same radius logic as buttons."
+    }
+  ],
+  "doc": {
+    "4.2 Badge": {
+      "tokens": [
+        "fill/control",
+        "fill/soft-hover",
+        "radius/full",
+        "scale/12",
+        "scale/20",
+        "scale/4",
+        "scale/6",
+        "scale/8",
+        "text/on-color"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/20–3\n20 / 24 / 28\nHorizontal padding\nscale/8 · scale/12\n8 / 12\nInner gap\nscale/4 · scale/6\n4 / 6\nCorner radius\nradius/full\n9999\nDot\nscale/6\n6\nIcon\nicon/xs · icon/sm\n12 / 16\nFilled background\nstatus/{tone}/default\nfill/control for Neutral\nSubtle background\nstatus/{tone}/soft\nfill/soft-hover for Neutral\nOutline border\nborder/{tone}\n1px\nFilled text\ntext/on-color\n—\nSubtle and Outline text\ntext/{tone}\n—\nFont\nLabel/S · Label/M\n12/16 · 14/20 (L)\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nFilled, Subtle, Outline\nFilled\nColor\nvariant\nNeutral, Accent, Success, Warning, Danger, Info\nNeutral\nSize\nvariant\nS (20), M (24), L (28)\nM\nLabel\ntext\nShort text, 1–2 words\nLabel\nShow dot\nboolean\ntrue / false\nfalse\nShow icon\nboolean\ntrue / false\nfalse\nIcon (swap)\ninstance swap\nAdded manually in Figma\n—\nDo / Don’t\nDo\nActive\nPending\nCancelled\nA short label — one or two words. A Badge is not a text block.\nDon’t\nPayment pending, please check your card\nA long sentence doesn’t fit in a Badge and breaks the pill shape.\nDo\nPaid\nRejected\nMatch colour to meaning: Success for success, Danger for errors.\nDon’t\nNew\nPopular\nDon’t pick a colour for decoration — users read it as a status."
+    }
+  },
+  "accepted": []
+}

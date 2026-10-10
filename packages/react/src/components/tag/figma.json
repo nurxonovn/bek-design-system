@@ -1,0 +1,72 @@
+{
+  "page": "4.2 Badge",
+  "components": [
+    {
+      "name": "Tag",
+      "id": "146:1159",
+      "page": "4.2 Badge",
+      "pageId": "10:83",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Tag"
+        },
+        "Show icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": ["Subtle", "Outline"],
+        "Color": ["Neutral", "Accent", "Success", "Warning", "Danger", "Info", "Utility"],
+        "Size": ["S", "M"]
+      },
+      "variants": 28,
+      "size": {
+        "w": 37,
+        "h": 20
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "fill/soft",
+          "fill/soft-hover",
+          "status/danger/soft",
+          "status/info/soft",
+          "status/success/soft",
+          "status/utility/soft",
+          "status/warning/soft",
+          "text/accent",
+          "text/danger",
+          "text/info",
+          "text/primary",
+          "text/success",
+          "text/utility",
+          "text/warning"
+        ],
+        "text": ["Caption/M"],
+        "effect": [],
+        "dimension": ["radius/control/md", "scale/12", "scale/20", "scale/24", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 5, 8, 12, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Metadata tag. Variant × Color × Size = 28 variants. Unlike Badge: a rounded rectangle, for information rather than status."
+    }
+  ],
+  "doc": {
+    "4.2 Badge": {
+      "tokens": [
+        "fill/control",
+        "fill/soft-hover",
+        "radius/full",
+        "scale/12",
+        "scale/20",
+        "scale/4",
+        "scale/6",
+        "scale/8",
+        "text/on-color"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/20–3\n20 / 24 / 28\nHorizontal padding\nscale/8 · scale/12\n8 / 12\nInner gap\nscale/4 · scale/6\n4 / 6\nCorner radius\nradius/full\n9999\nDot\nscale/6\n6\nIcon\nicon/xs · icon/sm\n12 / 16\nFilled background\nstatus/{tone}/default\nfill/control for Neutral\nSubtle background\nstatus/{tone}/soft\nfill/soft-hover for Neutral\nOutline border\nborder/{tone}\n1px\nFilled text\ntext/on-color\n—\nSubtle and Outline text\ntext/{tone}\n—\nFont\nLabel/S · Label/M\n12/16 · 14/20 (L)\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nFilled, Subtle, Outline\nFilled\nColor\nvariant\nNeutral, Accent, Success, Warning, Danger, Info\nNeutral\nSize\nvariant\nS (20), M (24), L (28)\nM\nLabel\ntext\nShort text, 1–2 words\nLabel\nShow dot\nboolean\ntrue / false\nfalse\nShow icon\nboolean\ntrue / false\nfalse\nIcon (swap)\ninstance swap\nAdded manually in Figma\n—\nDo / Don’t\nDo\nActive\nPending\nCancelled\nA short label — one or two words. A Badge is not a text block.\nDon’t\nPayment pending, please check your card\nA long sentence doesn’t fit in a Badge and breaks the pill shape.\nDo\nPaid\nRejected\nMatch colour to meaning: Success for success, Danger for errors.\nDon’t\nNew\nPopular\nDon’t pick a colour for decoration — users read it as a status."
+    }
+  },
+  "accepted": []
+}

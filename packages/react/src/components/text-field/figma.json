@@ -1,0 +1,111 @@
+{
+  "page": "3.2 Text field",
+  "components": [
+    {
+      "name": "Text field",
+      "id": "49:20100",
+      "page": "3.2 Text field",
+      "pageId": "10:75",
+      "props": {
+        "Label text": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Placeholder text": {
+          "type": "TEXT",
+          "default": "Placeholder"
+        },
+        "Input text": {
+          "type": "TEXT",
+          "default": "Input"
+        },
+        "Supporting text": {
+          "type": "TEXT",
+          "default": "Supporting text"
+        },
+        "Leading icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Trailing icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show supporting text": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Filled", "Outlined", "Plain"],
+        "Size": ["S", "M", "L", "XL"],
+        "State": ["Enabled", "Hovered", "Error", "Disabled", "Loading", "Skeleton", "Focus"],
+        "Text configurations": ["Label text", "Placeholder text", "Input text"]
+      },
+      "variants": 252,
+      "size": {
+        "w": 320,
+        "h": 56
+      },
+      "tokens": {
+        "color": [
+          "border/danger",
+          "border/focus",
+          "fill/primary",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "text/danger",
+          "text/disabled",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/M", "Label/Input"],
+        "effect": [],
+        "dimension": [
+          "radius/control/lg",
+          "radius/control/md",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/32",
+          "scale/36",
+          "scale/4",
+          "scale/40",
+          "scale/44",
+          "scale/56",
+          "scale/64",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 5, 8, 10, 12, 14, 16, 24, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Text input field. Variant × Size × State × Text configurations = 252 variants. Supporting text is built into the component."
+    }
+  ],
+  "doc": {
+    "3.2 Text field": {
+      "tokens": [
+        "border/danger",
+        "border/default",
+        "border/focus",
+        "control/height",
+        "fill/primary",
+        "radius/control/sm",
+        "scale/1",
+        "scale/12",
+        "scale/16",
+        "scale/2",
+        "scale/24",
+        "scale/32",
+        "scale/36",
+        "text/danger",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "\nDesign tokens\nWhich token each visual property comes from. In code these names become CSS variables.\nProperty\nToken\nValue\nHeight\nscale/36–4\n36 / 44 / 56 / 64\nHorizontal padding\nscale/12 · scale/16 · scale/24\n12 / 16 / 24\nInner gap\nscale/2–3\n8 / 12\nCorner radius\nradius/control/sm – lg\n6 / 8 / 12 / 16\nIcon slot\nscale/32–2\n32 / 40\nBorder width\nscale/1 · thick\n1 / 2\nBackground — Filled\ngray-alpha/100–200\n—\nBackground — Outlined\nfill/primary\n—\nBorder — default\nborder/default\n—\nBorder — focus\nborder/focus\n—\nBorder — error\nborder/danger\n—\nText — value\ntext/primary\n—\nText — placeholder\ntext/tertiary\n—\nText — label\ntext/secondary\n—\nText — error\ntext/danger\n—\nFont — value\nBody/S · Body/M\n14/20 · 16/24\nFont — label and supporting\nCaption/M\n12/16\nProps\nFigma names map one-to-one to code prop names.\nProp\nType\nValues\nDefault\nVariant\nvariant\nFilled, Outlined, Underlined\nFilled\nSize\nvariant\nS (36), M (44), L (56), XL (64)\nM\nState\nvariant\nEnabled, Hovered, Focused, Error, Disabled, Loading, Skeleton\nEnabled\nText configurations\nvariant\nLabel text, Placeholder text, Input text\nPlaceholder text\nLabel text\ntext\nAny text\nLabel\nPlaceholder text\ntext\nAny text\nPlaceholder\nInput text\ntext\nAny text\nInput\nSupporting text\ntext\nAny text\nSupporting text\nLeading icon\nboolean\ntrue / false\nfalse\nTrailing icon\nboolean\ntrue / false\nfalse\nShow supporting text\nboolean\ntrue / false\ntrue\nIcon (swap)\ninstance swap\nAdded manually in Figma\n—\nDo / Don’t\nDo\nEmail\nname@mail.uz\nWe’ll send the receipt here\nKeep the label above the field; use the placeholder only as an example, e.g. \"name@mail.uz\".\nDon’t\nEmail\nEmail\nSupporting text\nDon’t use the placeholder as the only label — it disappears as soon as the user types.\nDo\nEmail\nname@mail\nAdd the domain, e.g. name@mail.uz\nShow the error under the field and say how to fix it.\nDon’t\nEmail\nEnter email\nInvalid value\nDon’t clear what the user typed when validation fails."
+    }
+  },
+  "accepted": []
+}

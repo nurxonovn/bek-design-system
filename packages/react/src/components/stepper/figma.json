@@ -1,0 +1,84 @@
+{
+  "page": "3.9 Stepper",
+  "components": [
+    {
+      "name": "Stepper",
+      "id": "552:1243",
+      "page": "3.9 Stepper",
+      "pageId": "549:41819",
+      "props": {
+        "Value": {
+          "type": "TEXT",
+          "default": "2"
+        },
+        "Unit": {
+          "type": "TEXT",
+          "default": "pcs"
+        },
+        "Show unit": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": ["Outline", "Filled"],
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Focus", "Min", "Max", "Disabled"]
+      },
+      "variants": 36,
+      "size": {
+        "w": 100,
+        "h": 36
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/tertiary",
+          "fill/tertiary-hover",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Label/L", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "radius/control/pill",
+          "scale/2",
+          "scale/32",
+          "scale/36",
+          "scale/4",
+          "scale/40",
+          "scale/44",
+          "scale/48",
+          "scale/56"
+        ]
+      },
+      "sizes": [1, 2, 4, 5, 32, 40, 48],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "Quantity stepper. Variant = Filled (default) | Outline × Size = S (size/field/1) | M (size/field/2) | L (size/field/3) × State = Default | Hover | Focus | Min | Max | Disabled = 36 variants. − / + are nested Button (Flat, icon only); Min disables −, Max disables +. Value min-width = size/stepper-value/*. Show unit adds &quot;pcs&quot;, &quot;kg&quot; etc."
+    }
+  ],
+  "doc": {
+    "3.9 Stepper": {
+      "tokens": [
+        "border/default",
+        "border/focus",
+        "control/height",
+        "fill/tertiary",
+        "radius/control/md",
+        "scale/32",
+        "scale/36",
+        "scale/40",
+        "scale/44",
+        "scale/48",
+        "scale/56",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "\nDesign tokens\nEvery visual property is bound to a BEK variable or style. Code names follow var(--bek-…).\nProperty\nToken\nValue\nHeight\nscale/36 · 2 · 3\n36 · 44 · 56\nValue min-width\nscale/32 · 2 · 3\n32 · 40 · 48\nCorner radius\nradius/control/md\n8\nFill · Filled\nfill/tertiary\nLight / Dark from Color\nBorder · Outline\nborder/default · stroke/default\n1 px\nValue text\nS Label/M · M Label/L · L Label/L\ntext/primary\nUnit text\ntext/tertiary\nCaption style of the size\nFocus\n_Focus ring · border/focus\n2 px ring, offset stroke/focus\nDo / Don't\nDo\n1\nDisable − at the minimum and + at the maximum. The user sees the limit before tapping, instead of a silent no-op.\nDon't\n1250\nDon’t use a stepper for large or exact numbers — nobody taps + a thousand times. Use Text field (3.2) with a numeric keyboard.\nDo\n2\nOn touch screens use L (56 px) or at least M (44 px) so both buttons are easy to hit.\nDon't\n2\nDon’t use S on mobile: 36 px is below the 44 px touch target, and − / + sit too close together."
+    }
+  },
+  "accepted": []
+}
