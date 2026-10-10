@@ -226,6 +226,9 @@ importers:
       clsx:
         specifier: 2.1.1
         version: 2.1.1
+      page-mascot:
+        specifier: 0.1.0
+        version: 0.1.0(react@18.3.1)
     devDependencies:
       '@types/react':
         specifier: 18.3.26
@@ -2254,6 +2257,12 @@ packages:
 
   package-manager-detector@0.2.11:
     resolution: {integrity: sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==}
+
+  page-mascot@0.1.0:
+    resolution: {integrity: sha512-sw/BIqRKJ7nUfaxAGtmwQqm534I+lb2ZiXLDWZNexR1VF1RkmRl6BLVtj7hH+PrsiCPKtxHhA3IpVkXEm72FeA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      react: '>=18'
 
   parse-entities@4.0.2:
     resolution: {integrity: sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==}
@@ -4894,6 +4903,10 @@ snapshots:
   package-manager-detector@0.2.11:
     dependencies:
       quansync: 0.2.11
+
+  page-mascot@0.1.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   parse-entities@4.0.2:
     dependencies:

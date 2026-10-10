@@ -112,3 +112,24 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
 
 - ✅ Joriy sahifa doim `selected`. ❌ Bir vaqtda ikkita tanlangan element.
 - ✅ Header sahifadan sirt rangi bilan ajraladi. ❌ Header ostiga chegara chizig'i.
+
+## App shell · Tablet / Mobile (Figma 6.2)
+
+`AppShell` uchta qurilma uchun bitta: Web — `header` + `rail` + `menu`; Tablet — `header` + `rail`
+(`NavRail`); Mobile — `header` (`TopNavigation`) + `bottomNav` (`BottomNavigation`). Figma "Drawer: Closed / Open"
+→ `drawer` slotiga `NavDrawer` (`open` prop'i); u scrim bilan panellarni ham yopadi. Kontent padding'i
+`layout/page-margin` (Mobile 16 · Tablet 24 · Web 32) — tokenning o'zi rejimga qarab o'zgaradi.
+
+```tsx
+<AppShell
+  header={<TopNavigation title="BEK" leading="menu" onLeadingClick={() => setOpen(true)} />}
+  bottomNav={<BottomNavigation>…</BottomNavigation>}
+  drawer={
+    <NavDrawer open={open} onClose={() => setOpen(false)}>
+      …
+    </NavDrawer>
+  }
+>
+  …
+</AppShell>
+```

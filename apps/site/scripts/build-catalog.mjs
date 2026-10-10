@@ -40,7 +40,7 @@ for (const dir of readdirSync(COMPONENTS).sort()) {
   const intro = readme.split('\n').find((l) => l.startsWith('Figma:')) ?? '';
   const description = intro
     .replace(/^Figma:\s*\*\*[^*]+\*\*/, '')
-    .replace(/`/g, '')
+    .replace(/[`*]/g, '')
     .replace(/^[\s.—–-]+/, '')
     .trim();
   const figmaLabel = intro.match(/\*\*([^*]+)\*\*/)?.[1]?.trim() ?? spec?.page ?? '';

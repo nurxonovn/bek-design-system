@@ -1,0 +1,123 @@
+/* Keyboard — Figma "10.3 Keyboard". Mockup: iOS 27 (402) va Material 3 Gboard (412), BEK tokenlarida.
+   Fon fill/tertiary; tugmalar iOS surface/card · Android surface/raised; funksional tugmalar fill/tertiary.
+   Light/Dark tokenlar orqali. Pastda Home indicator uchun 34 xavfsiz maydon. */
+.bek-keyboard {
+  --bek-keyboard-key-bg: var(--bek-surface-card);
+  --bek-keyboard-key-height: 42px;
+  --bek-keyboard-gap: var(--bek-scale-6);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--bek-scale-8) var(--bek-scale-4) 0;
+  background: var(--bek-fill-tertiary);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  user-select: none;
+}
+
+.bek-keyboard--android {
+  --bek-keyboard-key-bg: var(--bek-surface-raised);
+  --bek-keyboard-key-height: 46px;
+  --bek-keyboard-gap: var(--bek-scale-6);
+
+  gap: var(--bek-scale-10);
+  padding-top: var(--bek-scale-12);
+}
+
+.bek-keyboard__suggestions {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 var(--bek-scale-8);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+}
+
+.bek-keyboard__row {
+  display: flex;
+  justify-content: center;
+  gap: var(--bek-keyboard-gap);
+}
+
+.bek-keyboard__key {
+  display: inline-flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--bek-scale-36);
+  height: var(--bek-keyboard-key-height);
+  border-radius: var(--bek-radius-control-sm);
+  background: var(--bek-keyboard-key-bg);
+  box-shadow: var(--bek-elevation-1);
+}
+
+.bek-keyboard--android .bek-keyboard__key {
+  box-shadow: none;
+}
+
+.bek-keyboard__key > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+.bek-keyboard__key--function {
+  background: var(--bek-fill-tertiary-hover);
+  font-size: var(--bek-type-body-md-size);
+}
+
+.bek-keyboard__key--wide {
+  flex: 1.4 1 0;
+  max-width: var(--bek-scale-48);
+}
+
+.bek-keyboard__key--space {
+  flex: 5 1 0;
+  max-width: none;
+  font-size: var(--bek-type-body-md-size);
+}
+
+.bek-keyboard__key--return {
+  flex: 2 1 0;
+  max-width: var(--bek-scale-96);
+}
+
+.bek-keyboard--android .bek-keyboard__key--return {
+  background: var(--bek-accent-default);
+  color: var(--bek-text-on-color);
+}
+
+/* Raqamli klaviatura — 3 ustun */
+.bek-keyboard__pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--bek-keyboard-gap);
+  padding: 0 var(--bek-scale-4);
+}
+
+.bek-keyboard__key--digit {
+  flex-direction: column;
+  gap: 0;
+  max-width: none;
+  height: 46px;
+  font-size: var(--bek-type-title-lg-size);
+  line-height: 1;
+}
+
+.bek-keyboard__key--digit > small {
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-scale-1);
+  color: var(--bek-text-secondary);
+}
+
+.bek-keyboard__key--empty {
+  background: transparent;
+  box-shadow: none;
+}
+
+.bek-keyboard__safe-area {
+  height: 34px;
+}

@@ -674,6 +674,79 @@
       "rawColors": [],
       "nested": ["Avatar", "Badge", "Button", "Logo"],
       "description": "Tablet top bar. Height layout/header/height (64 on Tablet). Menu button (opens the Nav drawer) · Logo · Search · Notifications (+ count) · Avatar. Language, theme, name, role and Log out live in the drawer footer or settings."
+    },
+    {
+      "name": "App shell · Tablet",
+      "id": "650:77695",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Drawer": ["Closed", "Open"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 834,
+        "h": 1194
+      },
+      "tokens": {
+        "color": [
+          "bg/overlay",
+          "bg/sheet",
+          "fill/secondary",
+          "surface/card",
+          "surface/raised",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": [
+          "layout/drawer/width",
+          "layout/header/height",
+          "layout/page-margin",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/4",
+          "scale/72",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24, 64],
+      "rawColors": [],
+      "nested": [],
+      "description": "Tablet app shell (600–1023 px), 834 × 1194: Header + Nav rail + Content. Drawer: Closed / Open — the drawer and a color/background/overlay scrim cover everything, including the header. Content padding layout/page-margin (24 on Tablet)."
+    },
+    {
+      "name": "App shell · Mobile",
+      "id": "650:79173",
+      "page": "6.2 Navigation",
+      "pageId": "10:92",
+      "props": {
+        "Drawer": ["Closed", "Open"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 390,
+        "h": 844
+      },
+      "tokens": {
+        "color": [
+          "bg/overlay",
+          "bg/sheet",
+          "fill/secondary",
+          "surface/card",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": ["Elevation/4 Overlay"],
+        "dimension": ["layout/drawer/width", "layout/page-margin", "radius/surface/md", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16, 24, 64],
+      "rawColors": [],
+      "nested": ["Bottom navigation", "Top navigation"],
+      "description": "Mobile app shell (360–599 px), 390 × 844: Top bar + Content + Bottom nav. Drawer: Closed / Open — drawer (304) and scrim cover the whole screen, bars included. Content padding layout/page-margin (16 on Mobile)."
     }
   ],
   "doc": {
@@ -728,6 +801,11 @@
       "rule": "token-extra",
       "match": "--bek-bg-base",
       "reason": "AppShell sahifa foni bg/base — doc \"Separate the header from the page by surface colour, not a border\" qoidasi uchun header/menu (surface/card) dan ajralishi kerak; Figma'da App shell o'rami bg/sheet, kontent esa demo placeholder (fill/secondary). Figma'da Content slot foniga bg/base berish kerak."
+    },
+    {
+      "rule": "variant-missing",
+      "match": "Drawer=Closed",
+      "reason": "App shell Tablet/Mobile Drawer=Closed/Open — kodda `drawer` slotidagi NavDrawer `open` prop'i (false = Closed); alohida variant klassi yo'q."
     }
   ]
 }

@@ -1,0 +1,108 @@
+{
+  "page": "10.2 System bars",
+  "components": [
+    {
+      "name": "Status bar",
+      "id": "784:368",
+      "page": "10.2 System bars",
+      "pageId": "782:67",
+      "props": {
+        "Platform": ["iOS", "Android"],
+        "Content": ["Dark", "Light"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 402,
+        "h": 62
+      },
+      "tokens": {
+        "color": ["fill/strong"],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 2.5, 9, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["Building Blocks/status-bar"],
+      "description": "Status bar — native system clock and indicators for mockups only (the OS renders it in code). Built from the real platform bars — iOS 27 (iPhone 17 Pro, 402 × 62) and Material 3 Android (412 × 52) — painted with BEK static tokens: Content=Dark → static/dark on light screens, Content=Light → static/white on dark screens and media. The nested native instance is exposed — edit Time there. Dynamic Isl"
+    },
+    {
+      "name": "Home indicator",
+      "id": "784:369",
+      "page": "10.2 System bars",
+      "pageId": "782:67",
+      "props": {
+        "Platform": ["iOS", "Android"],
+        "Content": ["Dark", "Light"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 402,
+        "h": 34
+      },
+      "tokens": {
+        "color": ["fill/strong"],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 8, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["Building Blocks/navigation"],
+      "description": "Home indicator — native system gesture bar for mockups only. Built from the real platform bars — iOS 27 (402 × 34 safe area, 144 × 5 bar) and Material 3 Android gesture navigation (412 × 24) — painted with BEK static tokens: Content=Dark → static/dark, Content=Light → static/white."
+    }
+  ],
+  "doc": {
+    "10.2 System bars": {
+      "tokens": ["bg/sheet", "static/dark", "static/white"],
+      "text": "DEVICES\nBEK\nDesign System\n10.2 System bars\nNative iOS & Android status bar and home / gesture bar layouts in BEK colours. 2 sets × 4 variants.\nOverview\nDrawn by the operating system in code. Use them in Figma so every mobile mockup shows the real safe areas.\nStatus bar · iOS\n9:41\n62 high (Dynamic Island).\nStatus bar · Android\n9:30\n52 high (camera cutout).\nHome indicator · iOS\n34 safe area, 144 × 5 bar.\nHome indicator · Android\n24 gesture area, 108 × 4 bar.\nAnatomy\n9:41\n1\ntime\n· Title/M (iOS) · Label/M (Android)\n2\nindicators\n· signal · Wi-Fi · battery — platform glyphs\n3\ncolour\n· static/dark or static/white — never theme tokens\nVariants\nContent follows the background behind the bar, not the app theme.\nContent=Dark — on light backgrounds\niOS\n9:41\nAndroid\n9:30\nContent=Light — on dark backgrounds and photos\niOS\n9:41\nAndroid\n9:30\nHome indicator · iOS\nSizes\nSafe areas — keep interactive content outside them.\nPart\niOS\nAndroid\nNotes\nStatus bar\n62\n52 (status + cutout)\nTop safe area\nHome indicator\n34\n24 (gesture) · 48 (3-button)\nBottom safe area\nIndicator bar\n144 × 5\n108 × 4\nradius full\nFrame\n390 × 844\n360 × 800\n10.1 Devices\nStates\nNo states\nSystem bars are not interactive. Switch Content when the background behind them changes (photo header, dark sheet).\nProps\nProp\nType\nValues\nDefault\nPlatform\nVariant\niOS · Android\niOS\nContent\nVariant\nDark · Light\nDark\nTime (Status bar)\nText\n9:41\n9:41\n—\n—\n—\n—\nTokens\nProperty\nToken\nLight page\nDark page\nContent=Dark\nstatic/dark\n#323233\n—\nContent=Light\nstatic/white\n—\n#FFFFFF\nBackground\nnone (transparent)\nbehind: bg/sheet\nbehind: bg/sheet\nIn code\nenv(safe-area-inset-*)\n—\n—\nDevices\nMobile only. Tablets use the same bars at their own widths; web has none.\nMobile · 390\n9:41\nStatus bar on top, Home indicator at the bottom of every mobile frame.\nTablet · 834\n9:30\nSame components stretched to 834 (iPad: 24 status bar).\nWeb · 1440\n9:41\nNot used — browsers draw their own chrome.\nDo / Don’t\n9:41\nDo\nUse Dark content on light screens and switch to Light content over photos.\n9:41\nDon’t\nDon’t leave dark content on a dark background or place buttons inside the safe areas."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-strong",
+      "reason": "fill/strong — Figma'dagi nested native (iOS 27 / M3) instance qatlami; doc Tokens jadvali bo'yicha kontent rangi static/dark yoki static/white, kod shunga amal qiladi."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-static-dark",
+      "reason": "Doc Tokens: Content=Dark → static/dark (mavzu tokeni emas); komponent set'ida nested native instance bog'lanmagan."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-static-white",
+      "reason": "Doc Tokens: Content=Light → static/white; set'da bog'lanmagan."
+    },
+    {
+      "rule": "px-figma",
+      "match": "62px",
+      "reason": "Status bar iOS balandligi 62 (doc Sizes jadvali) — balandlik extractor sizes ro'yxatiga kirmaydi, scale tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "34px",
+      "reason": "Home indicator iOS xavfsiz maydoni 34 (doc Sizes) — scale tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "144px",
+      "reason": "Home indicator iOS chizig'i 144 × 5 (doc Sizes) — native o'lcham."
+    },
+    {
+      "rule": "px-figma",
+      "match": "5px",
+      "reason": "Home indicator iOS chizig'i balandligi 5 (doc Sizes) — native o'lcham."
+    },
+    {
+      "rule": "px-figma",
+      "match": "108px",
+      "reason": "Home indicator Android chizig'i 108 × 4 (doc Sizes) — native o'lcham."
+    },
+    {
+      "rule": "px-figma",
+      "match": "124px",
+      "reason": "Dynamic Island kengligi (iOS 27 native, 124 × 36) — scale tokeni yo'q."
+    }
+  ]
+}

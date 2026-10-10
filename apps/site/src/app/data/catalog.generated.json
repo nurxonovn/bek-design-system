@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T17:19:36.387Z",
+  "generatedAt": "2026-10-10T17:33:38.716Z",
   "figmaFile": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System",
   "sections": [
     {
@@ -2559,7 +2559,7 @@
     {
       "dir": "icon",
       "title": "Icon",
-      "description": "Ikonka uchun o'lchamli slot; ikonkalarning o'zi — alohida **BEK Icons** kutubxonasidan (Style=Stroke, Type=Standard).",
+      "description": "Ikonka uchun o'lchamli slot; ikonkalarning o'zi — alohida BEK Icons kutubxonasidan (Style=Stroke, Type=Standard).",
       "exports": [
         "Icon"
       ],
@@ -2711,6 +2711,108 @@
       },
       "accepted": [],
       "readme": "# InfoWrap\n\nFigma: **5.5 Info wrap**. Forma yoki karta ichidagi kichik yordamchi izoh bloki.\n\n```tsx\nimport { InfoWrap } from '@bek/react';\n\n<InfoWrap icon={<TruckIcon />}>Delivery is free from 200 000 sum</InfoWrap>\n<InfoWrap emphasis title=\"Free delivery\" onInfo={openDetails}>From 200 000 sum</InfoWrap>\n```\n\n| Prop        | Qiymatlar                                     | Default     |\n| ----------- | --------------------------------------------- | ----------- |\n| `emphasis`  | `true` — `fill/tertiary` fon                  | `false`     |\n| `icon`      | boshidagi (leading) 16 px ikonka              | —           |\n| `title`     | ikki qatorli ko'rinish, Label/M `text/accent` | —           |\n| `children`  | matn, Caption/L `text/primary`                | —           |\n| `onInfo`    | berilsa — oxirida \"info\" tugmasi (16 px)      | —           |\n| `infoLabel` | info tugmasi nomi                             | `More info` |\n\n- Tokenlar: fon `fill/secondary`, padding 12 × 16, gap 8, radius `surface/xl`.\n\n## Do / Don't\n\n- ✅ Bir-ikki qatorli maslahat. ❌ Xato yoki ogohlantirish — ular uchun Alert.\n"
+    },
+    {
+      "dir": "keyboard",
+      "title": "Keyboard",
+      "description": "ekran maketlari uchun tizim klaviaturasi (iOS 27 / Material 3 Gboard) BEK tokenlarida. Faqat mockup: haqiqiy klaviaturani OS chizadi; bu komponent maydon fokusda bo'lganda ko'rinadigan maydonni tekshirish uchun. platform: ios · android; type: alphabet · numeric.",
+      "exports": [
+        "Keyboard"
+      ],
+      "section": {
+        "id": 10,
+        "title": "Devices"
+      },
+      "figma": {
+        "label": "10.3 Keyboard",
+        "pages": [
+          {
+            "name": "10.3 Keyboard",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=793-69"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Keyboard",
+            "id": "801:461",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=801-461",
+            "variants": 4,
+            "description": "Keyboard — native system keyboard for screen mockups (the OS draws it in code). Built from the real platform keyboards — iOS 27 (iPhone, 402 wide) and Material 3 Gboard (412 wide) — repainted with BEK colour tokens, so Light and Dark follow BEK Color modes. Platform (iOS · Android) × Type (Alphabet · Numeric: iOS Number Pad, Android Keypad). The nested native instance is exposed — switch its own T",
+            "props": {
+              "Platform": [
+                "iOS",
+                "Android"
+              ],
+              "Type": [
+                "Alphabet",
+                "Numeric"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/overlay",
+                "fill/tertiary"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "surface/card",
+          "surface/raised"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-overlay",
+          "reason": "bg/overlay — Figma'dagi nested native klaviatura instance ichidagi qatlam (bosilgan tugma popup soyasi); mockup kodida popup yo'q."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-surface-card",
+          "reason": "Doc Spec: iOS tugmalari surface/card — set'da nested instance bog'lanmagan."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-surface-raised",
+          "reason": "Doc Spec: Android tugmalari surface/raised — set'da bog'lanmagan."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-text-primary",
+          "reason": "Tugma harflari rangi — native instance'da bog'lanmagan; BEK matn tokeni."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-text-secondary",
+          "reason": "Raqamli klaviaturadagi ABC/DEF harflari — native instance'da bog'lanmagan."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-accent-default",
+          "reason": "Android (Gboard) return tugmasi accent rangda — native instance'da bog'lanmagan."
+        },
+        {
+          "rule": "px-figma",
+          "match": "42px",
+          "reason": "iOS 27 tugma balandligi 42 (native) — scale tokeni yo'q."
+        },
+        {
+          "rule": "px-figma",
+          "match": "46px",
+          "reason": "Gboard tugma balandligi 46 (native) — scale tokeni yo'q."
+        },
+        {
+          "rule": "px-figma",
+          "match": "34px",
+          "reason": "Pastki xavfsiz maydon 34 (10.2 Home indicator iOS)."
+        }
+      ],
+      "readme": "# Keyboard\n\nFigma: **10.3 Keyboard** — ekran maketlari uchun tizim klaviaturasi (iOS 27 / Material 3 Gboard) BEK tokenlarida. **Faqat mockup**: haqiqiy klaviaturani OS chizadi; bu komponent maydon fokusda bo'lganda ko'rinadigan maydonni tekshirish uchun. `platform`: `ios` · `android`; `type`: `alphabet` · `numeric`.\n\n```tsx\n<Keyboard />                                        // iOS · QWERTY · taklif qatori\n<Keyboard type=\"numeric\" />                         // iOS Number pad — telefon, kod, summa\n<Keyboard platform=\"android\" type=\"alphabet\" returnLabel=\"Done\" />\n```\n\nQoidalar (Figma doc):\n\n- Telefon, kod va summa maydonlarida raqamli klaviaturani so'rang — kodda `inputMode=\"numeric\"`; mockupda `type=\"numeric\"`.\n- Sticky tugma yoki fokusdagi maydon klaviatura ortida qolmasin — kontent yuqorida skroll bo'ladi.\n- Ranglar: fon `fill/tertiary`; tugmalar iOS `surface/card`, Android `surface/raised`; funksional tugmalar `fill/tertiary-hover`; Android return `accent/default`. Light/Dark tokenlar bilan.\n- Pastda Home indicator uchun 34 xavfsiz maydon (`10.2 System bars`).\n- Mobile: to'liq kenglik; Tablet: maket kengligiga cho'ziladi. Interaktiv emas (`aria-hidden`), holatlar yo'q.\n"
     },
     {
       "dir": "link",
@@ -3166,6 +3268,151 @@
         }
       ],
       "readme": "# BekLogo\n\nFigma: **2.2 Logo & Brand → Logo**. Belgi (to'rt gulbarg) + \"BEK\" wordmark + mahsulot nomi.\n\n```tsx\nimport { BekLogo } from '@bek/react';\n\n<BekLogo product=\"Academy\" />                       // horizontal · s · gradient\n<BekLogo product=\"Digital Legacy\" size=\"m\" />\n<BekLogo variant=\"mark\" size=\"l\" />                 // favicon, app icon\n<BekLogo color=\"mono\" />                            // masterbrand BEK\n\n<a href=\"/\" aria-label=\"BEK Academy — home\">\n  <BekLogo product=\"Academy\" aria-hidden />\n</a>\n```\n\n| Prop      | Qiymatlar                                  | Default      | Figma                  |\n| --------- | ------------------------------------------ | ------------ | ---------------------- |\n| `product` | `string` · `null`                          | `null` (BEK) | Product · Show product |\n| `variant` | `horizontal` · `vertical` · `mark`         | `horizontal` | Variant                |\n| `size`    | `s` 24 · `m` 40 · `l` 64 (belgi, px)       | `s`          | Size                   |\n| `color`   | `gradient` · `solid` · `mono` · `reversed` | `gradient`   | Color                  |\n\nRanglar faqat tokenlardan: `--bek-brand-logo-start` / `-end` (gradient), `--bek-brand-logo-solid`, `--bek-text-primary` (mono), `--bek-text-on-color` (reversed). Brend rangini o'zgartirish — CSS'da bitta qator.\n\n## Qoidalar\n\n- **Mahsulot nomi:** Title Case, 1–3 so'z, ≤ 18 belgi; \"BEK\" nomga qo'shilmaydi (`Academy`, `BEK Academy` emas); tarjima qilinmaydi.\n- **Bo'sh joy:** har tomonda kamida belgi kengligining 0.44 qismi.\n- **Minimal o'lcham:** belgi — ekranda 24 px (favicon 16 px); horizontal lockup — 120 px kenglik; vertical — 96 px.\n- **Qurilmalar:** Mobile va Tablet header'da `horizontal · s`; Web'da ilovada `s`, landing va footer'da `m`.\n- **Mumkin emas:** cho'zish, rangini o'zgartirish, burish, soya qo'shish, oraliqni o'zgartirish, notekis fon ustiga qo'yish.\n\n## Accessibility\n\nKomponent `role=\"img\"` va `aria-label=\"BEK <mahsulot>\"` bilan chiqadi. Havola ichida bo'lsa, nomni havolaga bering va logoga `aria-hidden` qo'ying.\n"
+    },
+    {
+      "dir": "mascot",
+      "title": "Mascot",
+      "description": "BEK maskoti, panda: Mascot (sprite-sheet kadri) va MascotMessage (maskot + sarlavha + tavsif + tugma). pose: idle + 8 qarash (look-up, look-down-right …) + 9 his (happy, love, success, celebrate, wink, surprised, shy, sleepy, dizzy); size: xs 32 · s 48 · m 64 · l 96 · xl 140 · 2xl 200.",
+      "exports": [
+        "Mascot",
+        "MascotMessage"
+      ],
+      "section": {
+        "id": 2,
+        "title": "Assets"
+      },
+      "figma": {
+        "label": "2.3 Mascot",
+        "pages": [
+          {
+            "name": "2.3 Mascot",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=385-14056"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Mascot",
+            "id": "385:50462",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=385-50462",
+            "variants": 108,
+            "description": "The BEK mascot — a panda. Pose: idle + 8 gaze directions + 9 emotions. Size: XS 32 · S 48 · M 64 · L 96 · XL 140 · 2XL 200 (size/mascot/1–6). Source: page-mascot (MIT © Kamran Ahmed). Always used with text; one mascot per screen.",
+            "props": {
+              "Pose": [
+                "idle",
+                "look-up-left",
+                "look-up",
+                "look-up-right",
+                "look-left",
+                "look-right",
+                "look-down-left",
+                "look-down",
+                "look-down-right",
+                "happy",
+                "love",
+                "success",
+                "celebrate",
+                "wink",
+                "surprised",
+                "shy",
+                "sleepy",
+                "dizzy"
+              ],
+              "Size": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "2XL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "surface/card"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": [
+                "scale/140",
+                "scale/200",
+                "scale/32",
+                "scale/48",
+                "scale/64",
+                "scale/96"
+              ]
+            },
+            "nested": []
+          },
+          {
+            "name": "Mascot message",
+            "id": "385:50487",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=385-50487",
+            "variants": 2,
+            "description": "Mascot + title + description + optional button. For empty-state, error and success screens. The mascot pose is chosen from the nested instance (exposed).",
+            "props": {
+              "Title": {
+                "type": "TEXT",
+                "default": "No courses yet"
+              },
+              "Description": {
+                "type": "TEXT",
+                "default": "Add your first course — your learning history will appear here."
+              },
+              "Action": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Layout": [
+                "Stacked",
+                "Inline"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "surface/card",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Body/S",
+                "Headline/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "scale/24",
+                "scale/32",
+                "scale/64",
+                "scale/8",
+                "scale/96"
+              ]
+            },
+            "nested": [
+              "Button"
+            ]
+          }
+        ],
+        "docTokens": [
+          "scale/32",
+          "scale/48",
+          "scale/64",
+          "scale/96",
+          "scale/140",
+          "scale/200",
+          "scale/8",
+          "scale/24",
+          "fill/tertiary-hover",
+          "text/primary",
+          "text/secondary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "text-style-missing",
+          "match": "Headline/S",
+          "reason": "Mascot message sarlavhasi — komponentda Headline/S, doc jadvalida Title/L; kod komponentga ergashadi (.bek-mascot-message__title Headline/S). Figma doc yangilanishi kerak."
+        }
+      ],
+      "readme": "# Mascot\n\nFigma: **2.3 Mascot** — BEK maskoti, panda: `Mascot` (sprite-sheet kadri) va `MascotMessage` (maskot + sarlavha + tavsif + tugma). `pose`: `idle` + 8 qarash (`look-up`, `look-down-right` …) + 9 his (`happy`, `love`, `success`, `celebrate`, `wink`, `surprised`, `shy`, `sleepy`, `dizzy`); `size`: `xs` 32 · `s` 48 · `m` 64 · `l` 96 · `xl` 140 · `2xl` 200.\n\n```tsx\n<Mascot pose=\"sleepy\" />                       // L 96, bezak (aria-hidden)\n<Mascot pose=\"wink\" size=\"m\" label=\"BEK panda\" />\n<Mascot interactive size=\"xl\" />                // kursorga qaraydi, bosganda reaksiya — landing, onboarding, 404\n\n<MascotMessage pose=\"sleepy\" title=\"Hali kurslar yo'q\" description=\"Birinchi kursni qo'shing — tarix shu yerda ko'rinadi.\" action={{ label: \"Kurs qo'shish\", onClick: add }} />\n<MascotMessage layout=\"inline\" pose=\"love\" size=\"m\" title=\"Sevimlilarga qo'shildi\" description=\"Saqlangan darslar Sevimlilar bo'limida.\" />\n```\n\nVaraqlar: panda `page-mascot` (MIT © Kamran Ahmed) dan, paket ichida (`@bek/react/assets/mascot/panda-{directions,reactions}.webp`) — standart holatda avtomatik yuklanadi; `directions` / `reactions` prop'lari bilan boshqa personaj berish mumkin.\n\nQoidalar (Figma doc):\n\n- Maskot **doim matn bilan**: maskot hisni, matn ma'noni tashiydi. Ekranda bitta maskot, hislar aralashtirilmaydi.\n- His ekran ma'nosiga mos: bo'sh holat → `sleepy`, xato / 404 / aloqa uzildi → `dizzy`, muvaffaqiyat → `success`, onboarding → `wink`, yangilik → `surprised`, sevimlilar / rahmat → `love`.\n- Statik holatda qarash pozalari ishlatilmaydi (faqat `idle` yoki his); qarashlar `interactive` rejim uchun.\n- Rasm ranglari o'zgartirilmaydi, fon shaffof. Dark rejimda `fill/tertiary-hover` yoki undan yorug' yuzaga qo'ying — eng qorong'i yuzada qora quloqlar ko'rinmaydi.\n- O'lchamlar: XS chat/inline · S toast, list item · M karta · L empty state · XL hero, onboarding · 2XL 404, to'liq ekran. Minimum XS 32.\n- `label` berilmasa bezak (`aria-hidden`); yolg'iz yoki interaktiv bo'lsa `label=\"BEK panda\"`.\n- `MascotMessage`: `surface/card`, padding 32, gap 24, sarlavha ↔ tavsif 8; tugma `Button · action · m`. Figma doc jadvalida sarlavha Title/L, komponentda Headline/S — kod komponentga ergashadi.\n"
     },
     {
       "dir": "navigation",
@@ -3943,6 +4190,89 @@
               "Button",
               "Logo"
             ]
+          },
+          {
+            "name": "App shell · Tablet",
+            "id": "650:77695",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=650-77695",
+            "variants": 2,
+            "description": "Tablet app shell (600–1023 px), 834 × 1194: Header + Nav rail + Content. Drawer: Closed / Open — the drawer and a color/background/overlay scrim cover everything, including the header. Content padding layout/page-margin (24 on Tablet).",
+            "props": {
+              "Drawer": [
+                "Closed",
+                "Open"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/overlay",
+                "bg/sheet",
+                "fill/secondary",
+                "surface/card",
+                "surface/raised",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Label/M"
+              ],
+              "effect": [
+                "Elevation/4 Overlay"
+              ],
+              "dimension": [
+                "layout/drawer/width",
+                "layout/header/height",
+                "layout/page-margin",
+                "radius/surface/md",
+                "scale/12",
+                "scale/16",
+                "scale/4",
+                "scale/72",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          },
+          {
+            "name": "App shell · Mobile",
+            "id": "650:79173",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=650-79173",
+            "variants": 2,
+            "description": "Mobile app shell (360–599 px), 390 × 844: Top bar + Content + Bottom nav. Drawer: Closed / Open — drawer (304) and scrim cover the whole screen, bars included. Content padding layout/page-margin (16 on Mobile).",
+            "props": {
+              "Drawer": [
+                "Closed",
+                "Open"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/overlay",
+                "bg/sheet",
+                "fill/secondary",
+                "surface/card",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Label/M"
+              ],
+              "effect": [
+                "Elevation/4 Overlay"
+              ],
+              "dimension": [
+                "layout/drawer/width",
+                "layout/page-margin",
+                "radius/surface/md",
+                "scale/8"
+              ]
+            },
+            "nested": [
+              "Bottom navigation",
+              "Top navigation"
+            ]
           }
         ],
         "docTokens": [
@@ -3993,9 +4323,14 @@
           "rule": "token-extra",
           "match": "--bek-bg-base",
           "reason": "AppShell sahifa foni bg/base — doc \"Separate the header from the page by surface colour, not a border\" qoidasi uchun header/menu (surface/card) dan ajralishi kerak; Figma'da App shell o'rami bg/sheet, kontent esa demo placeholder (fill/secondary). Figma'da Content slot foniga bg/base berish kerak."
+        },
+        {
+          "rule": "variant-missing",
+          "match": "Drawer=Closed",
+          "reason": "App shell Tablet/Mobile Drawer=Closed/Open — kodda `drawer` slotidagi NavDrawer `open` prop'i (false = Closed); alohida variant klassi yo'q."
         }
       ],
-      "readme": "# Navigation\n\nFigma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600) uchun ilova navigatsiyasi.\n\n## Web: ModuleRail + MenuPanel + AppHeader\n\n```tsx\nimport { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek/react';\n\n<AppShell\n  header={\n    <AppHeader\n      start={<BekLogo size=\"s\" />}\n      end={\n        <>\n          <Button variant=\"flat\" size=\"l\">EN</Button>                                {/* Language */}\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<MoonIcon />}>Theme</Button>\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button>\n          <NavProfile avatar={<Avatar name=\"Alex Brown\" size=\"s\" />} name=\"Alex Brown\" role=\"Administrator\" />\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<LogoutIcon />}>Log out</Button>\n        </>\n      }\n    />\n  }\n  rail={\n    <ModuleRail title=\"Apps\" bottom={<NavItem mode=\"module\" icon={<SettingsIcon />}>Settings</NavItem>}>\n      <NavItem mode=\"module\" icon={<HomeIcon />} href=\"/\" selected>Home</NavItem>\n    </ModuleRail>\n  }\n  menu={\n    <MenuPanel collapsed={collapsed} top={<NavItem icon={<SearchIcon />}>Search</NavItem>}\n      bottom={<NavItem icon={<SidebarIcon />} onClick={toggle}>Collapse</NavItem>}>\n      <NavGroup title=\"Workspace\" collapsed={collapsed}>\n        <NavItem mode={collapsed ? 'collapsed' : 'expanded'} icon={<GridIcon />} href=\"/dash\" selected>Dashboard</NavItem>\n        <NavItem icon={<FolderIcon />} expanded={open} aria-controls=\"p-subs\" onClick={…}>Projects</NavItem>\n        <NavSubList id=\"p-subs\" open={open}>\n          <NavItem mode=\"sub\" href=\"/p/alpha\">Alpha</NavItem>\n        </NavSubList>\n      </NavGroup>\n    </MenuPanel>\n  }\n>\n  {page}\n</AppShell>\n```\n\n| Komponent    | Asosiy prop'lar                                                                                                                                                            |\n| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                          |\n| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                             |\n| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                                  |\n| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                                                  |\n| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                                                |\n| `AppHeader`  | `start` (Menu button, Logo), `end` (Language, Theme, Notifications + Count, Profile/Avatar, Logout), `children` (Search); balandlik `layout/header/height`, `surface/card` |\n| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                        |\n| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                                                 |\n\n- Header · Web (Figma): Logo · Language · Theme · Notifications (+ Count — tugma ustidagi Badge) · Profile (`NavProfile`: Avatar, Name, Role) · Logout — barchasi `start`/`end` slotlari orqali; Header · Tablet: Menu button · Logo · Search (`children`) · Notifications · Avatar.\n- Nav item ranglari: Default `text/secondary` · Hover `fill/tertiary` + `text/primary` · Selected `accent/soft` + `text/accent` · Module Selected `accent/default` + `text/on-color` (hover `accent/hover`) · Disabled `text/disabled`. Radius 8, ikonka 20, Label/M (Sub — Body/S).\n- `collapsed`/`module` da nom ekran o'quvchi uchun yashirin matn va hover/fokusda chip (`surface/raised`, `Elevation/3`, 8 px o'ngda).\n- `href` berilsa — `<a>`, aks holda `<button>`; `selected` → `aria-current=\"page\"`; `expanded` → `aria-expanded` + aylanadigan chevron.\n\n## Tablet: NavRail + RailItem\n\n```tsx\n<NavRail bottom={<RailItem icon={<SettingsIcon />}>Settings</RailItem>}>\n  <RailItem icon={<HomeIcon />} href=\"/\" selected>\n    Home\n  </RailItem>\n  <RailItem icon={<BoxIcon />} badge={3}>\n    Orders\n  </RailItem>\n</NavRail>\n```\n\n- 72 px, `surface/raised`; element 56 kenglik, 56×32 pill indikator (ikonka 24), nom Label/S doim ko'rinadi. Selected — `accent/default` pill + `text/on-color` ikonka, nom `text/accent`; Pressed — `fill/tertiary`. 6 tagacha modul — qolgani drawer'da.\n\n## Tablet / Mobile: NavDrawer + DrawerItem\n\n```tsx\n<NavDrawer\n  open={open}\n  onClose={() => setOpen(false)}\n  header={<BekLogo size=\"s\" />}\n  footer={\n    <>\n      <NavProfile\n        avatar={<Avatar name=\"Alex Brown\" size=\"s\" />}\n        name=\"Alex Brown\"\n        role=\"Administrator\"\n      />\n      <DrawerItem icon={<LogoutIcon />}>Log out</DrawerItem>\n    </>\n  }\n>\n  <NavGroup title=\"Menu\" variant=\"touch\">\n    <DrawerItem icon={<HomeIcon />} href=\"/\" selected>\n      Home\n    </DrawerItem>\n    <DrawerItem icon={<BoxIcon />} badge={4}>\n      Orders\n    </DrawerItem>\n  </NavGroup>\n</NavDrawer>\n```\n\n- Kenglik `layout/drawer/width` (Tablet 360 · Mobile 304 — token qurilmaga ko'ra o'zgaradi, Figma `Device` prop'i kodda alohida emas), `surface/card`, `Elevation/4`; sarlavha `layout/header/height`; body scroll (padding 8 12, gap 16); footer `surface/raised` qotirilgan (profil — `NavProfile`, Settings, Log out).\n- DrawerItem: `item` 48 px (ikonka 24, Label/L) · `sub` 44 px (Body/M); radius 12; Pressed `fill/tertiary`, Selected `accent/soft` + `text/accent`.\n- Native `<dialog>` (`showModal`): fokus ichida, Esc va scrim (`bg/overlay`) bosilganda `onClose`; ochilish — chapdan siljish (`motion/overlay/slide`).\n\n## Do / Don't\n\n- ✅ Joriy sahifa doim `selected`. ❌ Bir vaqtda ikkita tanlangan element.\n- ✅ Header sahifadan sirt rangi bilan ajraladi. ❌ Header ostiga chegara chizig'i.\n"
+      "readme": "# Navigation\n\nFigma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600) uchun ilova navigatsiyasi.\n\n## Web: ModuleRail + MenuPanel + AppHeader\n\n```tsx\nimport { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek/react';\n\n<AppShell\n  header={\n    <AppHeader\n      start={<BekLogo size=\"s\" />}\n      end={\n        <>\n          <Button variant=\"flat\" size=\"l\">EN</Button>                                {/* Language */}\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<MoonIcon />}>Theme</Button>\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button>\n          <NavProfile avatar={<Avatar name=\"Alex Brown\" size=\"s\" />} name=\"Alex Brown\" role=\"Administrator\" />\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<LogoutIcon />}>Log out</Button>\n        </>\n      }\n    />\n  }\n  rail={\n    <ModuleRail title=\"Apps\" bottom={<NavItem mode=\"module\" icon={<SettingsIcon />}>Settings</NavItem>}>\n      <NavItem mode=\"module\" icon={<HomeIcon />} href=\"/\" selected>Home</NavItem>\n    </ModuleRail>\n  }\n  menu={\n    <MenuPanel collapsed={collapsed} top={<NavItem icon={<SearchIcon />}>Search</NavItem>}\n      bottom={<NavItem icon={<SidebarIcon />} onClick={toggle}>Collapse</NavItem>}>\n      <NavGroup title=\"Workspace\" collapsed={collapsed}>\n        <NavItem mode={collapsed ? 'collapsed' : 'expanded'} icon={<GridIcon />} href=\"/dash\" selected>Dashboard</NavItem>\n        <NavItem icon={<FolderIcon />} expanded={open} aria-controls=\"p-subs\" onClick={…}>Projects</NavItem>\n        <NavSubList id=\"p-subs\" open={open}>\n          <NavItem mode=\"sub\" href=\"/p/alpha\">Alpha</NavItem>\n        </NavSubList>\n      </NavGroup>\n    </MenuPanel>\n  }\n>\n  {page}\n</AppShell>\n```\n\n| Komponent    | Asosiy prop'lar                                                                                                                                                            |\n| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                          |\n| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                             |\n| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                                  |\n| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                                                  |\n| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                                                |\n| `AppHeader`  | `start` (Menu button, Logo), `end` (Language, Theme, Notifications + Count, Profile/Avatar, Logout), `children` (Search); balandlik `layout/header/height`, `surface/card` |\n| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                        |\n| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                                                 |\n\n- Header · Web (Figma): Logo · Language · Theme · Notifications (+ Count — tugma ustidagi Badge) · Profile (`NavProfile`: Avatar, Name, Role) · Logout — barchasi `start`/`end` slotlari orqali; Header · Tablet: Menu button · Logo · Search (`children`) · Notifications · Avatar.\n- Nav item ranglari: Default `text/secondary` · Hover `fill/tertiary` + `text/primary` · Selected `accent/soft` + `text/accent` · Module Selected `accent/default` + `text/on-color` (hover `accent/hover`) · Disabled `text/disabled`. Radius 8, ikonka 20, Label/M (Sub — Body/S).\n- `collapsed`/`module` da nom ekran o'quvchi uchun yashirin matn va hover/fokusda chip (`surface/raised`, `Elevation/3`, 8 px o'ngda).\n- `href` berilsa — `<a>`, aks holda `<button>`; `selected` → `aria-current=\"page\"`; `expanded` → `aria-expanded` + aylanadigan chevron.\n\n## Tablet: NavRail + RailItem\n\n```tsx\n<NavRail bottom={<RailItem icon={<SettingsIcon />}>Settings</RailItem>}>\n  <RailItem icon={<HomeIcon />} href=\"/\" selected>\n    Home\n  </RailItem>\n  <RailItem icon={<BoxIcon />} badge={3}>\n    Orders\n  </RailItem>\n</NavRail>\n```\n\n- 72 px, `surface/raised`; element 56 kenglik, 56×32 pill indikator (ikonka 24), nom Label/S doim ko'rinadi. Selected — `accent/default` pill + `text/on-color` ikonka, nom `text/accent`; Pressed — `fill/tertiary`. 6 tagacha modul — qolgani drawer'da.\n\n## Tablet / Mobile: NavDrawer + DrawerItem\n\n```tsx\n<NavDrawer\n  open={open}\n  onClose={() => setOpen(false)}\n  header={<BekLogo size=\"s\" />}\n  footer={\n    <>\n      <NavProfile\n        avatar={<Avatar name=\"Alex Brown\" size=\"s\" />}\n        name=\"Alex Brown\"\n        role=\"Administrator\"\n      />\n      <DrawerItem icon={<LogoutIcon />}>Log out</DrawerItem>\n    </>\n  }\n>\n  <NavGroup title=\"Menu\" variant=\"touch\">\n    <DrawerItem icon={<HomeIcon />} href=\"/\" selected>\n      Home\n    </DrawerItem>\n    <DrawerItem icon={<BoxIcon />} badge={4}>\n      Orders\n    </DrawerItem>\n  </NavGroup>\n</NavDrawer>\n```\n\n- Kenglik `layout/drawer/width` (Tablet 360 · Mobile 304 — token qurilmaga ko'ra o'zgaradi, Figma `Device` prop'i kodda alohida emas), `surface/card`, `Elevation/4`; sarlavha `layout/header/height`; body scroll (padding 8 12, gap 16); footer `surface/raised` qotirilgan (profil — `NavProfile`, Settings, Log out).\n- DrawerItem: `item` 48 px (ikonka 24, Label/L) · `sub` 44 px (Body/M); radius 12; Pressed `fill/tertiary`, Selected `accent/soft` + `text/accent`.\n- Native `<dialog>` (`showModal`): fokus ichida, Esc va scrim (`bg/overlay`) bosilganda `onClose`; ochilish — chapdan siljish (`motion/overlay/slide`).\n\n## Do / Don't\n\n- ✅ Joriy sahifa doim `selected`. ❌ Bir vaqtda ikkita tanlangan element.\n- ✅ Header sahifadan sirt rangi bilan ajraladi. ❌ Header ostiga chegara chizig'i.\n\n## App shell · Tablet / Mobile (Figma 6.2)\n\n`AppShell` uchta qurilma uchun bitta: Web — `header` + `rail` + `menu`; Tablet — `header` + `rail`\n(`NavRail`); Mobile — `header` (`TopNavigation`) + `bottomNav` (`BottomNavigation`). Figma \"Drawer: Closed / Open\"\n→ `drawer` slotiga `NavDrawer` (`open` prop'i); u scrim bilan panellarni ham yopadi. Kontent padding'i\n`layout/page-margin` (Mobile 16 · Tablet 24 · Web 32) — tokenning o'zi rejimga qarab o'zgaradi.\n\n```tsx\n<AppShell\n  header={<TopNavigation title=\"BEK\" leading=\"menu\" onLeadingClick={() => setOpen(true)} />}\n  bottomNav={<BottomNavigation>…</BottomNavigation>}\n  drawer={\n    <NavDrawer open={open} onClose={() => setOpen(false)}>\n      …\n    </NavDrawer>\n  }\n>\n  …\n</AppShell>\n```\n"
     },
     {
       "dir": "notification-bar",
@@ -5509,6 +5844,71 @@
       },
       "accepted": [],
       "readme": "# Pagination · LoadMore\n\nFigma: **6.4 Pagination**.\n\n```tsx\nimport { LoadMore, Pagination } from '@bek/react';\n\n<Pagination page={page} pageCount={52} onPageChange={setPage}\n  summary=\"1–24 of 1 240\" pageSize={<Select size=\"s\" … />} />   // web\n<Pagination variant=\"compact\" page={3} pageCount={52} onPageChange={setPage} />  // planshet\n<LoadMore loaded={24} total={120} onLoadMore={fetchMore} label=\"Showing 24 of 120\" />  // mobil\n```\n\n| Prop (`Pagination`)                         | Qiymatlar                                 | Default    |\n| ------------------------------------------- | ----------------------------------------- | ---------- |\n| `page` · `pageCount` · `onPageChange`       | 1 dan boshlanadi                          | —          |\n| `variant`                                   | `numbered` · `compact` (‹ 3 / 52 ›)       | `numbered` |\n| `size`                                      | `s` 36 · `m` 44 px                        | `s`        |\n| `summary`                                   | chapdagi xulosa (Body/S `text/secondary`) | —          |\n| `pageSize`                                  | o'ngdagi Select (24 / 48 / 96)            | —          |\n| `siblings`                                  | joriy sahifa atrofidagi qo'shnilar        | `1`        |\n| `previousLabel` · `nextLabel` · `pageLabel` | ekran o'quvchi matnlari                   | EN         |\n\n- Element: min-width = balandlik, radius 8, Label/M (M — Label/L); Hover `fill/tertiary`; Selected `accent/default` + `text/on-color` (`aria-current=\"page\"`); \"…\" `text/secondary`. Previous/Next — Flat icon Button.\n- `paginationRange(page, count, siblings)` — sahifalar ro'yxati (doim bir xil uzunlik, \"…\" bilan).\n- `LoadMore`: ProgressBar S + to'liq kenglikdagi Outline tugma (`loading` bilan); hammasi yuklanganda tugma yashiriladi.\n"
+    },
+    {
+      "dir": "pattern",
+      "title": "Pattern",
+      "description": "empty state, promo sheet, onboarding va karta fonlari uchun bezak plitka (320 × 320, takrorlanadi). type: dots · grid · diagonal · logo-petals; tone: subtle · accent.",
+      "exports": [
+        "Pattern"
+      ],
+      "section": {
+        "id": 2,
+        "title": "Assets"
+      },
+      "figma": {
+        "label": "2.5 Pattern",
+        "pages": [
+          {
+            "name": "2.5 Pattern",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=709-71601"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Pattern",
+            "id": "803:3231",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=803-3231",
+            "variants": 8,
+            "description": "Pattern — decorative 320 × 320 tile for empty states, promo sheets, onboarding and card backgrounds. Types: Dots (16 grid), Grid (32 lines), Diagonal (20 stripes), Logo petals (brand mark, staggered 48). Tones: Subtle = fill/soft-pressed on bg/base; Accent = fill/on-color-hover on accent/default. Place behind content, never behind body text; scale the tile, do not recolour.",
+            "props": {
+              "Type": [
+                "Dots",
+                "Grid",
+                "Diagonal",
+                "Logo petals"
+              ],
+              "Tone": [
+                "Subtle",
+                "Accent"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "bg/base",
+                "bg/sheet",
+                "fill/on-color-hover",
+                "fill/soft-pressed"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": [
+              "Logo"
+            ]
+          }
+        ],
+        "docTokens": [
+          "accent/default",
+          "bg/base",
+          "fill/on-color-hover",
+          "fill/soft-pressed"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Pattern\n\nFigma: **2.5 Pattern** — empty state, promo sheet, onboarding va karta fonlari uchun bezak plitka (320 × 320, takrorlanadi). `type`: `dots` · `grid` · `diagonal` · `logo-petals`; `tone`: `subtle` · `accent`.\n\n```tsx\n<div style={{ position: 'relative' }}>\n  <Pattern type=\"dots\" style={{ position: 'absolute', inset: 0 }} />\n  <EmptyState … />\n</div>\n\n<Pattern type=\"logo-petals\" tone=\"accent\" style={{ height: 200 }} />\n```\n\nQoidalar (Figma doc):\n\n- Plitka kontent **ostida** turadi (`aria-hidden`, `pointer-events: none`); ekranda bitta pattern.\n- `subtle` — `fill/soft-pressed` siyoh `bg/base` ustida: empty state va yorug' fonlar. `accent` — `fill/on-color-hover` siyoh `accent/default` ustida: promo, onboarding, brend lahzalari — ustida qisqa oq matn.\n- Matn yoki forma ustiga qo'ymang; siyoh rangi o'zgartirilmaydi (tokenlar bilan Dark rejimda o'zi almashadi).\n- Web'da plitka viewport'ning 40% dan kam qismini egallasin; o'lcham `--bek-pattern-tile` (320) orqali masshtablanadi.\n- Dots 16 px panjara · Grid 32 px chiziqlar · Diagonal 20 px yo'llar · Logo petals — brend belgisi 48 qadam (Mono 10% / Reversed 18% Figma'da; kodda token siyohi).\n"
     },
     {
       "dir": "pincode",
@@ -7170,6 +7570,139 @@
       "readme": "# Switch\n\nFigma: **3.6 Switch** — darhol kuchga kiradigan yoqish/o'chirish (saqlash tugmasisiz). Yo'lak `s` 32×20 · `m` 40×24 · `l` 48×28 px.\n\n```tsx\n<Switch checked={wifi} onChange={(e) => setWifi(e.target.checked)}>\n  Wi-Fi\n</Switch>\n```\n\nNative `<input type=\"checkbox\" role=\"switch\">`; Space almashtiradi. Formada \"Saqlash\" bosilgandan keyin kuchga kiradigan qiymat uchun Checkbox ishlating.\n"
     },
     {
+      "dir": "system-bars",
+      "title": "System bars",
+      "description": "StatusBar va HomeIndicator: iOS va Android tizim panellari faqat mockup va shablonlar uchun (haqiqiy qurilmada OS chizadi). platform: ios · android; content: dark (yorug' fon) · light (qorong'i fon, rasm).",
+      "exports": [
+        "HomeIndicator",
+        "StatusBar"
+      ],
+      "section": {
+        "id": 10,
+        "title": "Devices"
+      },
+      "figma": {
+        "label": "10.2 System bars",
+        "pages": [
+          {
+            "name": "10.2 System bars",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=782-67"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Status bar",
+            "id": "784:368",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=784-368",
+            "variants": 4,
+            "description": "Status bar — native system clock and indicators for mockups only (the OS renders it in code). Built from the real platform bars — iOS 27 (iPhone 17 Pro, 402 × 62) and Material 3 Android (412 × 52) — painted with BEK static tokens: Content=Dark → static/dark on light screens, Content=Light → static/white on dark screens and media. The nested native instance is exposed — edit Time there. Dynamic Isl",
+            "props": {
+              "Platform": [
+                "iOS",
+                "Android"
+              ],
+              "Content": [
+                "Dark",
+                "Light"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "fill/strong"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": [
+              "Building Blocks/status-bar"
+            ]
+          },
+          {
+            "name": "Home indicator",
+            "id": "784:369",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=784-369",
+            "variants": 4,
+            "description": "Home indicator — native system gesture bar for mockups only. Built from the real platform bars — iOS 27 (402 × 34 safe area, 144 × 5 bar) and Material 3 Android gesture navigation (412 × 24) — painted with BEK static tokens: Content=Dark → static/dark, Content=Light → static/white.",
+            "props": {
+              "Platform": [
+                "iOS",
+                "Android"
+              ],
+              "Content": [
+                "Dark",
+                "Light"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "fill/strong"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": [
+              "Building Blocks/navigation"
+            ]
+          }
+        ],
+        "docTokens": [
+          "bg/sheet",
+          "static/dark",
+          "static/white"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-fill-strong",
+          "reason": "fill/strong — Figma'dagi nested native (iOS 27 / M3) instance qatlami; doc Tokens jadvali bo'yicha kontent rangi static/dark yoki static/white, kod shunga amal qiladi."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-static-dark",
+          "reason": "Doc Tokens: Content=Dark → static/dark (mavzu tokeni emas); komponent set'ida nested native instance bog'lanmagan."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-static-white",
+          "reason": "Doc Tokens: Content=Light → static/white; set'da bog'lanmagan."
+        },
+        {
+          "rule": "px-figma",
+          "match": "62px",
+          "reason": "Status bar iOS balandligi 62 (doc Sizes jadvali) — balandlik extractor sizes ro'yxatiga kirmaydi, scale tokeni yo'q."
+        },
+        {
+          "rule": "px-figma",
+          "match": "34px",
+          "reason": "Home indicator iOS xavfsiz maydoni 34 (doc Sizes) — scale tokeni yo'q."
+        },
+        {
+          "rule": "px-figma",
+          "match": "144px",
+          "reason": "Home indicator iOS chizig'i 144 × 5 (doc Sizes) — native o'lcham."
+        },
+        {
+          "rule": "px-figma",
+          "match": "5px",
+          "reason": "Home indicator iOS chizig'i balandligi 5 (doc Sizes) — native o'lcham."
+        },
+        {
+          "rule": "px-figma",
+          "match": "108px",
+          "reason": "Home indicator Android chizig'i 108 × 4 (doc Sizes) — native o'lcham."
+        },
+        {
+          "rule": "px-figma",
+          "match": "124px",
+          "reason": "Dynamic Island kengligi (iOS 27 native, 124 × 36) — scale tokeni yo'q."
+        }
+      ],
+      "readme": "# System bars\n\nFigma: **10.2 System bars** — `StatusBar` va `HomeIndicator`: iOS va Android tizim panellari **faqat mockup va shablonlar uchun** (haqiqiy qurilmada OS chizadi). `platform`: `ios` · `android`; `content`: `dark` (yorug' fon) · `light` (qorong'i fon, rasm).\n\n```tsx\n<StatusBar />                                   // iOS · 9:41 · static/dark\n<StatusBar platform=\"android\" content=\"light\" time=\"9:30\" />\n<HomeIndicator />                               // iOS · 34 · 144 × 5\n<HomeIndicator platform=\"android\" />            // 24 · 108 × 4\n```\n\nQoidalar (Figma doc):\n\n- O'lchamlar: Status bar iOS 62 (Dynamic Island) · Android 52 (kamera kesimi); Home indicator iOS 34 · Android 24 (3 tugmali navigatsiya 48). Interaktiv kontent xavfsiz maydondan tashqarida — kodda `env(safe-area-inset-*)`.\n- Rang mavzuga emas, **orqadagi fonga** ergashadi: yorug' ekranda `dark` (`static/dark`), rasm va qorong'i sheet ustida `light` (`static/white`). Qorong'i fonda qorong'i kontent qoldirmang.\n- Fon shaffof (orqada `bg/sheet`); holatlar yo'q, interaktiv emas (`aria-hidden`).\n- Faqat Mobile; Tablet o'z kengligida (iPad status bar 24), Web'da ishlatilmaydi.\n- `apps/templates` dagi `Phone` ramkasi shu komponentlardan foydalanadi.\n"
+    },
+    {
       "dir": "table",
       "title": "Table",
       "description": "native <table> + TableHeaderCell (saralash), TableRow (tanlangan / o'chirilgan), TableCell (tavsif, raqam). size: s 40 · m 48 · l 56 px; zebra.",
@@ -7892,7 +8425,7 @@
     {
       "dir": "time-slot",
       "title": "TimeSlotPicker",
-      "description": "+ **Time slot** — yetkazish yoki band qilish oynasini tanlash: kun (SegmentedControl) + oynalar to'ri (qatorda 3 ta) + izoh. Express oyna birinchi.",
+      "description": "+ Time slot — yetkazish yoki band qilish oynasini tanlash: kun (SegmentedControl) + oynalar to'ri (qatorda 3 ta) + izoh. Express oyna birinchi.",
       "exports": [
         "TimeSlotPicker"
       ],

@@ -1,0 +1,111 @@
+{
+  "page": "2.3 Mascot",
+  "components": [
+    {
+      "name": "Mascot",
+      "id": "385:50462",
+      "page": "2.3 Mascot",
+      "pageId": "385:14056",
+      "props": {
+        "Pose": [
+          "idle",
+          "look-up-left",
+          "look-up",
+          "look-up-right",
+          "look-left",
+          "look-right",
+          "look-down-left",
+          "look-down",
+          "look-down-right",
+          "happy",
+          "love",
+          "success",
+          "celebrate",
+          "wink",
+          "surprised",
+          "shy",
+          "sleepy",
+          "dizzy"
+        ],
+        "Size": ["XS", "S", "M", "L", "XL", "2XL"]
+      },
+      "variants": 108,
+      "size": {
+        "w": 32,
+        "h": 32
+      },
+      "tokens": {
+        "color": ["surface/card"],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/140", "scale/200", "scale/32", "scale/48", "scale/64", "scale/96"]
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "The BEK mascot — a panda. Pose: idle + 8 gaze directions + 9 emotions. Size: XS 32 · S 48 · M 64 · L 96 · XL 140 · 2XL 200 (size/mascot/1–6). Source: page-mascot (MIT © Kamran Ahmed). Always used with text; one mascot per screen."
+    },
+    {
+      "name": "Mascot message",
+      "id": "385:50487",
+      "page": "2.3 Mascot",
+      "pageId": "385:14056",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "No courses yet"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Add your first course — your learning history will appear here."
+        },
+        "Action": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Layout": ["Stacked", "Inline"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 384,
+        "h": 308
+      },
+      "tokens": {
+        "color": ["surface/card", "text/primary", "text/secondary"],
+        "text": ["Body/S", "Headline/S"],
+        "effect": [],
+        "dimension": ["scale/24", "scale/32", "scale/64", "scale/8", "scale/96"]
+      },
+      "sizes": [1, 8, 12, 24, 32, 40],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "Mascot + title + description + optional button. For empty-state, error and success screens. The mascot pose is chosen from the nested instance (exposed)."
+    }
+  ],
+  "doc": {
+    "2.3 Mascot": {
+      "tokens": [
+        "scale/32",
+        "scale/48",
+        "scale/64",
+        "scale/96",
+        "scale/140",
+        "scale/200",
+        "scale/8",
+        "scale/24",
+        "scale/32",
+        "fill/tertiary-hover",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "Anatomy\nThe mascot is not a drawing but a frame cropped from a sprite sheet. The component is a single frame with no background and an image fill (CROP). Frame 360×360 px, a 1/3 × 1/3 slice of the sheet (via image transform). Surface: transparent background. Shadow drawn into the frame. Size: width = height = scale/32 … scale/200 (bound to the token). Source sheet: directions — 9 gazes · reactions — 9 emotions.\nVariants — emotion families: Gaze directions (interactive mode looks towards the cursor; static uses only idle): idle, look-up-left, look-up, look-up-right, look-left, look-right, look-down-left, look-down, look-down-right. Positive (success, thanks, greetings, achievement): happy, love, success, celebrate, wink (+ waving planned). Neutral (announcements, attention, gentle apology): surprised, shy (+ thinking, confused planned). Negative / low energy (empty state, error, disconnection): sleepy, dizzy (+ sad planned).\nSizes: XS 32 chat, inline · S 48 toast, list item · M 64 card, inline message · L 96 empty state · XL 140 hero, onboarding · 2XL 200 404, full screen. Minimum XS 32.\nStates and surfaces: no state axis; behaviour in code — static (default, no JS) or interactive (follows cursor, reacts 0.5 s when clicked; landing, onboarding and 404 only). Dark: use neutral/muted/hover (fill/tertiary-hover) or a lighter surface — on the darkest surface the ears blend in.\nUse cases (Mascot message): Empty state → sleepy · Error / 404 → dizzy · Success → success · Onboarding → wink · New feature → surprised · Thanks / favourite → love.\nProps: Pose (Variant, default idle) · Size (Variant, default L) · interactive (code, boolean, default false: page-mascot follows cursor + reacts) · label (code, string: omitted → decorative aria-hidden; standalone/interactive → \"BEK panda\") · Mascot message · Layout: Stacked · Inline (default Stacked) · Title / Description (Text) · Action (Boolean, default true) · mascot (exposed instance, default sleepy · L).\nTokens: Mascot width/height scale/32 · 48 · 64 · 96 · 140 · 200 (scope WIDTH_HEIGHT). Mascot colour/background — image fill, colours never changed, transparent background. Message padding scale/32. Message gap (mascot ↔ text, text ↔ button) scale/24. Title ↔ Description scale/8. Title: Title/L · text/primary. Description: Body/S · text/secondary. Action: Button · Variant=Action · Size=M. Dark surface: fill/tertiary-hover and lighter.\nDo / Don't: the mascot always comes with text — the mascot carries the emotion, the text carries the meaning. Don't mix several mascots or different emotions on one screen. The emotion fits the context: dizzy for errors, success for achievements."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "text-style-missing",
+      "match": "Headline/S",
+      "reason": "Mascot message sarlavhasi — komponentda Headline/S, doc jadvalida Title/L; kod komponentga ergashadi (.bek-mascot-message__title Headline/S). Figma doc yangilanishi kerak."
+    }
+  ]
+}

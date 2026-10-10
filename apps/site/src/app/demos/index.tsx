@@ -27,12 +27,16 @@ import {
   DropdownMenu,
   EmptyState,
   Fieldset,
+  HomeIndicator,
   Icon,
+  Keyboard,
   InfoWrap,
   Link,
   ListItem,
   LoadMore,
   Loader,
+  Mascot,
+  MascotMessage,
   MenuItem,
   MenuSeparator,
   Modal,
@@ -41,6 +45,7 @@ import {
   NotificationBar,
   OrderWidget,
   Pagination,
+  Pattern,
   Pinpad,
   Popover,
   Price,
@@ -56,6 +61,7 @@ import {
   Skeleton,
   Slider,
   Spinner,
+  StatusBar,
   Stepper,
   Switch,
   Tab,
@@ -764,6 +770,44 @@ export const demos: Record<string, ComponentType> = {
         Yangi: buyurtmani bir bosishda takrorlang
       </TooltipCallout>
     </Row>
+  ),
+  keyboard: () => (
+    <div className="w-full max-w-sm flex flex-col gap-3">
+      <Keyboard />
+      <Keyboard platform="android" type="numeric" />
+    </div>
+  ),
+  mascot: () => (
+    <div className="w-full max-w-sm flex flex-col gap-3">
+      <Row>
+        <Mascot pose="idle" size="s" />
+        <Mascot pose="happy" size="m" />
+        <Mascot pose="love" size="m" />
+        <Mascot pose="dizzy" size="m" />
+        <Mascot pose="sleepy" size="m" />
+      </Row>
+      <MascotMessage pose="sleepy" title="Hali kurslar yo'q" description="Birinchi kursni qo'shing — tarix shu yerda ko'rinadi." action={{ label: "Kurs qo'shish" }} />
+    </div>
+  ),
+  pattern: () => (
+    <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
+      <Pattern type="dots" style={{ height: 120, minHeight: 0, borderRadius: 12 }} />
+      <Pattern type="grid" style={{ height: 120, minHeight: 0, borderRadius: 12 }} />
+      <Pattern type="diagonal" tone="accent" style={{ height: 120, minHeight: 0, borderRadius: 12 }} />
+      <Pattern type="logo-petals" tone="accent" style={{ height: 120, minHeight: 0, borderRadius: 12 }} />
+    </div>
+  ),
+  'system-bars': () => (
+    <div className="w-full max-w-sm flex flex-col gap-3">
+      <div style={{ background: 'var(--bek-bg-sheet)', borderRadius: 16 }}>
+        <StatusBar />
+        <HomeIndicator />
+      </div>
+      <div style={{ background: 'var(--bek-static-dark)', borderRadius: 16 }}>
+        <StatusBar platform="android" content="light" />
+        <HomeIndicator platform="android" content="light" />
+      </div>
+    </div>
   ),
   'top-navigation': () => (
     <div className="w-full max-w-sm flex flex-col gap-3">
