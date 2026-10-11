@@ -32,3 +32,10 @@ pnpm build      # hamma paketlar
 ## Litsenziya
 
 Kod — MIT (`LICENSE`). Ikonkalar, maskot, 3D obyektlar va brend belgilari bu litsenziyaga kirmaydi.
+
+## Claude Code bilan ishlash
+
+`CLAUDE.md` — loyiha yo'riqnomasi. `.claude/` ichida ECC (Everything Claude Code) agentlari, komandalari, qoidalari
+va skill'larining loyihaga mos qismi + BEK'ga xos `figma-component` skili, `figma-parity` agenti va komandalar:
+`/new-component` (Figma sahifasidan komponent), `/figma-sync` (oylik Figma yangilanishini sinxronlash),
+`/parity` (Figma ↔ kod tekshiruvi), `/release`. Darvozalar: `pnpm format:check && pnpm typecheck && pnpm build && pnpm test && pnpm check:figma`.

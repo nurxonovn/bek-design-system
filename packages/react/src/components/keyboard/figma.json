@@ -1,0 +1,83 @@
+{
+  "page": "10.3 Keyboard",
+  "components": [
+    {
+      "name": "Keyboard",
+      "id": "801:461",
+      "page": "10.3 Keyboard",
+      "pageId": "793:69",
+      "props": {
+        "Platform": ["iOS", "Android"],
+        "Type": ["Alphabet", "Numeric"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 402,
+        "h": 332
+      },
+      "tokens": {
+        "color": ["bg/overlay", "fill/tertiary"],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 6, 7.5, 16, 24, 27, 32, 74],
+      "rawColors": [],
+      "nested": [],
+      "description": "Keyboard — native system keyboard for screen mockups (the OS draws it in code). Built from the real platform keyboards — iOS 27 (iPhone, 402 wide) and Material 3 Gboard (412 wide) — repainted with BEK colour tokens, so Light and Dark follow BEK Color modes. Platform (iOS · Android) × Type (Alphabet · Numeric: iOS Number Pad, Android Keypad). The nested native instance is exposed — switch its own T"
+    }
+  ],
+  "doc": {
+    "10.3 Keyboard": {
+      "tokens": ["surface/card", "surface/raised"],
+      "text": "SYSTEM\nBEK\nDesign System\n10.3 Keyboard\nNative iOS & Android keyboard layouts in BEK colours, for screen layouts. 4 variants · Platform × Type.\nOverview\nPlace the keyboard in mockups wherever a field is focused, so layouts are checked with the real visible area. It is a mock — the real one comes from the OS.\niOS · Alphabet\n“Design”\nDesigns\nDesigned\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\n􀆝\nz\nx\nc\nv\nb\nn\nm\n􀆛\n123\n􀅇\n􀊰\nText fields, search, names.\nAndroid · Alphabet\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\nz\nx\nc\nv\nb\nn\nm\n?123\n,\n.\nSame use on Android screens.\nAnatomy\niOS · Alphabet.\n“Design”\nDesigns\nDesigned\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\n􀆝\nz\nx\nc\nv\nb\nn\nm\n􀆛\n123\n􀅇\n􀊰\n1\nletter key\n· tap inserts the character\n2\nshift\n· toggles upper / lower case\n3\ndelete\n· function key · backspace glyph\n4\nspace\n· inserts a space · shows the language\n5\nreturn\n· primary action — Search · Go · Next · Done\n6\nsafe area\n· 34 bottom for the Home indicator\nVariants\niOS\nAlphabet\n“Design”\nDesigns\nDesigned\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\n􀆝\nz\nx\nc\nv\nb\nn\nm\n􀆛\n123\n􀅇\n􀊰\nNumeric — phone, code, amount\n1\n\n2\nABC\n3\nDEF\n4\nGHI\n5\nJKL\n6\nMNO\n7\nPQRS\n8\nTUV\n9\nWXYZ\n0\n􀆛\nAndroid\nAlphabet\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\nz\nx\nc\nv\nb\nn\nm\n?123\n,\n.\nNumeric\n1\n2\nABC\n3\nDEF\n4\nGHI\n5\nJKL\n6\nMNO\n7\nPQRS\n8\nTUV\n9\nWXYZ\n0\nDark mode\niOS\n“Design”\nDesigns\nDesigned\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\n􀆝\nz\nx\nc\nv\nb\nn\nm\n􀆛\n123\n􀅇\n􀊰\nAndroid · Numeric\n1\n2\nABC\n3\nDEF\n4\nGHI\n5\nJKL\n6\nMNO\n7\nPQRS\n8\nTUV\n9\nWXYZ\n0\nProps\nProp\nType\nValues\nDefault\nPlatform\nVariant\niOS · Android\niOS\nType\nVariant\nAlphabet · Numeric\nAlphabet\nSpec\nProperty\niOS\nAndroid\nAlphabet\nLower-case QWERTY\nQWERTY\nNumeric\nNumber pad\nNumeric keypad\nColours\nBEK tokens · keys surface/card\nBEK tokens · keys surface/raised\nTheme\nBEK Color · Light / Dark\nBEK Color · Light / Dark\nWidth\n402\n412\nDevices\nMobile · 390\n“Design”\nDesigns\nDesigned\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\n􀆝\nz\nx\nc\nv\nb\nn\nm\n􀆛\n123\n􀅇\n􀊰\nFull width at the bottom; content above scrolls.\nTablet · 834\n1\n\n2\nABC\n3\nDEF\n4\nGHI\n5\nJKL\n6\nMNO\n7\nPQRS\n8\nTUV\n9\nWXYZ\n0\n􀆛\nScale the mock to full width on tablet mockups.\nDo / Don’t\n1\n\n2\nABC\n3\nDEF\n4\nGHI\n5\nJKL\n6\nMNO\n7\nPQRS\n8\nTUV\n9\nWXYZ\n0\n􀆛\nDo\nAsk for the numeric keyboard on phone, code and amount fields (inputmode=\"numeric\").\nq\nw\ne\nr\nt\ny\nu\ni\no\np\na\ns\nd\nf\ng\nh\nj\nk\nl\nz\nx\nc\nv\nb\nn\nm\n?123\n,\n.\nDon’t\nDon’t let the sticky button or the focused field hide behind the keyboard."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-overlay",
+      "reason": "bg/overlay — Figma'dagi nested native klaviatura instance ichidagi qatlam (bosilgan tugma popup soyasi); mockup kodida popup yo'q."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-surface-card",
+      "reason": "Doc Spec: iOS tugmalari surface/card — set'da nested instance bog'lanmagan."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-surface-raised",
+      "reason": "Doc Spec: Android tugmalari surface/raised — set'da bog'lanmagan."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-primary",
+      "reason": "Tugma harflari rangi — native instance'da bog'lanmagan; BEK matn tokeni."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-secondary",
+      "reason": "Raqamli klaviaturadagi ABC/DEF harflari — native instance'da bog'lanmagan."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-accent-default",
+      "reason": "Android (Gboard) return tugmasi accent rangda — native instance'da bog'lanmagan."
+    },
+    {
+      "rule": "px-figma",
+      "match": "42px",
+      "reason": "iOS 27 tugma balandligi 42 (native) — scale tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "46px",
+      "reason": "Gboard tugma balandligi 46 (native) — scale tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "34px",
+      "reason": "Pastki xavfsiz maydon 34 (10.2 Home indicator iOS)."
+    }
+  ]
+}

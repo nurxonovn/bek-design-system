@@ -1,0 +1,86 @@
+/* Mascot — Figma "2.3 Mascot". Sprite-sheet kadri: width = height = scale/32…200, fon shaffof,
+   background-size 300% → har katak 0/50/100% qadam. Mascot message: surface/card, padding scale/32,
+   gap scale/24, sarlavha ↔ tavsif scale/8; sarlavha Headline/S text/primary, tavsif Body/S text/secondary. */
+.bek-mascot {
+  --bek-mascot-size: var(--bek-scale-96);
+
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--bek-mascot-size);
+  height: var(--bek-mascot-size);
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  vertical-align: middle;
+}
+
+.bek-mascot--xs {
+  --bek-mascot-size: var(--bek-scale-32);
+}
+
+.bek-mascot--s {
+  --bek-mascot-size: var(--bek-scale-48);
+}
+
+.bek-mascot--m {
+  --bek-mascot-size: var(--bek-scale-64);
+}
+
+.bek-mascot--xl {
+  --bek-mascot-size: var(--bek-scale-140);
+}
+
+.bek-mascot--2xl {
+  --bek-mascot-size: var(--bek-scale-200);
+}
+
+.bek-mascot--interactive {
+  background: none;
+}
+
+.bek-mascot-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-24);
+  box-sizing: border-box;
+  padding: var(--bek-scale-32);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  text-align: center;
+}
+
+.bek-mascot-message--inline {
+  flex-direction: row;
+  align-items: center;
+  text-align: start;
+}
+
+.bek-mascot-message--inline .bek-mascot-message__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.bek-mascot-message__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  max-width: var(--bek-scale-480);
+}
+
+.bek-mascot-message__title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-headline-sm-size);
+  line-height: var(--bek-type-headline-sm-line-height);
+  letter-spacing: var(--bek-type-headline-sm-tracking);
+}
+
+.bek-mascot-message__description {
+  margin: 0;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}

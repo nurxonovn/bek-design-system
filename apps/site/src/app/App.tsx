@@ -18,6 +18,7 @@ import { Footer } from './components/Footer';
 import { CatalogPage } from './components/CatalogPage';
 import { CatalogDetailPage } from './components/CatalogDetailPage';
 import { TokensPage } from './components/TokensPage';
+import { NotFound } from './components/NotFound';
 
 // Marshrutlar hash orqali (#/components/button) — har sahifa ulashiladigan havola, GitHub Pages'da server sozlamasiz ishlaydi.
 export default function App() {
@@ -27,8 +28,9 @@ export default function App() {
     if (currentPage.startsWith('component-detail-')) {
       const dir = currentPage.replace('component-detail-', '');
       if (findComponent(dir)) return <CatalogDetailPage dir={dir} onNavigate={navigate} />;
-      return <CatalogPage onNavigate={navigate} />;
+      return <NotFound onNavigate={navigate} />;
     }
+    if (currentPage === 'not-found') return <NotFound onNavigate={navigate} />;
     switch (currentPage) {
       case 'docs':
         return <DocumentationPage />;
@@ -64,7 +66,9 @@ export default function App() {
             <div className="min-h-screen bg-background antialiased">
               <Header currentPage={currentPage} onNavigate={navigate} />
               <main className="flex-1">
-                <ErrorBoundary fallback={<FallbackApp />}>{renderPage()}</ErrorBoundary>
+                <ErrorBoundary key={currentPage} fallback={<FallbackApp />}>
+                  {renderPage()}
+                </ErrorBoundary>
               </main>
               <Footer onNavigate={navigate} />
               <Toaster />

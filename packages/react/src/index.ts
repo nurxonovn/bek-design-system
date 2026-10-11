@@ -1,5 +1,7 @@
 export { cx } from './utils/cx.js';
 export * from './components/logo/index.js';
+export * from './components/pattern/index.js';
+export * from './components/mascot/index.js';
 export * from './components/badge/index.js';
 export * from './components/tag/index.js';
 export * from './components/icon/index.js';
@@ -53,3 +55,5 @@ export * from './components/top-navigation/index.js';
 export * from './components/bottom-navigation/index.js';
 export * from './components/checkout-bar/index.js';
 export * from './components/overlay/index.js';
+export * from './components/system-bars/index.js';
+export * from './components/keyboard/index.js';

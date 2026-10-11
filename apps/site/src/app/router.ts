@@ -20,30 +20,33 @@ export function pageToHash(page: string): string {
 }
 
 export function hashToPage(hash: string): string {
-  const path = hash.replace(/^#\/?/, '').replace(/\/$/, '');
-  if (path.startsWith('components/')) return `component-detail-${path.slice('components/'.length)}`;
-  return HASH_TO_PAGE[path] ?? (path ? path : 'home');
+  let path = '';
+  try {
+    path = decodeURIComponent(hash).replace(/^#\/?/, '').replace(/\/$/, '');
+  } catch {
+    return 'not-found';
+  }
+  if (!path) return 'home';
+  const m = path.match(/^components\/([a-z0-9-]+)$/);
+  if (m) return `component-detail-${m[1]}`;
+  return HASH_TO_PAGE[path] ?? 'not-found';
 }
 
 export function useHashRoute(): [string, (page: string) => void] {
   const [page, setPage] = useState(() => hashToPage(window.location.hash));
 
   useEffect(() => {
-    const onChange = () => {
-      setPage(hashToPage(window.location.hash));
-      window.scrollTo({ top: 0 });
-    };
+    const onChange = () => setPage(hashToPage(window.location.hash));
     window.addEventListener('hashchange', onChange);
     return () => window.removeEventListener('hashchange', onChange);
   }, []);
 
   const navigate = useCallback((next: string) => {
     const hash = pageToHash(next);
-    if (window.location.hash === hash) {
-      window.scrollTo({ top: 0 });
-      return;
-    }
-    window.location.hash = hash;
+    const current = window.location.hash || '#/';
+    if (current !== hash) window.location.hash = hash;
+    // Dasturiy navigatsiya — sahifa boshidan; orqaga/oldinga tugmalari brauzer skrollini saqlaydi.
+    window.scrollTo({ top: 0 });
   }, []);
 
   return [page, navigate];

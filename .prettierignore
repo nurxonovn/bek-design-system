@@ -5,3 +5,12 @@ out
 .turbo
 pnpm-lock.yaml
 apps/site
+# ECC (upstream nusxa) — formatlanmaydi, yangilash oson bo'lsin
+.claude/agents
+.claude/commands
+.claude/rules/common
+.claude/rules/typescript
+.claude/rules/react
+.claude/rules/web
+.claude/skills/*
+!.claude/skills/figma-component

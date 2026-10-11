@@ -19,6 +19,8 @@ import { Badge, BekLogo, Button, Tag } from '@bek/react';
 | Komponent                                                                                                                                                       | Figma sahifasi         | Hujjat                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------------- |
 | `BekLogo`                                                                                                                                                       | 2.2 Logo & Brand       | [README](src/components/logo/README.md)              |
+| `Mascot` · `MascotMessage`                                                                                                                                      | 2.3 Mascot             | [README](src/components/mascot/README.md)            |
+| `Pattern`                                                                                                                                                       | 2.5 Pattern            | [README](src/components/pattern/README.md)           |
 | `Button`                                                                                                                                                        | 3.1 Button             | [README](src/components/button/README.md)            |
 | `TextField`                                                                                                                                                     | 3.2 Text field         | [README](src/components/text-field/README.md)        |
 | `Select`                                                                                                                                                        | 3.3 Select             | [README](src/components/select/README.md)            |
@@ -72,6 +74,8 @@ import { Badge, BekLogo, Button, Tag } from '@bek/react';
 | `Icon`                                                                                                                                                          | 9.1 Slots & Helpers    | [README](src/components/icon/README.md)              |
 | `Spinner`                                                                                                                                                       | 9.1 Slots & Helpers    | [README](src/components/spinner/README.md)           |
 | `Divider`                                                                                                                                                       | 9.1 Slots & Helpers    | [README](src/components/divider/README.md)           |
+| `StatusBar` · `HomeIndicator`                                                                                                                                   | 10.2 System bars       | [README](src/components/system-bars/README.md)       |
+| `Keyboard`                                                                                                                                                      | 10.3 Keyboard          | [README](src/components/keyboard/README.md)          |
 
 Har komponent `src/components/<nom>/` ichida: `.tsx`, `.css`, `README.md`. CSS fayllar build paytida `dist/styles.css` ga yig'iladi.
 

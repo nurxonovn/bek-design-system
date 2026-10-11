@@ -28,7 +28,6 @@ export interface CatalogComponent {
 }
 
 export interface Catalog {
-  generatedAt: string;
   figmaFile: string;
   sections: { id: number; title: string }[];
   components: CatalogComponent[];

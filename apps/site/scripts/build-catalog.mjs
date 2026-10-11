@@ -32,15 +32,29 @@ const components = [];
 for (const dir of readdirSync(COMPONENTS).sort()) {
   const base = join(COMPONENTS, dir);
   const readme = read(join(base, 'README.md'));
-  if (!readme) continue;
+  if (!readme) {
+    if (existsSync(join(base, 'figma.json')) || existsSync(join(base, 'index.ts')))
+      throw new Error(`[@bek/site] ${dir}: README.md yo'q — komponent katalogga tushmaydi`);
+    continue;
+  }
   const specRaw = read(join(base, 'figma.json'));
-  const spec = specRaw ? JSON.parse(specRaw) : null;
+  let spec = null;
+  if (specRaw) {
+    try {
+      spec = JSON.parse(specRaw);
+    } catch (e) {
+      throw new Error(`[@bek/site] ${dir}/figma.json o'qilmadi: ${e.message}`);
+    }
+    for (const c of spec.components ?? [])
+      if (typeof c.id !== 'string' || typeof c.page !== 'string')
+        throw new Error(`[@bek/site] ${dir}/figma.json: components[] da id/page yo'q`);
+  } else console.warn(`[@bek/site] ${dir}: figma.json yo'q — Figma spetsifikatsiyasiz`);
 
   const title = readme.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? dir;
   const intro = readme.split('\n').find((l) => l.startsWith('Figma:')) ?? '';
   const description = intro
     .replace(/^Figma:\s*\*\*[^*]+\*\*/, '')
-    .replace(/`/g, '')
+    .replace(/[`*]/g, '')
     .replace(/^[\s.—–-]+/, '')
     .trim();
   const figmaLabel = intro.match(/\*\*([^*]+)\*\*/)?.[1]?.trim() ?? spec?.page ?? '';
@@ -52,7 +66,8 @@ for (const dir of readdirSync(COMPONENTS).sort()) {
     .map((s) => s.split(/\s+as\s+/).pop());
 
   const pages = [...new Set((spec?.components ?? []).map((c) => c.page))];
-  const sectionNo = Number((pages[0] ?? figmaLabel).match(/^(\d+)/)?.[1] ?? 9);
+  const sectionNo = Number((pages[0] ?? figmaLabel).match(/^(\d+)/)?.[1] ?? 0);
+  if (!SECTIONS[sectionNo]) console.warn(`[@bek/site] ${dir}: bo'lim raqami aniqlanmadi (${pages[0] ?? figmaLabel})`);
   const pageIds = Object.fromEntries((spec?.components ?? []).map((c) => [c.page, c.pageId]));
 
   components.push({
@@ -81,14 +96,15 @@ for (const dir of readdirSync(COMPONENTS).sort()) {
   });
 }
 
+if (!components.length) throw new Error('[@bek/site] katalog bo\'sh — packages/react/src/components topilmadi');
 const tokens = existsSync(TOKENS) ? JSON.parse(readFileSync(TOKENS, 'utf8')) : null;
+if (!tokens) console.warn('[@bek/site] tokens.json yo\'q — avval `pnpm --filter @bek/tokens build`');
 
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(
   OUT,
   JSON.stringify(
     {
-      generatedAt: new Date().toISOString(),
       figmaFile: FIGMA_FILE,
       sections: Object.entries(SECTIONS).map(([id, title]) => ({ id: Number(id), title })),
       components,

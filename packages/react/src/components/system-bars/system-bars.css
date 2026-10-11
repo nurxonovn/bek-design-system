@@ -1,0 +1,97 @@
+/* System bars — Figma "10.2 System bars". Faqat mockup: Status bar iOS 62 (Dynamic Island) · Android 52;
+   Home indicator iOS 34 (chiziq 144 × 5) · Android 24 (108 × 4). Rang static/dark (yorug' fon) yoki
+   static/white (qorong'i fon / rasm) — mavzu tokenlari emas. Fon shaffof; orqada bg/sheet. */
+.bek-system-bar--dark {
+  color: var(--bek-static-dark);
+}
+
+.bek-system-bar--light {
+  color: var(--bek-static-white);
+}
+
+.bek-status-bar {
+  --bek-status-bar-height: 62px;
+
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: var(--bek-status-bar-height);
+  padding: 0 var(--bek-scale-24) var(--bek-scale-16);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+  user-select: none;
+}
+
+.bek-status-bar--android {
+  --bek-status-bar-height: var(--bek-scale-52);
+
+  padding-inline: var(--bek-scale-16);
+  padding-bottom: var(--bek-scale-8);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-status-bar__time {
+  min-width: var(--bek-scale-40);
+}
+
+/* Dynamic Island — iOS kamera moduli */
+.bek-status-bar__island {
+  position: absolute;
+  top: var(--bek-scale-12);
+  left: 50%;
+  width: 124px;
+  height: var(--bek-scale-36);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-static-dark);
+  transform: translateX(-50%);
+}
+
+.bek-status-bar__indicators {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-6);
+}
+
+.bek-status-bar__glyph {
+  width: var(--bek-scale-20);
+  height: var(--bek-scale-12);
+}
+
+.bek-status-bar__glyph--battery {
+  width: var(--bek-scale-28);
+  height: var(--bek-scale-12);
+}
+
+.bek-home-indicator {
+  --bek-home-indicator-height: 34px;
+  --bek-home-indicator-bar-width: 144px;
+  --bek-home-indicator-bar-height: 5px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  height: var(--bek-home-indicator-height);
+  padding-bottom: var(--bek-scale-8);
+}
+
+.bek-home-indicator--android {
+  --bek-home-indicator-height: var(--bek-scale-24);
+  --bek-home-indicator-bar-width: 108px;
+  --bek-home-indicator-bar-height: var(--bek-scale-4);
+}
+
+.bek-home-indicator__bar {
+  width: var(--bek-home-indicator-bar-width);
+  height: var(--bek-home-indicator-bar-height);
+  border-radius: var(--bek-radius-full);
+  background: currentColor;
+}
