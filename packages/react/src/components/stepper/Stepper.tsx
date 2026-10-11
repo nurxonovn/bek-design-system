@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, type KeyboardEvent, type ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 import { MinusGlyph, PlusGlyph } from '../../icons/index.js';

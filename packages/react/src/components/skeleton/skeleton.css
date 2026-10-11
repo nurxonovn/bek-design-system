@@ -1,6 +1,7 @@
 /* Skeleton — Figma "5.7 Loading → Skeleton". Suyaklar fill/soft-pressed, shimmer:
    shaffoflik 1 → 0.5 → 1, 1.2 s ease-in-out. Text: 12 px qatorlar (r6), gap 8, oxirgisi 2/3.
-   Title 24 (r8, 180) · Circle 40 · Rect 140 (r12) · List row 48 · Card 168 (media 140). */
+   Title 24 (r8, 180) · Circle 40 · Rect 140 (r12) · List row 48 · Card 168 (media 140).
+   Card konteyner kengligini to'ldiradi (grid katagi); media nisbati Figma'dagi 168:140. */
 .bek-skeleton {
   display: flex;
   flex-direction: column;
@@ -53,9 +54,14 @@
   border-radius: var(--bek-radius-full);
 }
 
-.bek-skeleton--rect > .bek-skeleton__bone,
-.bek-skeleton__media {
+.bek-skeleton--rect > .bek-skeleton__bone {
   height: var(--bek-scale-140);
+  border-radius: var(--bek-radius-surface-md);
+}
+
+.bek-skeleton__media {
+  height: auto;
+  aspect-ratio: 168 / 140;
   border-radius: var(--bek-radius-surface-md);
 }
 
@@ -95,7 +101,7 @@
 
 .bek-skeleton--card {
   gap: var(--bek-scale-12);
-  width: 168px;
+  min-width: 0;
 }
 
 .bek-skeleton--card > .bek-skeleton__bone:nth-child(2) {

@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, type MouseEvent, type SyntheticEvent } from 'react';
 
 export interface DialogBehaviour {
