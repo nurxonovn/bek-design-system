@@ -1,0 +1,57 @@
+{
+  "page": "5.7 Loading",
+  "components": [
+    {
+      "name": "Skeleton",
+      "id": "800:107",
+      "page": "5.7 Loading",
+      "pageId": "793:68",
+      "props": {
+        "Shape": ["Text", "Title", "Circle", "Rect", "List row", "Card"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 240,
+        "h": 52
+      },
+      "tokens": {
+        "color": ["bg/sheet", "fill/soft-pressed"],
+        "text": [],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/12", "scale/8", "scale/full"]
+      },
+      "sizes": [1, 6, 7, 8, 12, 16, 24, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Skeleton — content placeholder while data loads. Bones fill/soft-pressed with a shimmer (opacity 1 → 0.5 → 1, 1.2s ease-in-out). Match the real layout: Text, Title, Circle, Rect, List row, Card. Never mix skeleton with a spinner on the same block.\nResizable: set the instance width (or FILL) — bones stretch, the last line of Text and the second line of List row keep their short length. Card media k"
+    }
+  ],
+  "doc": {
+    "5.7 Loading": {
+      "tokens": [
+        "accent/default",
+        "bg/base",
+        "fill/on-color-hover",
+        "fill/soft-hover",
+        "fill/soft-pressed",
+        "radius/full",
+        "radius/surface/md",
+        "static/white",
+        "text/secondary"
+      ],
+      "text": "FEEDBACK\nBEK\nDesign System\n5.7 Loading\nSpinner (6 variants · Tone × Size), Skeleton (6 shapes) and Pull to refresh (3 states).\nOverview\nShow progress the moment a wait is longer than 300 ms. Skeleton when the layout is known, Spinner when it is not, Pull to refresh for user-started reloads.\nSpinner\nUnknown layout or short actions: buttons, full-screen waits.\nSkeleton\nKnown layout: lists, cards, profiles.\nPull to refresh\nRefreshing…\nReload a list by pulling it down.\nAnatomy\nSpinner · L40.\n1\ntrack\n· full ring · inner radius 78% · fill/soft-hover\n2\narc\n· 135° · accent/default · rotates 800 ms linear\nVariants\nSpinner · Tone × Size\nDefault\nS · 16\nM · 24\nL · 40\nOn color — on accent buttons and media\nS · 16\nM · 24\nL · 40\nDark mode\nM · 24\nL · 40\nSkeleton\nBones fill/soft-pressed · shimmer opacity 1 → 0.5 → 1 · 1.2 s ease-in-out.\nText\nTitle\nCircle\nRect\nList row\nCard\nDark mode\nList row\nCard\nPull to refresh\n390 × 64 above the list. Threshold 64; haptic tick on Release.\nPull\nPull to refresh\nSpinner 40%, arc follows drag.\nRelease\nRelease to refresh\nThreshold reached.\nRefreshing\nRefreshing…\nSpins until data returns.\nProps\nComponent\nProp\nValues\nDefault\nSpinner\nTone\nDefault · On color\nDefault\nSpinner\nSize\nS16 · M24 · L40\nS16\nSkeleton\nShape\nText · Title · Circle · Rect · List row · Card\nText\nPull to refresh\nState\nPull · Release · Refreshing\nPull\nTokens\nProperty\nToken\nValue\nSpinner track\nfill/soft-hover · fill/on-color-hover\n—\nSpinner arc\naccent/default · static/white\n—\nSkeleton bone\nfill/soft-pressed\nradius 6 · radius/surface/md · radius/full\nPull label\nCaption/L · text/secondary\n—\nPull background\nbg/base\nheight 64\nDevices\nMobile · 390\nRefreshing…\nSkeleton rows while the menu loads; Pull to refresh on top.\nTablet · 834\nCard skeletons in the grid.\nWeb · 1440\nSpinner L in empty panels; no pull to refresh on web.\nDo / Don’t\nDo\nMatch the skeleton to the real layout so the content does not jump when it arrives.\nDon’t\nDon’t combine a spinner and a skeleton on the same block."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "px-figma",
+      "match": "180px",
+      "reason": "Title suyagining kengligi 180 — Figma Title variantining kengligi (resizable, \"set the instance width or FILL\"); sizes kenglikni olmaydi, scale/180 tokeni yo'q."
+    },
+    {
+      "rule": "px-figma",
+      "match": "168px",
+      "reason": "Card suyagining kengligi 168 — Figma Card variantining kengligi (resizable); sizes kenglikni olmaydi, scale/168 tokeni yo'q."
+    }
+  ]
+}

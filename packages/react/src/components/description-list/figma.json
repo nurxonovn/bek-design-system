@@ -1,0 +1,105 @@
+{
+  "page": "4.16 Description list",
+  "components": [
+    {
+      "name": "Description list item",
+      "id": "1052:361",
+      "page": "4.16 Description list",
+      "pageId": "1052:63",
+      "props": {
+        "Term": {
+          "type": "TEXT",
+          "default": "Parameter"
+        },
+        "Value": {
+          "type": "TEXT",
+          "default": "Value"
+        },
+        "Leader": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show hint": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Layout": ["Justified", "Columns", "Inline"],
+        "Size": ["S", "M", "L"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 18,
+      "size": {
+        "w": 360,
+        "h": 20
+      },
+      "tokens": {
+        "color": ["bg/sheet", "border/default", "text/primary", "text/secondary"],
+        "text": ["Body/L", "Body/M", "Body/S"],
+        "effect": [],
+        "dimension": ["scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 8, 16],
+      "rawColors": [],
+      "nested": [],
+      "description": "One term · value pair. Justified — value right-aligned (prices, receipts); Columns — fixed 152 term column, value wraps (specifications); Inline — “Term: value” (compact cards). Term text/secondary, value text/primary, size = Body/S·M·L. Leader — dotted line (border/default) when the eye must travel far. Totals: override the Value text style with Body Strong. React: &lt;DescriptionList.Item layout"
+    },
+    {
+      "name": "Description list",
+      "id": "1052:677",
+      "page": "4.16 Description list",
+      "pageId": "1052:63",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Title"
+        },
+        "Show title": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show total": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show link": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Layout": ["Justified", "Columns", "Inline"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 360,
+        "h": 196
+      },
+      "tokens": {
+        "color": ["bg/sheet", "border/hairline", "text/primary", "text/secondary"],
+        "text": ["Body/M", "Body/M Strong", "Title/M"],
+        "effect": [],
+        "dimension": ["scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 8, 16, 40, 48],
+      "rawColors": [],
+      "nested": ["Link"],
+      "description": "Title + five items + optional Total (Divider + Body Strong) and “Show all” Link. Swap or add items as needed; keep 3–8 rows, more → collapse behind Show all. React: &lt;DescriptionList title&gt;."
+    }
+  ],
+  "doc": {
+    "4.16 Description list": {
+      "tokens": ["border/default", "scale/4", "scale/8", "text/primary", "text/secondary"],
+      "text": "DATA DISPLAY\nBEK\nDesign System\n4.16 Description list\nTerm · value pairs — specifications, receipts, order details. Lighter than a Table. Item: 3 layouts × 3 sizes, LTR and RTL (18); List: 3 layouts with optional title, total and “Show all”.\nOverview\nThree layouts for three jobs.\nJustified · receipt\nYour order\nBEK Pro, 1 month\n99 000 so‘m\nTeam seats × 2\n60 000 so‘m\nPromo BEK15\n−10 000 so‘m\nDelivery\nFree\nVAT included\n12 %\nTotal\n149 000 so‘m\nColumns · specification\nTypeface\nBrand\nInter\nWeights\nRegular · Medium · Semi Bold\nStyles\n25\nLanguages\nLatin · Cyrillic · Arabic\nLicence\nOFL 1.1\nShow all\nInline · compact card\nOrder #4821\nStatus\n:\nOn the way\nCourier\n:\nAkmal\nArrives\n:\n14:30–15:00\nPaid\n:\nCard •• 4417\nAddress\n:\nYunusobod 19\nAnatomy\nItem, Justified M, leader and hint on.\nDelivery\nFree\n1\nterm\n· Body/S·M·L · text/secondary · TEXT prop “Term”\n2\nhint\n· optional · information-circle 16 · Tooltip with the explanation\n3\nleader\n· optional · dotted 1 px · border/default · sits on the baseline\n4\nvalue\n· same size · text/primary · right-aligned in Justified · TEXT prop “Value”\nLayouts\nPick by what the value looks like.\nJustified\nWeight\n1.2 kg\nDimensions\n30 × 20 × 8 cm\nWarranty\n12 months\nShort values, numbers and prices. Value is right-aligned so digits line up.\nColumns\nWeight\n1.2 kg\nDimensions\n30 × 20 × 8 cm\nWarranty\n12 months\nLong or wrapping values — specifications, addresses. Term column 152 px.\nInline\nWeight\n:\n1.2 kg\nDimensions\n:\n30 × 20 × 8 cm\nWarranty\n:\n12 months\nTwo or three facts inside a card, or on Mobile where width is tight.\nSizes\nThe item follows Body/S·M·L. Match the surrounding text.\nSubtotal\n159 000\nDiscount\n−10 000\nS · Body/S · 14/20 · rows 4 apart\nSubtotal\n159 000\nDiscount\n−10 000\nM · Body/M · 16/24 · rows 8 apart\nSubtotal\n159 000\nDiscount\n−10 000\nL · Body/L · 18/28 · rows 8 apart\nStates\nStatic content — no interactive states. A value that opens something is a Link (3.18) placed in the Value slot by detaching, or a List item (4.4).\nDevices\nColumns becomes Justified or Inline on narrow screens when values are short.\nMobile · 390\nTypeface\nBrand\nInter\nWeights\nRegular · Medium · Semi Bold\nStyles\n25\nLanguages\nLatin · Cyrillic · Arabic\nLicence\nOFL 1.1\nTablet · 834\nTypeface\nBrand\nInter\nWeights\nRegular · Medium · Semi Bold\nStyles\n25\nLanguages\nLatin · Cyrillic · Arabic\nLicence\nOFL 1.1\nWeb · 1440\nTypeface\nBrand\nInter\nWeights\nRegular · Medium · Semi Bold\nStyles\n25\nLanguages\nLatin · Cyrillic · Arabic\nLicence\nOFL 1.1\nDark\nTypeface\nBrand\nInter\nWeights\nRegular · Medium · Semi Bold\nStyles\n25\nLanguages\nLatin · Cyrillic · Arabic\nLicence\nOFL 1.1\nTotal\n149 000 so‘m\nTypeface\nBrand\nInter\nWeights\nRegular · Medium · Semi Bold\nStyles\n25\nLanguages\nLatin · Cyrillic · Arabic\nLicence\nOFL 1.1\nTypeface\nBrand\n:\nInter\nWeights\n:\nRegular · Medium · Semi Bold\nStyles\n:\n25\nLanguages\n:\nLatin · Cyrillic · Arabic\nLicence\n:\nOFL 1.1\nProps\nProp\nType\nValues\nDefault\nItem · Layout\nVariant\nJustified · Columns · Inline\nJustified\nItem · Size\nVariant\nS · M · L\nS\nItem · Direction\nVariant\nLTR · RTL\nLTR\nItem · Term · Value\nText\nany\nParameter · Value\nItem · Leader\nBoolean\non / off\noff\nItem · Show hint\nBoolean\non / off\noff\nList · Layout\nVariant\nJustified · Columns · Inline\nJustified\nList · Titl"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "px-figma",
+      "match": "152px",
+      "reason": "Figma doc (4.16 Layouts): Columns term ustuni 152 px — bu kenglik, extractor sizes ro'yxatiga width kirmaydi. --bek-dl-term-width orqali o'zgartiriladi."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-tertiary",
+      "reason": "Hint ikonkasi (information-circle) rangi — Figma spec'da hint default o'chiq bo'lgani uchun tokeni tushmagan; Fieldset 3.19 hint bilan bir xil: text/tertiary."
+    }
+  ]
+}

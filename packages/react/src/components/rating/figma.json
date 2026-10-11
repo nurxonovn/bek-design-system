@@ -1,0 +1,96 @@
+{
+  "page": "4.10 Rating",
+  "components": [
+    {
+      "name": ".Rating/Star",
+      "id": "549:41899",
+      "page": "4.10 Rating",
+      "pageId": "549:41821",
+      "props": {
+        "Fill": ["Empty", "Half", "Full"],
+        "Size": ["S", "M", "L"]
+      },
+      "variants": 9,
+      "size": {
+        "w": 16,
+        "h": 16
+      },
+      "tokens": {
+        "color": [],
+        "text": [],
+        "effect": [],
+        "dimension": ["icon/lg", "icon/md", "icon/sm"]
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": ["star"],
+      "description": "Single star for Rating. Fill = Empty | Half | Full × Size = S | M | L (size/icon/2·3·4) = 9 variants. Empty uses the Stroke icon on color/border/neutral/strong; Full uses Solid (documented exception) on color/foreground/rating (≥3:1, WCAG 1.4.11); Half clips Solid over Stroke."
+    },
+    {
+      "name": "Rating",
+      "id": "550:43131",
+      "page": "4.10 Rating",
+      "pageId": "549:41821",
+      "props": {
+        "Score": {
+          "type": "TEXT",
+          "default": "4.5"
+        },
+        "Count": {
+          "type": "TEXT",
+          "default": "(1 245 reviews)"
+        },
+        "Show score": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show count": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Stars", "Compact"],
+        "Size": ["S", "M", "L"],
+        "Value": ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "—"]
+      },
+      "variants": 36,
+      "size": {
+        "w": 210,
+        "h": 16
+      },
+      "tokens": {
+        "color": ["text/primary", "text/secondary"],
+        "text": ["Body/M", "Body/S", "Caption/M", "Label/L", "Label/M", "Label/S"],
+        "effect": [],
+        "dimension": ["icon/lg", "icon/md", "icon/sm", "scale/2", "scale/8"]
+      },
+      "sizes": [1, 2, 5, 8],
+      "rawColors": [],
+      "nested": [],
+      "description": "Read-only rating of any item — products, courses, places, apps, services. Variant = Stars (Value 0–5 in 0.5 steps) | Compact (one star + score) × Size = S | M | L = 36 variants. Score and Count are text props (default &quot;4.5&quot;; format decimals by locale in code); hide them with Show score / Show count. Built from .Rating/Star."
+    }
+  ],
+  "doc": {
+    "4.10 Rating": {
+      "tokens": [
+        "border/strong",
+        "scale/2",
+        "status/warning/default",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nStar size\nicon/sm · 3 · 4\n16 · 20 · 24\nFilled star\nstatus/warning/default\nSolid icon — allowed exception (2.1 Icons)\nEmpty star\nborder/strong\nStroke icon\nScore\ntext/primary\nLabel style of the size\nCount\ntext/secondary\nCaption / Body style of the size\nGap\nscale/2 · xs\nstars · text\nDo / Don't\nDo\n4.5\n(1 245 reviews)\nShow the score and the number of ratings — 4.5 from 3 people means something different from 4.5 from 3 000.\nDon't\nDon’t rely on stars alone. Half stars are hard to read at small sizes — keep the Score visible.\nDo\n4.5\n(1 245 reviews)\nUse Compact inside cards, rows and search results.\nDon't\n4.5\n(1 245 reviews)\nDon’t use Rating as an input. It is read-only; a rating picker will be its own component."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-status-warning-default",
+      "reason": "Figma doc \"Filled star — status/warning/default\" deydi, lekin .Rating/Star komponentida yulduz rangi variable'ga bog'lanmagan (tokens.color bo'sh, tavsifda eski color/foreground/rating nomi). Figma'da Solid yulduz fill'ini status/warning/default ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-border-strong",
+      "reason": "Figma doc \"Empty star — border/strong\" deydi, lekin .Rating/Star komponentida stroke rangi variable'ga bog'lanmagan (tavsifda eski color/border/neutral/strong). Figma'da Stroke yulduzni border/strong ga bog'lash kerak."
+    }
+  ]
+}

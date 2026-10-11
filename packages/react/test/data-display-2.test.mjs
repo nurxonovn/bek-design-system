@@ -48,7 +48,26 @@ test('Table: native table with sortable header and selected row', () => {
   );
   assert.match(html, /<tr aria-selected="true" class="bek-table__row is-selected">/);
   assert.match(html, /bek-table__description">Designer/);
+  assert.match(
+    html,
+    /bek-table__td bek-table__td--text-description"><span class="bek-table__stack"/,
+  );
   assert.match(html, /bek-table__td bek-table__td--numeric">12/);
+});
+
+test('Table: cell types from Figma (select, index, media, tags, status, actions)', () => {
+  assert.match(
+    r(h(TableCell, { type: 'select' }, 'x')),
+    /class="bek-table__td bek-table__td--select">x</,
+  );
+  assert.match(r(h(TableCell, { type: 'index' }, '1')), /bek-table__td--index">1</);
+  assert.match(r(h(TableCell, { type: 'text' }, 't')), /class="bek-table__td">t</);
+  for (const type of ['media', 'tags', 'status', 'actions'])
+    assert.match(
+      r(h(TableCell, { type }, 'c')),
+      new RegExp(`bek-table__td--${type}"><span class="bek-table__inline">c</span>`),
+    );
+  assert.match(r(h(Table, { size: 'l' })), /bek-table bek-table--l/);
 });
 
 test('Separator: line, block, labeled', () => {
@@ -83,5 +102,8 @@ test('Rating: 3.5 → 3 full, 1 half, 1 empty; labelled score', () => {
   assert.equal(html.match(/bek-star__full/g).length, 4);
   assert.equal(html.match(/bek-star__empty/g).length, 2);
   assert.match(html, /clip-path:inset\(0 50% 0 0\)/);
+  assert.equal(html.match(/bek-rating__star--full/g).length, 3);
+  assert.equal(html.match(/bek-rating__star--half/g).length, 1);
+  assert.equal(html.match(/bek-rating__star--empty/g).length, 1);
   assert.equal(r(h(Rating, { value: 4.5, variant: 'compact' })).match(/<svg/g).length, 1);
 });

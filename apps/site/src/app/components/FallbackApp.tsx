@@ -49,7 +49,7 @@ export function FallbackApp() {
               Welcome to Pure Design System
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              A comprehensive design system for SQB applications
+              A comprehensive design system for BEK applications
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card>
@@ -106,7 +106,7 @@ export function FallbackApp() {
                 <p className="text-muted-foreground mb-4">
                   Welcome to the Pure Design System documentation. This system provides
                   a comprehensive set of design tokens, components, and patterns for
-                  building consistent SQB applications.
+                  building consistent BEK applications.
                 </p>
                 <h3 className="text-lg font-semibold mb-2">Installation</h3>
                 <div className="bg-muted p-4 rounded-lg font-mono text-sm">

@@ -97,7 +97,9 @@ export interface ShareTarget {
   /** Kontakt — avatar/initsiallar; ilova — 24 px ikonka. */
   icon: ReactNode;
   onSelect?: () => void;
-  /** Avatar fon rangi (kontaktlar uchun), masalan `var(--bek-accent-soft)`. */
+  /** Avatar doirasi rangi (kontaktlar): accent/soft (standart) yoki status/{tone}/soft. */
+  tone?: 'accent' | 'info' | 'success' | 'warning' | 'utility';
+  /** Avatar fon rangi (kontaktlar uchun), masalan `var(--bek-accent-soft)`; `tone` dan ustun. */
   tint?: string;
 }
 
@@ -162,7 +164,10 @@ export function ShareSheet({
           onClick={item.onSelect}
         >
           <span
-            className="bek-share-sheet__circle"
+            className={cx(
+              'bek-share-sheet__circle',
+              item.tone && item.tone !== 'accent' && `bek-share-sheet__circle--${item.tone}`,
+            )}
             style={item.tint ? { background: item.tint } : undefined}
             aria-hidden="true"
           >

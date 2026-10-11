@@ -1,0 +1,141 @@
+/* Description list — Figma "4.16 Description list". Term text/secondary, qiymat text/primary, Body/S·M·L.
+   Justified — qiymat o'ngda; Columns — term ustuni 152; Inline — "Term: qiymat". Qatorlar S 4 · M/L 8
+   oraliq. Leader — nuqtali 1 px border/default. Total — hairline + Body Strong. Sarlavha Title/M. */
+.bek-dl {
+  --bek-dl-gap: var(--bek-scale-4);
+  --bek-dl-term-width: 152px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  color: var(--bek-text-primary);
+}
+
+.bek-dl--m {
+  --bek-dl-gap: var(--bek-scale-8);
+
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-dl--l {
+  --bek-dl-gap: var(--bek-scale-8);
+
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  letter-spacing: var(--bek-type-body-lg-tracking);
+}
+
+.bek-dl__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--bek-scale-16);
+}
+
+.bek-dl__title {
+  margin: 0;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+}
+
+.bek-dl__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-dl-gap);
+  margin: 0;
+  padding: 0;
+}
+
+.bek-dl__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+}
+
+.bek-dl__term {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-4);
+  color: var(--bek-text-secondary);
+}
+
+.bek-dl__value {
+  margin: 0;
+  min-width: 0;
+  color: var(--bek-text-primary);
+  overflow-wrap: anywhere;
+}
+
+.bek-dl__hint {
+  display: inline-flex;
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+  color: var(--bek-text-tertiary);
+  cursor: help;
+}
+
+.bek-dl__hint > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Justified — qiymat o'ngga tekislangan, raqamlar bir ustunda. */
+.bek-dl--justified .bek-dl__item {
+  justify-content: space-between;
+}
+
+.bek-dl--justified .bek-dl__value {
+  text-align: end;
+}
+
+/* Leader — nuqtali chiziq term va qiymat orasini to'ldiradi, baseline'da. */
+.bek-dl__leader {
+  flex: 1 1 auto;
+  min-width: var(--bek-scale-16);
+  border-bottom: var(--bek-stroke-default) dotted var(--bek-border-default);
+  transform: translateY(calc(-1 * var(--bek-scale-4)));
+}
+
+/* Columns — qattiq term ustuni, qiymat o'raladi. */
+.bek-dl--columns .bek-dl__term {
+  flex: 0 0 var(--bek-dl-term-width);
+}
+
+.bek-dl--columns .bek-dl__value {
+  flex: 1 1 auto;
+}
+
+/* Inline — "Term: qiymat". */
+.bek-dl--inline .bek-dl__item {
+  gap: var(--bek-scale-4);
+}
+
+.bek-dl--inline .bek-dl__term::after {
+  content: ':';
+}
+
+.bek-dl--inline .bek-dl__leader {
+  display: none;
+}
+
+/* Total — Divider (border/hairline) + Body Strong. */
+.bek-dl__total {
+  margin-top: var(--bek-scale-4);
+  padding-top: var(--bek-scale-8);
+  border-top: var(--bek-stroke-default) solid var(--bek-border-hairline);
+  font-weight: var(--bek-weight-semibold);
+}
+
+.bek-dl__total .bek-dl__term {
+  color: var(--bek-text-primary);
+}

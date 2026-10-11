@@ -1,7 +1,7 @@
 /* Date picker — Figma "3.14 Date picker" + "_Date cell". Karta surface/raised, radius surface/xl,
    padding 16 × 8; sarlavha Title/M; nav tugmalari 40 px fill/secondary; hafta kunlari Caption/M
    text/tertiary; katak 48 × 44, kun doirasi 40; tanlangan accent/default + text/on-color (Label/L);
-   oraliq tasmasi accent/soft; bugun — text/accent + 4 px nuqta. */
+   oraliq tasmasi accent/soft; bugun — text/accent + 4 px nuqta; Range xulosasi Label/M text/secondary. */
 .bek-date-picker {
   display: inline-flex;
   flex-direction: column;
@@ -155,6 +155,20 @@
   background: var(--bek-accent-default);
   color: var(--bek-text-on-color);
   font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+/* Range xulosasi: "12 – 16 oktyabr · 5 kun" — Label/M, text/secondary */
+.bek-date-picker__summary {
+  margin: 0;
+  padding-inline: var(--bek-scale-8);
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
 }
 
 .is-selected > .bek-date-picker__day::after {

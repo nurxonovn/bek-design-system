@@ -6,6 +6,7 @@ export interface InfoWrapProps extends Omit<HTMLAttributes<HTMLDivElement>, 'tit
   /** `true` — fill/tertiary fon (kuchliroq ajratish). */
   emphasis?: boolean;
   /** Boshidagi 16 px ikonka. */
+  /** Figma "Show leading icon" — boshidagi 16 px ikonka. */
   icon?: ReactNode;
   /** Ikki qatorli ko'rinish uchun sarlavha (Label/M, text/accent). */
   title?: ReactNode;

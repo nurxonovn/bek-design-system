@@ -1,6 +1,9 @@
 /* Carousel — Figma "4.11 Carousel". Viewport radius surface/lg, slaydlar orasi 12; strelkalar Raised
    icon-only Button (L, 36); nuqta: faol 24×8 accent/default pill, nofaol 8×8 border/default;
-   rasm ustida — text/on-color va glass/tint-clear. */
+   rasm ustida — text/on-color va glass/tint-clear. Indikator turlari (Figma .Carousel/Indicator):
+   fraction — Label/S text/on-color, bg/overlay pill; progress — 2 px chiziq, trek border/hairline, accent/default;
+   thumbnails — 56 (s) · 64 (m) kvadrat, fill/tertiary, radius control/md, hover border/strong halqa,
+   faol accent/default halqa, fokus border/focus; gorizontal (slayd ostida) yoki vertikal (yonida). */
 .bek-carousel {
   display: flex;
   flex-direction: column;
@@ -8,8 +11,15 @@
   font-family: var(--bek-family-sans);
 }
 
+.bek-carousel--vertical {
+  flex-direction: row;
+  align-items: stretch;
+}
+
 .bek-carousel__frame {
   position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .bek-carousel__viewport {
@@ -97,4 +107,107 @@
 
 .bek-carousel__dots--on-media .bek-carousel__dot.is-active {
   background: var(--bek-text-on-color);
+}
+
+/* Kasr: "1 / 5" — rasm ustidagi qorong'i pill. */
+.bek-carousel__fraction {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: var(--bek-scale-4) var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-bg-overlay);
+  color: var(--bek-text-on-color);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-carousel--inside .bek-carousel__fraction {
+  position: relative;
+  margin-top: calc(-1 * (var(--bek-scale-24) + var(--bek-scale-12)));
+  margin-bottom: var(--bek-scale-12);
+}
+
+/* Progress: trek border/hairline, to'lgan qism accent/default. */
+.bek-carousel__progress {
+  width: 100%;
+  height: var(--bek-scale-2);
+  overflow: hidden;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-border-hairline);
+}
+
+.bek-carousel__progress-bar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bek-accent-default);
+  transition: width var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+}
+
+/* Kichik rasmlar. */
+.bek-carousel__thumbs {
+  display: flex;
+  gap: var(--bek-scale-8);
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.bek-carousel__thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.bek-carousel__thumbs--horizontal {
+  flex-direction: row;
+}
+
+.bek-carousel__thumbs--vertical {
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.bek-carousel__thumb {
+  --bek-carousel-thumb: var(--bek-scale-56);
+
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-carousel-thumb);
+  height: var(--bek-carousel-thumb);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-md);
+  background: var(--bek-fill-tertiary);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-carousel__thumb--m {
+  --bek-carousel-thumb: var(--bek-scale-64);
+}
+
+.bek-carousel__thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-carousel__thumb:hover {
+  box-shadow: inset 0 0 0 var(--bek-stroke-focus) var(--bek-border-strong);
+}
+
+.bek-carousel__thumb.is-active {
+  box-shadow: inset 0 0 0 var(--bek-stroke-focus) var(--bek-accent-default);
+}
+
+.bek-carousel__thumb:focus-visible {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
 }

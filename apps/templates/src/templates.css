@@ -367,28 +367,6 @@ dd {
     var(--bek-elevation-4);
 }
 
-.tpl-status-bar {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
-  height: 54px;
-  padding: 0 var(--bek-scale-32);
-  font-weight: var(--bek-weight-semibold);
-}
-
-.tpl-status-bar__island {
-  width: 120px;
-  height: 34px;
-  border-radius: var(--bek-radius-full);
-  background: var(--bek-static-dark);
-}
-
-.tpl-status-bar__icons {
-  font-size: var(--bek-type-caption-sm-size);
-  letter-spacing: 2px;
-}
-
 .tpl-phone__screen {
   position: relative;
   display: flex;
@@ -397,17 +375,6 @@ dd {
   min-height: 0;
   overflow-y: auto;
   scrollbar-width: none;
-}
-
-.tpl-home-indicator {
-  position: absolute;
-  bottom: var(--bek-scale-8);
-  left: calc(50% - 72px);
-  z-index: var(--bek-z-toast);
-  width: 144px;
-  height: 5px;
-  border-radius: var(--bek-radius-full);
-  background: var(--bek-text-primary);
 }
 
 .tpl-mobile-bar {

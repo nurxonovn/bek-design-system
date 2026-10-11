@@ -1,0 +1,52 @@
+{
+  "page": "4.13 Separator",
+  "components": [
+    {
+      "name": "Separator",
+      "id": "766:76",
+      "page": "4.13 Separator",
+      "pageId": "765:66",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "or"
+        },
+        "Type": ["Line", "Block", "Labeled"],
+        "Orientation": ["Horizontal", "Vertical"],
+        "Inset": ["None", "Leading", "Both"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 375,
+        "h": 1
+      },
+      "tokens": {
+        "color": ["bg/base", "bg/sheet", "border/hairline", "text/tertiary"],
+        "text": ["Caption/M"],
+        "effect": [],
+        "dimension": ["scale/12", "scale/16", "scale/8", "stroke/default"]
+      },
+      "sizes": [1, 12, 16, 32, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Separator — divides content without borders on surfaces. Line = border/hairline (1px), Block = 8px bg/base band between grouped sections, Labeled = line · text · line (&quot;or&quot;). Inset: None | Leading 16 | Both 16. Prefer colour steps between surfaces; use a separator only inside one surface."
+    }
+  ],
+  "doc": {
+    "4.13 Separator": {
+      "tokens": [
+        "bg/base",
+        "bg/sheet",
+        "border/hairline",
+        "scale/12",
+        "scale/16",
+        "scale/8",
+        "surface/card",
+        "surface/grouped",
+        "text/tertiary"
+      ],
+      "text": "DATA DISPLAY\nBEK\nDesign System\n4.13 Separator\nA thin line, a band or a labelled line that divides content inside one surface. 6 variants · Type × Orientation × Inset.\nOverview\nBEK separates layers by colour first. Use a separator only between items that share one surface.\nLine\n1px border/hairline — between rows of one list.\nLine · Leading inset\nStarts after the 16px leading inset — aligns with row text.\nBlock\n8px bg/base band — between groups on mobile.\nLabeled\nor\nLine · text · line — “or” between two ways to continue.\nVertical\n24px — between inline actions or meta items.\nAnatomy\nLabeled separator shown; Line and Block have a single layer.\nor\n1\nline\n· border/hairline, 1px (stroke/default)\n2\nlabel\n· Caption/M, text/tertiary\n3\ngap\n· scale/12 (12) on both sides\nVariants\nType × Orientation × Inset. Inset applies to horizontal lines only.\nType=Line — Inset None · Leading · Both\nNone\nLeading 16\nBoth 16\nType=Block and Labeled\nBlock\nLabeled\nor\nDark mode\nLine\nBlock\nLabeled\nor\nSizes\nThickness is fixed. Width fills the parent; vertical line height follows its row.\nType\nThickness\nToken\nDefault length\nLine\n1px\nstroke/default\nFill parent (375 in the set)\nBlock\n8px\nscale/8\nFill parent\nLabeled\n1px + text\nstroke/default · Caption/M\nFill parent\nVertical\n1px\nstroke/default\n24 (fill row height)\nStates\nSeparator is not interactive — it has no states.\nNo states\nA separator never reacts to hover, focus or press. Do not make it a hit target.\nProps\nProp\nType\nValues\nDefault\nType\nVariant\nLine · Block · Labeled\nLine\nOrientation\nVariant\nHorizontal · Vertical (Line only)\nHorizontal\nInset\nVariant\nNone · Leading · Both\nNone\nLabel\nText\nAny short word\nor\nTokens\nMap each visual property to code.\nProperty\nToken\nLight\nDark\nLine colour\nborder/hairline\ngray-alpha/75\ngray-alpha/75\nLine thickness\nstroke/default\n1\n1\nBlock colour\nbg/base\n#F1F3F6\n#000000\nBlock height\nscale/8\n8\n8\nInset\nscale/16\n16\n16\nLabel\nCaption/M · text/tertiary\n12/16\n12/16\nDevices\nSame component on every device; only inset and usage change.\nMobile · 390\nLeading inset 16 under list rows. Block between groups.\nTablet · 834\nor\nLine inside cards; prefer surface steps between cards — Block is rarely needed.\nWeb · 1440\nHairline only inside tables, menus and sidebars. Never between page sections — use spacing.\nDo / Don’t\nDo\nUse a leading-inset line between rows of one list so it aligns with the text.\nDon’t\nDon’t stack separators or put one between two surfaces of different colour — the colour step already separates them."
+    }
+  },
+  "accepted": []
+}

@@ -1,0 +1,43 @@
+{
+  "page": "2.5 Pattern",
+  "components": [
+    {
+      "name": "Pattern",
+      "id": "803:3231",
+      "page": "2.5 Pattern",
+      "pageId": "709:71601",
+      "props": {
+        "Type": ["Dots", "Grid", "Diagonal", "Logo petals"],
+        "Tone": ["Subtle", "Accent"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 320,
+        "h": 320
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/base",
+          "bg/sheet",
+          "fill/on-color-hover",
+          "fill/soft-pressed"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 16, 24, 32],
+      "rawColors": [],
+      "nested": ["Logo"],
+      "description": "Pattern — decorative 320 × 320 tile for empty states, promo sheets, onboarding and card backgrounds. Types: Dots (16 grid), Grid (32 lines), Diagonal (20 stripes), Logo petals (brand mark, staggered 48). Tones: Subtle = fill/soft-pressed on bg/base; Accent = fill/on-color-hover on accent/default. Place behind content, never behind body text; scale the tile, do not recolour."
+    }
+  ],
+  "doc": {
+    "2.5 Pattern": {
+      "tokens": ["accent/default", "bg/base", "fill/on-color-hover", "fill/soft-pressed"],
+      "text": "FOUNDATIONS\nBEK\nDesign System\n2.5 Pattern\nDecorative 320 × 320 tiles for empty states, promo sheets, onboarding and card backgrounds. 8 variants · Type × Tone.\nOverview\nA pattern adds texture behind content without competing with it. One pattern per screen, always under the content layer.\nDots · Subtle\nEmpty states and light backgrounds.\nLogo petals · Accent\nPromo sheets, onboarding, brand moments.\nVariants\nType × Tone.\nSubtle — fill/soft-pressed on bg/base\nDots · 16\nGrid · 32\nDiagonal · 20\nLogo petals · 48\nAccent — fill/on-color-hover on accent/default\nDots\nGrid\nDiagonal\nLogo petals\nDark mode\nDots · Subtle\nLogo petals · Subtle\nGrid · Accent\nProps\nProp\nType\nValues\nDefault\nType\nVariant\nDots · Grid · Diagonal · Logo petals\nDots\nTone\nVariant\nSubtle · Accent\nSubtle\nTokens\nLayer\nSubtle\nAccent\nBackground\nbg/base\naccent/default\nInk (dots, lines)\nfill/soft-pressed\nfill/on-color-hover\nLogo petals\nLogo Mark S · Mono · 10%\nLogo Mark S · Reversed · 18%\nTile\n320 × 320 · scales\n320 × 320 · scales\nDevices\nMobile · 390\nBehind an empty state or the top of a promo sheet.\nWeb · 1440\nRepeat the tile; keep it under 40% of the viewport.\nDo / Don’t\nDo\nUse Accent patterns for brand moments with short white text on top.\nDon’t\nDon’t place body text or forms on top of a pattern, and don’t recolour the ink."
+    }
+  },
+  "accepted": []
+}

@@ -22,108 +22,62 @@ export interface PlatformContent {
 
 export const platformContent: Record<Platform, PlatformContent> = {
   web: {
-    description: "Angular komponentlari va CSS frameworklari web ilovalar uchun. Responsive dizayn va zamonaviy web standartlarga mos.",
+    description: "React komponentlari (@bek/react) va CSS tokenlari (@bek/tokens) — Figma «BEK Design System» faylidan yig'ilgan, Light/Dark va RTL tayyor, Tailwind talab qilinmaydi.",
     installation: {
-      title: "NPM orqali o'rnatish",
+      title: "pnpm orqali o'rnatish",
       commands: [
-        "npm install @sqb/angular-components",
-        "npm install @sqb/angular-themes",
-        "npm install @sqb/angular-icons"
+        "pnpm add @bek/tokens @bek/react",
+        "# yoki npm install @bek/tokens @bek/react"
       ],
-      notes: "Angular 14+ versiyasi kerak"
+      notes: "React 18+ kerak. Tokenlar CSS o'zgaruvchilari (--bek-*) sifatida keladi."
     },
     implementation: {
-      title: "Angular modulga import qilish",
-      setup: `import { NgModule } from '@angular/core';
-import { SqbDesignSystemModule } from '@sqb/angular-components';
-import { SqbThemeModule } from '@sqb/angular-themes';
+      title: "Uslublarni ulash va import",
+      setup: `// main.tsx
+import '@bek/tokens/tokens.css';      // ranglar, o'lchamlar, shrift (Light/Dark: data-theme="dark")
+import '@bek/tokens/typography.css';  // .bek-text-* matn uslublari
+import '@bek/react/styles.css';       // komponent uslublari
 
-@NgModule({
-  imports: [
-    SqbDesignSystemModule,
-    SqbThemeModule.forRoot()
-  ],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }`,
-      example: `import { Component } from '@angular/core';
+import { createRoot } from 'react-dom/client';
+import { App } from './App';
 
-@Component({
-  selector: 'app-example',
-  template: \`
-    <sqb-card>
-      <sqb-card-header>
-        <sqb-card-title>Web Component</sqb-card-title>
-      </sqb-card-header>
-      <sqb-card-content>
-        <sqb-button variant="primary" (click)="handleClick()">
-          Click me
-        </sqb-button>
-      </sqb-card-content>
-    </sqb-card>
-  \`
-})
-export class ExampleComponent {
-  handleClick() {
-    console.log('Button clicked!');
-  }
+createRoot(document.getElementById('root')!).render(<App />);`,
+      example: `import { Button, Card, TextField } from '@bek/react';
+
+export function Example() {
+  return (
+    <Card title="Profil" description="Ma'lumotlaringizni yangilang">
+      <TextField label="Ism" />
+      <Button variant="action" onClick={save}>Saqlash</Button>
+    </Card>
+  );
 }`
     },
     components: {
       button: {
-        code: `<sqb-button 
-  variant="primary" 
-  size="lg"
-  [disabled]="false"
-  (click)="handleClick()">
-  Primary Button
-</sqb-button>
-
-<!-- Variantlar -->
-<sqb-button variant="secondary">Secondary</sqb-button>
-<sqb-button variant="outline">Outline</sqb-button>
-<sqb-button variant="ghost">Ghost</sqb-button>
-
-<!-- O'lchamlar -->
-<sqb-button size="sm">Small</sqb-button>
-<sqb-button size="md">Medium</sqb-button>
-<sqb-button size="lg">Large</sqb-button>`,
-        notes: "Responsive va keyboard navigation qo'llab-quvvatlaydi"
+        code: `<Button variant="action">Saqlash</Button>
+<Button>Bekor qilish</Button>
+<Button variant="outline-danger" size="l">O'chirish</Button>
+<Button variant="flat" startIcon={<DownloadIcon />}>Yuklab olish</Button>
+<Button loading>Saqlanmoqda</Button>`,
+        notes: "Figma 3.1 Button: 22 variant × 5 o'lcham; holatlar CSS orqali"
       },
       input: {
-        code: `<sqb-input
-  label="Username"
-  placeholder="Enter your username"
-  [(ngModel)]="username"
-  [required]="true"
-  [error]="usernameError"
-  hint="Must be at least 3 characters">
-</sqb-input>
-
-<!-- Turlar -->
-<sqb-input type="email" label="Email"></sqb-input>
-<sqb-input type="password" label="Password"></sqb-input>
-<sqb-input type="number" label="Age"></sqb-input>`,
-        notes: "Form validation va accessibility qo'llab-quvvatlaydi"
+        code: `<TextField label="Email" type="email" />
+<TextField label="Telefon" placeholder="+998 __ ___ __ __" supportingText="SMS kod yuboriladi" />
+<TextField label="Karta" error supportingText="Karta raqami noto'g'ri" />`,
+        notes: "Figma 3.2 Text field: label maydon ichida, supporting text komponentda"
       },
       card: {
-        code: `<sqb-card [elevated]="true">
-  <sqb-card-header>
-    <sqb-card-title>Card Title</sqb-card-title>
-    <sqb-card-subtitle>Card Subtitle</sqb-card-subtitle>
-  </sqb-card-header>
-  
-  <sqb-card-content>
-    <p>This is the main content of the card.</p>
-  </sqb-card-content>
-  
-  <sqb-card-footer>
-    <sqb-button variant="outline">Cancel</sqb-button>
-    <sqb-button variant="primary">Save</sqb-button>
-  </sqb-card-footer>
-</sqb-card>`,
-        notes: "Responsive va nested card qo'llab-quvvatlaydi"
+        code: `<Card
+  title="To'lov"
+  description="Visa · 4421"
+  badge={<Badge variant="subtle" color="success" size="s">To'langan</Badge>}
+  footer={<><Button variant="action">Tasdiqlash</Button><Button variant="outline">Bekor</Button></>}
+>
+  Buyurtma №4821
+</Card>`,
+        notes: "Figma 4.3 Card: elevated · outlined · filled"
       }
     }
   },
@@ -148,7 +102,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         
-        // SQB Components ni sozlash
+        // BEK Components ni sozlash
         SqbComponentsConfig.initialize(this) {
             theme = SqbTheme.LIGHT
             primaryColor = Color.parseColor("#2C58A5")
@@ -290,9 +244,9 @@ inputField.apply {
     installation: {
       title: "CocoaPods Installation",
       commands: [
-        "pod 'SQBIOSComponents', '~> 1.0'",
-        "pod 'SQBIOSThemes', '~> 1.0'",
-        "pod 'SQBIOSIcons', '~> 1.0'"
+        "pod 'BEKIOSComponents', '~> 1.0'",
+        "pod 'BEKIOSThemes', '~> 1.0'",
+        "pod 'BEKIOSIcons', '~> 1.0'"
       ],
       notes: "iOS 14.0+ kerak, Swift 5.5+"
     },
@@ -300,16 +254,16 @@ inputField.apply {
       title: "iOS Application setup",
       setup: `// AppDelegate.swift
 import UIKit
-import SQBIOSComponents
-import SQBIOSThemes
+import BEKIOSComponents
+import BEKIOSThemes
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // SQB Components configuration
-        SQBThemeManager.shared.configure {
+        // BEK Components configuration
+        BEKThemeManager.shared.configure {
             $0.primaryColor = UIColor(hex: "#2C58A5")
             $0.theme = .light
             $0.enableHapticFeedback = true
@@ -320,7 +274,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }`,
       example: `// ViewController.swift
 import UIKit
-import SQBIOSComponents
+import BEKIOSComponents
 
 class ViewController: UIViewController {
     
@@ -330,7 +284,7 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        let button = SQBButton()
+        let button = BEKButton()
         button.title = "Primary Button"
         button.variant = .primary
         button.size = .large
@@ -349,7 +303,7 @@ class ViewController: UIViewController {
     components: {
       button: {
         code: `// UIKit Usage
-let primaryButton = SQBButton()
+let primaryButton = BEKButton()
 primaryButton.title = "Primary Button"
 primaryButton.variant = .primary
 primaryButton.size = .large
@@ -357,28 +311,28 @@ primaryButton.isEnabled = true
 primaryButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
 
 // Button variants
-let secondaryButton = SQBButton()
+let secondaryButton = BEKButton()
 secondaryButton.variant = .secondary
 
-let outlineButton = SQBButton()
+let outlineButton = BEKButton()
 outlineButton.variant = .outline
 
-let ghostButton = SQBButton()
+let ghostButton = BEKButton()
 ghostButton.variant = .ghost
 
 // SwiftUI Usage
 import SwiftUI
-import SQBIOSComponents
+import BEKIOSComponents
 
 struct ContentView: View {
     var body: some View {
         VStack(spacing: 16) {
-            SQBButton("Primary Button", variant: .primary, size: .large) {
+            BEKButton("Primary Button", variant: .primary, size: .large) {
                 // Handle button tap
                 print("Button tapped")
             }
             
-            SQBButton("Secondary Button", variant: .secondary) {
+            BEKButton("Secondary Button", variant: .secondary) {
                 // Handle tap
             }
         }
@@ -388,7 +342,7 @@ struct ContentView: View {
       },
       input: {
         code: `// UIKit Usage
-let inputField = SQBInputField()
+let inputField = BEKInputField()
 inputField.label = "Username"
 inputField.placeholder = "Enter your username"
 inputField.isRequired = true
@@ -407,7 +361,7 @@ struct LoginForm: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            SQBInputField(
+            BEKInputField(
                 "Username",
                 text: $username,
                 placeholder: "Enter your username",
@@ -425,18 +379,18 @@ struct LoginForm: View {
       },
       card: {
         code: `// UIKit Usage
-let cardView = SQBCardView()
+let cardView = BEKCardView()
 cardView.title = "Card Title"
 cardView.subtitle = "Card Subtitle"
 cardView.content = "This is the main content of the card."
 cardView.isElevated = true
 
 // Add action buttons
-let cancelButton = SQBButton()
+let cancelButton = BEKButton()
 cancelButton.title = "Cancel"
 cancelButton.variant = .outline
 
-let saveButton = SQBButton()
+let saveButton = BEKButton()
 saveButton.title = "Save"
 saveButton.variant = .primary
 
@@ -446,9 +400,9 @@ cardView.addFooterButton(saveButton)
 // SwiftUI Usage
 struct CardExample: View {
     var body: some View {
-        SQBCard(isElevated: true) {
+        BEKCard(isElevated: true) {
             VStack(alignment: .leading, spacing: 12) {
-                SQBCardHeader {
+                BEKCardHeader {
                     VStack(alignment: .leading) {
                         Text("Card Title")
                             .sqbCardTitle()
@@ -457,18 +411,18 @@ struct CardExample: View {
                     }
                 }
                 
-                SQBCardContent {
+                BEKCardContent {
                     Text("This is the main content of the card.")
                         .sqbCardContent()
                 }
                 
-                SQBCardFooter {
+                BEKCardFooter {
                     HStack {
                         Spacer()
-                        SQBButton("Cancel", variant: .outline) {
+                        BEKButton("Cancel", variant: .outline) {
                             // Handle cancel
                         }
-                        SQBButton("Save", variant: .primary) {
+                        BEKButton("Save", variant: .primary) {
                             // Handle save
                         }
                     }

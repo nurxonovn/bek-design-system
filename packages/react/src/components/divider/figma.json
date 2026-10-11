@@ -1,0 +1,36 @@
+{
+  "page": "9.1 Slots & Helpers",
+  "components": [
+    {
+      "name": "_Divider",
+      "id": "22:20",
+      "page": "9.1 Slots & Helpers",
+      "pageId": "10:100",
+      "props": {
+        "Orientation": ["Horizontal", "Vertical"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 240,
+        "h": 1
+      },
+      "tokens": {
+        "color": ["border/hairline"],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/24", "scale/32"]
+      },
+      "sizes": [1, 5, 24, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Divider line. Used inside List, Menu and Card."
+    }
+  ],
+  "doc": {
+    "9.1 Slots & Helpers": {
+      "tokens": [],
+      "text": ""
+    }
+  },
+  "accepted": []
+}

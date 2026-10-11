@@ -50,7 +50,7 @@
 .bek-breadcrumb__link:hover {
   color: var(--bek-text-primary);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: var(--bek-scale-2);
 }
 
 .bek-breadcrumb__current {

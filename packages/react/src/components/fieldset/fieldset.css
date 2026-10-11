@@ -1,0 +1,109 @@
+/* Fieldset — Figma "3.19 Fieldset". Label (Label/M · text/secondary) + hint 16 (text/tertiary) +
+   Optional (Caption/L · text/tertiary) → control (gap scale/8) → xabar (Caption/L; helper text/tertiary,
+   error text/danger + ikonka, success text/success + ikonka). Vertical — hamma qurilmalar;
+   Horizontal — faqat Web: label chapda (1.12 Forms: 160–200 px). */
+.bek-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-fieldset__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bek-scale-4);
+  min-height: var(--bek-type-label-md-line-height);
+}
+
+.bek-fieldset__label {
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-fieldset__hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+  color: var(--bek-text-tertiary);
+  cursor: help;
+}
+
+.bek-fieldset__hint > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-fieldset__optional {
+  margin-inline-start: auto;
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+}
+
+.bek-fieldset__control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+}
+
+/* Xabar: ikonka birinchi qator balandligida (1.11), gap scale/8 → ikonka va matn orasida scale/4. */
+.bek-fieldset__message {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bek-scale-4);
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+}
+
+.bek-fieldset__message > svg {
+  flex-shrink: 0;
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+  margin-block: calc((var(--bek-type-caption-lg-line-height) - var(--bek-icon-sm)) / 2);
+}
+
+.bek-fieldset--error .bek-fieldset__message {
+  color: var(--bek-text-danger);
+}
+
+.bek-fieldset--success .bek-fieldset__message {
+  color: var(--bek-text-success);
+}
+
+/* Horizontal — label chap ustunda, control + xabar o'ngda. */
+.bek-fieldset--horizontal {
+  display: grid;
+  grid-template-columns: var(--bek-fieldset-label-width, 10rem) minmax(0, 1fr);
+  column-gap: var(--bek-scale-24);
+  row-gap: var(--bek-scale-8);
+  align-items: start;
+}
+
+.bek-fieldset--horizontal .bek-fieldset__head {
+  grid-column: 1;
+  min-height: var(--bek-control-height-md);
+}
+
+.bek-fieldset--horizontal .bek-fieldset__optional {
+  margin-inline-start: 0;
+}
+
+.bek-fieldset--horizontal .bek-fieldset__control,
+.bek-fieldset--horizontal .bek-fieldset__message {
+  grid-column: 2;
+}

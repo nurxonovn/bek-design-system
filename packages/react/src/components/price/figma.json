@@ -1,0 +1,66 @@
+{
+  "page": "4.9 Price",
+  "components": [
+    {
+      "name": "Price",
+      "id": "550:233",
+      "page": "4.9 Price",
+      "pageId": "549:41820",
+      "props": {
+        "Price": {
+          "type": "TEXT",
+          "default": "4 234 000"
+        },
+        "Currency": {
+          "type": "TEXT",
+          "default": "soʻm"
+        },
+        "Note": {
+          "type": "TEXT",
+          "default": "per month, billed yearly"
+        },
+        "Show old price": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show discount": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show note": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Old price": {
+          "type": "TEXT",
+          "default": "5 290 000 soʻm"
+        },
+        "Size": ["S", "M", "L", "XL"],
+        "Layout": ["Inline", "Stacked"],
+        "Variant": ["Default", "Sale"]
+      },
+      "variants": 16,
+      "size": {
+        "w": 119,
+        "h": 20
+      },
+      "tokens": {
+        "color": ["text/danger", "text/primary", "text/secondary", "text/tertiary"],
+        "text": ["Body/S", "Caption/M", "Headline/M", "Headline/S", "Label/L", "Title/M"],
+        "effect": [],
+        "dimension": ["scale/2", "scale/8"]
+      },
+      "sizes": [1, 2, 5, 8],
+      "rawColors": [],
+      "nested": ["Badge"],
+      "description": "Price or amount — products, plans, fees, balances. Size = S | M | L | XL × Layout = Inline | Stacked × Variant = Default | Sale = 16 variants. Sale shows the current price in danger colour, the struck-through old price (Old price text prop) and a Badge (Filled · Danger, exposed). Note line is optional (off by default): billing period, instalment, tax note. Format: &quot;4 234 000 soʻm&quot; — spac"
+    }
+  ],
+  "doc": {
+    "4.9 Price": {
+      "tokens": ["text/danger", "text/on-color", "text/primary", "text/secondary", "text/tertiary"],
+      "text": "\nDesign tokens\nPart\nStyle\nColour\nAmount\nLabel/L · Title/M · Headline/S · Headline/M (S → XL)\nDefault text/primary · Sale text/danger\nCurrency\nSame style as the amount\nSame colour as the amount\nOld price\nBody/S · text/tertiary\nline-through\nDiscount\nBadge · Filled · Danger · S\ntext/on-color on danger fill\nNote\nCaption/M (S, M) · Body/S (L, XL)\ntext/secondary\nDo / Don't\nDo\n4 234 000\nsoʻm\n5 290 000 soʻm\n−20%\nShow the old price and the discount together with a Sale price, so the reduction is clear.\nDon't\n4 234 000\nsoʻm\nDon’t colour a price red on its own — without the old price it reads as an error.\nDo\n4 234 000\nsoʻm\nper month, billed yearly\nPut the billing period or instalment in the note line.\nDon't\n4.2 mln/mo\nsoʻm\nDon’t abbreviate or glue the period to the amount — it hides the real price."
+    }
+  },
+  "accepted": []
+}

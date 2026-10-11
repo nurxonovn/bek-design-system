@@ -7,7 +7,7 @@
   --bek-slider-thumb-bg: var(--bek-fill-secondary);
 
   width: 100%;
-  height: calc(var(--bek-slider-thumb) + 4px);
+  height: calc(var(--bek-slider-thumb) + var(--bek-scale-4));
   margin: 0;
   background: transparent;
   cursor: pointer;
@@ -115,7 +115,7 @@
 
 .bek-range__track {
   position: relative;
-  height: calc(var(--bek-slider-thumb, var(--bek-scale-14)) + 4px);
+  height: calc(var(--bek-slider-thumb, var(--bek-scale-14)) + var(--bek-scale-4));
 }
 
 .bek-range--m .bek-range__track {

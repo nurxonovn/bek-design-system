@@ -1,0 +1,116 @@
+{
+  "page": "5.2 Tooltip",
+  "components": [
+    {
+      "name": "Tooltip",
+      "id": "131:727",
+      "page": "5.2 Tooltip",
+      "pageId": "10:89",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Tooltip text"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Additional explanation."
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show arrow": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Dark", "Light"],
+        "Direction": ["Top", "Bottom", "Left", "Right"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 99,
+        "h": 44
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "fill/inverse",
+          "surface/raised",
+          "text/disabled",
+          "text/inverse",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": ["Elevation/2 Raised-hover"],
+        "dimension": ["radius/control/md", "scale/12", "scale/4"]
+      },
+      "sizes": [1, 4, 5, 8, 12, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "A short hint. Variant × Direction = 8 variants. Mandatory only on icon-only buttons."
+    },
+    {
+      "name": "Tooltip callout",
+      "id": "772:598",
+      "page": "5.2 Tooltip",
+      "pageId": "10:89",
+      "props": {
+        "Text": {
+          "type": "TEXT",
+          "default": "Some hints need two lines to explain what this does"
+        },
+        "Action": {
+          "type": "TEXT",
+          "default": "Got it"
+        },
+        "Show action": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["M", "S"],
+        "Tip": [
+          "Top Left",
+          "Top Center",
+          "Top Right",
+          "Bottom Left",
+          "Bottom Center",
+          "Bottom Right"
+        ]
+      },
+      "variants": 12,
+      "size": {
+        "w": 280,
+        "h": 80
+      },
+      "tokens": {
+        "color": ["bg/sheet", "surface/raised", "text/accent", "text/primary"],
+        "text": ["Body/S", "Caption/M", "Label/M", "Label/S"],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/surface/md", "scale/12", "scale/2", "scale/8"]
+      },
+      "sizes": [1, 2, 8, 12, 16, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Tooltip callout — a pointed hint that explains a new or hidden feature next to its trigger, with an optional action (&quot;Got it&quot;). Bubble tail in 6 positions. Always dark (fixed Dark mode, surface/raised). One per screen; dismiss on action or tap outside. For hover labels use Tooltip."
+    }
+  ],
+  "doc": {
+    "5.2 Tooltip": {
+      "tokens": [
+        "Elevation/3",
+        "fill/inverse",
+        "fill/primary",
+        "radius/surface/md",
+        "radius/surface/sm",
+        "scale/10",
+        "scale/12",
+        "surface/raised",
+        "text/accent",
+        "text/primary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHorizontal padding\nscale/12\n12\nVertical padding\nscale/10\n10\nCorner radius\nradius/surface/sm\n8\nArrow\n—\n10×10, rotated 45°\nMaximum width\n—\n280\nShadow\nElevation/3\nFloating layer\nDark background\nfill/inverse\nBlack in Light mode, white in Dark mode\nLight background\nfill/primary\nWith a 1px border\nTitle\nBody/S\n14/20 Medium\nDescription\nCaption/M\n12/16 Regular\nWhy the Dark variant changes with the mode\nThe Dark variant is bound to the gray/1000 token. It is black in Light mode and white in Dark mode. This is deliberate: a tooltip must always contrast with the background.\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nDark, Light\nDark\nDirection\nvariant\nTop, Bottom, Left, Right\nTop\nTitle\ntext\n1–6 words\nTooltip text\nDescription\ntext\nOne sentence\nAdditional explanation.\nShow description\nboolean\ntrue / false\nfalse\nShow arrow\nboolean\ntrue / false\ntrue\nBehaviour\nCase\nValue\nDescription\nOpen delay\n400 ms\nPrevents accidental opening\nClose delay\n100 ms\nAs soon as the pointer leaves\nKeyboard\nOpens on focus\nCloses with Esc\nMobile\nNot used\nNo hover — use a label or Sheet instead\nOffset from target\n8px\nThe arrow fills this gap\nAt the screen edge\nDirection flips automatically\nBottom if Top doesn’t fit"
+    }
+  },
+  "accepted": []
+}

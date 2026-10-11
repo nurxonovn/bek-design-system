@@ -1,0 +1,79 @@
+{
+  "page": "6.3 Breadcrumb",
+  "components": [
+    {
+      "name": ".Breadcrumb/Item",
+      "id": "549:42062",
+      "page": "6.3 Breadcrumb",
+      "pageId": "549:41825",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Section"
+        },
+        "Show icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Type": ["Link", "Current", "Overflow"],
+        "State": ["Default", "Hover", "Focus"],
+        "Size": ["S", "M"]
+      },
+      "variants": 14,
+      "size": {
+        "w": 58,
+        "h": 20
+      },
+      "tokens": {
+        "color": ["bg/sheet", "border/focus", "fill/tertiary", "text/primary", "text/secondary"],
+        "text": ["Body/M", "Body/M Strong", "Body/S", "Body/S Strong"],
+        "effect": [],
+        "dimension": ["radius/control/md", "radius/control/sm", "scale/2", "scale/4"]
+      },
+      "sizes": [1, 2, 4, 5, 8],
+      "rawColors": [],
+      "nested": [],
+      "description": "One breadcrumb step. Type = Link | Current | Overflow; State = Default | Hover | Focus (Current has Default only); Size = S (Body/S) | M (Body/M) = 14 variants. Show icon puts a home icon before the label (first step only). Separators live in Breadcrumb, not here. Hover darkens the label (foreground/neutral/default); underline is added in code."
+    },
+    {
+      "name": "Breadcrumb",
+      "id": "554:643",
+      "page": "6.3 Breadcrumb",
+      "pageId": "549:41825",
+      "props": {
+        "Show step 3": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show step 4": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["S", "M"],
+        "Layout": ["Full", "Collapsed", "Back"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 457,
+        "h": 20
+      },
+      "tokens": {
+        "color": ["bg/sheet", "text/primary", "text/secondary"],
+        "text": ["Body/M", "Body/M Strong", "Body/S", "Body/S Strong"],
+        "effect": [],
+        "dimension": ["radius/control/sm", "scale/2", "scale/4"]
+      },
+      "sizes": [1, 2, 4, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "Breadcrumb trail. Size = S | M × Layout = Full (web) | Collapsed (tablet, &quot;…&quot; opens a Dropdown menu) | Back (mobile, one link to the parent) = 6 variants. Steps are exposed .Breadcrumb/Item instances (toggle the home icon on the Home item); Show step 3/4 shortens the trail; separators are arrow-right-01 on foreground/neutral/subtle."
+    }
+  ],
+  "doc": {
+    "6.3 Breadcrumb": {
+      "tokens": ["border/focus", "scale/4", "text/primary", "text/secondary", "text/tertiary"],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nLink text\nBody/S · Body/M · text/secondary\nHover text/primary\nCurrent\ntext/primary\nLabel weight\nSeparator\narrow-right-01 · text/tertiary\nicon/sm\nFocus\n_Focus ring · border/focus\n—\nGap\nscale/4 · xs\n—\nDo / Don't\nDo\nHome\n…\nButton\nCollapse the middle levels when the trail gets long.\nDon't\nHome\nProjects\nDesign system\nComponents\nButton\nDon’t wrap a breadcrumb to a second line or squeeze it on mobile — use Back."
+    }
+  },
+  "accepted": []
+}

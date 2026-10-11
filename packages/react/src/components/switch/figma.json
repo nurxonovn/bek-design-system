@@ -1,0 +1,77 @@
+{
+  "page": "3.6 Switch",
+  "components": [
+    {
+      "name": "Switch",
+      "id": "76:368",
+      "page": "3.6 Switch",
+      "pageId": "10:79",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Show label": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Disabled", "Focus"],
+        "Checked": ["Off", "On"]
+      },
+      "variants": 24,
+      "size": {
+        "w": 76,
+        "h": 20
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/hover",
+          "border/focus",
+          "fill/control",
+          "fill/control-hover",
+          "fill/disabled",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "static/white",
+          "text/disabled",
+          "text/primary"
+        ],
+        "text": ["Body/M", "Body/S"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "radius/full",
+          "scale/16",
+          "scale/2",
+          "scale/20",
+          "scale/24",
+          "scale/28",
+          "scale/32",
+          "scale/40",
+          "scale/48",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 8, 16, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Turns something on or off. Size × State × Checked = 24 variants."
+    }
+  ],
+  "doc": {
+    "3.6 Switch": {
+      "tokens": [
+        "Elevation/1",
+        "accent/default",
+        "fill/control",
+        "radius/full",
+        "scale/16",
+        "scale/20",
+        "scale/32"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nTrack width\nscale/32–3\n32 / 40 / 48\nTrack height\nscale/20–3\n20 / 24 / 28\nThumb\nscale/16–3\n16 / 20 / 24\nCorner radius\nradius/full\n9999\nOn background\naccent/default\n—\nOff background\nfill/control\n—\nThumb shadow\nElevation/1\nNone when Disabled\nProps\nProp\nType\nValues\nDefault\nSize\nvariant\nS (32×20), M (40×24), L (48×28)\nM\nState\nvariant\nDefault, Hover, Focused, Disabled\nDefault\nChecked\nvariant\nOff, On\nOff\nLabel\ntext\nAny text\nLabel\nShow label\nboolean\ntrue / false\ntrue\nDo / Don’t\nDo\nLabel\nLabel\nA Switch takes effect immediately — no Save button is needed.\nNote\nLabel\nLabel\nIf a form needs confirmation, use a Checkbox rather than a Switch."
+    }
+  },
+  "accepted": []
+}

@@ -1,0 +1,103 @@
+{
+  "page": "3.3 Select",
+  "components": [
+    {
+      "name": "Select",
+      "id": "78:2792",
+      "page": "3.3 Select",
+      "pageId": "10:76",
+      "props": {
+        "Label text": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "Placeholder text": {
+          "type": "TEXT",
+          "default": "Select"
+        },
+        "Input text": {
+          "type": "TEXT",
+          "default": "Selected value"
+        },
+        "Supporting text": {
+          "type": "TEXT",
+          "default": "Supporting text"
+        },
+        "Leading icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show supporting text": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Filled", "Outlined", "Plain"],
+        "Size": ["S", "M", "L", "XL"],
+        "State": ["Enabled", "Hovered", "Open", "Error", "Disabled", "Skeleton", "Focus"],
+        "Text configurations": ["Label text", "Placeholder text", "Input text"]
+      },
+      "variants": 252,
+      "size": {
+        "w": 320,
+        "h": 56
+      },
+      "tokens": {
+        "color": [
+          "border/danger",
+          "border/focus",
+          "fill/primary",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "text/danger",
+          "text/disabled",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/M", "Label/Input"],
+        "effect": [],
+        "dimension": [
+          "radius/control/lg",
+          "radius/control/md",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/32",
+          "scale/36",
+          "scale/4",
+          "scale/40",
+          "scale/44",
+          "scale/56",
+          "scale/64",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 5, 8, 10, 12, 14, 16, 24, 40],
+      "rawColors": [],
+      "nested": ["arrow-down-01"],
+      "description": "Pick from a list. Variant × Size × State × Text configurations = 252 variants. The chevron rotates in the Open state."
+    }
+  ],
+  "doc": {
+    "3.3 Select": {
+      "tokens": [
+        "border/danger",
+        "border/default",
+        "border/focus",
+        "control/height",
+        "radius/control/",
+        "radius/control/sm",
+        "scale/12",
+        "scale/16",
+        "scale/24",
+        "scale/32",
+        "scale/36",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/36–4\n36 / 44 / 56 / 64\nHorizontal padding\nscale/12 · scale/16 · scale/24\n12 / 16 / 24\nCorner radius\nradius/control/sm – lg\n10 / 12 / 16 / 20\nIcon slot\nscale/32–2\n32 / 40\nChevron icon\narrow-down-01 (BEK - Icons)\n16 / 20 / 24\nBorder — default\nborder/default\n—\nBorder — Focused and Open\nborder/focus\n2px\nBorder — Error\nborder/danger\n2px\nText — value\ntext/primary\n—\nText — placeholder\ntext/tertiary\n—\nFont\nBody/S · Body/M\n14/20 · 16/24\nProps\nFigma names map one-to-one to code prop names.\nProp\nType\nValues\nDefault\nVariant\nvariant\nFilled, Outlined, Underlined\nFilled\nSize\nvariant\nS (36), M (44), L (56), XL (64)\nM\nState\nvariant\nEnabled, Hovered, Focused, Open, Error, Disabled, Skeleton\nEnabled\nText configurations\nvariant\nLabel text, Placeholder text, Input text\nPlaceholder text\nLabel text\ntext\nAny text\nLabel\nPlaceholder text\ntext\nAny text\nSelect\nInput text\ntext\nAny text\nSelected value\nSupporting text\ntext\nAny text\nSupporting text\nLeading icon\nboolean\ntrue / false\nfalse\nShow supporting text\nboolean\ntrue / false\ntrue\nIcon (swap)\ninstance swap\nAdded manually in Figma\n—\nDo / Don’t\nDo\nLabel\nSelect\nSupporting text\nMake the placeholder prompt an action: \"Select\", \"Select a city\".\nDon’t\nLabel\nLabel\nSupporting text\nDon’t repeat the label as the placeholder — the user won’t know what to do.\nDo\nLabel\nSelected value\nSupporting text\nUse Select when there are more than two options.\nDon’t\nLabel\nYes\nSupporting text\nFor two options, Radio or Switch is better than Select."
+    }
+  },
+  "accepted": []
+}

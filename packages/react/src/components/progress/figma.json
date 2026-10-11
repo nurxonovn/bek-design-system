@@ -1,0 +1,71 @@
+{
+  "page": "4.6 Progress",
+  "components": [
+    {
+      "name": "Progress bar",
+      "id": "261:782",
+      "page": "4.6 Progress",
+      "pageId": "261:691",
+      "props": {
+        "Show label": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show value": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Label": {
+          "type": "TEXT",
+          "default": "Progress"
+        },
+        "Value": {
+          "type": "TEXT",
+          "default": "62%"
+        },
+        "Size": ["S", "M", "L"],
+        "Status": ["Neutral", "Accent", "Success", "Warning", "Danger"]
+      },
+      "variants": 15,
+      "size": {
+        "w": 240,
+        "h": 32
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/sheet",
+          "fill/tertiary",
+          "status/danger/default",
+          "status/success/default",
+          "status/warning/default",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Label/M"],
+        "effect": [],
+        "dimension": ["radius/full", "scale/24", "scale/32", "scale/4", "scale/6", "scale/8"]
+      },
+      "sizes": [1, 5, 8, 24, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Progress bar shows how far along a task, upload or course is. Linear only. Bind the bar width to the real percentage when composing screens. Size = S | M | L (size/progress/1·2·3 = 4 · 6 · 8) × Status = Neutral | Accent | Success | Warning | Danger = 15 variants. Indeterminate loading → _Spinner (9.1)."
+    }
+  ],
+  "doc": {
+    "4.6 Progress": {
+      "tokens": [
+        "accent/default",
+        "fill/tertiary",
+        "radius/full",
+        "scale/4",
+        "scale/6",
+        "scale/8",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nTrack thickness\nscale/4 · 2 · 3\n4 · 6 · 8\nTrack\nfill/tertiary\nradius/full\nBar · Neutral\ntext/secondary\n—\nBar · Accent · Success · Warning · Danger\naccent/default · status/{success, warning, danger}/default\n—\nLabel\nLabel/M · text/primary\n—\nValue\nLabel/M · text/secondary\n—\nHeader gap\nscale/8\n8\nDo / Don't\nDo\nUploading report.pdf\n62%\nSay what is progressing and show the value — people want to know how long is left.\nDon't\nDon’t show a bare bar with no label — nobody knows what it measures.\nDo\nStorage\n6.2 of 10 GB\nUse Warning and Danger only when the user needs to act.\nDon't\nProfile\n62%\nDon’t colour normal progress red — an unfinished profile is not an error."
+    }
+  },
+  "accepted": []
+}

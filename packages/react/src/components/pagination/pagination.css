@@ -1,9 +1,9 @@
 /* Pagination — Figma "6.4 Pagination". Qator gap 16, sahifalar gap 2. Element: S 36 · M 44
    (min-width = balandlik), padding 0 8, radius 8, Label/M (M — Label/L) text/primary;
    Hover — fill/tertiary; Selected — accent/default + text/on-color; Ellipsis — text/secondary.
-   Xulosa Body/S text/secondary. Load more: gap 12, Progress S + Outline tugma. */
+   Xulosa Body/S (M — Body/M) text/secondary. Load more: gap 12, Progress S + Outline tugma. */
 .bek-pagination {
-  --bek-pagination-h: 36px;
+  --bek-pagination-h: var(--bek-scale-36);
 
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@
 }
 
 .bek-pagination--m {
-  --bek-pagination-h: 44px;
+  --bek-pagination-h: var(--bek-scale-44);
 }
 
 .bek-pagination__summary {
@@ -22,6 +22,12 @@
   font-size: var(--bek-type-body-sm-size);
   line-height: var(--bek-type-body-sm-line-height);
   letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-pagination--m .bek-pagination__summary {
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
 }
 
 .bek-pagination__pages {

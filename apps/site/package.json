@@ -4,12 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node scripts/build-catalog.mjs && vite",
+    "build": "node scripts/build-catalog.mjs && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "catalog": "node scripts/build-catalog.mjs"
   },
   "dependencies": {
+    "@bek/react": "workspace:*",
+    "@bek/tokens": "workspace:*",
     "@radix-ui/react-accordion": "1.2.3",
     "@radix-ui/react-alert-dialog": "1.1.6",
     "@radix-ui/react-aspect-ratio": "1.1.2",
@@ -48,8 +51,10 @@
     "react-day-picker": "8.10.1",
     "react-dom": "18.3.1",
     "react-hook-form": "7.55.0",
+    "react-markdown": "9.0.1",
     "react-resizable-panels": "2.1.7",
     "recharts": "2.15.2",
+    "remark-gfm": "4.0.1",
     "sonner": "2.0.3",
     "tailwind-merge": "3.2.0",
     "tw-animate-css": "1.3.8",

@@ -6,7 +6,7 @@ import { useTheme } from './ThemeProvider';
 import { useTranslation, Language } from './TranslationProvider';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from './ui/dropdown-menu';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import SqbTozaLogo1 from '../imports/SqbTozaLogo1';
+import { BekLogo } from '@bek/react';
 
 interface HeaderProps {
   currentPage: string;
@@ -25,14 +25,14 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
   ];
 
   const handleSettingsClick = () => {
-    // SQB ichki settings sahifasiga yo'naltirish
-    console.log('Settings clicked - SQB internal settings');
+    // BEK ichki settings sahifasiga yo'naltirish
+    console.log('Settings clicked - BEK internal settings');
     // Bu yerda real settings modal yoki sahifaga yo'naltirish bo'lishi mumkin
   };
 
   const handleHelpClick = () => {
-    // SQB ichki yordam resurslariga yo'naltirish
-    console.log('Help clicked - SQB internal help resources');
+    // BEK ichki yordam resurslariga yo'naltirish
+    console.log('Help clicked - BEK internal help resources');
     // Bu yerda help modal yoki docs sahifasiga yo'naltirish bo'lishi mumkin
     onNavigate('docs');
   };
@@ -51,12 +51,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               onClick={() => onNavigate('home')}
               className="flex items-center space-x-2 transition-all duration-300 hover:scale-105 group"
             >
-              {/* Main Logo */}
-              <div className="h-[52px] flex-shrink-0">
-                <div className="h-full w-auto" style={{ aspectRatio: '538/212' }}>
-                  <SqbTozaLogo1 />
-                </div>
-              </div>
+              <BekLogo product="Design System" size="m" aria-hidden />
             </button>
             
             {/* Version Badge with Dropdown */}
@@ -73,7 +68,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               <DropdownMenuContent align="start" className="w-80">
                 <div className="p-3">
                   <div className="flex items-center justify-between mb-3">
-                    <h4 className="font-semibold text-sm">Pure Design System</h4>
+                    <h4 className="font-semibold text-sm">BEK Design System</h4>
                     <Badge className="text-xs bg-green-100 text-green-700 border-green-200">
                       Joriy
                     </Badge>

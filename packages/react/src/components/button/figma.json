@@ -1,0 +1,207 @@
+{
+  "page": "3.1 Button",
+  "components": [
+    {
+      "name": "Button",
+      "id": "34:11246",
+      "page": "3.1 Button",
+      "pageId": "10:74",
+      "props": {
+        "Content": {
+          "type": "TEXT",
+          "default": "Content"
+        },
+        "Start icon": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "End icon": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": [
+          "Normal",
+          "Action",
+          "Outline",
+          "Outline-action",
+          "Outline-info",
+          "Outline-success",
+          "Outline-warning",
+          "Outline-danger",
+          "Outline-utility",
+          "Flat",
+          "Flat-action",
+          "Flat-info",
+          "Flat-success",
+          "Flat-warning",
+          "Flat-danger",
+          "Flat-utility",
+          "Flat-secondary",
+          "Raised",
+          "Normal-contrast",
+          "Outline-contrast",
+          "Flat-contrast",
+          "Danger"
+        ],
+        "Size": ["M", "L", "XL", "2XL", "3XL"],
+        "State": ["Default", "Hover", "Selected", "Disabled", "Loading", "Focus"],
+        "Icon only": ["Off", "On"]
+      },
+      "variants": 1320,
+      "size": {
+        "w": 102,
+        "h": 28
+      },
+      "tokens": {
+        "color": [
+          "accent/active",
+          "accent/default",
+          "accent/hover",
+          "accent/soft",
+          "accent/soft-hover",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "status/danger/default",
+          "status/danger/soft",
+          "status/danger/soft-hover",
+          "status/info/default",
+          "status/info/soft",
+          "status/info/soft-hover",
+          "status/success/default",
+          "status/success/soft",
+          "status/success/soft-hover",
+          "status/utility/default",
+          "status/utility/soft",
+          "status/utility/soft-hover",
+          "status/warning/default",
+          "status/warning/soft",
+          "status/warning/soft-hover",
+          "text/accent",
+          "text/danger",
+          "text/disabled",
+          "text/info",
+          "text/on-color",
+          "text/on-warning",
+          "text/primary",
+          "text/success",
+          "text/utility",
+          "text/warning"
+        ],
+        "text": ["Label/L", "Label/M", "Label/XL"],
+        "effect": [],
+        "dimension": [
+          "control/height/2xl",
+          "control/height/3xl",
+          "control/height/lg",
+          "control/height/md",
+          "control/height/xl",
+          "control/padding/2xl",
+          "control/padding/3xl",
+          "control/padding/lg",
+          "control/padding/md",
+          "control/padding/xl",
+          "radius/control/pill",
+          "scale/12",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 5, 8, 12, 16, 24, 32, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Action button. Variant × Size × State × Icon only = 1,320 variants. Sizes M · L · XL · 2XL · 3XL (28 / 36 / 44 / 52 / 60 px), default M. Start icon / End icon are exposed nested _Icon instances (any BEK - Icons style). Icons and spinner always use the text colour. Selected = toggle (accent/soft for neutral, own solid colour for coloured variants). Disabled = fill/soft + text/disabled. Pressed live"
+    }
+  ],
+  "doc": {
+    "3.1 Button": {
+      "tokens": [
+        "accent/active",
+        "accent/default",
+        "accent/hover",
+        "accent/soft",
+        "border/focus",
+        "control/height/md",
+        "control/padding/md",
+        "fill/disabled",
+        "fill/on-color",
+        "fill/primary",
+        "fill/secondary",
+        "fill/soft",
+        "fill/soft-hover",
+        "fill/soft-pressed",
+        "radius/control/pill",
+        "scale/12",
+        "scale/8",
+        "status/danger/default",
+        "text/accent",
+        "text/disabled",
+        "text/on-color",
+        "text/on-warning",
+        "text/primary"
+      ],
+      "text": "\nDesign tokens\nWhich token each visual property comes from.\nProperty\nToken\nValue\nHeight\ncontrol/height/md · lg · xl · 2xl · 3xl\n28 / 36 / 44 / 52 / 60\nHorizontal padding\ncontrol/padding/md · lg · xl · 2xl · 3xl\n12 / 16 / 24 / 32 / 40\nInner gap\nscale/8 · scale/12\n8 (M, L) · 12 (XL, 2XL, 3XL)\nCorner radius\nradius/control/pill\n9999 — at every size\nIcon\nStart icon / End icon → Size (icon/sm · md · lg)\n16 / 16 / 20 / 24 / 24\nBorder\nnone — layers separate by fill (border-free)\n0\nBackground — Action\naccent/default · accent/hover · accent/active\nDefault · Hover · Pressed and Selected\nBackground — Danger\nstatus/danger/default · hover · active\nDefault · Hover · Pressed and Selected\nBackground — Normal\nfill/soft-hover · fill/soft-pressed · fill/disabled\nDefault · Hover · Pressed (code)\nBackground — Outline, Flat, Raised\nOutline, Flat: fill/soft → fill/soft-hover → fill/soft-pressed · Raised: fill/primary → fill/secondary\nDefault → Hover → Pressed (code)\nBackground — coloured Outline\n{colour}/soft + fill/soft overlay · + fill/soft-hover overlay\nHover · Pressed (code). Coloured Flat: hover {colour}/soft, pressed + fill/soft\nBackground — Selected\naccent/soft (neutral) · own solid colour (coloured, Action, Danger)\nToggle buttons — aria-pressed in code\nBackground — Disabled\nfill/soft (filled) · none (Flat)\nContrast family keeps fill/on-color\nText and icons\ntext/primary · text/accent · text/{colour} · text/on-color · text/on-warning\nIcons and spinner always use the text colour\nText — Disabled\ntext/disabled\nAll families\nFont\nLabel/M (M, L) · Label/L (XL, 2XL) · Label/XL (3XL)\n14/20 · 16/20 · 18/24\nFocus\n_Focus ring · border/focus · stroke/focus\n2 px outline, 2 px offset (:focus-visible)\nProps\nFigma names map one-to-one to code prop names.\nProp\nType\nValues\nDefault\nVariant\nvariant\nNormal, Action, Raised, Outline (+6 coloured), Flat (+7 coloured), 3 contrast\nNormal\nSize\nvariant\nM (28), L (36), XL (44), 2XL (52), 3XL (60)\nM\nState\nvariant\nDefault, Hover, Selected, Disabled, Loading\nDefault\nIcon only\nvariant\nOn, Off\nOff\nContent\ntext\nButton label\nContent\nStart icon\nboolean\ntrue / false\ntrue\nEnd icon\nboolean\ntrue / false\nfalse\nIcon (swap)\ninstance swap\nAdded manually in Figma\n—\nDo / Don’t\nDo\nSave\nCancel\nOne Action button per screen. The rest are Outline or Flat.\nDon’t\nSave\nCancel\nTwo Action buttons side by side — the user cannot tell which one is primary.\nDo\nDelete\nCancel\nUse the danger family for irreversible actions.\nDon’t\nSave\nClose\nWhen danger is used for ordinary actions, it loses its meaning as a warning.\nDo\nSave changes\nCancel\nOn mobile the primary action is 2XL and full width; the secondary action sits under it.\nDon’t\nCancel\nSave changes\nM (28px) buttons on a touch screen — too small to tap reliably. Use XL or larger.\nDo\nCancel\nCreate project\nThe label starts with a verb and names the result.\nDon’t\nNo\nOK\nVague labels — the user has to read around the button to know what it does."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-unmapped",
+      "match": "accent/soft-hover",
+      "reason": "Figma Variables'da accent/soft-hover tokenida codeSyntax.WEB yo'q. Kod Figma doc'dagi qoidaga amal qiladi: rangli Outline hover = {colour}/soft + fill/soft overlay. Figma'da codeSyntax to'ldirilsin yoki variantlar doc'dagi overlay usuliga o'tkazilsin."
+    },
+    {
+      "rule": "token-unmapped",
+      "match": "status/danger/soft-hover",
+      "reason": "codeSyntax yo'q (Figma Variables). Kodda Outline-danger hover = status/danger/soft + fill/soft overlay (doc 'Background — coloured Outline')."
+    },
+    {
+      "rule": "token-unmapped",
+      "match": "status/info/soft-hover",
+      "reason": "codeSyntax yo'q (Figma Variables). Kodda Outline-info hover = status/info/soft + fill/soft overlay (doc qoidasi)."
+    },
+    {
+      "rule": "token-unmapped",
+      "match": "status/success/soft-hover",
+      "reason": "codeSyntax yo'q (Figma Variables). Kodda Outline-success hover = status/success/soft + fill/soft overlay (doc qoidasi)."
+    },
+    {
+      "rule": "token-unmapped",
+      "match": "status/utility/soft-hover",
+      "reason": "codeSyntax yo'q (Figma Variables). Kodda Outline-utility hover = status/utility/soft + fill/soft overlay (doc qoidasi)."
+    },
+    {
+      "rule": "token-unmapped",
+      "match": "status/warning/soft-hover",
+      "reason": "codeSyntax yo'q (Figma Variables). Kodda Outline-warning hover = status/warning/soft + fill/soft overlay (doc qoidasi)."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-fill-secondary",
+      "reason": "Raised hover foni — Figma doc Design tokens jadvalida 'Raised: fill/primary → fill/secondary' deb yozilgan, lekin komponent set'dagi Raised Hover varianti bu tokenga bog'lanmagan. Figma'da Raised/Hover variantini fill/secondary ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-fill-tertiary",
+      "reason": "Raised bosilgan (:active) holati — doc'da 'Pressed (code)' deb belgilangan, Figma'da Pressed varianti yo'q; fill/primary → secondary → tertiary zinasi davom ettirilgan."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-secondary",
+      "reason": "Flat-secondary variantining matn rangi — nomi text/secondary ni nazarda tutadi; Figma'da bu variant text/primary bilan chizilgan ko'rinadi. Figma'da Flat-secondary matnini text/secondary ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-fill-on-color",
+      "reason": "Normal/Outline/Flat-contrast fonlari — doc 'Contrast family keeps fill/on-color' deydi, komponent set'da bu tokenlar yo'q (ehtimol opacity bilan chizilgan). Figma'da contrast variantlarini fill/on-color (+hover/pressed) ga bog'lash kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-fill-on-color-hover",
+      "reason": "Contrast oilasi hover holati — fill/on-color-hover (doc: 'Contrast family keeps fill/on-color'); Figma variantlarida token bog'lanmagan."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-fill-on-color-pressed",
+      "reason": "Contrast oilasi pressed/selected holati — fill/on-color-pressed; Figma'da Pressed varianti yo'q (doc: 'Pressed (code)')."
+    }
+  ]
+}

@@ -133,7 +133,7 @@ export function Pinpad({
         {digit('0')}
         <button
           type="button"
-          className="bek-pinpad__key bek-pinpad__key--icon"
+          className="bek-pinpad__key bek-pinpad__key--icon bek-pinpad__key--clear"
           aria-label={clearLabel}
           disabled={disabled}
           onClick={onClear}

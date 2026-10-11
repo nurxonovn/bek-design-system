@@ -82,7 +82,7 @@ export function ComponentShowcasePage({ onNavigate }: ComponentShowcasePageProps
 
             <Alert className="border-primary/20 bg-primary/5">
               <CheckCircle className="h-4 w-4 text-primary" />
-              <AlertTitle className="text-primary">Angular Ready</AlertTitle>
+              <AlertTitle className="text-primary">React Ready</AlertTitle>
               <AlertDescription>
                 Smart naming: btn/primary/default, input/text/focused, toast/success. 
                 Auto Layout grid (4 columns desktop) bilan tartibga solingan.

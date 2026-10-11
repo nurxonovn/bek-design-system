@@ -10,6 +10,8 @@ export type {
   MenuPanelProps,
   ModuleRailProps,
 } from './MenuPanel.js';
+export { NavProfile } from './NavProfile.js';
+export type { NavProfileProps } from './NavProfile.js';
 export { NavRail, RailItem } from './NavRail.js';
 export type { NavRailProps, RailItemProps } from './NavRail.js';
 export { DrawerItem, NavDrawer } from './NavDrawer.js';

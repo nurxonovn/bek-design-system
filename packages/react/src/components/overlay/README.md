@@ -15,9 +15,9 @@ Trigger'ga bog'langan oynalar (Popover, menyular, Hover card) — `document.body
 | `ContextMenu`                                                    | 7.5 Context menu    | `menu` (MenuItem'lar), `children` — o'ng tugma / uzoq bosish (500 ms) hududi                                                                                |
 | `AlertDialog`                                                    | 7.6 Alert dialog    | `variant` info · success · warning · danger, `layout` inline · stacked, `confirmAction`, `cancelAction`, `icon`                                             |
 | `CommandPalette` · `CommandGroup` · `CommandItem`                | 7.7 Command palette | `query`, `onQueryChange`, `placeholder`, `empty`, `hints`; CommandItem: `icon`, `hotkey`, `onSelect`, `closeOnSelect`                                       |
-| `HoverCard`                                                      | 7.8 Hover card      | `trigger`, `placement`, `openDelay` 500, `closeDelay` 300                                                                                                   |
+| `HoverCard`                                                      | 7.8 Hover card      | `trigger`, `variant` profile · link, `title`, `subtitle`, `description`, `avatar`, `preview`, `stats`, `placement`, `openDelay` 500, `closeDelay` 300       |
 | `ActionSheet`                                                    | 7.10 Action sheet   | `actions` `{ label, icon, onSelect, destructive, disabled }[]`, `title`, `message`, `platform` android · ios                                                |
-| `ShareSheet`                                                     | 7.11 Share sheet    | `title`, `link`, `thumbnail`, `contacts`, `targets`, `showLinkField`, `onCopy`                                                                              |
+| `ShareSheet`                                                     | 7.11 Share sheet    | `title`, `link`, `thumbnail`, `contacts` (`tone` accent · info · success · warning · utility), `targets`, `showLinkField`, `onCopy`                         |
 
 ```tsx
 import { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek/react';
@@ -34,6 +34,10 @@ import { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek/
   <MenuItem icon={<TrashIcon />} danger onSelect={askDelete}>Delete</MenuItem>
 </DropdownMenu>
 
+<HoverCard trigger={<a href="/u/alex">@alex</a>} variant="profile" avatar={<Avatar name="Alex" size="l" />}
+  title="Alex Brown" subtitle="Product designer" description="Designs BEK components."
+  stats={[{ value: '128', label: 'Projects' }, { value: '2.4k', label: 'Followers' }]} />
+
 <AlertDialog open={confirm} onClose={() => setConfirm(false)} variant="danger"
   title="Delete this order?" description="This cannot be undone."
   confirmAction={{ label: 'Delete', onClick: remove }} cancelAction={{ label: 'Cancel' }} />
@@ -45,7 +49,8 @@ import { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek/
 - Bottom sheet: yuqori radius 24, dastak 36×4 `fill/control`, footer Action XL + Flat secondary XL, home indicator hisobga olinadi.
 - Popover: radius 12, `Elevation/2`, padding 16, gap 12, dum 12×6. Menu: 240 (submenu 200, ota menyudan 4 px), radius 8, padding 4, `Elevation/2`; element hover `fill/tertiary-hover`, selected `fill/strong`, danger `text/danger` + `status/danger/soft`.
 - Command palette: 640, `fill/primary`, radius 16, `Elevation/4`; < 600 px — to'liq kenglik, yuqorida, ishoralarsiz.
-- Hover card: 320, `fill/primary`, radius 12, `Elevation/3`, `z/dropdown`; touch'da ochilmaydi, fokusda ochiladi.
+- Hover card: 320, `fill/primary`, radius 12, `Elevation/3`, `z/dropdown`; touch'da ochilmaydi, fokusda ochiladi. `profile` — Avatar 48 + Title/S + Caption/M + Body/S + statistika (Label/M + Caption/L); `link` — 16:9 preview (`fill/tertiary-hover`) + sarlavha + izoh.
+- Action sheet: `platform` `ios` (native iOS 27 karta: `bg/sheet`, `fill/tertiary` pill amallar, radius 34, 8 px chetdan) · `android` (Material 3 sheet: `bg/sheet`, yuqori radius `radius/surface/xl`, dastak `fill/strong`). Share sheet: `bg/sheet`, kontakt doiralari `accent/soft`/`status/*/soft`, ilovalar va havola maydoni `fill/secondary`, Copy — `surface/raised` pill.
 - Harakat: Modal/Alert/Command — `scale-enter` 0.96 + fade (`motion/overlay/modal/enter`); Drawer va sheet'lar — siljish (`motion/overlay/slide`); anchored — `motion/overlay/anchored/enter`. `prefers-reduced-motion` da o'chadi.
 
 ## Klaviatura

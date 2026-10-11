@@ -1,0 +1,114 @@
+{
+  "page": "6.4 Pagination",
+  "components": [
+    {
+      "name": ".Pagination/Item",
+      "id": "549:42111",
+      "page": "6.4 Pagination",
+      "pageId": "549:41826",
+      "props": {
+        "Page": {
+          "type": "TEXT",
+          "default": "1"
+        },
+        "Type": ["Page", "Ellipsis"],
+        "State": ["Default", "Hover", "Selected", "Disabled", "Focus"],
+        "Size": ["S", "M"]
+      },
+      "variants": 14,
+      "size": {
+        "w": 36,
+        "h": 36
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/sheet",
+          "border/focus",
+          "fill/tertiary",
+          "text/disabled",
+          "text/on-color",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Label/L", "Label/M"],
+        "effect": [],
+        "dimension": ["radius/control/md", "scale/36", "scale/44", "scale/8"]
+      },
+      "sizes": [1, 2, 5, 8, 10, 36, 44],
+      "rawColors": [],
+      "nested": [],
+      "description": "One pagination cell. Type = Page | Ellipsis; State = Default | Hover | Selected | Disabled (Ellipsis: Default only); Size = S (size/field/1, 36) | M (size/field/2, 44) = 10 variants. Min-width equals height, so 1–3 digit pages stay square or grow."
+    },
+    {
+      "name": "Pagination",
+      "id": "556:378",
+      "page": "6.4 Pagination",
+      "pageId": "549:41826",
+      "props": {
+        "Summary": {
+          "type": "TEXT",
+          "default": "1–24 of 1 240"
+        },
+        "Show summary": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show page size": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Position": {
+          "type": "TEXT",
+          "default": "3 / 52"
+        },
+        "Show progress": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Variant": ["Numbered", "Compact", "Load more"],
+        "Size": ["S", "M"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 520,
+        "h": 36
+      },
+      "tokens": {
+        "color": ["accent/default", "bg/sheet", "text/on-color", "text/primary", "text/secondary"],
+        "text": ["Body/M", "Body/S", "Label/L", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "radius/control/md",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/36",
+          "scale/44",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 5, 8, 12, 16, 36, 44],
+      "rawColors": [],
+      "nested": ["Button", "Progress bar", "Select"],
+      "description": "Paging control. Variant = Numbered (web: summary, pages, page-size button) | Compact (tablet: ‹ 3 / 52 ›) | Load more (mobile: progress + full-width button) × Size = S | M = 6 variants. Pages are exposed .Pagination/Item instances; Previous/Next are Flat icon Buttons; Page size opens a Dropdown menu (24 / 48 / 96). Page size is a nested Select (Filled, S 36 / M 44), exposed."
+    }
+  ],
+  "doc": {
+    "6.4 Pagination": {
+      "tokens": [
+        "accent/default",
+        "fill/tertiary",
+        "radius/control/md",
+        "scale/2",
+        "scale/36",
+        "scale/44",
+        "text/on-color",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nCell size\nscale/36 · 2\n36 · 44\nCell radius\nradius/control/md\n—\nSelected\naccent/default · text/on-color\n—\nHover\nfill/tertiary · text/primary\n—\nSummary\nBody/S · text/secondary\n—\nProgress\nProgress bar (4.6)\n—\nGap\nscale/2 · md\n—\nDo / Don't\nDo\n24 of 1 240 shown\nShow more\nOn mobile use Load more — big target, no lost context.\nDon't\n1–24 of 1 240\n1\n2\n3\n…\n52\n24 per page\nDon’t put Numbered S on touch screens: 36 px cells are below the 44 px target."
+    }
+  },
+  "accepted": []
+}

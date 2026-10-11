@@ -97,6 +97,8 @@ export interface AppShellProps extends HTMLAttributes<HTMLDivElement> {
   menu?: ReactNode;
   /** Pastki navigatsiya (mobil). */
   bottomNav?: ReactNode;
+  /** Figma App shell · Tablet/Mobile "Drawer": NavDrawer (o'zi scrim bilan hamma narsani, panellarni ham yopadi). */
+  drawer?: ReactNode;
   /** Sahifa mazmuni — `<main>` ichida, padding layout/page-margin. */
   children: ReactNode;
 }
@@ -107,6 +109,7 @@ export function AppShell({
   rail,
   menu,
   bottomNav,
+  drawer,
   className,
   children,
   ...rest
@@ -120,6 +123,7 @@ export function AppShell({
         <main className="bek-app-shell__content">{children}</main>
       </div>
       {bottomNav}
+      {drawer}
     </div>
   );
 }

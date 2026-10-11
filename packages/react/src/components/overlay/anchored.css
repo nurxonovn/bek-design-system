@@ -14,7 +14,7 @@
   flex-direction: column;
   gap: var(--bek-scale-12);
   box-sizing: border-box;
-  width: 280px;
+  width: var(--bek-scale-280);
   max-width: calc(100vw - var(--bek-scale-16));
   padding: var(--bek-scale-16);
   border-radius: var(--bek-radius-surface-md);
@@ -28,7 +28,7 @@
 }
 
 .bek-popover--l {
-  width: 360px;
+  width: var(--bek-scale-360);
 }
 
 .bek-popover__header {
@@ -78,7 +78,7 @@
 .bek-popover--tail::before {
   position: absolute;
   width: var(--bek-scale-12);
-  height: 6px;
+  height: var(--bek-scale-6);
   background: inherit;
   content: '';
 }
@@ -98,7 +98,7 @@
 .bek-popover--tail[data-side='right']::before,
 .bek-popover--tail[data-side='left']::before {
   top: calc(50% - var(--bek-scale-6));
-  width: 6px;
+  width: var(--bek-scale-6);
   height: var(--bek-scale-12);
 }
 
@@ -121,7 +121,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 240px;
+  width: var(--bek-scale-240);
   max-width: calc(100vw - var(--bek-scale-16));
   max-height: calc(100dvh - var(--bek-scale-16));
   padding: var(--bek-scale-4);
@@ -148,7 +148,7 @@
   top: calc(var(--bek-scale-4) * -1);
   left: calc(100% + var(--bek-scale-4) + var(--bek-scale-4));
   z-index: 1;
-  width: 200px;
+  width: var(--bek-scale-200);
   overflow: visible;
 }
 
@@ -267,7 +267,10 @@
   display: contents;
 }
 
-/* Hover card: 320, fill/primary, radius 12, Elevation/3, padding 16, gap 12, z/dropdown. */
+/* Hover card: 320, fill/primary, radius 12, Elevation/3, padding 16, gap 12, z/dropdown.
+   Profile: Avatar 48 + Title/S + Subtitle Caption/M text/secondary, Description Body/S,
+   stats (Label/M qiymat + Caption/L text/secondary nom, gap 16). Link: preview 16:9
+   (fill/tertiary-hover, radius/surface/sm) + Title/S + Subtitle + Description. */
 .bek-hover-card {
   position: fixed;
   z-index: var(--bek-z-dropdown);
@@ -275,7 +278,7 @@
   flex-direction: column;
   gap: var(--bek-scale-12);
   box-sizing: border-box;
-  width: 320px;
+  width: var(--bek-scale-320);
   max-width: calc(100vw - var(--bek-scale-16));
   padding: var(--bek-scale-16);
   border-radius: var(--bek-radius-surface-md);
@@ -285,6 +288,95 @@
   font-family: var(--bek-family-sans);
   font-size: var(--bek-type-body-sm-size);
   line-height: var(--bek-type-body-sm-line-height);
+}
+
+.bek-hover-card__identity {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+}
+
+.bek-hover-card__avatar {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.bek-hover-card__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-sm);
+  background: var(--bek-fill-tertiary-hover);
+  color: var(--bek-text-secondary);
+}
+
+.bek-hover-card__preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-hover-card__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-width: 0;
+}
+
+.bek-hover-card__title {
+  margin: 0;
+  overflow: hidden;
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-sm-size);
+  line-height: var(--bek-type-title-sm-line-height);
+  letter-spacing: var(--bek-type-title-sm-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-hover-card__subtitle {
+  overflow: hidden;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-hover-card__description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--bek-text-secondary);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.bek-hover-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-16);
+}
+
+.bek-hover-card__stat {
+  display: inline-flex;
+  gap: var(--bek-scale-4);
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+}
+
+.bek-hover-card__stat-value {
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
 }
 
 @media (prefers-reduced-motion: no-preference) {

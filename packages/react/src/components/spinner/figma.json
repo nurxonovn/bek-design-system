@@ -1,0 +1,46 @@
+{
+  "page": "9.1 Slots & Helpers",
+  "components": [
+    {
+      "name": "_Spinner",
+      "id": "22:17",
+      "page": "9.1 Slots & Helpers",
+      "pageId": "10:100",
+      "props": {
+        "Spinner icon": {
+          "type": "INSTANCE_SWAP",
+          "default": "808:5296"
+        },
+        "Size": ["16", "20", "24"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 16,
+        "h": 16
+      },
+      "tokens": {
+        "color": ["text/accent"],
+        "text": [],
+        "effect": [],
+        "dimension": ["scale/24"]
+      },
+      "sizes": [1, 5, 24],
+      "rawColors": [],
+      "nested": ["loading-03"],
+      "description": "Loading indicator. Used inside Button and Input."
+    }
+  ],
+  "doc": {
+    "9.1 Slots & Helpers": {
+      "tokens": [],
+      "text": ""
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-accent",
+      "reason": "_Spinner Button va Input ichida ishlatiladi — rang `currentColor` (ota elementdan), Figma'dagi text/accent faqat demo rang. Standalone holat uchun Loader (5.7) ishlatiladi."
+    }
+  ]
+}
