@@ -110,6 +110,11 @@
       "rule": "variant-missing",
       "match": "Type=Wheel",
       "reason": "Wheel (kun · oy · yil g'ildiragi) — mobil'da native <input type=\"date\"> bilan hal qilinadi (README); alohida React varianti yo'q. Keyinchalik kerak bo'lsa qo'shiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-soft",
+      "reason": "fill/soft — doc Tokens: \"Wheel highlight\" (Type=Wheel g'ildirak varianti); kodda Wheel native <input type=\"date\"> bilan (accepted Type=Wheel), shuning uchun highlight tokeni ishlatilmaydi."
     }
   ]
 }

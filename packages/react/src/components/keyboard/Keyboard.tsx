@@ -56,8 +56,8 @@ export function Keyboard({
         <>
           {ios && (
             <div className="bek-keyboard__suggestions">
-              {suggestions.map((s) => (
-                <span key={s} className="bek-keyboard__suggestion">
+              {suggestions.map((s, i) => (
+                <span key={`${i}-${s}`} className="bek-keyboard__suggestion">
                   {s}
                 </span>
               ))}

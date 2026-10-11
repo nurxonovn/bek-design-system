@@ -84,11 +84,14 @@ test('AppShell: drawer slot renders after bottom navigation', () => {
 });
 
 test('Mascot: sprite cell per pose, size classes, label vs decorative', () => {
-  const idle = r(h(Mascot));
+  const sheets = { directions: '/m/panda-directions.webp', reactions: '/m/panda-reactions.webp' };
+  const idle = r(h(Mascot, sheets));
   assert.match(idle, /^<span aria-hidden="true" class="bek-mascot bek-mascot--l bek-mascot--idle"/);
   assert.match(idle, /panda-directions\.webp/);
   assert.match(idle, /background-position:50% 50%/);
-  const dizzy = r(h(Mascot, { pose: 'dizzy', size: 'xs', label: 'BEK panda' }));
+  // bundler'siz Node'da standart varaq file: bo'ladi → rasm yo'q, lekin markup buzilmaydi
+  assert.doesNotMatch(r(h(Mascot)), /file:/);
+  const dizzy = r(h(Mascot, { ...sheets, pose: 'dizzy', size: 'xs', label: 'BEK panda' }));
   assert.match(
     dizzy,
     /role="img" aria-label="BEK panda" class="bek-mascot bek-mascot--xs bek-mascot--dizzy"/,
@@ -111,6 +114,7 @@ test('MascotMessage: layout, nested mascot, action button', () => {
   );
   assert.match(html, /^<div class="bek-mascot-message bek-mascot-message--stacked">/);
   assert.match(html, /bek-mascot--l bek-mascot--sleepy/);
+  assert.doesNotMatch(html, /file:/);
   assert.match(html, /bek-mascot-message__title">No courses yet/);
   assert.match(html, /bek-mascot-message__description">Add your first course\./);
   assert.match(html, /bek-button--action[^>]*>.*Add course/);

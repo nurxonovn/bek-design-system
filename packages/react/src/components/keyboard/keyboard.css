@@ -18,6 +18,7 @@
   font-size: var(--bek-type-body-lg-size);
   line-height: var(--bek-type-body-lg-line-height);
   user-select: none;
+  direction: ltr; /* QWERTY va raqamlar RTL'da ham lotin tartibida — haqiqiy OS klaviaturasi kabi */
 }
 
 .bek-keyboard--android {

@@ -23,8 +23,8 @@ export function CatalogPage({ onNavigate }: CatalogPageProps) {
     <div className="container mx-auto px-4 py-8 space-y-8">
       <header className="space-y-3">
         <p className="text-sm text-muted-foreground">
-          Figma «BEK Design System» · {catalog.components.length} komponent · yangilangan{' '}
-          {new Date(catalog.generatedAt).toLocaleDateString('uz-UZ')}
+          Figma «BEK Design System» · {catalog.components.length} komponent · build{' '}
+          {new Date(__BUILD_DATE__).toLocaleDateString('uz-UZ')}
         </p>
         <h1 className="text-3xl md:text-4xl font-semibold">Komponentlar</h1>
         <p className="text-muted-foreground max-w-3xl">

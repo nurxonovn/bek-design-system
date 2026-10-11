@@ -82,6 +82,7 @@ const isSlotProp = (p) =>
   /^↳/.test(p) ||
   /^(Text configurations|Items|Lines|Value|Device|Columns|Rows)$/i.test(p);
 
+const hasVar = (text, v) => new RegExp(`${v}(?![a-z0-9-])`).test(text);
 const stripComments = (css) => css.replace(/\/\*[\s\S]*?\*\//g, '');
 const norm = (s) =>
   String(s)
@@ -183,6 +184,8 @@ function checkComponent(name) {
         .map((f) => read(join(testDir, f)))
         .join('\n')
     : '';
+  if (files.includes('index.ts') && !exportsNames.length)
+    E('export', "index.ts da `export { … }` yo'q");
   if (exportsNames.length && !exportsNames.some((n) => new RegExp(`\\b${n}\\b`).test(tests)))
     E('test', `test/*.test.mjs ichida ${exportsNames[0]} ishlatilmagan`);
 
@@ -241,7 +244,7 @@ function checkComponent(name) {
       W('figma-raw-color', `${c.name}: Figma'da tokensiz rang ${raw}`, raw);
   }
   for (const v of specColorVars)
-    if (!WRAPPER_TOKENS.has(v) && !pool.includes(v))
+    if (!WRAPPER_TOKENS.has(v) && !hasVar(pool, v))
       W('token-missing', `Figma ${v} ishlatadi, CSS'da yo'q`, v);
   const specKeys = new Set([...specColorVars].map(semanticKey).filter(Boolean));
   for (const v of used) {
@@ -264,8 +267,7 @@ function checkComponent(name) {
   }
   for (const t of specEffects) {
     const ref = effectRef(t);
-    if (ref && !pool.includes(ref))
-      W('effect-missing', `Figma effekti ${t} → ${ref} kodda yo'q`, t);
+    if (ref && !hasVar(pool, ref)) W('effect-missing', `Figma effekti ${t} → ${ref} kodda yo'q`, t);
   }
 
   // px: scale tokeni bor son → token; Figma'da yo'q son → ogohlantirish. @media shartlari va 0/0.5/1 px hisobga olinmaydi.
@@ -389,7 +391,9 @@ if (flag('--hook')) {
 
 const list = names.length
   ? names
-  : readdirSync(COMPONENTS).filter((d) => existsSync(join(COMPONENTS, d, 'index.ts')));
+  : readdirSync(COMPONENTS, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
 const { results, errors, warnings, failed } = run(list, { strict: flag('--strict') });
 if (flag('--json')) console.log(JSON.stringify(results, null, 2));
 else {

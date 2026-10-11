@@ -53,10 +53,17 @@ const REACTIONS: MascotPose[] = [
 ];
 
 // Standart varaqlar — page-mascot (MIT © Kamran Ahmed) panda; paket bilan birga keladi (assets/mascot).
-const DEFAULT_SHEETS = {
-  directions: new URL('../../../assets/mascot/panda-directions.webp', import.meta.url).href,
-  reactions: new URL('../../../assets/mascot/panda-reactions.webp', import.meta.url).href,
+// Bundler (Vite/webpack) `new URL(…, import.meta.url)` ni asset'ga aylantiradi. Bundler'siz Node SSR'da
+// natija `file:` bo'ladi — u holda varaqlarni `directions`/`reactions` prop'lari bilan bering (README).
+const assetUrl = (file: string) => {
+  const href = new URL(`../../../assets/mascot/${file}`, import.meta.url).href;
+  return href.startsWith('file:') ? undefined : href;
 };
+const DEFAULT_SHEETS = {
+  directions: assetUrl('panda-directions.webp'),
+  reactions: assetUrl('panda-reactions.webp'),
+};
+const cssUrl = (url: string) => `url("${url.replace(/["\\]/g, '\\$&')}")`;
 
 export interface MascotProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'children'> {
   /** Figma "Pose": idle + 8 qarash + 9 his. Statik holatda faqat idle yoki his ishlatiladi. */
@@ -66,7 +73,7 @@ export interface MascotProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'chil
   directions?: string;
   /** 3×3 "reactions" varag'i (URL). */
   reactions?: string;
-  /** Figma "interactive (code)": kursorga qaraydi, bosganda reaksiya (page-mascot). Faqat landing, onboarding, 404. */
+  /** Figma "interactive (code)": kursorga qaraydi, bosganda reaksiya (page-mascot); `pose` e'tiborga olinmaydi. Faqat landing, onboarding, 404. */
   interactive?: boolean;
   /** Ekran o'quvchi nomi, masalan "BEK panda". Berilmasa — bezak (`aria-hidden`). */
   label?: string;
@@ -97,8 +104,8 @@ export function Mascot({
         {...rest}
       >
         <InteractiveMascot
-          directions={directions}
-          reactions={reactions}
+          directions={directions ?? ''}
+          reactions={reactions ?? ''}
           size={px}
           label={label ?? 'BEK panda'}
         />
@@ -115,7 +122,7 @@ export function Mascot({
       aria-hidden={label ? undefined : true}
       className={cx('bek-mascot', `bek-mascot--${size}`, `bek-mascot--${pose}`, className)}
       style={{
-        backgroundImage: `url("${sheet}")`,
+        backgroundImage: sheet ? cssUrl(sheet) : undefined,
         backgroundPosition: `${(index % 3) * 50}% ${Math.floor(index / 3) * 50}%`,
         ...style,
       }}

@@ -11,7 +11,7 @@ Figma: **2.3 Mascot** — BEK maskoti, panda: `Mascot` (sprite-sheet kadri) va `
 <MascotMessage layout="inline" pose="love" size="m" title="Sevimlilarga qo'shildi" description="Saqlangan darslar Sevimlilar bo'limida." />
 ```
 
-Varaqlar: panda `page-mascot` (MIT © Kamran Ahmed) dan, paket ichida (`@bek/react/assets/mascot/panda-{directions,reactions}.webp`) — standart holatda avtomatik yuklanadi; `directions` / `reactions` prop'lari bilan boshqa personaj berish mumkin.
+Varaqlar: panda `page-mascot` (MIT © Kamran Ahmed) dan, paket ichida (`@bek/react/assets/mascot/panda-{directions,reactions}.webp`) — standart holatda avtomatik yuklanadi; `directions` / `reactions` prop'lari bilan boshqa personaj berish mumkin. Bundler (Vite, webpack) varaqlarni o'zi oladi; bundler'siz Node SSR'da yoki Vite dev'da paket pre-bundle qilinsa (`optimizeDeps.exclude: ['@bek/react']`) — URL'larni prop bilan bering.
 
 Qoidalar (Figma doc):
 
