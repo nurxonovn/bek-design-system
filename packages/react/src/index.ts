@@ -22,6 +22,7 @@ export * from './components/search-bar/index.js';
 export * from './components/chip/index.js';
 export * from './components/date-picker/index.js';
 export * from './components/time-slot/index.js';
+export * from './components/selector-card/index.js';
 export * from './components/link/index.js';
 export * from './components/fieldset/index.js';
 export * from './components/avatar/index.js';

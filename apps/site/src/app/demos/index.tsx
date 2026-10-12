@@ -57,6 +57,8 @@ import {
   SearchBar,
   SegmentedControl,
   Select,
+  SelectorCard,
+  SelectorGroup,
   Separator,
   Skeleton,
   Slider,
@@ -751,6 +753,55 @@ export const demos: Record<string, ComponentType> = {
           onChange={setSlot}
         />
       </div>
+    );
+  },
+  'selector-card': () => {
+    const [delivery, setDelivery] = useState('');
+    return (
+      <Col>
+        <Fieldset
+          label="Yetkazib berish usuli"
+          status={delivery ? 'helper' : 'error'}
+          message={delivery ? undefined : 'Yetkazib berish usulini tanlang'}
+        >
+          <SelectorGroup name="demo-delivery" error={!delivery}>
+            <SelectorCard
+              value="courier"
+              checked={delivery === 'courier'}
+              onChange={() => setDelivery('courier')}
+              icon={<Truck />}
+              title="Kuryer"
+              description="Toshkent bo'ylab 2 soat ichida"
+              meta="15 000 soʻm"
+            />
+            <SelectorCard
+              value="pickup"
+              checked={delivery === 'pickup'}
+              onChange={() => setDelivery('pickup')}
+              icon={<ShoppingBag />}
+              title="Topshirish punkti"
+              description="Ertaga tayyor, 1 200 ball"
+              meta="Bepul"
+            />
+            <SelectorCard value="post" disabled icon={<Home />} title="Pochta" description="Hozircha mavjud emas" />
+          </SelectorGroup>
+        </Fieldset>
+        <Fieldset label="Bildirishnomalar">
+          <SelectorGroup>
+            <SelectorCard control="switch" title="Buyurtma holati" description="Push va SMS" defaultChecked />
+            <SelectorCard control="checkbox" title="Aksiyalar" description="Haftada bir marta" />
+          </SelectorGroup>
+        </Fieldset>
+        <SelectorCard
+          name="demo-plan"
+          media="image-top"
+          image={<Photo label="Pro" />}
+          title="Pro"
+          description="Barcha komponentlar va yangilanishlar"
+          meta="99 000 soʻm / oy"
+          defaultChecked
+        />
+      </Col>
     );
   },
   toast: () => (

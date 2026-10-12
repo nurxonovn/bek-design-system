@@ -7020,6 +7020,158 @@
       "readme": "# Select\n\nFigma: **3.3 Select** — ro'yxatdan tanlash. Native `<select>` (klaviatura, mobil picker, autofill tayyor) TextField qobig'ida.\n\n```tsx\n<Select\n  label=\"Mamlakat\"\n  placeholder=\"Tanlang\"\n  value={country}\n  onChange={(e) => setCountry(e.target.value)}\n>\n  <option value=\"uz\">Oʻzbekiston</option>\n  <option value=\"kz\">Qozogʻiston</option>\n</Select>\n```\n\nProplar TextField bilan bir xil: `label`, `placeholder`, `supportingText`, `error`, `variant` (`filled` · `outlined` · `plain`), `size` (`s` · `m` · `l` · `xl`, default `m`), `leadingIcon`, `skeleton`. Qolgan `<select>` atributlari o'tadi; `ref` — select'ga.\n\nFigma'dagi \"Open\" holati (o'q 180° buriladi) native ro'yxatda brauzer tomonidan chiziladi. Qidiruvli yoki maxsus ko'rinishli ro'yxat kerak bo'lsa — Dropdown menu (7.4) bilan alohida komponent bo'ladi.\n"
     },
     {
+      "dir": "selector-card",
+      "title": "SelectorCard",
+      "description": "izohli katta tanlov: tarif, yetkazib berish usuli, to'lov turi, onboarding maqsadi. Butun karta bosiladi; indikator tanlov modelini ko'rsatadi. control: radio · checkbox · switch; media: none · icon · image-start · image-top. Kartalar SelectorGroup (orientation: vertical · horizontal) bilan Fieldset ichida guruhlanadi.",
+      "exports": [
+        "SelectorCard",
+        "SelectorGroup"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.16 Selector card",
+        "pages": [
+          {
+            "name": "3.16 Selector card",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1058-34894"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Selector card",
+            "id": "1058:54784",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1058-54784",
+            "variants": 144,
+            "description": "A large, explained choice: plan, delivery method, payment type, onboarding goal. The whole card is the hit target; the indicator (Radio · Checkbox · Switch) shows the selection model. Selected = accent/soft; Hover = fill/soft-hover over surface/card; Error = border/danger 2 px + a Fieldset message. Media: None · Icon (exposed _Icon) · Image start (64) · Image top (280 wide). Group cards inside a F",
+            "props": {
+              "Title": {
+                "type": "TEXT",
+                "default": "Standard delivery"
+              },
+              "Description": {
+                "type": "TEXT",
+                "default": "Courier brings the order within 2 days"
+              },
+              "Meta": {
+                "type": "TEXT",
+                "default": "Free"
+              },
+              "Show description": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show meta": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Media": [
+                "None",
+                "Icon",
+                "Image start",
+                "Image top"
+              ],
+              "Control": [
+                "Radio",
+                "Checkbox",
+                "Switch"
+              ],
+              "State": [
+                "Default",
+                "Hover",
+                "Selected",
+                "Focus",
+                "Disabled",
+                "Error"
+              ],
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/soft",
+                "bg/sheet",
+                "border/danger",
+                "border/focus",
+                "fill/soft",
+                "fill/soft-hover",
+                "surface/card",
+                "text/disabled",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Body/S",
+                "Label/M",
+                "Title/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "radius/full",
+                "radius/surface/md",
+                "radius/surface/sm",
+                "scale/12",
+                "scale/16",
+                "scale/4"
+              ]
+            },
+            "nested": [
+              "Checkbox",
+              "Radio",
+              "Switch"
+            ]
+          },
+          {
+            "name": "Selector group",
+            "id": "1058:107109",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1058-107109",
+            "variants": 2,
+            "description": "2–4 Selector cards that answer one question. Put it inside a Fieldset (3.19) for the label and the error message. Vertical on Mobile; Horizontal on Web when every card fits ≥ 240 px. Gap scale/12.",
+            "props": {
+              "Orientation": [
+                "Vertical",
+                "Horizontal"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/soft",
+                "bg/sheet",
+                "surface/card"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": [
+                "radius/surface/md",
+                "scale/12",
+                "scale/16"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/soft",
+          "border/danger",
+          "border/focus",
+          "fill/soft-hover",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "surface/card",
+          "text/accent",
+          "text/primary",
+          "text/secondary"
+        ]
+      },
+      "accepted": [],
+      "readme": "# SelectorCard\n\nFigma: **3.16 Selector card** — izohli katta tanlov: tarif, yetkazib berish usuli, to'lov turi, onboarding maqsadi. Butun karta bosiladi; indikator tanlov modelini ko'rsatadi. `control`: `radio` · `checkbox` · `switch`; `media`: `none` · `icon` · `image-start` · `image-top`. Kartalar `SelectorGroup` (`orientation`: `vertical` · `horizontal`) bilan Fieldset ichida guruhlanadi.\n\n```tsx\n<Fieldset label=\"Yetkazib berish usuli\" status=\"error\" message=\"Yetkazib berish usulini tanlang\">\n  <SelectorGroup name=\"delivery\" error>\n    <SelectorCard\n      value=\"courier\"\n      icon={<FlashGlyph />}\n      title=\"Kuryer\"\n      description=\"Toshkent bo'ylab 2 soat ichida\"\n      meta=\"15 000 so'm\"\n    />\n    <SelectorCard value=\"pickup\" icon={<UserGlyph />} title=\"Topshirish punkti\" description=\"Ertaga tayyor\" meta=\"Bepul\" />\n  </SelectorGroup>\n</Fieldset>\n\n<SelectorCard control=\"switch\" title=\"Buyurtma holati\" description=\"Push va SMS\" defaultChecked />\n```\n\nProp'lar (Figma → kod):\n\n| Figma                                     | React                                                                  |\n| ----------------------------------------- | ---------------------------------------------------------------------- |\n| Title                                     | `title` (Title/S · text/primary)                                       |\n| Show description · Description            | `description` (Body/S · text/secondary)                                |\n| Show meta · Meta                          | `meta` (Label/M — narx yoki muddat)                                    |\n| Media                                     | `media` + `icon` / `image`                                             |\n| Control                                   | `control`                                                              |\n| State=Error                               | `error` (`aria-invalid`)                                               |\n| State=Selected · Hover · Focus · Disabled | `checked`/`defaultChecked`, CSS `:hover`, `:focus-visible`, `disabled` |\n| Direction                                 | `dir=\"rtl\"` (logical properties)                                       |\n| Selector group · Orientation              | `SelectorGroup orientation`                                            |\n\n`media` berilmasa: `icon` → `icon`, `image` → `image-start`, aks holda `none`. Qolgan atributlar (`name`, `value`, `checked`, `onChange`, `required`, `ref` …) ichidagi native input'ga uzatiladi; `className`/`style` — karta ildiziga.\n\nQoidalar (Figma doc):\n\n- Indikator modelni aytadi: **Radio** — ko'pdan bittasi; **Checkbox** — ko'pdan istalgancha; **Switch** — har karta alohida yoqiladi/o'chiriladi.\n- Guruhda **2–4 karta**. 4 tadan ko'p bo'lsa — Select yoki Radio ro'yxati. Izohsiz 2–4 qisqa variant — Segmented control (3.10).\n- Bitta guruhda media turi va indikator bir xil — aralash indikator \"bitta tanlovmi yoki bir nechta?\" degan savol tug'diradi.\n- Qisqa sarlavha va bir qator izoh. Karta ichida paragraf yozmang — tafsilotni Tooltip yoki havolaga oling.\n- Joylashuv: Mobile va Tablet'da `vertical`; Web'da har karta kamida 240 px sig'sa `horizontal` (sig'masa keyingi qatorga o'tadi).\n- Error: karta `border/danger` 2 px; xabar kartada emas — guruh atrofidagi Fieldset'da (`status=\"error\"`, \"Yetkazib berish usulini tanlang\"). `SelectorGroup error` hamma kartalarga uzatadi.\n- Statik kontent kartasi uchun Card (4.3) ishlating.\n\nAnatomiya va o'lchamlar: konteyner `surface/card` → `accent/soft` (tanlanganda), `radius/surface/md`, padding `scale/16`, gap `scale/12`; media Icon 40 (`accent/soft` doira, ikonka 20 `text/accent`; tanlanganda doira `surface/card`), Image start 64 (`radius/surface/sm`), Image top 140 balandlik (padding faqat pastki qismda); matnlar orasida `scale/4`; indikator M o'lchamda, oxirgi chetda, birinchi qator balandligida. Hover — `fill/soft-hover` qatlami (faqat Web). Guruh gap `scale/12`.\n\nA11y:\n\n- Har karta — native `<input type=\"radio|checkbox\">` (Switch'da `role=\"switch\"`); nomi `aria-labelledby` → sarlavha, izoh va meta `aria-describedby` orqali o'qiladi.\n- Klaviatura: Tab guruhga kiradi, Radio kartalar orasida strelkalar (bir xil `name`), Checkbox va Switch kartani Space almashtiradi. Fokus halqasi butun kartada (`:focus-visible`, `border/focus`).\n- Guruh uchun Fieldset (`<fieldset>` + `<legend>`) ishlating; Fieldset'siz bo'lsa `SelectorGroup role=\"radiogroup\" aria-label=\"…\"`.\n- `disabled` — native disabled, `text/disabled`, fokuslanmaydi. `error` — `aria-invalid=\"true\"`.\n- RTL: `dir=\"rtl\"` da media, matn va indikator tartibi logical properties bilan ko'zgulanadi.\n"
+    },
+    {
       "dir": "separator",
       "title": "Separator · Scrollbar",
       "description": "type: line (1 px border/hairline) · block (8 px bg/base tasma guruhlar orasida) · labeled (\"yoki\"); inset: none · leading · both (16 px); orientation.",
