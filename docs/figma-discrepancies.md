@@ -71,6 +71,24 @@ Bu tokenlar `@bek/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
 - Demo fonlari komponent ichida: `bg/base` (Checkout bar, Bottom navigation, Bottom nav item, Date picker, Time slot) — `bg/sheet` o'ram sifatida ishlatilsa checker e'tiborsiz qoldiradi.
 - 10.2 / 10.3: nested native (iOS 27 / M3) instance'lar `static/dark`, `static/white`, `surface/card`, `surface/raised` ga bog'lanmagan.
 
+### A5. 2-bosqich: 3.16 Selector card, 4.17 Steps (2026-10)
+
+Ikkala sahifa `--strict` 0 bilan kodga o'tdi (`accepted[]` bo'sh). Figma tomonida:
+
+- 📘 doc'larda "Design tokens" sarlavhasi o'rniga "Tokens" — extractor doc matnini sahifa boshidan olib 3200 belgida
+  kesadi, Rules/Props/Tokens/Do-Don't `figma.json` ga tushmaydi. Boshqa sahifalardagidek "Design tokens" deb nomlang.
+- Selector card: `State` bitta o'qda — Selected+Hover/Disabled/Error/Focus kombinatsiyalari chizilmagan (kodda:
+  tanlangan kartada ham hover qatlami, disabled+checked `accent/soft` saqlaydi).
+- Selector card: Default karta `bg/sheet` ustida `surface/card`, chegarasiz — Light'da bosish nishoni noaniq;
+  `border/subtle` kerakmi, tasdiqlang.
+- Selector card: Switch indikatori (24) birinchi qatorga (Title/S, 20) yuqoridan tekislangan — 1.11 qoidasi bo'yicha
+  markazda bo'lishi kerak. Kod Figma'ga ergashgan.
+- Selector card: Image top varianti qat'iy 280 px (kodda suyuq, gorizontal guruhda ≥ 240); Selector group tavsifi
+  "Vertical on Mobile", doc "Mobile and Tablet".
+- Steps: chiziq (Line before/after) 2 px kengligi tokenga bog'lanmagan — `stroke/strong` (kodda shu).
+- Steps: tavsiflarda `<Steps.Item …>`, kodda `StepsItem` (`DescriptionListItem` kabi); horizontal qadam qat'iy 160 px
+  (kodda konteynerni teng bo'ladi); vertical oxirgi qadamda ham 24 px pastki padding — ataylabmi?
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |
