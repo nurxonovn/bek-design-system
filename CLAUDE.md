@@ -7,7 +7,7 @@ pnpm 10 + Turborepo. Javoblar va hujjatlar **o'zbekcha**, kod identifikatorlari 
 
 - `packages/tokens` — `@bek/tokens`: Figma Variables (`figma/*.json`) → `dist/tokens.css`, `typography.css`, `materials.css`, `tokens.json`.
 - `packages/react` — `@bek/react`: 58 komponent, `src/components/<kebab>/` (tsx · css · index · README · figma.json), testlar `test/*.test.mjs`, `scripts/check-figma.mjs`.
-- `apps/site` — hujjat sayti (Vite; katalog `scripts/build-catalog.mjs` bilan README + figma.json dan). GitHub Pages: `.github/workflows/deploy-site.yml`.
+- `apps/site` — hujjat sayti (e2e: `apps/site/e2e/*.spec.ts`, Playwright 1.56.1 + axe; asosli istisnolar `ACCEPTED`da) (Vite; katalog `scripts/build-catalog.mjs` bilan README + figma.json dan). GitHub Pages: `.github/workflows/deploy-site.yml`.
 - `apps/templates` — Figma 8.x namuna ekranlar.
 - `.claude/skills/figma-component` — Figma ↔ kod skili (extractor, konventsiyalar, foundations, tekshiruv qoidalari).
 
@@ -20,6 +20,7 @@ pnpm check:figma                 # Figma ↔ kod (CI: faqat xatolar)
 pnpm check:figma -- --strict     # ogohlantirish ham xato
 pnpm --filter @bek/react check:figma <nom> --strict
 pnpm --filter @bek/site dev      # sayt
+pnpm build && pnpm --filter @bek/site test:e2e   # brauzer: 58 sahifa, axe WCAG 2.2 AA, klaviatura
 ```
 
 ## Ish oqimi (ECC)
@@ -55,8 +56,8 @@ sarlavha Conventional Commits. `main` ga to'g'ridan-to'g'ri push yo'q. Model nom
 ## Tashqi tizimlar
 
 Figma MCP (`use_figma` read-only, `get_screenshot`, `get_variable_defs`); GitHub MCP; Supabase MCP
-(loyiha `BEK Design System`, loyiha ID maintainer'larda — hozircha bo'sh; migratsiyalar `supabase/migrations/`
-ga yoziladi, `database-reviewer` bilan ko'rib chiqiladi).
+(loyiha `BEK Design System`, loyiha ID maintainer'larda) — foydalanuvchining BEK asosidagi **boshqa startapi** uchun;
+design system repo'siga baza qo'shilmaydi. Startap ishida migratsiyalar o'sha loyihada, `database-reviewer` bilan.
 
 ECC: `.claude/ECC-VERSION` (asl: https://github.com/affaan-m/everything-claude-code, MIT — `.claude/ECC-LICENSE`).
 Yangilash: ECC'dan kerakli fayllarni qayta nusxalang; `bek/` qoidalari va BEK komandalari (`figma-sync`,

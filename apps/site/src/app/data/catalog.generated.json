@@ -1693,7 +1693,7 @@
           "reason": "Figma doc \"Thumb Hover ring — border/strong (2 px)\" deydi, lekin .Carousel/Thumb komponentida hover halqasi variable'ga bog'lanmagan (tokens.color: faqat border/focus, fill/tertiary). Figma'da Hover holat stroke'ini border/strong ga bog'lash kerak."
         }
       ],
-      "readme": "# Carousel\n\nFigma: **4.11 Carousel** — `controls`: `arrows` · `dots` (Figma \"Dots only\") · `none`; `placement`: `inside` · `below`; `peek` — keyingi slayd cheti; `onMedia` — rasm ustidagi oq nuqtalar. Indikator (`indicator`): `dots` · `fraction` (\"1 / 5\") · `progress` · `thumbnails` (`thumbnails` — kichik rasmlar, `orientation`: `horizontal` · `vertical`, `thumbSize`: `s` 56 · `m` 64).\n\n```tsx\n<Carousel aria-label=\"Aksiyalar\" peek>\n  <img src=\"/promo-1.jpg\" alt=\"Pitsa −20%\" />\n  <img src=\"/promo-2.jpg\" alt=\"Bepul yetkazish\" />\n</Carousel>\n```\n\n```tsx\n<Carousel\n  aria-label=\"Mahsulot rasmlari\"\n  controls=\"dots\"\n  indicator=\"thumbnails\"\n  orientation=\"vertical\"\n  thumbnails={photos.map((p) => (\n    <img src={p.thumb} alt=\"\" />\n  ))}\n>\n  {photos.map((p) => (\n    <img key={p.id} src={p.src} alt={p.alt} />\n  ))}\n</Carousel>\n```\n\nCSS scroll-snap: touch'da surish, sichqonchada strelkalar (Raised icon-only Button), nuqtalar sichqoncha uchun (Tab'da emas — 1.6 Accessibility). Har slayd `role=\"group\"` + \"2 / 5\" nomi; RTL qo'llab-quvvatlanadi.\n"
+      "readme": "# Carousel\n\nFigma: **4.11 Carousel** — `controls`: `arrows` · `dots` (Figma \"Dots only\") · `none`; `placement`: `inside` · `below`; `peek` — keyingi slayd cheti; `onMedia` — rasm ustidagi oq nuqtalar. Indikator (`indicator`): `dots` · `fraction` (\"1 / 5\") · `progress` · `thumbnails` (`thumbnails` — kichik rasmlar, `orientation`: `horizontal` · `vertical`, `thumbSize`: `s` 56 · `m` 64).\n\n```tsx\n<Carousel aria-label=\"Aksiyalar\" peek>\n  <img src=\"/promo-1.jpg\" alt=\"Pitsa −20%\" />\n  <img src=\"/promo-2.jpg\" alt=\"Bepul yetkazish\" />\n</Carousel>\n```\n\n```tsx\n<Carousel\n  aria-label=\"Mahsulot rasmlari\"\n  controls=\"dots\"\n  indicator=\"thumbnails\"\n  orientation=\"vertical\"\n  thumbnails={photos.map((p) => (\n    <img src={p.thumb} alt=\"\" />\n  ))}\n>\n  {photos.map((p) => (\n    <img key={p.id} src={p.src} alt={p.alt} />\n  ))}\n</Carousel>\n```\n\nCSS scroll-snap: touch'da surish, sichqonchada strelkalar (Raised icon-only Button), nuqtalar sichqoncha uchun (Tab'da emas — 1.6 Accessibility). Skroll maydoni fokuslanadi (`tabIndex=0`): Tab bilan kirib, ←/→ bilan suriladi. Har slayd `role=\"group\"` + \"2 / 5\" nomi; RTL qo'llab-quvvatlanadi.\n"
     },
     {
       "dir": "checkbox",
@@ -4586,7 +4586,7 @@
         ]
       },
       "accepted": [],
-      "readme": "# OrderWidget\n\nFigma: **4.15 Widget · Active order** — jarayondagi buyurtma holati (bosh ekranda). `status`: `accepted` · `preparing` · `on-the-way` · `delivered`; `size`: `compact` · `expanded` (4 bo'lakli progress + bosqich nomlari).\n\n```tsx\n<OrderWidget\n  status=\"preparing\"\n  size=\"expanded\"\n  icon={<FireIcon />}\n  title=\"Buyurtmangiz tayyorlanmoqda\"\n  subtitle=\"Taxminan 12 daqiqa\"\n  href=\"/orders/42\"\n  stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', \"Yo'lda\", 'Yetkazildi']}\n/>\n```\n\n`href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.\n"
+      "readme": "# OrderWidget\n\nFigma: **4.15 Widget · Active order** — jarayondagi buyurtma holati (bosh ekranda). `status`: `accepted` · `preparing` · `on-the-way` · `delivered`; `size`: `compact` · `expanded` (4 bo'lakli progress + bosqich nomlari).\n\n```tsx\n<OrderWidget\n  status=\"preparing\"\n  size=\"expanded\"\n  icon={<FireIcon />}\n  title=\"Buyurtmangiz tayyorlanmoqda\"\n  subtitle=\"Taxminan 12 daqiqa\"\n  href=\"/orders/42\"\n  stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', \"Yo'lda\", 'Yetkazildi']}\n  progressLabel=\"Buyurtma holati\"\n/>\n```\n\nBosqichlar chizig'i `role=\"progressbar\"`: nomi `progressLabel` (standart \"Order status\"), qiymat matni joriy bosqich yorlig'i. `href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.\n"
     },
     {
       "dir": "overlay",
@@ -6466,7 +6466,7 @@
         ]
       },
       "accepted": [],
-      "readme": "# ProgressBar\n\nFigma: **4.6 Progress** — chiziqli jarayon (yuklash, kurs, profil to'ldirish). `size`: `s` 4 · `m` 6 · `l` 8 px; `status`: `neutral` · `accent` · `success` · `warning` · `danger`.\n\n```tsx\n<ProgressBar value={uploaded} max={total} label=\"Yuklanmoqda\" showValue />\n```\n\n`role=\"progressbar\"` + `aria-valuenow`. `showValue`: `true` — foiz, yoki istalgan matn (\"3 / 5\"). Davomiyligi noma'lum kutish uchun — `Spinner`.\n"
+      "readme": "# ProgressBar\n\nFigma: **4.6 Progress** — chiziqli jarayon (yuklash, kurs, profil to'ldirish). `size`: `s` 4 · `m` 6 · `l` 8 px; `status`: `neutral` · `accent` · `success` · `warning` · `danger`.\n\n```tsx\n<ProgressBar value={uploaded} max={total} label=\"Yuklanmoqda\" showValue />\n```\n\n`role=\"progressbar\"` + `aria-valuenow`. `label` bo'lmasa `aria-label` bering — nomsiz progress ekran o'quvchiga tushunarsiz. `showValue`: `true` — foiz, yoki istalgan matn (\"3 / 5\"). Davomiyligi noma'lum kutish uchun — `Spinner`.\n"
     },
     {
       "dir": "radio",

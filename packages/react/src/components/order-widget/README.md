@@ -11,7 +11,8 @@ Figma: **4.15 Widget · Active order** — jarayondagi buyurtma holati (bosh ekr
   subtitle="Taxminan 12 daqiqa"
   href="/orders/42"
   stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', "Yo'lda", 'Yetkazildi']}
+  progressLabel="Buyurtma holati"
 />
 ```
 
-`href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.
+Bosqichlar chizig'i `role="progressbar"`: nomi `progressLabel` (standart "Order status"), qiymat matni joriy bosqich yorlig'i. `href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.

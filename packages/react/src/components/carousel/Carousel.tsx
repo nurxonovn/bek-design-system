@@ -150,7 +150,13 @@ export function Carousel({
       )}
     >
       <div className="bek-carousel__frame">
-        <div ref={viewport} className="bek-carousel__viewport" onScroll={onScroll}>
+        <div
+          ref={viewport}
+          // Skroll maydoni klaviaturadan ham boshqariladi (WCAG 2.1.1, axe scrollable-region-focusable).
+          tabIndex={0}
+          className="bek-carousel__viewport bek-focus-ring"
+          onScroll={onScroll}
+        >
           {slides.map((slide, i) => (
             <div
               key={i}

@@ -16,6 +16,8 @@ export interface OrderWidgetProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
   subtitle?: ReactNode;
   /** Bosqich nomlari (expanded): Qabul qilindi · Tayyorlanmoqda · Yo'lda · Yetkazildi. */
   stageLabels?: [ReactNode, ReactNode, ReactNode, ReactNode];
+  /** Bosqichlar chizig'ining ekran o'quvchi nomi. */
+  progressLabel?: string;
   /** Buyurtmani kuzatish sahifasi. */
   href?: string;
   onClick?: () => void;
@@ -30,6 +32,7 @@ export function OrderWidget({
   title,
   subtitle,
   stageLabels = ['Accepted', 'Preparing', 'On the way', 'Delivered'],
+  progressLabel = 'Order status',
   href,
   onClick,
   chevron = true,
@@ -57,6 +60,10 @@ export function OrderWidget({
             aria-valuemin={1}
             aria-valuemax={4}
             aria-valuenow={reached + 1}
+            aria-label={progressLabel}
+            aria-valuetext={
+              typeof stageLabels[reached] === 'string' ? stageLabels[reached] : undefined
+            }
           >
             {STAGES.map((s, i) => (
               <span key={s} className={cx('bek-order-widget__step', i <= reached && 'is-done')} />
