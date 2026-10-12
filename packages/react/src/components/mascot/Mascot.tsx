@@ -1,3 +1,5 @@
+'use client';
+
 import type { HTMLAttributes, ReactNode } from 'react';
 import { Mascot as InteractiveMascot } from 'page-mascot';
 import { cx } from '../../utils/cx.js';
