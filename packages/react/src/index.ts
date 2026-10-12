@@ -39,6 +39,7 @@ export * from './components/carousel/index.js';
 export * from './components/product-card/index.js';
 export * from './components/order-widget/index.js';
 export * from './components/description-list/index.js';
+export * from './components/steps/index.js';
 export * from './components/toast/index.js';
 export * from './components/tooltip/index.js';
 export * from './components/empty-state/index.js';

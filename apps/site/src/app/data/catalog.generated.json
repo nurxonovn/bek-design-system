@@ -7625,6 +7625,244 @@
       "readme": "# Stepper\n\nFigma: **3.9 Stepper** — miqdor tanlash. `variant`: `filled` · `outline`; `size`: `s` 36 · `m` 44 · `l` 56 px.\n\n```tsx\n<Stepper aria-label=\"Miqdor\" min={1} max={10} value={qty} onChange={setQty} unit=\"dona\" />\n```\n\nQiymat `role=\"spinbutton\"` — bitta Tab to'xtashi, ↑↓ / ← → qadam, Home/End. − / + — Flat icon-only `Button`, Tab'da emas (1.6 Accessibility); `min` da −, `max` da + o'chadi.\n"
     },
     {
+      "dir": "steps",
+      "title": "Steps",
+      "description": "foydalanuvchi jarayonning qayerida: buyurtma kuzatuvi, ariza bosqichlari, onboarding, uzun formalar. orientation: vertical · horizontal; qadam status: complete · current · upcoming · error; marker: dot · number · icon. 3.9 Stepper (± son kiritish) bilan adashtirmang.",
+      "exports": [
+        "Steps",
+        "StepsItem"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.17 Steps",
+        "pages": [
+          {
+            "name": "4.17 Steps",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1060-5185"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Steps · Vertical item",
+            "id": "1060:6215",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1060-6215",
+            "variants": 24,
+            "description": "One step of a vertical sequence — order tracking, application stages, onboarding, long-form progress. Status: Complete · Current · Upcoming · Error. Marker: Dot 8 · Number 24 · Icon 24. Turn Line before off on the first step and Line after off on the last. The line after a Complete step is accent; after anything else, border/default. React: &lt;Steps.Item status marker&gt;.",
+            "props": {
+              "Title": {
+                "type": "TEXT",
+                "default": "Order placed"
+              },
+              "Description": {
+                "type": "TEXT",
+                "default": "We received your order"
+              },
+              "Meta": {
+                "type": "TEXT",
+                "default": "10 Oct, 14:32"
+              },
+              "Number": {
+                "type": "TEXT",
+                "default": "1"
+              },
+              "Line before": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Line after": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show description": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show action": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show meta": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Status": [
+                "Complete",
+                "Current",
+                "Upcoming",
+                "Error"
+              ],
+              "Marker": [
+                "Dot",
+                "Number",
+                "Icon"
+              ],
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "accent/soft",
+                "bg/sheet",
+                "border/default",
+                "fill/control",
+                "fill/soft",
+                "status/danger/default",
+                "text/danger",
+                "text/on-color",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Body/S",
+                "Caption/L",
+                "Label/L",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "scale/12",
+                "scale/4"
+              ]
+            },
+            "nested": [
+              "Button"
+            ]
+          },
+          {
+            "name": "Steps · Horizontal item",
+            "id": "1060:6542",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1060-6542",
+            "variants": 24,
+            "description": "One step of a horizontal timeline — order tracking on a card, checkout stages. 160 wide; lines fill to the neighbours. Line slots keep their space when the line is hidden, so markers stay aligned. React: &lt;Steps.Item orientation=&quot;horizontal&quot;&gt;.",
+            "props": {
+              "Title": {
+                "type": "TEXT",
+                "default": "Packed"
+              },
+              "Caption": {
+                "type": "TEXT",
+                "default": "10 Oct"
+              },
+              "Number": {
+                "type": "TEXT",
+                "default": "1"
+              },
+              "Line before": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Line after": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show caption": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Status": [
+                "Complete",
+                "Current",
+                "Upcoming",
+                "Error"
+              ],
+              "Marker": [
+                "Dot",
+                "Number",
+                "Icon"
+              ],
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "accent/soft",
+                "bg/sheet",
+                "border/default",
+                "fill/control",
+                "fill/soft",
+                "status/danger/default",
+                "text/danger",
+                "text/on-color",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Label/M",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "scale/8"
+              ]
+            },
+            "nested": []
+          },
+          {
+            "name": "Steps",
+            "id": "1061:870",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1061-870",
+            "variants": 6,
+            "description": "Ready-made sequences of 3, 4 or 5 Number steps. Edit each item’s status and title; for more than 5 steps show a counter (“Step 3 of 8”) instead of every step.",
+            "props": {
+              "Orientation": [
+                "Vertical",
+                "Horizontal"
+              ],
+              "Count": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Label/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "scale/12",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/default",
+          "accent/soft",
+          "border/default",
+          "fill/control",
+          "fill/soft",
+          "scale/12",
+          "status/danger/default",
+          "text/danger",
+          "text/on-color",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Steps\n\nFigma: **4.17 Steps** — foydalanuvchi jarayonning qayerida: buyurtma kuzatuvi, ariza bosqichlari, onboarding, uzun formalar. `orientation`: `vertical` · `horizontal`; qadam `status`: `complete` · `current` · `upcoming` · `error`; `marker`: `dot` · `number` · `icon`. 3.9 Stepper (± son kiritish) bilan adashtirmang.\n\n```tsx\n<Steps marker=\"icon\" aria-label=\"Buyurtma holati\">\n  <StepsItem status=\"complete\" title=\"Buyurtma qabul qilindi\" meta=\"10 okt, 09:12\" />\n  <StepsItem status=\"complete\" title=\"To'landi\" meta=\"10 okt, 09:13\" />\n  <StepsItem\n    status=\"current\"\n    title=\"Yig'ildi\"\n    description=\"Kuryer 15:00 da olib ketadi\"\n    action={<Button size=\"m\">Kuzatish</Button>}\n    meta=\"Bugun\"\n  />\n  <StepsItem status=\"upcoming\" title=\"Yo'lda\" />\n  <StepsItem status=\"upcoming\" title=\"Yetkazildi\" />\n</Steps>\n\n<Steps orientation=\"horizontal\" marker=\"number\" aria-label=\"Rasmiylashtirish\">\n  <StepsItem status=\"complete\" title=\"Savat\" />\n  <StepsItem status=\"current\" title=\"Yetkazish\" caption=\"10 okt\" />\n  <StepsItem status=\"upcoming\" title=\"To'lov\" />\n  <StepsItem status=\"upcoming\" title=\"Tayyor\" />\n</Steps>\n```\n\n## API\n\n`Steps` (`<ol>`):\n\n| Prop           | Qiymatlar                                         | Default    |\n| -------------- | ------------------------------------------------- | ---------- |\n| `orientation`  | `vertical` · `horizontal`                         | `vertical` |\n| `marker`       | `dot` · `number` · `icon` — barcha qadamlar uchun | `dot`      |\n| `statusLabels` | `{ complete, current, upcoming, error }` matnlari | inglizcha  |\n\n`StepsItem` (`<li>`):\n\n| Prop                       | Figma                                   | Izoh                                                                   |\n| -------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |\n| `status`                   | Status                                  | default `complete` (Figma bilan bir xil)                               |\n| `marker`                   | Marker                                  | `Steps` dagidan ustun                                                  |\n| `title`                    | Title                                   | Label/L (vertical) · Label/M (horizontal)                              |\n| `description`              | Show description · Description          | faqat vertical; Body/S `text/secondary`                                |\n| `action`                   | Show action                             | faqat vertical; `Button` Normal M                                      |\n| `meta`                     | Show meta · Meta                        | faqat vertical; Caption/L `text/tertiary` — vaqt, narx, davomiylik     |\n| `caption`                  | Show caption · Caption                  | faqat horizontal; Caption/M `text/tertiary`                            |\n| `number`                   | Number                                  | default — tartib raqami (1, 2, 3 …)                                    |\n| `icon`                     | Marker icon (\\_Icon)                    | default — holatga qarab check · info · alert (16 px)                   |\n| `lineBefore` · `lineAfter` | Line before · Line after                | `Steps` ichida avtomatik: birinchida \"before\", oxirgida \"after\" o'chiq |\n| `statusLabel`              | —                                       | ekran o'quvchi uchun holat matni                                       |\n| `orientation`              | Steps · Vertical item / Horizontal item | odatda `Steps` dan keladi                                              |\n\nFigma \"Count\" (3 · 4 · 5) — prop emas: qadamlar soni `children` soniga teng. Figma'dagi `Steps.Item` — koddagi `StepsItem`.\n\n## Qoidalar (Figma doc)\n\n| Status     | Marker                                               | Sarlavha         | Qachon                                            |\n| ---------- | ---------------------------------------------------- | ---------------- | ------------------------------------------------- |\n| `complete` | `accent/default` · check                             | `text/primary`   | Bajarilgan; undan keyingi chiziq ham accent       |\n| `current`  | `accent/default` + 4 px `accent/soft` halqa          | `text/primary`   | **Bir vaqtda faqat bitta**                        |\n| `upcoming` | `fill/soft` · `text/secondary` (Dot: `fill/control`) | `text/secondary` | Hali yetib kelinmagan                             |\n| `error`    | `status/danger/default` · alert                      | `text/danger`    | To'siq — sababini ayting va keyingi amalni bering |\n\n- Chiziq 2 px: \"line before\" — qadam `upcoming` bo'lmasa `accent/default`; \"line after\" — `complete` dan keyin accent, aks holda `border/default`. Birinchi va oxirgi qadamda osilib qolgan chiziq bo'lmaydi.\n- Vertical — hamma qurilmada batafsil kuzatuv uchun. Horizontal — 3–5 qisqa qadam (bir-ikki so'z) karta yoki oqim tepasida; Mobile'da ko'pi bilan 4 qadam. Horizontal qadamlar kengligi teng (Figma'da 160; kodda konteyner teng bo'linadi), chiziqlar qo'shnigacha to'ladi; yashirin chiziq joyini saqlaydi — markerlar tekis turadi.\n- 5 tadan ko'p qadam bo'lsa hammasini ko'rsatmang — hisoblagich (\"3-qadam, jami 8\") yoki 4.6 Progress.\n- Xato qadam sababini (`description`) va keyingi amalni (`action`) aytsin — sababsiz qizil qadam yo'q.\n- O'lchamlar: rail 24 → kontent 12 (`scale/12`), vertical qadamlar orasi — 24 pastki padding (`scale/24`), meta Caption/L.\n\n## A11y\n\n- `<ol>` — tartibli ro'yxat; `aria-label` bering (\"Buyurtma holati\").\n- Joriy qadam `aria-current=\"step\"`. Har qadam sarlavhasi oldida holat matni `.bek-visually-hidden` da (\"Completed: …\"); lokalizatsiya — `statusLabels` / `statusLabel`.\n- Marker va chiziqlar dekorativ (`aria-hidden`) — rang yagona belgi emas.\n- Komponent statik (server-safe): bosiladigan qadam kerak bo'lsa `title` ichiga `Link` (3.18) qo'ying, amal uchun `action`.\n\nRTL: `dir=\"rtl\"` da rail o'ngga, meta chapga o'tadi (logical props). Dark — tokenlar orqali.\n"
+    },
+    {
       "dir": "switch",
       "title": "Switch",
       "description": "darhol kuchga kiradigan yoqish/o'chirish (saqlash tugmasisiz). Yo'lak s 32×20 · m 40×24 · l 48×28 px.",
