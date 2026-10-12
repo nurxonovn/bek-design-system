@@ -17,7 +17,8 @@ const files = [];
 })(dist);
 
 const needsClient = (src) => {
-  if (/\buse[A-Z][A-Za-z]*\(/.test(src)) return true;
+  // useId Server Component'da ham ishlaydi — direktiva talab qilmaydi.
+  if (/\buse(?!Id\()[A-Z][A-Za-z]*\(/.test(src)) return true;
   for (const m of src.matchAll(/\bon[A-Z][A-Za-z]*: ([^,}\n]+)/g)) {
     const v = m[1].trim();
     if (/=>|^function/.test(v)) return true;
@@ -33,6 +34,11 @@ test("interactive components declare 'use client'", () => {
     .filter((f) => !/^["']use client["'];/.test(readFileSync(f, 'utf8')))
     .map((f) => f.slice(dist.length));
   assert.deepEqual(missing, []);
+});
+
+test('Mascot wraps page-mascot (hooks) behind the directive', () => {
+  const src = readFileSync(join(dist, 'mascot/Mascot.js'), 'utf8');
+  assert.match(src, /^["']use client["'];/);
 });
 
 test('Button keeps the directive after build', () => {
