@@ -1,0 +1,71 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Org card",
+      "id": "1219:221",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Name": {
+          "type": "TEXT",
+          "default": "Dilnoza Nazarova"
+        },
+        "Role": {
+          "type": "TEXT",
+          "default": "Head of Retail"
+        },
+        "Team": {
+          "type": "TEXT",
+          "default": "Retail banking"
+        },
+        "Variant": ["Default", "Collapsed"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 280,
+        "h": 80
+      },
+      "tokens": {
+        "color": ["bg/base", "surface/card", "text/primary", "text/secondary", "text/tertiary"],
+        "text": ["Caption/M", "Caption/S", "Label/M"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": ["radius/surface/md", "scale/12", "scale/2", "scale/280"]
+      },
+      "sizes": [1, 2, 12, 40, 48],
+      "rawColors": [],
+      "nested": ["Avatar", "Badge"],
+      "description": "Person node for org charts and approval chains. Avatar (4.1, Size M), name, role, team. Collapsed shows the number of hidden reports as a Badge; tap expands the branch. Connect with Diagram/Connector (Elbow), parent above children. React: <OrgCard name role team avatar reports? collapsed? />"
+    }
+  ],
+  "doc": {
+    "Diagram/Org card": {
+      "tokens": [
+        "Elevation/1",
+        "border/accent",
+        "radius/surface/md",
+        "scale/12",
+        "scale/2",
+        "scale/280",
+        "shadow/soft",
+        "surface/card",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Org card\nPerson node for org charts and approval chains. 2 variants.\nOverview\nWhat it is and when to reach for it.\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\nWhen to use\nOrg structure, reporting lines, approval chains in bank workflows.\nCollapsed: branch with hidden reports.\nNot for user lists — use 4.4 List item.\nAnatomy\nNumbered layers of the default variant.\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\n1\nAvatar\n4.1 Avatar Size M\n2\nName\nLabel/M · property\n3\nRole\nCaption/M · text/secondary\n4\nTeam\nCaption/S · text/tertiary\n5\nReports\n4.2 Badge “+12” (Collapsed)\nVariants\n2 variants · Variant = Default | Collapsed\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\nDefault\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\n+12\nCollapsed\n+N hidden reports\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/280\n280 px\n280 px\n280 px\nscale/12\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nExpanded branch.\nCollapsed\nHidden reports counted in a Badge; tap expands.\nSelected\nborder/accent ring; details panel opens.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\nTablet · 834\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\nWeb · 1440\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\nDefault\nDN\nDilnoza Nazarova\nHead of Retail\nRetail banking\n+12\nCollapsed\nUsage\nRules that keep the diagram clear.\nParent above children, Elbow connectors.\nCollapse branches deeper than 2 levels by default.\nNames truncate to one line; full name in the tooltip.\nSpec\nLibrary-neutral contract — maps to React Flow, ELK, Mermaid, D3 or a native canvas.\nField\nDefinition\nPurpose\nPerson node for org charts and approval chains.\nEncoding\ntree ← manager → reports\nInteraction\nTap to expand / collapse; click opens profile.\nAccessibility\nrole=\"tree\" with treeitems; aria-expanded on collapsed nodes.\nComponent\n<OrgCard name role team avatar reports? collapsed? />\nData shape\n{ \"id\": \"dn\", \"name\": \"Dilnoza Nazarova\", \"role\": \"Head of Retail\", \"team\": \"Retail banking\", \"reports\": 12, \"collapsed\": true }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nName\ntext\nstring\nDilnoza Nazarova\nRole\ntext\nstring\nHead of Retail\nTeam\ntext\nstring\nRetail banking\nVariant\nvariant\nDefault · Collapsed\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/12\n12\n--bek-scale-12\nContainer · Padding\nscale/12\n12\n--bek-scale-12\nContainer · Width\nscale/280\n280\n--bek-scale-280\nContainer · Radius\nradius/surface/md\n12\n--bek-radius-surface-md\nContainer · Fill\nsurface/card\n#FFFFFF / #18181A\n--bek-surface-card\nContainer · Shadow\nshadow/soft\n#000000 @2% / #000000 @0%\n--bek-shadow-soft\nText · Gap\nscale/2\n2\n--bek-scale-2\nName · Fill\ntext/primary\n#323233 / #F3F3F3\n--b"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma set o'ramasi foni (bg/base) — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-border-accent",
+      "reason": "Doc «States → Selected»: border/accent halqa (`selected` prop). Figma set'da Selected variant yo'q — Figma'da Org card'ga Selected holatini qo'shish kerak."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+.bek-circle-packing__plot {
+  position: relative;
+  max-inline-size: 100%;
+}
+
+/* Nested: ota doira — dataviz/sequential/100, element — dataviz/sequential/300. Flat: guruh rangi (inline). */
+.bek-circle-packing__circle--parent {
+  fill: var(--bek-dataviz-sequential-100);
+}
+
+.bek-circle-packing__circle--child {
+  fill: var(--bek-dataviz-sequential-300);
+}
+
+/* Hover: doira konturi chart/line/stroke; <title> nomi, qiymati va guruhdagi ulushi. */
+.bek-circle-packing__item:hover .bek-circle-packing__circle,
+.bek-circle-packing__circle--parent:hover {
+  stroke: var(--bek-text-primary);
+  stroke-width: var(--bek-chart-line-stroke);
+}
+
+/* Nested element nomi — Caption/S · text/primary (sequential/300 ustida ≥ 4.5:1). */
+.bek-circle-packing__text {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  pointer-events: none;
+}
+
+.bek-circle-packing__labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/*
+ * Flat: yozuv kategorik rangga to'g'ridan-to'g'ri emas — surface/card chip + text/primary, faqat doira
+ * ichiga to'liq sig'sa. Nested: guruh nomi ota doira tepasida, text/secondary.
+ */
+.bek-circle-packing__chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding-block: var(--bek-scale-2);
+  padding-inline: var(--bek-scale-4);
+  border-radius: var(--bek-chart-bar-radius);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  white-space: nowrap;
+}
+
+.bek-circle-packing__chip--parent {
+  color: var(--bek-text-secondary);
+}

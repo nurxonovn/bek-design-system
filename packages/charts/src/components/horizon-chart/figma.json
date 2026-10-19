@@ -1,0 +1,85 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Horizon",
+      "id": "1252:39691",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Positive", "Diverging"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/diverging/neg-2",
+          "dataviz/diverging/neg-3",
+          "dataviz/diverging/neg-4",
+          "dataviz/diverging/pos-2",
+          "dataviz/diverging/pos-3",
+          "dataviz/diverging/pos-4",
+          "dataviz/label",
+          "dataviz/sequential/300",
+          "dataviz/sequential/500",
+          "dataviz/sequential/700",
+          "dataviz/track",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Dense time series: each row folds its value into 3 colour bands of the same height, so many series fit in little space. Diverging mirrors negative values in a second hue. Use for 4–20 series where a line chart would overlap. React: <HorizonChart data={[{ series, date, value }]} bands={3} mode=\"positive | diverging\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Horizon": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/label",
+        "dataviz/sequential/300",
+        "dataviz/sequential/500",
+        "dataviz/sequential/700",
+        "dataviz/track",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Horizon\nDense time series: each row folds its value into 3 equal-height colour bands, so many series fit in little space. Diverging mirrors negative values in a second hue. 2 variants.\nOverview\nWhat it is and when to reach for it.\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\nWhen to use\n4–20 series over the same time range where Line would overlap (load per region, latency per service).\nSpot when and where peaks happen, not exact values.\nDiverging for values around a baseline (vs. plan, vs. last week).\nAnatomy\nNumbered layers of the default variant.\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\n1\nRow label\nCaption/M · text/secondary\n2\nTrack\ndataviz/track — the empty row\n3\nBand 1–3\nsequential 300 · 500 · 700 (Positive) or diverging ±2 · ±3 · ±4\n4\nTime axis\nCaption/S · dataviz/label\n5\nLegend\nBand meaning (Low · Medium · High)\nVariants\n2 variants · Variant = Positive | Diverging\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\nPositive\nSequential bands\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nAbove baseline\nBelow baseline\nDiverging\nAbove / below baseline\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll rows.\nHover\nVertical crosshair across rows; tooltip with the exact value of every row.\nRow focus\nClick row → expands into Chart/Line for that series.\nLoading\nSkeleton rows.\nMissing data\nTrack shows through; tooltip says “no data”.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\nTablet · 834\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\nWeb · 1440\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nLow\nMedium\nHigh\nPositive\nToshkent\nSamarqand\nBuxoro\nFarg‘ona\n00:00\n06:00\n12:00\n18:00\n24:00\nAbove baseline\nBelow baseline\nDiverging\nUsage\nRules that keep the chart honest and readable.\nSame band size for every row, stated in the legend.\nRow height ≥ 24 px on mobile; fewer rows rather than thinner ones.\nSort rows by peak time or total, not alphabetically, when the pattern matters.\nAlways give the exact value in the tooltip.\nHow to read it\nDarker = higher. Each band is folded on top of the one below, so a full dark row means the value passed 3 bands.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nDense time series: each row folds its value into 3 equal-height colour bands, so many series fit in little space. Diverging mirrors negative values in a secon"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; qatorlar orasidagi bo'shliq shaffof. Figma'da set o'ramasi fonini spec'dan ajratish kerak."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend (LegendItem) komponentida."
+    }
+  ]
+}

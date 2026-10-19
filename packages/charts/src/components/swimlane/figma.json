@@ -1,0 +1,114 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Swimlane",
+      "id": "1263:2885",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Variant": ["Horizontal", "Vertical"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 900,
+        "h": 400
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/sheet",
+          "border/hairline",
+          "dataviz/label",
+          "fill/inverse",
+          "surface/card",
+          "text/accent",
+          "text/inverse",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/S", "Label/M"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/16",
+          "scale/160",
+          "scale/2",
+          "scale/56",
+          "scale/6",
+          "scale/720",
+          "scale/8",
+          "scale/900"
+        ]
+      },
+      "sizes": [1, 2, 6, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Cross-functional flow: each lane is an actor (person, system, AI agent), steps are Diagram/Node shapes on a bg/sheet canvas, connectors are orthogonal with arrowheads and Yes / No pills. Horizontal for web and print, Vertical for narrow screens. 2–6 lanes, ≤ 12 steps. React: <Swimlane lanes={string[]} steps={[{ id, lane, shape, label }]} edges={[{ from, to, label }]} direction=\"horizontal "
+    }
+  ],
+  "doc": {
+    "Diagram/Swimlane": {
+      "tokens": [
+        "bg/sheet",
+        "border/hairline",
+        "chart/grid/stroke",
+        "chart/line/stroke",
+        "dataviz/label",
+        "dataviz/negative",
+        "fill/inverse",
+        "radius/full",
+        "radius/surface/md",
+        "radius/surface/sm",
+        "scale/16",
+        "scale/160",
+        "scale/2",
+        "scale/56",
+        "scale/6",
+        "scale/720",
+        "scale/8",
+        "scale/900",
+        "shadow/soft",
+        "surface/card",
+        "text/secondary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Swimlane\nCross-functional flow: each lane is an actor (person, system, AI agent), steps are Diagram/Node shapes linked by orthogonal connectors. 2 variants.\nOverview\nWhat it is and when to reach for it.\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nWhen to use\nProcesses that hand off between people, systems and AI agents (loan approval, onboarding, support).\nShow who owns each step and where waiting or decisions happen.\nVertical on narrow screens; Horizontal for web, slides and print.\nAnatomy\nNumbered layers of the default variant.\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\n1\nCanvas\nbg/sheet · radius/surface/md\n2\nLane name + divider\nLabel/M · text/secondary, border/hairline\n3\nStep\nDiagram/Node · Terminal · Process · Decision\n4\nConnector\nOrthogonal · dataviz/label · chart/line/stroke + arrow\n5\nBranch pill\nYes / No · surface/card pill · Caption/S\nVariants\n2 variants · Variant = Horizontal | Vertical\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nHorizontal\nLanes as rows · 900\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nVertical\nLanes as columns · 720\nSizes\nDiagrams keep their geometry; width comes from a Dimension token, narrow screens get the narrow variant.\nToken\nMobile\nTablet\nWeb\nscale/900\n900 px\n900 px\n900 px\nscale/720\n720 px\n720 px\n720 px\nscale/160\n160 px\n160 px\n160 px\nscale/56\n56 px\n56 px\n56 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll steps and connectors.\nHover step\nIncoming and outgoing connectors highlighted.\nActive step\nLive process: current step gets Diagram/Agent node Running state.\nError path\nFailed branch connector in dataviz/negative.\nLoading\nSkeleton lanes.\nDevices\nEach device shows the variant meant for it; wide canvases are scaled, never stretched.\nMobile · 390\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nTablet · 834\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nWeb · 1440\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nHorizontal\nClient\nApp\nAI agent\nBackoffice\nYes\nNo\nApply for loan\nValidate form\nScore risk\nApprove?\nShow offer\nSign contract\nExplain decline\nVertical\nUsage\nRules that keep the diagram readable.\n2–6 lanes, ≤ 12 steps; split longer processes.\nOne start (Terminal) and clearly marked ends.\nEvery Decision has labelled exits (Yes / No).\nConnectors are orthogonal and never cross a node.\nAI agents are lanes too\nGive an AI agent its own lane so reviewers"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-accent-soft",
+      "reason": "Decision tuguni foni — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-inverse",
+      "reason": "Terminal tuguni — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Process foni va Yes / No pill — nested DiagramNode / DiagramConnector chizadi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-accent",
+      "reason": "Decision matni — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-inverse",
+      "reason": "Terminal matni — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "effect-missing",
+      "match": "Elevation/1",
+      "reason": "Process soyasi — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    }
+  ]
+}

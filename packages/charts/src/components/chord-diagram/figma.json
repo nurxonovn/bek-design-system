@@ -1,0 +1,66 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Chord",
+      "id": "1255:39658",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Focus"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/categorical/06",
+          "dataviz/neutral",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/S"],
+        "effect": [],
+        "dimension": ["chart/gap", "radius/surface/md", "scale/200", "scale/480"]
+      },
+      "sizes": [1, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Two-way flows between 3–10 groups: outer arcs show each group’s total, ribbons the flow between a pair (width at each end = flow in that direction). Focus colours one group’s ribbons and greys the rest. Fixed geometry — the Chord frame is centred, never stretched. React: <ChordDiagram matrix={number[][]} labels={string[]} focus=\"Toshkent\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Chord": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/line/stroke",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/categorical/05",
+        "dataviz/categorical/06",
+        "dataviz/neutral",
+        "scale/200",
+        "scale/480",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Relation\nBEK\nDesign System\nChart/Chord\nTwo-way flows between groups: outer arcs show each group’s total, ribbons the flow between a pair. Focus colours one group’s ribbons and greys the rest. 2 variants.\nOverview\nWhat it is and when to reach for it.\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nWhen to use\nFlows between 3–10 groups in both directions (transfers between regions, migration between plans).\nWhen the question is “who exchanges most with whom?”.\nFocus when the story is one group’s connections.\nAnatomy\nNumbered layers of the default variant.\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\n1\nGroup arc\nOuter ring · categorical/01–06 · length ∝ outgoing total\n2\nRibbon\nFlow between a pair · layer opacity 0.42\n3\nGroup label\nCaption/S · text/secondary outside the ring\n4\nChord frame\n200 × 200, centred — fixed geometry, never stretched\nVariants\n2 variants · Variant = Default | Focus\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nDefault\nRibbon colour = larger source\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nFocus\nOne group, rest neutral\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll ribbons.\nHover arc\nThat group’s ribbons stay, others drop to 0.1; tooltip with in / out totals.\nHover ribbon\nTooltip: A → B and B → A values.\nFocus\nSelected group in categorical/01, everything else dataviz/neutral.\nLoading\nChart/Card Loading.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nTablet · 834\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nWeb · 1440\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nDefault\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nXorazm\nFocus\nUsage\nRules that keep the chart honest and readable.\n3–10 groups; beyond that use Sankey or a matrix.\nRibbons at layer opacity (BND-09), never paint opacity.\nOrder groups to minimise crossings (largest next to its biggest partner).\nAlways provide the matrix as a table fallback.\nReading width\nRibbon width at each end is the flow in that direction: A → B at A’s arc, B → A at B’s arc.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nTwo-way flows between groups: outer arcs show each group’s total, ribbons the flow between a pair. Focus colours one group’s ribbons and greys the rest.\nEncoding\nangle span = group total (outgoing), ribbon end width = directed flow, colour = group (categorical). Square matrix input.\nInteraction\nHover arc / ribbon → tooltip, others fade. Click arc → Focus. Keyboard: arrows move between groups; Enter focuses.\nAccessibility\naria-label with top 3 flows; matrix table fallback; Focus is also announced in text.\nC"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    }
+  ]
+}

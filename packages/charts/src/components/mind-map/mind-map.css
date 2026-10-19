@@ -1,0 +1,63 @@
+/* Figma 4.19 Diagram · Mind map — bg/sheet canvas, radius/surface/md; tugunlar DiagramNode (HTML),
+   bog'lanishlar ostidagi SVG'da kubik egri · chart/line/stroke · kategorik rang. */
+.bek-mind-map {
+  margin: 0;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-mind-map__canvas {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-bg-sheet);
+}
+
+.bek-mind-map__links {
+  position: absolute;
+  inset-block-start: 0;
+  left: 0;
+  display: block;
+  overflow: visible;
+}
+
+.bek-mind-map__link {
+  fill: none;
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+}
+
+.bek-mind-map__node {
+  position: absolute;
+}
+
+/* Shox nuqtasi va barg nuqtasi — shox rangida, chart/point-size */
+.bek-mind-map__dot,
+.bek-mind-map__leaf-dot {
+  flex: none;
+  inline-size: var(--bek-chart-point-size);
+  block-size: var(--bek-chart-point-size);
+  border-radius: var(--bek-radius-full);
+}
+
+.bek-mind-map__dot {
+  position: absolute;
+  translate: -50% -50%;
+}
+
+/* Barg — nuqta + Body/S · text/primary */
+.bek-mind-map__leaf {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  translate: 0 -50%;
+  color: var(--bek-text-primary);
+  white-space: nowrap;
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  font-weight: var(--bek-weight-regular);
+}
