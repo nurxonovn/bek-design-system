@@ -1,0 +1,77 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Radial bar",
+      "id": "1241:21504",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Progress"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Headline/M", "Label/S"],
+        "effect": [],
+        "dimension": ["chart/gap", "radius/surface/md", "scale/200", "scale/480", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Compact progress comparison: one ring per category, all on the same 0–100% scale, track in dataviz/track. Default: up to 4 rings with a legend and values; Progress: 2–3 goal rings with the overall value in the centre. Rings are read by length, so keep the order stable (largest outside). React: <RadialBarChart data variant=\"default|progress\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Radial bar": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/track",
+        "scale/12",
+        "scale/16",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Radial bar\nCompact progress comparison — one ring per category on the same 0–100% scale. 2 variants.\nOverview\nWhat it is and when to reach for it.\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\nWhen to use\n3–4 progress values side by side in a small space (goals, plan completion).\nProgress: personal goal rings with the overall value in the centre.\nNot for precise comparison of close values — use Chart/Bar.\nAnatomy\nNumbered layers of the default variant.\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\n1\nTrack\ndataviz/track ring\n2\nValue arc\ncategorical colour, starts at 12 o’clock\n3\nLegend\nChart/Legend item + value\n4\nCentre\nHeadline/M + Caption (Progress)\nVariants\n2 variants · Variant = Default | Progress\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\nDefault\n≤ 4 rings + legend\n75%\nweekly goal\nMove\n76%\nLearn\n58%\nSave\n92%\nProgress\n2–3 goal rings\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nscale/12\n12 px\n12 px\n12 px\nscale/16\n16 px\n16 px\n16 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll rings.\nHover\nRing and its legend row highlighted, others 40%.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\nTablet · 834\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\nWeb · 1440\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nCards\n82%\nTransfers\n64%\nLoans\n47%\nDeposits\n31%\nDefault\n75%\nweekly goal\nMove\n76%\nLearn\n58%\nSave\n92%\nProgress\nUsage\nRules that keep the chart honest and readable.\nLargest value outside, keep the order stable between periods.\nValues always printed in the legend — arc length alone is hard to read.\nMax 4 rings.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nCompact progress comparison — one ring per category on the same 0–100% scale.\nEncoding\narc length ← value / max · colour ← category\nInteraction\nHover highlights a ring.\nAccessibility\nList of “Cards 82%” items.\nComponent\n<RadialBarChart data variant=\"default|progress\" />\nData shape\n{ \"items\": [ { \"label\": \"Cards\", \"value\": 0.82 }, { \"label\": \"Transfers\", \"value\": 0.64 } ], \"variant\": \"default | progress\", \"center\": \"75%\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Progress\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nPlot · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nTrack · Cards · Fill\ndataviz/track\n#E2E2E9 / #2D2D31\n--bek-dataviz-track\nValue · Cards · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nValue · Transfers · Fill\ndataviz/categorical/02\n#01B5C1 / #02ACB7\n--bek-dataviz-categorical-02\nValue"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni — ichki LegendItem / ChartLegend komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki LegendItem / ChartLegend komponentida."
+    }
+  ]
+}

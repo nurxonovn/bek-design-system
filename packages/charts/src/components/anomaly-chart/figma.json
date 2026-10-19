@@ -1,0 +1,112 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Anomaly",
+      "id": "1212:299",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Band"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 300
+      },
+      "tokens": {
+        "color": [
+          "dataviz/ai/soft",
+          "dataviz/categorical/01",
+          "dataviz/label",
+          "dataviz/uncertainty/95",
+          "status/warning/soft",
+          "surface/card",
+          "text/secondary",
+          "text/utility"
+        ],
+        "text": ["Caption/L", "Caption/S", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/height/md",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/32",
+          "scale/4",
+          "scale/40",
+          "scale/480",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 6, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Time series where a model flags outliers. Anomaly points use Chart/Data point State=Anomaly (dataviz/anomaly) and are explained by an AI insight line under the chart. Band shows the expected range the model learned (dataviz/uncertainty/95). Max 3 flagged points per view; each needs a reason in its tooltip. React: <AnomalyChart data anomalies expected? insight />"
+    }
+  ],
+  "doc": {
+    "Chart/Anomaly": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "chart/point/size-active",
+        "dataviz/ai/soft",
+        "dataviz/categorical/01",
+        "dataviz/uncertainty/95",
+        "radius/full",
+        "radius/surface/sm",
+        "scale/12",
+        "scale/32",
+        "scale/4",
+        "scale/40",
+        "scale/480",
+        "scale/6",
+        "scale/8",
+        "status/warning/soft"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Anomaly\nTime series where a model flags outliers and explains them in an AI insight line. 2 variants.\nOverview\nWhat it is and when to reach for it.\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nWhen to use\nMonitoring metrics where unusual values need attention (fraud, outages, spikes).\nBand: also show the expected range the model learned.\nNot for highlighting records you choose yourself — use Annotation.\nAnatomy\nNumbered layers of the default variant.\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\n1\nLegend\nSeries · Anomaly · Expected range\n2\nExpected range\ndataviz/uncertainty/95 (Band)\n3\nSeries\ndataviz/categorical/01\n4\nAnomaly points\nChart/Data point Anomaly\n5\nAI insight\nChart/AI insight Inline\nVariants\n2 variants · Variant = Default | Band\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nDefault\nRevenue\nAnomaly\nExpected range\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nBand\nwith expected range\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/point/size-active\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nFlagged points + insight.\nHover anomaly\nTooltip: value, expected, deviation, reason.\nDismissed\nUser marks “not an issue”; point returns to Default.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nTablet · 834\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nWeb · 1440\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nRevenue\nAnomaly\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nDefault\nRevenue\nAnomaly\nExpected range\n100\n75\n50\n25\n0\n1 Jul\n3 Jul\n5 Jul\n7 Jul\n9 Jul\n11 Jul\n2 anomalies: spike on 7 Jul (+52%), drop on 10 Jul (−52%) vs expected\nBand\nUsage\nRules that keep the chart honest and readable.\nMax 3 flagged points per view; rank the rest in a list.\nEvery flagged point needs a reason in the tooltip.\nLet users dismiss false alarms — feedback improves the model.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nTime series where a model flags outliers and explains them in an AI insight line.\nEncoding\nx ← time · y ← value · flag ← model score > threshold · band ← expected range\nInteraction\nHo"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-dataviz-ai-soft",
+      "reason": "AI insight qatori foni — ichki AiInsightLine (generated-chart/AiInsightLine.tsx, uslubi generated-chart.css) da."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-utility",
+      "reason": "AI insight matni va sparkles — ichki AiInsightLine (generated-chart) da."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/S",
+      "reason": "AI insight matni Label/S — ichki AiInsightLine (generated-chart.css) da."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni rangi — ichki ChartLegend (LegendItem) komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni — ichki ChartLegend (LegendItem) komponentida."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-dataviz-anomaly",
+      "reason": "Anomaliya nuqtasi — Chart/Data point State=Anomaly (dataviz/anomaly), Figma description shuni talab qiladi; instance ichi bo'lgani uchun spec rangida yo'q."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Funnel",
+      "id": "1215:125",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Stepped", "Horizontal"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 244
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/sequential/100",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/bar/gap",
+          "chart/bar/radius",
+          "chart/bar/thickness",
+          "chart/height/md",
+          "radius/surface/md",
+          "scale/12",
+          "scale/280",
+          "scale/4",
+          "scale/480",
+          "scale/80"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Conversion through ordered steps (onboarding, checkout, loan application). Stepped = bars + flow area between steps with step-to-step conversion; Horizontal = centred bars with count and share of the first step. 3–7 steps, same unit for all. The biggest drop gets the AI insight or annotation. React: <FunnelChart steps variant=\"stepped|horizontal\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Funnel": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/bar/radius",
+        "chart/bar/thickness",
+        "chart/height/md",
+        "dataviz/categorical/01",
+        "dataviz/sequential/100",
+        "scale/480",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Flow\nBEK\nDesign System\nChart/Funnel\nConversion through ordered steps — onboarding, checkout, loan application. 2 variants.\nOverview\nWhat it is and when to reach for it.\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\nWhen to use\n3–7 ordered steps with the same unit (users, applications).\nStepped: show step-to-step conversion. Horizontal: show share of the first step.\nNot for unordered categories — use Bar.\nAnatomy\nNumbered layers of the default variant.\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\n1\nBar\ndataviz/categorical/01 · chart/bar/radius on top\n2\nFlow area\ndataviz/sequential/100\n3\nConversion\nLabel/S step-to-step %\n4\nStep labels\nCaption/M name + Label/S count\nVariants\n2 variants · Variant = Stepped | Horizontal\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\nStepped\nstep-to-step %\nVisited\n12 400\n100%\nSigned up\n5 210\n42%\nVerified\n3 880\n31%\nApplied\n1 940\n16%\nApproved\n1 120\n9%\nHorizontal\nshare of first step\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/bar/thickness\n16 px\n24 px\n32 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll steps.\nHover step\nTooltip: count, conversion from previous and from first.\nBiggest drop\nAnnotation or AI insight marks it.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\nTablet · 834\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\nWeb · 1440\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n42%\n74%\n50%\n58%\nVisited\n12 400\nSigned up\n5 210\nVerified\n3 880\nApplied\n1 940\nApproved\n1 120\nStepped\nVisited\n12 400\n100%\nSigned up\n5 210\n42%\nVerified\n3 880\n31%\nApplied\n1 940\n16%\nApproved\n1 120\n9%\nHorizontal\nUsage\nRules that keep the chart honest and readable.\nSteps in process order, never sorted by value.\nPoint out the biggest drop — that is where the product work is.\nCounts in uz-UZ format (12 400).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nConversion through ordered steps — onboarding, checkout, loan application.\nEncoding\nx ← step order · height ← count · label ← count[i] / count[i−1]\nInteraction\nHover tooltip; click a step to see the people who dropped.\nAccessibility\n“Signed up 5 210, 42% of visited”.\nComponent\n<FunnelChart steps variant=\"stepped|horizontal\" />\nData shape\n{ \"steps\": [ { \"label\": \"Visited\", \"value\": 12400 }, { \"label\": \"Signed up\", \"value\": 5210 } ], \"variant\": \"stepped | horizontal\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nStepped · Horizontal\nStepped\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → "
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    }
+  ]
+}

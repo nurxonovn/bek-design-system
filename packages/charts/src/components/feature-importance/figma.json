@@ -1,0 +1,78 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Feature importance",
+      "id": "1244:21745",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Bar", "Waterfall"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/diverging/neg-3",
+          "dataviz/diverging/pos-3",
+          "dataviz/neutral",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/2",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Explains one model decision (SHAP): which inputs pushed the score up or down. Bar: signed contributions around zero; Waterfall: from base rate through each feature to the final prediction. Diverging colours (pos-3 / neg-3), never categorical. Show top 7, group the rest as “Other features”. React: <FeatureImportance base contributions={[{ feature, value }]} variant=\"bar|waterfall\" /&gt"
+    }
+  ],
+  "doc": {
+    "Chart/Feature importance": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/height/md",
+        "chart/legend/gap",
+        "dataviz/axis",
+        "dataviz/diverging/neg-3",
+        "dataviz/diverging/pos-3",
+        "scale/2",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Feature importance\nExplains one model decision: which inputs pushed the score up or down (SHAP). 2 variants.\nOverview\nWhat it is and when to reach for it.\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\nWhen to use\nCredit scoring, fraud flags, recommendations — any AI decision a person may question.\nBar: signed contributions. Waterfall: base rate → each feature → prediction.\nGlobal model importance across all decisions → Chart/Bar.\nAnatomy\nNumbered layers of the default variant.\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\n1\nLegend\nRaises · Lowers\n2\nFeature label\nCaption/M · text/secondary\n3\nContribution bar\ndataviz/diverging/pos-3 · neg-3\n4\nZero / connectors\ndataviz/axis\n5\nValue\nsigned, true minus −\nVariants\n2 variants · Variant = Bar | Waterfall\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\nBar\nsigned contributions\nRaises\nLowers\nBase → prediction\nBase rate\n0,35\nIncome\n+0,25\nPayment history\n+0,19\nDebt ratio\n−0,16\nAccount age\n+0,07\nRecent inquiries\n−0,05\nEmployment\n+0,04\nRegion\n−0,02\nPrediction\n0,66\nWaterfall\nbase → prediction\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nscale/2\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nTop 7 features.\nExpanded\n“Show all” lists remaining features; the rest are grouped as “Other features” by default.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\nTablet · 834\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\nWeb · 1440\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nRaises score\nLowers score\nIncome\n+0,42\nPayment history\n+0,31\nDebt ratio\n−0,27\nAccount age\n+0,12\nRecent inquiries\n−0,09\nEmployment\n+0,06\nRegion\n−0,03\nBar\nRaises\nLowers\nBase → prediction\nBase rate\n0,35\nIncome\n+0,25\nPayment history\n+0,19\nDebt ratio\n−0,16\nAccount age\n+0,07\nRecent inquiries\n−0,05\nEmployment\n+0,04\nRegion\n−0,02\nPrediction\n0,66\nWaterfall\nUsage\nRules that keep the chart honest and readable.\nShow the top 7 features; group the rest as “Other features”.\nDiverging colours only — never categorical.\nUse plain-language feature names (“Debt ratio”, not “dti_v2”).\nWaterfall must end exactly at the shown prediction.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni — ichki ChartLegend (LegendItem) komponentida."
+    }
+  ]
+}

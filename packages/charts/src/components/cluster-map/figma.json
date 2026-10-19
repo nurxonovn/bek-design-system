@@ -1,0 +1,85 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Cluster map",
+      "id": "1244:21989",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Labeled"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/06",
+          "dataviz/label",
+          "fill/inverse",
+          "surface/card",
+          "text/inverse",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/legend/gap",
+          "radius/full",
+          "radius/surface/md",
+          "scale/2",
+          "scale/200",
+          "scale/4",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Embedding / segmentation view: each dot is an item projected to 2D (UMAP, t-SNE), colour = cluster, soft hull at layer opacity 10%. Labeled adds AI-generated cluster names. Axes have no meaning — never show tick values; say what was projected in the caption. React: <ClusterMap points={[{ x, y, cluster }]} clusters={[{ id, label }]} />"
+    }
+  ],
+  "doc": {
+    "Chart/Cluster map": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/06",
+        "dataviz/label",
+        "fill/inverse",
+        "scale/200",
+        "scale/480",
+        "scale/8"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Cluster map\nEmbedding / segmentation view: items projected to 2D, coloured by cluster. 2 variants.\nOverview\nWhat it is and when to reach for it.\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nWhen to use\nCustomer segments, document topics, embedding exploration.\nLabeled: AI-generated names for each cluster.\nNever to read exact distances — axes have no units.\nAnatomy\nNumbered layers of the default variant.\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\n1\nLegend\nclusters (Default)\n2\nHull\ncluster colour, layer opacity 10%\n3\nPoint\ncluster colour, r 3\n4\nCluster label\nfill/inverse pill (Labeled)\n5\nCaption\nwhat was projected\nVariants\n2 variants · Variant = Default | Labeled\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nDefault\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nLabeled\nAI-named clusters\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nscale/8\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll clusters.\nHover point\nTooltip with item name and cluster.\nFocus cluster\nClick legend: other clusters 25%.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nTablet · 834\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nWeb · 1440\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nDefault\nSavers\nYoung spenders\nBusiness\nTravelers\n2D projection of 12 features · AI-named clusters\nLabeled\nUsage\nRules that keep the chart honest and readable.\nNo tick values — the axes of a projection have no meaning.\nCaption says what was projected and how (“UMAP of 12 features”).\nCluster names from AI are marked as AI and editable.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nEmbedding / segmentation view: items projected to 2D, coloured by cluster.\nEncoding\nx, y ← 2D projection · colour ← cluster\nInteraction\nHover tooltip; click cluster to focus; lasso select (Web).\nAccessibility\nList of clusters with size and example items.\nComponent\n<ClusterMap points={[{ x, y, cluster }]} clusters={[{ id, label }]} />\nData shape\n{ \"method\": \"umap\", \"points\": [ { \"x\": 0.12, \"y\": -0.4, \"cluster\": \"savers\", \"label\": \"Client 1042\" } ], \"clusters\": [ { \"id\": \"savers\", \"label\": \"Savers\", \"size\": 1240 } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Labeled\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni rangi — ichki ChartLegend (LegendItem) komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni — ichki ChartLegend (LegendItem) komponentida."
+    }
+  ]
+}

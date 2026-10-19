@@ -1,0 +1,66 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Lollipop",
+      "id": "1202:267",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "radius/full",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/480",
+          "scale/80",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Ranking with many categories — lighter than bars. Stem = dataviz/track, head = series colour. Sort descending. React: <LollipopChart data />."
+    }
+  ],
+  "doc": {
+    "Chart/Lollipop": {
+      "tokens": [
+        "chart/bar/gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/point/size",
+        "dataviz/categorical/01",
+        "dataviz/track",
+        "radius/full",
+        "scale/12",
+        "scale/16",
+        "scale/480",
+        "scale/80",
+        "surface/card",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Lollipop\nRanking with many categories — a thin stem and a dot read faster than heavy bars. 1 variant.\nOverview\nWhat it is and when to reach for it.\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\nWhen to use\nRanking 6–20 categories (skills, branches, products).\nValues are close and bars would form a wall of colour.\nNot for parts of a whole — use Waffle or Donut.\nAnatomy\nNumbered layers of the default variant.\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\n1\nLabel\nBody/S · text/secondary\n2\nStem\ndataviz/track · 2 px\n3\nHead\nseries colour · chart/point/size\n4\nValue\nLabel/S · text/primary\nVariants\n1 variant · Variant = Default\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/point/size\n8 px\n8 px\n8 px\nchart/bar/gap\n8 px\n12 px\n16 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll heads in the series colour.\nHover\nRow highlighted, others 40%; tooltip optional (value is already printed).\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\nTablet · 834\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\nWeb · 1440\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nDesign\n88\nFrontend\n74\nBackend\n69\nQA\n52\nDevOps\n37\nData\n31\nDefault\nUsage\nRules that keep the chart honest and readable.\nSort descending; the top item is the story.\nStems start at 0 — same honesty rule as bars.\nValue printed at the end of every row — no tooltip needed.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nRanking with many categories — a thin stem and a dot read faster than heavy bars.\nEncoding\ny ← category (sorted) · x ← value from 0 · colour ← series\nInteraction\nHover highlights the row; click drills down.\nAccessibility\nReads as a ranked list: “1. Design, 88”.\nComponent\n<LollipopChart data />.\nData shape\n{ \"items\": [ { \"label\": \"Design\", \"value\": 88 }, { \"label\": \"Frontend\", \"value\": 74 } ], \"sort\": \"desc\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nRows · Gap\nscale/16\n16\n--bek-scale-16\nRow · Gap\nscale/12\n12\n--bek-scale-12\nLabel · Width\nscale/80\n80\n--bek-scale-80\nLabel · Fill\ntext/secondary\n#505053 / #D4D4D6\n--bek-text-secondary\nTrack · Height\nscale/16\n16\n--bek-scale-16\nValue · Fill\ntext/primary\n#323233 / #F3F3F3\n--bek-text-primary\nStem · Radius\nradius/full\n9999\n--bek-radius-full\nStem · Fill\ndataviz/track\n#E2E2E9 / #2D2D31\n--bek-dataviz-track\nPoint · Stroke width\nstroke/strong\n2\n--bek-stroke-strong\nPoint · Fill\nda"
+    }
+  },
+  "accepted": []
+}

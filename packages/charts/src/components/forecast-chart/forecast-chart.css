@@ -1,0 +1,117 @@
+.bek-forecast-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+/* Prediction zone: dataviz/grid fon, chap cheti uzuq dataviz/ai/accent ("Today" belgisi). */
+.bek-forecast-chart__zone rect {
+  fill: var(--bek-dataviz-grid);
+}
+
+.bek-forecast-chart__today {
+  stroke: var(--bek-dataviz-ai-accent);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-dasharray: 4 4;
+}
+
+/* Ishonch oraliqlari — kengidan torigacha: 95 → 80 → 50. */
+.bek-forecast-chart__band--95 {
+  fill: var(--bek-dataviz-uncertainty-95);
+}
+
+.bek-forecast-chart__band--80 {
+  fill: var(--bek-dataviz-uncertainty-80);
+}
+
+.bek-forecast-chart__band--50 {
+  fill: var(--bek-dataviz-uncertainty-50);
+}
+
+/* Prognoz chizig'i — doim AI rangi (dataviz/ai/accent), uzuq 6/4. */
+.bek-forecast-chart__line {
+  fill: none;
+  stroke: var(--bek-dataviz-ai-accent);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-dasharray: 6 4;
+  stroke-linecap: round;
+}
+
+.bek-forecast-chart__actual {
+  fill: none;
+  stroke: var(--bek-chart-series-1, var(--bek-dataviz-categorical-01));
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bek-forecast-chart__target {
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-dasharray: 6 4;
+}
+
+/* Oxirgi haqiqiy nuqta: accent/soft halo + surface/card halqa. */
+.bek-forecast-chart__halo {
+  fill: var(--bek-accent-soft);
+}
+
+.bek-forecast-chart__point {
+  fill: var(--bek-chart-series-1, var(--bek-dataviz-categorical-01));
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-scale-2);
+}
+
+.bek-forecast-chart__hit {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: var(--bek-scale-8);
+}
+
+.bek-forecast-chart__hit:hover {
+  fill: var(--bek-dataviz-ai-accent);
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-scale-2);
+}
+
+/* Annotation tag "Today": fill/inverse pill, text/inverse. */
+.bek-forecast-chart__tag rect {
+  fill: var(--bek-fill-inverse);
+}
+
+.bek-forecast-chart__tag text {
+  fill: var(--bek-text-inverse);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+/* Zone yorlig'i — sparkles + "Forecast", text/secondary, pastki o'ng burchakda. */
+.bek-forecast-chart__zone-label text {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-forecast-chart__sparkles {
+  color: var(--bek-text-secondary);
+}
+
+/* O'q yozuvi — Caption/S · dataviz/label (chart.css). */
+.bek-forecast-chart .bek-chart__tick {
+  fill: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+}
+
+/* Recalculating: oraliqlar va prognoz 40%. */
+.bek-forecast-chart--recalculating .bek-forecast-chart__forecast {
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-forecast-chart__forecast {
+    transition: opacity var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
+  }
+}

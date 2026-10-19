@@ -1,0 +1,61 @@
+.bek-cluster-map__stage {
+  position: relative;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+}
+
+/* Hull — klaster rangi, qatlam shaffofligi 10%; nuqta — klaster rangi 85%, r 3. */
+.bek-cluster-map__hull {
+  fill: currentColor;
+  opacity: 0.1;
+}
+
+.bek-cluster-map__point {
+  fill: currentColor;
+  opacity: 0.85;
+}
+
+.bek-cluster-map__cluster {
+  transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+/* Hover yoki legend fokus: boshqa klasterlar 25%. */
+.bek-cluster-map__stage svg:hover .bek-cluster-map__cluster:not(:hover),
+.bek-cluster-map--focused .bek-cluster-map__cluster:not(.bek-cluster-map__cluster--active) {
+  opacity: 0.25;
+}
+
+/* Labeled: AI nomi — fill/inverse pill, text/inverse · Label/S. */
+.bek-cluster-map__tag {
+  position: absolute;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-inverse);
+  color: var(--bek-text-inverse);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+[dir='rtl'] .bek-cluster-map__tag {
+  transform: translate(50%, -50%);
+}
+
+/* Izoh — nima proyeksiya qilingani: Caption/S · dataviz/label. */
+.bek-cluster-map__caption {
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-cluster-map__cluster {
+    transition: none;
+  }
+}

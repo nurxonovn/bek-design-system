@@ -1,0 +1,86 @@
+.bek-cohort-heatmap__body {
+  display: flex;
+  align-items: flex-start;
+  min-inline-size: 0;
+}
+
+.bek-cohort-heatmap__labels {
+  flex: none;
+}
+
+/* Tor ekranda kataklar gorizontal skroll qiladi, kogorta ustuni joyida (Figma Mobile). */
+.bek-cohort-heatmap__scroll {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  overflow-x: auto;
+}
+
+/* Sarlavha — Caption/S · dataviz/label */
+.bek-cohort-heatmap__head {
+  fill: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+/* Kogorta nomi va hajmi — Caption/M */
+.bek-cohort-heatmap__cohort,
+.bek-cohort-heatmap__size {
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-cohort-heatmap__cohort {
+  fill: var(--bek-text-secondary);
+}
+
+.bek-cohort-heatmap__size {
+  fill: var(--bek-text-tertiary);
+}
+
+/* Katak qiymati — Caption/S, tabular raqamlar */
+.bek-cohort-heatmap__cell text {
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* CMP-07: faqat 200 · 300 · 600 · 700 (textCellLevel); matn 200/300 → text/primary, 600/700 → text/inverse (textOnCell). */
+.bek-cohort-heatmap__cell--200 rect {
+  fill: var(--bek-dataviz-sequential-200);
+}
+
+.bek-cohort-heatmap__cell--300 rect {
+  fill: var(--bek-dataviz-sequential-300);
+}
+
+.bek-cohort-heatmap__cell--600 rect {
+  fill: var(--bek-dataviz-sequential-600);
+}
+
+.bek-cohort-heatmap__cell--700 rect {
+  fill: var(--bek-dataviz-sequential-700);
+}
+
+.bek-cohort-heatmap__cell--200 text,
+.bek-cohort-heatmap__cell--300 text {
+  fill: var(--bek-text-primary);
+}
+
+.bek-cohort-heatmap__cell--600 text,
+.bek-cohort-heatmap__cell--700 text {
+  fill: var(--bek-text-inverse);
+}
+
+/* Hover: qator ajraladi, katak konturi; <title> soni va foizi. */
+.bek-cohort-heatmap__row:hover .bek-cohort-heatmap__cell:not(:hover) {
+  opacity: 0.85;
+}
+
+.bek-cohort-heatmap__cell:hover rect {
+  stroke: var(--bek-text-primary);
+  stroke-width: var(--bek-chart-grid-stroke);
+}

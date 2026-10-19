@@ -1,0 +1,30 @@
+/* Chart/Data point — nuqta: seriya rangi + surface/card halqa (stroke/strong); Active/Anomaly — halo. */
+.bek-data-point {
+  --bek-chart-point-color: var(--bek-chart-series-1, var(--bek-dataviz-categorical-01));
+}
+
+.bek-data-point__dot {
+  r: calc(var(--bek-chart-point-size) / 2);
+  fill: var(--bek-chart-point-color);
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+.bek-data-point--active .bek-data-point__dot,
+.bek-data-point--anomaly .bek-data-point__dot {
+  r: calc(var(--bek-chart-point-size-active) / 2);
+}
+
+/* Halo: size-active + 2 × scale/4 = 20 */
+.bek-data-point__halo {
+  r: calc(var(--bek-chart-point-size-active) / 2 + var(--bek-scale-4));
+  fill: var(--bek-accent-soft);
+}
+
+.bek-data-point--anomaly .bek-data-point__dot {
+  fill: var(--bek-dataviz-anomaly);
+}
+
+.bek-data-point--anomaly .bek-data-point__halo {
+  fill: var(--bek-status-warning-soft);
+}

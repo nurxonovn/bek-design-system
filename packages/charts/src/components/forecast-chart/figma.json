@@ -1,0 +1,97 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Forecast",
+      "id": "1212:193",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Target"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 260
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "dataviz/ai/accent",
+          "dataviz/categorical/01",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/target",
+          "dataviz/uncertainty/80",
+          "dataviz/uncertainty/95",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/height/md",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "scale/160",
+          "scale/32",
+          "scale/4",
+          "scale/40",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Observed series (solid) continued by a model forecast (dashed, dataviz/ai/accent) inside a Prediction zone, with 80% and 95% confidence bands (dataviz/uncertainty/80 · 95). The \"Today\" marker splits data from prediction. Target adds the goal line. Never draw a forecast without its band; state the horizon in the title. React: <ForecastChart data forecast={{ from, points, bands: [0.8, 0"
+    }
+  ],
+  "doc": {
+    "Chart/Forecast": {
+      "tokens": [
+        "accent/soft",
+        "chart/axis/label-gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/ai/accent",
+        "dataviz/categorical/01",
+        "dataviz/grid",
+        "dataviz/uncertainty/80",
+        "dataviz/uncertainty/95",
+        "radius/full",
+        "scale/160",
+        "scale/32",
+        "scale/4",
+        "scale/40",
+        "scale/480",
+        "scale/8"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Forecast\nObserved series continued by a model forecast with 80% and 95% confidence bands inside a Prediction zone. 2 variants.\nOverview\nWhat it is and when to reach for it.\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nWhen to use\nShowing what a model expects next (revenue, demand, balance).\nTarget: comparing the forecast with a goal.\nNever without its uncertainty band.\nAnatomy\nNumbered layers of the default variant.\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\n1\nLegend\nActual · Forecast · 80% · 95%\n2\nActual line\ndataviz/categorical/01 · solid\n3\nToday marker\nChart/Annotation Marker\n4\nPrediction zone\nChart/Prediction zone\n5\nBands\ndataviz/uncertainty/80 · 95\n6\nForecast line\ndataviz/ai/accent · dashed 6/4\nVariants\n2 variants · Variant = Default | Target\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nDefault\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nTarget\nadds Grid line Target\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nActual + forecast + bands.\nHover\nTooltip shows forecast value with its 80% range (64–93).\nRecalculating\nBands and forecast line fade to 40% with a Spinner in the legend.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nTablet · 834\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nWeb · 1440\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nDefault\nActual\nForecast\n80% range\n95% range\n100\n75\n50\n25\n0\nForecast\nToday\nJan\nMar\nMay\nJul\nSep\nNov\nTarget\nUsage\nRules that keep the chart honest and readable.\nThe forecast starts exactly at the last actual point.\nShow both bands; say the horizon in the title (“next 4 months”).\nThe forecast colour is always AI (dataviz/ai/accent), never a series colour.\nHonesty\nA forecast without its band looks like a promise. Never hide the bands to “simplify”.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nObserved series continued by a model forecast with 80% and 95% confidence bands inside a Prediction zone.\nEncoding\nx ← time · y ← value · dash ← forecast · band ← [lo, hi] per level\nInteraction\nHover tooltip with range; legend toggles bands.\nAccessibility\nSummary: “Forecast for November 82, likely between 71 and 93 (80%)”.\nComponent\n<ForecastChart data forecast={{ from, points, bands: [0.8, 0.95] }} target? />\nData shape\n{ \"actual\": [ { \"x\": \"2026-07\", \"y\": 67 } ], \"forecast\": { \"from\": \""
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-dataviz-uncertainty-50",
+      "reason": "50% oraliq ixtiyoriy (`bands` ga 50 berilganda). Figma set faqat 80/95 ni ko'rsatadi; dataviz/uncertainty/50 tokeni bor — Figma'da 50% bandli namuna qo'shilsa spec'ga tushadi."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-fill-inverse",
+      "reason": "\"Today\" tegi — Chart/Annotation Marker qismining foni (instance ichi, extractor yig'maydi). Figma'da Annotation alohida komponent sifatida spec'ga kiritilishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-inverse",
+      "reason": "\"Today\" tegi matni — Chart/Annotation Marker qismi (instance ichi, extractor yig'maydi)."
+    }
+  ]
+}

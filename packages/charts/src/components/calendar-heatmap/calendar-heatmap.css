@@ -1,0 +1,103 @@
+/* Year: hafta kunlari ustuni joyida qoladi, to'r tor ekranda gorizontal aylanadi (Figma Mobile). */
+.bek-calendar-heatmap__body {
+  display: flex;
+  align-items: flex-start;
+  min-inline-size: 0;
+}
+
+.bek-calendar-heatmap__weekdays {
+  flex: none;
+  display: block;
+  overflow: visible;
+}
+
+.bek-calendar-heatmap__scroll {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  overflow-x: auto;
+}
+
+/* Nol — dataviz/track; darajalar — dataviz/sequential (Year 200 · 300 · 500 · 700, Month — CMP-07). */
+.bek-calendar-heatmap__day--track {
+  fill: var(--bek-dataviz-track);
+}
+.bek-calendar-heatmap__day--200 {
+  fill: var(--bek-dataviz-sequential-200);
+}
+.bek-calendar-heatmap__day--300 {
+  fill: var(--bek-dataviz-sequential-300);
+}
+.bek-calendar-heatmap__day--500 {
+  fill: var(--bek-dataviz-sequential-500);
+}
+.bek-calendar-heatmap__day--600 {
+  fill: var(--bek-dataviz-sequential-600);
+}
+.bek-calendar-heatmap__day--700 {
+  fill: var(--bek-dataviz-sequential-700);
+}
+
+.bek-calendar-heatmap__cell {
+  rx: var(--bek-scale-2);
+}
+
+.bek-calendar-heatmap--month .bek-calendar-heatmap__cell {
+  rx: var(--bek-radius-surface-sm);
+}
+
+.bek-calendar-heatmap__cell:hover {
+  stroke: var(--bek-border-focus);
+  stroke-width: var(--bek-scale-2);
+}
+
+/* Month sanasi — Caption/S; 200/300 va nol → text/primary, 600/700 → text/inverse (CMP-07). */
+.bek-calendar-heatmap__date {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.bek-calendar-heatmap__day--600 .bek-calendar-heatmap__date,
+.bek-calendar-heatmap__day--700 .bek-calendar-heatmap__date {
+  fill: var(--bek-text-inverse);
+}
+
+/* Less → More shkalasi — Caption/S · dataviz/label, oraliq scale/4, katak scale/10. */
+.bek-calendar-heatmap__scale {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-4);
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-calendar-heatmap__swatch {
+  inline-size: var(--bek-scale-10);
+  block-size: var(--bek-scale-10);
+  border-radius: var(--bek-scale-2);
+}
+
+.bek-calendar-heatmap__swatch--track {
+  background: var(--bek-dataviz-track);
+}
+.bek-calendar-heatmap__swatch--200 {
+  background: var(--bek-dataviz-sequential-200);
+}
+.bek-calendar-heatmap__swatch--300 {
+  background: var(--bek-dataviz-sequential-300);
+}
+.bek-calendar-heatmap__swatch--500 {
+  background: var(--bek-dataviz-sequential-500);
+}
+.bek-calendar-heatmap__swatch--600 {
+  background: var(--bek-dataviz-sequential-600);
+}
+.bek-calendar-heatmap__swatch--700 {
+  background: var(--bek-dataviz-sequential-700);
+}

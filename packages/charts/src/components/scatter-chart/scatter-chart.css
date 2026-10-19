@@ -1,0 +1,41 @@
+/* Nuqta — kategorik rang, qatlam shaffofligi 85%; Bubble — 60% (Figma Anatomy). */
+.bek-scatter-chart__point {
+  opacity: 0.85;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.bek-scatter-chart--bubble .bek-scatter-chart__point {
+  opacity: 0.6;
+}
+
+/* Hover: nuqta kattalashadi (chart/point/size → point/size-active), <title> qiymatni aytadi. */
+.bek-scatter-chart__point:hover {
+  opacity: 1;
+  transform: scale(1.5);
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-scale-2);
+}
+
+/* Trend line: dataviz/target uzuq chiziq, oraliq — dataviz/grid maydon. */
+.bek-scatter-chart__trend {
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-dasharray: 6 4;
+  stroke-linecap: round;
+}
+
+.bek-scatter-chart__band {
+  fill: var(--bek-dataviz-grid);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-scatter-chart__point {
+    transition: transform var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}
+
+/* O'q yozuvi Caption/S · dataviz/label (chart.css); legend Caption/L — ChartLegend. */
+.bek-scatter-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+}

@@ -1,0 +1,82 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Waffle",
+      "id": "1204:251",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/32",
+          "scale/4",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 32, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Share out of 100 — one cell = 1%. Easier to read than a pie for close values and works well on Mobile. Remainder on dataviz/track. React: <WaffleChart data />."
+    }
+  ],
+  "doc": {
+    "Chart/Waffle": {
+      "tokens": [
+        "chart/height/md",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/track",
+        "scale/12",
+        "scale/16",
+        "scale/2",
+        "scale/32",
+        "scale/4",
+        "scale/480",
+        "scale/8",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Composition\nBEK\nDesign System\nChart/Waffle\nShare out of 100 — one cell is 1%. Easier to read than a pie for close values and works well on Mobile. 1 variant.\nOverview\nWhat it is and when to reach for it.\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\nWhen to use\nA share or 2–4 shares that must be compared precisely.\nProgress and goals in friendly, countable units.\nNot for more than 4 categories.\nAnatomy\nNumbered layers of the default variant.\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\n1\nCell\n10 × 10 grid · categorical colour\n2\nRemainder\ndataviz/track\n3\nLegend\nChart/Legend item · Square\nVariants\n1 variant · Variant = Default\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nscale/2\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nFilled left-to-right, bottom-to-top.\nHover\nCategory cells highlighted, others 40%.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\nTablet · 834\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\nWeb · 1440\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nMobile app\n46%\nWeb\n28%\nBranch\n16%\nOther\n10%\nDefault\nUsage\nRules that keep the chart honest and readable.\nAlways 100 cells; round shares to whole percent and fix the sum to 100.\nFill order: bottom-left → right, row by row.\nMax 4 categories + remainder.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nShare out of 100 — one cell is 1%. Easier to read than a pie for close values and works well on Mobile.\nEncoding\ncells ← round(share × 100) · colour ← category\nInteraction\nHover a legend row or cell to highlight its category.\nAccessibility\n“38 percent Cards, 22 percent Transfers, 40 percent other”.\nComponent\n<WaffleChart data />.\nData shape\n{ \"parts\": [ { \"label\": \"Cards\", \"share\": 0.38 }, { \"label\": \"Transfers\", \"share\": 0.22 } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/32\n32\n--bek-scale-32\nContainer · Width\nscale/480\n480\n--bek-scale-480\nGrid · Gap\nscale/4\n4\n--bek-scale-4\nGrid · Row gap\nscale/4\n4\n--bek-scale-4\nLegend · Gap\nscale/12\n12\n--bek-scale-12\nCell · Width\nscale/16\n16\n--bek-scale-16\nCell · Height\nscale/16\n16\n--bek-scale-16\nCell · Radius\nscale/4\n4\n--bek-scale-4\nCell · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nCell · Fill\ndataviz/categorical/02\n#01B5C1 / #02ACB7\n--bek-dataviz-categorical-02\nCell · Fill\ndataviz/categorical/03\n#FF983C / #E8852C\n--bek-dataviz-categorical-03\nCell · Fill\ndataviz/track\n#E2E2E9 / #2D2D31\n--bek-dataviz-track\nChart/Legend item · Gap\nscale/8\n8\n--bek-scale-8\nValue · Fill\ntext/primary\n#323233 / #F3F3F3\n--bek-text-prima"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend yozuvi rangi — ichki LegendItem/ChartLegend (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Square)."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend yozuvi Caption/L — ichki LegendItem/ChartLegend (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Square)."
+    }
+  ]
+}

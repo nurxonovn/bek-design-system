@@ -1,0 +1,51 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Connector",
+      "id": "1217:116",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Yes"
+        },
+        "Variant": ["Straight", "Dashed", "Elbow", "Labeled"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 120,
+        "h": 10
+      },
+      "tokens": {
+        "color": ["bg/base", "bg/sheet", "dataviz/label", "text/secondary"],
+        "text": ["Caption/M"],
+        "effect": [],
+        "dimension": ["chart/line/stroke", "radius/full", "radius/surface/md", "scale/2", "scale/6"]
+      },
+      "sizes": [1, 2, 6, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Arrow between Diagram nodes. Straight = main flow, Dashed = optional / async, Elbow = orthogonal turn (prefer over diagonals), Labeled = decision branch (Yes / No). Stroke chart/line/stroke in dataviz/label; arrow head 8×10. Resize along the flow axis; the head stays pinned to the end. React: <DiagramEdge variant label? />"
+    }
+  ],
+  "doc": {
+    "Diagram/Connector": {
+      "tokens": ["accent/default", "bg/sheet", "chart/line/stroke", "dataviz/label", "scale/128"],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Connector\nArrow between diagram nodes: main flow, optional path, orthogonal turn or labelled branch. 4 variants.\nOverview\nWhat it is and when to reach for it.\nWhen to use\nJoining any two Diagram nodes.\nLabeled: decision branches.\nDashed: optional, async or fallback paths.\nAnatomy\nNumbered layers of the default variant.\n1\nLine\ndataviz/label · chart/line/stroke\n2\nArrow head\n8 × 10 · dataviz/label\n3\nLabel pill\nbg/sheet · Caption/M (Labeled)\nVariants\n4 variants · Variant = Straight | Dashed | Elbow | Labeled\nStraight\nmain flow\nDashed\noptional / async\nElbow\northogonal turn\nYes\nLabeled\nYes / No\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/line/stroke\n2 px\n2 px\n2 px\nscale/128\n128 px\n128 px\n128 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nStatic.\nActive path\nIn a walkthrough the current path uses accent/default.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nTablet · 834\nWeb · 1440\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nStraight\nDashed\nElbow\nYes\nLabeled\nUsage\nRules that keep the diagram clear.\nPrefer Elbow (orthogonal) over diagonal lines.\nArrows never cross nodes; minimise crossings.\nResize along the flow axis — the head stays pinned to the end.\nSpec\nLibrary-neutral contract — maps to React Flow, ELK, Mermaid, D3 or a native canvas.\nField\nDefinition\nPurpose\nArrow between diagram nodes: main flow, optional path, orthogonal turn or labelled branch.\nEncoding\nfrom → to · style ← edge type · label ← condition\nInteraction\nStatic in docs.\nAccessibility\nEdges described in the ordered list (“If approved → Issue card”).\nComponent\n<DiagramEdge variant label? />\nData shape\n{ \"from\": \"check\", \"to\": \"issue\", \"type\": \"straight | dashed | elbow\", \"label\": \"Yes\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nLabel\ntext\nstring\nYes\nVariant\nvariant\nStraight · Dashed · Elbow · Labeled\nStraight\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nLine · Stroke width\nchart/line/stroke\n2\n--bek-chart-line-stroke\nLine · Stroke\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nArrow · Fill\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nDo / Don’t\nDo\nUse Elbow turns on a grid.\nDon’t\n✕ Draw diagonal spaghetti lines.\nAvoid: Draw diagonal spaghetti lines.\nDo\nLabel every decision branch.\nDon’t\n✕ Rely on colour to tell Yes from No.\nAvoid: Rely on colour to tell Yes from No."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma set o'ramasi foni (bg/base) — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-accent-default",
+      "reason": "Doc «States → Active path»: walkthrough'dagi joriy yo'l accent/default (`active` prop). Figma set'da Active variant yo'q — Figma'da Connector'ga State=Active variantini qo'shish kerak."
+    }
+  ]
+}

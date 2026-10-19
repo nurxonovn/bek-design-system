@@ -1,0 +1,78 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Radar",
+      "id": "1241:21724",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Single", "Compare"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/label",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Profile across 5–8 qualitative dimensions on the same 0–100 scale (vendor scoring, skill profiles, model comparison). Single or Compare (max 3 series, fill at layer opacity 18%). More than 8 axes or different units → use Chart/Bar. React: <RadarChart axes series />"
+    }
+  ],
+  "doc": {
+    "Chart/Radar": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/height/md",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/label",
+        "scale/200",
+        "scale/480"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Radar\nProfile across 5–8 qualitative dimensions on one 0–100 scale. 2 variants.\nOverview\nWhat it is and when to reach for it.\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nWhen to use\nVendor or model scoring, skill profiles, product fit.\nCompare: up to 3 profiles.\nDifferent units or > 8 axes → Chart/Bar.\nAnatomy\nNumbered layers of the default variant.\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\n1\nRings\ndataviz/axis at 33 · 66 · 100\n2\nSpokes + labels\nCaption/S · dataviz/label\n3\nArea\nseries colour, layer opacity 18%\n4\nOutline + points\nchart/line/stroke\nVariants\n2 variants · Variant = Single | Compare\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nSingle\nBEK\nMarket avg.\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nCompare\n≤ 3 series\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nProfiles drawn.\nHover axis\nTooltip lists every series value on that axis.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nTablet · 834\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nWeb · 1440\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nSingle\nBEK\nMarket avg.\nSpeed\nQuality\nCost\nSupport\nSecurity\nUX\nCompare\nUsage\nRules that keep the chart honest and readable.\nAll axes share the same scale and direction (higher = better).\nOrder axes so related ones sit next to each other.\nMax 3 overlapping profiles.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nProfile across 5–8 qualitative dimensions on one 0–100 scale.\nEncoding\nangle ← dimension · radius ← score · colour ← series\nInteraction\nHover axis or series; legend toggles.\nAccessibility\nTable view: dimension × series.\nComponent\n<RadarChart axes series />\nData shape\n{ \"axes\": [\"Speed\", \"Quality\", \"Cost\"], \"series\": [ { \"label\": \"BEK\", \"values\": [90, 70, 50] } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nSingle · Compare\nSingle\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nPlot · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nRing 33 · Stroke width\nchart/grid/stroke\n1\n--bek-chart-grid-stroke\nRing 33 · Stroke\ndataviz/axis\n#0A0A0A @12% / #FFFFFF @12%\n--bek-dataviz-axis\nAxis label · Fill\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nArea · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nOutline · Stroke width\nchart/line/stroke\n2\n--bek-chart-line-stroke\nOutline · Stroke\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nAxis label · Text\nCaption/S\ntext style\n—\nDo / Don’t\nDo\nSp"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni — ichki ChartLegend / LegendItem komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend / LegendItem komponentida."
+    }
+  ]
+}

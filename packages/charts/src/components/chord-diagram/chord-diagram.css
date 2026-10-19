@@ -1,0 +1,57 @@
+/* Guruh yoyi — categorical/01–06 (Focus'da tanlangani categorical/01, qolgani dataviz/neutral). */
+.bek-chord-diagram__arc {
+  stroke: none;
+}
+
+/* Lenta — qatlam shaffofligi 0.42 (BND-09: paint opacity emas, CSS opacity). */
+.bek-chord-diagram__ribbon {
+  opacity: 0.42;
+}
+
+/* Hover lenta: qolgan lentalar 0.1; <title> A → B va B → A qiymatlari. */
+.bek-chord-diagram__ribbons:has(.bek-chord-diagram__ribbon:hover)
+  .bek-chord-diagram__ribbon:not(:hover) {
+  opacity: 0.1;
+}
+
+/* Hover yoy: shu guruh lentalari qoladi, qolganlari 0.1 (Figma: 3–10 guruh → 10 ta qoida). */
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--0:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--0),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--1:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--1),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--2:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--2),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--3:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--3),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--4:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--4),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--5:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--5),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--6:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--6),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--7:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--7),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--8:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--8),
+.bek-chord-diagram__canvas:has(.bek-chord-diagram__arc--9:hover)
+  .bek-chord-diagram__ribbon:not(.bek-chord-diagram__ribbon--9) {
+  opacity: 0.1;
+}
+
+.bek-chord-diagram__group:hover .bek-chord-diagram__arc {
+  stroke: var(--bek-text-secondary);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Guruh nomi — Caption/S · text/secondary, halqa tashqarisida. */
+.bek-chord-diagram__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Focus guruhi nomi ajraladi (Focus matnda ham — jadval sarlavhasida). */
+.bek-chord-diagram__group--focus .bek-chord-diagram__label {
+  font-weight: var(--bek-weight-medium);
+}

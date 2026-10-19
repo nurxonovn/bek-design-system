@@ -1,0 +1,67 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Crosshair",
+      "id": "1209:116",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Vertical", "Both"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 240,
+        "h": 200
+      },
+      "tokens": {
+        "color": ["accent/soft", "dataviz/axis", "fill/inverse", "surface/card", "text/inverse"],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/grid/stroke",
+          "chart/height/md",
+          "radius/full",
+          "radius/surface/md",
+          "scale/2",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Follows the pointer on hover (Web) or a long-press drag (Mobile/Tablet) and snaps to the nearest data point. Vertical = time series, Both = scatter / bubble. Value tags use fill/inverse + text/inverse. Pair with Chart/Tooltip. React: <ChartCrosshair axes=\"x|xy\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Crosshair": {
+      "tokens": [
+        "accent/soft",
+        "chart/grid/stroke",
+        "chart/height/md",
+        "chart/point/size-active",
+        "dataviz/axis",
+        "fill/inverse",
+        "radius/full",
+        "scale/2",
+        "scale/4",
+        "scale/8",
+        "text/inverse"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Crosshair\nFollows the pointer and snaps to the nearest point, with value tags on the axes. 2 variants.\nOverview\nWhat it is and when to reach for it.\n12 Oct\nWhen to use\nLine, Area, Live and Forecast charts with hover reading.\nBoth: scatter and bubble charts where X and Y matter.\nNot on bar charts — the bar itself highlights.\nAnatomy\nNumbered layers of the default variant.\n12 Oct\n1\nVertical rule\ndataviz/axis · chart/grid/stroke\n2\nHorizontal rule\nBoth only\n3\nPoint\nChart/Data point Active\n4\nValue tags\nfill/inverse · text/inverse · Label/S\nVariants\n2 variants · Variant = Vertical | Both\n12 Oct\nVertical\ntime series\n12 Oct\n4 820\nBoth\nscatter / bubble\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/point/size-active\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nHidden\nPointer outside the plot.\nTracking\nWeb: follows the pointer; Mobile: long-press and drag.\nLocked\nClick locks at a point for comparison.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n12 Oct\nTablet · 834\n12 Oct\nWeb · 1440\n12 Oct\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n12 Oct\nVertical\n12 Oct\n4 820\nBoth\nUsage\nRules that keep the chart honest and readable.\nAlways snap to data, never show values between points.\nPair with Chart/Tooltip; X tag shows the date, Y tag the value.\nOn touch, start tracking only on long-press so scrolling still works.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nFollows the pointer and snaps to the nearest point, with value tags on the axes.\nEncoding\nx ← pointer → nearest datum.x · y ← datum.y\nInteraction\nMouse move / long-press drag; Esc hides; ←/→ moves by one point when focused.\nAccessibility\nKeyboard equivalent via focusable points; values announced with aria-live.\nComponent\n<ChartCrosshair axes=\"x|xy\" />\nData shape\n{ \"axes\": \"x | xy\", \"snap\": \"nearest\", \"value\": { \"x\": \"12 Oct\", \"y\": 4820 } }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nVertical · Both\nVertical\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nVertical rule · Stroke width\nchart/grid/stroke\n1\n--bek-chart-grid-stroke\nVertical rule · Stroke\ndataviz/axis\n#0A0A0A @12% / #FFFFFF @12%\n--bek-dataviz-axis\nPoint · Padding\nscale/4\n4\n--bek-scale-4\nPoint · Radius\nradius/full\n9999\n--bek-radius-full\nPoint · Fill\naccent/soft\n#E1E7FA / #161F3D\n--bek-accent-soft\nX value · Gap\nscale/4\n4\n--bek-scale-4\nX value · Padding\nscale/8\n8\n--bek-scale-8\nX value · Padding\nscale/2\n2\n--bek-scale-2\nX value · Fill\nfill/inverse\n#323233 / #F3F3F3\n--bek-fill-inverse\nLabel · Fill\ntext/inverse\n#F8F8F9 / #111111\n--bek-text-inverse\nPoint · Part\nChart/Data point\nnested instance\n—\nLabel · Text\nLabel/S\ntext style"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-accent-soft",
+      "reason": "Nested Chart/Data point (Active) halo rangi — ChartPoint (data-point.css) chizadi; bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Nested Chart/Data point halqasi (ChartPoint, data-point.css) va Figma set o'ramasi foni — bu komponentning o'z CSS'ida kerak emas."
+    }
+  ]
+}
