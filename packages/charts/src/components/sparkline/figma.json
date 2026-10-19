@@ -1,0 +1,55 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Sparkline",
+      "id": "1203:221",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Up", "Down", "Neutral", "Bars"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 128,
+        "h": 32
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/negative",
+          "dataviz/neutral",
+          "dataviz/positive",
+          "dataviz/track",
+          "surface/card"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": [
+          "chart/line/stroke",
+          "chart/sparkline/height",
+          "radius/surface/md",
+          "scale/128",
+          "scale/2"
+        ]
+      },
+      "sizes": [1, 2, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Micro chart inside KPI cards, tables and list rows. No axes, no labels; colour carries direction (dataviz/positive / negative / neutral). Height chart/sparkline/height. React: <Sparkline variant data />."
+    }
+  ],
+  "doc": {
+    "Chart/Sparkline": {
+      "tokens": ["chart/line/stroke", "chart/sparkline/height", "dataviz/positive", "scale/128"],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Sparkline\nMicro chart for KPI cards, table cells and list rows. No axes; colour carries direction. 4 variants.\nOverview\nWhat it is and when to reach for it.\nWhen to use\nNext to a number to show its recent trend.\nIn tables with one trend per row.\nBars: discrete periods (daily counts).\nAnatomy\nNumbered layers of the default variant.\n1\nLine / bars\ndataviz/positive · negative · neutral\n2\nEnd point\nData point at the last value\nVariants\n4 variants · Variant = Up | Down | Neutral | Bars\nUp\npositive\nDown\nnegative\nNeutral\nflat\nBars\ndiscrete\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/sparkline/height\n32 px\n40 px\n48 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nStatic.\nHover\nOptional: shows last value tooltip in tables.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nTablet · 834\nWeb · 1440\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nUp\nDown\nNeutral\nBars\nUsage\nRules that keep the chart honest and readable.\nNo axes, no grid, no labels — the number next to it carries the value.\nSame time window for every sparkline in a table.\nColour follows the Delta meaning (flip for costs).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nMicro chart for KPI cards, table cells and list rows. No axes; colour carries direction.\nEncoding\nx ← time · y ← value (min–max of window) · colour ← direction\nInteraction\nNone by default.\nAccessibility\naria-label: “Trend up over 7 days”.\nComponent\n<Sparkline variant data />.\nData shape\n{ \"values\": [12, 14, 13, 17, 19], \"direction\": \"up | down | neutral\", \"type\": \"line | bars\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nUp · Down · Neutral · Bars\nUp\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Width\nscale/128\n128\n--bek-scale-128\nContainer · Height\nchart/sparkline/height\n32 / 40 / 48\n--bek-chart-sparkline-height\nLine · Stroke width\nchart/line/stroke\n2\n--bek-chart-line-stroke\nLine · Stroke\ndataviz/positive\n#247E3A / #22853A\n--bek-dataviz-positive\nEnd · Fill\ndataviz/positive\n#247E3A / #22853A\n--bek-dataviz-positive\nDo / Don’t\nDo\nPair with a value and a Delta.\nDon’t\n✕ Show a sparkline alone without a number.\nAvoid: Show a sparkline alone without a number.\nDo\nKeep the same scale within a table column.\nDon’t\n✕ Let each row auto-scale so flat rows look dramatic.\nAvoid: Let each row auto-scale so flat rows look dramatic."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

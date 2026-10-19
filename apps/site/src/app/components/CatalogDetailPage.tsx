@@ -11,7 +11,9 @@ interface CatalogDetailPageProps {
   onNavigate: (page: string) => void;
 }
 
-const GITHUB = 'https://github.com/nurxonovn/bek-design-system/blob/main/packages/react/src/components';
+const GITHUB = 'https://github.com/nurxonovn/bek-design-system/blob/main/packages';
+const sourceUrl = (pkg: string | undefined, dir: string) =>
+  `${GITHUB}/${pkg === '@bek/charts' ? 'charts' : 'react'}/src/components/${dir}`;
 
 /** Komponent sahifasi: jonli namuna · Figma spetsifikatsiyasi (prop'lar, tokenlar) · README. */
 export function CatalogDetailPage({ dir, onNavigate }: CatalogDetailPageProps) {
@@ -45,7 +47,7 @@ export function CatalogDetailPage({ dir, onNavigate }: CatalogDetailPageProps) {
               Figma · {p.name}
             </Link>
           ))}
-          <Link href={`${GITHUB}/${c.dir}`} target="_blank" rel="noreferrer" variant="neutral" size="s" endIcon={<ExternalLink size={14} />}>
+          <Link href={sourceUrl(c.package, c.dir)} target="_blank" rel="noreferrer" variant="neutral" size="s" endIcon={<ExternalLink size={14} />}>
             GitHub
           </Link>
         </div>

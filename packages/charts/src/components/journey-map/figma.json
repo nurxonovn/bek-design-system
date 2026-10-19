@@ -1,0 +1,84 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/User journey map",
+      "id": "1264:2892",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Variant": ["Default", "Compact"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 720,
+        "h": 416
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/grid",
+          "dataviz/negative",
+          "dataviz/neutral",
+          "dataviz/positive",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Caption/S", "Label/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/360",
+          "scale/4",
+          "scale/720",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Customer journey across 3–6 stages: actions, touchpoints, an emotion curve and the pain points / opportunities each stage reveals. Default is the wide canvas (web, workshops, print); Compact stacks one card per stage for mobile. Emotion uses dot colour + a word, never colour alone. React: <JourneyMap stages={[{ name, action, touchpoints, emotion, pain, opportunity }]} layout=\"default | com"
+    }
+  ],
+  "doc": {
+    "Diagram/User journey map": {
+      "tokens": [
+        "bg/sheet",
+        "chart/grid/stroke",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/grid",
+        "dataviz/negative",
+        "dataviz/neutral",
+        "dataviz/positive",
+        "radius/full",
+        "radius/surface/md",
+        "radius/surface/sm",
+        "scale/16",
+        "scale/2",
+        "scale/360",
+        "scale/4",
+        "scale/720",
+        "scale/8",
+        "surface/card",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/User journey map\nCustomer journey across stages: actions, touchpoints, an emotion curve and the pain points and opportunities each stage reveals. 2 variants.\nOverview\nWhat it is and when to reach for it.\nStage\nActions\nTouchpoints\nEmotion\nPain points\nOpportunities\n1 Discover\nSees a course ad in a Telegram channel\nTelegram\nLanding\n—\nShow the price in the ad\n2 Sign up\nCreates an account with a phone number\nApp\nSMS\nSMS code arrives late\nLog in with Telegram\n3 First payment\nPays for the first course by card\nApp\nPayme\nCard check fails twice\nSave cards, retry inline\n4 Repeat\nBuys the next level after 3 weeks\nApp\nPush\n—\nStreak rewards\nPositive\nNeutral\nFrustrated\nDelighted\nWhen to use\nProduct discovery and workshops — map one persona’s path from first contact to repeat use.\nAlign design, marketing and support on where users struggle.\nCompact on mobile and in reports; Default on wide screens and print.\nAnatomy\nNumbered layers of the default variant.\nStage\nActions\nTouchpoints\nEmotion\nPain points\nOpportunities\n1 Discover\nSees a course ad in a Telegram channel\nTelegram\nLanding\n—\nShow the price in the ad\n2 Sign up\nCreates an account with a phone number\nApp\nSMS\nSMS code arrives late\nLog in with Telegram\n3 First payment\nPays for the first course by card\nApp\nPayme\nCard check fails twice\nSave cards, retry inline\n4 Repeat\nBuys the next level after 3 weeks\nApp\nPush\n—\nStreak rewards\nPositive\nNeutral\nFrustrated\nDelighted\n1\nStage header\nNumber + name · Label/M, progress dots categorical/01\n2\nAction cell\nsurface/card on bg/sheet · Caption/M\n3\nTouchpoint chip\nsurface/card pill · Caption/S\n4\nEmotion curve\ncategorical/01 line, dots positive / neutral / negative + word\n5\nPain point\ndataviz/negative dot + text\n6\nOpportunity\ndataviz/positive dot + text\nVariants\n2 variants · Variant = Default | Compact\nStage\nActions\nTouchpoints\nEmotion\nPain points\nOpportunities\n1 Discover\nSees a course ad in a Telegram channel\nTelegram\nLanding\n—\nShow the price in the ad\n2 Sign up\nCreates an account with a phone number\nApp\nSMS\nSMS code arrives late\nLog in with Telegram\n3 First payment\nPays for the first course by card\nApp\nPayme\nCard check fails twice\nSave cards, retry inline\n4 Repeat\nBuys the next level after 3 weeks\nApp\nPush\n—\nStreak rewards\nPositive\nNeutral\nFrustrated\nDelighted\nDefault\nWide canvas · 720\n1 · Discover\nPositive\nSees a course ad in a Telegram channel\nTelegram\nLanding\nShow the price in the ad\n2 · Sign up\nNeutral\nCreates an account with a phone number\nApp\nSMS\nSMS code arrives late\nLog in with Telegram\n3 · First payment\nFrustrated\nPays for the first course by card\nApp\nPayme\nCard check fails twice\nSave cards, retry inline\n4 · Repeat\nDelighted\nBuys the next level after 3 weeks\nApp\nPush\nStreak rewards\nCompact\nStacked cards · 360\nSizes\nDiagrams keep their geometry; width comes from a Dimension token, narrow screens get the narrow variant.\nToken\nMobile\nTablet\nWeb\nscale/720\n720 px\n720 px\n720 px\nscale/360\n360 px\n360 px\n360 px\nscale/16\n16 px\n16 px\n16 px\nscale/8\n8 px\n8 px\n8 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll rows filled.\nEmpty cell\n“—” in text/tertiary, never a blank box.\nHover stage\nC"
+    }
+  },
+  "accepted": []
+}

@@ -1,0 +1,25 @@
+/* Oqim qatlami — seriya rangi (categorical/01–07), qatlamlar orasida surface/card ingichka chegara. */
+.bek-streamgraph__layer {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-linejoin: round;
+}
+
+/* Vaqt o'qi — dataviz/axis · chart/grid/stroke */
+.bek-streamgraph__axis {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+/* Vaqt va ulush yozuvlari — Caption/S · dataviz/label (chart.css). */
+.bek-streamgraph .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+}
+
+/* Hover qatlam: qolganlari 0,3 gacha xiralashadi (Figma States). */
+.bek-streamgraph__plot:hover .bek-streamgraph__layer:not(:hover) {
+  opacity: 0.3;
+}

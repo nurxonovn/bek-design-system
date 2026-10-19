@@ -1,0 +1,102 @@
+/* Rang — guruh ildizida `color: seriesColor(0)` (dataviz/categorical/01), belgilar `currentColor`. */
+
+/* Qiymat o'qi — dataviz/axis · chart/grid/stroke; vertikal grid — dataviz/grid (chart.css). */
+.bek-box-plot__axis {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+/* Guruh nomi — Caption/M · text/secondary */
+.bek-box-plot__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* "n = 1" / "n = 0" izohi — Caption/S · dataviz/label */
+.bek-box-plot__note,
+.bek-box-plot .bek-chart__tick {
+  fill: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+/* Mo'ylov va qopqoq — categorical/01 · grid stroke */
+.bek-box-plot__whisker,
+.bek-box-plot__cap {
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Quti Q1–Q3: to'ldirish qatlam shaffofligi 0,28 + kontur; radius chart/bar/radius. */
+.bek-box-plot__box,
+.bek-box-plot__violin {
+  fill: currentColor;
+  opacity: 0.28;
+}
+
+.bek-box-plot__box,
+.bek-box-plot__outline {
+  rx: var(--bek-chart-bar-radius);
+}
+
+.bek-box-plot__outline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Mediana — chart/line/stroke */
+.bek-box-plot__median {
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-line-stroke);
+}
+
+/* Chetlanish — surface/card ustida ichi bo'sh nuqta */
+.bek-box-plot__outlier {
+  fill: var(--bek-surface-card);
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Box + points — har qiymat quti ortida */
+.bek-box-plot__point {
+  fill: currentColor;
+  opacity: 0.6;
+}
+
+/* Violin — IQR chizig'i (Q1–Q3) va mediana bo'shlig'i surface/card */
+.bek-box-plot__iqr {
+  stroke: currentColor;
+  stroke-width: var(--bek-scale-4);
+  stroke-linecap: round;
+}
+
+.bek-box-plot__iqr-median {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-chart-line-stroke);
+}
+
+/* Hover guruh: qolgan guruhlar qatlam shaffofligi 0,4 gacha xiralashadi (Figma States). */
+.bek-box-plot__group {
+  transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-box-plot__plot:hover .bek-box-plot__group:not(:hover) {
+  opacity: 0.4;
+}
+
+.bek-box-plot__outlier:hover {
+  stroke-width: var(--bek-chart-line-stroke);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-box-plot__group {
+    transition: none;
+  }
+}

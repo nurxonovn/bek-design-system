@@ -1,0 +1,31 @@
+/* Chart/Annotation — teg: fill/inverse pill + Label/S · text/inverse; chiziq: dataviz/target; davr: dataviz/grid. */
+.bek-annotation__tag rect {
+  fill: var(--bek-fill-inverse);
+}
+
+.bek-annotation__tag-text {
+  fill: var(--bek-text-inverse);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Marker: uzuq 4/4, chart/grid/stroke */
+.bek-annotation__rule {
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-dasharray: 4 4;
+}
+
+/* Point: tegdan nuqtagacha oyoq */
+.bek-annotation__stem {
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Range: davr soyasi */
+.bek-annotation__band {
+  fill: var(--bek-dataviz-grid);
+}

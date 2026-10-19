@@ -1,0 +1,52 @@
+/* Figma "Chart/Feature importance": faqat diverging ranglar — oshiradi pos-3, pasaytiradi neg-3. */
+.bek-feature-importance__row--raises .bek-feature-importance__bar {
+  fill: var(--bek-dataviz-diverging-pos-3);
+}
+
+.bek-feature-importance__row--lowers .bek-feature-importance__bar {
+  fill: var(--bek-dataviz-diverging-neg-3);
+}
+
+/* Waterfall: base rate va prediction — dataviz/neutral. */
+.bek-feature-importance__bar--total {
+  fill: var(--bek-dataviz-neutral);
+}
+
+/* Nol chizig'i va ulagichlar — dataviz/axis, chart/grid/stroke; ulagich uzuq 2/2. */
+.bek-feature-importance__zero,
+.bek-feature-importance__connector {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+.bek-feature-importance__connector {
+  stroke-dasharray: 2 2;
+}
+
+/* Kirish nomi — Caption/M · text/secondary; base / prediction — text/primary. */
+.bek-feature-importance__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+.bek-feature-importance__row--total .bek-feature-importance__label {
+  fill: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+}
+
+/* Qiymat — Label/S · text/primary, ishorali, haqiqiy minus. */
+.bek-feature-importance__value {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hover: tanlangan qator saqlanadi, qolganlari 40% (Chart/Bar qoidasi). */
+.bek-feature-importance svg:hover .bek-feature-importance__row:not(:hover) {
+  opacity: 0.4;
+}

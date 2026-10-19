@@ -1,0 +1,69 @@
+/* Figma "Chart/Confidence meter": eni scale/240, oraliq scale/8; segment 5 × scale/6, orasi scale/4. */
+.bek-confidence-meter {
+  --bek-confidence-color: var(--bek-status-success-default);
+}
+
+/* .bek-chart (chart.css) dan keyin yig'iladi — oraliqni aniqroq selektor bilan beramiz. */
+.bek-chart.bek-confidence-meter {
+  gap: var(--bek-scale-8);
+  inline-size: 100%;
+  max-inline-size: var(--bek-scale-240);
+}
+
+.bek-confidence-meter--medium {
+  --bek-confidence-color: var(--bek-status-warning-default);
+}
+
+.bek-confidence-meter--low {
+  --bek-confidence-color: var(--bek-status-danger-default);
+}
+
+.bek-confidence-meter__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--bek-scale-8);
+}
+
+/* Yorliq — Caption/M · text/tertiary */
+.bek-confidence-meter__label {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+/* Daraja · qiymat — Label/M · text/primary */
+.bek-confidence-meter__value {
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.bek-confidence-meter__segments {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--bek-scale-4);
+}
+
+.bek-confidence-meter__segment {
+  block-size: var(--bek-scale-6);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-dataviz-track);
+}
+
+.bek-confidence-meter__segment--on {
+  background: var(--bek-confidence-color);
+}
+
+/* Sabab — Caption/M · text/secondary */
+.bek-confidence-meter__reason {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}

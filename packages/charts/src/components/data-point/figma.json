@@ -1,0 +1,55 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Data point",
+      "id": "1201:254",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "State": ["Default", "Active", "Anomaly"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 8,
+        "h": 8
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "dataviz/anomaly",
+          "dataviz/categorical/01",
+          "status/warning/soft",
+          "surface/card"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": [
+          "chart/point/size",
+          "chart/point/size-active",
+          "radius/full",
+          "radius/surface/md",
+          "scale/4",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 4, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Point on a line / scatter. Default is hidden on dense lines and shown on hover (Active). Anomaly = AI-detected outlier. React: <ChartPoint state />."
+    }
+  ],
+  "doc": {
+    "Chart/Data point": {
+      "tokens": [
+        "chart/point/size",
+        "chart/point/size-active",
+        "dataviz/anomaly",
+        "dataviz/categorical/01",
+        "surface/card"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Data point\nA single value on a line or scatter. Hidden on dense lines and shown on hover; Anomaly marks an AI-detected outlier. 3 variants.\nOverview\nWhat it is and when to reach for it.\nWhen to use\nHover / focus feedback on Chart/Line and Chart/Live.\nLast value of a line, to anchor the eye.\nOutliers flagged by a model (Anomaly).\nAnatomy\nNumbered layers of the default variant.\n1\nHalo\nseries colour at 20%, chart/point/size-active\n2\nDot\nchart/point/size · surface/card ring\nVariants\n3 variants · State = Default | Active | Anomaly\nDefault\nhidden on dense lines\nActive\nhover, focus, last value\nAnomaly\ndataviz/anomaly\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/point/size\n8 px\n8 px\n8 px\nchart/point/size-active\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nDot only, often hidden when > 24 points.\nActive\nDot + halo on hover / keyboard focus.\nAnomaly\ndataviz/anomaly with halo; tooltip explains why.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nTablet · 834\nWeb · 1440\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nDefault\nActive\nAnomaly\nUsage\nRules that keep the chart honest and readable.\nShow all points only when there are ≤ 24 per series.\nHit area is at least 24 × 24 even though the dot is 8.\nAnomaly always comes with a reason in the tooltip or an AI insight.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nA single value on a line or scatter. Hidden on dense lines and shown on hover; Anomaly marks an AI-detected outlier.\nEncoding\nposition ← (x, y) · colour ← series · state ← interaction / model flag\nInteraction\nHover / focus → Active + tooltip; arrow keys step between points.\nAccessibility\nEach focusable point announces “12 Oct, Revenue 4 820 mln”.\nComponent\n<ChartPoint state />.\nData shape\n{ \"x\": \"2026-10-12\", \"y\": 4820, \"series\": \"revenue\", \"anomaly\": { \"score\": 0.97, \"reason\": \"+52% vs expected\" } }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nState\nvariant\nDefault · Active · Anomaly\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nPoint · Stroke width\nstroke/strong\n2\n--bek-stroke-strong\nPoint · Width\nchart/point/size\n8\n--bek-chart-point-size\nPoint · Height\nchart/point/size\n8\n--bek-chart-point-size\nPoint · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nPoint · Stroke\nsurface/card\n#FFFFFF / #18181A\n--bek-surface-card\nDo / Don’t\nDo\nShow points on hover for long series.\nDon’t\n✕ Draw every point on a 365-day line.\nAvoid: Draw every point on a 365-day line.\nDo\nUse Anomaly only for model-flagged outliers.\nDon’t\n✕ Use Anomaly to decorate the highest value.\nAvoid: Use Anomaly to decorate the highest value."
+    }
+  },
+  "accepted": []
+}

@@ -1,0 +1,43 @@
+/* Metrika nomi — Caption/M · text/secondary */
+.bek-model-comparison__metric {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Track — dataviz/track, 0–100, stroke/strong */
+.bek-model-comparison__track {
+  stroke: var(--bek-dataviz-track);
+  stroke-width: var(--bek-stroke-strong);
+  stroke-linecap: round;
+}
+
+/* Model nuqtasi — kategorik rang + surface/card halqa */
+.bek-model-comparison__dot {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+/* Eng yaxshi qiymat — Label/S · text/primary, g'olib ustida */
+.bek-model-comparison__best {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hover qator: qolganlari 40%, <title> asl qiymatlarni aytadi. */
+.bek-model-comparison svg:hover .bek-model-comparison__row:not(:hover) {
+  opacity: 0.4;
+}
+
+/* Izoh — Caption/S · dataviz/label, track bilan bir chiziqda boshlanadi. */
+.bek-model-comparison__caption {
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}

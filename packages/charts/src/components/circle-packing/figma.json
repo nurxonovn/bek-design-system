@@ -1,0 +1,74 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Circle packing",
+      "id": "1254:39806",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Flat", "Nested"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/sequential/100",
+          "dataviz/sequential/300",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Circles sized by value (area, not radius), packed without overlap. Flat colours by group; Nested draws each group as a parent circle with its items inside. Use for 8–40 items where exact comparison is not the goal — for ranking use Bar. Labels sit on surface/card chips, so they pass contrast on any fill. React: <CirclePacking data={{ name, children }} mode=\"flat | nested\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Circle packing": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/sequential/100",
+        "dataviz/sequential/300",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Composition\nBEK\nDesign System\nChart/Circle packing\nCircles sized by value (area), packed without overlap. Flat colours items by group; Nested draws each group as a parent circle with its items inside. 2 variants.\nOverview\nWhat it is and when to reach for it.\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\nWhen to use\nGive a quick sense of scale for 8–40 items (features by usage, spend by category).\nShow a two-level hierarchy where exact comparison is not the goal (Nested).\nDashboards and reports that need a friendly overview next to a precise table.\nAnatomy\nNumbered layers of the default variant.\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\n1\nCircle\nArea ∝ value · anchored, never stretched\n2\nGroup colour\nFlat: categorical/01–03\n3\nParent\nNested: dataviz/sequential/100\n4\nChild\nNested: dataviz/sequential/300, label text/primary\n5\nLabel chip\nsurface/card chip, shown only if it fits inside the circle\n6\nLegend\nFlat: group legend\nVariants\n2 variants · Variant = Flat | Nested\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\nFlat\nColour by group\nP2P\nQR\nBills\nPayments\nSavings\nCards\nCredit\nNested\nParent → children\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/bar/radius\n4 px\n4 px\n4 px\nchart/legend/gap\n12 px\n16 px\n16 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll circles.\nHover\nCircle outline chart/line/stroke; tooltip with name, value and share of group.\nZoom (Nested)\nClick a parent → it fills the plot, children get labels.\nLoading\nChart/Card Loading.\nHidden label\nLabel drops when it does not fit; tooltip always shows it.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\nTablet · 834\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\nWeb · 1440\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nP2P\nQR\nCards\nLoans\nBills\nPayments\nSavings\nCredit\nFlat\nP2P\nQR\nBills\nPayments\nSavings\nCards\nCredit\nNested\nUsage\nRules that keep the chart honest and readable.\nSize by area, never by radius.\nLabels only when they fit; never let a label cross the circle edge.\nMax 3 groups in Flat; more groups → Nested or Treemap.\nPair with a table when readers must rank items.\nFixed geometry\nCircles are anchored (CMP-11): their positions follow the plot, their size does not. On Mobile the whole chart is rescaled, not stretched.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nCircles sized by value (area), packed without overlap. Flat colours items by group; Nested draws each group as a parent circle with its items inside.\nEncoding\ncircle area = value (sqrt scale), position = packing (no meaning), colour = group (Flat) or depth (Nested, sequential).\nInteraction\nHover → tooltip. Click parent → zoom in (Nested). Escape → zoom out. Keyboard: Tab through circles in value order.\nAccessibility\nari"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend / LegendItem komponentida."
+    }
+  ]
+}

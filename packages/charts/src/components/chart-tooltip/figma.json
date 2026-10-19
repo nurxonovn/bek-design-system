@@ -1,0 +1,74 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Tooltip",
+      "id": "1201:193",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Single", "Multi"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 200,
+        "h": 68
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/target",
+          "surface/card",
+          "surface/raised",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/M"],
+        "effect": ["Elevation/2 Raised-hover"],
+        "dimension": [
+          "chart/legend/marker",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/200",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Hover / tap tooltip. Surface layer 3 (surface/raised + Elevation/2). React: <ChartTooltip title rows=[{color,label,value}] />. Values use uz-UZ format: space thousands, comma decimals."
+    }
+  ],
+  "doc": {
+    "Chart/Tooltip": {
+      "tokens": [
+        "Elevation/2",
+        "chart/legend/marker",
+        "dataviz/categorical/01",
+        "dataviz/target",
+        "radius/full",
+        "radius/surface/sm",
+        "scale/12",
+        "scale/200",
+        "scale/8",
+        "shadow/soft",
+        "surface/raised",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Tooltip\nValue read-out on hover or tap. Raised surface (layer 3) with Elevation/2. 2 variants.\nOverview\nWhat it is and when to reach for it.\nOct 18, 2026\nRevenue\n12 450 000\nWhen to use\nExact values matter but would clutter the plot as labels.\nSeveral series share an X value — Multi lists them in one card.\nAlways together with Chart/Crosshair or a highlighted mark.\nAnatomy\nNumbered layers of the default variant.\nOct 18, 2026\nRevenue\n12 450 000\n1\nTitle\nX value · Caption/M · text/tertiary\n2\nMarker\nchart/legend/marker · series colour\n3\nLabel\nBody/S · text/secondary\n4\nValue\nLabel/M · text/primary, tabular\n5\nContainer\nsurface/raised · radius/surface/sm · Elevation/2\nVariants\n2 variants · Variant = Single | Multi\nOct 18, 2026\nRevenue\n12 450 000\nSingle\nOct 18, 2026\nRevenue\n12 450 000\nCosts\n8 120 000\nPlan\n11 000 000\nMulti\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/legend/marker\n8 px\n8 px\n8 px\nscale/12\n12 px\n12 px\n12 px\nscale/200\n200 px\n200 px\n200 px\nStates\nInteractive and data states.\nState\nBehaviour\nHidden\nNo pointer on the plot.\nVisible\nWeb: follows the pointer with 12 px offset, flips near edges. Mobile/Tablet: pinned above the touched point.\nPinned\nClick / tap on a mark keeps it open until tap outside or Esc.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nOct 18, 2026\nRevenue\n12 450 000\nTablet · 834\nOct 18, 2026\nRevenue\n12 450 000\nWeb · 1440\nOct 18, 2026\nRevenue\n12 450 000\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nOct 18, 2026\nRevenue\n12 450 000\nSingle\nOct 18, 2026\nRevenue\n12 450 000\nCosts\n8 120 000\nPlan\n11 000 000\nMulti\nUsage\nRules that keep the chart honest and readable.\nTitle = the X value (date, category). One row per series, same order as the legend.\nValues in uz-UZ format: 12 400 · 4,8 mln · +12,4%. True minus sign −.\nMax 6 rows; the rest becomes “Other”.\nNever cover the point being read — place above, flip below at the top edge.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nValue read-out on hover or tap. Raised surface (layer 3) with Elevation/2.\nEncoding\ntitle ← x · row.marker ← series.color · row.label ← series.label · row.value ← formatted y\nInteraction\nAppears on hover (Web, 0 ms delay) or tap (touch); Esc closes; arrow keys move between points when the chart has focus.\nAccessibility\nrole=\"tooltip\"; the same values are announced via aria-live on keyboard focus; never the only way to read a value — table view exists.\nComponent\n<ChartTooltip title rows=[{color,label,value}] />. Values use uz-UZ format: space thousands, comma decimals.\nData shape\n{ \"title\": \"12 Oct\", \"rows\": [ { \"color\": \"dataviz/categorical/01\", \"label\": \"Revenue\", \"value\": \"4 820 mln\" }, { \"color\": \"dataviz/target\", \"label\": \"Plan\", \"value\": \"5 000 mln\" } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nSingle · Multi\nSingle\nTokens\nEvery visual property of the default variant → token → value "
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

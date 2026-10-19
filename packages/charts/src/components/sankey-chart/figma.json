@@ -1,0 +1,64 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Sankey",
+      "id": "1215:239",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Label/S"],
+        "effect": [],
+        "dimension": ["chart/height/md", "radius/surface/md", "scale/2", "scale/4", "scale/480"]
+      },
+      "sizes": [1, 2, 4, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Flow of a quantity between stages (income → spending → categories, traffic sources → pages). Node = 12 px bar in a categorical colour; link = source colour at 28%. Max 3 columns and 12 nodes; group small flows into \"Other\". Mobile: replaced by a stacked bar or list (see 4.23 doc). React: <SankeyChart nodes links />"
+    }
+  ],
+  "doc": {
+    "Chart/Sankey": {
+      "tokens": [
+        "chart/height/md",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/categorical/05",
+        "scale/12",
+        "scale/2",
+        "scale/4",
+        "scale/480",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Flow\nBEK\nDesign System\nChart/Sankey\nFlow of a quantity between stages — income → spending → categories, sources → pages. 1 variant.\nOverview\nWhat it is and when to reach for it.\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\nWhen to use\nWhere money, users or traffic go between 2–3 stages.\nUp to 12 nodes.\nMobile: replace with a stacked bar or list.\nAnatomy\nNumbered layers of the default variant.\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\n1\nNodes\n12 px bars · categorical colours\n2\nLinks\nsource colour · layer opacity 28% (BND-09)\n3\nLabels\nLabel/S name + Caption/M share\nVariants\n1 variant · Variant = Default\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nscale/12\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll flows.\nHover node / link\nConnected flows keep colour, others drop to 10%.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\nTablet · 834\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\nWeb · 1440\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nSalary\n60%\nFreelance\n25%\nCashback\n15%\nSpent\n70%\nSaved\n30%\nRent\n30%\nFood\n22%\nTransport\n18%\nDeposit\n20%\nInvest\n10%\nDefault\nUsage\nRules that keep the chart honest and readable.\nMax 3 columns and 12 nodes; group small flows into “Other”.\nLink colour = source node colour.\nLabels outside the nodes, shares in percent.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nFlow of a quantity between stages — income → spending → categories, sources → pages.\nEncoding\nnode height ← total through node · link width ← flow value · colour ← source\nInteraction\nHover highlights a path; click a node filters the dashboard.\nAccessibility\nTable view of source → target → value.\nComponent\n<SankeyChart nodes links />\nData shape\n{ \"nodes\": [ { \"id\": \"salary\", \"label\": \"Salary\" }, { \"id\": \"spent\", \"label\": \"Spent\" } ], \"links\": [ { \"source\": \"salary\", \"target\": \"spent\", \"value\": 45 } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Width\nscale/480\n480\n--bek-scale-480\nContainer · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nSalary → Spent · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nFreel"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    }
+  ]
+}

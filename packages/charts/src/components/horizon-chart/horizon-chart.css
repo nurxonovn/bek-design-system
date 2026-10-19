@@ -1,0 +1,36 @@
+/* Trek — dataviz/track: bo'sh qator (ma'lumot yo'q joyda ham ko'rinib turadi). */
+.bek-horizon-chart__track {
+  fill: var(--bek-dataviz-track);
+}
+
+/* Band 1–3 — Positive: sequential 300 · 500 · 700; Diverging: ±2 · ±3 · ±4 (rang TSX'da, tokendan). */
+.bek-horizon-chart__band {
+  stroke: none;
+}
+
+/* Qator nomi — Caption/M · text/secondary */
+.bek-horizon-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Vaqt o'qi — dataviz/axis · chart/grid/stroke; yozuvlar Caption/S · dataviz/label (chart.css). */
+.bek-horizon-chart__axis {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+.bek-horizon-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+}
+
+/* Hover qator: qolganlari xiralashadi; aniq qiymat — <title> va ko'rinmas jadvalda. */
+.bek-horizon-chart__plot:hover .bek-horizon-chart__row:not(:hover) {
+  opacity: 0.4;
+}

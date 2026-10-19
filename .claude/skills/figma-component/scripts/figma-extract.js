@@ -36,7 +36,7 @@ const SIZE_KEYS = [
   'minHeight',
 ];
 const TOKEN_RE =
-  /\b(?:fill|text|border|accent|status|surface|bg|static|scale|radius|control|layout|type|shadow|glass|size|motion|z|family|weight)\/[A-Za-z0-9/-]+|\bElevation\/[A-Za-z0-9]+|\bGlass\/[A-Za-z]+/g;
+  /\b(?:fill|text|border|accent|status|surface|bg|static|scale|radius|control|layout|type|shadow|glass|size|motion|z|family|weight|dataviz|chart|gradient)\/[A-Za-z0-9/-]+|\bElevation\/[A-Za-z0-9]+|\bGlass\/[A-Za-z]+/g;
 
 // Boshqa sahifadagi komponent instance'i (Card ichidagi Button, Badge …) — o'z tokenlari bilan hisoblanmaydi,
 // faqat `nested` ro'yxatiga yoziladi. Shu sahifadagi va yordamchi (_Icon, .Carousel/Dot) instance'lar hisoblanadi.
@@ -164,15 +164,20 @@ for (const id of INPUT.sets) {
     ...(await collect(node, pageName)),
     description: (node.description || '').slice(0, 400),
   });
-  if (INPUT.doc && !out.doc[pageName]) {
+  // Oila sahifasi (4.18 Chart, 4.19 Diagram): har set o'z `📘 <set nomi>` freymiga ega — doc shu freymdan,
+  // kaliti set nomi. Oddiy sahifada — sahifadagi `📘` freym(lar), kaliti sahifa nomi.
+  const ownDoc = page.findOne((f) => f.type === 'FRAME' && f.name === '📘 ' + node.name);
+  const docKey = ownDoc ? node.name : pageName;
+  if (INPUT.doc && !out.doc[docKey]) {
     const texts = [];
-    for (const f of page.children.filter((f) => /^📘/.test(f.name)))
+    const frames = ownDoc ? [ownDoc] : page.children.filter((f) => /^📘/.test(f.name));
+    for (const f of frames)
       for (const t of f.findAll((n) => n.type === 'TEXT'))
         texts.push(t.characters.replace(/\s+/g, ' ').trim());
     const full = texts.join('\n');
     const start = Math.max(full.indexOf('\nDesign tokens'), 0);
     const end = full.indexOf('\nRelated', start);
-    out.doc[pageName] = {
+    out.doc[docKey] = {
       tokens: [...new Set(full.match(TOKEN_RE) || [])].sort(),
       text: full.slice(start, end > 0 ? end : undefined).slice(0, 3200),
     };

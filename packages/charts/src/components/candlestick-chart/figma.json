@@ -1,0 +1,81 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Candlestick",
+      "id": "1243:21780",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Volume"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 260
+      },
+      "tokens": {
+        "color": [
+          "dataviz/label",
+          "dataviz/negative",
+          "dataviz/positive",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/height/md",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/1",
+          "scale/32",
+          "scale/40",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Price movement per period: body = open → close, wick = high → low. Up = dataviz/positive, Down = dataviz/negative (never series colours). Volume adds bars under the plot at layer opacity 40%. Mobile: pinch-zoom with a 1-week default window; pair with Chart/Range brush on long series. React: <CandlestickChart data={[{ t, o, h, l, c, v? }]} volume? />"
+    }
+  ],
+  "doc": {
+    "Chart/Candlestick": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "dataviz/negative",
+        "dataviz/positive",
+        "scale/1",
+        "scale/32",
+        "scale/40",
+        "scale/480",
+        "scale/8"
+      ],
+      "text": "4.18 Chart · Finance\nBEK\nDesign System\nChart/Candlestick\nPrice movement per period: body = open → close, wick = high → low. 2 variants.\nOverview\nWhat it is and when to reach for it.\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nWhen to use\nExchange rates, stock and crypto prices, any OHLC data.\nVolume: show trading activity under the price.\nJust the closing price → Chart/Line.\nAnatomy\nNumbered layers of the default variant.\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\n1\nLegend\nUp · Down\n2\nWick\nhigh → low\n3\nBody\nopen → close · scale/1 radius\n4\nVolume\nbars at layer opacity 40% (Volume)\n5\nAxes\nChart/Axis + grid\nVariants\n2 variants · Variant = Default | Volume\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nDefault\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nVolume\nbars under the plot\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nscale/40\n40 px\n40 px\n40 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll candles.\nHover\nCrosshair + tooltip: O, H, L, C, volume.\nZoomed\nRange brush or pinch narrows the window.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nTablet · 834\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nWeb · 1440\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nDefault\nUp\nDown\n100\n85\n70\n55\n40\n1 Oct\n5 Oct\n9 Oct\n13 Oct\n17 Oct\n21 Oct\nVolume\nUsage\nRules that keep the chart honest and readable.\nUp = dataviz/positive, Down = dataviz/negative — never series colours.\nMobile: 1-week default window with pinch-zoom.\nPair long series with Chart/Range brush.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nPrice movement per period: body = open → close, wick = high → low.\nEncoding\nx ← period · body ← [open, close] · wick ← [low, high] · colour ← close ≥ open\nInteraction\nHover tooltip; zoom; brush.\nAccessibility\n“12 Oct: open 61, close 58, high 63, low 56”.\nComponent\n<CandlestickChart data={[{ t, o, h, l, c, v? }]} volume? />\nData shape\n{ \"interval\": \"1D\", \"candles\": [ { \"t\": \"2026-10-12\", \"o\": 61, \"h\": 63, \"l\": 56, \"c\": 58, \"v\": 12400 } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Volume\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLegend · Gap\nchart/legend/gap\n12 / 16 / 16\n--bek-chart-legend-gap\nBody · Gap\nchart/axis/label-gap\n8\n--bek-chart-axis-label-gap\nX axis row · Padding\nscale/40\n40\n--bek-scale-40\nChart/Legend item · Gap\nscale/8\n8\n--bek-scale-8\nY axis · Width\nscale/32\n32\n--bek-scale-32\nY axis"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni — ichki ChartLegend / LegendItem komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend / LegendItem komponentida."
+    }
+  ]
+}

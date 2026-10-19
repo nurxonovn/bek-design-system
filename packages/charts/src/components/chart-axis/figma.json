@@ -1,0 +1,47 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Axis",
+      "id": "1201:268",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Y", "X"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 32,
+        "h": 200
+      },
+      "tokens": {
+        "color": ["dataviz/label", "surface/card"],
+        "text": ["Caption/S"],
+        "effect": [],
+        "dimension": ["chart/height/md", "radius/surface/md", "scale/480"]
+      },
+      "sizes": [1, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Tick labels. Y: right-aligned, chart/axis/tick-count per device (4/5/6). X: first and last label always visible; shorten on Mobile (Jan, Feb). React: <ChartAxis orientation />."
+    }
+  ],
+  "doc": {
+    "Chart/Axis": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/axis/tick-count",
+        "chart/height/md",
+        "dataviz/label"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Axis\nTick labels for the value (Y) and category / time (X) axes. 2 variants.\nOverview\nWhat it is and when to reach for it.\n100\n75\n50\n25\n0\nWhen to use\nEvery cartesian chart: Bar, Line, Area, Live, Forecast, Waterfall.\nHide on sparklines and KPI micro charts.\nAnatomy\nNumbered layers of the default variant.\n100\n75\n50\n25\n0\n1\nTick label\nCaption/S · dataviz/label\n2\nSpacing\nchart/axis/label-gap to the plot\nVariants\n2 variants · Variant = Y | X\n100\n75\n50\n25\n0\nY\nright-aligned, 4 / 5 / 6 ticks\nJan\nFeb\nMar\nApr\nMay\nJun\nX\nfirst and last always shown\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/axis/tick-count\n4\n5\n6\nchart/axis/label-gap\n8 px\n8 px\n8 px\nchart/height/md\n200 px\n240 px\n320 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nLabels in dataviz/label.\nCrowded\nX labels shorten (Jan, Feb) or skip every second on Mobile.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n100\n75\n50\n25\n0\nTablet · 834\n100\n75\n50\n25\n0\nWeb · 1440\n100\n75\n50\n25\n0\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n100\n75\n50\n25\n0\nY\nJan\nFeb\nMar\nApr\nMay\nJun\nX\nUsage\nRules that keep the chart honest and readable.\nY ticks: chart/axis/tick-count per device (Mobile 4, Tablet 5, Web 6), nice numbers (0, 25, 50…).\nCompact units: 4,8 mln, 12 ming; unit once in the subtitle.\nX: first and last labels are always visible; never rotate labels — shorten or skip instead.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nTick labels for the value (Y) and category / time (X) axes.\nEncoding\nY ticks ← nice(scale.domain, tick-count) · X ticks ← categories / time interval\nInteraction\nNone.\nAccessibility\nAxis titles exposed via aria-label on the chart; ticks are decorative (aria-hidden) when a table view exists.\nComponent\n<ChartAxis orientation />.\nData shape\n{ \"y\": { \"min\": 0, \"max\": 100, \"ticks\": 5, \"format\": \"compact\" }, \"x\": { \"type\": \"time\", \"interval\": \"month\" } }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nY · X\nY\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nTick · Fill\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nTick · Text\nCaption/S\ntext style\n—\nDo / Don’t\nDo\n100\n75\n50\n25\n0\nUse round tick steps (0 · 25 · 50 · 75 · 100).\nDon’t\n✕ Use odd steps like 0 · 17 · 34 · 51.\nAvoid: Use odd steps like 0 · 17 · 34 · 51.\nDo\n100\n75\n50\n25\n0\nShorten X labels on Mobile (Jan, Feb).\nDon’t\n✕ Rotate labels 45° to fit them.\nAvoid: Rotate labels 45° to fit them."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; Figma'da set o'ramasi fonini spec'dan ajratish kerak."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Bar",
+      "id": "1202:228",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Vertical", "Grouped", "Stacked", "Horizontal"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 480,
+        "h": 228
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/label",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/bar/radius",
+          "chart/bar/thickness",
+          "chart/gap",
+          "chart/height/md",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/12",
+          "scale/32",
+          "scale/40",
+          "scale/480",
+          "scale/8",
+          "scale/80"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Compare values across categories. Bars always start at zero. Variants: Vertical, Grouped (≤3 series), Stacked (≤4 segments, rounded on the value end only), Horizontal (long labels, ranking). React: <BarChart variant data series />. Bar geometry is data — it is not token-bound; thickness, gap and radius are (chart/bar/*)."
+    }
+  ],
+  "doc": {
+    "Chart/Bar": {
+      "tokens": [
+        "border/hairline",
+        "chart/axis/label-gap",
+        "chart/axis/tick-count",
+        "chart/bar/",
+        "chart/bar/gap",
+        "chart/bar/radius",
+        "chart/bar/thickness",
+        "chart/gap",
+        "chart/height/md",
+        "dataviz/categorical/01",
+        "scale/32",
+        "scale/40",
+        "scale/480"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Bar\nCompares values across categories. Bars always start at zero. 4 variants.\nOverview\nWhat it is and when to reach for it.\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nWhen to use\nComparing amounts across 2–12 categories (months, regions, products).\nGrouped: up to 3 series side by side. Stacked: parts of a total, up to 4 segments.\nHorizontal: long category names or ranked lists.\nAnatomy\nNumbered layers of the default variant.\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\n1\nY axis\nChart/Axis Y, tick count per device\n2\nGrid\nChart/Grid line Solid · border/hairline\n3\nBaseline\nChart/Grid line Baseline at zero\n4\nBar\nchart/bar/thickness · chart/bar/radius on the value end\n5\nX axis\nChart/Axis X, first and last label always visible\nVariants\n4 variants · Variant = Vertical | Grouped | Stacked | Horizontal\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nVertical\n2026\n2025\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nGrouped\n≤ 3 series\nCards\nTransfers\nLoans\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nStacked\n≤ 4 segments\nTashkent\n4 820\nSamarkand\n3 360\nBukhara\n2 510\nFergana\n2 150\nNamangan\n1 570\nHorizontal\nranked, long labels\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/bar/thickness\n16 px\n24 px\n32 px\nchart/bar/gap\n8 px\n12 px\n16 px\nchart/bar/radius\n4 px\n4 px\n4 px\nchart/axis/tick-count\n4\n5\n6\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll bars in series colours.\nHover / tap\nHovered bar keeps its colour, others drop to 40%; Chart/Tooltip shows the value.\nSelected\nClick pins the bar (drill-down); others stay at 40%.\nLoading · Empty · Error\nHandled by Chart/Card.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nTablet · 834\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nWeb · 1440\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nVertical\n2026\n2025\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nGrouped\nCards\nTransfers\nLoans\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nStacked\nTashkent\n4 820\nSamarkand\n3 360\nBukhara\n2 510\nFergana\n2 150\nNamangan\n1 570\nHorizontal\nUsage\nRules that keep the chart honest and readable.\nThe value axis starts at 0 — never truncate bars.\nSort categories by value unless the order is natural (time, steps).\nRadius only on the value end of a bar; stacked segments are square inside.\nMobile: more than 6 categories → switch to Horizontal or scroll the plot.\nMany categories?\nOver 12 categories, use Chart/Lollipop — thinner marks read faster.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nCompares values across categories. Bars always start at zero.\nEncoding\nx ← category · y ← value (from 0) · colour ← series · stack ← segment\nInteraction\nHover / tap shows Chart/Tooltip; click selects for drill-down; legend toggles series.\nAccessibility\nText summary under the chart (“May is highest: 92”); table view toggle; "
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

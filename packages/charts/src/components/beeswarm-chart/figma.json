@@ -1,0 +1,63 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Beeswarm",
+      "id": "1242:22302",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/label",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Every individual value as a dot, grouped by category and spread so none overlap — shows distribution and outliers without hiding the count. 20–300 points per group; for more use a histogram. React: <BeeswarmChart data={[{ group, value }]} />"
+    }
+  ],
+  "doc": {
+    "Chart/Beeswarm": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/height/md",
+        "chart/point/size",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/label",
+        "scale/200",
+        "scale/480",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Relation\nBEK\nDesign System\nChart/Beeswarm\nEvery value as a dot, grouped by category and spread so none overlap. 1 variant.\nOverview\nWhat it is and when to reach for it.\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nWhen to use\nDistribution per group where each item matters (salaries, response times).\n20–300 points per group.\nMore points → histogram or box plot.\nAnatomy\nNumbered layers of the default variant.\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\n1\nGroup label\nCaption/M · text/secondary\n2\nDot\ngroup colour, r 3,5\n3\nAxis\ndataviz/axis + ticks\nVariants\n1 variant · Variant = Default\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nchart/point/size\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll dots.\nHover\nDot + tooltip with the item name.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nTablet · 834\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nWeb · 1440\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nDefault\nUsage\nRules that keep the chart honest and readable.\nOne row per group, same scale for all.\nDots never overlap — they spread vertically.\nMark the median with a Target grid line if it matters.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nEvery value as a dot, grouped by category and spread so none overlap.\nEncoding\nx ← value · row ← group · colour ← group\nInteraction\nHover tooltip; click opens the item.\nAccessibility\nPer group: count, median, min, max.\nComponent\n<BeeswarmChart data={[{ group, value }]} />\nData shape\n{ \"points\": [ { \"group\": \"Retail\", \"value\": 58, \"label\": \"Client 1042\" } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nPlot · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nAxis · Stroke width\nchart/grid/stroke\n1\n--bek-chart-grid-stroke\nAxis · Stroke\ndataviz/axis\n#0A0A0A @12% / #FFFFFF @12%\n--bek-dataviz-axis\nTick · Fill\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nGroup · Fill\ntext/secondary\n#505053 / #D4D4D6\n--bek-text-secondary\nPoint · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nPoint · Fill\ndataviz/categorical/02\n#01B5C1 / #02ACB7\n--bek-dataviz-categorical-02\nPoint · Fill\ndataviz/categorical/03\n#FF983C / #E8852C\n--bek-dataviz-categorical-03\nTick · Text\nCaption/S\ntext style\n—\nGroup · Text\nCaption/M\ntext style\n—\nDo / Don’t\nDo\n0\n25\n50\n75\n100\nRetail\nSME\nCorporate\nShow individual items when counts are small.\nDon’t\n✕ Hide 30 values behind one average.\nAvoid: Hide 30 values behind "
+    }
+  },
+  "accepted": []
+}

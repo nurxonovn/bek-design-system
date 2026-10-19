@@ -1,0 +1,24 @@
+.bek-bar-chart__bar {
+  shape-rendering: geometricPrecision;
+}
+
+/* Hover: tanlangan ustun guruhidan boshqalari 40% (Figma doc). */
+.bek-bar-chart__plot:hover .bek-bar-chart__group:not(:hover) {
+  opacity: 0.4;
+}
+
+/* Horizontal: kategoriya — Caption/L · text/secondary, qiymat — Label/S · text/primary */
+.bek-bar-chart__category {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+.bek-bar-chart__value {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}

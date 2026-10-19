@@ -1,0 +1,47 @@
+.bek-marimekko-chart__plot {
+  position: relative;
+  max-inline-size: 100%;
+}
+
+/* Katak — kategoriya rangi (dataviz/categorical/0i), radius chart/bar/radius. */
+.bek-marimekko-chart__cell {
+  rx: var(--bek-chart-bar-radius);
+}
+
+/* Hover: katak qoladi, qolganlari 40% (Figma "Hover cell"); <title> qiymat va ulushlarni aytadi. */
+.bek-marimekko-chart__cells:has(.bek-marimekko-chart__cell:hover)
+  .bek-marimekko-chart__cell:not(:hover) {
+  opacity: 0.4;
+}
+
+/* Ustun nomi — Caption/S · dataviz/label (bek-chart__tick), ulushi — text/tertiary. */
+.bek-marimekko-chart__share {
+  fill: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-regular);
+}
+
+.bek-marimekko-chart__labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/*
+ * Labeled: % chip — surface/card + text/primary (Caption/S). Matn kategorik rangga to'g'ridan-to'g'ri
+ * qo'yilmaydi: hech bir matn tokeni har kategorik rangda ikkala rejimda 4.5:1 bermaydi.
+ */
+.bek-marimekko-chart__chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding-block: var(--bek-scale-2);
+  padding-inline: var(--bek-scale-4);
+  border-radius: var(--bek-chart-bar-radius);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

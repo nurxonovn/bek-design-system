@@ -1,0 +1,80 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Marimekko",
+      "id": "1254:39695",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Labeled"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/label",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Two-way share: column width is each segment’s share of the total, column height splits it by category — shows market size and mix in one view. 2–6 columns × 2–5 categories. Labeled adds % chips (surface/card) and column shares. React: <MarimekkoChart data={[{ column, category, value }]} labels />"
+    }
+  ],
+  "doc": {
+    "Chart/Marimekko": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/legend/gap",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/label",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Composition\nBEK\nDesign System\nChart/Marimekko\nTwo-way share: column width is each segment’s share of the total, column height splits it by category — market size and mix in one view. 2 variants.\nOverview\nWhat it is and when to reach for it.\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\nWhen to use\nMarket or portfolio mix across segments of very different size (regions × products).\nWhen a 100% stacked bar would hide that one column is four times bigger than another.\nLabeled for presentations and reports where readers need the numbers.\nAnatomy\nNumbered layers of the default variant.\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\n1\nShare ticks\n0 / 50 / 100% · Caption/S\n2\nCell\ncategorical/01–05 · radius chart/bar/radius · 2 px gap\n3\nValue chip\nLabeled only · surface/card chip, text/primary — passes on any fill\n4\nColumn label + share\nCaption/S · dataviz/label and text/tertiary\n5\nLegend\nChart/Legend item · Square\nVariants\n2 variants · Variant = Default | Labeled\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\nDefault\nNo cell labels\n100%\n50%\n0%\n42%\n28%\n20%\nToshkent\n48%\n36%\n30%\n22%\nSamarqand\n22%\n30%\n34%\n24%\nFarg‘ona\n18%\n26%\n30%\n28%\n16%\nBoshqa\n12%\nCards\nLoans\nDeposits\nOther\nLabeled\n% chips + column share\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/bar/radius\n4 px\n4 px\n4 px\nchart/legend/gap\n12 px\n16 px\n16 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll cells.\nHover cell\nCell stays, others dim to 0.4; tooltip: column, category, value, % of column, % of total.\nSmall cell\nChip hidden when the cell is under 40 × 22 px; tooltip still shows it.\nLoading\nChart/Card Loading.\nOne column\nFalls back to Bar (Stacked 100%).\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\nTablet · 834\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\nWeb · 1440\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n100%\n50%\n0%\nToshkent\nSamarqand\nFarg‘ona\nBoshqa\nCards\nLoans\nDeposits\nOther\nDefault\n100%\n50%\n0%\n42%\n28%\n20%\nToshkent\n48%\n36%\n30%\n22%\nSamarqand\n22%\n30%\n34%\n24%\nFarg‘ona\n18%\n26%\n30%\n28%\n16%\nBoshqa\n12%\nCards\nLoans\nDeposits\nOther\nLabeled\nUsage\nRules that keep the chart honest and readable.\n2–6 columns × 2–5 categories; group the tail into “Other”.\nSame category order in every column, largest at the bottom.\nSort columns by width (share), largest left.\nNever put text straight on a categorical fill — use the chip (surface/card).\nWhy chips\nNo single text token passes 4.5:1 on every categorical colour in both Light and Dark. A surface/card chip with text/primary always does (12.9 / 15.9).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nTwo-wa"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni — ichki ChartLegend / LegendItem komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend / LegendItem komponentida."
+    }
+  ]
+}

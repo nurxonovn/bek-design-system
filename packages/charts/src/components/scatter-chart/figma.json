@@ -1,0 +1,77 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Scatter",
+      "id": "1242:22170",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Bubble", "Trend line"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 480,
+        "h": 228
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/target",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/height/md",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/32",
+          "scale/40",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Relationship between two numeric variables (income vs spend, risk vs return). Default: one point per item; Bubble: size = a third variable, up to 2 groups, layer opacity 60%; Trend line: dashed regression with its confidence band. Never imply causation — say “correlates”. React: <ScatterChart data x y size? group? trend? />"
+    }
+  ],
+  "doc": {
+    "Chart/Scatter": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/point/size",
+        "dataviz/categorical/01",
+        "dataviz/grid",
+        "dataviz/target",
+        "scale/32",
+        "scale/40",
+        "scale/480"
+      ],
+      "text": "4.18 Chart · Relation\nBEK\nDesign System\nChart/Scatter\nRelationship between two numeric variables; Bubble adds a third, Trend line adds a regression with its band. 3 variants.\nOverview\nWhat it is and when to reach for it.\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nWhen to use\nDo two measures move together (income vs spend, risk vs return)?\nFinding clusters and outliers among 20–1 000 items.\nNot for time series — use Chart/Line.\nAnatomy\nNumbered layers of the default variant.\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\n1\nAxes + grid\nChart/Axis · Chart/Grid line\n2\nPoint\ncategorical colour, layer opacity 85%\n3\nBubble size\nthird variable (Bubble)\n4\nTrend line + band\ndataviz/target dashed + dataviz/grid band\nVariants\n3 variants · Variant = Default | Bubble | Trend line\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nDefault\nRetail\nSME\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nBubble\nsize = 3rd value, ≤ 2 groups\nClients\nTrend\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nTrend line\nregression + band\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/point/size\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll points.\nHover\nPoint enlarges, Chart/Crosshair Both + tooltip.\nBrush select\nDrag a rectangle to select points (Web).\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nTablet · 834\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nWeb · 1440\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nDefault\nRetail\nSME\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nBubble\nClients\nTrend\n100\n75\n50\n25\n0\n0\n20\n40\n60\n80\n100\nTrend line\nUsage\nRules that keep the chart honest and readable.\nBoth axes labelled with units; start at 0 only if 0 is meaningful.\nOverplotting: lower opacity or switch to a density view above ~1 000 points.\nSay “correlates”, never “causes”.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nRelationship between two numeric variables; Bubble adds a third, Trend line adds a regression with its band.\nEncoding\nx ← var 1 · y ← var 2 · size ← var 3 · colour ← group\nInteraction\nHover tooltip; brush to select; legend toggles groups.\nAccessibility\nSummary with correlation (“strong positive, r = 0,82”); table view.\nComponent\n<ScatterChart data x y size? group? trend? />\nData shape\n{ \"points\": [ { \"x\": 42, \"y\": 37, \"size\": 12, \"group\": \"Retail\" } ], \"trend\": { \"slope\": 0.75, \"intercept\": 6, \"band\": 0.95 } }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Bubble · Trend line\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nBody · Gap\nchart/axis/label-gap\n8\n--bek-chart-axis-label-gap\nX axis row · Padding\nscale/40\n40\n--bek-scale-40\nY axis · Width\nscale/32\n32\n--bek"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni — ichki ChartLegend / LegendItem komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend / LegendItem komponentida."
+    }
+  ]
+}

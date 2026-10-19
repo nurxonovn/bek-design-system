@@ -1,0 +1,73 @@
+/* Figma 4.19 Diagram · Org card — 280 eni, padding/gap 12, surface/card + Elevation/1. */
+.bek-org-card {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  inline-size: var(--bek-scale-280);
+  max-inline-size: 100%;
+  padding: var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-surface-card);
+  box-shadow: var(--bek-elevation-1);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+/* Selected — border/accent halqa */
+.bek-org-card--selected {
+  box-shadow:
+    inset 0 0 0 var(--bek-stroke-strong) var(--bek-border-accent),
+    var(--bek-elevation-1);
+}
+
+.bek-org-card__avatar {
+  flex-shrink: 0;
+}
+
+.bek-org-card__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-inline-size: 0;
+}
+
+.bek-org-card__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-org-card__role {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-org-card__team {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-org-card > .bek-badge {
+  flex-shrink: 0;
+}
+
+.bek-org-card__toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: none;
+  cursor: pointer;
+}

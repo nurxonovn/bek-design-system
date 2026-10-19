@@ -1,0 +1,15 @@
+/* Chart/Grid line — Solid / Baseline: `.bek-chart__gridline` / `.bek-chart__baseline` (styles/chart.css). */
+.bek-grid-line {
+  pointer-events: none;
+}
+
+/* Target: dataviz/target, uzuq 4/4, chart/grid/stroke */
+.bek-grid-line__target {
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-dasharray: 4 4;
+}
+
+.bek-grid-line__label {
+  fill: var(--bek-dataviz-target);
+}

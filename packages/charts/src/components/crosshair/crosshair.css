@@ -1,0 +1,23 @@
+/* Chart/Crosshair — chiziq dataviz/axis · chart/grid/stroke; teglar fill/inverse + Label/S · text/inverse. */
+.bek-crosshair {
+  pointer-events: none;
+}
+
+.bek-crosshair__rule {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+.bek-crosshair__tag rect {
+  fill: var(--bek-fill-inverse);
+}
+
+.bek-crosshair__tag-text {
+  fill: var(--bek-text-inverse);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,76 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Donut",
+      "id": "1204:109",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Progress"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 160
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Headline/S", "Label/S", "Title/L"],
+        "effect": [],
+        "dimension": [
+          "chart/height/sm",
+          "radius/surface/md",
+          "scale/12",
+          "scale/2",
+          "scale/32",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 32, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Part-to-whole with ≤5 segments (group the rest into “Other”); the centre always carries the total or key value. Progress = single value on dataviz/track. Ring thickness chart/donut/thickness. Prefer Waffle or Stacked bar when shares are close. React: <DonutChart variant data total />."
+    }
+  ],
+  "doc": {
+    "Chart/Donut": {
+      "tokens": [
+        "chart/donut/thickness",
+        "chart/height/sm",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/neutral",
+        "dataviz/track",
+        "scale/12",
+        "scale/2",
+        "scale/32",
+        "scale/480",
+        "scale/8",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Composition\nBEK\nDesign System\nChart/Donut\nPart-to-whole with up to 5 segments; the centre always carries the total or key value. Progress = one value on a track. 2 variants.\nOverview\nWhat it is and when to reach for it.\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\nWhen to use\nShare of a total with 2–5 parts (spending categories, channels).\nProgress: a single percentage in a compact space.\nNot for comparing many parts or change over time.\nAnatomy\nNumbered layers of the default variant.\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\n1\nRing\nchart/donut/thickness · categorical 01→05\n2\nCentre\nTotal · Headline + Caption\n3\nLegend rows\nChart/Legend item + value, right-aligned\nVariants\n2 variants · Variant = Default | Progress\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\nDefault\n68%\nof plan\nProgress\nsingle value on dataviz/track\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/sm\n140 px\n160 px\n200 px\nchart/donut/thickness\n20 px\n24 px\n28 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll segments.\nHover\nSegment grows 2 px, others 40%; centre shows the segment value.\nSelected\nClick filters the rest of the dashboard.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\nTablet · 834\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\nWeb · 1440\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n12,4 mln\nTotal, so‘m\nCards\n46%\nTransfers\n28%\nLoans\n16%\nOther\n10%\nDefault\n68%\nof plan\nProgress\nUsage\nRules that keep the chart honest and readable.\nMax 5 segments; group the rest into “Other” (always last, dataviz/neutral).\nSegments start at 12 o’clock and go clockwise, largest first.\nLegend with values always present — angles are hard to read.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nPart-to-whole with up to 5 segments; the centre always carries the total or key value. Progress = one value on a track.\nEncoding\nangle ← share · colour ← category (ordered) · centre ← total\nInteraction\nHover / tap a segment or legend row highlights it.\nAccessibility\nReads as a list of shares that add to 100%; table view.\nComponent\n<DonutChart variant data total />.\nData shape\n{ \"total\": { \"label\": \"Spent\", \"value\": \"12,4 mln\" }, \"segments\": [ { \"label\": \"Food\", \"value\": 42 }, { \"label\": \"Rent\", \"value\": 30 } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Progress\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/32\n32\n--bek-scale-32\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLegend · Gap\nscale/12\n12\n--bek-scale-12\nRing · Width\nchart/height/sm\n140 / 160 / 200\n--bek-chart-height-sm\nRing · Height\nchart"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni; kodda hover ajratgichi."
+    }
+  ]
+}

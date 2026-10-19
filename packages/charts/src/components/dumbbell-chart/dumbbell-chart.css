@@ -1,0 +1,39 @@
+/* Qator nomi — Caption/L · text/secondary */
+.bek-dumbbell-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Ishorali farq — Label/S · text/primary */
+.bek-dumbbell-chart__delta {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Nuqtalar orasidagi trek — dataviz/track, uchlari radius/full */
+.bek-dumbbell-chart__track {
+  stroke: var(--bek-dataviz-track);
+  stroke-width: var(--bek-scale-4);
+  stroke-linecap: round;
+}
+
+.bek-dumbbell-chart__point {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+/* Hover: qator ajraladi, qolganlari 40%; <title> ikkala qiymat va farqni aytadi. */
+.bek-dumbbell-chart__plot:hover .bek-dumbbell-chart__row:not(:hover) {
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-dumbbell-chart__row {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}
