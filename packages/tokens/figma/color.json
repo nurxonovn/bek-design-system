@@ -8,14 +8,14 @@
       "codeSyntax": {
         "WEB": "var(--bek-fill-primary)"
       },
-      "description": "Eng och neytral to'ldiruvchi fon (Light #F8F8F9). Neytral tugma, karusel tugmalari, kichik bloklar.",
+      "description": "Deprecated as a surface — alias of bg/sheet. Use bg/sheet for sheets, bg/base for page backgrounds.",
       "scopes": ["FRAME_FILL", "SHAPE_FILL"],
       "values": {
         "Light": {
-          "$alias": "Palette/light/gray/50"
+          "$alias": "Color/bg/sheet"
         },
         "Dark": {
-          "$alias": "Palette/dark/gray/50"
+          "$alias": "Color/bg/sheet"
         }
       }
     },
@@ -977,14 +977,14 @@
       "codeSyntax": {
         "WEB": "var(--bek-bg-sheet)"
       },
-      "description": "Floor 1 — main background of every screen, window, sheet and modal. Light #FFFFFF · Dark #0E0E10.",
+      "description": "Layer 1 — Modal, Sheet, Drawer; plain block inside a card. Light gray/50 · Dark gray/50. BEK standard SRF-01.",
       "scopes": ["FRAME_FILL", "SHAPE_FILL"],
       "values": {
         "Light": {
-          "$alias": "Palette/white"
+          "$alias": "Palette/light/gray/50"
         },
         "Dark": {
-          "$alias": "Palette/dark/gray/40"
+          "$alias": "Palette/dark/gray/50"
         }
       }
     },
@@ -998,7 +998,7 @@
       "scopes": ["FRAME_FILL", "SHAPE_FILL"],
       "values": {
         "Light": {
-          "$alias": "Palette/light/gray/85"
+          "$alias": "Palette/white"
         },
         "Dark": {
           "$alias": "Palette/dark/gray/75"
@@ -1028,14 +1028,14 @@
       "codeSyntax": {
         "WEB": "var(--bek-bg-base)"
       },
-      "description": "Floor 0 — lowest layer under the sheet; grouped page background. Light #F1F3F6 · Dark #000000.",
+      "description": "Layer 0 — app/page background and doc frames. Light gray/85 · Dark gray/40 (#0E0E10, never pure black). BEK standard SRF-01.",
       "scopes": ["FRAME_FILL", "SHAPE_FILL"],
       "values": {
         "Light": {
           "$alias": "Palette/light/gray/85"
         },
         "Dark": {
-          "$alias": "Palette/black"
+          "$alias": "Palette/dark/gray/40"
         }
       }
     },
@@ -1045,14 +1045,14 @@
       "codeSyntax": {
         "WEB": "var(--bek-surface-grouped)"
       },
-      "description": "Card on bg/base (grouped layout, settings, lists). Light #FFFFFF · Dark #18181A.",
+      "description": "Deprecated — alias of surface/card. Use surface/card.",
       "scopes": ["FRAME_FILL", "SHAPE_FILL"],
       "values": {
         "Light": {
-          "$alias": "Palette/white"
+          "$alias": "Color/surface/card"
         },
         "Dark": {
-          "$alias": "Palette/dark/gray/75"
+          "$alias": "Color/surface/card"
         }
       }
     },
@@ -1426,6 +1426,941 @@
       "values": {
         "Light": "#6e6e6e",
         "Dark": "#6e6e6e"
+      }
+    },
+    {
+      "name": "status/success/hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-success-hover)"
+      },
+      "description": "status/success/default hover (+1 step).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/850"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/300"
+        }
+      }
+    },
+    {
+      "name": "status/success/active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-success-active)"
+      },
+      "description": "status/success/default pressed (+2 steps).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/900"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/250"
+        }
+      }
+    },
+    {
+      "name": "status/warning/hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-warning-hover)"
+      },
+      "description": "status/warning/default hover (+1 step away from text). Warning carries dark text, so the step goes lighter.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/500"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/600"
+        }
+      }
+    },
+    {
+      "name": "status/warning/active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-warning-active)"
+      },
+      "description": "status/warning/default pressed (+2 steps away from text). Warning carries dark text, so the step goes lighter.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/650"
+        }
+      }
+    },
+    {
+      "name": "status/info/hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-info-hover)"
+      },
+      "description": "status/info/default hover (+1 step).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/700"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/400"
+        }
+      }
+    },
+    {
+      "name": "status/info/active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-info-active)"
+      },
+      "description": "status/info/default pressed (+2 steps).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/750"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/350"
+        }
+      }
+    },
+    {
+      "name": "status/utility/hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-utility-hover)"
+      },
+      "description": "status/utility/default hover (+1 step).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/400"
+        }
+      }
+    },
+    {
+      "name": "status/utility/active",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-utility-active)"
+      },
+      "description": "status/utility/default pressed (+2 steps).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/700"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/350"
+        }
+      }
+    },
+    {
+      "name": "accent/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-accent-soft-hover)"
+      },
+      "description": "accent/soft hover. Steps one palette step away from the text colour (lighter in Light, darker in Dark) so text keeps ≥ 4.5:1.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/100"
+        }
+      }
+    },
+    {
+      "name": "status/info/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-info-soft-hover)"
+      },
+      "description": "status/info/soft hover. Steps one palette step away from the text colour (lighter in Light, darker in Dark) so text keeps ≥ 4.5:1.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/blue/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/blue/100"
+        }
+      }
+    },
+    {
+      "name": "status/success/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-success-soft-hover)"
+      },
+      "description": "status/success/soft hover. Steps one palette step away from the text colour (lighter in Light, darker in Dark) so text keeps ≥ 4.5:1.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/100"
+        }
+      }
+    },
+    {
+      "name": "status/warning/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-warning-soft-hover)"
+      },
+      "description": "status/warning/soft hover. Steps one palette step away from the text colour (lighter in Light, darker in Dark) so text keeps ≥ 4.5:1.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/100"
+        }
+      }
+    },
+    {
+      "name": "status/utility/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-utility-soft-hover)"
+      },
+      "description": "status/utility/soft hover. Steps one palette step away from the text colour (lighter in Light, darker in Dark) so text keeps ≥ 4.5:1.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/100"
+        }
+      }
+    },
+    {
+      "name": "status/danger/soft-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-status-danger-soft-hover)"
+      },
+      "description": "status/danger/soft hover. Steps one palette step away from the text colour (lighter in Light, darker in Dark) so text keeps ≥ 4.5:1.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/50"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/100"
+        }
+      }
+    },
+    {
+      "name": "gradient/brand-start",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-gradient-brand-start)"
+      },
+      "description": "Brand gradient start (3D style B violet). Same in Light and Dark.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/brand/3d-violet"
+        },
+        "Dark": {
+          "$alias": "Palette/brand/3d-violet"
+        }
+      }
+    },
+    {
+      "name": "gradient/brand-end",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-gradient-brand-end)"
+      },
+      "description": "Brand gradient end (3D style B blue). Same in Light and Dark.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/brand/3d-blue"
+        },
+        "Dark": {
+          "$alias": "Palette/brand/3d-blue"
+        }
+      }
+    },
+    {
+      "name": "text/accent-hover",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-text-accent-hover)"
+      },
+      "description": "Link Accent on hover. One step away from the background (darker in Light, lighter in Dark).",
+      "scopes": ["TEXT_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/750"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/01",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-01)"
+      },
+      "description": "Categorical series 1. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/600"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/02",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-02)"
+      },
+      "description": "Categorical series 2. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/teal/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/teal/450"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/03",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-03)"
+      },
+      "description": "Categorical series 3. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/orange/500"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/orange/500"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/04",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-04)"
+      },
+      "description": "Categorical series 4. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/pink/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/pink/450"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/05",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-05)"
+      },
+      "description": "Categorical series 5. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/600"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/400"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/06",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-06)"
+      },
+      "description": "Categorical series 6. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/550"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/07",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-07)"
+      },
+      "description": "Categorical series 7. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/yellow/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/yellow/450"
+        }
+      }
+    },
+    {
+      "name": "dataviz/categorical/08",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-categorical-08)"
+      },
+      "description": "Categorical series 8. Use in order; max 6 per chart, group the rest into \"Other\".",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/cyan/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/cyan/400"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/100",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-100)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/150"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/200"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/200",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-200)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/250"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/300"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/300",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-300)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/350"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/400"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/400",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-400)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/500"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/500",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-500)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/550"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/600"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/600",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-600)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/700"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/750"
+        }
+      }
+    },
+    {
+      "name": "dataviz/sequential/700",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-sequential-700)"
+      },
+      "description": "Sequential ramp (low → high). Heatmaps, density, calendar.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/indigo/850"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/indigo/900"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/neg-4",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-neg-4)"
+      },
+      "description": "Diverging, negative side (neg-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/650"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/neg-3",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-neg-3)"
+      },
+      "description": "Diverging, negative side (neg-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/500"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/neg-2",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-neg-2)"
+      },
+      "description": "Diverging, negative side (neg-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/300"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/350"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/neg-1",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-neg-1)"
+      },
+      "description": "Diverging, negative side (neg-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/red/150"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/red/250"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/0",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-0)"
+      },
+      "description": "Diverging midpoint (neutral).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/fill/tertiary"
+        },
+        "Dark": {
+          "$alias": "Color/fill/tertiary"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/pos-1",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-pos-1)"
+      },
+      "description": "Diverging, positive side (pos-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/150"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/250"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/pos-2",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-pos-2)"
+      },
+      "description": "Diverging, positive side (pos-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/300"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/350"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/pos-3",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-pos-3)"
+      },
+      "description": "Diverging, positive side (pos-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/450"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/500"
+        }
+      }
+    },
+    {
+      "name": "dataviz/diverging/pos-4",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-diverging-pos-4)"
+      },
+      "description": "Diverging, positive side (pos-4 strongest).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/650"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/green/650"
+        }
+      }
+    },
+    {
+      "name": "dataviz/positive",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-positive)"
+      },
+      "description": "Growth, gain, up.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/status/success/default"
+        },
+        "Dark": {
+          "$alias": "Color/status/success/default"
+        }
+      }
+    },
+    {
+      "name": "dataviz/negative",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-negative)"
+      },
+      "description": "Decline, loss, down.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/status/danger/default"
+        },
+        "Dark": {
+          "$alias": "Color/status/danger/default"
+        }
+      }
+    },
+    {
+      "name": "dataviz/neutral",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-neutral)"
+      },
+      "description": "No change / neutral value.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/text/tertiary"
+        },
+        "Dark": {
+          "$alias": "Color/text/tertiary"
+        }
+      }
+    },
+    {
+      "name": "dataviz/target",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-target)"
+      },
+      "description": "Target / reference line (drawn dashed).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/text/secondary"
+        },
+        "Dark": {
+          "$alias": "Color/text/secondary"
+        }
+      }
+    },
+    {
+      "name": "dataviz/anomaly",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-anomaly)"
+      },
+      "description": "Anomaly marker.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/status/warning/default"
+        },
+        "Dark": {
+          "$alias": "Color/status/warning/default"
+        }
+      }
+    },
+    {
+      "name": "dataviz/ai/accent",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-ai-accent)"
+      },
+      "description": "AI layer: forecast line, insight marker, AI badge.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/status/utility/default"
+        },
+        "Dark": {
+          "$alias": "Color/status/utility/default"
+        }
+      }
+    },
+    {
+      "name": "dataviz/ai/soft",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-ai-soft)"
+      },
+      "description": "AI layer: insight bubble and prediction-zone background.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Color/status/utility/soft"
+        },
+        "Dark": {
+          "$alias": "Color/status/utility/soft"
+        }
+      }
+    },
+    {
+      "name": "dataviz/uncertainty/50",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-uncertainty-50)"
+      },
+      "description": "Confidence band 50% (innermost).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/250"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/300"
+        }
+      }
+    },
+    {
+      "name": "dataviz/uncertainty/80",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-uncertainty-80)"
+      },
+      "description": "Confidence band 80%.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/150"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/200"
+        }
+      }
+    },
+    {
+      "name": "dataviz/uncertainty/95",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-uncertainty-95)"
+      },
+      "description": "Confidence band 95% (outermost).",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/purple/100"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/purple/150"
+        }
+      }
+    },
+    {
+      "name": "dataviz/axis",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-axis)"
+      },
+      "description": "Axis baseline.",
+      "scopes": ["SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/border/default"
+        },
+        "Dark": {
+          "$alias": "Color/border/default"
+        }
+      }
+    },
+    {
+      "name": "dataviz/grid",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-grid)"
+      },
+      "description": "Grid lines.",
+      "scopes": ["SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/border/hairline"
+        },
+        "Dark": {
+          "$alias": "Color/border/hairline"
+        }
+      }
+    },
+    {
+      "name": "dataviz/label",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-label)"
+      },
+      "description": "Axis and tick labels.",
+      "scopes": ["TEXT_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Color/text/tertiary"
+        },
+        "Dark": {
+          "$alias": "Color/text/tertiary"
+        }
+      }
+    },
+    {
+      "name": "dataviz/track",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-dataviz-track)"
+      },
+      "description": "Empty track (progress, gauge, bullet) and muted / non-selected series.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
+      "values": {
+        "Light": {
+          "$alias": "Color/fill/tertiary"
+        },
+        "Dark": {
+          "$alias": "Color/fill/tertiary"
+        }
       }
     }
   ]

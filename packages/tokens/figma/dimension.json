@@ -1467,6 +1467,388 @@
         "Tablet": "cubic-bezier(0.2, 0, 0, 1)",
         "Web": "cubic-bezier(0.2, 0, 0, 1)"
       }
+    },
+    {
+      "name": "chart/height/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-height-sm)"
+      },
+      "description": "Compact chart in cards.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/140"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/160"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/200"
+        }
+      }
+    },
+    {
+      "name": "chart/height/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-height-md)"
+      },
+      "description": "Default plot height.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/200"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/240"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/320"
+        }
+      }
+    },
+    {
+      "name": "chart/height/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-height-lg)"
+      },
+      "description": "Dashboard hero chart.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/280"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/320"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/400"
+        }
+      }
+    },
+    {
+      "name": "chart/sparkline/height",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-sparkline-height)"
+      },
+      "description": "Sparkline / micro chart.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/40"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/48"
+        }
+      }
+    },
+    {
+      "name": "chart/padding",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-padding)"
+      },
+      "description": "Chart container padding.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/24"
+        }
+      }
+    },
+    {
+      "name": "chart/gap",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-gap)"
+      },
+      "description": "Gap between header, legend and plot.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/16"
+        }
+      }
+    },
+    {
+      "name": "chart/axis/label-gap",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-axis-label-gap)"
+      },
+      "description": "Gap between axis and its labels.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "chart/axis/tick-count",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-axis-tick-count)"
+      },
+      "description": "Recommended Y-axis tick count per device.",
+      "scopes": [],
+      "values": {
+        "Mobile": 4,
+        "Tablet": 5,
+        "Web": 6
+      }
+    },
+    {
+      "name": "chart/bar/thickness",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-bar-thickness)"
+      },
+      "description": "Max bar thickness.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/32"
+        }
+      }
+    },
+    {
+      "name": "chart/bar/gap",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-bar-gap)"
+      },
+      "description": "Gap between bars / groups.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/16"
+        }
+      }
+    },
+    {
+      "name": "chart/bar/radius",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-bar-radius)"
+      },
+      "description": "Bar end radius (value end only).",
+      "scopes": ["CORNER_RADIUS"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/4"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/4"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/4"
+        }
+      }
+    },
+    {
+      "name": "chart/line/stroke",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-line-stroke)"
+      },
+      "description": "Series line width.",
+      "scopes": ["STROKE_FLOAT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/2"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/2"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/2"
+        }
+      }
+    },
+    {
+      "name": "chart/grid/stroke",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-grid-stroke)"
+      },
+      "description": "Grid and axis line width.",
+      "scopes": ["WIDTH_HEIGHT", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/1"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/1"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/1"
+        }
+      }
+    },
+    {
+      "name": "chart/point/size",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-point-size)"
+      },
+      "description": "Data point diameter.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "chart/point/size-active",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-point-size-active)"
+      },
+      "description": "Hovered / selected point diameter.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/12"
+        }
+      }
+    },
+    {
+      "name": "chart/legend/marker",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-legend-marker)"
+      },
+      "description": "Legend dot / square size.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/8"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/8"
+        }
+      }
+    },
+    {
+      "name": "chart/legend/gap",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-legend-gap)"
+      },
+      "description": "Gap between legend items.",
+      "scopes": ["GAP"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/12"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/16"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/16"
+        }
+      }
+    },
+    {
+      "name": "chart/donut/thickness",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-chart-donut-thickness)"
+      },
+      "description": "Donut ring thickness.",
+      "scopes": ["WIDTH_HEIGHT", "STROKE_FLOAT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/20"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/24"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/28"
+        }
+      }
+    },
+    {
+      "name": "motion/duration/chart-enter",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-duration-chart-enter)"
+      },
+      "description": "Chart first render animation.",
+      "scopes": [],
+      "values": {
+        "Mobile": 400,
+        "Tablet": 400,
+        "Web": 400
+      }
+    },
+    {
+      "name": "motion/duration/live-pulse",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-motion-duration-live-pulse)"
+      },
+      "description": "Live / anomaly pulse loop.",
+      "scopes": [],
+      "values": {
+        "Mobile": 1600,
+        "Tablet": 1600,
+        "Web": 1600
+      }
     }
   ]
 }

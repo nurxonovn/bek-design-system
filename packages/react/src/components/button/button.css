@@ -233,8 +233,8 @@
 .bek-button--outline-action {
   --bek-button-bg: var(--bek-accent-soft);
   --bek-button-fg: var(--bek-text-accent);
-  --bek-button-hover-bg: var(--bek-accent-soft);
-  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-hover-bg: var(--bek-accent-soft-hover);
+  --bek-button-hover-overlay: transparent;
   --bek-button-active-bg: var(--bek-accent-soft);
   --bek-button-active-overlay: var(--bek-fill-soft-hover);
   --bek-button-selected-bg: var(--bek-accent-default);
@@ -261,8 +261,8 @@
 .bek-button--outline-info {
   --bek-button-bg: var(--bek-status-info-soft);
   --bek-button-fg: var(--bek-text-info);
-  --bek-button-hover-bg: var(--bek-status-info-soft);
-  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-hover-bg: var(--bek-status-info-soft-hover);
+  --bek-button-hover-overlay: transparent;
   --bek-button-active-bg: var(--bek-status-info-soft);
   --bek-button-active-overlay: var(--bek-fill-soft-hover);
   --bek-button-selected-bg: var(--bek-status-info-default);
@@ -289,8 +289,8 @@
 .bek-button--outline-success {
   --bek-button-bg: var(--bek-status-success-soft);
   --bek-button-fg: var(--bek-text-success);
-  --bek-button-hover-bg: var(--bek-status-success-soft);
-  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-hover-bg: var(--bek-status-success-soft-hover);
+  --bek-button-hover-overlay: transparent;
   --bek-button-active-bg: var(--bek-status-success-soft);
   --bek-button-active-overlay: var(--bek-fill-soft-hover);
   --bek-button-selected-bg: var(--bek-status-success-default);
@@ -317,8 +317,8 @@
 .bek-button--outline-warning {
   --bek-button-bg: var(--bek-status-warning-soft);
   --bek-button-fg: var(--bek-text-warning);
-  --bek-button-hover-bg: var(--bek-status-warning-soft);
-  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-hover-bg: var(--bek-status-warning-soft-hover);
+  --bek-button-hover-overlay: transparent;
   --bek-button-active-bg: var(--bek-status-warning-soft);
   --bek-button-active-overlay: var(--bek-fill-soft-hover);
   --bek-button-selected-bg: var(--bek-status-warning-default);
@@ -345,8 +345,8 @@
 .bek-button--outline-danger {
   --bek-button-bg: var(--bek-status-danger-soft);
   --bek-button-fg: var(--bek-text-danger);
-  --bek-button-hover-bg: var(--bek-status-danger-soft);
-  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-hover-bg: var(--bek-status-danger-soft-hover);
+  --bek-button-hover-overlay: transparent;
   --bek-button-active-bg: var(--bek-status-danger-soft);
   --bek-button-active-overlay: var(--bek-fill-soft-hover);
   --bek-button-selected-bg: var(--bek-status-danger-default);
@@ -373,8 +373,8 @@
 .bek-button--outline-utility {
   --bek-button-bg: var(--bek-status-utility-soft);
   --bek-button-fg: var(--bek-text-utility);
-  --bek-button-hover-bg: var(--bek-status-utility-soft);
-  --bek-button-hover-overlay: var(--bek-fill-soft);
+  --bek-button-hover-bg: var(--bek-status-utility-soft-hover);
+  --bek-button-hover-overlay: transparent;
   --bek-button-active-bg: var(--bek-status-utility-soft);
   --bek-button-active-overlay: var(--bek-fill-soft-hover);
   --bek-button-selected-bg: var(--bek-status-utility-default);
