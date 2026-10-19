@@ -1,0 +1,126 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Line",
+      "id": "1203:202",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Single", "Multi", "Area", "Hover"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 480,
+        "h": 228
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/label",
+          "dataviz/target",
+          "surface/card",
+          "surface/raised",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Caption/S"],
+        "effect": ["Elevation/2 Raised-hover"],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/height/md",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/200",
+          "scale/32",
+          "scale/4",
+          "scale/40",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Change over time. Max 5 lines (Mobile 3). Smooth curve, 2px stroke (chart/line/stroke), points only on hover. Area = single series with accent/soft fill. Hover shows crosshair + Data point (Active) + Tooltip. React: <LineChart variant data series area />."
+    }
+  ],
+  "doc": {
+    "Chart/Line": {
+      "tokens": [
+        "accent/soft",
+        "chart/axis/label-gap",
+        "chart/axis/tick-count",
+        "chart/gap",
+        "chart/height/md",
+        "chart/line/stroke",
+        "chart/point/size",
+        "dataviz/categorical/01",
+        "scale/32",
+        "scale/40",
+        "scale/480"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Line\nChange over time. Smooth 2 px lines, points only on hover; Area for one series with volume. 4 variants.\nOverview\nWhat it is and when to reach for it.\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nWhen to use\nContinuous time: days, weeks, months.\nUp to 5 series on Web, 3 on Mobile.\nArea: one series where the volume under the line matters.\nAnatomy\nNumbered layers of the default variant.\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\n1\nY axis\nChart/Axis Y\n2\nGrid + baseline\nChart/Grid line\n3\nLine\nchart/line/stroke · series colour\n4\nArea\naccent/soft (Area variant)\n5\nX axis\nChart/Axis X\nVariants\n4 variants · Variant = Single | Multi | Area | Hover\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSingle\nRevenue\nCosts\nPlan\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nMulti\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nArea\n100\n75\n50\n25\n0\nOct 18, 2026\nRevenue\n12 450 000\nJan\nFeb\nMar\nApr\nMay\nJun\nHover\ncrosshair + tooltip\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/line/stroke\n2 px\n2 px\n2 px\nchart/point/size\n8 px\n8 px\n8 px\nchart/axis/tick-count\n4\n5\n6\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nLines only.\nHover\nCrosshair, active points and tooltip (see Hover variant).\nSeries hidden\nLegend toggle removes the line, Y axis keeps its scale.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nTablet · 834\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nWeb · 1440\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSingle\nRevenue\nCosts\nPlan\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nMulti\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nArea\n100\n75\n50\n25\n0\nOct 18, 2026\nRevenue\n12 450 000\nJan\nFeb\nMar\nApr\nMay\nJun\nHover\nUsage\nRules that keep the chart honest and readable.\nThe Y axis does not have to start at 0 — but say so if it doesn’t.\nMax 5 lines; more → small multiples or highlight one and mute the rest.\nUse dashed lines only for forecast or plan.\nGaps in data are gaps in the line — never interpolate silently.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nChange over time. Smooth 2 px lines, points only on hover; Area for one series with volume.\nEncoding\nx ← time · y ← value · colour ← series · dash ← forecast/plan\nInteraction\nHover / tap: Chart/Crosshair + Chart/Tooltip; legend toggles; brush zooms.\nAccessibility\nSummary: start, end, min, max and change; table view; points focusable.\nComponent\n<LineChart variant data series area />.\nData shape\n{ \"x\": { \"type\": \"time\" }, \"series\": [ { \"id\": \"rev\", \"label\": \"Revenue\", \"points\": [ { \"x\": \"2026-01\", \"y\": 42 } ] } ], \"variant\": \"single | multi | area\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nSingle · Multi · Area · Hover\nSingle\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web)"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni; kodda nuqta halqasi uchun ishlatiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-raised",
+      "reason": "Tooltip foni — ichki ChartTooltip komponentida."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend va tooltip matni — ichki ChartLegend / ChartTooltip'da."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-tertiary",
+      "reason": "Tooltip sarlavhasi — ichki ChartTooltip'da."
+    },
+    {
+      "rule": "effect-missing",
+      "match": "Elevation/2",
+      "reason": "Tooltip soyasi — ichki ChartTooltip'da."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni — ichki ChartLegend'da."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/M",
+      "reason": "Tooltip sarlavhasi — ichki ChartTooltip'da."
+    },
+    {
+      "rule": "variant-missing",
+      "match": "Variant=Hover",
+      "reason": "Hover — interaksiya holati (crosshair + tooltip), prop emas."
+    },
+    {
+      "rule": "variant-missing",
+      "match": "Variant=Single",
+      "reason": "Single — bitta seriya berilganda (series.length === 1)."
+    },
+    {
+      "rule": "variant-missing",
+      "match": "Variant=Multi",
+      "reason": "Multi — 2+ seriya berilganda, legend avtomatik."
+    }
+  ]
+}

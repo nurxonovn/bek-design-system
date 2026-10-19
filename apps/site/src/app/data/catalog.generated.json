@@ -45,6 +45,7 @@
   "components": [
     {
       "dir": "accordion",
+      "package": "@bek/react",
       "title": "Accordion",
       "description": "yig'iladigan bo'limlar. variant: plain (ajratuvchi chiziq) · card (fill/secondary); size: s 48 · m 56 px.",
       "exports": [
@@ -210,6 +211,7 @@
     },
     {
       "dir": "alert",
+      "package": "@bek/react",
       "title": "Alert",
       "description": "Sahifa ichidagi doimiy xabar: nima bo'ldi, nega va keyingi qadam.",
       "exports": [
@@ -333,6 +335,7 @@
     },
     {
       "dir": "app-bar",
+      "package": "@bek/react",
       "title": "AppBar",
       "description": "Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.",
       "exports": [
@@ -453,6 +456,7 @@
     },
     {
       "dir": "avatar",
+      "package": "@bek/react",
       "title": "Avatar",
       "description": "size: s 32 · m 40 · l 48 · xl 64 px; status: online · away · busy.",
       "exports": [
@@ -552,6 +556,7 @@
     },
     {
       "dir": "badge",
+      "package": "@bek/react",
       "title": "Badge",
       "description": "Qisqa holat yoki son: pill shaklida, 1–2 so'z.",
       "exports": [
@@ -669,6 +674,7 @@
     },
     {
       "dir": "base-selector",
+      "package": "@bek/react",
       "title": "BaseSelector",
       "description": "qisqa variantlar ro'yxatini (xamir, o'lcham, muz, qovurish) ‹ › bilan birma-bir aylantirish, rasm bilan.",
       "exports": [
@@ -766,6 +772,7 @@
     },
     {
       "dir": "bottom-navigation",
+      "package": "@bek/react",
       "title": "BottomNavigation",
       "description": "(+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.",
       "exports": [
@@ -932,6 +939,7 @@
     },
     {
       "dir": "breadcrumb",
+      "package": "@bek/react",
       "title": "Breadcrumb",
       "description": "Sahifaning ierarxiyadagi o'rni; oxirgi qadam — joriy sahifa.",
       "exports": [
@@ -1064,6 +1072,7 @@
     },
     {
       "dir": "button",
+      "package": "@bek/react",
       "title": "Button",
       "description": "Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.",
       "exports": [
@@ -1298,6 +1307,7 @@
     },
     {
       "dir": "card",
+      "package": "@bek/react",
       "title": "Card",
       "description": "variant: elevated · outlined · filled; size: s · m · l (padding 16 / 24 / 32).",
       "exports": [
@@ -1451,6 +1461,7 @@
     },
     {
       "dir": "carousel",
+      "package": "@bek/react",
       "title": "Carousel",
       "description": "controls: arrows · dots (Figma \"Dots only\") · none; placement: inside · below; peek — keyingi slayd cheti; onMedia — rasm ustidagi oq nuqtalar. Indikator (indicator): dots · fraction (\"1 / 5\") · progress · thumbnails (thumbnails — kichik rasmlar, orientation: horizontal · vertical, thumbSize: s 56 · m 64).",
       "exports": [
@@ -1686,6 +1697,7 @@
     },
     {
       "dir": "checkbox",
+      "package": "@bek/react",
       "title": "Checkbox",
       "description": "Unchecked · Checked · Indeterminate, o'lcham s 16 · m 20 · l 24 px.",
       "exports": [
@@ -1786,6 +1798,7 @@
     },
     {
       "dir": "checkout-bar",
+      "package": "@bek/react",
       "title": "CheckoutBar · CartPill",
       "description": "Buyurtmani oldinga suradigan sticky pastki panel.",
       "exports": [
@@ -1892,6 +1905,7 @@
     },
     {
       "dir": "chip",
+      "package": "@bek/react",
       "title": "Chip",
       "description": "foydalanuvchi yoqadigan (Filter) yoki olib tashlaydigan (Input) ixcham pill. size: s 32 · m 40.",
       "exports": [
@@ -2007,6 +2021,7 @@
     },
     {
       "dir": "date-picker",
+      "package": "@bek/react",
       "title": "DatePicker",
       "description": "Type=Single va Type=Range. Dushanbadan boshlanadigan oy to'ri, bugun nuqtasi, oraliq tasmasi; mobil'da Bottom sheet, web'da Popover ichida.",
       "exports": [
@@ -2153,6 +2168,7 @@
     },
     {
       "dir": "description-list",
+      "package": "@bek/react",
       "title": "Description list",
       "description": "term · qiymat juftliklari: xususiyatlar, cheklar, buyurtma tafsilotlari. Table'dan yengil. layout: justified · columns · inline; size: s (Body/S) · m (Body/M) · l (Body/L).",
       "exports": [
@@ -2306,6 +2322,7 @@
     },
     {
       "dir": "divider",
+      "package": "@bek/react",
       "title": "Divider",
       "description": "Yagona ajratuvchi chiziq: border/hairline, 1 px (stroke/default). List, Menu, Card ichida.",
       "exports": [
@@ -2357,6 +2374,7 @@
     },
     {
       "dir": "empty-state",
+      "package": "@bek/react",
       "title": "EmptyState",
       "description": "Bo'sh ro'yxat, natija yo'q yoki oflayn holat.",
       "exports": [
@@ -2464,6 +2482,7 @@
     },
     {
       "dir": "fieldset",
+      "package": "@bek/react",
       "title": "Fieldset",
       "description": "bitta label, bitta control (yoki boshqaruvlar guruhi), bitta xabar. O'z label'i bo'lmagan istalgan control'ni o'raydi: Chip qatori, Checkbox/Radio guruhi, Segmented control, Slider, Date picker, yuklovchi. layout: vertical · horizontal; status: helper · error · success.",
       "exports": [
@@ -2562,6 +2581,7 @@
     },
     {
       "dir": "icon",
+      "package": "@bek/react",
       "title": "Icon",
       "description": "Ikonka uchun o'lchamli slot; ikonkalarning o'zi — alohida BEK Icons kutubxonasidan (Style=Stroke, Type=Standard).",
       "exports": [
@@ -2619,6 +2639,7 @@
     },
     {
       "dir": "info-wrap",
+      "package": "@bek/react",
       "title": "InfoWrap",
       "description": "Forma yoki karta ichidagi kichik yordamchi izoh bloki.",
       "exports": [
@@ -2718,6 +2739,7 @@
     },
     {
       "dir": "keyboard",
+      "package": "@bek/react",
       "title": "Keyboard",
       "description": "ekran maketlari uchun tizim klaviaturasi (iOS 27 / Material 3 Gboard) BEK tokenlarida. Faqat mockup: haqiqiy klaviaturani OS chizadi; bu komponent maydon fokusda bo'lganda ko'rinadigan maydonni tekshirish uchun. platform: ios · android; type: alphabet · numeric.",
       "exports": [
@@ -2820,6 +2842,7 @@
     },
     {
       "dir": "link",
+      "package": "@bek/react",
       "title": "Link",
       "description": "foydalanuvchini boshqa joyga olib boradigan matn havolasi. variant: inherit · accent · neutral · subtle; size: s (Body/S) · m (Body/M) · l (Body/L). Padding va fon yo'q — bu matn, tugma emas.",
       "exports": [
@@ -2930,6 +2953,7 @@
     },
     {
       "dir": "list-item",
+      "package": "@bek/react",
       "title": "ListItem",
       "description": "ro'yxat qatori, chap (leading: Checkbox, Icon, Avatar) va o'ng (trailing: Badge, Switch, qiymat; chevron) slotlar bilan. size: s 48 · m 56 · l 72 px (min).",
       "exports": [
@@ -3064,6 +3088,7 @@
     },
     {
       "dir": "loader",
+      "package": "@bek/react",
       "title": "Loader · PullToRefresh",
       "description": "",
       "exports": [
@@ -3173,6 +3198,7 @@
     },
     {
       "dir": "logo",
+      "package": "@bek/react",
       "title": "BekLogo",
       "description": "Belgi (to'rt gulbarg) + \"BEK\" wordmark + mahsulot nomi.",
       "exports": [
@@ -3275,6 +3301,7 @@
     },
     {
       "dir": "mascot",
+      "package": "@bek/react",
       "title": "Mascot",
       "description": "BEK maskoti, panda: Mascot (sprite-sheet kadri) va MascotMessage (maskot + sarlavha + tavsif + tugma). pose: idle + 8 qarash (look-up, look-down-right …) + 9 his (happy, love, success, celebrate, wink, surprised, shy, sleepy, dizzy); size: xs 32 · s 48 · m 64 · l 96 · xl 140 · 2xl 200.",
       "exports": [
@@ -3420,6 +3447,7 @@
     },
     {
       "dir": "navigation",
+      "package": "@bek/react",
       "title": "Navigation",
       "description": "Web (≥ 1024), Tablet (600–1023) va Mobile (< 600) uchun ilova navigatsiyasi.",
       "exports": [
@@ -4338,6 +4366,7 @@
     },
     {
       "dir": "notification-bar",
+      "package": "@bek/react",
       "title": "NotificationBar",
       "description": "Mobil snackbar — ekran pastida bir qatorli xabar.",
       "exports": [
@@ -4454,6 +4483,7 @@
     },
     {
       "dir": "order-widget",
+      "package": "@bek/react",
       "title": "OrderWidget",
       "description": "jarayondagi buyurtma holati (bosh ekranda). status: accepted · preparing · on-the-way · delivered; size: compact · expanded (4 bo'lakli progress + bosqich nomlari).",
       "exports": [
@@ -4560,6 +4590,7 @@
     },
     {
       "dir": "overlay",
+      "package": "@bek/react",
       "title": "Overlays",
       "description": "(7.1–7.11). Barcha bloklovchi oynalar native <dialog> (showModal) ustida:",
       "exports": [
@@ -5693,6 +5724,7 @@
     },
     {
       "dir": "pagination",
+      "package": "@bek/react",
       "title": "Pagination · LoadMore",
       "description": "",
       "exports": [
@@ -5851,6 +5883,7 @@
     },
     {
       "dir": "pattern",
+      "package": "@bek/react",
       "title": "Pattern",
       "description": "empty state, promo sheet, onboarding va karta fonlari uchun bezak plitka (320 × 320, takrorlanadi). type: dots · grid · diagonal · logo-petals; tone: subtle · accent.",
       "exports": [
@@ -5916,6 +5949,7 @@
     },
     {
       "dir": "pincode",
+      "package": "@bek/react",
       "title": "CodeInput · Pinpad",
       "description": "PIN nuqtalari (CodeInput, 4 yoki 6) va raqamli klaviatura (Pinpad).",
       "exports": [
@@ -6121,6 +6155,7 @@
     },
     {
       "dir": "price",
+      "package": "@bek/react",
       "title": "Price",
       "description": "narx, valyuta, eski narx, chegirma va izoh. size: s · m · l · xl; layout: inline · stacked.",
       "exports": [
@@ -6228,6 +6263,7 @@
     },
     {
       "dir": "product-card",
+      "package": "@bek/react",
       "title": "ProductCard",
       "description": "rasm, nom, tavsif, narx va qo'shish amali. layout: vertical (2 ustunli to'r) · horizontal (menyu ro'yxati) · featured (aksiya, tavsiya).",
       "exports": [
@@ -6336,6 +6372,7 @@
     },
     {
       "dir": "progress",
+      "package": "@bek/react",
       "title": "ProgressBar",
       "description": "chiziqli jarayon (yuklash, kurs, profil to'ldirish). size: s 4 · m 6 · l 8 px; status: neutral · accent · success · warning · danger.",
       "exports": [
@@ -6433,6 +6470,7 @@
     },
     {
       "dir": "radio",
+      "package": "@bek/react",
       "title": "Radio",
       "description": "bitta tanlov, o'lcham s 16 · m 20 · l 24 px.",
       "exports": [
@@ -6525,6 +6563,7 @@
     },
     {
       "dir": "rating",
+      "package": "@bek/react",
       "title": "Rating",
       "description": "faqat o'qish uchun reyting (mahsulot, kurs, joy). variant: stars (5 yulduz, 0.5 qadam) · compact (bitta yulduz + ball); size: s 16 · m 20 · l 24 px.",
       "exports": [
@@ -6671,6 +6710,7 @@
     },
     {
       "dir": "search-bar",
+      "package": "@bek/react",
       "title": "SearchBar",
       "description": "ro'yxat va katalog uchun pill qidiruv. size: m 36 (zich UI) · l 44 (touch).",
       "exports": [
@@ -6771,6 +6811,7 @@
     },
     {
       "dir": "segmented-control",
+      "package": "@bek/react",
       "title": "SegmentedControl",
       "description": "2–4 o'zaro istisno ko'rinish yoki rejim (davr, o'lcham). size: m · l; variant: solid · overlay (rasm/video ustida).",
       "exports": [
@@ -6884,6 +6925,7 @@
     },
     {
       "dir": "select",
+      "package": "@bek/react",
       "title": "Select",
       "description": "ro'yxatdan tanlash. Native <select> (klaviatura, mobil picker, autofill tayyor) TextField qobig'ida.",
       "exports": [
@@ -7021,6 +7063,7 @@
     },
     {
       "dir": "separator",
+      "package": "@bek/react",
       "title": "Separator · Scrollbar",
       "description": "type: line (1 px border/hairline) · block (8 px bg/base tasma guruhlar orasida) · labeled (\"yoki\"); inset: none · leading · both (16 px); orientation.",
       "exports": [
@@ -7103,6 +7146,7 @@
     },
     {
       "dir": "skeleton",
+      "package": "@bek/react",
       "title": "Skeleton",
       "description": "Ma'lumot yuklanguncha haqiqiy maketni takrorlovchi joy egallovchi.",
       "exports": [
@@ -7182,6 +7226,7 @@
     },
     {
       "dir": "slider",
+      "package": "@bek/react",
       "title": "Slider · RangeSlider",
       "description": "Type=Single → Slider, Type=Range → RangeSlider. O'lcham s · m · l (yo'lak 6/8/10, thumb 14/16/20 px).",
       "exports": [
@@ -7300,6 +7345,7 @@
     },
     {
       "dir": "spinner",
+      "package": "@bek/react",
       "title": "Spinner",
       "description": "Yuklanish belgisi; Button va Input ichida ham ishlatiladi.",
       "exports": [
@@ -7363,6 +7409,7 @@
     },
     {
       "dir": "stepper",
+      "package": "@bek/react",
       "title": "Stepper",
       "description": "miqdor tanlash. variant: filled · outline; size: s 36 · m 44 · l 56 px.",
       "exports": [
@@ -7474,6 +7521,7 @@
     },
     {
       "dir": "switch",
+      "package": "@bek/react",
       "title": "Switch",
       "description": "darhol kuchga kiradigan yoqish/o'chirish (saqlash tugmasisiz). Yo'lak s 32×20 · m 40×24 · l 48×28 px.",
       "exports": [
@@ -7575,6 +7623,7 @@
     },
     {
       "dir": "system-bars",
+      "package": "@bek/react",
       "title": "System bars",
       "description": "StatusBar va HomeIndicator: iOS va Android tizim panellari faqat mockup va shablonlar uchun (haqiqiy qurilmada OS chizadi). platform: ios · android; content: dark (yorug' fon) · light (qorong'i fon, rasm).",
       "exports": [
@@ -7708,6 +7757,7 @@
     },
     {
       "dir": "table",
+      "package": "@bek/react",
       "title": "Table",
       "description": "native <table> + TableHeaderCell (saralash), TableRow (tanlangan / o'chirilgan), TableCell (tavsif, raqam). size: s 40 · m 48 · l 56 px; zebra.",
       "exports": [
@@ -7886,6 +7936,7 @@
     },
     {
       "dir": "tabs",
+      "package": "@bek/react",
       "title": "Tabs",
       "description": "(Tab item + Tabs). Bir sahifadagi bo'limlar orasida almashish — WAI-ARIA tabs.",
       "exports": [
@@ -8053,6 +8104,7 @@
     },
     {
       "dir": "tag",
+      "package": "@bek/react",
       "title": "Tag",
       "description": "Metama'lumot yorlig'i (kategoriya, mavzu). Badge'dan farqi: holat emas, ma'lumot; shakli — yumaloq burchakli to'rtburchak (radius/control/md).",
       "exports": [
@@ -8155,6 +8207,7 @@
     },
     {
       "dir": "text-field",
+      "package": "@bek/react",
       "title": "TextField",
       "description": "Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.",
       "exports": [
@@ -8298,6 +8351,7 @@
     },
     {
       "dir": "textarea",
+      "package": "@bek/react",
       "title": "Textarea",
       "description": "ko'p qatorli matn, yordamchi qatorning o'ng tomonida belgi hisoblagichi.",
       "exports": [
@@ -8428,6 +8482,7 @@
     },
     {
       "dir": "time-slot",
+      "package": "@bek/react",
       "title": "TimeSlotPicker",
       "description": "+ Time slot — yetkazish yoki band qilish oynasini tanlash: kun (SegmentedControl) + oynalar to'ri (qatorda 3 ta) + izoh. Express oyna birinchi.",
       "exports": [
@@ -8573,6 +8628,7 @@
     },
     {
       "dir": "toast",
+      "package": "@bek/react",
       "title": "Toast",
       "description": "Amal natijasi haqida qisqa vaqtli xabar (\"Saved\", \"Payment failed\").",
       "exports": [
@@ -8704,6 +8760,7 @@
     },
     {
       "dir": "tooltip",
+      "package": "@bek/react",
       "title": "Tooltip · TooltipCallout",
       "description": "",
       "exports": [
@@ -8858,6 +8915,7 @@
     },
     {
       "dir": "top-navigation",
+      "package": "@bek/react",
       "title": "TopNavigation",
       "description": "Mobil/planshet ekran yuqorisidagi panel. Web uchun — AppHeader (6.2).",
       "exports": [
@@ -8990,6 +9048,906 @@
         }
       ],
       "readme": "# TopNavigation\n\nFigma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).\n\n```tsx\nimport { TopNavigation } from '@bek/react';\n\n<TopNavigation title=\"Product\" onLeadingClick={goBack} actions={<ShareButton />} />\n<TopNavigation type=\"large-title\" title=\"Profile\" leading=\"none\" />\n<TopNavigation type=\"search\" leading=\"menu\" onLeadingClick={openDrawer}>\n  <SearchBar placeholder=\"Search\" />\n</TopNavigation>\n<TopNavigation background=\"transparent\" title=\"Gallery\" />   // rasm ustida\n```\n\n| Prop                              | Qiymatlar                                         | Default    |\n| --------------------------------- | ------------------------------------------------- | ---------- |\n| `type`                            | `standard` · `large-title` · `search`             | `standard` |\n| `leading`                         | `back` · `close` · `menu` · `none`                | `back`     |\n| `onLeadingClick` · `leadingLabel` | chap tugma va uning nomi                          | —          |\n| `title`                           | Title/M markazda; Large title — Headline/L pastda | —          |\n| `actions`                         | 2 tagacha Flat XL icon tugma yoki avatar          | —          |\n| `background`                      | `solid` (`bg/sheet`) · `transparent`              | `solid`    |\n\n- Bar 56, padding 0 8, gap 8; tugmalar 44 (touch target). Transparent — tugmalar `fill/on-media`, matn `text/on-color`. Status bar ustida joylashadi; RTL'da orqaga chevron teskari.\n"
+    },
+    {
+      "dir": "bar-chart",
+      "package": "@bek/charts",
+      "title": "Bar chart",
+      "description": "kategoriyalar bo'yicha qiymatlarni solishtirish; ustun doim 0 dan. variant: vertical · grouped · stacked · horizontal.",
+      "exports": [
+        "BarChart"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Bar",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Bar",
+            "id": "1202:228",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1202-228",
+            "variants": 4,
+            "description": "Compare values across categories. Bars always start at zero. Variants: Vertical, Grouped (≤3 series), Stacked (≤4 segments, rounded on the value end only), Horizontal (long labels, ranking). React: <BarChart variant data series />. Bar geometry is data — it is not token-bound; thickness, gap and radius are (chart/bar/*).",
+            "props": {
+              "Variant": [
+                "Vertical",
+                "Grouped",
+                "Stacked",
+                "Horizontal"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/categorical/03",
+                "dataviz/label",
+                "surface/card",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/S",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/axis/label-gap",
+                "chart/bar/radius",
+                "chart/bar/thickness",
+                "chart/gap",
+                "chart/height/md",
+                "chart/legend/gap",
+                "radius/surface/md",
+                "scale/12",
+                "scale/32",
+                "scale/40",
+                "scale/480",
+                "scale/8",
+                "scale/80"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "border/hairline",
+          "chart/axis/label-gap",
+          "chart/axis/tick-count",
+          "chart/bar/",
+          "chart/bar/gap",
+          "chart/bar/radius",
+          "chart/bar/thickness",
+          "chart/gap",
+          "chart/height/md",
+          "dataviz/categorical/01",
+          "scale/32",
+          "scale/40",
+          "scale/480"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+        }
+      ],
+      "readme": "# Bar chart\n\nFigma: **4.18 Chart · Bar** — kategoriyalar bo'yicha qiymatlarni solishtirish; ustun doim 0 dan. `variant`: `vertical` · `grouped` · `stacked` · `horizontal`.\n\n```tsx\n<ChartContainer>\n  {(width) => (\n    <BarChart\n      width={width}\n      variant=\"grouped\"\n      series={[{ name: '2026' }, { name: '2025' }]}\n      data={[\n        { label: 'Jan', values: [42, 35] },\n        { label: 'Feb', values: [51, 40] },\n      ]}\n      label=\"Orders 2026 vs 2025: higher every month\"\n    />\n  )}\n</ChartContainer>\n```\n\n- **Qachon:** 2–12 kategoriya. Grouped ≤ 3 seriya, Stacked ≤ 4 segment (qismlar yig'indisi), Horizontal — uzun nomlar va reyting (Mobile'da 6+ kategoriya bo'lsa ham).\n- **Kodlash:** x = kategoriya, y = qiymat (0 dan), rang = seriya (`dataviz/categorical/0i`), radius (`chart/bar/radius`) faqat qiymat uchida.\n- **Interaksiya:** hover — qolgan ustunlar 40%, `<title>` qiymatni aytadi; drill-down uchun ota komponent bosishni ushlaydi.\n- **A11y:** `role=\"img\"` + `label` xulosa, ko'rinmas `<table>` ma'lumot nusxasi; rang yolg'iz ma'no tashimaydi (legend + jadval).\n- **O'lchamlar:** plot `chart/height/md` (200 / 240 / 320), qalinlik `chart/bar/thickness` (16 / 24 / 32) → `barThickness`, tick `chart/axis/tick-count` (4 / 5 / 6) → `ticks`. Responsiv en — `ChartContainer`.\n- Matn: o'q Caption/S · `dataviz/label`; Horizontal kategoriya Caption/L · `text/secondary`, qiymat Label/S · `text/primary`.\n"
+    },
+    {
+      "dir": "chart-card",
+      "package": "@bek/charts",
+      "title": "Chart card",
+      "description": "har dashboard chartining o'ramasi: sarlavha, davr tanlagich, KPI qatori, chart sloti va manba. state: default · loading · empty · error.",
+      "exports": [
+        "ChartCard"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Card",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Card",
+            "id": "1216:414",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1216-414",
+            "variants": 4,
+            "description": "The standard container for any chart on a dashboard. Header: title + subtitle (period, unit) and a Segmented period switch; KPI row: value + Chart/Delta; chart slot (swap any Chart/* instance); footer: data source and freshness. States: Loading (skeleton in the chart's shape), Empty (5.3 Empty state, no mascot), Error (message + Try again). Padding chart/padding, gap chart/gap — both change pe",
+            "props": {
+              "Title": {
+                "type": "TEXT",
+                "default": "Revenue"
+              },
+              "Subtitle": {
+                "type": "TEXT",
+                "default": "Last 6 months · UZS"
+              },
+              "State": [
+                "Default",
+                "Loading",
+                "Empty",
+                "Error"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/base",
+                "bg/sheet",
+                "status/success/soft",
+                "surface/card",
+                "text/primary",
+                "text/success",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Headline/M",
+                "Label/S",
+                "Title/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/gap",
+                "chart/height/md",
+                "chart/padding",
+                "radius/full",
+                "radius/surface/md",
+                "radius/surface/sm",
+                "scale/16",
+                "scale/2",
+                "scale/480",
+                "scale/6",
+                "scale/8"
+              ]
+            },
+            "nested": [
+              "Empty state",
+              "Segmented control",
+              "Skeleton"
+            ]
+          }
+        ],
+        "docTokens": [
+          "chart/gap",
+          "chart/height/md",
+          "chart/padding",
+          "fill/secondary",
+          "radius/full",
+          "radius/surface/md",
+          "scale/16",
+          "scale/2",
+          "scale/480",
+          "scale/6",
+          "scale/8",
+          "status/success/soft",
+          "surface/card",
+          "text/primary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-status-success-soft",
+          "reason": "KPI qatoridagi Delta pill'i — ichki Delta komponentida."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-success",
+          "reason": "KPI qatoridagi Delta matni — ichki Delta komponentida."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "Figma'dagi skeleton/namuna foni — kodda 5.4 Skeleton o'zining tokenlari bilan."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Label/S",
+          "reason": "Delta matni — ichki Delta komponentida."
+        }
+      ],
+      "readme": "# Chart card\n\nFigma: **4.18 Chart · Card** — har dashboard chartining o'ramasi: sarlavha, davr tanlagich, KPI qatori, chart sloti va manba. `state`: `default` · `loading` · `empty` · `error`.\n\n```tsx\n<ChartCard\n  title=\"Revenue\"\n  subtitle=\"Last 6 months · UZS\"\n  periods={[\n    { value: '1m', label: '1M' },\n    { value: '6m', label: '6M' },\n    { value: '1y', label: '1Y' },\n  ]}\n  period={period}\n  onPeriodChange={setPeriod}\n  kpi={{ value: '4 820 mln', delta: 12.4, comparison: 'vs previous 6 months' }}\n  footer=\"Source: Core banking · Updated 18 Oct, 09:40\"\n  state={isLoading ? 'loading' : rows.length ? 'default' : 'empty'}\n  onChangePeriod={() => setPeriod('1y')}\n>\n  <ChartContainer>\n    {(w) => <LineChart width={w} labels={months} series={series} label=\"…\" />}\n  </ChartContainer>\n</ChartCard>\n```\n\n- **Tarkib:** Title/M sarlavha + Caption/M izoh, 3.10 Segmented control (davr), KPI — Headline/M qiymat + `Delta` + taqqoslash, chart sloti, Caption/M footer (manba va yangilanish vaqti).\n- **Holatlar:** Loading — chart shaklida 5.4 Skeleton, header interaktiv qoladi (`aria-busy`); Empty — 5.3 Empty state (maskotsiz) + \"Change period\"; Error — xabar + \"Try again\" (`role=\"alert\"`), footer xato manbasini (`errorSource`) ko'rsatadi.\n- **Qachon:** dashboard yoki hisobotdagi har chart. Boshqa karta ichiga solmang — chartni to'g'ridan-to'g'ri joylang.\n- **Sirt:** `surface/card`, `radius/surface/md`, padding `chart/padding` (12 / 16 / 24), oraliq `chart/gap`; chart sloti kamida `chart/height/md`. Kenglik konteynerga to'liq moslashadi (FILL).\n"
+    },
+    {
+      "dir": "chart-tooltip",
+      "package": "@bek/charts",
+      "title": "Chart tooltip",
+      "description": "chart ustidagi qiymat kartochkasi. rows soni bo'yicha: 1 — single, 2+ — multi (ko'pi bilan 6).",
+      "exports": [
+        "ChartTooltip"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Tooltip",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Tooltip",
+            "id": "1201:193",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-193",
+            "variants": 2,
+            "description": "Hover / tap tooltip. Surface layer 3 (surface/raised + Elevation/2). React: <ChartTooltip title rows=[{color,label,value}] />. Values use uz-UZ format: space thousands, comma decimals.",
+            "props": {
+              "Variant": [
+                "Single",
+                "Multi"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/target",
+                "surface/card",
+                "surface/raised",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Body/S",
+                "Caption/M",
+                "Label/M"
+              ],
+              "effect": [
+                "Elevation/2 Raised-hover"
+              ],
+              "dimension": [
+                "chart/legend/marker",
+                "radius/full",
+                "radius/surface/md",
+                "radius/surface/sm",
+                "scale/12",
+                "scale/200",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "Elevation/2",
+          "chart/legend/marker",
+          "dataviz/categorical/01",
+          "dataviz/target",
+          "radius/full",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/200",
+          "scale/8",
+          "shadow/soft",
+          "surface/raised",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+        }
+      ],
+      "readme": "# Chart tooltip\n\nFigma: **4.18 Chart · Tooltip** — chart ustidagi qiymat kartochkasi. `rows` soni bo'yicha: 1 — `single`, 2+ — `multi` (ko'pi bilan 6).\n\n```tsx\n<ChartTooltip\n  title=\"18 Oct 2026\"\n  rows={[\n    { label: 'Daromad', value: formatNumber(12450000) },\n    { label: 'Reja', value: formatNumber(12000000), dashed: true },\n  ]}\n/>\n```\n\n- Sarlavha = x (Caption/M · `text/tertiary`), qatorlar: marker + label (Body/S · `text/secondary`) + qiymat (Label/M · `text/primary`, tabular).\n- Joylashuv chartda: web'da kursordan 12 px, chetga yetganda teskari tomonga; touch'da nuqtaga mahkamlanadi. Esc yopadi, strelkalar nuqtalar bo'ylab yuradi.\n- `role=\"tooltip\"`; chart o'zgarishlarni `aria-live` bilan e'lon qiladi. Format uz-UZ, minus `−`.\n- Fon `surface/raised` + Elevation/2 (Dark'da soya 0, rang ajratadi).\n"
+    },
+    {
+      "dir": "delta",
+      "package": "@bek/charts",
+      "title": "Delta",
+      "description": "o'zgarish pill'i: o'q va +12,4%. variant qiymatdan hisoblanadi: positive · negative · neutral.",
+      "exports": [
+        "Delta",
+        "deltaVariant"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Delta",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Delta",
+            "id": "1201:219",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-219",
+            "variants": 3,
+            "description": "Change vs previous period. Positive = up/gain, Negative = down/loss (true minus sign −). React: <ChartDelta value={0.124} />.",
+            "props": {
+              "Variant": [
+                "Positive",
+                "Negative",
+                "Neutral"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "fill/tertiary",
+                "status/danger/soft",
+                "status/success/soft",
+                "surface/card",
+                "text/danger",
+                "text/secondary",
+                "text/success"
+              ],
+              "text": [
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "radius/full",
+                "radius/surface/md",
+                "scale/2",
+                "scale/6",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "fill/soft",
+          "radius/full",
+          "scale/2",
+          "scale/20",
+          "scale/6",
+          "scale/8",
+          "status/danger/soft",
+          "status/success/soft",
+          "text/danger",
+          "text/secondary",
+          "text/success"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+        }
+      ],
+      "readme": "# Delta\n\nFigma: **4.18 Chart · Delta** — o'zgarish pill'i: o'q va `+12,4%`. `variant` qiymatdan hisoblanadi: `positive` · `negative` · `neutral`.\n\n```tsx\n<Delta value={12.4} />                     {/* +12,4% — yashil */}\n<Delta value={8.2} betterWhen=\"down\" />    {/* xarajat oshdi — qizil */}\n<Delta value={0.2} />                      {/* |Δ| < 0,5% — neutral */}\n```\n\n- Variant ishoradan olinadi, `betterWhen=\"down\"` uni teskari qiladi (xarajat, xatolar, kechikish). `threshold` (0,5%) dan kichik o'zgarish — Neutral.\n- Format uz-UZ: `+12,4%`, haqiqiy minus `−3,1%` (U+2212). Boshqa birlik uchun `label`.\n- O'q bezak (`aria-hidden`); ma'no matnda. Rang yolg'iz ma'no tashimaydi.\n- Ranglar: positive `status/success/soft` + `text/success`, negative `status/danger/soft` + `text/danger`, neutral `fill/tertiary` + `text/secondary`. Matn Label/S.\n- Statik komponent, interaksiya yo'q.\n"
+    },
+    {
+      "dir": "donut-chart",
+      "package": "@bek/charts",
+      "title": "Donut chart",
+      "description": "ulushlar halqasi, markazda jami, yonida qiymatli legend. variant: default · progress.",
+      "exports": [
+        "DonutChart"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Donut",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Donut",
+            "id": "1204:109",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1204-109",
+            "variants": 2,
+            "description": "Part-to-whole with ≤5 segments (group the rest into “Other”); the centre always carries the total or key value. Progress = single value on dataviz/track. Ring thickness chart/donut/thickness. Prefer Waffle or Stacked bar when shares are close. React: <DonutChart variant data total />.",
+            "props": {
+              "Variant": [
+                "Default",
+                "Progress"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/categorical/03",
+                "dataviz/categorical/04",
+                "dataviz/track",
+                "surface/card",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/M",
+                "Headline/S",
+                "Label/S",
+                "Title/L"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/height/sm",
+                "radius/surface/md",
+                "scale/12",
+                "scale/2",
+                "scale/32",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/donut/thickness",
+          "chart/height/sm",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/neutral",
+          "dataviz/track",
+          "scale/12",
+          "scale/2",
+          "scale/32",
+          "scale/480",
+          "scale/8",
+          "text/primary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni; kodda hover ajratgichi."
+        }
+      ],
+      "readme": "# Donut chart\n\nFigma: **4.18 Chart · Donut** — ulushlar halqasi, markazda jami, yonida qiymatli legend. `variant`: `default` · `progress`.\n\n```tsx\n<DonutChart\n  data={[\n    { label: 'Cards', value: 4820 },\n    { label: 'Loans', value: 2210 },\n    { label: 'Deposits', value: 1540 },\n    { label: 'Other', value: 620, color: 'var(--bek-dataviz-neutral)' },\n  ]}\n  centerLabel=\"Total, mln\"\n  label=\"Cards make up more than half of revenue\"\n/>\n<DonutChart variant=\"progress\" progress={0.72} centerLabel=\"of goal\" label=\"72% of the quarterly goal\" />\n```\n\n- **Qachon:** bitta butunning 2–5 qismi. Ko'proq bo'lsa — kichiklarini \"Other\" (`dataviz/neutral`) ga yig'ing yoki Bar ishlating.\n- **Kodlash:** burchak = ulush, rang = tartiblangan kategoriya; segmentlar kattasidan, soat 12 dan soat yo'nalishida. Markazda jami (Headline/S), izoh Caption/M.\n- **Legend majburiy** (Default): nom, qiymat va ulush — rangga tayanib qolmaslik uchun.\n- **Progress:** `dataviz/track` ustida bitta qiymat (`dataviz/categorical/01`), uchlari yumaloq; markazda foiz (Title/L).\n- **Interaksiya:** hover — segment ajraladi, qolganlari 40%; `<title>` qiymat va ulushni aytadi. Ko'rinmas `<table>`.\n- O'lcham: diametr `chart/height/sm` (140 / 160 / 200) → `size`, qalinlik `chart/donut/thickness` (20 / 24 / 28) → `thickness`.\n"
+    },
+    {
+      "dir": "kpi-card",
+      "package": "@bek/charts",
+      "title": "KPI card",
+      "description": "dashboard yuqori qatoridagi asosiy raqam. variant: default · compact · progress.",
+      "exports": [
+        "KpiCard"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · KPI card",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/KPI card",
+            "id": "1216:452",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1216-452",
+            "variants": 3,
+            "description": "One number that matters, with direction and context. Default: label, value (Headline/M, tabular), Chart/Delta, Sparkline, comparison period. Compact: for dense grids and Mobile rows. Progress: value vs goal. Value uses uz-UZ format (12 480; 4,8 mln). React: <KpiCard label value delta trend variant=\"default|compact|progress\" goal? />",
+            "props": {
+              "Variant": [
+                "Default",
+                "Compact",
+                "Progress"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "bg/base",
+                "dataviz/positive",
+                "dataviz/track",
+                "status/success/soft",
+                "surface/card",
+                "text/primary",
+                "text/secondary",
+                "text/success",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Caption/S",
+                "Headline/M",
+                "Label/S",
+                "Title/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/line/stroke",
+                "chart/sparkline/height",
+                "radius/full",
+                "radius/surface/md",
+                "scale/12",
+                "scale/16",
+                "scale/2",
+                "scale/240",
+                "scale/6",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "Elevation/1",
+          "chart/sparkline/height",
+          "radius/full",
+          "radius/surface/md",
+          "scale/16",
+          "scale/2",
+          "scale/240",
+          "scale/6",
+          "scale/8",
+          "status/success/soft",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-status-success-soft",
+          "reason": "Delta pill'i — ichki Delta komponentida."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-success",
+          "reason": "Delta matni — ichki Delta komponentida."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-dataviz-positive",
+          "reason": "Sparkline rangi — ichki Sparkline komponentida (trend bo'yicha)."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "Figma set o'ramasi foni — komponentning o'zi emas."
+        }
+      ],
+      "readme": "# KPI card\n\nFigma: **4.18 Chart · KPI card** — dashboard yuqori qatoridagi asosiy raqam. `variant`: `default` · `compact` · `progress`.\n\n```tsx\n<KpiCard label=\"Active users\" value={formatNumber(12480)} delta={12.4} comparison=\"vs last week\" trend={[9, 10, 9.6, 11, 12.1, 12.48]} href=\"/analytics/users\" />\n<KpiCard variant=\"compact\" label=\"Transfers\" value=\"1 940\" delta={12.4} />\n<KpiCard variant=\"progress\" label=\"Monthly goal\" goal={{ progress: 0.72, label: '3,6 of 5 mln' }} comparison=\"8 days left\" />\n```\n\n- **Qachon:** dashboard tepasida 3–6 asosiy raqam. Compact — zich grid va Mobile ro'yxat; Progress — maqsadga nisbatan qiymat.\n- **Tarkib:** label Caption/M · `text/secondary`, qiymat Headline/M (Compact — Title/M) tabular, `Delta`, `Sparkline` (Default) yoki progress track (`dataviz/track` + `accent/default`, `role=\"progressbar\"`), taqqoslash Caption/S · `text/tertiary`.\n- **Interaksiya:** `href` berilsa butun karta havola, hover'da Elevation/1 va fokus halqasi. Loading'da 5.4 Skeleton (Title + Text) ishlating.\n- **Qoida:** bitta qatordagi kartalar bir xil variantda; format uz-UZ (`12 480`, `4,8 mln`).\n- O'lcham: eni ko'pi bilan `scale/240`, padding `scale/16`, sparkline balandligi `chart/sparkline/height`.\n"
+    },
+    {
+      "dir": "legend-item",
+      "package": "@bek/charts",
+      "title": "Legend item",
+      "description": "seriya markeri va nomi; ChartLegend ularni qatorga teradi. variant: dot · square · line · dashed.",
+      "exports": [
+        "ChartLegend",
+        "LegendItem"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Legend item",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Legend item",
+            "id": "1201:168",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-168",
+            "variants": 4,
+            "description": "Legend entry for a chart series. React: <ChartLegendItem variant=\"dot|square|line|dashed\" label color />. Marker colour = series token (dataviz/categorical/*). Dashed = target / forecast.",
+            "props": {
+              "Label": {
+                "type": "TEXT",
+                "default": "Series name"
+              },
+              "Variant": [
+                "Dot",
+                "Square",
+                "Line",
+                "Dashed"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/target",
+                "surface/card",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/legend/marker",
+                "chart/line/stroke",
+                "radius/full",
+                "radius/surface/md",
+                "scale/16",
+                "scale/2",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/legend/gap",
+          "chart/legend/marker",
+          "dataviz/categorical/",
+          "dataviz/categorical/01",
+          "radius/full",
+          "scale/8",
+          "text/disabled",
+          "text/secondary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+        }
+      ],
+      "readme": "# Legend item\n\nFigma: **4.18 Chart · Legend item** — seriya markeri va nomi; `ChartLegend` ularni qatorga teradi. `variant`: `dot` · `square` · `line` · `dashed`.\n\n```tsx\n<ChartLegend\n  items={[\n    { label: 'Daromad', variant: 'line' },\n    { label: 'Xarajat', variant: 'line', color: seriesColor(1) },\n    { label: 'Reja', variant: 'dashed' },\n  ]}\n  onToggle={(i) => toggleSeries(i)}\n/>\n```\n\n- Marker rangi = seriya rangi (`seriesColor(i)` → `dataviz/categorical/0i`), `dashed` — `dataviz/target` (prognoz, reja).\n- `onToggle` berilsa har yozuv `aria-pressed` toggle tugma: bosish seriyani o'chirib-yoqadi, hover qolganlarini 30% ga xiralashtiradi. Yashirin seriya — label `text/disabled`, marker 30%.\n- Ko'pi bilan 6 seriya; qolganini \"Other\" ga birlashtiring.\n- Matn: Caption/L · `text/secondary`; marker `chart/legend/marker` (8 px), chiziq `chart/line/stroke`.\n"
+    },
+    {
+      "dir": "line-chart",
+      "package": "@bek/charts",
+      "title": "Line chart",
+      "description": "vaqt bo'yicha trend. Figma variantlari: Single (1 seriya), Multi (2–5 seriya + legend), Area (area), Hover — interaksiya holati (Crosshair + Tooltip), alohida prop emas.",
+      "exports": [
+        "LineChart"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Line",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Line",
+            "id": "1203:202",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1203-202",
+            "variants": 4,
+            "description": "Change over time. Max 5 lines (Mobile 3). Smooth curve, 2px stroke (chart/line/stroke), points only on hover. Area = single series with accent/soft fill. Hover shows crosshair + Data point (Active) + Tooltip. React: <LineChart variant data series area />.",
+            "props": {
+              "Variant": [
+                "Single",
+                "Multi",
+                "Area",
+                "Hover"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/soft",
+                "dataviz/axis",
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/label",
+                "dataviz/target",
+                "surface/card",
+                "surface/raised",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/M",
+                "Caption/S"
+              ],
+              "effect": [
+                "Elevation/2 Raised-hover"
+              ],
+              "dimension": [
+                "chart/axis/label-gap",
+                "chart/gap",
+                "chart/height/md",
+                "chart/legend/gap",
+                "chart/line/stroke",
+                "radius/full",
+                "radius/surface/md",
+                "radius/surface/sm",
+                "scale/12",
+                "scale/200",
+                "scale/32",
+                "scale/4",
+                "scale/40",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/soft",
+          "chart/axis/label-gap",
+          "chart/axis/tick-count",
+          "chart/gap",
+          "chart/height/md",
+          "chart/line/stroke",
+          "chart/point/size",
+          "dataviz/categorical/01",
+          "scale/32",
+          "scale/40",
+          "scale/480"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni; kodda nuqta halqasi uchun ishlatiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-raised",
+          "reason": "Tooltip foni — ichki ChartTooltip komponentida."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-secondary",
+          "reason": "Legend va tooltip matni — ichki ChartLegend / ChartTooltip'da."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-tertiary",
+          "reason": "Tooltip sarlavhasi — ichki ChartTooltip'da."
+        },
+        {
+          "rule": "effect-missing",
+          "match": "Elevation/2",
+          "reason": "Tooltip soyasi — ichki ChartTooltip'da."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Legend matni — ichki ChartLegend'da."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/M",
+          "reason": "Tooltip sarlavhasi — ichki ChartTooltip'da."
+        },
+        {
+          "rule": "variant-missing",
+          "match": "Variant=Hover",
+          "reason": "Hover — interaksiya holati (crosshair + tooltip), prop emas."
+        },
+        {
+          "rule": "variant-missing",
+          "match": "Variant=Single",
+          "reason": "Single — bitta seriya berilganda (series.length === 1)."
+        },
+        {
+          "rule": "variant-missing",
+          "match": "Variant=Multi",
+          "reason": "Multi — 2+ seriya berilganda, legend avtomatik."
+        }
+      ],
+      "readme": "# Line chart\n\nFigma: **4.18 Chart · Line** — vaqt bo'yicha trend. Figma variantlari: Single (1 seriya), Multi (2–5 seriya + legend), Area (`area`), Hover — interaksiya holati (Crosshair + Tooltip), alohida prop emas.\n\n```tsx\n<ChartContainer>\n  {(width) => (\n    <LineChart\n      width={width}\n      labels={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}\n      series={[\n        { name: 'Revenue', values: [42, 55, 48, 66, 61, 82] },\n        { name: 'Plan', values: [50, 55, 60, 65, 70, 75], dashed: true },\n      ]}\n      label=\"Revenue grew 95% in six months and passed the plan in June\"\n    />\n  )}\n</ChartContainer>\n```\n\n- **Kodlash:** x = vaqt, y = qiymat (0 dan boshlanishi shart emas; `area` bilan — 0 dan), rang = seriya, uzuq chiziq = prognoz yoki reja (`dataviz/target`).\n- **Chiziq:** silliq (monotone), `chart/line/stroke` 2 px; nuqtalar faqat hover'da. `null` qiymat chiziqda bo'shliq qoldiradi — yo'q ma'lumot \"tekislanmaydi\".\n- **Interaksiya:** hover — vertikal crosshair, nuqtalar va `ChartTooltip` (kursordan 12 px, chetda teskari tomonga). Klaviatura: plotga Tab, ← → nuqtalar bo'ylab, Esc yopadi; tooltip `aria-live`.\n- **Seriyalar:** ko'pi bilan 5 (Mobile'da 3); legend ko'p seriyada avtomatik.\n- **A11y:** `role=\"img\"` + `label` xulosa, ko'rinmas `<table>`.\n- O'lcham: plot `chart/height/md` (200 / 240 / 320), tick `chart/axis/tick-count`; responsiv en `ChartContainer` bilan.\n"
+    },
+    {
+      "dir": "sparkline",
+      "package": "@bek/charts",
+      "title": "Sparkline",
+      "description": "o'q va yozuvsiz mikro-chart (KPI karta, jadval qatori). Figma variantlari Up · Down · Neutral — trend (qiymatdan avtomatik), Bars — variant=\"bars\".",
+      "exports": [
+        "Sparkline",
+        "sparklineTrend"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Sparkline",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Sparkline",
+            "id": "1203:221",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1203-221",
+            "variants": 4,
+            "description": "Micro chart inside KPI cards, tables and list rows. No axes, no labels; colour carries direction (dataviz/positive / negative / neutral). Height chart/sparkline/height. React: <Sparkline variant data />.",
+            "props": {
+              "Variant": [
+                "Up",
+                "Down",
+                "Neutral",
+                "Bars"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/negative",
+                "dataviz/neutral",
+                "dataviz/positive",
+                "dataviz/track",
+                "surface/card"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": [
+                "chart/line/stroke",
+                "chart/sparkline/height",
+                "radius/surface/md",
+                "scale/128",
+                "scale/2"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/line/stroke",
+          "chart/sparkline/height",
+          "dataviz/positive",
+          "scale/128"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+        }
+      ],
+      "readme": "# Sparkline\n\nFigma: **4.18 Chart · Sparkline** — o'q va yozuvsiz mikro-chart (KPI karta, jadval qatori). Figma variantlari Up · Down · Neutral — `trend` (qiymatdan avtomatik), Bars — `variant=\"bars\"`.\n\n```tsx\n<Sparkline data={[12, 14, 13, 17, 19, 22]} label=\"Trend up over 6 days\" />\n<Sparkline data={weekly} variant=\"bars\" label=\"Orders, last 8 weeks\" />\n```\n\n- x = vaqt, y = oyna ichidagi min–max; rang = yo'nalish: up `dataviz/positive`, down `dataviz/negative`, neutral `dataviz/neutral`. Oxirgi qiymatda nuqta.\n- Bars: `dataviz/track` ustunlar, oxirgisi `dataviz/categorical/01`.\n- Jadvalda hamma qatorlarga bir xil `domain` bering — aks holda kichik o'zgarish katta ko'rinadi.\n- Interaksiya yo'q; `label` majburiy (`role=\"img\"`), qiymatlar yonidagi matnda bo'lsin.\n- O'lcham: `scale/128` × `chart/sparkline/height` (32 / 40 / 48), chiziq `chart/line/stroke`.\n"
     }
   ],
   "tokens": {

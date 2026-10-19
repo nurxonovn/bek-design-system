@@ -9,11 +9,15 @@
 // token, matn uslubi, variant, px. `--strict` ogohlantirishni ham xatoga aylantiradi (yangi komponent uchun).
 // Ataylab qilingan farq figma.json → "accepted": [{ "rule", "match", "reason" }] bilan yopiladi.
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { dirname, join, relative, sep } from 'node:path';
+import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const REPO = join(ROOT, '..', '..');
+// `--root=<paket>` — boshqa paketni tekshirish (masalan `@bek/charts`: `--root=.`); standart — @bek/react.
+const rootArg = process.argv.find((a) => a.startsWith('--root='));
+const ROOT = rootArg
+  ? resolve(process.cwd(), rootArg.slice('--root='.length))
+  : join(dirname(fileURLToPath(import.meta.url)), '..');
+const REPO = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const TOKENS = join(REPO, 'packages/tokens/figma');
 const COMPONENTS = join(ROOT, 'src/components');
 const STYLES = join(ROOT, 'src/styles');

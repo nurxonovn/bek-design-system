@@ -1,0 +1,94 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/KPI card",
+      "id": "1216:452",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Compact", "Progress"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 240,
+        "h": 148
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/base",
+          "dataviz/positive",
+          "dataviz/track",
+          "status/success/soft",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/success",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S", "Headline/M", "Label/S", "Title/M"],
+        "effect": [],
+        "dimension": [
+          "chart/line/stroke",
+          "chart/sparkline/height",
+          "radius/full",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/240",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 6, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "One number that matters, with direction and context. Default: label, value (Headline/M, tabular), Chart/Delta, Sparkline, comparison period. Compact: for dense grids and Mobile rows. Progress: value vs goal. Value uses uz-UZ format (12 480; 4,8 mln). React: <KpiCard label value delta trend variant=\"default|compact|progress\" goal? />"
+    }
+  ],
+  "doc": {
+    "Chart/KPI card": {
+      "tokens": [
+        "Elevation/1",
+        "chart/sparkline/height",
+        "radius/full",
+        "radius/surface/md",
+        "scale/16",
+        "scale/2",
+        "scale/240",
+        "scale/6",
+        "scale/8",
+        "status/success/soft",
+        "surface/card",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Card\nBEK\nDesign System\nChart/KPI card\nOne number that matters, with direction and context. 3 variants.\nOverview\nWhat it is and when to reach for it.\nActive users\n12 480\n+12,4%\nvs last week\nWhen to use\nTop row of a dashboard: 3–6 key numbers.\nCompact: dense grids and Mobile lists.\nProgress: a value against a goal.\nAnatomy\nNumbered layers of the default variant.\nActive users\n12 480\n+12,4%\nvs last week\n1\nLabel\nCaption/M · text/secondary\n2\nValue\nHeadline/M · tabular\n3\nDelta\nChart/Delta\n4\nSparkline / track\nChart/Sparkline or progress track\n5\nComparison\nCaption/S · text/tertiary\nVariants\n3 variants · Variant = Default | Compact | Progress\nActive users\n12 480\n+12,4%\nvs last week\nDefault\nTransfers\n1 940\n+12,4%\nCompact\ndense grids\nMonthly goal\n72%\n3,6 of 5 mln\n8 days left\nProgress\nvalue vs goal\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/240\n240 px\n240 px\n240 px\nscale/16\n16 px\n16 px\n16 px\nchart/sparkline/height\n32 px\n40 px\n48 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nValue shown.\nHover\nCard raises (Elevation/1) when it links to a detail page.\nLoading\nSkeleton Title + Text shapes.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nActive users\n12 480\n+12,4%\nvs last week\nTablet · 834\nActive users\n12 480\n+12,4%\nvs last week\nWeb · 1440\nActive users\n12 480\n+12,4%\nvs last week\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nActive users\n12 480\n+12,4%\nvs last week\nDefault\nTransfers\n1 940\n+12,4%\nCompact\nMonthly goal\n72%\n3,6 of 5 mln\n8 days left\nProgress\nUsage\nRules that keep the chart honest and readable.\nValue formatting uz-UZ: 12 480 · 4,8 mln.\nAlways pair the Delta with what it compares to.\nSame variant for every card in one row.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nOne number that matters, with direction and context.\nEncoding\nvalue ← metric · delta ← change · trend ← last N values\nInteraction\nWhole card clickable to the detail chart.\nAccessibility\n“Active users 12 480, up 12,4% vs last week”.\nComponent\n<KpiCard label value delta trend variant=\"default|compact|progress\" goal? />\nData shape\n{ \"label\": \"Active users\", \"value\": 12480, \"delta\": 0.124, \"trend\": [10, 11, 10, 12, 12] , \"goal\": null }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Compact · Progress\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/8\n8\n--bek-scale-8\nContainer · Padding\nscale/16\n16\n--bek-scale-16\nContainer · Width\nscale/240\n240\n--bek-scale-240\nContainer · Radius\nradius/surface/md\n12\n--bek-radius-surface-md\nContainer · Fill\nsurface/card\n#FFFFFF / #18181A\n--bek-surface-card\nLabel · Fill\ntext/secondary\n#505053 / #D4D4D6\n--bek-text-secondary\nSparkline · Height\nchart/sparkline/height\n32 / 40 / 48\n--bek-chart-sparkline-height\nCompare · Fill\ntext/tertiary\n#656568 / #ACACB0\n--bek-text-tertiary\nVal"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-status-success-soft",
+      "reason": "Delta pill'i — ichki Delta komponentida."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-success",
+      "reason": "Delta matni — ichki Delta komponentida."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-dataviz-positive",
+      "reason": "Sparkline rangi — ichki Sparkline komponentida (trend bo'yicha)."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma set o'ramasi foni — komponentning o'zi emas."
+    }
+  ]
+}
