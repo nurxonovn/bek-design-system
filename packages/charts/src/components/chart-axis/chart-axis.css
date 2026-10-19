@@ -1,0 +1,9 @@
+/* Chart/Axis — yozuvlar Caption/S · dataviz/label (`.bek-chart__tick`, styles/chart.css). O'q bezak: bosilmaydi. */
+.bek-chart-axis {
+  pointer-events: none;
+}
+
+/* Mustaqil ko'rinish: o'q yozuvlari SVG chegarasidan chiqsa ham kesilmaydi. */
+.bek-chart-axis-preview {
+  gap: 0;
+}

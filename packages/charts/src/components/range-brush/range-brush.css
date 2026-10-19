@@ -1,0 +1,70 @@
+/* Chart/Range brush — trek dataviz/grid, umumiy chiziq dataviz/label, oyna accent/soft + border/accent,
+   tutqichlar accent/default 6 × 24 (Elevation/1), bosish maydoni target/min (44). */
+.bek-range-brush {
+  max-inline-size: 100%;
+  user-select: none;
+  touch-action: none;
+}
+
+.bek-range-brush__track {
+  position: relative;
+  block-size: var(--bek-scale-56);
+  background: var(--bek-dataviz-grid);
+  border-radius: var(--bek-radius-surface-sm);
+}
+
+.bek-range-brush__overview {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.bek-range-brush__overview path {
+  fill: none;
+  stroke: var(--bek-dataviz-label);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-linejoin: round;
+}
+
+.bek-range-brush__window {
+  position: absolute;
+  inset-block: 0;
+  box-sizing: border-box;
+  background: var(--bek-accent-soft);
+  border: var(--bek-stroke-default) solid var(--bek-border-accent);
+  border-radius: var(--bek-radius-surface-sm);
+  cursor: grab;
+}
+
+.bek-range-brush__window:active {
+  cursor: grabbing;
+}
+
+/* Bosish maydoni 44 × 44, chizilgani — ::before 6 × 24 */
+.bek-range-brush__handle {
+  position: absolute;
+  inset-block-start: 50%;
+  inline-size: var(--bek-target-min);
+  block-size: var(--bek-target-min);
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  border-radius: var(--bek-radius-full);
+  cursor: ew-resize;
+  outline-offset: calc(var(--bek-scale-12) * -1);
+}
+
+.bek-range-brush__handle::before {
+  content: '';
+  inline-size: var(--bek-scale-6);
+  block-size: var(--bek-scale-24);
+  background: var(--bek-accent-default);
+  border-radius: var(--bek-radius-full);
+  box-shadow: var(--bek-elevation-1);
+}
+
+.bek-range-brush__handle:hover::before,
+.bek-range-brush__handle:active::before {
+  background: var(--bek-accent-hover);
+}

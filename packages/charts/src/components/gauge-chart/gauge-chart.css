@@ -1,0 +1,79 @@
+.bek-gauge-chart__track,
+.bek-gauge-chart__value,
+.bek-gauge-chart__zone {
+  fill: none;
+  stroke-linecap: butt;
+}
+
+/* Default: dataviz/track ustida qiymat yoyi — dataviz/categorical/01. */
+.bek-gauge-chart__track {
+  stroke: var(--bek-dataviz-track);
+}
+
+.bek-gauge-chart__value {
+  stroke: var(--bek-dataviz-categorical-01);
+}
+
+/* Zones: negative · warning · positive (+ neutral). */
+.bek-gauge-chart__zone--negative {
+  stroke: var(--bek-dataviz-negative);
+}
+
+.bek-gauge-chart__zone--warning {
+  stroke: var(--bek-status-warning-default);
+}
+
+.bek-gauge-chart__zone--positive {
+  stroke: var(--bek-dataviz-positive);
+}
+
+.bek-gauge-chart__zone--neutral {
+  stroke: var(--bek-dataviz-track);
+}
+
+/* Strelka — text/primary, stroke/strong. */
+.bek-gauge-chart__needle line {
+  stroke: var(--bek-text-primary);
+  stroke-width: var(--bek-stroke-strong);
+  stroke-linecap: round;
+}
+
+.bek-gauge-chart__needle circle {
+  fill: var(--bek-text-primary);
+}
+
+/* Qiymat — Headline/M · text/primary */
+.bek-gauge-chart__number {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-headline-md-size);
+  letter-spacing: var(--bek-type-headline-md-tracking);
+  font-weight: var(--bek-weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Izoh — Caption/M · text/tertiary */
+.bek-gauge-chart__caption {
+  fill: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Chegaralar — Caption/S · dataviz/label (chart.css). */
+.bek-gauge-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+}
+
+/* Updating: yoy eski qiymatdan yangisiga (motion/duration/chart-enter). */
+@media (prefers-reduced-motion: no-preference) {
+  .bek-gauge-chart__value {
+    transition: stroke-dasharray var(--bek-motion-duration-chart-enter)
+      var(--bek-motion-easing-standard);
+  }
+
+  .bek-gauge-chart__needle line {
+    transition:
+      x2 var(--bek-motion-duration-chart-enter) var(--bek-motion-easing-standard),
+      y2 var(--bek-motion-duration-chart-enter) var(--bek-motion-easing-standard);
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Waterfall",
+      "id": "1215:186",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 260
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/label",
+          "dataviz/negative",
+          "dataviz/neutral",
+          "dataviz/positive",
+          "surface/card",
+          "text/danger",
+          "text/primary",
+          "text/secondary",
+          "text/success"
+        ],
+        "text": ["Caption/L", "Caption/S", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/bar/radius",
+          "chart/bar/thickness",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/height/md",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/32",
+          "scale/40",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "How a starting value becomes an end value through positive and negative contributions (P&L, cash flow, budget bridge). Totals = dataviz/neutral from zero; increases dataviz/positive; decreases dataviz/negative; dashed connectors carry the running level. Signed labels with true minus (−). React: <WaterfallChart start items end />"
+    }
+  ],
+  "doc": {
+    "Chart/Waterfall": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/bar/radius",
+        "chart/bar/thickness",
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/height/md",
+        "chart/legend/gap",
+        "dataviz/axis",
+        "dataviz/negative",
+        "dataviz/neutral",
+        "dataviz/positive",
+        "scale/32",
+        "scale/40",
+        "scale/480",
+        "scale/8",
+        "text/danger",
+        "text/primary",
+        "text/success"
+      ],
+      "text": "4.18 Chart · Flow\nBEK\nDesign System\nChart/Waterfall\nHow a start value becomes an end value through positive and negative contributions. 1 variant.\nOverview\nWhat it is and when to reach for it.\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\nWhen to use\nP&L bridges, cash flow, budget vs actual explanations.\nExplaining why a total changed between two periods.\nNot for independent categories — use Bar.\nAnatomy\nNumbered layers of the default variant.\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\n1\nTotal bars\ndataviz/neutral from zero\n2\nIncrease\ndataviz/positive\n3\nDecrease\ndataviz/negative\n4\nConnector\ndashed dataviz/axis at the running level\n5\nValue labels\nsigned, text/success · text/danger\nVariants\n1 variant · Variant = Default\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/bar/thickness\n16 px\n24 px\n32 px\nchart/bar/radius\n4 px\n4 px\n4 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll steps.\nHover\nTooltip: change and running total.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\nTablet · 834\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\nWeb · 1440\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nIncrease\nDecrease\nTotal\n100\n75\n50\n25\n0\n60\n+18\n+9\n−14\n−8\n65\nQ1\nSales\nServices\nRefunds\nFees\nQ2\nDefault\nUsage\nRules that keep the chart honest and readable.\nFirst and last bars are totals from zero; the rest float.\nSigned labels with a true minus (−14).\nMax 8 steps; group small items into “Other”.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nHow a start value becomes an end value through positive and negative contributions.\nEncoding\ny0, y1 ← running total before / after · colour ← sign\nInteraction\nHover tooltip; click drills into a contribution.\nAccessibility\n“Q1 60, Sales +18, Services +9, Refunds −14, Fees −8, Q2 65”.\nComponent\n<WaterfallChart start items end />\nData shape\n{ \"start\": { \"label\": \"Q1\", \"value\": 60 }, \"items\": [ { \"label\": \"Sales\", \"value\": 18 }, { \"label\": \"Refunds\", \"value\": -14 } ], \"end\": { \"label\": \"Q2\" } }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLegend · Gap\nchart/legend/gap\n12 / 16 / 16\n--bek-chart-legend-gap\nBody · Gap\nchart/axis/label-gap\n8\n--bek-chart-axis-label-gap\nX axis row · Pa"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend yozuvi rangi — ichki LegendItem/ChartLegend (legend-item.css) beradi (Increase · Decrease · Total)."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend yozuvi Caption/L — ichki LegendItem/ChartLegend (legend-item.css) beradi (Increase · Decrease · Total)."
+    }
+  ]
+}

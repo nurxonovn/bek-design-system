@@ -1,0 +1,104 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Live",
+      "id": "1203:258",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 260
+      },
+      "tokens": {
+        "color": [
+          "dataviz/label",
+          "dataviz/positive",
+          "status/danger/default",
+          "status/danger/soft",
+          "status/success/soft",
+          "surface/card",
+          "text/danger",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/height/md",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "scale/2",
+          "scale/32",
+          "scale/40",
+          "scale/480",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 6, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Real-time stream. Window slides left; the head point pulses (motion/duration/live-pulse, 1600 ms) and the LIVE badge shows freshness. Pause animation when prefers-reduced-motion. React: <LiveChart stream window />."
+    }
+  ],
+  "doc": {
+    "Chart/Live": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/line/stroke",
+        "dataviz/positive",
+        "motion/duration/live-pulse",
+        "radius/full",
+        "scale/2",
+        "scale/32",
+        "scale/40",
+        "scale/480",
+        "scale/6",
+        "scale/8",
+        "status/danger/default",
+        "status/danger/soft",
+        "status/success/soft",
+        "surface/card",
+        "text/danger",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Live\nReal-time stream. The window slides left, the head point pulses and the LIVE badge shows freshness. 1 variant.\nOverview\nWhat it is and when to reach for it.\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nWhen to use\nValues that update every second or minute (rates, load, transactions).\nMonitoring screens and operator dashboards.\nNot for daily or slower data — use Line.\nAnatomy\nNumbered layers of the default variant.\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\n1\nLIVE badge\nstatus/danger/soft · dot + Label/S\n2\nFreshness\nCaption/M · text/tertiary\n3\nArea\nstatus/success/soft\n4\nAxes + grid\nChart/Axis · Chart/Grid line\nVariants\n1 variant · Variant = Default\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nmotion/duration/live-pulse\n1600 ms\n1600 ms\n1600 ms\nStates\nInteractive and data states.\nState\nBehaviour\nLive\nStreaming; head pulses (motion/duration/live-pulse).\nPaused\nUser hovered or pressed pause; badge turns neutral “PAUSED”.\nStale\nNo data > 3 intervals; badge warning “DELAYED”.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nTablet · 834\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nWeb · 1440\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nLIVE\nUpdated every 5 s\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nDefault\nUsage\nRules that keep the chart honest and readable.\nFixed time window (last 5 min, last hour) — the X axis moves, the Y axis stays stable.\nPause the animation when prefers-reduced-motion is on.\nShow when data was last received.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nReal-time stream. The window slides left, the head point pulses and the LIVE badge shows freshness.\nEncoding\nx ← timestamp (rolling window) · y ← value\nInteraction\nHover pauses; pause/play control; brush to scroll back.\nAccessibility\nLive region announces only threshold crossings, not every tick.\nComponent\n<LiveChart stream window />.\nData shape\n{ \"window\": \"5m\", \"intervalMs\": 5000, \"points\": [ { \"t\": 1729320000, \"v\": 42 } ], \"status\": \"live | paused | stale\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nHeader · Gap\nscale/8\n8\n--bek-scale-8\nBody · Gap\nchart/axis/label-gap\n8\n--bek-chart-axis-label-gap\nX axis row · Padding\nscale/40\n40\n--bek-scale-40\nLive badge · Gap\nscale/6\n6\n--bek-scale-6\nLive badge · Padding\nscale/8\n8\n--bek-scale-8\nLive badge · Padding\nscale/2\n2\n--bek-scale-2\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-dataviz-track",
+      "reason": "Paused holati (Figma doc «States»: badge neytral PAUSED) — badge foni. Figma'da faqat Live chizilgan: set'ga Status=Live|Paused|Stale varianti qo'shilishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-dataviz-neutral",
+      "reason": "Paused holati badge nuqtasi (Figma doc «States»). Figma'da Status=Paused varianti yo'q — qo'shilishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-status-warning-soft",
+      "reason": "Stale holati (Figma doc «States»: badge warning DELAYED) — badge foni. Figma'da Status=Stale varianti yo'q — qo'shilishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-status-warning-default",
+      "reason": "Stale holati badge nuqtasi (Figma doc «States»). Figma'da Status=Stale varianti yo'q — qo'shilishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-warning",
+      "reason": "Stale holati badge matni (Figma doc «States»). Figma'da Status=Stale varianti yo'q — qo'shilishi kerak."
+    }
+  ]
+}

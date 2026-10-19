@@ -1,0 +1,73 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Network graph",
+      "id": "1242:22419",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Focus"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Connections between entities (products, accounts, services, transfers). Node size = degree or volume, colour = group, links in dataviz/axis. Max ~40 nodes; Focus highlights one node and its neighbours, the rest at layer opacity 25%. Mobile: show 1-level neighbours only. React: <NetworkGraph nodes links focus? />"
+    }
+  ],
+  "doc": {
+    "Chart/Network graph": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Relation\nBEK\nDesign System\nChart/Network graph\nConnections between entities — products, accounts, services, transfers. 2 variants.\nOverview\nWhat it is and when to reach for it.\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nWhen to use\nShowing what connects to what (product ecosystem, money flows between accounts).\nUp to ~40 nodes.\nHierarchies → Chart/Treemap or Diagram/Org card.\nAnatomy\nNumbered layers of the default variant.\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\n1\nLink\ndataviz/axis · chart/line/stroke\n2\nNode\ngroup colour, size = degree, surface/card ring\n3\nLabel\nCaption/M, only for large or focused nodes\n4\nLegend\ngroups\nVariants\n2 variants · Variant = Default | Focus\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nDefault\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nMortgage\nAuto\nFocus\nnode + neighbours, rest 25%\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nstroke/strong\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nWhole graph.\nFocus\nSelected node and neighbours highlighted, others at layer opacity 25%.\nDragging\nNode follows the pointer, links stretch.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nTablet · 834\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nWeb · 1440\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nDefault\nCore\nPayments\nLending\nBEK Bank\nPayments\nCards\nLoans\nDeposits\nMortgage\nAuto\nFocus\nUsage\nRules that keep the chart honest and readable.\nLabel only big or focused nodes.\nMax ~40 nodes; filter or cluster above that.\nMobile: only 1-level neighbours of the selected node.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nConnections between entities — products, accounts, services, transfers.\nEncoding\nnode size ← degree / volume · colour ← group · link ← relation\nInteraction\nClick to focus; drag nodes; zoom and pan.\nAccessibility\nAdjacency list per node.\nComponent\n<NetworkGraph nodes links focus? />\nData shape\n{ \"nodes\": [ { \"id\": \"bank\", \"label\": \"BEK Bank\", \"group\": \"core\", \"size\": 14 } ], \"links\": [ { \"source\": \"bank\", \"target\": \"loans\" } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Focus\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLegend · Gap\nchart/legend/gap\n12 / 16 / 16\n--bek-chart-legend-gap\nPlot · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nChart/Legend item · Gap\nscale/8\n8\n--bek-scale-8\nBEK Bank — Payments · Str"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend / LegendItem komponentida."
+    }
+  ]
+}

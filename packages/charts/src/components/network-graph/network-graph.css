@@ -1,0 +1,43 @@
+/* Bog'lanish — dataviz/axis · chart/line/stroke; Focus'da tanlangan tugun rangi, stroke/strong. */
+.bek-network-graph__link {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+}
+
+.bek-network-graph__link--active {
+  stroke-width: var(--bek-stroke-strong);
+}
+
+/* Tugun — guruh rangi, surface/card halqa (stroke/strong). */
+.bek-network-graph__node circle {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+/* Focus: qolganlari qatlam shaffofligi 25%. */
+.bek-network-graph__node--dim,
+.bek-network-graph__link--dim {
+  opacity: 0.25;
+}
+
+/* Yozuv — Caption/M · text/secondary; tanlangan tugun text/primary. */
+.bek-network-graph__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+  paint-order: stroke;
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-scale-2);
+  stroke-linejoin: round;
+}
+
+.bek-network-graph__node--focus .bek-network-graph__label {
+  fill: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-network-graph__node:hover circle {
+  stroke: var(--bek-text-primary);
+}

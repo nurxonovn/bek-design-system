@@ -1,0 +1,39 @@
+/* Yo'nalish rangi: o'sish — dataviz/positive, pasayish — dataviz/negative (seriya ranglari emas). */
+.bek-candlestick-chart__candle--up {
+  color: var(--bek-dataviz-positive);
+}
+
+.bek-candlestick-chart__candle--down {
+  color: var(--bek-dataviz-negative);
+}
+
+.bek-candlestick-chart__wick {
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Tana — ochilish → yopilish, radius scale/1. */
+.bek-candlestick-chart__body {
+  fill: currentColor;
+}
+
+/* Volume — qatlam shaffofligi 40%. */
+.bek-candlestick-chart__volume {
+  fill: currentColor;
+  opacity: 0.4;
+}
+
+.bek-candlestick-chart__hit {
+  fill: transparent;
+}
+
+/* Hover: sham ustunini belgilash (crosshair o'rnida), <title> O · H · L · C · hajm. */
+.bek-candlestick-chart__candle:hover .bek-candlestick-chart__hit {
+  fill: currentColor;
+  opacity: 0.08;
+}
+
+/* O'q yozuvi Caption/S · dataviz/label (chart.css); legend Caption/L — ChartLegend. */
+.bek-candlestick-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+}

@@ -1,0 +1,44 @@
+/* Halqalar va nurlar — dataviz/axis · chart/grid/stroke */
+.bek-radar-chart__ring,
+.bek-radar-chart__spoke {
+  fill: none;
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Seriya rangi `color` orqali: maydon — qatlam shaffofligi 18%, kontur — chart/line/stroke */
+.bek-radar-chart__area {
+  fill: currentColor;
+  opacity: 0.18;
+}
+
+.bek-radar-chart__outline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linejoin: round;
+}
+
+.bek-radar-chart__point {
+  fill: currentColor;
+}
+
+/* Hover: profil ustida — qolganlari 40%; o'q ustida — yozuv qalinlashadi (<title> qiymatlarni aytadi). */
+.bek-radar-chart
+  .bek-chart__svg:has(.bek-radar-chart__series:hover)
+  .bek-radar-chart__series:not(:hover) {
+  opacity: 0.4;
+}
+
+.bek-radar-chart__axis:hover .bek-chart__tick {
+  font-weight: var(--bek-weight-semibold);
+}
+
+.bek-radar-chart__axis:hover .bek-radar-chart__spoke {
+  stroke: var(--bek-dataviz-label);
+}
+
+/* O'q yozuvi Caption/S · dataviz/label (chart.css `.bek-chart__tick`). */
+.bek-radar-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+}

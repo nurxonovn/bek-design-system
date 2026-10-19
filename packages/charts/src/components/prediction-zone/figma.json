@@ -1,0 +1,51 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Prediction zone",
+      "id": "1209:129",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 160,
+        "h": 200
+      },
+      "tokens": {
+        "color": ["dataviz/ai/accent", "dataviz/grid", "surface/card", "text/secondary"],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": ["chart/height/md", "radius/surface/md", "scale/160", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 4, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Marks the part of the X axis that is model output, not observed data. Always pairs with a dashed forecast line and the confidence band (dataviz/uncertainty/*). Uses dataviz/ai/* so users can tell AI from data. React: <ChartPredictionZone from label=\"Forecast\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Prediction zone": {
+      "tokens": [
+        "chart/height/md",
+        "dataviz/ai/accent",
+        "dataviz/grid",
+        "dataviz/uncertainty/",
+        "scale/160",
+        "scale/4",
+        "scale/8",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Prediction zone\nMarks the part of the X axis that is model output, not observed data. 1 variant.\nOverview\nWhat it is and when to reach for it.\nForecast\nWhen to use\nAny forecast, projection or AI-filled gap.\nTogether with a dashed forecast line and confidence bands.\nNot for targets or plans written by people — use a Target grid line.\nAnatomy\nNumbered layers of the default variant.\nForecast\n1\nZone\ndataviz/grid fill · left edge dashed dataviz/ai/accent\n2\nLabel\nSparkles _Icon + “Forecast” · Label/S\nVariants\n1 variant · Variant = Default\nForecast\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nscale/160\n160 px\n160 px\n160 px\nscale/8\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nZone from the “Today” marker to the end of the axis.\nHover\nTooltip lists model name, horizon and training range.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nForecast\nTablet · 834\nForecast\nWeb · 1440\nForecast\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nForecast\nDefault\nUsage\nRules that keep the chart honest and readable.\nStarts exactly at the last observed point.\nAlways pairs with Chart/Forecast bands (dataviz/uncertainty/*).\nLabel stays bottom-right so it never covers the line.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nMarks the part of the X axis that is model output, not observed data.\nEncoding\nx ← [forecast.from, axis.end]\nInteraction\nHover shows model metadata.\nAccessibility\nSummary says “Forecast from July, 80% range 64–93”.\nComponent\n<ChartPredictionZone from label=\"Forecast\" />\nData shape\n{ \"from\": \"2026-07-31\", \"label\": \"Forecast\", \"model\": \"bek-forecast-v2\", \"horizon\": \"4 months\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Padding\nscale/8\n8\n--bek-scale-8\nContainer · Width\nscale/160\n160\n--bek-scale-160\nContainer · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nContainer · Fill\ndataviz/grid\n#0A0A0A @5% / #FFFFFF @5%\n--bek-dataviz-grid\nContainer · Stroke\ndataviz/ai/accent\n#BC2DCF / #B32CC6\n--bek-dataviz-ai-accent\nZone label · Gap\nscale/4\n4\n--bek-scale-4\nLabel · Fill\ntext/secondary\n#505053 / #D4D4D6\n--bek-text-secondary\nLabel · Text\nLabel/S\ntext style\n—\nDo / Don’t\nDo\nForecast\nMark every predicted range so it can’t be mistaken for data.\nDon’t\n✕ Draw a forecast with the same style as actuals.\nAvoid: Draw a forecast with the same style as actuals.\nDo\nForecast\nName the horizon in the chart title (“next 4 months”).\nDon’t\n✕ Hide the zone on Mobile to save space.\nAvoid: Hide the zone on Mobile to save space."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; Figma'da set o'ramasi fonini spec'dan ajratish kerak."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Model comparison",
+      "id": "1244:22033",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/label",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Caption/S", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Compares 2–4 AI models (or vendors, prompts) across the metrics that matter, all normalised to 0–100 where higher is better. One row per metric, one dot per model, best value printed. Invert costs and latency before plotting and say so in the caption. React: <ModelComparison models metrics={[{ label, scores: [] }]} />"
+    }
+  ],
+  "doc": {
+    "Chart/Model comparison": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/label",
+        "dataviz/track",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Model comparison\nCompares 2–4 AI models, vendors or prompts across the metrics that matter, on one 0–100 scale. 1 variant.\nOverview\nWhat it is and when to reach for it.\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\nWhen to use\nChoosing a model or vendor; showing a release improvement.\nMetrics with different units normalised to 0–100 (higher = better).\nSingle metric over time → Chart/Line.\nAnatomy\nNumbered layers of the default variant.\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\n1\nLegend\none colour per model\n2\nMetric label\nCaption/M\n3\nTrack\ndataviz/track 0–100\n4\nModel dot\ncategorical colour + surface/card ring\n5\nBest value\nLabel/S above the winner\nVariants\n1 variant · Variant = Default\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nstroke/strong\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll models.\nHover row\nTooltip with raw values (ms, UZS, %).\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\nTablet · 834\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\nWeb · 1440\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nBEK-small\nBEK-base\nVendor X\nAccuracy\n91\nF1 score\n89\nSpeed\n95\nCost efficiency\n90\nUzbek language\n86\nScore 0–100 · higher is better\nDefault\nUsage\nRules that keep the chart honest and readable.\nNormalise every metric so higher is better; invert latency and cost and say so.\nPrint the best value on each row.\nMax 4 models, 3–8 metrics.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nCompares 2–4 AI models, vendors or prompts across the metrics that matter, on one 0–100 scale.\nEncoding\nx ← normalised score · row ← metric · colour ← model\nInteraction\nHover tooltip; legend toggles models.\nAccessibility\nTable view metric × model with raw values.\nComponent\n<ModelComparison models metrics={[{ label, scores: [] }]} />\nData shape\n{ \"models\": [\"BEK-small\", \"BEK-base\", \"Vendor X\"], \"metrics\": [ { \"label\": \"Accuracy\", \"scores\": [82, 91, 88], \"raw\": [\"82%\", \"91%\", \"88%\"] } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nCont"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni — ichki ChartLegend (LegendItem) komponentida."
+    }
+  ]
+}

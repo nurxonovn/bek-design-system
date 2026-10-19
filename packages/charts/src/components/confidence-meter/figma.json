@@ -1,0 +1,71 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Confidence meter",
+      "id": "1213:245",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["High", "Medium", "Low"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 240,
+        "h": 58
+      },
+      "tokens": {
+        "color": [
+          "dataviz/track",
+          "status/danger/default",
+          "status/success/default",
+          "status/warning/default",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "radius/surface/md",
+          "scale/240",
+          "scale/4",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "How sure the model is about an AI answer, forecast or generated chart. 5 segments: High 5 (status/success), Medium 3 (status/warning), Low 1 (status/danger); remainder dataviz/track. Always shows the level as text + a one-line reason — colour never carries meaning alone. React: <ConfidenceMeter level=\"high|medium|low\" value={0.92} reason />"
+    }
+  ],
+  "doc": {
+    "Chart/Confidence meter": {
+      "tokens": [
+        "dataviz/track",
+        "radius/full",
+        "scale/240",
+        "scale/4",
+        "scale/6",
+        "scale/8",
+        "status/danger/default",
+        "status/success/default",
+        "status/warning/default",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Confidence meter\nHow sure the model is about an answer, forecast or generated chart — five segments plus a one-line reason. 3 variants.\nOverview\nWhat it is and when to reach for it.\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\nWhen to use\nNext to any AI output that people may act on (forecasts, scores, generated charts).\nWhen data quality varies between answers.\nNot for task progress — use 4.6 Progress.\nAnatomy\nNumbered layers of the default variant.\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\n1\nLabel\nCaption/M · text/tertiary\n2\nLevel · value\nLabel/M · text/primary\n3\nSegments\n5 × scale/6 · status colour / dataviz/track\n4\nReason\nCaption/M · text/secondary\nVariants\n3 variants · Variant = High | Medium | Low\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\nHigh\n5 segments · ≥ 80%\nConfidence\nMedium · 64%\nSources disagree on 2 of 12 months\nMedium\n3 segments · 50–79%\nConfidence\nLow · 31%\nNot enough data — check before you share\nLow\n1 segment · < 50%\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/240\n240 px\n240 px\n240 px\nscale/6\n6 px\n6 px\n6 px\nStates\nInteractive and data states.\nState\nBehaviour\nHigh\nstatus/success/default.\nMedium\nstatus/warning/default.\nLow\nstatus/danger/default — also suggests checking the data.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\nTablet · 834\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\nWeb · 1440\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nConfidence\nHigh · 92%\nBased on 2.4 mln rows from 3 sources\nHigh\nConfidence\nMedium · 64%\nSources disagree on 2 of 12 months\nMedium\nConfidence\nLow · 31%\nNot enough data — check before you share\nLow\nUsage\nRules that keep the chart honest and readable.\nAlways show the level as text and a reason — colour never carries meaning alone.\nThresholds: High ≥ 80%, Medium 50–79%, Low < 50% (configurable per product).\nLow confidence should lead to an action: check data, ask a person.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nHow sure the model is about an answer, forecast or generated chart — five segments plus a one-line reason.\nEncoding\nsegments ← level · text ← value + reason\nInteraction\nClick opens how the score was computed.\nAccessibility\nrole=\"meter\" with aria-valuenow and aria-valuetext “High, 92 percent”.\nComponent\n<ConfidenceMeter level=\"high|medium|low\" value={0.92} reason />\nData shape\n{ \"level\": \"high | medium | low\", \"value\": 0.92, \"reason\": \"Based on 2,4 mln rows from 3 sources\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nHigh · Medium · Low\nHigh\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/8\n8\n--bek-scale-8\nContainer · Width\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

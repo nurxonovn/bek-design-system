@@ -1,0 +1,88 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Treemap",
+      "id": "1204:123",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 240
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "surface/card",
+          "text/on-color",
+          "text/on-color-muted"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "radius/control/sm",
+          "radius/surface/md",
+          "scale/12",
+          "scale/2",
+          "scale/240",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 2, 4, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Hierarchical share by area. Largest cell top-left, labels inside only when the cell fits them (≥ 64×40), otherwise in tooltip. Mobile: top 6 cells, rest grouped as “Other”. React: <Treemap data />."
+    }
+  ],
+  "doc": {
+    "Chart/Treemap": {
+      "tokens": [
+        "border/focus",
+        "chart/height/lg",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "radius/control/sm",
+        "radius/surface/sm",
+        "scale/12",
+        "scale/2",
+        "scale/240",
+        "scale/480",
+        "scale/64",
+        "text/on-color",
+        "text/on-color-muted"
+      ],
+      "text": "4.18 Chart · Composition\nBEK\nDesign System\nChart/Treemap\nHierarchical share by area. Largest cell top-left; labels inside only when the cell fits them. 1 variant.\nOverview\nWhat it is and when to reach for it.\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\nWhen to use\nMany parts (6–30) of one total: portfolio, budget lines, file sizes.\nTwo-level hierarchy (category → item).\nNot for precise comparison — use Bar.\nAnatomy\nNumbered layers of the default variant.\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\n1\nCell\ncategorical colour by group · radius/surface/sm\n2\nLabel\nLabel/S · text/on-color when ≥ 64 × 40\n3\nValue\nCaption/M under the label\nVariants\n1 variant · Variant = Default\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/lg\n280 px\n320 px\n400 px\nscale/64\n64 px\n64 px\n64 px\nscale/2\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll cells.\nHover\nCell outlined with border/focus; tooltip with share.\nDrill-down\nClick zooms into a group; breadcrumb shows the path.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\nTablet · 834\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\nWeb · 1440\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nFood\n38%\nTransport\n22%\nUtilities\n16%\nFun\n12%\nDefault\nUsage\nRules that keep the chart honest and readable.\nSort by size: largest top-left (squarified layout).\nLabels only when the cell is ≥ 64 × 40; otherwise the tooltip.\nMobile: top 6 cells, the rest grouped into Other.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nHierarchical share by area. Largest cell top-left; labels inside only when the cell fits them.\nEncoding\narea ← value · colour ← group · nesting ← hierarchy\nInteraction\nHover tooltip; click drills into a group; Esc goes back.\nAccessibility\nTree exposed as nested list with shares.\nComponent\n<Treemap data />.\nData shape\n{ \"name\": \"Budget\", \"children\": [ { \"name\": \"Rent\", \"value\": 30 }, { \"name\": \"Food\", \"children\": [ { \"name\": \"Groceries\", \"value\": 14 } ] } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Width\nscale/480\n480\n--bek-scale-480\nContainer · Height\nscale/240\n240\n--bek-scale-240\nCell · Gap\nscale/2\n2\n--bek-scale-2\nCell · Padding\nscale/12\n12\n--bek-scale-12\nCell · Radius\nradius/control/sm\n4\n--bek-radius-control-sm\nCell · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nCell · Fill\ndataviz/categorical/02\n#01B5C1 / #02ACB7\n--bek-dataviz-categorical-02\nCell · Fill\ndataviz/categorical/03\n#FF983C / #E8852C\n--bek-dataviz-categorical-03\nCell · Fill\ndataviz/categorical/04\n#FF2D55 / #D02E4F\n--bek-dataviz-categorical-04\nLabel · Fill\ntext/"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-on-color",
+      "reason": "Figma yozuvni kategorik rangga to'g'ridan-to'g'ri text/on-color bilan qo'ygan — kategorik ranglarda (03 to'q sariq, 02 moviy) kontrast 4.5:1 kafolatlanmagan. Kodda yozuv surface/card chip ichida (text/primary). Figma'da Label ham chip'ga o'tkazilishi kerak."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-on-color-muted",
+      "reason": "Ulush yozuvi Figma'da text/on-color-muted bilan rangli katakda; kodda chip ichida text/secondary. Figma'da chip'ga o'tkazilishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-primary",
+      "reason": "Chip ichidagi nom (Label/M). Figma'da label text/on-color bilan to'g'ridan-to'g'ri katakda — chip (surface/card + text/primary) bilan yangilanishi kerak."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-text-secondary",
+      "reason": "Chip ichidagi ulush (Caption/M). Figma'da text/on-color-muted — chip (text/secondary) bilan yangilanishi kerak."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+/* KPI nomi — Caption/L · text/secondary */
+.bek-bullet-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Qiymat — Label/S · text/primary */
+.bek-bullet-chart__value {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Oraliqlar: yomon → yaxshi = dataviz/sequential/300 → 200 → 100 (to'qdan ochga). */
+.bek-bullet-chart__range--300 {
+  fill: var(--bek-dataviz-sequential-300);
+}
+
+.bek-bullet-chart__range--200 {
+  fill: var(--bek-dataviz-sequential-200);
+}
+
+.bek-bullet-chart__range--100 {
+  fill: var(--bek-dataviz-sequential-100);
+}
+
+/* Maqsad belgisi — dataviz/target, ustundan baland */
+.bek-bullet-chart__target {
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+/* Hover: qator ajraladi, qolganlari 40%; <title> qiymat, maqsad va % ni aytadi. */
+.bek-bullet-chart__row {
+  cursor: default;
+}
+
+svg:hover > .bek-bullet-chart__row:not(:hover) {
+  opacity: 0.4;
+}

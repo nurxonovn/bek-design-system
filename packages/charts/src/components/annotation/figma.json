@@ -1,0 +1,82 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Annotation",
+      "id": "1209:100",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Annotation"
+        },
+        "Variant": ["Marker", "Point", "Range"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 120,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "dataviz/grid",
+          "dataviz/target",
+          "fill/inverse",
+          "surface/card",
+          "text/inverse"
+        ],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/grid/stroke",
+          "chart/height/md",
+          "radius/full",
+          "radius/surface/md",
+          "scale/1",
+          "scale/128",
+          "scale/16",
+          "scale/2",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Explains a moment in the data. Marker = event on the X axis (dashed rule + tag), Point = callout on one value, Range = shaded period. Max 3 per chart, tag ≤ 24 characters, never cover the latest value. React: <ChartAnnotation variant=\"marker|point|range\" label x x2? y? />"
+    }
+  ],
+  "doc": {
+    "Chart/Annotation": {
+      "tokens": [
+        "chart/grid/stroke",
+        "chart/height/md",
+        "dataviz/grid",
+        "dataviz/target",
+        "fill/inverse",
+        "radius/full",
+        "scale/128",
+        "scale/16",
+        "scale/2",
+        "scale/4",
+        "scale/8",
+        "text/inverse"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Annotation\nExplains a moment in the data: Marker for an event on the X axis, Point for one value, Range for a period. 3 variants.\nOverview\nWhat it is and when to reach for it.\nAnnotation\nWhen to use\nSomething outside the data explains a change (price change, campaign, outage).\nA single value needs a callout (record, target hit).\nA period needs shading (holiday season, test window).\nAnatomy\nNumbered layers of the default variant.\nAnnotation\n1\nTag\nfill/inverse pill · Label/S · text/inverse\n2\nRule / stem\ndataviz/target · dashed 4/4 (Marker)\n3\nPoint\nChart/Data point Active (Point)\n4\nBand\ndataviz/grid (Range)\nVariants\n3 variants · Variant = Marker | Point | Range\nAnnotation\nMarker\nevent on X\nAnnotation\nPoint\none value\nAnnotation\nRange\na period\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nscale/16\n16 px\n16 px\n16 px\nscale/128\n128 px\n128 px\n128 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nTag visible.\nHover\nTag expands to a Chart/Tooltip with the full note.\nCrowded\nMobile: tags collapse to numbered dots, notes listed under the chart.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nAnnotation\nTablet · 834\nAnnotation\nWeb · 1440\nAnnotation\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nAnnotation\nMarker\nAnnotation\nPoint\nAnnotation\nRange\nUsage\nRules that keep the chart honest and readable.\nMax 3 annotations per chart.\nTag text ≤ 24 characters; details go into the hover tooltip.\nNever cover the latest value or the line being explained.\nLabel: Annotation (Label property) on every variant.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nExplains a moment in the data: Marker for an event on the X axis, Point for one value, Range for a period.\nEncoding\nx (and x2 for Range) ← event date · y ← value (Point) · label ← note\nInteraction\nHover / tap shows the full note; click can open the related record.\nAccessibility\nAnnounced in the chart summary: “Annotation: Price change on 1 May”.\nComponent\n<ChartAnnotation variant=\"marker|point|range\" label x x2? y? />\nData shape\n{ \"type\": \"marker | point | range\", \"x\": \"2026-05-01\", \"x2\": \"2026-05-14\", \"y\": 92, \"label\": \"Price change\", \"note\": \"Tariff +8% from 1 May\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nLabel\ntext\nstring\nAnnotation\nVariant\nvariant\nMarker · Point · Range\nMarker\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/4\n4\n--bek-scale-4\nContainer · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nAnnotation tag · Padding\nscale/8\n8\n--bek-scale-8\nAnnotation tag · Padding\nscale/2\n2\n--bek-scale-2\nAnnotation tag · Radius\nradius/full\n9999\n--bek-radius-full\nAnnotation tag · Fill\nfill/inverse\n#323233 / #F3F3F3\n--bek-fill-inverse\nRule · Stroke width\nchart/grid/stroke\n1\n--bek-chart-grid-stroke\nRu"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-accent-soft",
+      "reason": "Nested Chart/Data point (Active) halo rangi — ChartPoint (data-point.css) chizadi; bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Nested Chart/Data point halqasi (ChartPoint, data-point.css) va Figma set o'ramasi foni — bu komponentning o'z CSS'ida kerak emas."
+    }
+  ]
+}

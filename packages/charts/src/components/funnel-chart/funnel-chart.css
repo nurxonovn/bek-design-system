@@ -1,0 +1,54 @@
+/* Ustun — dataviz/categorical/01, chart/bar/radius faqat tepada. */
+.bek-funnel-chart__bar {
+  fill: var(--bek-chart-series-1);
+}
+
+.bek-funnel-chart--horizontal .bek-funnel-chart__bar {
+  rx: var(--bek-chart-bar-radius);
+}
+
+/* Oqim maydoni — dataviz/sequential/100. */
+.bek-funnel-chart__flow {
+  fill: var(--bek-dataviz-sequential-100);
+}
+
+/* Hover: bosqichdan boshqalari 40%. */
+.bek-funnel-chart .bek-chart__svg:hover .bek-funnel-chart__step:not(:hover) {
+  opacity: 0.4;
+}
+
+/* Konversiya — Label/S · text/primary; eng katta tushish qalinroq. */
+.bek-funnel-chart__conversion,
+.bek-funnel-chart__count {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-funnel-chart__conversion--drop {
+  font-weight: var(--bek-weight-semibold);
+}
+
+/* Bosqich nomi — Stepped: Caption/M, Horizontal: Body/S · text/secondary. */
+.bek-funnel-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+.bek-funnel-chart__name {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Birinchi bosqichdan ulush — Caption/M · text/tertiary. */
+.bek-funnel-chart__share {
+  fill: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  font-weight: var(--bek-weight-regular);
+}

@@ -1,0 +1,66 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Usage meter",
+      "id": "1213:281",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Normal", "Warning", "Limit"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 320,
+        "h": 60
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "dataviz/track",
+          "status/danger/default",
+          "status/warning/default",
+          "surface/card",
+          "text/danger",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary",
+          "text/warning"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": ["radius/full", "radius/surface/md", "scale/320", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Quota or token usage with a projection to the reset date. Used = solid fill, Forecast = same colour at 35%. Normal (accent) < 80%, Warning (status/warning) 80–99% or forecast > 90%, Limit (status/danger) at 100%. Numbers in uz-UZ format with space separators. React: <UsageMeter used limit forecast resetAt label />"
+    }
+  ],
+  "doc": {
+    "Chart/Usage meter": {
+      "tokens": [
+        "accent/default",
+        "dataviz/track",
+        "radius/full",
+        "scale/320",
+        "scale/8",
+        "status/danger/default",
+        "status/warning/default",
+        "text/danger",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary",
+        "text/warning"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Usage meter\nQuota or token usage with a projection to the reset date. 3 variants.\nOverview\nWhat it is and when to reach for it.\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\nWhen to use\nAI token budgets, API quotas, storage, plan limits.\nUsers must see when they will hit a limit before it happens.\nNot for one-off progress — use 4.6 Progress.\nAnatomy\nNumbered layers of the default variant.\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\n1\nHeader\nLabel/M label + value\n2\nTrack\ndataviz/track · radius/full\n3\nUsed\naccent / warning / danger\n4\nForecast\nsame colour, layer opacity 35% (BND-09)\n5\nFooter\nReset date + forecast note\nVariants\n3 variants · Variant = Normal | Warning | Limit\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\nNormal\n< 80%\nAI tokens\n820 000 / 1 mln\nResets 1 Nov\nForecast 96% — close to limit\nWarning\n80–99% or forecast > 90%\nAI tokens\n1 mln / 1 mln\nResets 1 Nov\nLimit reached — resets in 3 days\nLimit\n100%\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/320\n320 px\n320 px\n320 px\nscale/8\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nNormal\naccent/default.\nWarning\nstatus/warning/default + text/warning note.\nLimit\nstatus/danger/default + text/danger note; upgrade action nearby.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\nTablet · 834\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\nWeb · 1440\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nAI tokens\n450 000 / 1 mln\nResets 1 Nov\nForecast 65% by reset\nNormal\nAI tokens\n820 000 / 1 mln\nResets 1 Nov\nForecast 96% — close to limit\nWarning\nAI tokens\n1 mln / 1 mln\nResets 1 Nov\nLimit reached — resets in 3 days\nLimit\nUsage\nRules that keep the chart honest and readable.\nNumbers in uz-UZ format with spaces: 820 000 / 1 mln.\nForecast is a lighter extension of the used bar, never a separate colour.\nSwitch to Warning by forecast, not only by current value.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nQuota or token usage with a projection to the reset date.\nEncoding\nused ← used / limit · forecast ← projected / limit · state ← thresholds\nInteraction\nClick opens usage details by day.\nAccessibility\nrole=\"meter\"; text states used, limit and reset date.\nComponent\n<UsageMeter used limit forecast resetAt label />\nData shape\n{ \"label\": \"AI tokens\", \"used\": 820000, \"limit\": 1000000, \"forecast\": 960000, \"resetAt\": \"2026-11-01\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nNormal · Warning · Limit\nNormal\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/8\n8\n--bek-scale-8\nContainer · Width\nscale/320\n320\n--bek-scale-320\nTrack · Height\nscale/8\n8\n-"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}
