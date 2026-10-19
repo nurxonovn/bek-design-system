@@ -1,0 +1,89 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Timeline item",
+      "id": "1219:252",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Credit check"
+        },
+        "Date": {
+          "type": "TEXT",
+          "default": "Today"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Usually takes up to 2 hours"
+        },
+        "State": ["Done", "Current", "Upcoming"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 320,
+        "h": 62
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "bg/base",
+          "border/default",
+          "border/strong",
+          "status/success/default",
+          "surface/card",
+          "text/accent",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "radius/surface/md",
+          "scale/12",
+          "scale/2",
+          "scale/20",
+          "scale/320",
+          "scale/4",
+          "scale/8",
+          "stroke/default",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 20, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Vertical event history or roadmap (application status, delivery tracking, project milestones). Stack items; hide the Line on the last item. Done = status/success, Current = accent with soft ring and accent date, Upcoming = outline marker and muted title. For a numbered wizard use 4.17 Steps instead. React: <Timeline><TimelineItem state title date description /></Timeline>"
+    }
+  ],
+  "doc": {
+    "Diagram/Timeline item": {
+      "tokens": [
+        "border/default",
+        "scale/12",
+        "scale/2",
+        "scale/20",
+        "scale/320",
+        "scale/4",
+        "scale/8",
+        "status/success",
+        "status/success/default",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Timeline item\nVertical event history or roadmap — application status, delivery tracking, milestones. 3 variants.\nOverview\nWhat it is and when to reach for it.\nCredit check\nToday\nUsually takes up to 2 hours\nWhen to use\nStatus of a long process (“Credit check — today”).\nHistory of events on an account or ticket.\nFor a numbered wizard use 4.17 Steps.\nAnatomy\nNumbered layers of the default variant.\nCredit check\nToday\nUsually takes up to 2 hours\n1\nMarker\nscale/12 · success / accent / outline\n2\nLine\nscale/2 · success or border/default\n3\nTitle + date\nLabel/M + Caption/M\n4\nDescription\nBody/S · text/secondary\nVariants\n3 variants · State = Done | Current | Upcoming\nCredit check\nToday\nUsually takes up to 2 hours\nDone\nstatus/success\nCredit check\nToday\nUsually takes up to 2 hours\nCurrent\naccent + ring\nCredit check\nToday\nUsually takes up to 2 hours\nUpcoming\noutline, muted\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/320\n320 px\n320 px\n320 px\nscale/12\n12 px\n12 px\n12 px\nscale/20\n20 px\n20 px\n20 px\nStates\nInteractive and data states.\nState\nBehaviour\nDone\nCompleted event.\nCurrent\nAccent marker with soft ring, accent date.\nUpcoming\nOutline marker, muted title.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nCredit check\nToday\nUsually takes up to 2 hours\nTablet · 834\nCredit check\nToday\nUsually takes up to 2 hours\nWeb · 1440\nCredit check\nToday\nUsually takes up to 2 hours\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nCredit check\nToday\nUsually takes up to 2 hours\nDone\nCredit check\nToday\nUsually takes up to 2 hours\nCurrent\nCredit check\nToday\nUsually takes up to 2 hours\nUpcoming\nUsage\nRules that keep the diagram clear.\nNewest at the top for histories; chronological for processes.\nExactly one Current item.\nHide the Line on the last item.\nDates relative when recent (“Today”), absolute otherwise.\nSpec\nLibrary-neutral contract — maps to React Flow, ELK, Mermaid, D3 or a native canvas.\nField\nDefinition\nPurpose\nVertical event history or roadmap — application status, delivery tracking, milestones.\nEncoding\norder ← time · state ← progress\nInteraction\nItems may expand to show details.\nAccessibility\nOrdered list; current item has aria-current=\"step\".\nComponent\n<Timeline><TimelineItem state title date description /></Timeline>\nData shape\n{ \"items\": [ { \"title\": \"Application submitted\", \"date\": \"2026-10-14T10:20\", \"state\": \"done\" }, { \"title\": \"Credit check\", \"date\": \"today\", \"state\": \"current\" } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nTitle\ntext\nstring\nCredit check\nDate\ntext\nstring\nToday\nDescription\ntext\nstring\nUsually takes up to 2 hours\nState\nvariant\nDone · Current · Upcoming\nDone\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/12\n12\n--bek-scale-12\nContainer · Width\nscale/320\n320\n--bek-scale-320\nRail · Gap\nscale/4\n4\n--bek-scale-4\nRail · Padding\nscale/4\n4\n--bek-scale-4\nContent · "
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma set o'ramasi foni (bg/base) — komponentning o'zi emas."
+    }
+  ]
+}

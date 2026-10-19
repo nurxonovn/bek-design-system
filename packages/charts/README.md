@@ -67,3 +67,19 @@ import { ChartCard, ChartContainer, LineChart, formatNumber } from '@bek/charts'
 | `FeatureImportance`          | 4.18 Chart · Feature importance | [README](src/components/feature-importance/README.md) |
 | `ClusterMap`                 | 4.18 Chart · Cluster map        | [README](src/components/cluster-map/README.md)        |
 | `ModelComparison`            | 4.18 Chart · Model comparison   | [README](src/components/model-comparison/README.md)   |
+| `DiagramNode`                | 4.19 Diagram · Node             | [README](src/components/diagram-node/README.md)       |
+| `DiagramConnector`           | 4.19 Diagram · Connector        | [README](src/components/diagram-connector/README.md)  |
+| `AgentNode`                  | 4.19 Diagram · Agent node       | [README](src/components/agent-node/README.md)         |
+| `OrgCard`                    | 4.19 Diagram · Org card         | [README](src/components/org-card/README.md)           |
+| `Timeline` · `TimelineItem`  | 4.19 Diagram · Timeline item    | [README](src/components/timeline-item/README.md)      |
+| `MarimekkoChart`             | 4.18 Chart · Marimekko          | [README](src/components/marimekko-chart/README.md)    |
+| `CirclePacking`              | 4.18 Chart · Circle packing     | [README](src/components/circle-packing/README.md)     |
+| `ChordDiagram`               | 4.18 Chart · Chord              | [README](src/components/chord-diagram/README.md)      |
+| `ConfusionMatrix`            | 4.18 Chart · Confusion matrix   | [README](src/components/confusion-matrix/README.md)   |
+| `BoxPlot`                    | 4.18 Chart · Box plot           | [README](src/components/box-plot/README.md)           |
+| `RidgelineChart`             | 4.18 Chart · Ridgeline          | [README](src/components/ridgeline-chart/README.md)    |
+| `Streamgraph`                | 4.18 Chart · Streamgraph        | [README](src/components/streamgraph/README.md)        |
+| `HorizonChart`               | 4.18 Chart · Horizon            | [README](src/components/horizon-chart/README.md)      |
+| `MindMap`                    | 4.19 Diagram · Mind map         | [README](src/components/mind-map/README.md)           |
+| `JourneyMap`                 | 4.19 Diagram · User journey map | [README](src/components/journey-map/README.md)        |
+| `Swimlane`                   | 4.19 Diagram · Swimlane         | [README](src/components/swimlane/README.md)           |

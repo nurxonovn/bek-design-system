@@ -1,0 +1,36 @@
+/* Figma 4.19 Diagram · Connector — chiziq chart/line/stroke · dataviz/label, strelka 8 × 10. */
+.bek-diagram-connector {
+  --bek-diagram-connector-color: var(--bek-dataviz-label);
+}
+
+.bek-diagram-connector--active {
+  --bek-diagram-connector-color: var(--bek-accent-default);
+}
+
+.bek-diagram-connector__line {
+  fill: none;
+  stroke: var(--bek-diagram-connector-color);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linejoin: miter;
+}
+
+.bek-diagram-connector--dashed .bek-diagram-connector__line {
+  stroke-dasharray: 4 4;
+}
+
+.bek-diagram-connector__head {
+  fill: var(--bek-diagram-connector-color);
+}
+
+/* Label pill — bg/sheet, Caption/M · text/secondary */
+.bek-diagram-connector__label rect {
+  fill: var(--bek-bg-sheet);
+}
+
+.bek-diagram-connector__label text {
+  fill: var(--bek-text-secondary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-medium);
+}

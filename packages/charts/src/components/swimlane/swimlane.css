@@ -1,0 +1,56 @@
+/* Figma 4.19 Diagram · Swimlane — bg/sheet canvas (Horizontal scale/900, Vertical scale/720),
+   yo'lak nomi Label/M · text/secondary, ajratgich border/hairline; qadamlar DiagramNode, bog'lanishlar
+   DiagramConnector (ortogonal, strelka, Yes / No pill). */
+.bek-swimlane {
+  margin: 0;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-swimlane__canvas {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-bg-sheet);
+}
+
+.bek-swimlane__edges {
+  position: absolute;
+  inset-block-start: 0;
+  left: 0;
+  display: block;
+  overflow: visible;
+}
+
+.bek-swimlane__divider {
+  stroke: var(--bek-border-hairline);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+.bek-swimlane__lane-name {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-inline: var(--bek-scale-16);
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-swimlane--horizontal .bek-swimlane__lane-name {
+  left: 0;
+}
+
+.bek-swimlane--vertical .bek-swimlane__lane-name {
+  top: 0;
+  justify-content: center;
+}
+
+.bek-swimlane__step {
+  position: absolute;
+}

@@ -1,0 +1,80 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Node",
+      "id": "1217:101",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Step name"
+        },
+        "Variant": ["Process", "Terminal", "Note", "Subprocess", "Decision", "Data"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 160,
+        "h": 56
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/base",
+          "border/strong",
+          "fill/inverse",
+          "status/info/soft",
+          "status/warning/soft",
+          "surface/card",
+          "text/accent",
+          "text/info",
+          "text/inverse",
+          "text/primary"
+        ],
+        "text": ["Label/M"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/16",
+          "scale/160",
+          "scale/56",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Flowchart shapes for process docs, bank workflows and onboarding maps. Terminal = start/end (fill/inverse pill), Process = step (surface/card + Elevation/1), Decision = yes/no (accent/soft diamond), Data = document or input (status/info/soft), Subprocess = linked flow (side rules), Note = comment (status/warning/soft). Width 160 on an 8 pt grid, min 32 between nodes, flow left→right or top→bottom."
+    }
+  ],
+  "doc": {
+    "Diagram/Node": {
+      "tokens": [
+        "Elevation/1",
+        "accent/soft",
+        "border/accent",
+        "fill/inverse",
+        "radius/surface/sm",
+        "scale/16",
+        "scale/160",
+        "scale/32",
+        "scale/56",
+        "scale/8",
+        "shadow/soft",
+        "surface/card",
+        "text/primary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Node\nFlowchart shapes for process maps, bank workflows and onboarding flows. 6 variants.\nOverview\nWhat it is and when to reach for it.\nStep name\nWhen to use\nDocumenting a process with decisions (loan approval, KYC, refunds).\nExplaining a product flow to stakeholders.\nFor live automation steps use Agent node.\nAnatomy\nNumbered layers of the default variant.\nStep name\n1\nShape\nsurface/card / fill/inverse / accent/soft / status soft\n2\nLabel\nLabel/M · centred · Label property\n3\nElevation\nElevation/1 on Process and Subprocess\nVariants\n6 variants · Variant = Process | Terminal | Note | Subprocess | Decision | Data\nStep name\nProcess\nstep\nStep name\nTerminal\nstart / end\nStep name\nNote\ncomment\nStep name\nSubprocess\nlinked flow\nStep name\nDecision\nyes / no\nStep name\nData\ndocument / input\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/160\n160 px\n160 px\n160 px\nscale/56\n56 px\n56 px\n56 px\nscale/32\n32 px\n32 px\n32 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nStatic node.\nSelected\nCanvas tools draw _Focus ring around it.\nHighlighted\nCurrent step in a walkthrough: border/accent stroke 2.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nStep name\nTablet · 834\nStep name\nWeb · 1440\nStep name\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nStep name\nProcess\nStep name\nTerminal\nStep name\nNote\nStep name\nSubprocess\nStep name\nDecision\nStep name\nData\nUsage\nRules that keep the diagram clear.\n8 pt grid; at least 32 between nodes.\nFlow left → right or top → bottom, never both in one diagram.\nOne Terminal at the start, one per end; Decisions always have two labelled exits.\nMax 4 colours in one diagram.\nSpec\nLibrary-neutral contract — maps to React Flow, ELK, Mermaid, D3 or a native canvas.\nField\nDefinition\nPurpose\nFlowchart shapes for process maps, bank workflows and onboarding flows.\nEncoding\nshape ← step type · label ← step name · position ← flow order\nInteraction\nStatic in docs; selectable and draggable in canvas editors.\nAccessibility\nProvide the flow as an ordered list next to the diagram.\nComponent\n<DiagramNode variant label />\nData shape\n{ \"nodes\": [ { \"id\": \"start\", \"type\": \"terminal\", \"label\": \"Start\" }, { \"id\": \"check\", \"type\": \"decision\", \"label\": \"Approved?\" } ], \"edges\": [ { \"from\": \"start\", \"to\": \"check\" } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nLabel\ntext\nstring\nStep name\nVariant\nvariant\nProcess · Terminal · Note · Subprocess · Decision · Data\nProcess\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Padding\nscale/16\n16\n--bek-scale-16\nContainer · Padding\nscale/8\n8\n--bek-scale-8\nContainer · Width\nscale/160\n160\n--bek-scale-160\nContainer · Height\nscale/56\n56\n--bek-scale-56\nContainer · Radius\nradius/surface/sm\n8\n--bek-radius-surface-sm\nContainer · Fill\nsurface/card\n#FFFFFF / #18181A\n--bek-surface-card\nContainer · Shadow\nshadow/soft\n#000000 @2% / #000000 @0%\n--bek-shado"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma set o'ramasi foni (bg/base) — komponentning o'zi emas."
+    }
+  ]
+}

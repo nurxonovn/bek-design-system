@@ -1,0 +1,64 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Ridgeline",
+      "id": "1251:39966",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Highlight"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/neutral",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 2, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Stacked density curves that overlap slightly — compares how a distribution shifts across 4–12 ordered groups (months, cohorts). Highlight keeps one group in colour and greys the rest. React: <RidgelineChart data={[{ group, values }]} highlight=\"Jun\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Ridgeline": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/grid",
+        "dataviz/label",
+        "dataviz/neutral",
+        "scale/200",
+        "scale/480",
+        "surface/card",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Distribution\nBEK\nDesign System\nChart/Ridgeline\nStacked, slightly overlapping density curves — shows how a distribution shifts across ordered groups (months, cohorts, versions). 2 variants.\nOverview\nWhat it is and when to reach for it.\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nWhen to use\nShow a shift over time: delivery time per month, session length per release.\n4–12 ordered groups where one density per group is the story.\nHighlight one group (this month) against the history in grey.\nAnatomy\nNumbered layers of the default variant.\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\n1\nGroup label\nCaption/M · text/secondary, on the ridge baseline\n2\nKnockout\nsurface/card under each ridge so overlaps stay clean\n3\nDensity area\ncategorical/01 at layer opacity 0.28\n4\nDensity line\nchart/line/stroke\n5\nValue axis\nShared x scale, ticks Caption/S\nVariants\n2 variants · Variant = Default | Highlight\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nDefault\nAll groups in colour\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nHighlight\nOne group, rest dataviz/neutral\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll ridges categorical/01.\nHover ridge\nRidge raises, tooltip with n, median and P90; others dim.\nHighlight\nSelected group in colour, others dataviz/neutral at 0.16.\nLoading\nChart/Card Loading.\nSparse group\nn < 20 → dashed line, tooltip says “low sample”.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nTablet · 834\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nWeb · 1440\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nDefault\n0\n15\n30\n45\n60\nJan\nFeb\nMar\nApr\nMay\nJun\nHighlight\nUsage\nRules that keep the chart honest and readable.\nKeep the order meaningful — time or rank; never alphabetical.\nOverlap ≤ 50% of the ridge height so peaks remain readable.\nSame x scale and same bandwidth for every ridge.\nMax 12 ridges; beyond that use Horizon or a heatmap.\nOverlap is the point\nRidgelines save space by overlapping; the knockout layer (surface/card) keeps each curve crisp in Light and Dark.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nStacked, slightly overlapping density curves — shows how a distribution shifts across ordered groups (months, cohorts, versions).\nEncoding\ny = ordered group (band, overlapping), x = value (linear), ridge height = kernel density (shared bandwidth). Colour only for highlight.\nInteraction\nHover → tooltip (n, median, P90). Click label → highlight that group. Keyboard: arrow keys between ridges.\nAccessibility\naria-label per ridge with median and P90; data table fallback; highlight also uses label weight, not only colour.\nComponent\n<RidgelineChart data={[{ group, values }]} "
+    }
+  },
+  "accepted": []
+}

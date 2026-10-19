@@ -1,0 +1,99 @@
+/* Tor ekranda jadval gorizontal skroll qiladi (Figma Mobile). */
+.bek-confusion-matrix__scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+
+/* Kataklar orasi scale/4, radius chart/bar/radius. */
+.bek-confusion-matrix__table {
+  border-collapse: separate;
+  border-spacing: var(--bek-scale-4);
+  margin-inline: calc(var(--bek-scale-4) * -1);
+  table-layout: fixed;
+}
+
+/* Burchak va ustun sarlavhalari (bashorat) — Caption/S · dataviz/label */
+.bek-confusion-matrix__corner,
+.bek-confusion-matrix__head {
+  padding: 0;
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-confusion-matrix__corner {
+  text-align: start;
+}
+
+.bek-confusion-matrix__head {
+  text-align: center;
+}
+
+/* Qator nomi (haqiqiy sinf) — Caption/M · text/secondary */
+.bek-confusion-matrix__row {
+  padding: 0;
+  padding-inline-end: var(--bek-scale-8);
+  text-align: start;
+  white-space: nowrap;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Katak qiymati — Caption/M, tabular raqamlar */
+.bek-confusion-matrix__cell {
+  block-size: var(--bek-confusion-matrix-row);
+  padding: 0;
+  border-radius: var(--bek-chart-bar-radius);
+  text-align: center;
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-confusion-matrix__cell--diagonal {
+  font-weight: var(--bek-weight-medium);
+}
+
+/* CMP-07: faqat 200 · 300 · 600 · 700 (textCellLevel); matn 200/300 → text/primary, 600/700 → text/inverse (textOnCell). */
+.bek-confusion-matrix__cell--200 {
+  background: var(--bek-dataviz-sequential-200);
+  color: var(--bek-text-primary);
+}
+
+.bek-confusion-matrix__cell--300 {
+  background: var(--bek-dataviz-sequential-300);
+  color: var(--bek-text-primary);
+}
+
+.bek-confusion-matrix__cell--600 {
+  background: var(--bek-dataviz-sequential-600);
+  color: var(--bek-text-inverse);
+}
+
+.bek-confusion-matrix__cell--700 {
+  background: var(--bek-dataviz-sequential-700);
+  color: var(--bek-text-inverse);
+}
+
+/* Hover: katak konturi; title — haqiqiy, bashorat, son, qator %, precision / recall. */
+.bek-confusion-matrix__cell:hover {
+  outline: var(--bek-chart-grid-stroke) solid var(--bek-text-primary);
+  outline-offset: calc(var(--bek-chart-grid-stroke) * -1);
+}
+
+/* Xulosa — Caption/M · text/secondary */
+.bek-confusion-matrix__summary {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+  font-variant-numeric: tabular-nums;
+}

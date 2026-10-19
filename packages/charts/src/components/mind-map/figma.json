@@ -1,0 +1,105 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Mind map",
+      "id": "1263:2802",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Variant": ["Radial", "Tree"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 720,
+        "h": 400
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/categorical/06",
+          "fill/inverse",
+          "surface/card",
+          "text/inverse",
+          "text/primary"
+        ],
+        "text": ["Body/S", "Label/M"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/16",
+          "scale/160",
+          "scale/56",
+          "scale/720",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Central idea with branches — brainstorms, scope maps, onboarding topics. Radial spreads 3–8 branches around the centre; Tree reads left → right with leaves. Each branch keeps one categorical colour on its links. Built from Diagram/Node (Terminal = root, Process = branch) on a bg/sheet canvas. React: <MindMap root={{ label, children }} layout=\"radial | tree\" />"
+    }
+  ],
+  "doc": {
+    "Diagram/Mind map": {
+      "tokens": [
+        "bg/sheet",
+        "chart/line/stroke",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/categorical/05",
+        "dataviz/categorical/06",
+        "fill/inverse",
+        "radius/full",
+        "radius/surface/md",
+        "radius/surface/sm",
+        "scale/16",
+        "scale/160",
+        "scale/56",
+        "scale/720",
+        "scale/8",
+        "shadow/soft",
+        "surface/card",
+        "text/primary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Mind map\nCentral idea with branches — Radial spreads 3–8 branches around the centre, Tree reads left → right with leaves. 2 variants.\nOverview\nWhat it is and when to reach for it.\nBEK Academy launch\nProduct\nMarketing\nSales\nTeam\nFinance\nLegal\nWhen to use\nBrainstorms, scope maps, course or onboarding topic maps.\nShow how sub-topics hang from one idea when order does not matter (Radial).\nTree when there is a reading direction and two levels (goal → area → item).\nAnatomy\nNumbered layers of the default variant.\nBEK Academy launch\nProduct\nMarketing\nSales\nTeam\nFinance\nLegal\n1\nCanvas\nbg/sheet · radius/surface/md\n2\nRoot\nDiagram/Node · Terminal (fill/inverse)\n3\nBranch\nDiagram/Node · Process\n4\nLink\nCubic curve · categorical/01–08 · chart/line/stroke\n5\nBranch dot / leaf\nSame categorical colour; leaf text Body/S · text/primary\nVariants\n2 variants · Variant = Radial | Tree\nBEK Academy launch\nProduct\nMarketing\nSales\nTeam\nFinance\nLegal\nRadial\n3–8 branches\nMobile app\nAI tutor\nTelegram ads\nReferral\nHiring\nPayments\nQ4 goals\nProduct\nGrowth\nOperations\nTree\nRoot → branch → leaf\nSizes\nDiagrams keep their geometry; width comes from a Dimension token, narrow screens get the narrow variant.\nToken\nMobile\nTablet\nWeb\nscale/720\n720 px\n720 px\n720 px\nscale/160\n160 px\n160 px\n160 px\nscale/56\n56 px\n56 px\n56 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll branches visible.\nHover branch\nBranch and its links stay, others fade to 0.3.\nCollapsed\nBranch shows “+n” instead of its leaves.\nEditing\nNode label becomes a text field; Enter adds a sibling, Tab a child.\nEmpty\nRoot only with “Add a branch” ghost node.\nDevices\nEach device shows the variant meant for it; wide canvases are scaled, never stretched.\nMobile · 390\nMobile app\nAI tutor\nTelegram ads\nReferral\nHiring\nPayments\nQ4 goals\nProduct\nGrowth\nOperations\nTablet · 834\nBEK Academy launch\nProduct\nMarketing\nSales\nTeam\nFinance\nLegal\nWeb · 1440\nBEK Academy launch\nProduct\nMarketing\nSales\nTeam\nFinance\nLegal\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nBEK Academy launch\nProduct\nMarketing\nSales\nTeam\nFinance\nLegal\nRadial\nMobile app\nAI tutor\nTelegram ads\nReferral\nHiring\nPayments\nQ4 goals\nProduct\nGrowth\nOperations\nTree\nUsage\nRules that keep the diagram readable.\nOne root, 3–8 branches; more → split into two maps.\nOne colour per branch, kept on every link of that branch.\nLabels ≤ 3 words — the map is a summary, not a document.\nLinks never cross nodes; re-order branches instead.\nColour is a group, not a value\nBranch colours only separate groups. Never use them to rank or score branches.\nSpec\nLibrary-neutral contract — maps to React Flow, Mermaid, D3 or a native renderer.\nField\nDefinition\nPurpose\nCentral idea with branches — Radial spreads 3–8 branches around the centre, Tree reads left → right with leaves.\nEncoding\nPosition = hierarchy (centre or left = root), link colour = branch (categorical), node shape = role (Terminal root, Process branch).\nInteraction\nHover branch → highlight. Click node → collapse / expand. Keyboard: arrows move between siblings, Enter opens, Escape collapses.\nAccessibility\nRendered as a nested"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-inverse",
+      "reason": "Ildiz tuguni (Terminal) — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Shox tugunlari (Process) foni — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-inverse",
+      "reason": "Terminal matni — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/M",
+      "reason": "Tugun yorlig'i — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "effect-missing",
+      "match": "Elevation/1",
+      "reason": "Process soyasi — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
+    }
+  ]
+}

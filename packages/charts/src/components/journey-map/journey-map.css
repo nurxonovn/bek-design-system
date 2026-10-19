@@ -1,0 +1,189 @@
+/* Figma 4.19 Diagram · User journey map — Default: bg/sheet canvas 720, qator nomlari ustuni 96;
+   Compact: har bosqich surface/card kartasi, eni 360. Emotsiya — nuqta rangi + so'z. */
+.bek-journey {
+  margin: 0;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+}
+
+.bek-journey__grid {
+  display: grid;
+  box-sizing: border-box;
+  inline-size: var(--bek-scale-720);
+  align-items: start;
+  gap: var(--bek-scale-8);
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-bg-sheet);
+}
+
+.bek-journey__row-name {
+  padding-block: var(--bek-scale-4);
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+}
+
+.bek-journey__stage {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-4);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-journey__grid > .bek-journey__stage {
+  padding-block-end: var(--bek-scale-4);
+  border-block-end: var(--bek-chart-grid-stroke) solid var(--bek-dataviz-grid);
+}
+
+.bek-journey__num {
+  color: var(--bek-dataviz-categorical-01);
+}
+
+.bek-journey__cell {
+  min-inline-size: 0;
+  color: var(--bek-text-secondary);
+}
+
+.bek-journey__card {
+  padding: var(--bek-scale-8);
+  border-radius: var(--bek-radius-surface-sm);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+}
+
+.bek-journey__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-4);
+}
+
+.bek-journey__chip {
+  padding-block: var(--bek-scale-2);
+  padding-inline: var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}
+
+.bek-journey__empty {
+  color: var(--bek-text-tertiary);
+}
+
+.bek-journey__note,
+.bek-journey__mood {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--bek-scale-4);
+}
+
+.bek-journey__mood {
+  white-space: nowrap;
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+}
+
+.bek-journey__dot {
+  flex: none;
+  inline-size: var(--bek-scale-8);
+  block-size: var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  translate: 0 -1px;
+}
+
+.bek-journey__dot--positive {
+  background: var(--bek-dataviz-positive);
+}
+.bek-journey__dot--neutral {
+  background: var(--bek-dataviz-neutral);
+}
+.bek-journey__dot--negative {
+  background: var(--bek-dataviz-negative);
+}
+
+/* Emotsiya chizig'i — bosqich ustunlari ustida, balandligi scale/48 */
+.bek-journey__curve {
+  position: relative;
+  block-size: var(--bek-scale-48);
+}
+
+.bek-journey__curve svg {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: visible;
+}
+
+.bek-journey__baseline {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  vector-effect: non-scaling-stroke;
+}
+
+.bek-journey__line {
+  fill: none;
+  stroke: var(--bek-dataviz-categorical-01);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.bek-journey__point {
+  position: absolute;
+  translate: calc(-1 * var(--bek-scale-4)) -50%;
+}
+
+/* Compact — kartalar ustma-ust */
+.bek-journey__cards {
+  display: flex;
+  box-sizing: border-box;
+  inline-size: var(--bek-scale-360);
+  max-inline-size: 100%;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  margin: 0;
+  padding: var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-bg-sheet);
+  list-style: none;
+}
+
+.bek-journey__stage-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  padding: var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-sm);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-secondary);
+}
+
+.bek-journey__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bek-scale-8);
+  color: var(--bek-text-primary);
+}
+
+.bek-journey__action {
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+}
+
+.bek-journey--compact .bek-journey__chip {
+  background: var(--bek-bg-sheet);
+}

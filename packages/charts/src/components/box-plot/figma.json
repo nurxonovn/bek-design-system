@@ -1,0 +1,64 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Box plot",
+      "id": "1251:39891",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Box", "Violin", "Box + points"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/grid",
+          "dataviz/label",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 2, 4, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Five-number summary per group — minimum, quartiles, median, maximum — with outliers as hollow dots. Violin shows the density shape; Box + points adds every value behind the box. 3–12 groups; groups as rows so labels stay readable on mobile. React: <BoxPlot data={[{ group, values }]} variant=\"box | violin | points\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Box plot": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/grid",
+        "dataviz/label",
+        "scale/200",
+        "scale/480",
+        "surface/card",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Distribution\nBEK\nDesign System\nChart/Box plot\nFive-number summary of a numeric value per group, with outliers; Violin shows the density shape, Box + points every value behind the box. 3 variants.\nOverview\nWhat it is and when to reach for it.\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nWhen to use\nCompare the spread, not just the average, of 3–12 groups (order value by city, response time by team).\nSpot skew and outliers before choosing a mean or a median for a KPI.\nViolin when the shape matters (two peaks); Box + points when n < 50 per group so readers see the sample.\nAnatomy\nNumbered layers of the default variant.\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\n1\nGroup label\nCaption/M · text/secondary\n2\nWhisker + cap\nMin → Q1 and Q3 → max · categorical/01 · grid stroke\n3\nBox\nQ1–Q3 · fill at layer opacity 0.28 + outline\n4\nMedian\nchart/line/stroke\n5\nOutlier\nHollow dot on surface/card · anchored\n6\nValue axis\nTicks Caption/S · dataviz/label, grid dataviz/grid\nVariants\n3 variants · Variant = Box | Violin | Box + points\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nBox\nDefault\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nViolin\nDensity + IQR bar\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nBox + points\nRaw values, n < 50\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll groups in categorical/01.\nHover group\nTooltip: n, min, Q1, median, Q3, max; other groups dim to layer opacity 0.4.\nHover outlier\nTooltip with the raw value and its record label.\nLoading\nChart/Card Loading state (Skeleton).\nEmpty / 1 value\nGroup shows a single tick and “n = 1”; no box is drawn.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nTablet · 834\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nWeb · 1440\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nBox\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nViolin\n0\n100\n200\n300\n400\nToshkent\nSamarqand\nBuxoro\nAndijon\nNamangan\nBox + points\nUsage\nRules that keep the chart honest and readable.\nGroups as rows — labels stay horizontal and readable on mobile.\nSort groups by median unless the order is meaningful (time, size).\nWhiskers = 1.5 × IQR (Tukey); state it in the tooltip or footnote.\nOne colour for all groups; colour only to highlight one group.\nMedian, not mean\nThe line inside the box is the median. If the business KPI is a mean, add it as a Data point marker and say so in the legend.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nFive-number summary "
+    }
+  },
+  "accepted": []
+}
