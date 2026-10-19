@@ -1,0 +1,84 @@
+.bek-chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-chart-gap);
+  min-inline-size: 0;
+  padding: var(--bek-chart-padding);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-chart-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--bek-scale-12);
+}
+
+.bek-chart-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-inline-size: 0;
+}
+
+.bek-chart-card__title {
+  margin: 0;
+  font-size: var(--bek-type-title-md-size);
+  line-height: var(--bek-type-title-md-line-height);
+  letter-spacing: var(--bek-type-title-md-tracking);
+  font-weight: var(--bek-weight-semibold);
+}
+
+.bek-chart-card__subtitle,
+.bek-chart-card__comparison,
+.bek-chart-card__footer {
+  margin: 0;
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-chart-card__kpi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+.bek-chart-card__value {
+  font-size: var(--bek-type-headline-md-size);
+  line-height: var(--bek-type-headline-md-line-height);
+  letter-spacing: var(--bek-type-headline-md-tracking);
+  font-weight: var(--bek-weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-chart-card__slot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-inline-size: 0;
+  min-block-size: var(--bek-chart-height-md);
+}
+
+.bek-chart-card__skeleton {
+  inline-size: 100%;
+  block-size: var(--bek-chart-height-md);
+  border-radius: var(--bek-radius-surface-sm);
+}
+
+.bek-chart-card__slot .bek-empty-state {
+  border-radius: var(--bek-radius-surface-sm);
+  background: var(--bek-bg-sheet);
+}
+
+/* Davr tanlagich sarlavha yonida o'z eniga ega (Figma: o'ng tomonda); tor ekranda pastga o'raladi. */
+.bek-chart-card__header > .bek-segmented {
+  flex: 0 1 auto;
+  inline-size: auto;
+}

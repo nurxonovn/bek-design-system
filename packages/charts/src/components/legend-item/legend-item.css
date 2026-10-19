@@ -1,0 +1,72 @@
+.bek-legend-item {
+  --bek-legend-color: var(--bek-dataviz-categorical-01);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--bek-text-secondary);
+  font-family: var(--bek-family-sans);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  font-weight: var(--bek-weight-regular);
+  border-radius: var(--bek-radius-full);
+}
+
+button.bek-legend-item {
+  cursor: pointer;
+}
+
+.bek-legend-item__marker {
+  flex: none;
+  inline-size: var(--bek-chart-legend-marker);
+  block-size: var(--bek-chart-legend-marker);
+  background: var(--bek-legend-color);
+  border-radius: var(--bek-radius-full);
+}
+
+.bek-legend-item--square .bek-legend-item__marker {
+  border-radius: var(--bek-scale-2);
+}
+
+.bek-legend-item--line .bek-legend-item__marker,
+.bek-legend-item--dashed .bek-legend-item__marker {
+  inline-size: var(--bek-scale-16);
+  block-size: var(--bek-chart-line-stroke);
+}
+
+.bek-legend-item--dashed {
+  --bek-legend-color: var(--bek-dataviz-target);
+}
+
+.bek-legend-item--dashed .bek-legend-item__marker {
+  background: repeating-linear-gradient(
+    to right,
+    var(--bek-legend-color) 0 var(--bek-scale-4),
+    transparent var(--bek-scale-4) var(--bek-scale-6)
+  );
+}
+
+.bek-legend-item--hidden {
+  color: var(--bek-text-disabled);
+}
+
+.bek-legend-item--hidden .bek-legend-item__marker {
+  opacity: 0.3;
+}
+
+.bek-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-4) var(--bek-chart-legend-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Bitta seriya ustida turganda qolganlari 30% ga xiralashadi (Figma doc). */
+.bek-chart-legend:has(button.bek-legend-item:hover) button.bek-legend-item:not(:hover) {
+  opacity: 0.3;
+}

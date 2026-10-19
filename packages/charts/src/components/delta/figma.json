@@ -1,0 +1,62 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Delta",
+      "id": "1201:219",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Positive", "Negative", "Neutral"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 71,
+        "h": 20
+      },
+      "tokens": {
+        "color": [
+          "fill/tertiary",
+          "status/danger/soft",
+          "status/success/soft",
+          "surface/card",
+          "text/danger",
+          "text/secondary",
+          "text/success"
+        ],
+        "text": ["Label/S"],
+        "effect": [],
+        "dimension": ["radius/full", "radius/surface/md", "scale/2", "scale/6", "scale/8"]
+      },
+      "sizes": [1, 2, 6, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Change vs previous period. Positive = up/gain, Negative = down/loss (true minus sign −). React: <ChartDelta value={0.124} />."
+    }
+  ],
+  "doc": {
+    "Chart/Delta": {
+      "tokens": [
+        "fill/soft",
+        "radius/full",
+        "scale/2",
+        "scale/20",
+        "scale/6",
+        "scale/8",
+        "status/danger/soft",
+        "status/success/soft",
+        "text/danger",
+        "text/secondary",
+        "text/success"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Delta\nChange against the previous period, coloured by direction, with a real minus sign. 3 variants.\nOverview\nWhat it is and when to reach for it.\n+12,4%\nWhen to use\nNext to a KPI value or in a table cell to show change.\nInside Chart/Card and Chart/KPI card headers.\nNot for absolute values — only for change.\nAnatomy\nNumbered layers of the default variant.\n+12,4%\n1\nArrow\nDirection icon · text colour\n2\nValue\nLabel/S · tabular, signed\n3\nContainer\nstatus/*/soft · radius/full\nVariants\n3 variants · Variant = Positive | Negative | Neutral\n+12,4%\nPositive\ngain\n−3,1%\nNegative\nloss\n0,0%\nNeutral\n|Δ| < 0,5%\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/20\n20 px\n20 px\n20 px\nscale/8\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nPositive\nstatus/success/soft + text/success, arrow up.\nNegative\nstatus/danger/soft + text/danger, arrow down.\nNeutral\nfill/soft + text/secondary, flat arrow.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n+12,4%\nTablet · 834\n+12,4%\nWeb · 1440\n+12,4%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n+12,4%\nPositive\n−3,1%\nNegative\n0,0%\nNeutral\nUsage\nRules that keep the chart honest and readable.\nPositive = good change, Negative = bad change. For costs, debt or churn flip the mapping: a rise is Negative.\nOne decimal with a comma: +12,4% · −3,1%.\nAlways pair with the comparison period (“vs last week”).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nChange against the previous period, coloured by direction, with a real minus sign.\nEncoding\nvariant ← sign(value) with semantic flip · text ← formatted percent\nInteraction\nStatic. In a KPI card the whole card is the hit target.\nAccessibility\nAnnounced as “up 12,4 percent vs last week”; arrow icon aria-hidden.\nComponent\n<ChartDelta value={0.124} />.\nData shape\n{ \"value\": 0.124, \"format\": \"percent\", \"betterWhen\": \"up | down\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nPositive · Negative · Neutral\nPositive\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/2\n2\n--bek-scale-2\nContainer · Padding\nscale/6\n6\n--bek-scale-6\nContainer · Padding\nscale/2\n2\n--bek-scale-2\nContainer · Padding\nscale/8\n8\n--bek-scale-8\nContainer · Radius\nradius/full\n9999\n--bek-radius-full\nContainer · Fill\nstatus/success/soft\n#E0F6E5 / #133A1D\n--bek-status-success-soft\nValue · Fill\ntext/success\n#206F34 / #30D158\n--bek-text-success\nValue · Text\nLabel/S\ntext style\n—\nDo / Don’t\nDo\n+12,4%\nUse the true minus sign − (U+2212).\nDon’t\n✕ Type a hyphen - for negative values.\nAvoid: Type a hyphen - for negative values.\nDo\n+12,4%\nKeep the arrow — direction must not rely on colour.\nDon’t\n✕ Colour the number red or green without an arrow.\nAvoid: Colour the number red or green without an arrow."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

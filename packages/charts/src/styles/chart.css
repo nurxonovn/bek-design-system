@@ -1,0 +1,70 @@
+/* Umumiy chart uslublari: ildiz, o'q, grid, ko'rinmas jadval. Har chart shu klasslarni ishlatadi. */
+.bek-chart {
+  /* Seriya palitrasi — `seriesColor(i)`; bitta chart uchun qayta belgilash mumkin. */
+  --bek-chart-series-1: var(--bek-dataviz-categorical-01);
+  --bek-chart-series-2: var(--bek-dataviz-categorical-02);
+  --bek-chart-series-3: var(--bek-dataviz-categorical-03);
+  --bek-chart-series-4: var(--bek-dataviz-categorical-04);
+  --bek-chart-series-5: var(--bek-dataviz-categorical-05);
+  --bek-chart-series-6: var(--bek-dataviz-categorical-06);
+  --bek-chart-series-7: var(--bek-dataviz-categorical-07);
+  --bek-chart-series-8: var(--bek-dataviz-categorical-08);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-chart-gap);
+  margin: 0;
+  min-width: 0;
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-chart-container {
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.bek-chart__svg {
+  display: block;
+  max-inline-size: 100%;
+  overflow: visible;
+}
+
+/* Caption/S · dataviz/label — o'q va tick yozuvlari */
+.bek-chart__tick {
+  fill: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-chart__gridline {
+  stroke: var(--bek-dataviz-grid);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+.bek-chart__baseline {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+/* Ekran o'quvchi uchun ma'lumot jadvali — ko'rinmaydi, lekin o'qiladi. */
+.bek-chart__sr {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-chart__mark {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}

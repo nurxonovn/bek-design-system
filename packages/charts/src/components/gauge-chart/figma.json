@@ -1,0 +1,63 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Gauge",
+      "id": "1243:21941",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Zones"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/label",
+          "dataviz/negative",
+          "dataviz/positive",
+          "dataviz/track",
+          "status/warning/default",
+          "surface/card",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S", "Headline/M"],
+        "effect": [],
+        "dimension": ["chart/gap", "radius/surface/md", "scale/200", "scale/480", "stroke/strong"]
+      },
+      "sizes": [1, 2, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "A single value on a bounded scale where the range itself matters (credit score, risk level). Default: value arc on dataviz/track; Zones: poor / fair / good bands with a needle. Always print the value and both bounds. For KPI vs target on dashboards prefer Chart/Bullet. React: <GaugeChart value min max zones? />"
+    }
+  ],
+  "doc": {
+    "Chart/Gauge": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "dataviz/categorical/01",
+        "dataviz/label",
+        "dataviz/track",
+        "motion/duration/chart-enter",
+        "scale/200",
+        "scale/480",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Finance\nBEK\nDesign System\nChart/Gauge\nA single value on a bounded scale where the range itself matters. 2 variants.\nOverview\nWhat it is and when to reach for it.\n620\nCredit score\n300\n850\nWhen to use\nCredit score, risk level, health score with known bounds.\nZones: the band (poor / fair / good) is the message.\nKPI vs target on a dashboard → Chart/Bullet.\nAnatomy\nNumbered layers of the default variant.\n620\nCredit score\n300\n850\n1\nTrack / zones\ndataviz/track or negative · warning · positive\n2\nValue arc / needle\ncategorical colour or text/primary needle\n3\nValue\nHeadline/M + caption\n4\nBounds\nmin and max · Caption/S\nVariants\n2 variants · Variant = Default | Zones\n620\nCredit score\n300\n850\nDefault\nvalue arc\n620\nCredit score\n300\n850\nZones\nbands + needle\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nstroke/strong\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nStatic value.\nUpdating\nArc animates from the old value (motion/duration/chart-enter).\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n620\nCredit score\n300\n850\nTablet · 834\n620\nCredit score\n300\n850\nWeb · 1440\n620\nCredit score\n300\n850\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n620\nCredit score\n300\n850\nDefault\n620\nCredit score\n300\n850\nZones\nUsage\nRules that keep the chart honest and readable.\nAlways print the value and both bounds.\nZones carry labels in the tooltip or legend, not only colour.\nOne gauge per card — never a grid of gauges.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nA single value on a bounded scale where the range itself matters.\nEncoding\nangle ← (value − min) / (max − min) · zone ← thresholds\nInteraction\nHover shows zone name and thresholds.\nAccessibility\nrole=\"meter\" with aria-valuemin / max / now and zone text.\nComponent\n<GaugeChart value min max zones? />\nData shape\n{ \"value\": 620, \"min\": 300, \"max\": 850, \"zones\": [ { \"to\": 520, \"label\": \"Poor\" }, { \"to\": 685, \"label\": \"Fair\" }, { \"to\": 850, \"label\": \"Good\" } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Zones\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nPlot · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nTrack · Fill\ndataviz/track\n#E2E2E9 / #2D2D31\n--bek-dataviz-track\nValue · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nValue · Fill\ntext/primary\n#323233 / #F3F3F3\n--bek-text-primary\nCaption · Fill\ntext/tertiary\n#656568 / #ACACB0\n--bek-text-tertiary\nMin · Fill\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nValue · Text\nHeadline/M\ntext style\n—\nCaption · Text\nCaption/M\ntext style\n—\nMin · Text\nCaption/S\ntext style\n—\nDo / Don’t\nDo\n620\nCredit score\n30"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

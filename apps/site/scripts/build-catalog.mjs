@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Komponentlar katalogi: packages/react/src/components/*/{README.md, figma.json, index.ts} →
+// Komponentlar katalogi: packages/{react,charts}/src/components/*/{README.md, figma.json, index.ts} →
 // src/app/data/catalog.generated.json. Sayt shu fayldan Figma sahifasi, prop'lar, tokenlar va README'ni ko'rsatadi.
 // `pnpm --filter @bek/site catalog` (dev/build oldidan avtomatik ishlaydi).
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -7,7 +7,10 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
-const COMPONENTS = join(SITE, '../../packages/react/src/components');
+const PACKAGES = [
+  ['@bek/react', join(SITE, '../../packages/react/src/components')],
+  ['@bek/charts', join(SITE, '../../packages/charts/src/components')],
+];
 const TOKENS = join(SITE, '../../packages/tokens/dist/tokens.json');
 const OUT = join(SITE, 'src/app/data/catalog.generated.json');
 const FIGMA_FILE = 'https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System';
@@ -29,7 +32,8 @@ const read = (p) => (existsSync(p) ? readFileSync(p, 'utf8') : '');
 const figmaUrl = (nodeId) => `${FIGMA_FILE}?node-id=${nodeId.replace(':', '-')}`;
 
 const components = [];
-for (const dir of readdirSync(COMPONENTS).sort()) {
+for (const [pkg, COMPONENTS] of PACKAGES)
+for (const dir of existsSync(COMPONENTS) ? readdirSync(COMPONENTS).sort() : []) {
   const base = join(COMPONENTS, dir);
   const readme = read(join(base, 'README.md'));
   if (!readme) {
@@ -72,6 +76,7 @@ for (const dir of readdirSync(COMPONENTS).sort()) {
 
   components.push({
     dir,
+    package: pkg,
     title,
     description,
     exports: exportsNames,

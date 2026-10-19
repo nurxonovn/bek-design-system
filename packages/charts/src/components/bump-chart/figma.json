@@ -1,0 +1,88 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Bump",
+      "id": "1241:21585",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 260
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/label",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/axis/label-gap",
+          "chart/gap",
+          "chart/height/md",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/32",
+          "scale/40",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "How a ranking changes over time — one line per item, Y = rank (#1 on top). Max 6 items; highlight the item you discuss and mute the rest. Ranks only; for values use Chart/Line. React: <BumpChart series={[{ id, label, ranks: [] }]} periods />"
+    }
+  ],
+  "doc": {
+    "Chart/Bump": {
+      "tokens": [
+        "chart/axis/label-gap",
+        "chart/gap",
+        "chart/height/md",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "chart/point/size",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/categorical/05",
+        "scale/32",
+        "scale/40",
+        "scale/480",
+        "scale/8"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Bump\nHow a ranking changes over time — one line per item, rank #1 on top. 1 variant.\nOverview\nWhat it is and when to reach for it.\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\nWhen to use\nLeague tables, branch rankings, product positions over periods.\n3–6 items, 4–12 periods.\nFor the values themselves use Chart/Line.\nAnatomy\nNumbered layers of the default variant.\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\n1\nLegend\nLine items\n2\nRank axis\nChart/Axis Y with #1…#5\n3\nLines\nchart/line/stroke · smooth\n4\nPoints\nrank at each period\nVariants\n1 variant · Variant = Default\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/md\n200 px\n240 px\n320 px\nchart/line/stroke\n2 px\n2 px\n2 px\nchart/point/size\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll lines.\nHover line\nLine keeps colour, others 30%; tooltip shows rank and value.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\nTablet · 834\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\nWeb · 1440\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nTashkent\nSamarkand\nBukhara\nFergana\nNamangan\n#1\n#2\n#3\n#4\n#5\nQ1\nQ2\nQ3\nQ4\nQ5\nQ6\nDefault\nUsage\nRules that keep the chart honest and readable.\nRank 1 is always at the top.\nMax 6 items; highlight the one you discuss.\nTies share a rank — draw both at the same height.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nHow a ranking changes over time — one line per item, rank #1 on top.\nEncoding\nx ← period · y ← rank (inverted) · colour ← item\nInteraction\nHover a line or legend item to isolate it.\nAccessibility\n“Tashkent: #1 in all periods except Q3 (#2)”.\nComponent\n<BumpChart series={[{ id, label, ranks: [] }]} periods />\nData shape\n{ \"periods\": [\"Q1\", \"Q2\"], \"series\": [ { \"label\": \"Tashkent\", \"ranks\": [1, 1] } ] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLegend · Gap\nchart/legend/gap\n12 / 16 / 16\n--bek-chart-legend-gap\nBody · Gap\nchart/axis/label-gap\n8\n--bek-chart-axis-label-gap\nX axis row · Padding\nscale/40\n40\n--bek-scale-40\nChart/Legend item · Gap\nscale/8\n8\n--bek-scale-8\nY axis · Width\nscale/32\n32\n--bek-scale-32\nY axis · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nTashkent · Stroke width\nchart/line/stroke\n2\n--bek-chart-line-stroke\nTashkent · Stroke\ndataviz/categorical/01\n#3E6"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni — ichki LegendItem / ChartLegend komponentida."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki LegendItem / ChartLegend komponentida."
+    }
+  ]
+}

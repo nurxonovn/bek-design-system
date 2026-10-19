@@ -1,0 +1,49 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Grid line",
+      "id": "1201:275",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Solid", "Baseline", "Target"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 480,
+        "h": 2
+      },
+      "tokens": {
+        "color": ["dataviz/axis", "dataviz/grid", "dataviz/target", "surface/card"],
+        "text": [],
+        "effect": [],
+        "dimension": ["chart/grid/stroke", "radius/surface/md", "scale/480"]
+      },
+      "sizes": [1, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Horizontal guide. Solid = grid (border/hairline), Baseline = zero axis (border/default), Target = dashed reference line. React: <ChartGridLine variant />."
+    }
+  ],
+  "doc": {
+    "Chart/Grid line": {
+      "tokens": [
+        "border/default",
+        "border/hairline",
+        "chart/grid/stroke",
+        "dataviz/grid",
+        "dataviz/target",
+        "scale/480"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Grid line\nHorizontal guide lines: grid, zero baseline and dashed target. 3 variants.\nOverview\nWhat it is and when to reach for it.\nWhen to use\nSolid: one per Y tick, behind marks.\nBaseline: the zero line of bars and areas.\nTarget: a goal or plan value across the plot.\nAnatomy\nNumbered layers of the default variant.\n1\nLine\nstroke chart/grid/stroke\n2\nColour\nborder/hairline · border/default · dataviz/target\nVariants\n3 variants · Variant = Solid | Baseline | Target\nSolid\nborder/hairline\nBaseline\nborder/default\nTarget\ndashed 4/4\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/grid/stroke\n1 px\n1 px\n1 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nStatic.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nTablet · 834\nWeb · 1440\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nSolid\nBaseline\nTarget\nUsage\nRules that keep the chart honest and readable.\nGrid lines sit behind the data and never compete with it.\nOnly horizontal grid on bar and line charts; no vertical grid.\nA Target line always has a label (legend or annotation).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nHorizontal guide lines: grid, zero baseline and dashed target.\nEncoding\ny ← tick value or target value\nInteraction\nNone.\nAccessibility\nDecorative (aria-hidden); the target value is stated in text.\nComponent\n<ChartGridLine variant />.\nData shape\n{ \"grid\": [0, 25, 50, 75, 100], \"target\": 85 }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nSolid · Baseline · Target\nSolid\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLine · Height\nchart/grid/stroke\n1\n--bek-chart-grid-stroke\nLine · Fill\ndataviz/grid\n#0A0A0A @5% / #FFFFFF @5%\n--bek-dataviz-grid\nDo / Don’t\nDo\nKeep the grid at hairline contrast.\nDon’t\n✕ Darken the grid to “help” reading — it adds noise.\nAvoid: Darken the grid to “help” reading — it adds noise.\nDo\nLabel the Target line.\nDon’t\n✕ Draw an unlabeled dashed line.\nAvoid: Draw an unlabeled dashed line."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; Figma'da set o'ramasi fonini spec'dan ajratish kerak."
+    }
+  ]
+}

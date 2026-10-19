@@ -1,0 +1,74 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Confusion matrix",
+      "id": "1255:39747",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Counts", "Normalized"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/label",
+          "dataviz/sequential/200",
+          "dataviz/sequential/300",
+          "dataviz/sequential/700",
+          "surface/card",
+          "text/inverse",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 4, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Model evaluation: rows are actual classes, columns predicted; the diagonal is correct. Colour = row share on dataviz/sequential 200 · 300 · 600 · 700 (CMP-07), text/primary on light cells and text/inverse on dark. Counts shows raw numbers, Normalized row %. 2–10 classes. React: <ConfusionMatrix labels={string[]} matrix={number[][]} normalize />"
+    }
+  ],
+  "doc": {
+    "Chart/Confusion matrix": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "dataviz/label",
+        "dataviz/sequential/200",
+        "dataviz/sequential/300",
+        "dataviz/sequential/700",
+        "scale/200",
+        "scale/480",
+        "text/inverse",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · AI\nBEK\nDesign System\nChart/Confusion matrix\nModel evaluation: rows are actual classes, columns predicted; the diagonal is correct. Counts shows raw numbers, Normalized row %. 2 variants.\nOverview\nWhat it is and when to reach for it.\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\nWhen to use\nEvaluate a classifier (ticket routing, fraud, intent detection) after training or in production monitoring.\nShow which classes the model confuses, not only overall accuracy.\nNormalized when classes are imbalanced.\nAnatomy\nNumbered layers of the default variant.\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\n1\nCorner + column headers\nCaption/S · dataviz/label (columns = predicted)\n2\nRow label\nActual class · Caption/M · text/secondary\n3\nCell\nsequential 200 · 300 · 600 · 700 by row share\n4\nValue\ntext/primary on 200/300, text/inverse on 600/700 (CMP-07)\n5\nSummary\nAccuracy + samples · Caption/M\nVariants\n2 variants · Variant = Counts | Normalized\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\nCounts\nRaw numbers\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n91,6%\n4,0%\n2,0%\n2,4%\nCards\n6,7%\n87,2%\n1,8%\n4,3%\nLoans\n3,0%\n3,9%\n86,1%\n7,0%\nOther\n9,1%\n7,3%\n5,2%\n78,4%\nAccuracy 86,9% · 1 240 samples · columns = predicted\nNormalized\nRow %\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/bar/radius\n4 px\n4 px\n4 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll cells.\nHover cell\nTooltip: actual, predicted, count, row %, precision / recall of that class.\nClick cell\nOpens the misclassified samples (drill-down).\nLoading\nSkeleton grid.\nRetraining\nAI insight “Model updated · accuracy +1,2 pp” above the matrix.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\nTablet · 834\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\nWeb · 1440\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n412\n18\n9\n11\nCards\n22\n286\n6\n14\nLoans\n7\n9\n198\n16\nOther\n21\n17\n12\n182\nAccuracy 86,9% · 1 240 samples · columns = predicted\nCounts\nActual ↓\nPayments\nCards\nLoans\nOther\nPayments\n91,6%\n4,0%\n2,0%\n2,4%\nCards\n6,7%\n87,2%\n1,8%\n4,3%\nLoans\n3,0%\n3,9%\n86,1%\n7,0%\nOther\n9,1%\n7,3%\n5,2%\n78"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-dataviz-sequential-600",
+      "reason": "Figma tavsifi va doc (Anatomy 3) kataklarni sequential 200 · 300 · 600 · 700 deb belgilaydi (CMP-07), lekin namunadagi ma'lumotda 40–70% ulushli katak yo'q — shuning uchun 600 spec'ga tushmagan. Figma'da namunaga 600 darajali katak (masalan, 55%) qo'shilishi kerak."
+    }
+  ]
+}

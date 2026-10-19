@@ -1,0 +1,40 @@
+/* Kategoriya — Caption/L · text/secondary */
+.bek-lollipop-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Qiymat — Label/S · text/primary */
+.bek-lollipop-chart__value {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Poya — dataviz/track · stroke/strong, uchlari radius/full */
+.bek-lollipop-chart__stem {
+  stroke: var(--bek-dataviz-track);
+  stroke-width: var(--bek-stroke-strong);
+  stroke-linecap: round;
+}
+
+/* Bosh — seriya rangi, karta foni bilan halqa (stroke/strong) */
+.bek-lollipop-chart__head {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+/* Hover: qator ajraladi, qolganlari 40% (Figma doc). */
+.bek-lollipop-chart__plot:hover .bek-lollipop-chart__row:not(:hover) {
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-lollipop-chart__row {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}

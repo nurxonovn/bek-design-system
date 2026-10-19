@@ -1,0 +1,63 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Legend item",
+      "id": "1201:168",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Series name"
+        },
+        "Variant": ["Dot", "Square", "Line", "Dashed"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 97,
+        "h": 20
+      },
+      "tokens": {
+        "color": ["dataviz/categorical/01", "dataviz/target", "surface/card", "text/secondary"],
+        "text": ["Caption/L"],
+        "effect": [],
+        "dimension": [
+          "chart/legend/marker",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "scale/16",
+          "scale/2",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Legend entry for a chart series. React: <ChartLegendItem variant=\"dot|square|line|dashed\" label color />. Marker colour = series token (dataviz/categorical/*). Dashed = target / forecast."
+    }
+  ],
+  "doc": {
+    "Chart/Legend item": {
+      "tokens": [
+        "chart/legend/gap",
+        "chart/legend/marker",
+        "dataviz/categorical/",
+        "dataviz/categorical/01",
+        "radius/full",
+        "scale/8",
+        "text/disabled",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Legend item\nNames a series with a marker and a label. Dot for points and bars, Square for areas, Line and Dashed for lines and forecasts. 4 variants.\nOverview\nWhat it is and when to reach for it.\nSeries name\nWhen to use\nTwo or more series share one plot.\nA forecast, target or range needs to be told apart from the data.\nSkip it for a single series — the chart title already names it.\nAnatomy\nNumbered layers of the default variant.\nSeries name\n1\nMarker\nchart/legend/marker, series colour\n2\nLabel\nBody/S · text/secondary\nVariants\n4 variants · Variant = Dot | Square | Line | Dashed\nSeries name\nDot\nSeries name\nSquare\nSeries name\nLine\nSeries name\nDashed\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/legend/marker\n8 px\n8 px\n8 px\nchart/legend/gap\n12 px\n16 px\n16 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nSeries visible.\nHidden\nClick / tap toggles the series off; label turns text/disabled, marker 30%.\nFocus\nKeyboard focus draws _Focus ring around the item.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nSeries name\nTablet · 834\nSeries name\nWeb · 1440\nSeries name\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nSeries name\nDot\nSeries name\nSquare\nSeries name\nLine\nSeries name\nDashed\nUsage\nRules that keep the chart honest and readable.\nOrder items exactly as the series are drawn (top → bottom, left → right).\nWeb and Tablet: legend above the plot, right-aligned with the title row. Mobile: below the plot, wraps.\nMarker colour is always the series token — dataviz/categorical/01…08 in order.\nMax 6 items; group the rest as “Other”.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nNames a series with a marker and a label. Dot for points and bars, Square for areas, Line and Dashed for lines and forecasts.\nEncoding\nmarker colour ← series.color · marker style ← series.mark · label ← series.label\nInteraction\nClick / tap toggles the series; Shift+click isolates it. Hover highlights the series and mutes the others (dataviz/*, 30%).\nAccessibility\nRendered as a list of toggle buttons with aria-pressed; colour is always paired with the label text.\nComponent\n<ChartLegendItem variant=\"dot|square|line|dashed\" label color />. Marker colour = series token (dataviz/categorical/*). Dashed = target / forecast.\nData shape\n{ \"id\": \"revenue\", \"label\": \"Revenue\", \"color\": \"dataviz/categorical/01\", \"mark\": \"dot | square | line | dashed\", \"hidden\": false }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nLabel\ntext\nstring\nSeries name\nVariant\nvariant\nDot · Square · Line · Dashed\nDot\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nscale/8\n8\n--bek-scale-8\nMarker · Width\nchart/legend/marker\n8\n--bek-chart-legend-marker\nMarker · Height\nchart/legend/marker\n8\n--bek-chart-legend-marker\nMarker · Radius\nradius/full\n9999\n--bek-rad"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

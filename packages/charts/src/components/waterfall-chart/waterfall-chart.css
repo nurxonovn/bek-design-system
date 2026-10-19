@@ -1,0 +1,47 @@
+/* Jamilar — dataviz/neutral (0 dan), o'sish — dataviz/positive, kamayish — dataviz/negative. */
+.bek-waterfall-chart__step--total {
+  fill: var(--bek-dataviz-neutral);
+}
+
+.bek-waterfall-chart__step--increase {
+  fill: var(--bek-dataviz-positive);
+}
+
+.bek-waterfall-chart__step--decrease {
+  fill: var(--bek-dataviz-negative);
+}
+
+/* Suzuvchi ustun — chart/bar/radius har burchakda. */
+.bek-waterfall-chart__step rect {
+  rx: var(--bek-chart-bar-radius);
+}
+
+/* Bog'lovchi — uzuq dataviz/axis joriy darajada. */
+.bek-waterfall-chart__connector {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-dasharray: 4 4;
+  shape-rendering: crispEdges;
+}
+
+/* Hover: tanlangan ustundan boshqalari 40%. */
+.bek-waterfall-chart__plot:hover .bek-waterfall-chart__step:not(:hover) {
+  opacity: 0.4;
+}
+
+/* Qiymat — Label/S; ishorali: text/success · text/danger, jami — text/primary. */
+.bek-waterfall-chart__value {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-waterfall-chart__step--increase .bek-waterfall-chart__value {
+  fill: var(--bek-text-success);
+}
+
+.bek-waterfall-chart__step--decrease .bek-waterfall-chart__value {
+  fill: var(--bek-text-danger);
+}

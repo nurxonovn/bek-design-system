@@ -1,0 +1,92 @@
+{
+  "page": "4.19 Diagram",
+  "components": [
+    {
+      "name": "Diagram/Agent node",
+      "id": "1219:195",
+      "page": "4.19 Diagram",
+      "pageId": "1210:75",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Summarize with AI"
+        },
+        "Type": {
+          "type": "TEXT",
+          "default": "LLM step"
+        },
+        "State": ["Idle", "Running", "Success", "Error"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 280,
+        "h": 86
+      },
+      "tokens": {
+        "color": [
+          "bg/base",
+          "border/accent",
+          "border/danger",
+          "border/strong",
+          "dataviz/ai/soft",
+          "surface/card",
+          "text/danger",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S", "Label/M"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/2",
+          "scale/280",
+          "scale/32",
+          "scale/8",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": ["Badge"],
+      "description": "One step of an automation or AI-agent workflow (n8n-style canvas, BEK AI agents). Icon tile (swap Icon), title, step type, status Badge and one meta line; input/output ports sit on the vertical centre for Diagram/Connector. Running = border/accent ring, Error = border/danger ring + reason in text/danger. React: <AgentNode title type icon status=\"idle|running|success|error\" meta />"
+    }
+  ],
+  "doc": {
+    "Diagram/Agent node": {
+      "tokens": [
+        "Elevation/1",
+        "border/accent",
+        "border/danger",
+        "border/strong",
+        "dataviz/ai/soft",
+        "fill/soft-hover",
+        "radius/full",
+        "radius/surface/md",
+        "radius/surface/sm",
+        "scale/12",
+        "scale/2",
+        "scale/20",
+        "scale/280",
+        "scale/32",
+        "scale/4",
+        "scale/8",
+        "shadow/soft",
+        "surface/card",
+        "text/danger",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "4.19 Diagram\nBEK\nDesign System\nDiagram/Agent node\nOne step of an automation or AI-agent workflow with its live status. 4 variants.\nOverview\nWhat it is and when to reach for it.\nSummarize with AI\nLLM step\nIdle\nWaiting for input\nWhen to use\nWorkflow canvases (n8n-style), BEK AI agent builders.\nShowing where a run is and which step failed.\nFor static process docs use Diagram/Node.\nAnatomy\nNumbered layers of the default variant.\nSummarize with AI\nLLM step\nIdle\nWaiting for input\n1\nIcon tile\ndataviz/ai/soft · exposed _Icon (swap)\n2\nTitle + type\nLabel/M + Caption/S · properties\n3\nStatus\n4.2 Badge Subtle with dot\n4\nMeta\nCaption/M · reason or timing\n5\nPorts\ninput / output at vertical centre\nVariants\n4 variants · State = Idle | Running | Success | Error\nSummarize with AI\nLLM step\nIdle\nWaiting for input\nIdle\nSummarize with AI\nLLM step\nRunning\nProcessing 12 of 40 items\nRunning\nborder/accent ring\nSummarize with AI\nLLM step\nDone\n1,4 s · 40 items\nSuccess\nSummarize with AI\nLLM step\nFailed\nRate limit — retry in 30 s\nError\nborder/danger ring\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/280\n280 px\n280 px\n280 px\nscale/32\n32 px\n32 px\n32 px\nscale/12\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nIdle\nWaiting for input.\nRunning\nAccent ring + progress text.\nSuccess\nDone badge + duration.\nError\nDanger ring + reason in text/danger + retry.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nSummarize with AI\nLLM step\nIdle\nWaiting for input\nTablet · 834\nSummarize with AI\nLLM step\nIdle\nWaiting for input\nWeb · 1440\nSummarize with AI\nLLM step\nIdle\nWaiting for input\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nSummarize with AI\nLLM step\nIdle\nWaiting for input\nIdle\nSummarize with AI\nLLM step\nRunning\nProcessing 12 of 40 items\nRunning\nSummarize with AI\nLLM step\nDone\n1,4 s · 40 items\nSuccess\nSummarize with AI\nLLM step\nFailed\nRate limit — retry in 30 s\nError\nUsage\nRules that keep the diagram clear.\nTitle says what the step does (“Summarize with AI”), Type says the kind (LLM step, HTTP, Filter).\nError always states the reason and next action.\nConnect ports with Diagram/Connector; one input on the left, outputs on the right.\nSpec\nLibrary-neutral contract — maps to React Flow, ELK, Mermaid, D3 or a native canvas.\nField\nDefinition\nPurpose\nOne step of an automation or AI-agent workflow with its live status.\nEncoding\nstatus ← run state · meta ← progress / duration / error\nInteraction\nClick opens step settings; hover shows input/output preview.\nAccessibility\nStatus announced (“Summarize with AI, running, 12 of 40 items”).\nComponent\n<AgentNode title type icon status=\"idle|running|success|error\" meta />\nData shape\n{ \"id\": \"summarize\", \"title\": \"Summarize with AI\", \"type\": \"LLM step\", \"icon\": \"sparkles\", \"status\": \"idle | running | success | error\", \"meta\": \"Processing 12 of 40 items\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nTitle\ntext\nstring\nSummarize with AI\nType\ntext\nstring\nLLM step\nState\nvariant\nIdle · Running · Succes"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma set o'ramasi foni (bg/base) — komponentning o'zi emas."
+    }
+  ]
+}

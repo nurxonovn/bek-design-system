@@ -1,0 +1,80 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Streamgraph",
+      "id": "1252:39609",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Expanded"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/label",
+          "surface/card",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Stacked areas flowing around a centre line — shows how the mix of 3–7 categories rises and fades over time; read the overall shape, not exact values. Expanded stacks to 100% to compare shares. React: <StreamGraph data={[{ date, series, value }]} offset=\"silhouette | expand\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Streamgraph": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/categorical/05",
+        "dataviz/label",
+        "scale/200",
+        "scale/480",
+        "scale/8"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Streamgraph\nStacked areas flowing around a centre line — shows how a mix of categories rises and fades over time. Expanded stacks to 100%. 2 variants.\nOverview\nWhat it is and when to reach for it.\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nWhen to use\nMix over time: traffic by channel, revenue by product line.\nThe overall shape and the rise of a new category matter more than exact values.\nExpanded when only the shares matter (100%).\nAnatomy\nNumbered layers of the default variant.\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\n1\nStream layer\nOne area per series · categorical/01–07\n2\nBaseline\nSilhouette (centred) or 0 (Expanded)\n3\nShare ticks\nExpanded only · 0 / 50 / 100%\n4\nTime axis\nCaption/S · dataviz/label\n5\nLegend\nChart/Legend item · Square\nVariants\n2 variants · Variant = Default | Expanded\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nDefault\nSilhouette offset\n100%\n50%\n0%\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nExpanded\n100% stacked\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll layers.\nHover layer\nLayer stays, others dim to 0.3; tooltip with value and share at the cursor date.\nLegend toggle\nHidden series removed, streams re-flow.\nLoading\nChart/Card Loading.\nSingle series\nFalls back to Chart/Line Area.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nTablet · 834\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nWeb · 1440\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nDefault\n100%\n50%\n0%\nJan\nMar\nMay\nJul\nSep\nNov\nMobile app\nWeb\nTelegram bot\nPartners\nOffline\nExpanded\nUsage\nRules that keep the chart honest and readable.\n3–7 series; group the long tail into “Other”.\nLargest or most stable series at the bottom (Expanded) or centre (Default).\nUse for shape and change, not exact comparison — pair with a table or tooltip.\nSame series colour as everywhere else in the product.\nNot for precise values\nOnly the bottom layer has a flat baseline. If readers must compare values, use Line (Multi) or Bar (Stacked).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nStacked areas flowing around a centre line — shows how a mix of categories rises and fades over time. Expanded stacks to 100%.\nEncoding\nx = time (point/linear), stacked y = value with silhouette offset (Default) or expand offset (Expanded), colour = series (categorical).\nInteraction\nHover → vertical crosshair, tooltip with every series at that date. "
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend matni rangi — ichki ChartLegend (LegendItem) komponentida; Streamgraph o'zi text/secondary ishlatmaydi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend matni (Caption/L) — ichki ChartLegend (LegendItem) komponentida."
+    }
+  ]
+}

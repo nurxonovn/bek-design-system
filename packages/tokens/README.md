@@ -24,6 +24,7 @@ BEK Design System tokenlari: Figma variables → CSS o'zgaruvchilari (`--bek-*`)
 | `dist/palette.css`    | Xom palitra (`--light-red-50` …). Komponentlarda ishlatmang — faqat semantik tokenlar          |
 | `dist/tokens.json`    | Hamma tokenlar, aliaslar yechilgan holda (rejim bo'yicha)                                      |
 
+- Chart va diagramma tokenlari (Figma 4.18 / 4.19): ranglar `--bek-dataviz-*` (categorical 01–08, sequential 100–700, diverging neg-4…pos-4, positive / negative / neutral / target / anomaly, `ai/*`, `uncertainty/*`, axis / grid / label / track), o'lchamlar `--bek-chart-*` (height, padding, gap, bar, line, grid, point, legend, donut) va `--bek-motion-duration-chart-enter` / `-live-pulse`. Matnli heatmap kataklarida faqat sequential 200 · 300 · 600 · 700 ishlating (Figma CMP-07).
 - Light/Dark: `:root` va `[data-theme="dark"]`.
 - Qurilmalar: Mobile (360–599) — `:root`, Tablet — `@media (min-width: 600px)`, Web — `@media (min-width: 1024px)`.
 - CSS nomlari Figma'dagi **codeSyntax (Web)** dan olinadi: `fill/primary` → `--bek-fill-primary`.

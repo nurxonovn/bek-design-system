@@ -1,0 +1,73 @@
+/* Qator rangi — ildizda `color`: categorical/01 yoki (Highlight'da qolganlari) dataviz/neutral. */
+
+/* Qiymat o'qi — dataviz/axis · chart/grid/stroke; vertikal grid — dataviz/grid (chart.css). */
+.bek-ridgeline-chart__axis {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+/* Knockout — har qator ostida surface/card: ustma-ust tushganda egri chiziq toza qoladi. */
+.bek-ridgeline-chart__knockout {
+  fill: var(--bek-surface-card);
+}
+
+/* Zichlik maydoni — qatlam shaffofligi 0,28 */
+.bek-ridgeline-chart__area {
+  fill: currentColor;
+  opacity: 0.28;
+}
+
+/* Zichlik chizig'i — chart/line/stroke */
+.bek-ridgeline-chart__line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linejoin: round;
+}
+
+/* n < 20 — shtrix chiziq ("low sample") */
+.bek-ridgeline-chart__ridge--sparse .bek-ridgeline-chart__line {
+  stroke-dasharray: 4 4;
+}
+
+/* Highlight: qolgan qatorlar dataviz/neutral, maydon 0,16 */
+.bek-ridgeline-chart__ridge--muted .bek-ridgeline-chart__area {
+  opacity: 0.16;
+}
+
+/* Guruh nomi — Caption/M · text/secondary, qator asos chizig'ida */
+.bek-ridgeline-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Ajratilgan guruh faqat rang bilan emas, yozuv qalinligi bilan ham (A11y). */
+.bek-ridgeline-chart__ridge--highlight .bek-ridgeline-chart__label {
+  font-weight: var(--bek-weight-semibold);
+}
+
+/* O'q yozuvi — Caption/S · dataviz/label */
+.bek-ridgeline-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+}
+
+/* Hover qator: qolganlari xiralashadi (Figma States). */
+.bek-ridgeline-chart__ridge {
+  transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-ridgeline-chart__plot:hover .bek-ridgeline-chart__ridge:not(:hover) {
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-ridgeline-chart__ridge {
+    transition: none;
+  }
+}

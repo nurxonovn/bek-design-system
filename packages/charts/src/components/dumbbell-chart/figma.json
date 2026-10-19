@@ -1,0 +1,71 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Dumbbell",
+      "id": "1202:305",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 160
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/legend/gap",
+          "radius/full",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/480",
+          "scale/8",
+          "scale/80",
+          "stroke/strong"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Before vs after, plan vs actual. Two points per row joined by a track; the gap is the story. React: <DumbbellChart data from to />."
+    }
+  ],
+  "doc": {
+    "Chart/Dumbbell": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/sm",
+        "chart/legend/gap",
+        "chart/point/size",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/track",
+        "radius/full",
+        "scale/12",
+        "scale/16",
+        "scale/480",
+        "scale/8",
+        "scale/80",
+        "surface/card",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Dumbbell\nTwo values per row joined by a track — before vs after, plan vs actual. The gap is the story. 1 variant.\nOverview\nWhat it is and when to reach for it.\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\nWhen to use\nPlan vs actual, last year vs this year, before vs after a change.\n3–12 rows.\nNot for time series with many periods — use Line.\nAnatomy\nNumbered layers of the default variant.\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\n1\nLegend\nChart/Legend item · two series\n2\nLabel\nBody/S · text/secondary\n3\nTrack\ndataviz/track between the points\n4\nPoints\ncategorical/02 (from) · categorical/01 (to)\n5\nDelta\nLabel/S signed difference\nVariants\n1 variant · Variant = Default\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/height/sm\n140 px\n160 px\n200 px\nchart/point/size\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nBoth points visible.\nHover\nRow highlighted; tooltip shows both values and the difference.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\nTablet · 834\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\nWeb · 1440\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nPlan\nActual\nQ1\n+16\nQ2\n−3\nQ3\n+16\nQ4\n+26\nDefault\nUsage\nRules that keep the chart honest and readable.\nAlways show the legend: which dot is “from” and which is “to”.\nSort by the difference when the change matters most.\nPrint the signed difference at the end (+16 · −3).\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nTwo values per row joined by a track — before vs after, plan vs actual. The gap is the story.\nEncoding\ny ← category · x1 ← from · x2 ← to · label ← to − from\nInteraction\nHover shows both values.\nAccessibility\n“Q1: plan 40, actual 56, +16”.\nComponent\n<DumbbellChart data from to />.\nData shape\n{ \"rows\": [ { \"label\": \"Q1\", \"from\": 40, \"to\": 56 }, { \"label\": \"Q2\", \"from\": 47, \"to\": 44 } ], \"fromLabel\": \"Plan\", \"toLabel\": \"Actual\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nLegend · Gap\nchart/legend/gap\n12 / 16 / 16\n--bek-chart-legend-gap\nRows · Gap\nscale/16\n16\n--bek-scale-16\nChart/Legend item · Gap\nscale/8\n8\n--bek-scale-8\nRow · Gap\nscale/12\n12\n--bek-scale-12\nLabel · Width\nscale/80\n80\n--bek-scale-80\nLabel · Fill\ntext/secondary\n#505053 / #D4D4D6\n--bek-text-secondary\nTrack · Height\nscale/16\n16\n--bek-scale-16\nValue · Fill\ntext/primary\n#323233 / #F3F3F3\n--bek-text-primary\nStem · Radius\nradius/full\n9999\n--bek-radius-full\nStem · Fill\ndataviz/track\n#E2E2E9 / #2D2D31\n--bek-dataviz-track\nPoint · Stroke width\nstroke/strong\n2\n--bek-stroke"
+    }
+  },
+  "accepted": []
+}

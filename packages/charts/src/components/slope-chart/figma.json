@@ -1,0 +1,71 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Slope",
+      "id": "1241:21658",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Highlight"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/negative",
+          "dataviz/neutral",
+          "dataviz/positive",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 2, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Change between exactly two points (before/after, last year/this year) for 3–10 items. Default colours by direction (dataviz/positive / negative); Highlight shows one item in a series colour and mutes the rest (layer opacity 45%, BND-09). Labels at both ends replace the axis. React: <SlopeChart data={[{ label, from, to }]} highlight? />"
+    }
+  ],
+  "doc": {
+    "Chart/Slope": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/height/md",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/negative",
+        "dataviz/positive",
+        "scale/200",
+        "scale/480",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Slope\nChange between exactly two points for 3–10 items; labels at both ends replace the axis. 2 variants.\nOverview\nWhat it is and when to reach for it.\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nWhen to use\nBefore / after, last year / this year.\nMany items where the direction of change matters more than the path.\nMore than two periods → Chart/Line or Bump.\nAnatomy\nNumbered layers of the default variant.\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\n1\nPeriod axes\ntwo dataviz/axis rules + period labels\n2\nSlope line\nchart/line/stroke\n3\nEnd points\ndots in line colour\n4\nLabels\nname + value left, value right\nVariants\n2 variants · Variant = Default | Highlight\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nDefault\ncolour by direction\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nHighlight\none item, rest muted 45%\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nUp = dataviz/positive, down = dataviz/negative.\nHighlight\nOne item in a series colour, others at layer opacity 45%.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nTablet · 834\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nWeb · 1440\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nDefault\n2025\n2026\nCards 42\n61\nTransfers 55\n48\nLoans 30\n44\nDeposits 68\n72\nInsurance 20\n14\nHighlight\nUsage\nRules that keep the chart honest and readable.\nSame scale on both sides.\nAvoid label collisions: nudge labels, never overlap.\nHighlight variant for storytelling.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nChange between exactly two points for 3–10 items; labels at both ends replace the axis.\nEncoding\ny1 ← from · y2 ← to · colour ← sign(to − from)\nInteraction\nHover highlights the line.\nAccessibility\n“Loans 30 → 44, up”.\nComponent\n<SlopeChart data={[{ label, from, to }]} highlight? />\nData shape\n{ \"from\": \"2025\", \"to\": \"2026\", \"items\": [ { \"label\": \"Loans\", \"from\": 30, \"to\": 44 } ], \"highlight\": \"Loans\" }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault · Highlight\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nPlot · Height\nchart/height/md\n200 / 240 / 320\n--bek-chart-height-md\nAxis 2"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

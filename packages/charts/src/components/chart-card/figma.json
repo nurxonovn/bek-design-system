@@ -1,0 +1,101 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Card",
+      "id": "1216:414",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Revenue"
+        },
+        "Subtitle": {
+          "type": "TEXT",
+          "default": "Last 6 months · UZS"
+        },
+        "State": ["Default", "Loading", "Empty", "Error"]
+      },
+      "variants": 4,
+      "size": {
+        "w": 480,
+        "h": 374
+      },
+      "tokens": {
+        "color": [
+          "bg/base",
+          "bg/sheet",
+          "status/success/soft",
+          "surface/card",
+          "text/primary",
+          "text/success",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Headline/M", "Label/S", "Title/M"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/height/md",
+          "chart/padding",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/16",
+          "scale/2",
+          "scale/480",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 6, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": ["Empty state", "Segmented control", "Skeleton"],
+      "description": "The standard container for any chart on a dashboard. Header: title + subtitle (period, unit) and a Segmented period switch; KPI row: value + Chart/Delta; chart slot (swap any Chart/* instance); footer: data source and freshness. States: Loading (skeleton in the chart's shape), Empty (5.3 Empty state, no mascot), Error (message + Try again). Padding chart/padding, gap chart/gap — both change pe"
+    }
+  ],
+  "doc": {
+    "Chart/Card": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "chart/padding",
+        "fill/secondary",
+        "radius/full",
+        "radius/surface/md",
+        "scale/16",
+        "scale/2",
+        "scale/480",
+        "scale/6",
+        "scale/8",
+        "status/success/soft",
+        "surface/card",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Card\nBEK\nDesign System\nChart/Card\nThe standard container for any chart on a dashboard: title, period switch, KPI, chart slot, source — plus Loading, Empty and Error. 4 variants.\nOverview\nWhat it is and when to reach for it.\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\nWhen to use\nEvery chart on a dashboard or report page.\nWhenever a chart needs a title, a period switch or data states.\nNot inside another card — nest the chart directly.\nAnatomy\nNumbered layers of the default variant.\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\n1\nHeader\nTitle/M title + Caption/M subtitle\n2\nPeriod\n3.10 Segmented control\n3\nKPI row\nHeadline/M value + Chart/Delta + comparison\n4\nChart slot\nany Chart/* instance\n5\nFooter\nCaption/M source and freshness\n6\nContainer\nsurface/card · radius/surface/md · chart/padding\nVariants\n4 variants · State = Default | Loading | Empty | Error\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\nDefault\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\nLoading\nskeleton in chart shape\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\nNo data for this period\nTry a longer period or another account.\nChange period\nSource: Core banking\nEmpty\n5.3 Empty state\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\nCouldn't load the chart\nCheck the connection and try again.\nTry again\nError 503 · Core banking did not respond\nError\nmessage + Try again\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/padding\n12 px\n16 px\n24 px\nchart/gap\n12 px\n16 px\n16 px\nchart/height/md\n200 px\n240 px\n320 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nData loaded.\nLoading\nSkeleton in the chart’s shape; header stays interactive.\nEmpty\nNo data for the period — explain and offer “Change period”.\nError\nWhat failed and “Try again”; footer shows the error source.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\nTablet · 834\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\nWeb · 1440\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\n4 820 mln\n+12,4%\nvs previous 6 months\n100\n75\n50\n25\n0\nJan\nFeb\nMar\nApr\nMay\nJun\nSource: Core banking · Updated 18 Oct, 09:40\nDefault\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\nLoading\nRevenue\nLast 6 months · UZS\n1M\n6M\n1Y\nNo data for this period\nTry a longer period or another account.\nCh"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-status-success-soft",
+      "reason": "KPI qatoridagi Delta pill'i — ichki Delta komponentida."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-success",
+      "reason": "KPI qatoridagi Delta matni — ichki Delta komponentida."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "Figma'dagi skeleton/namuna foni — kodda 5.4 Skeleton o'zining tokenlari bilan."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/S",
+      "reason": "Delta matni — ichki Delta komponentida."
+    }
+  ]
+}

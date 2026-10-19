@@ -1,0 +1,69 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Range brush",
+      "id": "1209:135",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 56
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "border/accent",
+          "dataviz/grid",
+          "dataviz/label",
+          "surface/card"
+        ],
+        "text": [],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": [
+          "chart/grid/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/480",
+          "scale/56"
+        ]
+      },
+      "sizes": [1, 8, 12, 32],
+      "rawColors": [],
+      "nested": [],
+      "description": "Overview strip under long time series: drag the window to pan, drag a handle to zoom the main chart. Height 56; handles 6×24 with a 44 px hit area (target/min). Keyboard: ←/→ move, Shift+←/→ resize. React: <ChartBrush startIndex endIndex onChange />"
+    }
+  ],
+  "doc": {
+    "Chart/Range brush": {
+      "tokens": [
+        "Elevation/1",
+        "accent/default",
+        "accent/soft",
+        "border/accent",
+        "chart/grid/stroke",
+        "dataviz/grid",
+        "dataviz/label",
+        "radius/full",
+        "radius/surface/sm",
+        "scale/480",
+        "scale/56",
+        "shadow/soft"
+      ],
+      "text": "4.18 Chart · Parts\nBEK\nDesign System\nChart/Range brush\nOverview strip under long time series: drag the window to pan, drag a handle to zoom the main chart. 1 variant.\nOverview\nWhat it is and when to reach for it.\nWhen to use\nSeries longer than one screen (daily data over a year, live logs).\nUsers need to compare a period with the whole history.\nNot on Mobile below 6 months of data — a period Segmented control is enough.\nAnatomy\nNumbered layers of the default variant.\n1\nTrack\ndataviz/grid · radius/surface/sm\n2\nOverview line\ndataviz/label · whole series\n3\nWindow\naccent/soft + border/accent\n4\nHandles\naccent/default 6 × 24, hit area target/min\nVariants\n1 variant · Variant = Default\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/56\n56 px\n56 px\n56 px\nscale/480\n480 px\n480 px\n480 px\ntarget/min\n44 px\n44 px\n44 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nWindow shows the visible range.\nDragging\nWindow follows the pointer; main chart updates live.\nFocus\nHandle focused: ←/→ move, Shift+←/→ resize.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nTablet · 834\nWeb · 1440\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nDefault\nUsage\nRules that keep the chart honest and readable.\nHeight 56; sits 16 below the X axis of the main chart.\nHandles keep a 44 px touch target even though they are drawn 6 px wide.\nSnap the window to whole periods (day, week) for financial data.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nOverview strip under long time series: drag the window to pan, drag a handle to zoom the main chart.\nEncoding\noverview ← all data · window ← [startIndex, endIndex]\nInteraction\nDrag window to pan; drag handles to resize; double-click resets.\nAccessibility\nTwo sliders with aria-valuetext (“From 1 Jul”, “To 31 Aug”).\nComponent\n<ChartBrush startIndex endIndex onChange />\nData shape\n{ \"startIndex\": 180, \"endIndex\": 240, \"minSpan\": 7 }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Width\nscale/480\n480\n--bek-scale-480\nContainer · Height\nscale/56\n56\n--bek-scale-56\nContainer · Radius\nradius/surface/sm\n8\n--bek-radius-surface-sm\nContainer · Fill\ndataviz/grid\n#0A0A0A @5% / #FFFFFF @5%\n--bek-dataviz-grid\nWindow · strokeTopWeight\nstroke/default\n1\n--bek-stroke-default\nWindow · strokeBottomWeight\nstroke/default\n1\n--bek-stroke-default\nWindow · strokeLeftWeight\nstroke/default\n1\n--bek-stroke-default\nWindow · strokeRightWeight\nstroke/default\n1\n--bek-stroke-default\nWindow · Fill\naccent/soft\n#E1E7FA / #161F3D\n--bek-accent-soft\nWindow · Stroke\nborder/accent\n#5072E0 / #395BC9\n--bek-border-accent\nOverview line · Stroke width\nchart/grid/stroke\n1\n--bek-chart-grid-stroke\nOverview line · Stroke\ndataviz/label\n#656568 / #ACACB0\n--bek-dataviz-label\nStart handle · Radiu"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; Figma'da set o'ramasi fonini spec'dan ajratish kerak."
+    }
+  ]
+}

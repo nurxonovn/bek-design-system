@@ -1,0 +1,32 @@
+/* O'q — dataviz/axis · chart/grid/stroke, bo'linmalar ham shu rangda. */
+.bek-beeswarm-chart__axis,
+.bek-beeswarm-chart__tick-mark {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+/* Guruh nomi — Caption/M · text/secondary */
+.bek-beeswarm-chart__label {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Hover: nuqta va <title> (element nomi); qolgan nuqtalar 40%. */
+.bek-beeswarm-chart__dot:hover {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-scale-2);
+}
+
+.bek-beeswarm-chart
+  .bek-chart__svg:has(.bek-beeswarm-chart__dot:hover)
+  .bek-beeswarm-chart__dot:not(:hover) {
+  opacity: 0.4;
+}
+
+/* O'q yozuvi Caption/S · dataviz/label (chart.css). */
+.bek-beeswarm-chart .bek-chart__tick {
+  font-size: var(--bek-type-caption-sm-size);
+}

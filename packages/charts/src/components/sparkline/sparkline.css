@@ -1,0 +1,36 @@
+.bek-sparkline {
+  --bek-sparkline-color: var(--bek-dataviz-neutral);
+  display: block;
+  overflow: visible;
+  block-size: var(--bek-chart-sparkline-height);
+  inline-size: auto;
+}
+
+.bek-sparkline--up {
+  --bek-sparkline-color: var(--bek-dataviz-positive);
+}
+
+.bek-sparkline--down {
+  --bek-sparkline-color: var(--bek-dataviz-negative);
+}
+
+.bek-sparkline__line {
+  fill: none;
+  stroke: var(--bek-sparkline-color);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.bek-sparkline__dot {
+  fill: var(--bek-sparkline-color);
+}
+
+.bek-sparkline__bar {
+  fill: var(--bek-dataviz-track);
+}
+
+.bek-sparkline__bar--last {
+  fill: var(--bek-dataviz-categorical-01);
+}

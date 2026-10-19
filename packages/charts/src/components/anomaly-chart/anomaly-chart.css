@@ -1,0 +1,45 @@
+.bek-anomaly-chart__line {
+  fill: none;
+  stroke: var(--bek-chart-series-1, var(--bek-dataviz-categorical-01));
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Band: model o'rgangan kutilgan oraliq — dataviz/uncertainty/95. */
+.bek-anomaly-chart__band {
+  fill: var(--bek-dataviz-uncertainty-95);
+}
+
+/* Chart/Data point State=Anomaly: status/warning/soft halo, dataviz/anomaly nuqta, surface/card halqa. */
+.bek-anomaly-chart__halo {
+  fill: var(--bek-status-warning-soft);
+}
+
+.bek-anomaly-chart__point {
+  fill: var(--bek-dataviz-anomaly);
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-scale-2);
+}
+
+.bek-anomaly-chart__anomaly {
+  cursor: help;
+}
+
+.bek-anomaly-chart__anomaly:hover .bek-anomaly-chart__halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1.2);
+}
+
+/* O'q yozuvi — Caption/S · dataviz/label (chart.css). */
+.bek-anomaly-chart .bek-chart__tick {
+  fill: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-anomaly-chart__halo {
+    transition: transform var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Calendar heatmap",
+      "id": "1242:21964",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Year", "Month"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 132
+      },
+      "tokens": {
+        "color": [
+          "dataviz/label",
+          "dataviz/sequential/200",
+          "dataviz/sequential/300",
+          "dataviz/sequential/500",
+          "dataviz/sequential/600",
+          "dataviz/sequential/700",
+          "dataviz/track",
+          "surface/card",
+          "text/inverse",
+          "text/primary"
+        ],
+        "text": ["Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/10",
+          "scale/104",
+          "scale/2",
+          "scale/200",
+          "scale/4",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Daily activity over a year (Year, GitHub-style) or a month (Month). Colour = amount on dataviz/sequential (200 · 300 · 500 · 700), zero = dataviz/track; always show the Less → More scale. Weeks start on Monday. Mobile: Year scrolls horizontally with sticky weekday labels. React: <CalendarHeatmap data={[{ date, value }]} range=\"year|month\" />"
+    }
+  ],
+  "doc": {
+    "Chart/Calendar heatmap": {
+      "tokens": [
+        "chart/gap",
+        "dataviz/label",
+        "dataviz/sequential/200",
+        "dataviz/sequential/300",
+        "dataviz/sequential/500",
+        "dataviz/sequential/700",
+        "dataviz/track",
+        "scale/10",
+        "scale/104",
+        "scale/2",
+        "scale/200",
+        "scale/4",
+        "scale/480"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Calendar heatmap\nDaily activity over a year or a month, coloured by amount. 2 variants.\nOverview\nWhat it is and when to reach for it.\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\nWhen to use\nActivity, transactions or logins per day.\nSpotting weekly and seasonal patterns.\nExact values matter → use Chart/Bar per day.\nAnatomy\nNumbered layers of the default variant.\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\n1\nDay cell\nsequential 200 · 300 · 500 · 700, zero = dataviz/track\n2\nMonth / weekday labels\nCaption/S · dataviz/label\n3\nScale\nLess → More legend\n4\nDate (Month)\nCaption/S on the cell\nVariants\n2 variants · Variant = Year | Month\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\nYear\n53 × 7, GitHub-style\nMon\nTue\nWed\nThu\nFri\nSat\nSun\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nMonth\ncalendar grid\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/104\n104 px\n104 px\n104 px\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nscale/10\n10 px\n10 px\n10 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll days.\nHover day\nTooltip: date and value.\nSelected\nClick filters the dashboard to that day.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\nTablet · 834\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\nWeb · 1440\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\nMon\nWed\nFri\nLess\nMore\nYear\nMon\nTue\nWed\nThu\nFri\nSat\nSun\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nMonth\nUsage\nRules that keep the chart honest and readable.\nWeeks start on Monday (uz-UZ).\nAlways show the Less → More scale.\nMobile: Year scrolls horizontally with sticky weekday labels.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nDaily activity over a year or a month, coloured by amount.\nEncoding\ncell ← date · colour ← binned value\nInteraction\nHover tooltip; click selects a day.\nAccessibility\nGrid with row = weekday; each cell labelled “12 Oct, 24 payments”.\nComponent\n<CalendarHeatmap data={[{ date, value }]} range=\"year|month\" />\nData shape\n{ \"range\": \"year | month\", \"days\": [ { \"date\": \"2026-10-12\", \"value\": 24 } ], \"bins\": [0, 5, 15, 30] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nYear · Month\nYear\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nPlot · Height\nscale/104\n104\n--bek-scale-104\nScale · Gap\nscale/4\n4\n--bek-scale-4\nMonth · Fill\ndataviz/label\n#656568 / #ACACB"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    }
+  ]
+}

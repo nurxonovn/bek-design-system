@@ -1,0 +1,70 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Cohort heatmap",
+      "id": "1243:21921",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Percent", "Absolute"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 200
+      },
+      "tokens": {
+        "color": [
+          "dataviz/label",
+          "dataviz/sequential/200",
+          "dataviz/sequential/300",
+          "dataviz/sequential/600",
+          "dataviz/sequential/700",
+          "surface/card",
+          "text/inverse",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": ["chart/gap", "radius/surface/md", "scale/200", "scale/4", "scale/480"]
+      },
+      "sizes": [1, 4, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Retention by sign-up cohort: rows = cohorts, columns = months since start (M0 = 100%). Colour on dataviz/sequential 200 · 300 · 600 · 700 only (400/500 fail text contrast in one mode); text is text/primary on 200/300 and text/inverse on 600/700 — ≥ 4.5:1 in Light and Dark. Percent or Absolute counts. Mobile: horizontal scroll with sticky cohort column. React: <CohortHeatmap cohorts={[{ label, s"
+    }
+  ],
+  "doc": {
+    "Chart/Cohort heatmap": {
+      "tokens": [
+        "chart/gap",
+        "chart/height/md",
+        "dataviz/label",
+        "dataviz/sequential",
+        "dataviz/sequential/200",
+        "dataviz/sequential/300",
+        "dataviz/sequential/400",
+        "dataviz/sequential/500",
+        "dataviz/sequential/700",
+        "scale/200",
+        "scale/4",
+        "scale/480",
+        "text/on-color",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Finance\nBEK\nDesign System\nChart/Cohort heatmap\nRetention by sign-up cohort: rows = cohorts, columns = months since start. 2 variants.\nOverview\nWhat it is and when to reach for it.\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\nWhen to use\nRetention, repeat purchase, loan repayment by cohort.\nComparing how newer cohorts behave vs older ones.\nOne cohort only → Chart/Line.\nAnatomy\nNumbered layers of the default variant.\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\n1\nHeader\nCohort · Users · M0…M5\n2\nCohort label + size\nCaption/M\n3\nCell\ndataviz/sequential by value · scale/4 radius\n4\nValue\ntext/primary or text/on-color by contrast\nVariants\n2 variants · Variant = Percent | Absolute\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\nPercent\nshare of M0\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n1 240\n769\n595\n508\n459\n422\nFeb 2026\n1 180\n1 180\n684\n531\n448\n413\nMar 2026\n1 420\n1 420\n937\n738\n653\nApr 2026\n1 360\n1 360\n870\n694\nMay 2026\n1 510\n1 510\n1 057\nJun 2026\n1 630\n1 630\nAbsolute\ncounts\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/200 · fixed, keeps shapes true\n200 px\n200 px\n200 px\nscale/4\n4 px\n4 px\n4 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nTriangle of cells.\nHover\nRow and column highlighted; tooltip with count and %.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\nTablet · 834\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\nWeb · 1440\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n100%\n62%\n48%\n41%\n37%\n34%\nFeb 2026\n1 180\n100%\n58%\n45%\n38%\n35%\nMar 2026\n1 420\n100%\n66%\n52%\n46%\nApr 2026\n1 360\n100%\n64%\n51%\nMay 2026\n1 510\n100%\n70%\nJun 2026\n1 630\n100%\nPercent\nCohort\nUsers\nM0\nM1\nM2\nM3\nM4\nM5\nJan 2026\n1 240\n1 240\n769\n595\n508\n459\n422\nFeb 2026\n1 180\n1 180\n684\n531\n448\n413\nMar 2026\n1 420\n1 420\n937\n738\n653\nApr 2026\n1 360\n1 360\n870\n694\nMay 2026\n1 510\n1 510\n1 057\nJun 2026\n1 630\n1 630\nAbsolute\nUsage\nRules that keep the chart hones"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

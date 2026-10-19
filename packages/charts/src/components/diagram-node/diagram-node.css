@@ -1,0 +1,106 @@
+/* Figma 4.19 Diagram · Node — 160 × 56, padding 8/16, Label/M markazda. */
+.bek-diagram-node {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--bek-scale-160);
+  min-block-size: var(--bek-scale-56);
+  padding-block: var(--bek-scale-8);
+  padding-inline: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-sm);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  text-align: center;
+}
+
+.bek-diagram-node__label {
+  position: relative;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+/* Process va Subprocess — Elevation/1 */
+.bek-diagram-node--process,
+.bek-diagram-node--subprocess {
+  box-shadow: var(--bek-elevation-1);
+}
+
+.bek-diagram-node--terminal {
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-inverse);
+  color: var(--bek-text-inverse);
+}
+
+.bek-diagram-node--note {
+  background: var(--bek-status-warning-soft);
+}
+
+/* Subprocess — ichki yon chiziqlar (bog'langan oqim) */
+.bek-diagram-node--subprocess::before {
+  content: '';
+  position: absolute;
+  inset: var(--bek-scale-8);
+  border-inline: 1px solid var(--bek-border-strong);
+  pointer-events: none;
+}
+
+/* Decision (romb) va Data (parallelogram) — fon SVG shaklda */
+.bek-diagram-node--decision,
+.bek-diagram-node--data {
+  background: none;
+  color: var(--bek-text-accent);
+}
+
+.bek-diagram-node--decision {
+  min-block-size: var(--bek-scale-80);
+  padding-inline: var(--bek-scale-32);
+}
+
+.bek-diagram-node--data {
+  color: var(--bek-text-info);
+}
+
+.bek-diagram-node__shape {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: visible;
+  fill: var(--bek-accent-soft);
+  stroke: none;
+}
+
+.bek-diagram-node--data .bek-diagram-node__shape {
+  fill: var(--bek-status-info-soft);
+}
+
+[dir='rtl'] .bek-diagram-node--data .bek-diagram-node__shape {
+  transform: scaleX(-1);
+}
+
+/* Highlighted — walkthrough'dagi joriy qadam: border/accent, stroke/strong */
+.bek-diagram-node--highlighted {
+  box-shadow:
+    inset 0 0 0 var(--bek-stroke-strong) var(--bek-border-accent),
+    var(--bek-elevation-1);
+}
+
+.bek-diagram-node--highlighted .bek-diagram-node__shape {
+  stroke: var(--bek-border-accent);
+  stroke-width: var(--bek-stroke-strong);
+}
+
+.bek-diagram-node--decision.bek-diagram-node--highlighted,
+.bek-diagram-node--data.bek-diagram-node--highlighted {
+  box-shadow: none;
+}

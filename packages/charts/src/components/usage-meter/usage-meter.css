@@ -1,0 +1,91 @@
+/* Figma "Chart/Usage meter": eni scale/320, oraliq scale/8, track balandligi scale/8 · radius/full. */
+.bek-usage-meter {
+  --bek-usage-color: var(--bek-accent-default);
+  --bek-usage-note: var(--bek-text-tertiary);
+}
+
+/* .bek-chart (chart.css) dan keyin yig'iladi — oraliqni aniqroq selektor bilan beramiz. */
+.bek-chart.bek-usage-meter {
+  gap: var(--bek-scale-8);
+  inline-size: 100%;
+  max-inline-size: var(--bek-scale-320);
+}
+
+.bek-usage-meter--warning {
+  --bek-usage-color: var(--bek-status-warning-default);
+  --bek-usage-note: var(--bek-text-warning);
+}
+
+.bek-usage-meter--limit {
+  --bek-usage-color: var(--bek-status-danger-default);
+  --bek-usage-note: var(--bek-text-danger);
+}
+
+.bek-usage-meter__header,
+.bek-usage-meter__footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--bek-scale-8);
+}
+
+/* Yorliq — Label/M · text/primary; qiymat — Label/M · text/secondary */
+.bek-usage-meter__label,
+.bek-usage-meter__value {
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  font-weight: var(--bek-weight-medium);
+}
+
+.bek-usage-meter__label {
+  color: var(--bek-text-primary);
+}
+
+.bek-usage-meter__value {
+  color: var(--bek-text-secondary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.bek-usage-meter__track {
+  position: relative;
+  display: block;
+  block-size: var(--bek-scale-8);
+  overflow: hidden;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-dataviz-track);
+}
+
+.bek-usage-meter__used,
+.bek-usage-meter__forecast {
+  position: absolute;
+  inset-block: 0;
+  background: var(--bek-usage-color);
+}
+
+/* Uchlar track'ning radius/full kesimidan yumaloq; sarflangan va prognoz orasida chok yo'q. */
+.bek-usage-meter__used {
+  inset-inline-start: 0;
+}
+
+/* Prognoz — o'sha rang, qatlam shaffofligi 35% (BND-09), alohida rang emas. */
+.bek-usage-meter__forecast {
+  opacity: 0.35;
+}
+
+/* Footer — Caption/M: reset text/tertiary, izoh holatga qarab tertiary / warning / danger */
+.bek-usage-meter__footer {
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-usage-meter__reset {
+  color: var(--bek-text-tertiary);
+}
+
+.bek-usage-meter__note {
+  color: var(--bek-usage-note);
+  text-align: end;
+}

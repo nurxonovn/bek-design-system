@@ -1,0 +1,75 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Bullet",
+      "id": "1202:335",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default"]
+      },
+      "variants": 1,
+      "size": {
+        "w": 480,
+        "h": 104
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/sequential/100",
+          "dataviz/sequential/200",
+          "dataviz/sequential/300",
+          "dataviz/target",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/480",
+          "scale/80"
+        ]
+      },
+      "sizes": [1, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "KPI vs target with qualitative ranges — replaces gauges on dashboards. Ranges = dataviz/sequential/100–300, value bar = series colour, target tick = dataviz/target. React: <BulletChart value target ranges />."
+    }
+  ],
+  "doc": {
+    "Chart/Bullet": {
+      "tokens": [
+        "chart/bar/thickness",
+        "chart/gap",
+        "chart/height/sm",
+        "dataviz/categorical/01",
+        "dataviz/sequential/100",
+        "dataviz/sequential/200",
+        "dataviz/sequential/300",
+        "dataviz/target",
+        "scale/12",
+        "scale/16",
+        "scale/24",
+        "scale/480",
+        "scale/80",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Bullet\nOne KPI against a target with qualitative ranges — the modern replacement for gauges. 1 variant.\nOverview\nWhat it is and when to reach for it.\nRevenue\n72%\nProfit\n55%\nNPS\n84\nWhen to use\nProgress to a target on dashboards (revenue, NPS, SLA).\nSeveral KPIs stacked in the same scale.\nNot for trends — pair with a Sparkline if history matters.\nAnatomy\nNumbered layers of the default variant.\nRevenue\n72%\nProfit\n55%\nNPS\n84\n1\nLabel\nBody/S\n2\nRanges\ndataviz/sequential/100 · 200 · 300\n3\nValue bar\nseries colour\n4\nTarget tick\ndataviz/target\n5\nValue\nLabel/S\nVariants\n1 variant · Variant = Default\nRevenue\n72%\nProfit\n55%\nNPS\n84\nDefault\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nchart/bar/thickness\n16 px\n24 px\n32 px\nchart/height/sm\n140 px\n160 px\n200 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nValue below target.\nReached\nValue past the target tick; Delta or Badge may say “Goal reached”.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nRevenue\n72%\nProfit\n55%\nNPS\n84\nTablet · 834\nRevenue\n72%\nProfit\n55%\nNPS\n84\nWeb · 1440\nRevenue\n72%\nProfit\n55%\nNPS\n84\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nRevenue\n72%\nProfit\n55%\nNPS\n84\nDefault\nUsage\nRules that keep the chart honest and readable.\nMax 3 ranges (poor · ok · good) from light to dark.\nThe target tick is taller than the bar so it is always visible.\nStack several bullets with the same scale for comparison.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nOne KPI against a target with qualitative ranges — the modern replacement for gauges.\nEncoding\nx ← value · ranges ← thresholds · tick ← target\nInteraction\nHover shows value, target and % of target.\nAccessibility\n“Revenue 72% of target, range good”.\nComponent\n<BulletChart value target ranges />.\nData shape\n{ \"label\": \"Revenue\", \"value\": 72, \"target\": 80, \"ranges\": [50, 75, 100] }\nProps\nFigma properties = component props in code.\nProp\nType\nValues\nDefault\nVariant\nvariant\nDefault\nDefault\nTokens\nEvery visual property of the default variant → token → value (Light / Dark or Mobile / Tablet / Web) → CSS.\nProperty\nToken\nValue\nCSS\nContainer · Gap\nchart/gap\n12 / 16 / 16\n--bek-chart-gap\nContainer · Width\nscale/480\n480\n--bek-scale-480\nRows · Gap\nscale/16\n16\n--bek-scale-16\nRow · Gap\nscale/12\n12\n--bek-scale-12\nLabel · Width\nscale/80\n80\n--bek-scale-80\nLabel · Fill\ntext/secondary\n#505053 / #D4D4D6\n--bek-text-secondary\nTrack · Height\nscale/24\n24\n--bek-scale-24\nValue · Fill\ntext/primary\n#323233 / #F3F3F3\n--bek-text-primary\nRange · Fill\ndataviz/sequential/300\n#879EEA / #2F4AA1\n--bek-dataviz-sequential-300\nRange · Fill\ndataviz/sequential/200\n#ABBBF0 / #253979\n--bek-dataviz-sequential-200\nRange · Fill\ndataviz/sequential/100\n#CFD8F7 / #1B2851\n--bek-dataviz-sequential-100\nValue · Fill\ndataviz/categorical/01\n#3E63DD / #5172E0\n--bek-dataviz-categorical-01\nTarget · Fill\ndataviz/target\n#505053 / #D4D4D6\n--bek-dataviz-target\nLabel · Text\nCaption/L\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
+    }
+  ]
+}

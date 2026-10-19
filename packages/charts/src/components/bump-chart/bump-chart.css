@@ -1,0 +1,33 @@
+/* Chiziq — seriya rangi (`color`), chart/line/stroke, silliq (curveBumpX) */
+.bek-bump-chart__line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Har davrdagi o'rin — chart/point/size */
+.bek-bump-chart__point {
+  fill: currentColor;
+}
+
+/* Highlight: muhokama qilinmayotgan chiziqlar 30%. */
+.bek-bump-chart__series--muted {
+  opacity: 0.3;
+}
+
+/* Hover: chiziq rangini saqlaydi, qolganlari 30% (Figma doc). */
+.bek-bump-chart__plot:hover .bek-bump-chart__series:not(:hover) {
+  opacity: 0.3;
+}
+
+.bek-bump-chart__plot:hover .bek-bump-chart__series:hover {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-bump-chart__series {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}
