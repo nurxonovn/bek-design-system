@@ -1,12 +1,30 @@
 {
   "name": "@bek/charts",
-  "version": "0.0.0",
-  "description": "BEK Design System charts and diagrams — SVG React components on @bek/tokens (Figma 4.18 Chart, 4.19 Diagram)",
+  "version": "1.0.0-beta.0",
+  "description": "BEK Design System charts and diagrams — 61 SVG React components on @bek/tokens",
   "license": "MIT",
-  "type": "module",
-  "files": [
-    "dist"
+  "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurxonovn/bek-design-system.git",
+    "directory": "packages/charts"
+  },
+  "homepage": "https://nurxonovn.github.io/bek-design-system/",
+  "bugs": {
+    "url": "https://github.com/nurxonovn/bek-design-system/issues"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "figma",
+    "react",
+    "uzbekistan",
+    "bek",
+    "charts",
+    "dataviz",
+    "d3"
   ],
+  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -16,18 +34,20 @@
     },
     "./styles.css": "./dist/styles.css"
   },
+  "files": [
+    "dist"
+  ],
   "sideEffects": [
     "*.css"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"test/*.test.mjs\"",
     "check:figma": "node ../react/scripts/check-figma.mjs --root=."
-  },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
   },
   "dependencies": {
     "@bek/react": "workspace:*",
@@ -39,6 +59,10 @@
     "d3-sankey": "0.12.3",
     "d3-scale": "4.0.2",
     "d3-shape": "3.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@types/d3-array": "3.2.1",

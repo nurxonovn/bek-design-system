@@ -1,12 +1,27 @@
 {
   "name": "@bek/tokens",
-  "version": "0.0.0",
-  "description": "BEK Design System tokens — CSS variables, TypeScript and Tailwind theme generated from Figma variables",
+  "version": "1.0.0-beta.0",
+  "description": "BEK Design System tokens — CSS custom properties, JSON, typography and materials generated from Figma Variables",
   "license": "MIT",
-  "type": "module",
-  "files": [
-    "dist"
+  "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurxonovn/bek-design-system.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://nurxonovn.github.io/bek-design-system/",
+  "bugs": {
+    "url": "https://github.com/nurxonovn/bek-design-system/issues"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "figma",
+    "react",
+    "uzbekistan",
+    "bek"
   ],
+  "type": "module",
   "exports": {
     "./tokens.css": "./dist/tokens.css",
     "./palette.css": "./dist/palette.css",
@@ -14,11 +29,17 @@
     "./tokens.json": "./dist/tokens.json",
     "./materials.css": "./dist/materials.css"
   },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "typecheck": "node --check scripts/build.mjs"
-  },
-  "sideEffects": [
-    "*.css"
-  ]
+  }
 }

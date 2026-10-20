@@ -1,0 +1,41 @@
+name: Bug report
+description: Something in @bek/tokens, @bek/react, @bek/charts or the docs site is broken
+labels: [bug]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options: ['@bek/react', '@bek/charts', '@bek/tokens', 'docs site', 'other']
+    validations: { required: true }
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      placeholder: e.g. Button, TextField, BarChart
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal code or a link to a sandbox.
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+    validations: { required: true }
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device / theme
+      multiple: true
+      options: [Mobile, Tablet, Web, Light, Dark, RTL]
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: e.g. 1.0.0-beta.0, browser, OS
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshot or recording

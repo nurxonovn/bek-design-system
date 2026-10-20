@@ -1,0 +1,22 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@bek/site": "0.0.0",
+    "@bek/templates": "0.0.0",
+    "@bek/charts": "0.0.0",
+    "@bek/react": "0.0.0",
+    "@bek/tokens": "0.0.0"
+  },
+  "changesets": [
+    "charts-w1",
+    "charts-w2",
+    "charts-w3",
+    "figma-foundations",
+    "figma-parity-skill",
+    "figma-sections-next",
+    "public-beta",
+    "rsc-use-client-skeleton-fill",
+    "tokens-dataviz"
+  ]
+}

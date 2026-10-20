@@ -1,0 +1,25 @@
+name: Figma ↔ code mismatch
+description: The code does not match the Figma spec (token, variant, size, state)
+labels: [figma-parity]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component and Figma page
+      placeholder: e.g. Button — 3.1 Button
+    validations: { required: true }
+  - type: textarea
+    id: diff
+    attributes:
+      label: What differs
+      description: Quote the token / variant / value in Figma and what the code does.
+      placeholder: |
+        Figma: hover → accent/hover
+        Code: hover → accent/default
+    validations: { required: true }
+  - type: dropdown
+    id: side
+    attributes:
+      label: Which side is wrong?
+      options: [Code should follow Figma, Figma should change, Not sure]
+    validations: { required: true }
