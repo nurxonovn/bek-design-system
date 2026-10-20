@@ -4,5 +4,5 @@
   "commit": false,
   "access": "public",
   "baseBranch": "main",
-  "ignore": ["@bek/site"]
+  "ignore": ["@bek/site", "@bek/templates"]
 }

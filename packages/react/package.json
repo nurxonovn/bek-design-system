@@ -1,13 +1,27 @@
 {
   "name": "@bek/react",
-  "version": "0.0.0",
-  "description": "BEK Design System React components",
+  "version": "1.0.0-beta.0",
+  "description": "BEK Design System — 58 React components on design tokens, Light/Dark, RTL, accessible",
   "license": "MIT",
-  "type": "module",
-  "files": [
-    "dist",
-    "assets"
+  "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurxonovn/bek-design-system.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://nurxonovn.github.io/bek-design-system/",
+  "bugs": {
+    "url": "https://github.com/nurxonovn/bek-design-system/issues"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "figma",
+    "react",
+    "uzbekistan",
+    "bek"
   ],
+  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -18,23 +32,30 @@
     "./styles.css": "./dist/styles.css",
     "./assets/*": "./assets/*"
   },
+  "files": [
+    "dist",
+    "assets"
+  ],
   "sideEffects": [
     "*.css"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test \"test/*.test.mjs\"",
     "check:figma": "node scripts/check-figma.mjs"
   },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
-  },
   "dependencies": {
     "@bek/tokens": "workspace:*",
     "clsx": "2.1.1",
     "page-mascot": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@types/react": "18.3.26",

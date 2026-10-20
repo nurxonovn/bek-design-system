@@ -55,7 +55,7 @@ sarlavha Conventional Commits. `main` ga to'g'ridan-to'g'ri push yo'q. Model nom
 ## Tashqi tizimlar
 
 Figma MCP (`use_figma` read-only, `get_screenshot`, `get_variable_defs`); GitHub MCP; Supabase MCP
-(loyiha `BEK Design System`, `hiyagjqdmixjygkcrocv` — hozircha bo'sh; migratsiyalar `supabase/migrations/`
+(loyiha `BEK Design System`, loyiha ID maintainer'larda — hozircha bo'sh; migratsiyalar `supabase/migrations/`
 ga yoziladi, `database-reviewer` bilan ko'rib chiqiladi).
 
 ECC: `.claude/ECC-VERSION` (asl: https://github.com/affaan-m/everything-claude-code, MIT — `.claude/ECC-LICENSE`).

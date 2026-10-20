@@ -1,0 +1,27 @@
+name: Component request
+description: Propose a new component or variant
+labels: [enhancement]
+body:
+  - type: input
+    id: figma
+    attributes:
+      label: Figma page
+      description: Page number and name if it already exists in the BEK Figma file (e.g. "3.17 Uploader"). Leave empty if not.
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use case
+      description: What problem does it solve? Where would you use it?
+    validations: { required: true }
+  - type: textarea
+    id: api
+    attributes:
+      label: Proposed API
+      description: Props, variants, sizes — following Figma naming (`variant`, `size`).
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing components and issues
+        - label: It works on Mobile, Tablet and Web (or I explained why not)
