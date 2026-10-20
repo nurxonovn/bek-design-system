@@ -82,356 +82,96 @@ export function Example() {
     }
   },
   android: {
-    description: "Android native komponentlari Material Design 3 asosida. Kotlin va Java da ishlatish uchun optimallashtirilgan.",
+    description: "BEK hozircha faqat React (@bek/react) va CSS (@bek/tokens) kodida. Android uchun nativ kutubxona yo'q — Figma spec (har komponentda Mobile 390 · Tablet 834 · Web 1440) va @bek/tokens ichidagi tokens.json qiymatlaridan Compose/XML temasi quriladi.",
     installation: {
-      title: "Gradle Dependencies",
+      title: "Tokenlarni olish",
       commands: [
-        "implementation 'com.sqb:android-components:1.0.0'",
-        "implementation 'com.sqb:android-themes:1.0.0'",
-        "implementation 'com.sqb:android-icons:1.0.0'"
+        "pnpm add @bek/tokens   # tokens.json — ranglar (Light/Dark), o'lchamlar (Mobile/Tablet/Web), tipografika",
+        "# yoki Figma faylidan: Variables → Export"
       ],
-      notes: "Android API 21+ (Android 5.0) kerak"
+      notes: "Nativ Android paketi rejada; hozircha tokens.json manba sifatida ishlatiladi."
     },
     implementation: {
-      title: "Android Application setup",
-      setup: `// Application.kt
-import com.sqb.components.SqbComponentsConfig
-import com.sqb.themes.SqbTheme
-
-class MyApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        
-        // BEK Components ni sozlash
-        SqbComponentsConfig.initialize(this) {
-            theme = SqbTheme.LIGHT
-            primaryColor = Color.parseColor("#2C58A5")
-            enableRippleEffects = true
-        }
-    }
-}`,
-      example: `// MainActivity.kt
-import com.sqb.components.SqbButton
-import com.sqb.components.SqbCard
-
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        
-        val button = SqbButton(this).apply {
-            text = "Primary Button"
-            variant = SqbButton.Variant.PRIMARY
-            size = SqbButton.Size.LARGE
-            setOnClickListener { 
-                // Handle click
-            }
-        }
-        
-        // Layout ga qo'shish
-        findViewById<ViewGroup>(R.id.container).addView(button)
-    }
+      title: "Compose temasi tokens.json asosida",
+      setup: `// Theme.kt — qiymatlar @bek/tokens/tokens.json dan
+val BekLightColors = lightColorScheme(
+    primary = Color(0xFF3E63DD),        // accent/default
+    background = Color(0xFFF1F3F6),     // bg/base
+    surface = Color(0xFFFFFFFF),        // surface/card
+    error = Color(0xFFD93134)           // status/danger/default
+)`,
+      example: `@Composable
+fun BekButton(text: String, onClick: () -> Unit) {
+    Button(
+        onClick = onClick,
+        shape = RoundedCornerShape(10.dp),            // radius/control/md (Mobile)
+        modifier = Modifier.height(44.dp)             // control/height/lg (Mobile)
+    ) { Text(text) }
 }`
     },
     components: {
       button: {
-        code: `<!-- XML Layout -->
-<com.sqb.components.SqbButton
-    android:id="@+id/primaryButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Primary Button"
-    app:sqb_variant="primary"
-    app:sqb_size="large"
-    app:sqb_enabled="true" />
-
-<!-- Kotlin Code -->
-val button = findViewById<SqbButton>(R.id.primaryButton)
-button.setOnClickListener { 
-    // Handle button click
-    Log.d("Button", "Primary button clicked")
-}
-
-// Programmatik yaratish
-val secondaryButton = SqbButton(this).apply {
-    text = "Secondary"
-    variant = SqbButton.Variant.SECONDARY
-    size = SqbButton.Size.MEDIUM
-}`,
-        notes: "Material Design ripple effect va state management"
+        code: `// Nativ komponent yo'q — Figma 3.1 Button spec:
+// o'lchamlar M 28 · L 36 · XL 44 · 2XL 52 · 3XL 60; variantlar action · normal · outline · flat`,
+        notes: "Compose'da Figma spec va tokens.json bo'yicha quriladi"
       },
       input: {
-        code: `<!-- XML Layout -->
-<com.sqb.components.SqbInputField
-    android:id="@+id/usernameInput"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Enter your username"
-    app:sqb_label="Username"
-    app:sqb_required="true"
-    app:sqb_errorMessage="Username is required"
-    app:sqb_helperText="Must be at least 3 characters" />
-
-<!-- Kotlin Code -->
-val inputField = findViewById<SqbInputField>(R.id.usernameInput)
-inputField.apply {
-    inputType = InputType.TYPE_CLASS_TEXT
-    addTextChangedListener(object : TextWatcher {
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            validateInput(s.toString())
-        }
-    })
-}`,
-        notes: "Real-time validation va error handling"
+        code: `// Nativ komponent yo'q — Figma 3.2 Text field spec:
+// label maydon ichida, supporting text pastda, focus — _Focus ring (2 px, border/focus)`,
+        notes: "Figma 3.2 Text field"
       },
       card: {
-        code: `<!-- XML Layout -->
-<com.sqb.components.SqbCard
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:sqb_elevated="true"
-    app:sqb_cornerRadius="8dp">
-    
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Card Title"
-            style="@style/SqbCardTitle" />
-            
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Card content goes here"
-            style="@style/SqbCardContent"
-            android:layout_marginTop="8dp" />
-            
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="end">
-            
-            <com.sqb.components.SqbButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cancel"
-                app:sqb_variant="outline" />
-                
-            <com.sqb.components.SqbButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Save"
-                app:sqb_variant="primary"
-                android:layout_marginStart="8dp" />
-                
-        </LinearLayout>
-        
-    </LinearLayout>
-    
-</com.sqb.components.SqbCard>`,
-        notes: "Elevation va shadow effects Material Design 3 asosida"
+        code: `// Nativ komponent yo'q — Figma 4.3 Card spec:
+// surface/card fon, border yo'q (GEN-02), radius/surface/md, padding scale/16`,
+        notes: "Figma 4.3 Card"
       }
     }
   },
   ios: {
-    description: "iOS native komponentlari Human Interface Guidelines asosida. Swift va SwiftUI da ishlatish uchun optimallashtirilgan.",
+    description: "BEK hozircha faqat React (@bek/react) va CSS (@bek/tokens) kodida. iOS uchun nativ kutubxona yo'q — Figma spec (3 qurilma) va @bek/tokens ichidagi tokens.json qiymatlaridan SwiftUI temasi quriladi.",
     installation: {
-      title: "CocoaPods Installation",
+      title: "Tokenlarni olish",
       commands: [
-        "pod 'BEKIOSComponents', '~> 1.0'",
-        "pod 'BEKIOSThemes', '~> 1.0'",
-        "pod 'BEKIOSIcons', '~> 1.0'"
+        "pnpm add @bek/tokens   # tokens.json — ranglar (Light/Dark), o'lchamlar (Mobile/Tablet/Web), tipografika",
+        "# yoki Figma faylidan: Variables → Export"
       ],
-      notes: "iOS 14.0+ kerak, Swift 5.5+"
+      notes: "Nativ iOS paketi rejada; hozircha tokens.json manba sifatida ishlatiladi."
     },
     implementation: {
-      title: "iOS Application setup",
-      setup: `// AppDelegate.swift
-import UIKit
-import BEKIOSComponents
-import BEKIOSThemes
-
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // BEK Components configuration
-        BEKThemeManager.shared.configure {
-            $0.primaryColor = UIColor(hex: "#2C58A5")
-            $0.theme = .light
-            $0.enableHapticFeedback = true
-        }
-        
-        return true
-    }
+      title: "SwiftUI temasi tokens.json asosida",
+      setup: `// BekTheme.swift — qiymatlar @bek/tokens/tokens.json dan
+enum BekColor {
+    static let accent  = Color(hex: 0x3E63DD)   // accent/default
+    static let bgBase  = Color(hex: 0xF1F3F6)   // bg/base
+    static let surface = Color(hex: 0xFFFFFF)   // surface/card
+    static let danger  = Color(hex: 0xD93134)   // status/danger/default
 }`,
-      example: `// ViewController.swift
-import UIKit
-import BEKIOSComponents
-
-class ViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-    
-    private func setupUI() {
-        let button = BEKButton()
-        button.title = "Primary Button"
-        button.variant = .primary
-        button.size = .large
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
-        view.addSubview(button)
-        // Auto Layout constraints...
-    }
-    
-    @objc private func buttonTapped() {
-        // Handle button tap
-        print("Primary button tapped")
+      example: `struct BekButton: View {
+    let title: String
+    let action: () -> Void
+    var body: some View {
+        Button(title, action: action)
+            .frame(height: 44)                              // control/height/lg (Mobile)
+            .background(BekColor.accent)
+            .clipShape(RoundedRectangle(cornerRadius: 10))  // radius/control/md
     }
 }`
     },
     components: {
       button: {
-        code: `// UIKit Usage
-let primaryButton = BEKButton()
-primaryButton.title = "Primary Button"
-primaryButton.variant = .primary
-primaryButton.size = .large
-primaryButton.isEnabled = true
-primaryButton.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-
-// Button variants
-let secondaryButton = BEKButton()
-secondaryButton.variant = .secondary
-
-let outlineButton = BEKButton()
-outlineButton.variant = .outline
-
-let ghostButton = BEKButton()
-ghostButton.variant = .ghost
-
-// SwiftUI Usage
-import SwiftUI
-import BEKIOSComponents
-
-struct ContentView: View {
-    var body: some View {
-        VStack(spacing: 16) {
-            BEKButton("Primary Button", variant: .primary, size: .large) {
-                // Handle button tap
-                print("Button tapped")
-            }
-            
-            BEKButton("Secondary Button", variant: .secondary) {
-                // Handle tap
-            }
-        }
-    }
-}`,
-        notes: "Haptic feedback va iOS accessibility qo'llab-quvvatlaydi"
+        code: `// Nativ komponent yo'q — Figma 3.1 Button spec:
+// o'lchamlar M 28 · L 36 · XL 44 · 2XL 52 · 3XL 60; variantlar action · normal · outline · flat`,
+        notes: "SwiftUI'da Figma spec va tokens.json bo'yicha quriladi"
       },
       input: {
-        code: `// UIKit Usage
-let inputField = BEKInputField()
-inputField.label = "Username"
-inputField.placeholder = "Enter your username"
-inputField.isRequired = true
-inputField.errorMessage = "Username is required"
-inputField.helperText = "Must be at least 3 characters"
-inputField.inputType = .text
-
-inputField.onTextChanged = { [weak self] text in
-    self?.validateUsername(text)
-}
-
-// SwiftUI Usage
-struct LoginForm: View {
-    @State private var username: String = ""
-    @State private var isValid: Bool = true
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            BEKInputField(
-                "Username",
-                text: $username,
-                placeholder: "Enter your username",
-                isRequired: true,
-                isValid: $isValid,
-                helperText: "Must be at least 3 characters"
-            )
-            .onTextChanged { text in
-                isValid = text.count >= 3
-            }
-        }
-    }
-}`,
-        notes: "Real-time validation va iOS keyboard handling"
+        code: `// Nativ komponent yo'q — Figma 3.2 Text field spec:
+// label maydon ichida, supporting text pastda, focus — _Focus ring (2 px, border/focus)`,
+        notes: "Figma 3.2 Text field"
       },
       card: {
-        code: `// UIKit Usage
-let cardView = BEKCardView()
-cardView.title = "Card Title"
-cardView.subtitle = "Card Subtitle"
-cardView.content = "This is the main content of the card."
-cardView.isElevated = true
-
-// Add action buttons
-let cancelButton = BEKButton()
-cancelButton.title = "Cancel"
-cancelButton.variant = .outline
-
-let saveButton = BEKButton()
-saveButton.title = "Save"
-saveButton.variant = .primary
-
-cardView.addFooterButton(cancelButton)
-cardView.addFooterButton(saveButton)
-
-// SwiftUI Usage
-struct CardExample: View {
-    var body: some View {
-        BEKCard(isElevated: true) {
-            VStack(alignment: .leading, spacing: 12) {
-                BEKCardHeader {
-                    VStack(alignment: .leading) {
-                        Text("Card Title")
-                            .sqbCardTitle()
-                        Text("Card Subtitle")
-                            .sqbCardSubtitle()
-                    }
-                }
-                
-                BEKCardContent {
-                    Text("This is the main content of the card.")
-                        .sqbCardContent()
-                }
-                
-                BEKCardFooter {
-                    HStack {
-                        Spacer()
-                        BEKButton("Cancel", variant: .outline) {
-                            // Handle cancel
-                        }
-                        BEKButton("Save", variant: .primary) {
-                            // Handle save
-                        }
-                    }
-                }
-            }
-        }
-    }
-}`,
-        notes: "iOS shadow effects va corner radius optimization"
+        code: `// Nativ komponent yo'q — Figma 4.3 Card spec:
+// surface/card fon, border yo'q (GEN-02), radius/surface/md, padding scale/16`,
+        notes: "Figma 4.3 Card"
       }
     }
   }

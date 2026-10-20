@@ -18,7 +18,7 @@ pnpm --filter @bek/site build    # dist/ (GitHub Pages: .github/workflows/deploy
   bitta demo. Demo yo'q bo'lsa karta «Namuna tez orada» ko'rsatadi.
 - **Tokenlar** (`#/tokens`) — `@bek/tokens/tokens.json` dan: ranglar (Light/Dark), tipografika,
   o'lchamlar (Mobile/Tablet/Web), soya, layout.
-- Sayt qobig'i Pure (Figma Make) prototipidan; shadcn o'zgaruvchilari `src/styles/bek-bridge.css`
+- Sayt qobig'i shadcn/ui asosida; uning o'zgaruvchilari `src/styles/bek-bridge.css`
   orqali BEK tokenlariga bog'langan, Dark rejim `data-theme="dark"` bilan sinxron.
 
 ## Marshrutlar

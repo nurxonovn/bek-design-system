@@ -169,7 +169,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         </div>
       </section>
 
-      {/* About Pure Section */}
+      {/* About BEK Section */}
       <section className="container mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <h2 className="font-medium mb-6" style={{ fontSize: 'var(--text-5xl)' }}>BEK Design System nima?</h2>
@@ -301,7 +301,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                         <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                         <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                       </div>
-                      <span className="font-medium" style={{ fontSize: 'var(--text-sm)' }}>Pure Documentation</span>
+                      <span className="font-medium" style={{ fontSize: 'var(--text-sm)' }}>BEK Documentation</span>
                     </div>
                   </div>
                   <div className="p-6">
@@ -390,7 +390,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-medium mb-8" style={{ fontSize: 'var(--text-6xl)' }}>
             <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent text-[56px] font-bold">
-              Start building with Pure
+              Start building with BEK
             </span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-center" style={{ fontSize: 'var(--text-xl)' }}>

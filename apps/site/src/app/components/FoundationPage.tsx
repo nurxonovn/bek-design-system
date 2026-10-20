@@ -124,7 +124,7 @@ export function FoundationPage({ onNavigate }: FoundationPageProps) {
               Dizayn Foundation
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Pure dizayn tizimining asosiy elementlari - ranglar, typography, spacing va boshqa foundational tokenlar
+              BEK dizayn tizimining asosiy elementlari - ranglar, typography, spacing va boshqa foundational tokenlar
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300">

@@ -21,7 +21,7 @@ export function FallbackApp() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Building className="h-8 w-8 text-primary" />
-              <h1 className="text-xl font-bold">Pure Design System</h1>
+              <h1 className="text-xl font-bold">BEK Design System</h1>
             </div>
             <nav className="flex gap-2">
               {pages.map(page => (
@@ -46,7 +46,7 @@ export function FallbackApp() {
         {currentPage === 'home' && (
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">
-              Welcome to Pure Design System
+              Welcome to BEK Design System
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               A comprehensive design system for BEK applications
@@ -104,13 +104,13 @@ export function FallbackApp() {
               <CardContent className="p-6">
                 <h2 className="text-xl font-semibold mb-4">Getting Started</h2>
                 <p className="text-muted-foreground mb-4">
-                  Welcome to the Pure Design System documentation. This system provides
+                  Welcome to the BEK Design System documentation. This system provides
                   a comprehensive set of design tokens, components, and patterns for
                   building consistent BEK applications.
                 </p>
                 <h3 className="text-lg font-semibold mb-2">Installation</h3>
                 <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-                  npm install @sqb/design-system
+                  pnpm add @bek/tokens @bek/react
                 </div>
               </CardContent>
             </Card>

@@ -12,23 +12,23 @@ export interface Translations {
   
   // Landing Page
   internalUse: string;
-  sqbTeams: string;
+  bekTeams: string;
   designSystem: string;
   officialDesignSystem: string;
   buildConsistent: string;
   getStarted: string;
   browseComponents: string;
-  internalSqbComponent: string;
-  builtForSqb: string;
-  builtForSqbDesc: string;
+  bekComponentLibrary: string;
+  builtForBek: string;
+  builtForBekDesc: string;
   
   // Features
   enterpriseReady: string;
   enterpriseReadyDesc: string;
   optimizedPerformance: string;
   optimizedPerformanceDesc: string;
-  sqbBrandConsistent: string;
-  sqbBrandConsistentDesc: string;
+  bekBrandConsistent: string;
+  bekBrandConsistentDesc: string;
   teamCollaboration: string;
   teamCollaborationDesc: string;
   
@@ -48,12 +48,12 @@ export interface Translations {
   themingGuide: string;
   implementationExamples: string;
   internalResources: string;
-  sqbGitlab: string;
+  githubRepo: string;
   internalPackage: string;
   changeLog: string;
   developmentGuidelines: string;
   internalSupport: string;
-  sqbTeamsChannel: string;
+  figmaFile: string;
   devTeamWiki: string;
   itSupportPortal: string;
   requestAccess: string;
@@ -230,23 +230,23 @@ const translations: Record<Language, Translations> = {
     
     // Landing Page
     internalUse: "Ichki foydalanish uchun - BEK jamoalari",
-    sqbTeams: "BEK jamoalari",
+    bekTeams: "BEK jamoalari",
     designSystem: "Dizayn tizimi",
     officialDesignSystem: "BEK uchun BEK dizayn tizimi. Barcha BEK raqamli mahsulotlarida izchil, professional interfeyslari yaratish.",
     buildConsistent: "Barcha BEK raqamli mahsulotlarida izchil, professional interfeyslari yaratish.",
     getStarted: "Boshlash",
     browseComponents: "Komponentlarni ko'rish",
-    internalSqbComponent: "Ichki BEK Komponent kutubxonasi",
-    builtForSqb: "BEK raqamli ekotizimi uchun yaratilgan",
-    builtForSqbDesc: "BEK dizayn tizimi barcha BEK ilovalarida izchillikni ta'minlaydi va xavfsizlik va muvofiqlik bo'yicha eng yuqori standartlarni saqlaydi.",
+    bekComponentLibrary: "BEK komponent kutubxonasi",
+    builtForBek: "BEK raqamli ekotizimi uchun yaratilgan",
+    builtForBekDesc: "Ochiq dizayn tizimi — barcha BEK mahsulotlari mobil, planshet va vebda bir xil ko'rinadi.",
     
     // Features
     enterpriseReady: "Korxona uchun tayyor",
     enterpriseReadyDesc: "BEK ichki ilovalarida korxona darajasidagi xavfsizlik va standartlar bilan maxsus yaratilgan.",
     optimizedPerformance: "Optimallashtirilgan ishlash",
     optimizedPerformanceDesc: "Bank ilova talablari va ishlash standartlari uchun optimallashtirilgan yengil React komponentlari.",
-    sqbBrandConsistent: "BEK brendiga mos",
-    sqbBrandConsistentDesc: "BEK vizual identifikatsiya yo'riqnomalari bilan izchil ranglar, tipografiya va dizayn namunalari.",
+    bekBrandConsistent: "BEK brendiga mos",
+    bekBrandConsistentDesc: "BEK vizual identifikatsiya yo'riqnomalari bilan izchil ranglar, tipografiya va dizayn namunalari.",
     teamCollaboration: "Jamoa hamkorligi",
     teamCollaborationDesc: "BEK rivojlantirish jamoalari uchun aniq hujjatlar va standartlashtirilgan amalga oshirish namunalari bilan ishlab chiqilgan.",
     
@@ -266,12 +266,12 @@ const translations: Record<Language, Translations> = {
     themingGuide: "Mavzu yo'riqnomasi",
     implementationExamples: "Amalga oshirish misollari",
     internalResources: "Ichki resurslar",
-    sqbGitlab: "BEK GitHub repozitoriyasi",
+    githubRepo: "BEK GitHub repozitoriyasi",
     internalPackage: "Ichki paket registri",
     changeLog: "O'zgarishlar jurnali",
     developmentGuidelines: "Rivojlantirish yo'riqnomalari",
     internalSupport: "Ichki yordam",
-    sqbTeamsChannel: "BEK Telegram kanali",
+    figmaFile: "Figma fayli",
     devTeamWiki: "Rivojlantirish jamoasi Wiki",
     itSupportPortal: "IT yordam portali",
     requestAccess: "Ruxsat so'rash",
@@ -410,9 +410,9 @@ const translations: Record<Language, Translations> = {
     webDescription: "Web ilovalar uchun React komponentlari va CSS frameworklari",
     androidDescription: "Android ilovalar uchun native komponentlar va Material Design",
     iosDescription: "iOS ilovalar uchun native komponentlar va Human Interface Guidelines",
-    webInstallation: "npm install @sqb/angular-components",
-    androidInstallation: "implementation 'com.sqb:android-components:1.0.0'",
-    iosInstallation: "pod 'BEKIOSComponents', '~> 1.0'",
+    webInstallation: "pnpm add @bek/tokens @bek/react",
+    androidInstallation: "pnpm add @bek/tokens   # tokens.json → Compose temasi",
+    iosInstallation: "pnpm add @bek/tokens   # tokens.json → SwiftUI temasi",
     webImplementation: "React moduli sifatida import qiling va HTML templatelarida ishlating",
     androidImplementation: "Kotlin/Java kodingizda BEK komponentlarni ishlating",
     iosImplementation: "Swift kodingizda BEK UI komponentlarni ishlating",
@@ -446,23 +446,23 @@ const translations: Record<Language, Translations> = {
     
     // Landing Page
     internalUse: "Только для внутреннего использования - Команды BEK",
-    sqbTeams: "Команды BEK",
+    bekTeams: "Команды BEK",
     designSystem: "Дизайн-система",
     officialDesignSystem: "Дизайн-система BEK для BEK. Создавайте согласованные, профессиональные интерфейсы во всех цифровых продуктах банка.",
     buildConsistent: "Создавайте согласованные, профессиональные интерфейсы во всех цифровых продуктах банка.",
     getStarted: "Начать",
     browseComponents: "Просмотр компонентов",
-    internalSqbComponent: "Внутренняя библиотека компонентов BEK",
-    builtForSqb: "Создано для цифровой экосистемы BEK",
-    builtForSqbDesc: "Дизайн-система BEK обеспечивает согласованность во всех приложениях банка, поддерживая при этом самые высокие стандарты безопасности и соответствия.",
+    bekComponentLibrary: "Библиотека компонентов BEK",
+    builtForBek: "Создано для цифровой экосистемы BEK",
+    builtForBekDesc: "Открытая дизайн-система: все продукты BEK выглядят одинаково на мобильных, планшетах и в вебе.",
     
     // Features
     enterpriseReady: "Готово для предприятия",
     enterpriseReadyDesc: "Создано специально для внутренних приложений BEK с корпоративной безопасностью и стандартами.",
     optimizedPerformance: "Оптимизированная производительность",
     optimizedPerformanceDesc: "Легкие компоненты React, оптимизированные для требований BEK их приложений и стандартов производительности.",
-    sqbBrandConsistent: "Соответствие бренду BEK",
-    sqbBrandConsistentDesc: "Следует руководящим принципам визуальной идентичности BEK с согласованными цветами, типографико�� и шаблонами дизайна.",
+    bekBrandConsistent: "Соответствие бренду BEK",
+    bekBrandConsistentDesc: "Следует руководящим принципам визуальной идентичности BEK с согласованными цветами, типографико�� и шаблонами дизайна.",
     teamCollaboration: "Командная работа",
     teamCollaborationDesc: "Разработано для команд разработки BEK с четкой документацией и стандартизированными шаблонами реализации.",
     
@@ -482,12 +482,12 @@ const translations: Record<Language, Translations> = {
     themingGuide: "Руководство по темам",
     implementationExamples: "Примеры реализации",
     internalResources: "Внутренние ресурсы",
-    sqbGitlab: "Репозиторий BEK GitHub",
+    githubRepo: "Репозиторий BEK GitHub",
     internalPackage: "Внутренний реестр пакетов",
     changeLog: "Журнал изменений",
     developmentGuidelines: "Руководящие принципы разработки",
     internalSupport: "Внутренняя поддержка",
-    sqbTeamsChannel: "Канал BEK Teams",
+    figmaFile: "Файл Figma",
     devTeamWiki: "Wiki команды разработки",
     itSupportPortal: "Портал IT-поддержки",
     requestAccess: "Запросить доступ",
@@ -626,9 +626,9 @@ const translations: Record<Language, Translations> = {
     webDescription: "React компоненты и CSS фреймворки для веб-приложений",
     androidDescription: "Нативные компоненты и Material Design для Android приложений",
     iosDescription: "Нативные компоненты и Human Interface Guidelines для iOS приложений",
-    webInstallation: "npm install @sqb/angular-components",
-    androidInstallation: "implementation 'com.sqb:android-components:1.0.0'",
-    iosInstallation: "pod 'BEKIOSComponents', '~> 1.0'",
+    webInstallation: "pnpm add @bek/tokens @bek/react",
+    androidInstallation: "pnpm add @bek/tokens   # tokens.json → Compose temasi",
+    iosInstallation: "pnpm add @bek/tokens   # tokens.json → SwiftUI temasi",
     webImplementation: "Импортируйте как React модуль и используйте в HTML шаблонах",
     androidImplementation: "Используйте BEK компоненты в вашем Kotlin/Java коде",
     iosImplementation: "Используйте BEK UI компоненты в вашем Swift коде",
@@ -662,23 +662,23 @@ const translations: Record<Language, Translations> = {
     
     // Landing Page
     internalUse: "Internal Use Only - BEK Teams",
-    sqbTeams: "BEK Teams",
+    bekTeams: "BEK Teams",
     designSystem: "Design System",
     officialDesignSystem: "The official design system for BEK Business applications. Build consistent, professional interfaces across all BEK digital products.",
     buildConsistent: "Build consistent, professional interfaces across all BEK digital products.",
     getStarted: "Get Started",
     browseComponents: "Browse Components",
-    internalSqbComponent: "Internal BEK Component Library",
-    builtForSqb: "Built for BEK's digital ecosystem",
-    builtForSqbDesc: "Our internal design system ensures consistency across all BEK applications while maintaining the highest standards of security and compliance.",
+    bekComponentLibrary: "BEK Component Library",
+    builtForBek: "Built for BEK's digital ecosystem",
+    builtForBekDesc: "An open design system that keeps every BEK product consistent across mobile, tablet and web.",
     
     // Features
     enterpriseReady: "Enterprise Ready",
     enterpriseReadyDesc: "Built specifically for BEK's internal applications with enterprise-grade security and standards.",
     optimizedPerformance: "Optimized Performance",
     optimizedPerformanceDesc: "Lightweight React components optimized for BEK's application requirements and performance standards.",
-    sqbBrandConsistent: "BEK Brand Consistent",
-    sqbBrandConsistentDesc: "Follows BEK's visual identity guidelines with consistent colors, typography, and design patterns.",
+    bekBrandConsistent: "BEK Brand Consistent",
+    bekBrandConsistentDesc: "Follows BEK's visual identity guidelines with consistent colors, typography, and design patterns.",
     teamCollaboration: "Team Collaboration",
     teamCollaborationDesc: "Designed for BEK development teams with clear documentation and standardized implementation patterns.",
     
@@ -698,12 +698,12 @@ const translations: Record<Language, Translations> = {
     themingGuide: "Theming Guide",
     implementationExamples: "Implementation Examples",
     internalResources: "Internal Resources",
-    sqbGitlab: "BEK GitHub Repository",
+    githubRepo: "BEK GitHub Repository",
     internalPackage: "Internal Package Registry",
     changeLog: "Change Log",
     developmentGuidelines: "Development Guidelines",
     internalSupport: "Internal Support",
-    sqbTeamsChannel: "BEK Teams Channel",
+    figmaFile: "Figma file",
     devTeamWiki: "Development Team Wiki",
     itSupportPortal: "IT Support Portal",
     requestAccess: "Request Access",
@@ -842,9 +842,9 @@ const translations: Record<Language, Translations> = {
     webDescription: "React components and CSS frameworks for web applications",
     androidDescription: "Native components and Material Design for Android applications",
     iosDescription: "Native components and Human Interface Guidelines for iOS applications",
-    webInstallation: "npm install @sqb/angular-components",
-    androidInstallation: "implementation 'com.sqb:android-components:1.0.0'",
-    iosInstallation: "pod 'BEKIOSComponents', '~> 1.0'",
+    webInstallation: "pnpm add @bek/tokens @bek/react",
+    androidInstallation: "pnpm add @bek/tokens   # tokens.json → Compose temasi",
+    iosInstallation: "pnpm add @bek/tokens   # tokens.json → SwiftUI temasi",
     webImplementation: "Import as React module and use in HTML templates",
     androidImplementation: "Use BEK components in your Kotlin/Java code",
     iosImplementation: "Use BEK UI components in your Swift code",
