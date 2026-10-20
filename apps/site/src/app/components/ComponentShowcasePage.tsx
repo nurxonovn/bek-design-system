@@ -734,10 +734,10 @@ export function ComponentShowcasePage({ onNavigate }: ComponentShowcasePageProps
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Angular Integration */}
+            {/* React Integration */}
             <Card>
               <CardHeader>
-                <CardTitle>Angular Integration</CardTitle>
+                <CardTitle>React Integration</CardTitle>
               </CardHeader>
               <Separator />
               <CardContent className="p-6">
@@ -745,30 +745,27 @@ export function ComponentShowcasePage({ onNavigate }: ComponentShowcasePageProps
                   <div>
                     <Label className="mb-2 block">Installation</Label>
                     <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
-                      <code>npm install @sqb/pure-angular</code>
+                      <code>pnpm add @bek/tokens @bek/react</code>
                     </pre>
                   </div>
                   
                   <div>
-                    <Label className="mb-2 block">Import Module</Label>
+                    <Label className="mb-2 block">Import styles</Label>
                     <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
-                      <code>{`import { PureModule } from '@sqb/pure-angular';
-
-@NgModule({
-  imports: [PureModule]
-})`}</code>
+                      <code>{`import '@bek/tokens/tokens.css';
+import '@bek/tokens/typography.css';
+import '@bek/react/styles.css';`}</code>
                     </pre>
                   </div>
 
                   <div>
                     <Label className="mb-2 block">Usage Example</Label>
                     <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
-                      <code>{`<pure-button 
-  [variant]="'primary'"
-  [size]="'default'"
-  (click)="handleClick()">
+                      <code>{`import { Button } from '@bek/react';
+
+<Button variant="action" size="l" onClick={handleClick}>
   Click me
-</pure-button>`}</code>
+</Button>`}</code>
                     </pre>
                   </div>
                 </div>

@@ -201,7 +201,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                     variant="ghost"
                     size="sm"
                     className="h-9 w-9 px-0 hover:bg-primary/10 transition-all duration-300 hover:scale-110"
-                    onClick={() => window.open('https://github.com/sqb-uz/pure-design-system', '_blank')}
+                    onClick={() => window.open('https://github.com/nurxonovn/bek-design-system', '_blank')}
                   >
                     <Github className="h-4 w-4" />
                   </Button>

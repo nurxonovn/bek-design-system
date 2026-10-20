@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 // Hash-marshrutlar: har sahifa ulashiladigan havola — #/components/button, #/tokens.
-// Pure'ning `currentPage` satr identifikatorlari saqlanadi; faqat URL bilan sinxronlanadi.
+// Sayt qobig'ining `currentPage` satr identifikatorlari saqlanadi; faqat URL bilan sinxronlanadi.
 const PAGE_TO_HASH: Record<string, string> = {
   home: '',
   docs: 'docs',

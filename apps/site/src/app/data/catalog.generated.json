@@ -14299,7 +14299,8 @@
       "description": "vertikal voqealar tarixi yoki yo'l xaritasi (ariza holati, yetkazib berish, loyiha bosqichlari). state: done · current · upcoming.",
       "exports": [
         "Timeline",
-        "TimelineItem"
+        "TimelineItem",
+        "TIMELINE_STATE_LABEL"
       ],
       "section": {
         "id": 4,

@@ -145,9 +145,9 @@ export function TypographySection() {
            'Typography System'}
         </h3>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
-          {currentLanguage === 'uz' ? 'Pure dizayn tizimining typography qoidalari, o\'lchamlari va font hiearxiyasi' : 
-           currentLanguage === 'ru' ? 'Правила типографики, размеры и иерархия шрифтов системы дизайна Pure' : 
-           'Typography rules, sizes, and font hierarchy of the Pure design system'}
+          {currentLanguage === 'uz' ? 'BEK dizayn tizimining typography qoidalari, o\'lchamlari va font hiearxiyasi' : 
+           currentLanguage === 'ru' ? 'Правила типографики, размеры и иерархия шрифтов системы дизайна BEK' : 
+           'Typography rules, sizes, and font hierarchy of the BEK design system'}
         </p>
         <Button onClick={handleDownloadFont} className="shadow-lg hover:shadow-xl transition-all duration-300">
           <Download className="h-5 w-5 mr-2" />
@@ -178,9 +178,9 @@ export function TypographySection() {
                   ttinterphases Pro
                 </h4>
                 <p className="text-muted-foreground text-sm">
-                  {currentLanguage === 'uz' ? 'Pure dizayn tizimi uchun asosiy font' : 
-                   currentLanguage === 'ru' ? 'Основной шрифт для системы дизайна Pure' : 
-                   'Primary font for Pure design system'}
+                  {currentLanguage === 'uz' ? 'BEK dizayn tizimi uchun asosiy font' : 
+                   currentLanguage === 'ru' ? 'Основной шрифт для системы дизайна BEK' : 
+                   'Primary font for BEK design system'}
                 </p>
               </div>
               

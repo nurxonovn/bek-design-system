@@ -126,45 +126,10 @@ export function DocumentationPage() {
                   
                   <div>
                     <h4 className="text-base font-semibold mb-2">
-                      {currentPlatform === 'web' ? t.cardComponent : 
-                       currentPlatform === 'android' ? 'Card Layout' : 
-                       'Card View'}
+                      {t.cardComponent}
                     </h4>
                     <pre className="bg-muted/50 rounded p-3 text-sm overflow-x-auto leading-relaxed">
-                      <code>{currentPlatform === 'web' ? 
-                        `<sqb-card>
-  <sqb-card-header>
-    <sqb-card-title>Title</sqb-card-title>
-  </sqb-card-header>
-  <sqb-card-content>
-    <p>Card content goes here.</p>
-  </sqb-card-content>
-</sqb-card>` :
-                        currentPlatform === 'android' ?
-                        `<com.sqb.components.SqbCard
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp">
-        
-        <TextView
-            android:text="Title"
-            style="@style/SqbCardTitle" />
-            
-        <TextView
-            android:text="Card content goes here."
-            style="@style/SqbCardContent" />
-            
-    </LinearLayout>
-    
-</com.sqb.components.SqbCard>` :
-                        `let cardView = BEKCardView()
-cardView.title = "Title"
-cardView.content = "Card content goes here."
-view.addSubview(cardView)`
-                      }</code>
+                      <code>{content.components.card?.code || 'Example not available'}</code>
                     </pre>
                   </div>
                 </div>

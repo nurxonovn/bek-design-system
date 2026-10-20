@@ -113,7 +113,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 onClick={() => window.open('https://github.com/nurxonovn/bek-design-system', '_blank', 'noreferrer')}
                 className="block w-full text-left text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-300"
               >
-                {t.sqbGitlab}
+                {t.githubRepo}
               </button>
               <button
                 onClick={() => window.open('https://github.com/nurxonovn/bek-design-system/tree/main/packages', '_blank', 'noreferrer')}
@@ -144,7 +144,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 onClick={() => window.open('https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System', '_blank', 'noreferrer')}
                 className="block w-full text-left text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-300"
               >
-                {t.sqbTeamsChannel}
+                {t.figmaFile}
               </button>
               <button
                 onClick={() => console.log('Dev team wiki clicked')}

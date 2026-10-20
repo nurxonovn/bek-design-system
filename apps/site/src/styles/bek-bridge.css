@@ -1,4 +1,4 @@
-/* Pure (Figma Make, shadcn o'zgaruvchilari) → BEK tokenlari ko'prigi.
+/* Sayt qobig'i (shadcn o'zgaruvchilari) → BEK tokenlari ko'prigi.
    Sayt qobig'i (header, kartalar, tugmalar) BEK ranglari, radius va shriftini oladi; Light/Dark
    @bek/tokens'dagi [data-theme="dark"] orqali almashadi (ThemeProvider .dark bilan birga qo'yadi). */
 :root,
