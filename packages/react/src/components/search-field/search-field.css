@@ -1,0 +1,237 @@
+/* Search field — Figma "3.12 Search bar → Search field". Pill (radius/full), balandlik field/height/*:
+   S 36 · padding 12 · gap 8 · ikonka 16 · Body/S; M 44 · 16 · 8 · 20 · Body/M; L 56 · 20 · 12 · 24 · Body/L.
+   Filled — fill/soft (hover fill/soft-hover); Elevated — surface/card + Elevation/1 (hover Elevation/2);
+   On-media — fill/on-media + Glass/Small. Placeholder/ikonkalar text/tertiary, qiymat text/primary,
+   caret accent/default; Scope (Label/S) va Shortcut (Caption/M) — kichik pill; Cancel Label/M text/accent;
+   fokus — _Focus ring (2 px border/focus, 2 px tashqarida). Disabled — text/disabled. */
+.bek-search-field {
+  --bek-search-field-height: var(--bek-field-height-md);
+  --bek-search-field-padding: var(--bek-scale-16);
+  --bek-search-field-gap: var(--bek-scale-8);
+  --bek-search-field-icon: var(--bek-icon-md);
+  --bek-search-field-fill: var(--bek-fill-soft);
+  --bek-search-field-fill-hover: var(--bek-fill-soft-hover);
+  --bek-search-field-shadow: none;
+  --bek-search-field-shadow-hover: none;
+  --bek-search-field-chip: var(--bek-surface-card);
+  --bek-search-field-muted: var(--bek-text-tertiary);
+  --bek-search-field-value: var(--bek-text-primary);
+  --bek-search-field-scope: var(--bek-text-secondary);
+  --bek-search-field-cancel: var(--bek-text-accent);
+
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  width: 100%;
+  font-family: var(--bek-family-sans);
+}
+
+/* Size */
+.bek-search-field--s {
+  --bek-search-field-height: var(--bek-field-height-sm);
+  --bek-search-field-padding: var(--bek-scale-12);
+  --bek-search-field-icon: var(--bek-icon-sm);
+}
+
+.bek-search-field--l {
+  --bek-search-field-height: var(--bek-field-height-lg);
+  --bek-search-field-padding: var(--bek-scale-20);
+  --bek-search-field-gap: var(--bek-scale-12);
+  --bek-search-field-icon: var(--bek-icon-lg);
+}
+
+/* Variant */
+.bek-search-field--elevated {
+  --bek-search-field-fill: var(--bek-surface-card);
+  --bek-search-field-fill-hover: var(--bek-surface-card);
+  --bek-search-field-shadow: var(--bek-elevation-1);
+  --bek-search-field-shadow-hover: var(--bek-elevation-2);
+  --bek-search-field-chip: var(--bek-fill-soft);
+}
+
+.bek-search-field--on-media {
+  --bek-search-field-fill: var(--bek-fill-on-media);
+  --bek-search-field-chip: var(--bek-fill-on-media);
+  --bek-search-field-muted: var(--bek-text-on-color-muted);
+  --bek-search-field-value: var(--bek-text-on-color);
+  --bek-search-field-scope: var(--bek-text-on-color);
+  --bek-search-field-cancel: var(--bek-text-on-color);
+}
+
+/* Disabled — text/disabled; Elevated soyasiz. */
+.bek-search-field--disabled {
+  --bek-search-field-muted: var(--bek-text-disabled);
+  --bek-search-field-value: var(--bek-text-disabled);
+  --bek-search-field-shadow: none;
+}
+
+.bek-search-field__field {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--bek-search-field-gap);
+  box-sizing: border-box;
+  min-width: 0;
+  height: var(--bek-search-field-height);
+  padding-inline: var(--bek-search-field-padding);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-search-field-fill);
+  cursor: text;
+  transition:
+    background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard),
+    box-shadow var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+/* Filled · Elevated: soya o'zgaruvchidan. On-media soyani materials.css dagi .bek-glass-small beradi. */
+.bek-search-field:not(.bek-search-field--on-media) .bek-search-field__field {
+  box-shadow: var(--bek-search-field-shadow);
+}
+
+/* Ikki klass — .bek-glass-small foni (glass/tint-clear) Figma'dagi fill/on-media ni bosmasin. */
+.bek-search-field.bek-search-field--on-media .bek-search-field__field {
+  background: var(--bek-search-field-fill);
+}
+
+/* Hover: Filled — fill/soft-hover, Elevated — Elevation/2; On-media Figma'da o'zgarmaydi. */
+.bek-search-field:not(.bek-search-field--disabled, .bek-search-field--on-media)
+  .bek-search-field__field:hover {
+  background: var(--bek-search-field-fill-hover);
+  box-shadow: var(--bek-search-field-shadow-hover);
+}
+
+.bek-search-field__field:has(.bek-search-field__input:focus-visible) {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-search-field--disabled .bek-search-field__field {
+  cursor: not-allowed;
+}
+
+.bek-search-field__icon {
+  flex-shrink: 0;
+  width: var(--bek-search-field-icon);
+  height: var(--bek-search-field-icon);
+  color: var(--bek-search-field-muted);
+}
+
+/* Scope — "All": pill, padding 2 8, Label/S. */
+.bek-search-field__scope {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-search-field-chip);
+  color: var(--bek-search-field-scope);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  white-space: nowrap;
+}
+
+.bek-search-field__input {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--bek-search-field-value);
+  caret-color: var(--bek-accent-default);
+  font: inherit;
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+  appearance: none;
+}
+
+.bek-search-field--s .bek-search-field__input {
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-search-field--l .bek-search-field__input {
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  letter-spacing: var(--bek-type-body-lg-tracking);
+}
+
+.bek-search-field__input::placeholder {
+  color: var(--bek-search-field-muted);
+  opacity: 1;
+}
+
+.bek-search-field__input:disabled {
+  cursor: not-allowed;
+}
+
+.bek-search-field__input::-webkit-search-cancel-button,
+.bek-search-field__input::-webkit-search-decoration {
+  display: none;
+}
+
+/* Clear · Voice · Filter — ikonka o'lchamidagi tugmalar (text/tertiary). */
+.bek-search-field__action {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-search-field-icon);
+  height: var(--bek-search-field-icon);
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-full);
+  background: transparent;
+  color: var(--bek-search-field-muted);
+  cursor: pointer;
+}
+
+.bek-search-field__action:disabled {
+  cursor: not-allowed;
+}
+
+.bek-search-field__action > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Loading — Clear o'rnida _Spinner. */
+.bek-search-field__spinner {
+  color: var(--bek-search-field-value);
+}
+
+/* Shortcut — "⌘K": padding 2 6, radius/control/sm, Caption/M. */
+.bek-search-field__shortcut {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: var(--bek-scale-2) var(--bek-scale-6);
+  border-radius: var(--bek-radius-control-sm);
+  background: var(--bek-search-field-chip);
+  color: var(--bek-search-field-muted);
+  font-family: inherit;
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  white-space: nowrap;
+}
+
+.bek-search-field__cancel {
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-control-sm);
+  background: transparent;
+  color: var(--bek-search-field-cancel);
+  font: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  cursor: pointer;
+}

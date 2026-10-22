@@ -80,7 +80,7 @@
     {
       "rule": "token-missing",
       "match": "--bek-fill-secondary",
-      "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchBar (3.12) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
+      "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchField (3.12 Search bar · Search field) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
     }
   ]
 }

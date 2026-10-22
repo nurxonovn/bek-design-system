@@ -84,22 +84,22 @@
     {
       "rule": "token-missing",
       "match": "--bek-fill-secondary",
-      "reason": "Type=Search qidiruv maydoni Figma'da inline chizilgan (fill/secondary fon, text/tertiary placeholder, Body/M matn, fill/strong ikonka); kodda bu SearchBar (3.12) komponenti `children` orqali qo'yiladi. Figma'da Search bar instance ishlatish kerak."
+      "reason": "Type=Search qidiruv maydoni Figma'da inline chizilgan (fill/secondary fon, text/tertiary placeholder, Body/M matn, fill/strong ikonka); kodda bu SearchField (3.12 Search bar · Search field) komponenti `children` orqali qo'yiladi. Figma'da Search bar instance ishlatish kerak."
     },
     {
       "rule": "token-missing",
       "match": "--bek-fill-strong",
-      "reason": "Qidiruv maydoni ikonkasi/ajratgichi — SearchBar komponentiga tegishli (qarang: fill/secondary sababi)."
+      "reason": "Qidiruv maydoni ikonkasi/ajratgichi — SearchField komponentiga tegishli (qarang: fill/secondary sababi)."
     },
     {
       "rule": "token-missing",
       "match": "--bek-text-tertiary",
-      "reason": "Qidiruv maydoni placeholder rangi — SearchBar komponentiga tegishli (qarang: fill/secondary sababi)."
+      "reason": "Qidiruv maydoni placeholder rangi — SearchField komponentiga tegishli (qarang: fill/secondary sababi)."
     },
     {
       "rule": "text-style-missing",
       "match": "Body/M",
-      "reason": "Body/M — qidiruv maydoni matni, SearchBar komponentida; TopNavigation'ning o'z matnlari Title/M va Headline/L."
+      "reason": "Body/M — qidiruv maydoni matni, SearchField komponentida; TopNavigation'ning o'z matnlari Title/M va Headline/L."
     }
   ]
 }

@@ -1,0 +1,139 @@
+{
+  "page": "3.12 Search bar",
+  "components": [
+    {
+      "name": "Search field",
+      "id": "1128:110102",
+      "page": "3.12 Search bar",
+      "pageId": "782:63",
+      "props": {
+        "Placeholder": {
+          "type": "TEXT",
+          "default": "Search"
+        },
+        "Value": {
+          "type": "TEXT",
+          "default": "Pizza"
+        },
+        "Scope label": {
+          "type": "TEXT",
+          "default": "All"
+        },
+        "Shortcut label": {
+          "type": "TEXT",
+          "default": "⌘K"
+        },
+        "Cancel label": {
+          "type": "TEXT",
+          "default": "Cancel"
+        },
+        "Show scope": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show voice": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show shortcut": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show filter": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show cancel": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": ["Filled", "Elevated", "On-media"],
+        "Size": ["S", "M", "L"],
+        "State": ["Default", "Hover", "Focus", "Filled", "Disabled", "Loading"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 108,
+      "size": {
+        "w": 320,
+        "h": 36
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/base",
+          "border/focus",
+          "fill/on-media",
+          "fill/soft",
+          "fill/soft-hover",
+          "surface/card",
+          "text/accent",
+          "text/disabled",
+          "text/on-color",
+          "text/on-color-muted",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/L", "Body/M", "Body/S", "Caption/M", "Label/M", "Label/S"],
+        "effect": ["Elevation/1 Raised", "Elevation/2 Raised-hover", "Glass/Small"],
+        "dimension": [
+          "field/height/lg",
+          "field/height/md",
+          "field/height/sm",
+          "radius/control/sm",
+          "radius/full",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/20",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 6, 8, 12, 16, 20, 24],
+      "rawColors": [],
+      "nested": [],
+      "description": "Search field — the entry point for search in lists, catalogues and the whole app. React: <SearchField variant size state dir />. Variant: Filled (on bg/base or cards), Elevated (white with shadow, on busy or tinted headers), On-media (glass, over photos and gradients). Size S/M/L = 36/44/56, same scale as Text field. Slots: Leading icon and Clear are swappable nested _Icon instances;"
+    }
+  ],
+  "doc": {
+    "3.12 Search bar": {
+      "tokens": [
+        "Elevation/1",
+        "Elevation/2",
+        "Elevation/3",
+        "Glass/Small",
+        "accent/default",
+        "accent/soft",
+        "bg/base",
+        "border/focus",
+        "border/hairline",
+        "fill/on-media",
+        "fill/soft",
+        "fill/soft-hover",
+        "radius/full",
+        "radius/surface/lg",
+        "scale/12",
+        "scale/16",
+        "scale/20",
+        "scale/36",
+        "scale/44",
+        "scale/56",
+        "scale/8",
+        "surface/card",
+        "surface/raised",
+        "text/disabled",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.12 Search bar\nOne search system: Search field (108 variants · Variant × Size × State × Direction), Search suggestions, Search result row and Facet panel.\nOverview\nSearch field opens Search suggestions; on catalogues the Filter slot opens the Facet panel. Every part is a separate component.\nPiz\n⌘K\nSuggestions\nPizza margherita\n↵\nPizza delivery\nPizza four cheese\nPizzeria near me\n↑ ↓ Navigate\n↵ Open\nesc Close\nFilters\nClear all\nType\n2\nIndustry\nStyle\nShape\nColor\nMood\nTYPE\nSymbol & Text\n661\nWordmark\n428\nSymbol\n118\nAnimated\n111\nApp icon\n1\n2 filters · 1,089 results\nShow results\nPiz\nCancel\nPeople\nNN\nAlicia Kumar\nHR Business Partner\nFiles\nVacation_Planning_Handbook.pdf\nMay 19 · 2025\nPlanning your vacation is an important part of keeping a healthy work-life balance.\nCoverage_Requirements.docx\nApr 11 · 2025\nMinimum staffing levels for every team during the holiday season.\nItems\nSee all\nQ2 vacation coordination\nJun 12 · 2025\nStep-by-step guidance on prioritising requests and aligning with project deadlines.\nAnatomy\nEvery slot of Search field. Leading icon and Clear are swappable _Icon instances; the rest are boolean slots.\nAll\nPiz\n⌘K\nCancel\n1\nLeading icon\n· search-01, swappable _Icon\n2\nScope\n· Show scope — where the search runs\n3\nContent\n· Placeholder or Value with caret\n4\nClear\n· cancel-circle, shown in Focus and Filled\n5\nVoice\n· Show voice — mic-01\n6\nShortcut\n· Show shortcut — ⌘K, web only\n7\nFilter\n· Show filter — opens Facet panel\n8\nCancel\n· Show cancel — mobile, closes search\n9\nFocus ring\n· _Focus ring, radius 9999\nVariants\nFilled on bg/base and cards · Elevated on tinted or busy headers · On-media over photos, gradients and brand colour.\nFilled\nfill/soft — default for lists and screens\nSearch\nPizza\nElevated\nsurface/card + Elevation/1 — stands out on bg/base\nSearch\nPizza\nOn-media\nfill/on-media + Glass/Small — over media only\nSearch\nPizza\nSizes\nSame height scale as Text field — S 36 · M 44 · L 56.\nSize S\nSearch\n36 · padding 12 · icon 16 · Body/S\nSize M\nSearch\n44 · padding 16 · icon 20 · Body/M\nSize L\nSearch\n56 · padding 20 · icon 24 · Body/L\nStates\nFocus uses the shared _Focus ring. Loading replaces Clear with a spinner while results load.\nDefault\nSearch\nPlaceholder, text/tertiary\nHover\nSearch\nfill/soft-hover\nFocus\nPizza\nCaret + Clear + _Focus ring\nFilled\nPizza\nValue + Clear\nDisabled\nSearch\ntext/disabled\nLoading\nPizza\n_Spinner instead of Clear\nDevices\nMobile 390 · Tablet 834 · Web 1440 — each screen carries its own Dimension and Typography mode.\nMobile · 390\n\nCancel\nRecent searches\nClear\nPizza delivery\nSushi near me\nLagman\nCoffee beans\nTap opens full-screen suggestions; Cancel closes search.\nTablet · 834\nPiz\nSuggestions\nPizza margherita\n↵\nPizza delivery\nPizza four cheese\nPizzeria near me\n↑ ↓ Navigate\n↵ Open\nesc Close\nElevated L field; suggestions float under it.\nWeb · 1440\nPiz\n⌘K\nPeople\nNN\nAlicia Kumar\nHR Business Partner\n↵\nFiles\nVacation_Planning_Handbook.pdf\nMay 19 · 2025\nPlanning your vacation is an important part of keeping a healthy work-life balance.\nCoverage_Requirements.docx\nApr 11 · 2025\nMinimum staffing levels for every team during the holiday season.\nItems\nSee all\nQ2 vacation coordination\nJun 12 · 2025\nStep-by-step "
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base — Figma'da komponent to'plami (Search field set) o'ramining foni, komponentning o'zi emas (checker faqat bg/sheet ni o'ram foni deb biladi). Doc'da ham Filled/Elevated qaysi fon ustida turishi uchun tilga olinadi. Figma'da set foni boshqa sahifalardagi kabi bg/sheet ga o'tkazilsa, bu yozuv olib tashlanadi."
+    }
+  ]
+}

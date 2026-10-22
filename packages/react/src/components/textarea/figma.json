@@ -96,5 +96,11 @@
       "text": "\nDesign tokens\nProperty\nToken\nValue\nMinimum height\nscale/80–3\n80 / 104 / 128\nPadding\nscale/12 · scale/16\n12 / 16\nCorner radius\nradius/control/sm – lg\n10 / 12 / 16\nSupporting top spacing\nscale/4\n4\nBorder — default\nborder/default\n—\nBorder — Focused\nborder/focus\n2px\nBorder — Error\nborder/danger\n2px\nText — value\ntext/primary\n—\nText — placeholder\ntext/tertiary\n—\nSupporting and counter\nCaption/M\n12/16\nText font\nBody/S · Body/M\n14/20 · 16/24\nProps\nProp\nType\nValues\nDefault\nVariant\nvariant\nFilled, Outlined, Underlined\nFilled\nSize\nvariant\nS (80), M (104), L (128)\nM\nState\nvariant\nEnabled, Hovered, Focused, Error, Disabled, Skeleton\nEnabled\nText configurations\nvariant\nLabel text, Placeholder text, Input text\nPlaceholder text\nLabel text\ntext\nAny text\nLabel\nPlaceholder text\ntext\nAny text\nEnter text\nInput text\ntext\nAny text\n—\nSupporting text\ntext\nAny text\nSupporting text\nCounter\ntext\nMasalan 84/500\n0/500\nShow supporting text\nboolean\ntrue / false\ntrue\nShow counter\nboolean\ntrue / false\ntrue\nDo / Don’t\nDo\nLabel\nA field for longer text. Multi-line comments or descriptions go here.\nSupporting text\n84/500\nIf there is a character limit, show the counter so the user knows how much is left.\nDon’t\nLabel\nA field for longer text. Multi-line comments or descriptions go here.\nSupporting text\nThere is a limit but the counter is hidden — the user is stopped without warning."
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-primary",
+      "reason": "fill/primary — bg/sheet ning deprecated aliasi (Color: 'Deprecated as a surface'). Umumiy maydon qobig'i (styles/field.css) Outlined focus/xato fonini Figma 3.2 Text field kabi bg/sheet dan oladi. Figma'da Textarea Outlined fonini bg/sheet ga bog'lash kerak."
+    }
+  ]
 }

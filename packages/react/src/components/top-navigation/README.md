@@ -8,7 +8,7 @@ import { TopNavigation } from '@bek-ui/react';
 <TopNavigation title="Product" onLeadingClick={goBack} actions={<ShareButton />} />
 <TopNavigation type="large-title" title="Profile" leading="none" />
 <TopNavigation type="search" leading="menu" onLeadingClick={openDrawer}>
-  <SearchBar placeholder="Search" />
+  <SearchField size="s" placeholder="Search" />
 </TopNavigation>
 <TopNavigation background="transparent" title="Gallery" />   // rasm ustida
 ```

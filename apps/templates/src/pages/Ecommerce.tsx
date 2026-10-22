@@ -14,7 +14,7 @@ import {
   Price,
   ProductCard,
   Rating,
-  SearchBar,
+  SearchField,
   Stepper,
   TextField,
   TopNavigation,
@@ -56,7 +56,7 @@ function Home() {
         </div>
       </div>
       <div className="tpl-mobile-content">
-        <SearchBar placeholder="Search UI kits, icons or templates" />
+        <SearchField size="s" placeholder="Search UI kits, icons or templates" />
         <div className="tpl-row tpl-scroll-x">
           {['All', 'UI kits', 'Icons', 'Templates'].map((label) => (
             <Chip key={label} selected={filter === label} onClick={() => setFilter(label)}>

@@ -449,10 +449,10 @@
         {
           "rule": "token-missing",
           "match": "--bek-fill-secondary",
-          "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchBar (3.12) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
+          "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchField (3.12 Search bar · Search field) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
         }
       ],
-      "readme": "# AppBar\n\nFigma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.\n`variant`: `title` · `search` · `brand`; `size`: `s` · `m`.\n\n```tsx\nimport '@bek-ui/tokens/materials.css'; // scrolled holat uchun Glass/Regular\nimport { AppBar } from '@bek-ui/react';\n\n<AppBar title=\"Orders\" onBack={goBack} scrolled={scrollY > 0}\n  actions={<Button variant=\"flat\" size=\"l\" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />\n<AppBar variant=\"search\" onBack={goBack}><SearchBar placeholder=\"Search\" /></AppBar>\n<AppBar variant=\"brand\" leading={<BekLogo size=\"s\" />} actions={…}><SearchBar placeholder=\"Search\" /></AppBar>\n// Figma \"Show count\" — bildirishnoma tugmasi ustidagi hisoblagich: actions ichida Badge\n<AppBar title=\"Inbox\" actions={<span style={{ position: 'relative' }}><Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button><Badge color=\"danger\" size=\"s\">3</Badge></span>} />\n```\n\n| Prop       | Qiymatlar                                                                            | Default |\n| ---------- | ------------------------------------------------------------------------------------ | ------- |\n| `variant`  | `title` (orqaga + sarlavha) · `search` (orqaga + qidiruv) · `brand` (logo + qidiruv) | `title` |\n| `size`     | `s` 56 (mobil) · `m` 64 (planshet, web)                                              | `s`     |\n| `scrolled` | kontent ostidan o'tganda — Glass/Regular (`glass/tint`) + `Elevation/1`              | `false` |\n| `onBack`   | orqaga tugmasi (`backLabel`)                                                         | —       |\n| `leading`  | logo va h.k.                                                                         | —       |\n| `title`    | Title/M (M — Title/L), `<h1>`                                                        | —       |\n| `children` | sarlavha o'rnida (qidiruv maydoni — SearchBar, 36 px, `fill/secondary`)              | —       |\n| `actions`  | 1–3 ta icon-only tugma                                                               | —       |\n\n- Tokenlar: `fill/primary`, gap 12, yon padding `layout/page-margin`, `z/sticky`. Scrolled=Off — chegarasiz (ajralish faqat scrollda: `glass/tint` + `glass/tint-shade`, blur 16, `Elevation/1`; `materials.css` ulansa to'liq Glass/Regular).\n- `search`/`brand` da `title` berilsa `<h1>` ekran o'quvchi uchun yashirin qoladi. Hisoblagich (`Show count`) — amal tugmasi ustidagi `Badge` (`status/danger`).\n"
+      "readme": "# AppBar\n\nFigma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.\n`variant`: `title` · `search` · `brand`; `size`: `s` · `m`.\n\n```tsx\nimport '@bek-ui/tokens/materials.css'; // scrolled holat uchun Glass/Regular\nimport { AppBar } from '@bek-ui/react';\n\n<AppBar title=\"Orders\" onBack={goBack} scrolled={scrollY > 0}\n  actions={<Button variant=\"flat\" size=\"l\" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />\n<AppBar variant=\"search\" onBack={goBack}><SearchField size=\"s\" placeholder=\"Search\" /></AppBar>\n<AppBar variant=\"brand\" leading={<BekLogo size=\"s\" />} actions={…}><SearchField size=\"s\" placeholder=\"Search\" /></AppBar>\n// Figma \"Show count\" — bildirishnoma tugmasi ustidagi hisoblagich: actions ichida Badge\n<AppBar title=\"Inbox\" actions={<span style={{ position: 'relative' }}><Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button><Badge color=\"danger\" size=\"s\">3</Badge></span>} />\n```\n\n| Prop       | Qiymatlar                                                                            | Default |\n| ---------- | ------------------------------------------------------------------------------------ | ------- |\n| `variant`  | `title` (orqaga + sarlavha) · `search` (orqaga + qidiruv) · `brand` (logo + qidiruv) | `title` |\n| `size`     | `s` 56 (mobil) · `m` 64 (planshet, web)                                              | `s`     |\n| `scrolled` | kontent ostidan o'tganda — Glass/Regular (`glass/tint`) + `Elevation/1`              | `false` |\n| `onBack`   | orqaga tugmasi (`backLabel`)                                                         | —       |\n| `leading`  | logo va h.k.                                                                         | —       |\n| `title`    | Title/M (M — Title/L), `<h1>`                                                        | —       |\n| `children` | sarlavha o'rnida (qidiruv maydoni — `SearchField size=\"s\"`, 36 px)                   | —       |\n| `actions`  | 1–3 ta icon-only tugma                                                               | —       |\n\n- Tokenlar: `fill/primary`, gap 12, yon padding `layout/page-margin`, `z/sticky`. Scrolled=Off — chegarasiz (ajralish faqat scrollda: `glass/tint` + `glass/tint-shade`, blur 16, `Elevation/1`; `materials.css` ulansa to'liq Glass/Regular).\n- `search`/`brand` da `title` berilsa `<h1>` ekran o'quvchi uchun yashirin qoladi. Hisoblagich (`Show count`) — amal tugmasi ustidagi `Badge` (`status/danger`).\n"
     },
     {
       "dir": "avatar",
@@ -1303,7 +1303,7 @@
           "reason": "Contrast oilasi pressed/selected holati — fill/on-color-pressed; Figma'da Pressed varianti yo'q (doc: 'Pressed (code)')."
         }
       ],
-      "readme": "# Button\n\nFigma: **3.1 Button**. Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.\n\n```tsx\nimport { Button } from '@bek-ui/react';\n\n<Button variant=\"action\">Save changes</Button>\n<Button variant=\"outline-danger\" size=\"l\" startIcon={<TrashIcon />}>Delete</Button>\n<Button loading>Saving</Button>\n<Button variant=\"flat\" pressed={isBold} onClick={toggleBold}>Bold</Button>\n<Button variant=\"flat\" iconOnly startIcon={<CloseIcon />}>Close</Button>   // \"Close\" — ekran o'quvchi uchun\n```\n\n| Prop        | Qiymatlar                                                                                                                                                                                                          | Default  |\n| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |\n| `variant`   | `normal` · `action` · `danger` · `raised` · `outline` · `outline-{action·info·success·warning·danger·utility}` · `flat` · `flat-{…}` · `flat-secondary` · `normal-contrast` · `outline-contrast` · `flat-contrast` | `normal` |\n| `size`      | `m` 28 · `l` 36 · `xl` 44 · `2xl` 52 · `3xl` 60 px                                                                                                                                                                 | `m`      |\n| `startIcon` | `ReactNode` — o'lchami tugmaga qarab: 16 · 16 · 20 · 24 · 24 px                                                                                                                                                    | —        |\n| `endIcon`   | `ReactNode`                                                                                                                                                                                                        | —        |\n| `loading`   | spinner start icon o'rnida, `aria-busy`, bosish bloklanadi, ranglar saqlanadi                                                                                                                                      | `false`  |\n| `pressed`   | toggle — `aria-pressed` (Figma: State=Selected)                                                                                                                                                                    | —        |\n| `iconOnly`  | faqat ikonka; `children` ko'rinmas nom bo'lib qoladi                                                                                                                                                               | `false`  |\n\nQolgan `<button>` atributlari (`disabled`, `type`, `onClick`, `aria-*`) o'tadi; `type` default — `button`. Focus — `.bek-focus-ring` (faqat klaviatura).\n\n## Qachon qaysi variant\n\n- **Action** — hududdagi bitta asosiy amal (Save, Pay, Continue).\n- **Normal, Outline** — asosiy amal yonidagi ikkinchi darajali (Cancel, Back, Export).\n- **Flat** — toolbar, jadval qatori, \"Show more\".\n- **Danger / Outline-danger / Flat-danger** — qaytarib bo'lmaydigan amal; Alert dialog (7.6) bilan tasdiqlang.\n- info / success / warning / utility ohanglari — faqat ma'no tashisa. **Raised** — xarita yoki media ustida. **Contrast** — faqat to'q yoki rasm fon ustida.\n\n## O'lcham va qurilma\n\n- Mobile: default **xl** (44 px), asosiy amal **2xl** va to'liq kenglik; touch'da xl dan kichik emas.\n- Tablet: touch'da xl, pointer toolbarida l.\n- Web: formalarda **l**, zich UI'da (jadval, filtr) **m**; xl–3xl faqat marketing CTA.\n- Guruhdagi oraliq: m/l — 8 px, xl–3xl — 12 px. Bir guruhda bitta o'lcham, ko'pi bilan 3 tugma.\n\n## Matn\n\nFe'l bilan boshlang va natijani ayting: \"Save changes\", \"Create project\". 1–3 so'z, gap shaklida, nuqtasiz, bir qatorda. Sahifani almashtirsa — bu havola, tugma emas.\n"
+      "readme": "# Button\n\nFigma: **3.1 Button**. Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.\n\n```tsx\nimport { Button } from '@bek-ui/react';\n\n<Button variant=\"action\">Save changes</Button>\n<Button variant=\"outline-danger\" size=\"l\" startIcon={<TrashIcon />}>Delete</Button>\n<Button loading>Saving</Button>\n<Button variant=\"flat\" pressed={isBold} onClick={toggleBold}>Bold</Button>\n<Button variant=\"flat\" iconOnly startIcon={<CloseIcon />}>Close</Button>   // \"Close\" — ekran o'quvchi uchun\n```\n\n| Prop        | Qiymatlar                                                                                                                                                                                                          | Default  |\n| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |\n| `variant`   | `normal` · `action` · `danger` · `raised` · `outline` · `outline-{action·info·success·warning·danger·utility}` · `flat` · `flat-{…}` · `flat-secondary` · `normal-contrast` · `outline-contrast` · `flat-contrast` | `normal` |\n| `size`      | `m` 28 · `l` 36 · `xl` 44 · `2xl` 56 · `3xl` 64 px                                                                                                                                                                 | `m`      |\n| `startIcon` | `ReactNode` — o'lchami tugmaga qarab: 16 · 16 · 20 · 24 · 24 px                                                                                                                                                    | —        |\n| `endIcon`   | `ReactNode`                                                                                                                                                                                                        | —        |\n| `loading`   | spinner start icon o'rnida, `aria-busy`, bosish bloklanadi, ranglar saqlanadi                                                                                                                                      | `false`  |\n| `pressed`   | toggle — `aria-pressed` (Figma: State=Selected)                                                                                                                                                                    | —        |\n| `iconOnly`  | faqat ikonka; `children` ko'rinmas nom bo'lib qoladi                                                                                                                                                               | `false`  |\n\nQolgan `<button>` atributlari (`disabled`, `type`, `onClick`, `aria-*`) o'tadi; `type` default — `button`. Focus — `.bek-focus-ring` (faqat klaviatura).\n\n## Qachon qaysi variant\n\n- **Action** — hududdagi bitta asosiy amal (Save, Pay, Continue).\n- **Normal, Outline** — asosiy amal yonidagi ikkinchi darajali (Cancel, Back, Export).\n- **Flat** — toolbar, jadval qatori, \"Show more\".\n- **Danger / Outline-danger / Flat-danger** — qaytarib bo'lmaydigan amal; Alert dialog (7.6) bilan tasdiqlang.\n- info / success / warning / utility ohanglari — faqat ma'no tashisa. **Raised** — xarita yoki media ustida. **Contrast** — faqat to'q yoki rasm fon ustida.\n\n## O'lcham va qurilma\n\n- Mobile: default **xl** (44 px), asosiy amal **2xl** va to'liq kenglik; touch'da xl dan kichik emas.\n- Tablet: touch'da xl, pointer toolbarida l.\n- Web: formalarda **l**, zich UI'da (jadval, filtr) **m**; xl–3xl faqat marketing CTA.\n- Guruhdagi oraliq: m/l — 8 px, xl–3xl — 12 px. Bir guruhda bitta o'lcham, ko'pi bilan 3 tugma.\n\n## Matn\n\nFe'l bilan boshlang va natijani ayting: \"Save changes\", \"Create project\". 1–3 so'z, gap shaklida, nuqtasiz, bir qatorda. Sahifani almashtirsa — bu havola, tugma emas.\n"
     },
     {
       "dir": "card",
@@ -1901,7 +1901,7 @@
           "reason": "bg/base — Figma'da Checkout bar variant frame'i ortidagi ekran foni (demo); bar o'zi surface/raised + Elevation/1. Doc'da esa \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga moslanishi kerak."
         }
       ],
-      "readme": "# CheckoutBar · CartPill\n\nFigma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.\n\n```tsx\nimport { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';\n\n<CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}\n  action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />\n<CheckoutBar type=\"checkout\" total=\"159 000 soʻm\" action={{ label: 'Pay', loading: paying }}\n  legal=\"By tapping Pay you agree to the terms\" />\n<CartPill icon={<BagIcon />} label=\"Cart · 3 items\" total=\"147 000 soʻm\" onClick={openCart} />\n```\n\n| Prop (`CheckoutBar`)   | Qiymatlar                                           | Default |\n| ---------------------- | --------------------------------------------------- | ------- |\n| `type`                 | `cart` · `checkout`                                 | `cart`  |\n| `info`                 | yuqoridagi izoh (InfoWrap)                          | —       |\n| `total` · `totalLabel` | jami (Title/L) va uning nomi (Caption/L)            | `Total` |\n| `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |\n| `legal`                | Caption/M `text/tertiary`                           | —       |\n\n- `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.\n- `CartPill` (Floating): 60 px accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.\n"
+      "readme": "# CheckoutBar · CartPill\n\nFigma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.\n\n```tsx\nimport { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';\n\n<CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}\n  action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />\n<CheckoutBar type=\"checkout\" total=\"159 000 soʻm\" action={{ label: 'Pay', loading: paying }}\n  legal=\"By tapping Pay you agree to the terms\" />\n<CartPill icon={<BagIcon />} label=\"Cart · 3 items\" total=\"147 000 soʻm\" onClick={openCart} />\n```\n\n| Prop (`CheckoutBar`)   | Qiymatlar                                           | Default |\n| ---------------------- | --------------------------------------------------- | ------- |\n| `type`                 | `cart` · `checkout`                                 | `cart`  |\n| `info`                 | yuqoridagi izoh (InfoWrap)                          | —       |\n| `total` · `totalLabel` | jami (Title/L) va uning nomi (Caption/L)            | `Total` |\n| `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |\n| `legal`                | Caption/M `text/tertiary`                           | —       |\n\n- `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.\n- `CartPill` (Floating): 64 px (`control/height/3xl`) accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.\n"
     },
     {
       "dir": "chip",
@@ -6709,11 +6709,12 @@
       "readme": "# Rating\n\nFigma: **4.10 Rating** — faqat o'qish uchun reyting (mahsulot, kurs, joy). `variant`: `stars` (5 yulduz, 0.5 qadam) · `compact` (bitta yulduz + ball); `size`: `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<Rating value={4.5} count=\"(1 245 sharh)\" locale=\"uz\" />\n<Rating value={4.8} variant=\"compact\" size=\"s\" />\n```\n\n`role=\"img\"` + `aria-label=\"4,5 / 5\"`; Tab to'xtashi emas. Ball locale bo'yicha formatlanadi. To'liq yulduz — `status/warning/default`, bo'sh — `border/strong`.\n"
     },
     {
-      "dir": "search-bar",
+      "dir": "search-field",
       "package": "@bek-ui/react",
-      "title": "SearchBar",
-      "description": "ro'yxat va katalog uchun pill qidiruv. size: m 36 (zich UI) · l 44 (touch).",
+      "title": "SearchField",
+      "description": "Search field: ro'yxat, katalog va butun ilova uchun pill qidiruv maydoni.",
       "exports": [
+        "SearchField",
         "SearchBar"
       ],
       "section": {
@@ -6730,28 +6731,69 @@
         ],
         "sets": [
           {
-            "name": "Search bar",
-            "id": "785:259",
-            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=785-259",
-            "variants": 12,
-            "description": "Search bar — a pill search field for lists and catalogues. Default shows placeholder; Focused lifts to surface/raised, shows the caret, clear button and a Cancel text action; Filled keeps the query with a clear button. M 36 for dense UIs, L 44 for touch. Results update as you type.",
+            "name": "Search field",
+            "id": "1128:110102",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1128-110102",
+            "variants": 108,
+            "description": "Search field — the entry point for search in lists, catalogues and the whole app. React: <SearchField variant size state dir />. Variant: Filled (on bg/base or cards), Elevated (white with shadow, on busy or tinted headers), On-media (glass, over photos and gradients). Size S/M/L = 36/44/56, same scale as Text field. Slots: Leading icon and Clear are swappable nested _Icon instances;",
             "props": {
               "Placeholder": {
                 "type": "TEXT",
-                "default": "Search products"
+                "default": "Search"
+              },
+              "Value": {
+                "type": "TEXT",
+                "default": "Pizza"
+              },
+              "Scope label": {
+                "type": "TEXT",
+                "default": "All"
+              },
+              "Shortcut label": {
+                "type": "TEXT",
+                "default": "⌘K"
               },
               "Cancel label": {
                 "type": "TEXT",
                 "default": "Cancel"
               },
+              "Show scope": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show voice": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show shortcut": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show filter": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show cancel": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Variant": [
+                "Filled",
+                "Elevated",
+                "On-media"
+              ],
               "Size": [
+                "S",
                 "M",
                 "L"
               ],
               "State": [
                 "Default",
-                "Focused",
-                "Filled"
+                "Hover",
+                "Focus",
+                "Filled",
+                "Disabled",
+                "Loading"
               ],
               "Direction": [
                 "LTR",
@@ -6761,53 +6803,87 @@
             "tokens": {
               "color": [
                 "accent/default",
-                "bg/sheet",
-                "fill/secondary",
-                "surface/raised",
+                "bg/base",
+                "border/focus",
+                "fill/on-media",
+                "fill/soft",
+                "fill/soft-hover",
+                "surface/card",
                 "text/accent",
+                "text/disabled",
+                "text/on-color",
+                "text/on-color-muted",
                 "text/primary",
+                "text/secondary",
                 "text/tertiary"
               ],
               "text": [
                 "Body/L",
                 "Body/M",
-                "Label/L",
-                "Label/M"
+                "Body/S",
+                "Caption/M",
+                "Label/M",
+                "Label/S"
               ],
               "effect": [
-                "Elevation/1 Raised"
+                "Elevation/1 Raised",
+                "Elevation/2 Raised-hover",
+                "Glass/Small"
               ],
               "dimension": [
+                "field/height/lg",
+                "field/height/md",
+                "field/height/sm",
+                "radius/control/sm",
                 "radius/full",
                 "scale/12",
-                "scale/36",
-                "scale/44",
+                "scale/16",
+                "scale/2",
+                "scale/20",
+                "scale/6",
                 "scale/8"
               ]
             },
-            "nested": [
-              "cancel-circle",
-              "search-01"
-            ]
+            "nested": []
           }
         ],
         "docTokens": [
           "Elevation/1",
+          "Elevation/2",
+          "Elevation/3",
+          "Glass/Small",
           "accent/default",
-          "fill/disabled",
-          "fill/secondary",
+          "accent/soft",
+          "bg/base",
+          "border/focus",
+          "border/hairline",
+          "fill/on-media",
+          "fill/soft",
+          "fill/soft-hover",
           "radius/full",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/16",
+          "scale/20",
           "scale/36",
           "scale/44",
+          "scale/56",
+          "scale/8",
+          "surface/card",
           "surface/raised",
-          "text/accent",
           "text/disabled",
           "text/primary",
           "text/tertiary"
         ]
       },
-      "accepted": [],
-      "readme": "# SearchBar\n\nFigma: **3.12 Search bar** — ro'yxat va katalog uchun pill qidiruv. `size`: `m` 36 (zich UI) · `l` 44 (touch).\n\n```tsx\n<SearchBar\n  aria-label=\"Mahsulot qidirish\"\n  placeholder=\"Mahsulot qidirish\"\n  value={q}\n  onChange={(e) => setQ(e.target.value)}\n  onClear={() => setQ('')}\n  onCancel={close}\n  cancelLabel=\"Bekor qilish\"\n/>\n```\n\n`role=\"search\"` o'ram, `type=\"search\"` input. Qiymat bo'lsa — tozalash (×); `onCancel` berilsa focus paytida \"Cancel\" matn tugmasi chiqadi. Focus'da maydon `surface/raised` ga ko'tariladi. Natijalar yozish bilan yangilanadi — alohida \"Qidirish\" tugmasi shart emas.\n"
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "bg/base — Figma'da komponent to'plami (Search field set) o'ramining foni, komponentning o'zi emas (checker faqat bg/sheet ni o'ram foni deb biladi). Doc'da ham Filled/Elevated qaysi fon ustida turishi uchun tilga olinadi. Figma'da set foni boshqa sahifalardagi kabi bg/sheet ga o'tkazilsa, bu yozuv olib tashlanadi."
+        }
+      ],
+      "readme": "# SearchField\n\nFigma: **3.12 Search bar** — Search field: ro'yxat, katalog va butun ilova uchun pill qidiruv maydoni.\n`variant`: `filled` · `elevated` · `on-media`; `size`: `s` 36 · `m` 44 · `l` 56 (Text field bilan bir xil\n`field/height/*` shkalasi).\n\n```tsx\n<SearchField\n  aria-label=\"Mahsulot qidirish\"\n  placeholder=\"Mahsulot qidirish\"\n  value={q}\n  onChange={(e) => setQ(e.target.value)}\n  onClear={() => setQ('')}\n  onCancel={close}\n  cancelLabel=\"Bekor qilish\"\n/>\n\n// Katalog: qamrov, ovoz, ⌘K yorlig'i va filtr (Facet panel)\n<SearchField\n  variant=\"elevated\"\n  size=\"l\"\n  scope=\"All\"\n  shortcut=\"⌘K\"\n  onVoice={startDictation}\n  onFilter={openFacets}\n  loading={isFetching}\n/>\n```\n\n| Prop                       | Figma                          | Qiymatlar / ma'nosi                                              | Default    |\n| -------------------------- | ------------------------------ | ---------------------------------------------------------------- | ---------- |\n| `variant`                  | Variant                        | `filled` · `elevated` · `on-media`                               | `filled`   |\n| `size`                     | Size                           | `s` 36 · `m` 44 · `l` 56                                         | `m`        |\n| `placeholder`              | Placeholder                    | matn (text/tertiary)                                             | `'Search'` |\n| `value` · `defaultValue`   | Value                          | boshqariladigan / boshqarilmaydigan qiymat                       | —          |\n| `scope`                    | Show scope · Scope label       | qidiruv qayerda ishlaydi (\"All\"); inputga `aria-describedby`     | —          |\n| `onVoice` · `voiceLabel`   | Show voice                     | mikrofon tugmasi (mic-01)                                        | —          |\n| `shortcut`                 | Show shortcut · Shortcut label | `⌘K` yorlig'i, faqat web; inputga `aria-keyshortcuts` (`Meta+K`) | —          |\n| `onFilter` · `filterLabel` | Show filter                    | Facet panelini ochuvchi tugma                                    | —          |\n| `onClear` · `clearLabel`   | Clear                          | tozalash (cancel-circle) — faqat qiymat bo'lsa                   | `'Clear'`  |\n| `onCancel` · `cancelLabel` | Show cancel · Cancel label     | mobil \"Cancel\" — focus paytida, qidiruvni yopadi                 | `'Cancel'` |\n| `loading` · `loadingLabel` | State=Loading                  | Clear o'rnida `Spinner`, o'ramda `aria-busy`                     | `false`    |\n| `disabled`                 | State=Disabled                 | text/disabled, Elevated soyasiz                                  | `false`    |\n| `dir`                      | Direction                      | `rtl` — o'ramga qo'yiladi, joylashuv logical properties bilan    | —          |\n\n## Variantlar\n\n- **Filled** — `fill/soft` (hover `fill/soft-hover`). Ro'yxat va ekranlar uchun standart, `bg/base` va kartalar ustida.\n- **Elevated** — `surface/card` + `Elevation/1` (hover `Elevation/2`). Tusli yoki gavjum sarlavhalarda ajralib turadi.\n- **On-media** — `fill/on-media` + `Glass/Small`, matn `text/on-color`. **Faqat** rasm, gradient yoki brend rangi\n  ustida; `bg/base` yoki oq karta ustida ishlatmang. To'liq shisha effekti uchun `@bek-ui/tokens/materials.css` ni ulang.\n\n## Holatlar\n\nHolatlar prop emas, CSS: Hover — `:hover`; Focus — `_Focus ring` (2 px `border/focus`, radius 9999) va caret\n`accent/default`; Filled — qiymat + Clear; Disabled — `disabled`; Loading — `loading`. Dark mode alohida variantsiz,\ntokenlardan.\n\n## Qoidalar (Figma doc)\n\n- `role=\"search\"` o'ram, `type=\"search\"` input. Natijalar yozish bilan yangilanadi — alohida \"Qidirish\" tugmasi shart emas.\n- Focus bo'lishi bilan oxirgi qidiruvlarni (Recent), 1–2 belgidan keyin takliflarni ko'rsating; kutish paytida\n  bo'sh panel emas, `loading`.\n- Filtrlar maydon ichida emas: `onFilter` faqat kataloglarda, u Facet panelni ochadi; qo'llangan filtrlar maydon\n  ostida `Chip` sifatida.\n- Mobil: to'liq ekranli takliflar va `onCancel`. Web: takliflar maydon ostida, ↑ ↓ ↵ esc bilan boshqariladi.\n- `shortcut` — faqat yorliq va `aria-keyshortcuts`; tugmalar bog'lanishini (masalan, ⌘K → `input.focus()`) ilova\n  o'zi qiladi. Butun mahsulot bo'yicha qidiruv va amallar uchun — 7.7 Command palette.\n- `aria-label` (yoki tashqi `<label>`) bering: placeholder yorliq o'rnini bosmaydi.\n\n## Eski `SearchBar`\n\n`SearchBar` — eskirgan (deprecated) alias: `size=\"m\"` → `s` (36), `size=\"l\"` → `m` (44). Yangi kodda `SearchField`.\n"
     },
     {
       "dir": "segmented-control",
@@ -6949,7 +7025,7 @@
             "id": "78:2792",
             "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=78-2792",
             "variants": 252,
-            "description": "Pick from a list. Variant × Size × State × Text configurations = 252 variants. The chevron rotates in the Open state.",
+            "description": "Pick from a list. Variant × Size × State × Text configurations = 252 variants. The chevron rotates in the Open state. Heights use field/height/* (S 36 · M 44 · L 56 · XL 64) and pair with Button L · XL · 2XL · 3XL (CMP-12).",
             "props": {
               "Label text": {
                 "type": "TEXT",
@@ -7003,9 +7079,9 @@
             },
             "tokens": {
               "color": [
+                "bg/sheet",
                 "border/danger",
                 "border/focus",
-                "fill/primary",
                 "fill/soft",
                 "fill/soft-hover",
                 "fill/soft-pressed",
@@ -7022,18 +7098,18 @@
               ],
               "effect": [],
               "dimension": [
+                "field/height/lg",
+                "field/height/md",
+                "field/height/sm",
+                "field/height/xl",
                 "radius/control/lg",
                 "radius/control/md",
                 "scale/12",
                 "scale/16",
                 "scale/24",
                 "scale/32",
-                "scale/36",
                 "scale/4",
                 "scale/40",
-                "scale/44",
-                "scale/56",
-                "scale/64",
                 "scale/8"
               ]
             },
@@ -7059,7 +7135,7 @@
         ]
       },
       "accepted": [],
-      "readme": "# Select\n\nFigma: **3.3 Select** — ro'yxatdan tanlash. Native `<select>` (klaviatura, mobil picker, autofill tayyor) TextField qobig'ida.\n\n```tsx\n<Select\n  label=\"Mamlakat\"\n  placeholder=\"Tanlang\"\n  value={country}\n  onChange={(e) => setCountry(e.target.value)}\n>\n  <option value=\"uz\">Oʻzbekiston</option>\n  <option value=\"kz\">Qozogʻiston</option>\n</Select>\n```\n\nProplar TextField bilan bir xil: `label`, `placeholder`, `supportingText`, `error`, `variant` (`filled` · `outlined` · `plain`), `size` (`s` · `m` · `l` · `xl`, default `m`), `leadingIcon`, `skeleton`. Qolgan `<select>` atributlari o'tadi; `ref` — select'ga.\n\nFigma'dagi \"Open\" holati (o'q 180° buriladi) native ro'yxatda brauzer tomonidan chiziladi. Qidiruvli yoki maxsus ko'rinishli ro'yxat kerak bo'lsa — Dropdown menu (7.4) bilan alohida komponent bo'ladi.\n"
+      "readme": "# Select\n\nFigma: **3.3 Select** — ro'yxatdan tanlash. Native `<select>` (klaviatura, mobil picker, autofill tayyor) TextField qobig'ida.\n\n```tsx\n<Select\n  label=\"Mamlakat\"\n  placeholder=\"Tanlang\"\n  value={country}\n  onChange={(e) => setCountry(e.target.value)}\n>\n  <option value=\"uz\">Oʻzbekiston</option>\n  <option value=\"kz\">Qozogʻiston</option>\n</Select>\n```\n\nProplar TextField bilan bir xil: `label`, `placeholder`, `supportingText`, `error`, `variant` (`filled` · `outlined` · `plain`), `size` (`s` 36 · `m` 44 · `l` 56 · `xl` 64 — `field/height/*`, default `m`; yonidagi Button: L · XL · 2XL · 3XL), `leadingIcon`, `skeleton`. Qolgan `<select>` atributlari o'tadi; `ref` — select'ga.\n\nFigma'dagi \"Open\" holati (o'q 180° buriladi) native ro'yxatda brauzer tomonidan chiziladi. Qidiruvli yoki maxsus ko'rinishli ro'yxat kerak bo'lsa — Dropdown menu (7.4) bilan alohida komponent bo'ladi.\n"
     },
     {
       "dir": "separator",
@@ -8230,8 +8306,8 @@
             "name": "Text field",
             "id": "49:20100",
             "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=49-20100",
-            "variants": 252,
-            "description": "Text input field. Variant × Size × State × Text configurations = 252 variants. Supporting text is built into the component.",
+            "variants": 273,
+            "description": "Text input field. Variant (Filled · Outlined · Underlined) × Size (S 36 · M 44 · L 56 · XL 64, Underlined also 2XL 72) × State × Text configurations. Heights use field/height/* — a Button beside the field uses the same height (S↔Button L, M↔XL, L↔2XL, XL↔3XL). Prefix / Suffix (Show prefix, Show suffix) for currency, units, +998. Underlined L–2XL is the login / onboarding style. Supporting text is ",
             "props": {
               "Label text": {
                 "type": "TEXT",
@@ -8261,16 +8337,33 @@
                 "type": "BOOLEAN",
                 "default": true
               },
+              "Prefix": {
+                "type": "TEXT",
+                "default": "UZS"
+              },
+              "Suffix": {
+                "type": "TEXT",
+                "default": ".00"
+              },
+              "Show prefix": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show suffix": {
+                "type": "BOOLEAN",
+                "default": false
+              },
               "Variant": [
                 "Filled",
                 "Outlined",
-                "Plain"
+                "Underlined"
               ],
               "Size": [
                 "S",
                 "M",
                 "L",
-                "XL"
+                "XL",
+                "2XL"
               ],
               "State": [
                 "Enabled",
@@ -8289,9 +8382,12 @@
             },
             "tokens": {
               "color": [
+                "bg/sheet",
+                "border/accent",
                 "border/danger",
+                "border/default",
                 "border/focus",
-                "fill/primary",
+                "border/hairline",
                 "fill/soft",
                 "fill/soft-hover",
                 "fill/soft-pressed",
@@ -8304,22 +8400,24 @@
               "text": [
                 "Body/M",
                 "Caption/M",
+                "Headline/S",
                 "Label/Input"
               ],
               "effect": [],
               "dimension": [
+                "field/height/2xl",
+                "field/height/lg",
+                "field/height/md",
+                "field/height/sm",
+                "field/height/xl",
                 "radius/control/lg",
                 "radius/control/md",
                 "scale/12",
                 "scale/16",
                 "scale/24",
                 "scale/32",
-                "scale/36",
                 "scale/4",
                 "scale/40",
-                "scale/44",
-                "scale/56",
-                "scale/64",
                 "scale/8"
               ]
             },
@@ -8331,6 +8429,8 @@
           "border/default",
           "border/focus",
           "control/height",
+          "control/height/",
+          "control/height/lg",
           "fill/primary",
           "radius/control/sm",
           "scale/1",
@@ -8347,7 +8447,7 @@
         ]
       },
       "accepted": [],
-      "readme": "# TextField\n\nFigma: **3.2 Text field**. Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.\n\n```tsx\nimport { TextField } from '@bek-ui/react';\n\n<TextField label=\"Email\" type=\"email\" />\n<TextField label=\"Telefon\" placeholder=\"+998 __ ___ __ __\" supportingText=\"SMS kod yuboriladi\" />\n<TextField label=\"Karta\" error supportingText=\"Karta raqami noto'g'ri\" />\n<TextField variant=\"outlined\" size=\"l\" leadingIcon={<SearchIcon />} loading />\n```\n\n| Prop             | Qiymatlar                                    | Default  |\n| ---------------- | -------------------------------------------- | -------- |\n| `label`          | `string`                                     | —        |\n| `supportingText` | `ReactNode` — yordam yoki xato matni         | —        |\n| `error`          | `boolean` — `aria-invalid`, qizil chegara    | `false`  |\n| `variant`        | `filled` · `outlined` · `plain`              | `filled` |\n| `size`           | `s` 36 · `m` 44 · `l` 56 · `xl` 64 px        | `m`      |\n| `leadingIcon`    | `ReactNode` — slot 32 (s, m) · 40 (l, xl)    | —        |\n| `trailingIcon`   | `ReactNode` — tozalash, ko'rsatish, kalendar | —        |\n| `loading`        | o'ngda spinner                               | `false`  |\n| `skeleton`       | faqat maydon shakli                          | `false`  |\n\nQolgan `<input>` atributlari (`value`, `onChange`, `type`, `name`, `disabled` …) input'ga o'tadi; `ref` — input'ga; `className` — tashqi o'ramga.\n\n- **Filled** — default, kulrang fon. **Outlined** — focus'da `fill/primary` fon. **Plain** — fonsiz, hover'da yumshoq fon.\n- Focus — `border/focus` 2 px halqa, 2 px oraliq. Xato — `border/danger` 1 px + qizil yordamchi matn; xato faqat rang bilan emas, matn bilan ham aytiladi.\n- Mobile va Tablet'da qiymat 16 px (iOS zoom qilmasligi uchun) — `s` o'lchamda `Label/Input` tokeni shuni ta'minlaydi.\n- Maydon qobig'i (`.bek-field*`) Select va Textarea bilan umumiy: `src/styles/field.css`.\n"
+      "readme": "# TextField\n\nFigma: **3.2 Text field**. Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.\n\n```tsx\nimport { TextField } from '@bek-ui/react';\n\n<TextField label=\"Email\" type=\"email\" />\n<TextField label=\"Telefon\" placeholder=\"+998 __ ___ __ __\" supportingText=\"SMS kod yuboriladi\" />\n<TextField label=\"Karta\" error supportingText=\"Karta raqami noto'g'ri\" />\n<TextField variant=\"outlined\" size=\"l\" leadingIcon={<SearchIcon />} loading />\n<TextField label=\"Summa\" prefix=\"UZS\" suffix=\".00\" inputMode=\"decimal\" />\n<TextField variant=\"underlined\" size=\"2xl\" label=\"Telefon\" prefix=\"+998\" type=\"tel\" />\n```\n\n| Prop             | Qiymatlar                                                           | Default  |\n| ---------------- | ------------------------------------------------------------------- | -------- |\n| `label`          | `string`                                                            | —        |\n| `supportingText` | `ReactNode` — yordam yoki xato matni                                | —        |\n| `error`          | `boolean` — `aria-invalid`, qizil chegara                           | `false`  |\n| `variant`        | `filled` · `outlined` · `underlined`                                | `filled` |\n| `size`           | `s` 36 · `m` 44 · `l` 56 · `xl` 64 · `2xl` 72 px (`field/height/*`) | `m`      |\n| `prefix`         | `ReactNode` — valyuta, `+998` (Show prefix)                         | —        |\n| `suffix`         | `ReactNode` — birlik, `.00` (Show suffix)                           | —        |\n| `leadingIcon`    | `ReactNode` — slot 32 (s, m) · 40 (l, xl, 2xl)                      | —        |\n| `trailingIcon`   | `ReactNode` — tozalash, ko'rsatish, kalendar                        | —        |\n| `loading`        | o'ngda spinner                                                      | `false`  |\n| `skeleton`       | faqat maydon shakli                                                 | `false`  |\n\nQolgan `<input>` atributlari (`value`, `onChange`, `type`, `name`, `disabled` …) input'ga o'tadi; `ref` — input'ga; `className` — tashqi o'ramga.\n\n- **Filled** — default, `fill/soft` fon. **Outlined** — focus va xatoda `bg/sheet` fon. **Underlined** — fonsiz, pastki chiziq `border/default` 1 px (hover — `fill/soft`, focus — `border/accent` 2 px, xato — `border/danger` 2 px, disabled — `border/hairline`). Underlined L–2XL — login / onboarding uslubi; `2xl` (72, qiymat Headline/S) faqat Underlined bilan.\n- `variant=\"plain\"` — eski nom (deprecated): Figma'da Plain o'rniga Underlined keldi, endi `underlined` sifatida chiziladi.\n- Balandlik `field/height/*` — yonidagi Button shu balandlikda bo'ladi: S ↔ Button L, M ↔ XL, L ↔ 2XL, XL ↔ 3XL (Figma 1.12 Forms · height pairing).\n- Prefix / Suffix — qiymat uslubida, `text/tertiary`; label doim yuqorida (suzuvchi) turadi. Ekran o'quvchi uchun `aria-describedby` ga qo'shiladi.\n- Focus — `border/focus` 2 px halqa, 2 px oraliq. Xato — `border/danger` 1 px + qizil yordamchi matn; xato faqat rang bilan emas, matn bilan ham aytiladi.\n- Mobile va Tablet'da qiymat 16 px (iOS zoom qilmasligi uchun) — `s` o'lchamda `Label/Input` tokeni shuni ta'minlaydi.\n- Maydon qobig'i (`.bek-field*`) Select va Textarea bilan umumiy: `src/styles/field.css`.\n"
     },
     {
       "dir": "textarea",
@@ -8477,7 +8577,13 @@
           "text/tertiary"
         ]
       },
-      "accepted": [],
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-fill-primary",
+          "reason": "fill/primary — bg/sheet ning deprecated aliasi (Color: 'Deprecated as a surface'). Umumiy maydon qobig'i (styles/field.css) Outlined focus/xato fonini Figma 3.2 Text field kabi bg/sheet dan oladi. Figma'da Textarea Outlined fonini bg/sheet ga bog'lash kerak."
+        }
+      ],
       "readme": "# Textarea\n\nFigma: **3.7 Textarea** — ko'p qatorli matn, yordamchi qatorning o'ng tomonida belgi hisoblagichi.\n\n```tsx\n<Textarea label=\"Izoh\" maxLength={500} showCount supportingText=\"Ixtiyoriy\" />\n```\n\n| Prop        | Qiymatlar                                 | Default  |\n| ----------- | ----------------------------------------- | -------- |\n| `size`      | `s` 80 · `m` 104 · `l` 128 px (min)       | `m`      |\n| `showCount` | `\"5/500\"` hisoblagich (`maxLength` bilan) | `false`  |\n| `variant`   | `filled` · `outlined` · `plain`           | `filled` |\n\n`label`, `placeholder`, `supportingText`, `error`, `skeleton` — TextField kabi. Balandlikni foydalanuvchi pastga cho'zishi mumkin (`resize: vertical`).\n"
     },
     {
@@ -9029,25 +9135,25 @@
         {
           "rule": "token-missing",
           "match": "--bek-fill-secondary",
-          "reason": "Type=Search qidiruv maydoni Figma'da inline chizilgan (fill/secondary fon, text/tertiary placeholder, Body/M matn, fill/strong ikonka); kodda bu SearchBar (3.12) komponenti `children` orqali qo'yiladi. Figma'da Search bar instance ishlatish kerak."
+          "reason": "Type=Search qidiruv maydoni Figma'da inline chizilgan (fill/secondary fon, text/tertiary placeholder, Body/M matn, fill/strong ikonka); kodda bu SearchField (3.12 Search bar · Search field) komponenti `children` orqali qo'yiladi. Figma'da Search bar instance ishlatish kerak."
         },
         {
           "rule": "token-missing",
           "match": "--bek-fill-strong",
-          "reason": "Qidiruv maydoni ikonkasi/ajratgichi — SearchBar komponentiga tegishli (qarang: fill/secondary sababi)."
+          "reason": "Qidiruv maydoni ikonkasi/ajratgichi — SearchField komponentiga tegishli (qarang: fill/secondary sababi)."
         },
         {
           "rule": "token-missing",
           "match": "--bek-text-tertiary",
-          "reason": "Qidiruv maydoni placeholder rangi — SearchBar komponentiga tegishli (qarang: fill/secondary sababi)."
+          "reason": "Qidiruv maydoni placeholder rangi — SearchField komponentiga tegishli (qarang: fill/secondary sababi)."
         },
         {
           "rule": "text-style-missing",
           "match": "Body/M",
-          "reason": "Body/M — qidiruv maydoni matni, SearchBar komponentida; TopNavigation'ning o'z matnlari Title/M va Headline/L."
+          "reason": "Body/M — qidiruv maydoni matni, SearchField komponentida; TopNavigation'ning o'z matnlari Title/M va Headline/L."
         }
       ],
-      "readme": "# TopNavigation\n\nFigma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).\n\n```tsx\nimport { TopNavigation } from '@bek-ui/react';\n\n<TopNavigation title=\"Product\" onLeadingClick={goBack} actions={<ShareButton />} />\n<TopNavigation type=\"large-title\" title=\"Profile\" leading=\"none\" />\n<TopNavigation type=\"search\" leading=\"menu\" onLeadingClick={openDrawer}>\n  <SearchBar placeholder=\"Search\" />\n</TopNavigation>\n<TopNavigation background=\"transparent\" title=\"Gallery\" />   // rasm ustida\n```\n\n| Prop                              | Qiymatlar                                         | Default    |\n| --------------------------------- | ------------------------------------------------- | ---------- |\n| `type`                            | `standard` · `large-title` · `search`             | `standard` |\n| `leading`                         | `back` · `close` · `menu` · `none`                | `back`     |\n| `onLeadingClick` · `leadingLabel` | chap tugma va uning nomi                          | —          |\n| `title`                           | Title/M markazda; Large title — Headline/L pastda | —          |\n| `actions`                         | 2 tagacha Flat XL icon tugma yoki avatar          | —          |\n| `background`                      | `solid` (`bg/sheet`) · `transparent`              | `solid`    |\n\n- Bar 56, padding 0 8, gap 8; tugmalar 44 (touch target). Transparent — tugmalar `fill/on-media`, matn `text/on-color`. Status bar ustida joylashadi; RTL'da orqaga chevron teskari.\n"
+      "readme": "# TopNavigation\n\nFigma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).\n\n```tsx\nimport { TopNavigation } from '@bek-ui/react';\n\n<TopNavigation title=\"Product\" onLeadingClick={goBack} actions={<ShareButton />} />\n<TopNavigation type=\"large-title\" title=\"Profile\" leading=\"none\" />\n<TopNavigation type=\"search\" leading=\"menu\" onLeadingClick={openDrawer}>\n  <SearchField size=\"s\" placeholder=\"Search\" />\n</TopNavigation>\n<TopNavigation background=\"transparent\" title=\"Gallery\" />   // rasm ustida\n```\n\n| Prop                              | Qiymatlar                                         | Default    |\n| --------------------------------- | ------------------------------------------------- | ---------- |\n| `type`                            | `standard` · `large-title` · `search`             | `standard` |\n| `leading`                         | `back` · `close` · `menu` · `none`                | `back`     |\n| `onLeadingClick` · `leadingLabel` | chap tugma va uning nomi                          | —          |\n| `title`                           | Title/M markazda; Large title — Headline/L pastda | —          |\n| `actions`                         | 2 tagacha Flat XL icon tugma yoki avatar          | —          |\n| `background`                      | `solid` (`bg/sheet`) · `transparent`              | `solid`    |\n\n- Bar 56, padding 0 8, gap 8; tugmalar 44 (touch target). Transparent — tugmalar `fill/on-media`, matn `text/on-color`. Status bar ustida joylashadi; RTL'da orqaga chevron teskari.\n"
     },
     {
       "dir": "agent-node",

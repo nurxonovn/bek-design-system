@@ -9,7 +9,7 @@ import {
   ListItem,
   NavItem,
   ProgressBar,
-  SearchBar,
+  SearchField,
   Tag,
   type TagColor,
 } from '@bek-ui/react';
@@ -131,7 +131,8 @@ export function Dashboard() {
       <div className="tpl-dashboard__main">
         <header className="tpl-dashboard__header">
           <BekLogo size="s" className="tpl-mobile-only" />
-          <SearchBar
+          <SearchField
+            size="s"
             placeholder="Search courses, lessons…"
             className="tpl-dashboard__search tpl-desktop-only"
           />
@@ -147,7 +148,11 @@ export function Dashboard() {
         </header>
 
         <main className="tpl-dashboard__content">
-          <SearchBar placeholder="Search courses, lessons…" className="tpl-mobile-only" />
+          <SearchField
+            size="s"
+            placeholder="Search courses, lessons…"
+            className="tpl-mobile-only"
+          />
           <div>
             <h1 className="tpl-h1">Hello, Nurbek</h1>
             <p className="tpl-muted">You have 2 lessons today and 1 assignment due soon</p>
