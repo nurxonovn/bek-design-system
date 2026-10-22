@@ -1,0 +1,335 @@
+/* Uploader — Figma "3.17 Uploader". To'rt qism: File item (fill/secondary, padding 12, gap 12,
+   radius/surface/md; Name Label/M, Meta Caption/M text/tertiary; Error — status/danger/soft +
+   text/danger) · Uploader · File (Button Normal L/XL + ro'yxat, gap 12, ro'yxat gap 8) ·
+   Uploader · Drop zone (bg/sheet, border/strong 1 uzuq chiziq, padding 32, gap 16,
+   radius/surface/lg; Drag over — accent/soft + border/accent 2; Error — border/danger 2) ·
+   Uploader · Media (kvadrat 80/104/128, fill/soft → fill/soft-hover, radius/surface/md,
+   Caption/M text/secondary; Loading — bg/overlay + text/on-color; Error — status/danger/soft +
+   border/danger 2). */
+.bek-uploader {
+  font-family: var(--bek-family-sans);
+}
+
+/* Link (3.18) ko'rinishidagi <button> — browse, Retry: joyida bajariladigan amal. */
+.bek-uploader__link {
+  border: 0;
+  background: none;
+}
+
+.bek-uploader__link:disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-uploader__files {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* File item */
+.bek-file-item {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  min-width: 0;
+  padding: var(--bek-scale-12);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-secondary);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-file-item--error {
+  background: var(--bek-status-danger-soft);
+}
+
+.bek-file-item__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-file-item--error .bek-file-item__icon {
+  color: var(--bek-text-danger);
+}
+
+.bek-file-item__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-file-item__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--bek-scale-4);
+  min-width: 0;
+}
+
+.bek-file-item__name {
+  max-width: 100%;
+  overflow: hidden;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-file-item__meta {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-file-item--error .bek-file-item__meta {
+  color: var(--bek-text-danger);
+}
+
+.bek-file-item__progress {
+  align-self: stretch;
+}
+
+.bek-file-item__remove {
+  flex-shrink: 0;
+}
+
+/* Uploader · File */
+.bek-file-uploader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--bek-scale-12);
+}
+
+.bek-file-uploader > .bek-uploader__files {
+  align-self: stretch;
+}
+
+/* Uploader · Drop zone. Chegara qalinligi 1 → 2 o'zgarganda o'lcham sakramasin — padding kompensatsiyasi. */
+.bek-drop-zone {
+  --bek-drop-zone-border: var(--bek-stroke-default);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-16);
+  box-sizing: border-box;
+  padding: calc(var(--bek-scale-32) + var(--bek-stroke-strong) - var(--bek-drop-zone-border));
+  border: var(--bek-drop-zone-border) dashed var(--bek-border-strong);
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-bg-sheet);
+  color: var(--bek-text-primary);
+  text-align: center;
+  transition:
+    background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard),
+    border-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-drop-zone--drag-over {
+  --bek-drop-zone-border: var(--bek-stroke-strong);
+
+  border-color: var(--bek-border-accent);
+  background: var(--bek-accent-soft);
+}
+
+.bek-drop-zone--error {
+  --bek-drop-zone-border: var(--bek-stroke-strong);
+
+  border-color: var(--bek-border-danger);
+}
+
+.bek-drop-zone.bek-uploader--disabled {
+  border-color: var(--bek-border-default);
+  color: var(--bek-text-disabled);
+}
+
+.bek-drop-zone__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+.bek-drop-zone__icon {
+  display: inline-flex;
+  width: var(--bek-icon-xl);
+  height: var(--bek-icon-xl);
+}
+
+.bek-drop-zone__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-drop-zone__title {
+  margin: 0;
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+}
+
+.bek-drop-zone--drag-over .bek-drop-zone__title {
+  color: var(--bek-text-accent);
+}
+
+.bek-drop-zone__hint {
+  margin: 0;
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+}
+
+.bek-uploader--disabled .bek-drop-zone__hint {
+  color: var(--bek-text-disabled);
+}
+
+.bek-drop-zone > .bek-uploader__files {
+  text-align: start;
+}
+
+/* Uploader · Media */
+.bek-media-uploader {
+  --bek-media-size: var(--bek-scale-80);
+  --bek-media-icon: var(--bek-icon-md);
+
+  position: relative;
+  display: inline-flex;
+  width: var(--bek-media-size);
+  height: var(--bek-media-size);
+  vertical-align: top;
+}
+
+.bek-media-uploader--m {
+  --bek-media-size: var(--bek-scale-104);
+  --bek-media-icon: var(--bek-icon-lg);
+}
+
+.bek-media-uploader--l {
+  --bek-media-size: var(--bek-scale-128);
+  --bek-media-icon: var(--bek-icon-xl);
+}
+
+.bek-media-uploader__tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-scale-4);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-fill-tertiary);
+  color: var(--bek-text-secondary);
+  font-family: inherit;
+}
+
+.bek-media-uploader__action {
+  background: var(--bek-fill-soft);
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-media-uploader__action:hover:not(:disabled) {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-media-uploader__action:disabled {
+  color: var(--bek-text-disabled);
+  cursor: not-allowed;
+}
+
+.bek-media-uploader--error .bek-media-uploader__action {
+  background: var(--bek-status-danger-soft);
+  box-shadow: inset 0 0 0 var(--bek-stroke-strong) var(--bek-border-danger);
+  color: var(--bek-text-danger);
+}
+
+.bek-media-uploader__icon {
+  display: inline-flex;
+  width: var(--bek-media-icon);
+  height: var(--bek-media-icon);
+}
+
+.bek-media-uploader__icon > svg,
+.bek-media-uploader__image > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bek-media-uploader__label,
+.bek-media-uploader__percent {
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-media-uploader__image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: inherit;
+  background: var(--bek-fill-tertiary);
+  color: var(--bek-text-secondary);
+}
+
+.bek-media-uploader__image > svg {
+  width: var(--bek-media-icon);
+  height: var(--bek-media-icon);
+}
+
+.bek-media-uploader__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-media-uploader__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bek-scale-4);
+  border-radius: inherit;
+  background: var(--bek-bg-overlay);
+  color: var(--bek-text-on-color);
+}
+
+.bek-media-uploader__remove {
+  position: absolute;
+  inset-block-start: var(--bek-scale-6);
+  inset-inline-end: var(--bek-scale-6);
+}
+
+.bek-media-uploader__cover,
+.bek-media-uploader__duration {
+  position: absolute;
+  inset-block-end: var(--bek-scale-6);
+}
+
+.bek-media-uploader__cover {
+  inset-inline-start: var(--bek-scale-6);
+}
+
+.bek-media-uploader__duration {
+  inset-inline-end: var(--bek-scale-6);
+}

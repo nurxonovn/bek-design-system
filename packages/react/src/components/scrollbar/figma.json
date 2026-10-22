@@ -1,0 +1,55 @@
+{
+  "page": "4.8 Scrollbar",
+  "components": [
+    {
+      "name": "Scrollbar",
+      "id": "360:55",
+      "page": "4.8 Scrollbar",
+      "pageId": "359:49540",
+      "props": {
+        "Orientation": ["Vertical", "Horizontal"],
+        "Size": ["M", "S"],
+        "State": ["Default", "Hover", "Active"]
+      },
+      "variants": 12,
+      "size": {
+        "w": 12,
+        "h": 240
+      },
+      "tokens": {
+        "color": [
+          "border/default",
+          "fill/scrollbar",
+          "fill/scrollbar-active",
+          "fill/scrollbar-hover"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": ["radius/full", "scale/12", "scale/2", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 2, 5, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Scroll bar — based on standard behaviour. Track + thumb, both orientations, two widths, three states. Thumb length is calculated from the content ratio and never drops below size/scrollbar-thumb/min (32px). Colours are on the alpha (neutral-a) scale, so it works on any surface."
+    }
+  ],
+  "doc": {
+    "Scrollbar": {
+      "tokens": [
+        "border/default",
+        "fill/scrollbar",
+        "fill/scrollbar-active",
+        "fill/scrollbar-hover",
+        "radius/full",
+        "scale/12",
+        "scale/2",
+        "scale/24",
+        "scale/32",
+        "scale/4",
+        "scale/8"
+      ],
+      "text": "\nDesign tokens\nWhich token each visual property comes from. The component has no hand-typed values.\nProperty\nToken\nValue\nNote\nTrack width · M\nscale/12\n12px\nStandard always-visible scroll\nTrack width · S\nscale/8\n8px\nOverlays and compact containers\nThumb width · M\nscale/8\n8px\nTrack minus 2×2px spacing\nThumb width · S\nscale/4\n4px\nTrack minus 2×2px spacing\nMinimum thumb length\nscale/32\n32px\nNever smaller — a hard limit\nHit area\nscale/24\n24px\nWCAG 2.5.5 / 2.5.8\nTrack inner spacing\nscale/2\n2px\nBetween the thumb and the track edge\nRadius · track and thumb\nradius/full\n9999\nFully rounded ends\nTrack background\nborder/default\ngray-alpha/150\nAlpha — works on any surface\nThumb · Default\nfill/scrollbar\ngray-alpha/550\nAdapts automatically in Light and Dark modes\nThumb · Hover\nfill/scrollbar-hover\ngray-alpha/650\n\nThumb · Active\nfill/scrollbar-active\ngray-alpha/850\nWhile dragging\nBorder\n—\nnone\nBEK rule: elements are separated by colour difference, not borders\nDo / Don’t\nThree pairs — visibility, thumb length and horizontal scroll.\nDo\nWhen content doesn’t fit, the scroll bar is visible. The user immediately understands there is more below.\nDon’t\nScroll hidden with scrollbar-width: none. The content is cut off but nothing indicates it — affordance and accessibility are both lost.\nDo\nEven with very long content, the thumb is never shorter than 32px — it can be grabbed with a mouse.\nDon’t\nThe thumb has shrunk to a dot following the content ratio. It can’t be grabbed, and its position can’t be read.\nDo\nInside a table\nHorizontal scroll inside an inner container — a table, code block or carousel. The page outside the container doesn’t move.\nDon’t\nOn the page itself\nHorizontal scroll on the page itself. This is almost always a layout bug: the content didn’t fit its container and the scroll hid the problem."
+    }
+  },
+  "accepted": []
+}

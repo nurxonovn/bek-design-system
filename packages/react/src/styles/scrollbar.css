@@ -1,16 +1,26 @@
-/* Scrollbar — Figma "4.8 Scrollbar": track border/default, thumb fill/scrollbar → hover → active,
-   M 12 px (thumb 8) · S 8 px (thumb 4), padding 2, to'liq radius. Scroll bo'ladigan elementga
-   .bek-scrollbar (yoki .bek-scrollbar--s) qo'ying. */
+/* Scrollbar — Figma "4.8 Scrollbar" (React: ScrollArea, src/components/scrollbar). Track
+   border/default, thumb fill/scrollbar → hover → active (sudrash), M track 12 / thumb 8 · S track 8 /
+   thumb 4 (track ichida 2 px oraliq), radius/full, thumb uzunligi kamida 32 px. Scroll bo'ladigan
+   elementga .bek-scrollbar (yoki .bek-scrollbar--s) qo'ying.
+   Chromium 121+ standart `scrollbar-color`/`scrollbar-width` berilsa ::-webkit-scrollbar
+   uslublarini e'tiborsiz qoldiradi — shuning uchun standart xossalar faqat ::-webkit-scrollbar'ni
+   bilmaydigan brauzerga (Firefox) beriladi; Chromium va Safari aniq o'lchamni pseudo-elementdan oladi. */
 .bek-scrollbar {
   --bek-scrollbar-size: var(--bek-scale-12);
-
-  scrollbar-color: var(--bek-fill-scrollbar) var(--bek-border-default);
 }
 
 .bek-scrollbar--s {
   --bek-scrollbar-size: var(--bek-scale-8);
+}
 
-  scrollbar-width: thin;
+@supports not selector(::-webkit-scrollbar) {
+  .bek-scrollbar {
+    scrollbar-color: var(--bek-fill-scrollbar) var(--bek-border-default);
+  }
+
+  .bek-scrollbar--s {
+    scrollbar-width: thin;
+  }
 }
 
 .bek-scrollbar::-webkit-scrollbar {
@@ -24,10 +34,17 @@
 }
 
 .bek-scrollbar::-webkit-scrollbar-thumb {
-  min-height: var(--bek-scale-32);
   border: var(--bek-scale-2) solid transparent;
   border-radius: var(--bek-radius-full);
   background: var(--bek-fill-scrollbar) padding-box;
+}
+
+.bek-scrollbar::-webkit-scrollbar-thumb:vertical {
+  min-height: var(--bek-scale-32);
+}
+
+.bek-scrollbar::-webkit-scrollbar-thumb:horizontal {
+  min-width: var(--bek-scale-32);
 }
 
 .bek-scrollbar::-webkit-scrollbar-thumb:hover {
