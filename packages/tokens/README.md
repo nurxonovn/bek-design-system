@@ -25,6 +25,8 @@ BEK Design System tokenlari: Figma variables → CSS o'zgaruvchilari (`--bek-*`)
 | `dist/tokens.json`    | Hamma tokenlar, aliaslar yechilgan holda (rejim bo'yicha)                                      |
 
 - Chart va diagramma tokenlari (Figma 4.18 / 4.19): ranglar `--bek-dataviz-*` (categorical 01–08, sequential 100–700, diverging neg-4…pos-4, positive / negative / neutral / target / anomaly, `ai/*`, `uncertainty/*`, axis / grid / label / track), o'lchamlar `--bek-chart-*` (height, padding, gap, bar, line, grid, point, legend, donut) va `--bek-motion-duration-chart-enter` / `-live-pulse`. Matnli heatmap kataklarida faqat sequential 200 · 300 · 600 · 700 ishlating (Figma CMP-07).
+- Forma balandliklari (Figma 1.12 Forms · height pairing): `--bek-field-height-{xs,sm,md,lg,xl,2xl}` = 32 · 36 · 44 · 56 · 64 · 72. Maydon yonidagi tugma shu balandlikda; `control/height/2xl` = 56 (`field/lg`), `3xl` = 64 (`field/xl`). `2xl` faqat Underlined Text field uchun.
+- `--bek-effect-matrix-{bg,head,trail,fade}` — faqat 2.6 Backgrounds (Matrix rain), UI'da ishlatmang; Light/Dark bir xil.
 - Light/Dark: `:root` va `[data-theme="dark"]`.
 - Qurilmalar: Mobile (360–599) — `:root`, Tablet — `@media (min-width: 600px)`, Web — `@media (min-width: 1024px)`.
 - CSS nomlari Figma'dagi **codeSyntax (Web)** dan olinadi: `fill/primary` → `--bek-fill-primary`.

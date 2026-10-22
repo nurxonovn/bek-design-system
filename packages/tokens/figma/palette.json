@@ -6531,25 +6531,19 @@
     {
       "name": "brand/3d-violet",
       "type": "COLOR",
+      "hiddenFromPublishing": true,
       "description": "3D style B gradient start. Primitive — use gradient/brand-start.",
-      "scopes": [],
       "values": {
         "Value": "#a78bfa"
-      },
-      "codeSyntax": {
-        "WEB": "var(--brand-3d-violet)"
       }
     },
     {
       "name": "brand/3d-blue",
       "type": "COLOR",
+      "hiddenFromPublishing": true,
       "description": "3D style B gradient end. Primitive — use gradient/brand-end.",
-      "scopes": [],
       "values": {
         "Value": "#6c9bf5"
-      },
-      "codeSyntax": {
-        "WEB": "var(--brand-3d-blue)"
       }
     }
   ]

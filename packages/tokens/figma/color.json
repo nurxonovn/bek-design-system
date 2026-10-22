@@ -2362,6 +2362,74 @@
           "$alias": "Color/fill/tertiary"
         }
       }
+    },
+    {
+      "name": "effect/matrix/bg",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-effect-matrix-bg)"
+      },
+      "description": "Classic Matrix style (black + green) for 2.6 Backgrounds only — mode-independent, same in Light and Dark. Not for UI.",
+      "scopes": ["FRAME_FILL", "SHAPE_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/dark/gray/40"
+        },
+        "Dark": {
+          "$alias": "Palette/dark/gray/40"
+        }
+      }
+    },
+    {
+      "name": "effect/matrix/head",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-effect-matrix-head)"
+      },
+      "description": "Classic Matrix style (black + green) for 2.6 Backgrounds only — mode-independent, same in Light and Dark. Not for UI.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/350"
+        },
+        "Dark": {
+          "$alias": "Palette/light/green/350"
+        }
+      }
+    },
+    {
+      "name": "effect/matrix/trail",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-effect-matrix-trail)"
+      },
+      "description": "Classic Matrix style (black + green) for 2.6 Backgrounds only — mode-independent, same in Light and Dark. Not for UI.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/600"
+        },
+        "Dark": {
+          "$alias": "Palette/light/green/600"
+        }
+      }
+    },
+    {
+      "name": "effect/matrix/fade",
+      "type": "COLOR",
+      "codeSyntax": {
+        "WEB": "var(--bek-effect-matrix-fade)"
+      },
+      "description": "Classic Matrix style (black + green) for 2.6 Backgrounds only — mode-independent, same in Light and Dark. Not for UI.",
+      "scopes": ["SHAPE_FILL", "TEXT_FILL"],
+      "values": {
+        "Light": {
+          "$alias": "Palette/light/green/900"
+        },
+        "Dark": {
+          "$alias": "Palette/light/green/900"
+        }
+      }
     }
   ]
 }
