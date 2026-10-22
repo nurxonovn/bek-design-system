@@ -5,7 +5,9 @@ export { NavGroup, NavSubList } from './NavGroup.js';
 export type { NavGroupProps, NavSubListProps } from './NavGroup.js';
 export { AppHeader, AppShell, MenuPanel, ModuleRail } from './MenuPanel.js';
 export type {
+  AppHeaderDevice,
   AppHeaderProps,
+  AppShellDevice,
   AppShellProps,
   MenuPanelProps,
   ModuleRailProps,

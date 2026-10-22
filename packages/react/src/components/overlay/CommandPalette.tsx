@@ -46,7 +46,7 @@ const DEFAULT_HINTS: [ReactNode, ReactNode][] = [
 /**
  * Figma "7.7 Command palette": ⌘K / Ctrl K bilan ochiladigan klaviatura launcher'i.
  * Web — 640, markazda, pastda ishoralar; Mobile (< 600) — to'liq kenglik, yuqorida.
- * fill/primary, radius surface/lg, Elevation/4, z/modal. Combobox + listbox (aria-activedescendant).
+ * bg/sheet, radius surface/lg, Elevation/4, z/modal. Combobox + listbox (aria-activedescendant).
  */
 export function CommandPalette({
   open,

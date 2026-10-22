@@ -1,4 +1,4 @@
-/* Command palette — Figma "7.7 Command palette". Web 640, yuqoridan 12vh; fill/primary,
+/* Command palette — Figma "7.7 Command palette". Web 640, yuqoridan 12vh; bg/sheet,
    radius surface/lg, Elevation/4. Qidiruv 56 (padding 12 16, gap 12, Body/M), ostida
    border/hairline; natijalar padding 8; footer fill/secondary, padding 8 16, gap 16, Caption/M.
    Mobile (< 600): to'liq kenglik, ekran yuqorisida, ishoralarsiz. */
@@ -8,7 +8,7 @@
   margin: 12vh auto auto;
   overflow: hidden;
   border-radius: var(--bek-radius-surface-lg);
-  background: var(--bek-fill-primary);
+  background: var(--bek-bg-sheet);
 }
 
 .bek-command__search {

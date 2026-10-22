@@ -48,8 +48,8 @@ import { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek-
 - Dialog sirti: `surface/raised`, chegarasiz, `Elevation/4`; Modal/Drawer/Alert radius 16; sarlavha Headline/S (Alert — Title/L), izoh Body/S `text/secondary`; header padding 24 24 16, footer 24 (gap 12, o'ngda). Yopish tugmasi 32, radius 8, hover `fill/tertiary`.
 - Bottom sheet: yuqori radius 24, dastak 36×4 `fill/control`, footer Action XL + Flat secondary XL, home indicator hisobga olinadi.
 - Popover: radius 12, `Elevation/2`, padding 16, gap 12, dum 12×6. Menu: 240 (submenu 200, ota menyudan 4 px), radius 8, padding 4, `Elevation/2`; element hover `fill/tertiary-hover`, selected `fill/strong`, danger `text/danger` + `status/danger/soft`.
-- Command palette: 640, `fill/primary`, radius 16, `Elevation/4`; < 600 px — to'liq kenglik, yuqorida, ishoralarsiz.
-- Hover card: 320, `fill/primary`, radius 12, `Elevation/3`, `z/dropdown`; touch'da ochilmaydi, fokusda ochiladi. `profile` — Avatar 48 + Title/S + Caption/M + Body/S + statistika (Label/M + Caption/L); `link` — 16:9 preview (`fill/tertiary-hover`) + sarlavha + izoh.
+- Command palette: 640, `bg/sheet` (doc jadvalida hali `fill/primary`), radius 16, `Elevation/4`; < 600 px — to'liq kenglik, yuqorida, ishoralarsiz.
+- Hover card: 320, `bg/sheet` (doc jadvalida hali `fill/primary`), radius 12, `Elevation/3`, `z/dropdown`; touch'da ochilmaydi, fokusda ochiladi. `profile` — Avatar 48 + Title/S + Caption/M + Body/S + statistika (Label/M + Caption/L); `link` — 16:9 preview (`fill/tertiary-hover`) + sarlavha + izoh.
 - Action sheet: `platform` `ios` (native iOS 27 karta: `bg/sheet`, `fill/tertiary` pill amallar, radius 34, 8 px chetdan) · `android` (Material 3 sheet: `bg/sheet`, yuqori radius `radius/surface/xl`, dastak `fill/strong`). Share sheet: `bg/sheet`, kontakt doiralari `accent/soft`/`status/*/soft`, ilovalar va havola maydoni `fill/secondary`, Copy — `surface/raised` pill.
 - Harakat: Modal/Alert/Command — `scale-enter` 0.96 + fade (`motion/overlay/modal/enter`); Drawer va sheet'lar — siljish (`motion/overlay/slide`); anchored — `motion/overlay/anchored/enter`. `prefers-reduced-motion` da o'chadi.
 

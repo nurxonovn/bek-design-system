@@ -181,7 +181,8 @@
   display: none;
 }
 
-/* Menu panel · Web: Expanded 256 (240 element + 2×8) · Collapsed 56; surface/card, padding 8, gap 8. */
+/* Menu panel · Web: Expanded 256 (232 element + 2×12) · Collapsed 64 (40 + 2×12); surface/card,
+   padding 8 12, gap 8. */
 .bek-menu-panel {
   display: flex;
   flex-direction: column;
@@ -190,12 +191,12 @@
   box-sizing: border-box;
   width: calc(var(--bek-scale-240) + 2 * var(--bek-scale-8));
   height: 100%;
-  padding: var(--bek-scale-8);
+  padding: var(--bek-scale-8) var(--bek-scale-12);
   background: var(--bek-surface-card);
 }
 
 .bek-menu-panel--collapsed {
-  width: var(--bek-scale-56);
+  width: calc(var(--bek-scale-40) + 2 * var(--bek-scale-12));
 }
 
 .bek-menu-panel__middle {
@@ -211,7 +212,8 @@
   overflow: visible;
 }
 
-/* Module rail · Web: 64 px, surface/raised, padding 12, gap 4; sarlavha Caption/S. */
+/* Module rail · Web: 64 px, surface/raised, padding 12, gap 4, boshlanish burchaklari radius 20
+   (scale/20); sarlavha Caption/S. */
 .bek-module-rail {
   display: flex;
   flex-direction: column;
@@ -221,6 +223,8 @@
   width: var(--bek-scale-64);
   height: 100%;
   padding: var(--bek-scale-12);
+  border-start-start-radius: var(--bek-scale-20);
+  border-end-start-radius: var(--bek-scale-20);
   background: var(--bek-surface-raised);
 }
 
@@ -241,7 +245,9 @@
   letter-spacing: var(--bek-type-caption-sm-tracking);
 }
 
-/* Header: balandlik layout/header/height, surface/card, padding 0 24, gap 16. */
+/* Header · Web: balandlik layout/header/height, fill/secondary (App shell foni bilan bir xil —
+   sahifadan sirt rangi bilan ajraladi), padding 0 24, gap 16.
+   Header · Tablet: surface/card, padding 0 16 0 12, gap 8. */
 .bek-app-header {
   display: flex;
   flex-shrink: 0;
@@ -249,10 +255,16 @@
   gap: var(--bek-scale-16);
   box-sizing: border-box;
   height: var(--bek-layout-header-height);
-  padding: 0 var(--bek-layout-page-margin);
-  background: var(--bek-surface-card);
+  padding: 0 var(--bek-scale-24);
+  background: var(--bek-fill-secondary);
   color: var(--bek-text-primary);
   font-family: var(--bek-family-sans);
+}
+
+.bek-app-header--tablet {
+  gap: var(--bek-scale-8);
+  padding-inline: var(--bek-scale-12) var(--bek-scale-16);
+  background: var(--bek-surface-card);
 }
 
 .bek-app-header__start,
@@ -315,12 +327,15 @@
   letter-spacing: var(--bek-type-caption-md-tracking);
 }
 
-/* App shell: sahifa foni bg/base — header/menu (surface/card) dan sirt rangi bilan ajraladi. */
+/* App shell · Tablet / Mobile: fon va kontent bg/sheet, padding layout/page-margin.
+   App shell · Web: fon fill/secondary (Header bilan bir xil); header va body orasida 2, body
+   padding 0 20 20, panellar orasida 2 (fon ajratuvchi chiziq bo'lib ko'rinadi); kontent bg/sheet,
+   oxirgi burchaklar radius 20 (scale/20) — Module rail boshlanish burchaklari bilan bir blok. */
 .bek-app-shell {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  background: var(--bek-bg-base);
+  background: var(--bek-bg-sheet);
 }
 
 .bek-app-shell__body {
@@ -334,6 +349,22 @@
   min-width: 0;
   padding: var(--bek-layout-page-margin);
   overflow-y: auto;
+  background: var(--bek-bg-sheet);
+}
+
+.bek-app-shell--web {
+  gap: var(--bek-scale-2);
+  background: var(--bek-fill-secondary);
+}
+
+.bek-app-shell--web > .bek-app-shell__body {
+  gap: var(--bek-scale-2);
+  padding: 0 var(--bek-scale-20) var(--bek-scale-20);
+}
+
+.bek-app-shell--web .bek-app-shell__content {
+  border-start-end-radius: var(--bek-scale-20);
+  border-end-end-radius: var(--bek-scale-20);
 }
 
 /* Rail item · Tablet: 56 kenglik, padding 4 0, gap 4; indikator 56×32 pill, ikonka 24;

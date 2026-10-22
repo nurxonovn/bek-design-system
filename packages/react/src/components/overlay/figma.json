@@ -259,7 +259,7 @@
         "h": 120
       },
       "tokens": {
-        "color": ["surface/raised", "text/primary", "text/secondary"],
+        "color": ["bg/base", "surface/raised", "text/primary", "text/secondary"],
         "text": ["Caption/M", "Title/S"],
         "effect": ["Elevation/2 Raised-hover"],
         "dimension": [
@@ -586,8 +586,8 @@
       },
       "tokens": {
         "color": [
+          "bg/sheet",
           "border/hairline",
-          "fill/primary",
           "fill/secondary",
           "fill/tertiary",
           "text/primary",
@@ -646,7 +646,7 @@
       },
       "tokens": {
         "color": [
-          "fill/primary",
+          "bg/sheet",
           "fill/tertiary-hover",
           "text/accent",
           "text/primary",
@@ -945,7 +945,7 @@
         "text/primary",
         "text/tertiary"
       ],
-      "text": "OVERLAYS\nBEK\nDesign System\n7.4 Dropdown menu\nA list of items that opens when the trigger is clicked. Made of four components: Menu item (Size × State × Variant = 16 variants), Menu group label, Menu separator and the Dropdown menu container. Inherits the Popover (7.3) surface.\nOverview\nA full menu, a simple menu without groups, and a menu with one destructive action.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nEdit\n⌘E\nCopy\n⌘D\nDelete\n⌫\nAnatomy\nContainer + items. Each item is a separate component instance, so menu length and content can be assembled freely.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\n1\nContainer\nradius/surface/md + Elevation/3 + scale/4 inner padding. No border — surface colour and shadow set it apart.\n2\nMenu group label\n12 px Medium, subtle colour. Only when a group name is needed.\n3\nMenu item\nStart icon + Label + Hotkey + Submenu arrow. Each can be turned off with a boolean.\n4\nMenu separator\nA 1 px line. Only where a group with different content begins.\n5\nDanger item\nVariant = Danger. Usually at the end of the list, after a separator.\n6\nLayer\nlayout/z/dropdown = 1000. Also opens inside a Modal.\nVariants\nThe Menu item’s Variant axis. The rest of the structure is the same.\nVariant = Normal\nMenu item\n⌘K\nOrdinary actions.\nVariant = Danger\nMenu item\n⌘K\nIrreversible actions.\nSubmenu\nMenu item\n⌘K\nThe arrow indicates a submenu.\nSizes\nItem height is bound to the scale/* tokens. Container width is fixed — long text is truncated with an ellipsis.\nElement\nValue\nToken\nText\nWhen\nItem — S\n32 px\nscale/32\n13 px Regular\nDense interfaces, toolbar menus\nItem — M\n40 px\nscale/40\n14 px Regular\nThe default choice, touch screens\nGroup label\n28 px\n—\n12 px Medium\nGroup heading\nSeparator\n1 px + 2 px padding\nscale/1 · scale/2\n—\nGap between groups\nContainer\n240 px\nscale/240\n—\nWidened on the instance for longer text\nStates\nDefault → Hover → Selected → Disabled. Keyboard navigation uses the Hover state; no separate focus ring is added.\nNormal · Default\nEdit\n⌘E\nNormal · Hover\nEdit\n⌘E\nNormal · Selected\nEdit\n⌘E\nNormal · Disabled\nEdit\n⌘E\nDanger · Default\nDelete\n⌫\nDanger · Hover\nDelete\n⌫\nDanger · Selected\nDelete\n⌫\nDanger · Disabled\nDelete\n⌫\nDark mode\nThe container and items draw from the same role tokens — no separate variant is needed.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\nEdit\n⌘E\nCopy\n⌘D\nMove to\nDelete\n⌫\nDevices\nMobile · 390\nMenu item\n⌘K\nM items (44) inside 7.10 Action sheet from the bottom.\nTablet · 834\nMenu item\n⌘K\nM items in a dropdown under the trigger, 240 wide.\nWeb · 1440\nMenu item\n⌘K\nS items (32), hover + arrow keys, shortcuts on the right.\nProps\nProperties of two components: the item itself and the container that holds it.\nMenu item\nProp\nType\nValues\nDefault\nSize\nVariant\nS · M\nM\nState\nVariant\nDefault · Hover · Selected · Disabled\nDefault\nVariant\nVariant\nNormal · Danger\nNormal\nLabel\nText\nFree text\nMenu item\nHotkey text\nText\nFree text\n⌘K\nStart icon\nBoolean\ntrue · false\ntrue\nHotkey\nBoolean\ntrue · false\ntrue\nSubmenu arrow\nBoolean\ntrue · false\nfalse\nIcon swap\nInstance swap\nFrom the Hugeicons library\n— added manually\nDropdown menu\nProp\nType\nValues\nDefault\nGroup label\nBoolean\ntrue · false\ntrue\nItem 3\nBoolean\ntrue "
+      "text": "OVERLAYS\nBEK\nDesign System\n7.4 Dropdown menu\nA list of items that opens when the trigger is clicked. Made of four components: Menu item (Size × State × Variant = 16 variants), Menu group label, Menu separator and the Dropdown menu container. Inherits the Popover (7.3) surface.\nOverview\nA full menu, a simple menu without groups, and a menu with one destructive action.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nEdit\n⌘E\nCopy\n⌘D\nDelete\n⌫\nAnatomy\nContainer + items. Each item is a separate component instance, so menu length and content can be assembled freely.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\n1\nContainer\nradius/surface/md + Elevation/3 + scale/4 inner padding. No border — surface colour and shadow set it apart.\n2\nMenu group label\n12 px Medium, subtle colour. Only when a group name is needed.\n3\nMenu item\nStart icon + Label + Hotkey + Submenu arrow. Each can be turned off with a boolean.\n4\nMenu separator\nA 1 px line. Only where a group with different content begins.\n5\nDanger item\nVariant = Danger. Usually at the end of the list, after a separator.\n6\nLayer\nlayout/z/dropdown = 1000. Also opens inside a Modal.\nVariants\nThe Menu item’s Variant axis. The rest of the structure is the same.\nVariant = Normal\nMenu item\n⌘K\nOrdinary actions.\nVariant = Danger\nMenu item\n⌘K\nIrreversible actions.\nSubmenu\nMenu item\n⌘K\nThe arrow indicates a submenu.\nSizes\nItem height is bound to the scale/* tokens. Container width is fixed — long text is truncated with an ellipsis.\nElement\nValue\nToken\nText\nWhen\nItem — S\n32 px\nscale/32\n13 px Regular\nDense interfaces, toolbar menus\nItem — M\n40 px\nscale/40\n14 px Regular\nThe default choice, touch screens\nGroup label\n28 px\n—\n12 px Medium\nGroup heading\nSeparator\n1 px + 2 px padding\nscale/1 · scale/2\n—\nGap between groups\nContainer\n240 px\nscale/240\n—\nWidened on the instance for longer text\nStates\nDefault → Hover → Selected → Disabled. Keyboard navigation uses the Hover state; no separate focus ring is added.\nNormal · Default\nEdit\n⌘E\nNormal · Hover\nEdit\n⌘E\nNormal · Selected\nEdit\n⌘E\nNormal · Disabled\nEdit\n⌘E\nDanger · Default\nDelete\n⌫\nDanger · Hover\nDelete\n⌫\nDanger · Selected\nDelete\n⌫\nDanger · Disabled\nDelete\n⌫\nDark mode\nThe container and items draw from the same role tokens — no separate variant is needed.\nGURUH\nEdit\n⌘E\nCopy\n⌘D\nMove to\nArchive\nDelete\n⌫\nEdit\n⌘E\nCopy\n⌘D\nMove to\nDelete\n⌫\nDevices\nMobile · 390\nMenu item\n⌘K\nM items (44) inside 7.10 Action sheet from the bottom.\nTablet · 834\nMenu item\n⌘K\nM items in a dropdown under the trigger, 240 wide.\nWeb · 1440\nMenu item\n⌘K\nS items (32), hover + arrow keys, shortcuts on the right.\nProps\nProperties of two components: the item itself and the container that holds it.\nMenu item\nProp\nType\nValues\nDefault\nSize\nVariant\nS · M\nM\nState\nVariant\nDefault · Hover · Selected · Disabled\nDefault\nVariant\nVariant\nNormal · Danger\nNormal\nLabel\nText\nFree text\nMenu item\nHotkey text\nText\nFree text\n⌘K\nStart icon\nBoolean\ntrue · false\ntrue\nHotkey\nBoolean\ntrue · false\ntrue\nSubmenu arrow\nBoolean\ntrue · false\nfalse\nIcon swap\nInstance swap\nFrom the BEK - Icons library\n— added manually\nDropdown menu\nProp\nType\nValues\nDefault\nGroup label\nBoolean\ntrue · false\ntrue\nItem 3\nBoolean\ntru"
     },
     "7.5 Context menu": {
       "tokens": [
@@ -1062,9 +1062,9 @@
   },
   "accepted": [
     {
-      "rule": "token-extra",
-      "match": "--bek-bg-sheet",
-      "reason": "Action sheet (iOS 27 / Material 3 native instance) va Share sheet sirti Figma'da bg/sheet (nested native komponent, spec tokenlariga tushmagan); doc'da \"Card / sheet: surface/raised\" deyilgan — doc yoki native instance tokenini moslashtirish kerak. Kod komponentga ergashadi (bg/sheet)."
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base — faqat Popover komponent set o'ramining (COMPONENT_SET 283:46321) foni, Popover variantlari va tail surface/raised. Namoyish foni kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga bog'lash (boshqa set'lar kabi) kerak."
     },
     {
       "rule": "px-figma",

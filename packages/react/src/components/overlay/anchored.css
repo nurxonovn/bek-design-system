@@ -267,7 +267,7 @@
   display: contents;
 }
 
-/* Hover card: 320, fill/primary, radius 12, Elevation/3, padding 16, gap 12, z/dropdown.
+/* Hover card: 320, bg/sheet, radius 12, Elevation/3, padding 16, gap 12, z/dropdown.
    Profile: Avatar 48 + Title/S + Subtitle Caption/M text/secondary, Description Body/S,
    stats (Label/M qiymat + Caption/L text/secondary nom, gap 16). Link: preview 16:9
    (fill/tertiary-hover, radius/surface/sm) + Title/S + Subtitle + Description. */
@@ -282,7 +282,7 @@
   max-width: calc(100vw - var(--bek-scale-16));
   padding: var(--bek-scale-16);
   border-radius: var(--bek-radius-surface-md);
-  background: var(--bek-fill-primary);
+  background: var(--bek-bg-sheet);
   box-shadow: var(--bek-elevation-3);
   color: var(--bek-text-primary);
   font-family: var(--bek-family-sans);

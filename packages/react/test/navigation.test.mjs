@@ -3,6 +3,8 @@ import { test } from 'node:test';
 import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import {
+  AppHeader,
+  AppShell,
   DrawerItem,
   MenuPanel,
   ModuleRail,
@@ -81,6 +83,19 @@ test('NavGroup, NavSubList, MenuPanel and ModuleRail structure', () => {
     r(h(ModuleRail, { title: 'Apps', showLabels: true }, 'x')),
     /bek-module-rail--labels/,
   );
+});
+
+test('AppHeader device and AppShell device classes (Figma Header/App shell · Web/Tablet/Mobile)', () => {
+  assert.match(r(h(AppHeader, { start: 'L' })), /^<header class="bek-app-header">/);
+  assert.match(
+    r(h(AppHeader, { device: 'tablet' })),
+    /^<header class="bek-app-header bek-app-header--tablet">/,
+  );
+  // device berilmasa slotlardan: menu → web, rail → tablet, aks holda mobile
+  assert.match(r(h(AppShell, { menu: 'M' }, 'c')), /class="bek-app-shell bek-app-shell--web"/);
+  assert.match(r(h(AppShell, { rail: 'R' }, 'c')), /bek-app-shell--tablet/);
+  assert.match(r(h(AppShell, null, 'c')), /bek-app-shell--mobile/);
+  assert.match(r(h(AppShell, { device: 'web' }, 'c')), /bek-app-shell--web/);
 });
 
 test('NavRail / RailItem and NavDrawer / DrawerItem', () => {

@@ -2,9 +2,9 @@ import type { HTMLAttributes, ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
 
 export interface MenuPanelProps extends HTMLAttributes<HTMLElement> {
-  /** `false` — 256 px; `true` — 56 px (faqat ikonkalar). */
+  /** `false` — 256 px; `true` — 64 px (faqat ikonkalar: 40 + 2×12). */
   collapsed?: boolean;
-  /** Yuqori qism (odatda qidiruv Nav item). */
+  /** Yuqori qism (odatda qidiruv Nav item va SearchField — Figma `Search`). */
   top?: ReactNode;
   /** Pastki, qotirilgan qism (odatda "Collapse" tugmasi). */
   bottom?: ReactNode;
@@ -12,7 +12,7 @@ export interface MenuPanelProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
-/** Figma "Menu panel · Web": tanlangan modul sahifalari. surface/card, padding 8, gap 8. */
+/** Figma "Menu panel · Web": tanlangan modul sahifalari. surface/card, padding 8 12, gap 8. */
 export function MenuPanel({
   collapsed = false,
   top,
@@ -44,7 +44,10 @@ export interface ModuleRailProps extends Omit<HTMLAttributes<HTMLElement>, 'titl
   children: ReactNode;
 }
 
-/** Figma "Module rail · Web": modul tanlovchi tor panel. 40 + 2×12 = 64 px, surface/raised. */
+/**
+ * Figma "Module rail · Web": modul tanlovchi tor panel. 40 + 2×12 = 64 px, surface/raised,
+ * boshlanish burchaklari radius 20 (scale/20).
+ */
 export function ModuleRail({
   title,
   bottom,
@@ -67,7 +70,14 @@ export function ModuleRail({
   );
 }
 
+export type AppHeaderDevice = 'web' | 'tablet';
+
 export interface AppHeaderProps extends HTMLAttributes<HTMLElement> {
+  /**
+   * Figma "Header · Web" (`web`, standart): fill/secondary — App shell foni bilan bir xil,
+   * padding 0 24, gap 16. "Header · Tablet" (`tablet`): surface/card, padding 0 16 0 12, gap 8.
+   */
+  device?: AppHeaderDevice;
   /** Chap tomon: menyu tugmasi, logo. */
   start?: ReactNode;
   /** O'ng tomon: til, mavzu, bildirishnomalar, profil. */
@@ -76,12 +86,22 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLElement> {
 }
 
 /**
- * Figma "Header · Web / Tablet": yuqori panel. Balandlik layout/header/height, surface/card;
- * sahifadan chegara bilan emas, sirt rangi bilan ajraladi.
+ * Figma "Header · Web / Tablet": yuqori panel. Balandlik layout/header/height; sahifadan
+ * chegara bilan emas, sirt rangi bilan ajraladi (Web — fill/secondary, Tablet — surface/card).
  */
-export function AppHeader({ start, end, className, children, ...rest }: AppHeaderProps) {
+export function AppHeader({
+  device = 'web',
+  start,
+  end,
+  className,
+  children,
+  ...rest
+}: AppHeaderProps) {
   return (
-    <header {...rest} className={cx('bek-app-header', className)}>
+    <header
+      {...rest}
+      className={cx('bek-app-header', device === 'tablet' && 'bek-app-header--tablet', className)}
+    >
       {start && <div className="bek-app-header__start">{start}</div>}
       <div className="bek-app-header__center">{children}</div>
       {end && <div className="bek-app-header__end">{end}</div>}
@@ -89,7 +109,15 @@ export function AppHeader({ start, end, className, children, ...rest }: AppHeade
   );
 }
 
+export type AppShellDevice = 'web' | 'tablet' | 'mobile';
+
 export interface AppShellProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Figma "App shell · Web / Tablet / Mobile". Berilmasa: `menu` bor — `web`, `rail` bor —
+   * `tablet`, aks holda `mobile`. Web: fon fill/secondary, panellar orasida 2 px, body padding
+   * 0 20 20, kontent bg/sheet (oxirgi burchaklar radius 20). Tablet/Mobile: fon bg/sheet.
+   */
+  device?: AppShellDevice;
   header?: ReactNode;
   /** Chapdagi rail (ModuleRail yoki NavRail). */
   rail?: ReactNode;
@@ -105,6 +133,7 @@ export interface AppShellProps extends HTMLAttributes<HTMLDivElement> {
 
 /** Figma "App shell": Header + Rail + Menu + Content (+ Bottom nav mobil uchun). */
 export function AppShell({
+  device,
   header,
   rail,
   menu,
@@ -114,8 +143,9 @@ export function AppShell({
   children,
   ...rest
 }: AppShellProps) {
+  const shellDevice = device ?? (menu ? 'web' : rail ? 'tablet' : 'mobile');
   return (
-    <div {...rest} className={cx('bek-app-shell', className)}>
+    <div {...rest} className={cx('bek-app-shell', `bek-app-shell--${shellDevice}`, className)}>
       {header}
       <div className="bek-app-shell__body">
         {rail}
