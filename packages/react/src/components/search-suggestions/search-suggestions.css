@@ -1,0 +1,367 @@
+/* Search suggestions — Figma "3.12 Search bar → Search suggestions" + "Search result row".
+   Web: surface/raised, radius/surface/lg (16), Elevation/3 Floating, padding 8, gap 4; pastda ishoralar
+   (padding 8 12, gap 16, border-top border/hairline, Caption/M text/tertiary).
+   Mobile: to'liq ekran surface/card, tepada Filled Search field (padding 8), ishoralarsiz.
+   Guruh sarlavhasi: padding 8 12, Caption/M text/tertiary; amal ("Clear", "See all") Label/S text/accent.
+   Empty: padding 40 24, gap 8, ikonka doirasi 48 fill/soft (search-remove 24 text/primary), Label/L + Body/S.
+   Loading: 4 skelet qator (40 miniatyura radius/control/md + 2 chiziq 10, radius/full). */
+.bek-search-suggestions {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--bek-scale-8);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-search-suggestions--web {
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-3);
+}
+
+.bek-search-suggestions--mobile {
+  min-height: 100%;
+  background: var(--bek-surface-card);
+}
+
+.bek-search-suggestions__field {
+  padding: var(--bek-scale-8);
+}
+
+.bek-search-suggestions__list,
+.bek-search-suggestions__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+}
+
+.bek-search-suggestions__list:empty {
+  display: none;
+}
+
+.bek-search-suggestions__group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+}
+
+.bek-search-suggestions__group-label {
+  flex: 1;
+  min-width: 0;
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+/* Guruh amali — option (↑ ↓ bilan yetiladi). Tanlanganda accent/soft fon. */
+.bek-search-suggestions__group-action {
+  flex-shrink: 0;
+  margin-block: calc(-1 * var(--bek-scale-2));
+  margin-inline-end: calc(-1 * var(--bek-scale-6));
+  padding: var(--bek-scale-2) var(--bek-scale-6);
+  border-radius: var(--bek-radius-control-sm);
+  color: var(--bek-text-accent);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  cursor: pointer;
+}
+
+.bek-search-suggestions__group-action:hover {
+  background: var(--bek-fill-soft);
+}
+
+.bek-search-suggestions__group-action--selected,
+.bek-search-suggestions__group-action--selected:hover {
+  background: var(--bek-accent-soft);
+}
+
+/* Loading — Skeleton (5.7) qatorlari: padding 8 12, gap 12. */
+.bek-search-suggestions__skeleton {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+}
+
+.bek-search-suggestions .bek-search-suggestions__skeleton-thumb {
+  flex-shrink: 0;
+  width: var(--bek-scale-40);
+}
+
+.bek-search-suggestions .bek-search-suggestions__skeleton-thumb > .bek-skeleton__bone {
+  height: var(--bek-scale-40);
+  border-radius: var(--bek-radius-control-md);
+}
+
+.bek-search-suggestions .bek-search-suggestions__skeleton-lines > .bek-skeleton__bone {
+  height: var(--bek-scale-10);
+  border-radius: var(--bek-radius-full);
+}
+
+.bek-search-suggestions .bek-search-suggestions__skeleton-lines > .bek-skeleton__bone:first-child {
+  width: 52%;
+}
+
+.bek-search-suggestions .bek-search-suggestions__skeleton-lines > .bek-skeleton__bone:last-child {
+  width: 80%;
+}
+
+/* Live region doim a11y daraxtida qoladi (display: none emas) — bo'sh bo'lsa joy egallamaydi. */
+.bek-search-suggestions__status:empty {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Empty — Content=Empty. */
+.bek-search-suggestions__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  padding: var(--bek-scale-40) var(--bek-scale-24);
+  text-align: center;
+}
+
+.bek-search-suggestions__empty-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-48);
+  height: var(--bek-scale-48);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-primary);
+}
+
+.bek-search-suggestions__empty-icon > svg {
+  width: var(--bek-icon-lg);
+  height: var(--bek-icon-lg);
+}
+
+.bek-search-suggestions__empty-title,
+.bek-search-suggestions__empty-description {
+  margin: 0;
+}
+
+.bek-search-suggestions__empty-title {
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-search-suggestions__empty-description {
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-search-suggestions__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-16);
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+  border-top: var(--bek-stroke-default) solid var(--bek-border-hairline);
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+/* ---------- Search result row ----------
+   padding 8 12, gap 12, radius/control/md (8). Hover fill/soft, Selected accent/soft + ↵ (padding 2 6,
+   radius/control/sm, surface/card, Caption/M text/tertiary). Ikonkalar 20 text/tertiary.
+   Title Label/L text/primary (Recent — text/secondary), Meta Caption/M text/tertiary (baseline, gap 8),
+   Snippet Body/S text/secondary, Source pill padding 2 8 fill/soft Label/S. Content ichida gap 2.
+   Item/File miniatyura 40 radius/control/md: fill/soft (image-01) · status/info/soft (file-01 text/info). */
+.bek-search-result-row {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  min-width: 0;
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+  border-radius: var(--bek-radius-control-md);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-search-result-row--multiline {
+  align-items: flex-start;
+}
+
+.bek-search-result-row:hover {
+  background: var(--bek-fill-soft);
+}
+
+.bek-search-result-row--selected,
+.bek-search-result-row--selected:hover {
+  background: var(--bek-accent-soft);
+}
+
+.bek-search-result-row__icon,
+.bek-search-result-row__fill {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+  color: var(--bek-text-tertiary);
+}
+
+.bek-search-result-row__icon > svg,
+.bek-search-result-row__fill > svg,
+.bek-search-result-row__thumb > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+.bek-search-result-row__thumb {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: var(--bek-scale-40);
+  height: var(--bek-scale-40);
+  border-radius: var(--bek-radius-control-md);
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-tertiary);
+}
+
+.bek-search-result-row__thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-search-result-row--file .bek-search-result-row__thumb {
+  background: var(--bek-status-info-soft);
+  color: var(--bek-text-info);
+}
+
+.bek-search-result-row__avatar {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.bek-search-result-row__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+  min-width: 0;
+}
+
+.bek-search-result-row__heading {
+  display: flex;
+  align-items: baseline;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+}
+
+.bek-search-result-row__title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Recent — o'tgan so'rov text/secondary; Query + match — yozilgan qism text/primary, qolgani text/secondary. */
+.bek-search-result-row--recent .bek-search-result-row__title,
+.bek-search-result-row__title--matched {
+  color: var(--bek-text-secondary);
+}
+
+.bek-search-result-row__match {
+  color: var(--bek-text-primary);
+}
+
+.bek-search-result-row__meta {
+  flex-shrink: 0;
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  white-space: nowrap;
+}
+
+.bek-search-result-row__snippet {
+  overflow: hidden;
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-search-result-row__source {
+  align-self: flex-start;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}
+
+/* ↵ — faqat Selected va Web'da. */
+.bek-search-result-row__enter {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--bek-scale-24);
+  padding: var(--bek-scale-2) var(--bek-scale-6);
+  border-radius: var(--bek-radius-control-sm);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-tertiary);
+  font-family: inherit;
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-search-result-row--selected .bek-search-result-row__enter {
+  display: inline-flex;
+}
+
+.bek-search-suggestions--mobile .bek-search-result-row__enter {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-search-result-row {
+    transition: none;
+  }
+}

@@ -1,0 +1,5 @@
+---
+'@bek-ui/react': minor
+---
+
+3.12 Search bar — qidiruv tizimining qolgan qismlari (Figma bilan strict mos): `SearchSuggestions` (Search suggestions — `device` web · mobile; Recent · Suggestions · Results guruhlari `SearchSuggestionGroup` bilan, sarlavhada "Clear" / "See all" amali; Empty — `emptyTitle` · `emptyDescription`, Loading — `Skeleton` qatorlar + `aria-busy` va live region; Web'da ↑ ↓ ↵ esc ishoralari, Mobile'da tepada `field` slot), `SearchResultRow` (Search result row — `type` query · recent · item · person · file, `title` · `match` · `meta` · `snippet` · `source` · `media`, Selected — `aria-selected` + ↵, ↖ Fill query) va `useSearchSuggestions` (WAI-ARIA combobox: `SearchField` ga `role="combobox"`, `aria-controls`, `aria-activedescendant`, ↑ ↓ / ↵ / esc). `FacetPanel` (Facet panel — `device` web · mobile; facet'lar `fieldset` + `legend` va `Checkbox` M + son, Web'da vertikal `tablist`, "Clear all" va "Show results" tugmalari). Ichki ikonkalar (`src/icons`): clock-01, arrow-up-left-01, image-01, file-01, search-remove.

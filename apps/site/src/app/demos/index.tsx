@@ -28,6 +28,7 @@ import {
   Divider,
   DropdownMenu,
   EmptyState,
+  FacetPanel,
   Fieldset,
   HomeIndicator,
   Icon,
@@ -57,6 +58,9 @@ import {
   RangeSlider,
   Rating,
   SearchField,
+  SearchResultRow,
+  SearchSuggestionGroup,
+  SearchSuggestions,
   SegmentedControl,
   Select,
   ScrubField,
@@ -89,6 +93,8 @@ import {
   Tooltip,
   TooltipCallout,
   TopNavigation,
+  useSearchSuggestions,
+  type FacetValue,
 } from '@bek-ui/react';
 import {
   ChevronRight,
@@ -389,6 +395,58 @@ export const demos: Record<string, ComponentType> = {
       secondaryAction={{ label: "Ko'proq bilish" }}
     />
   ),
+  'facet-panel': () => {
+    const facets = [
+      {
+        id: 'type',
+        label: 'Turi',
+        options: [
+          { value: 'symbol-text', label: 'Belgi va matn', count: 661 },
+          { value: 'wordmark', label: 'Yozuv', count: 428 },
+          { value: 'symbol', label: 'Belgi', count: 118 },
+          { value: 'animated', label: 'Animatsiyali', count: 111 },
+          { value: 'app-icon', label: 'Ilova ikonkasi', count: 1 },
+        ],
+      },
+      {
+        id: 'industry',
+        label: 'Soha',
+        options: [
+          { value: 'finance', label: 'Moliya', count: 312 },
+          { value: 'education', label: "Ta'lim", count: 204 },
+          { value: 'retail', label: 'Savdo', count: 98 },
+        ],
+      },
+      { id: 'style', label: 'Uslub', options: [{ value: 'flat', label: 'Tekis', count: 540 }, { value: 'line', label: 'Chiziqli', count: 233 }] },
+    ];
+    const [filters, setFilters] = useState<FacetValue>({ type: ['symbol-text', 'wordmark'] });
+    const total = Object.values(filters).reduce((n, v) => n + v.length, 0);
+    return (
+      <div className="flex flex-col gap-6 w-full max-w-3xl">
+        <FacetPanel
+          facets={facets}
+          value={filters}
+          onChange={setFilters}
+          title="Filtrlar"
+          clearAllLabel="Hammasini tozalash"
+          summary={`${total} ta filtr · 1 089 natija`}
+          resultsLabel="Natijalarni ko'rsatish"
+          selectedCountLabel={(n) => `${n} ta tanlangan`}
+        />
+        <div className="w-full max-w-sm">
+          <FacetPanel
+            device="mobile"
+            facets={facets.slice(0, 2)}
+            value={filters}
+            onChange={setFilters}
+            title="Filtrlar"
+            clearAllLabel="Tozalash"
+            resultsLabel="1 089 natijani ko'rsatish"
+          />
+        </div>
+      </div>
+    );
+  },
   fieldset: () => {
     const [v, setV] = useState('courier');
     return (
@@ -633,6 +691,76 @@ export const demos: Record<string, ComponentType> = {
         <SearchField aria-label="Qidiruv (yuklanmoqda)" size="s" defaultValue="Pizza" loading loadingLabel="Yuklanmoqda" />
         <SearchField aria-label="Qidiruv (o'chirilgan)" size="s" disabled />
       </Col>
+    );
+  },
+  'search-suggestions': () => {
+    const all = ['Pizza margherita', 'Pizza delivery', 'Pizza four cheese', 'Pizzeria near me', 'Sushi near me', 'Lagman', 'Coffee beans'];
+    const [q, setQ] = useState('');
+    const [open, setOpen] = useState(false);
+    const [recent, setRecent] = useState(['Pizza delivery', 'Sushi near me', 'Lagman', 'Coffee beans']);
+    const nav = useSearchSuggestions({ open, onClose: () => setOpen(false) });
+    const matches = q ? all.filter((s) => s.toLowerCase().includes(q.toLowerCase())) : [];
+    const pick = (s: string) => {
+      setQ(s);
+      setOpen(false);
+      setRecent((r) => [s, ...r.filter((x) => x !== s)].slice(0, 4));
+    };
+    return (
+      <div className="flex flex-col gap-6 w-full max-w-xl">
+        <div className="flex flex-col gap-2">
+          <SearchField
+            aria-label="Qidirish"
+            placeholder="Qidirish (masalan, piz)"
+            value={q}
+            onChange={(e) => {
+              setQ(e.target.value);
+              setOpen(true);
+            }}
+            onFocus={() => setOpen(true)}
+            onBlur={() => setOpen(false)}
+            onClear={() => setQ('')}
+            {...nav.inputProps}
+          />
+          {open && (
+            <SearchSuggestions
+              {...nav.listProps}
+              label="Takliflar"
+              emptyTitle={q ? `“${q}” bo'yicha hech narsa topilmadi` : undefined}
+              emptyDescription="Imloni tekshiring yoki umumiyroq so'z yozing."
+              hints={[['↑ ↓', 'Tanlash'], ['↵', 'Ochish'], ['esc', 'Yopish']]}
+            >
+              {!q
+                ? recent.length > 0 && (
+                    <SearchSuggestionGroup label="Oxirgi qidiruvlar" actionLabel="Tozalash" onAction={() => setRecent([])}>
+                      {recent.map((s) => (
+                        <SearchResultRow key={s} type="recent" title={s} onClick={() => pick(s)} onFillQuery={() => setQ(s)} fillQueryLabel="Maydonga qo'yish" />
+                      ))}
+                    </SearchSuggestionGroup>
+                  )
+                : matches.length > 0 && (
+                    <SearchSuggestionGroup label="Takliflar">
+                      {matches.map((s) => (
+                        <SearchResultRow key={s} type="query" title={s} match={q} onClick={() => pick(s)} onFillQuery={() => setQ(s)} fillQueryLabel="Maydonga qo'yish" />
+                      ))}
+                    </SearchSuggestionGroup>
+                  )}
+            </SearchSuggestions>
+          )}
+        </div>
+        <SearchSuggestions label="Natijalar namunasi" activeId="demo-person" hints={[['↑ ↓', 'Tanlash'], ['↵', 'Ochish'], ['esc', 'Yopish']]}>
+          <SearchSuggestionGroup label="Odamlar">
+            <SearchResultRow id="demo-person" type="person" title="Alicia Kumar" meta="HR Business Partner" />
+          </SearchSuggestionGroup>
+          <SearchSuggestionGroup label="Fayllar">
+            <SearchResultRow type="file" title="Vacation_Planning_Handbook.pdf" meta="May 19 · 2025" snippet="Planning your vacation is an important part of keeping a healthy work-life balance." />
+            <SearchResultRow type="file" title="Coverage_Requirements.docx" meta="Apr 11 · 2025" snippet="Minimum staffing levels for every team during the holiday season." />
+          </SearchSuggestionGroup>
+          <SearchSuggestionGroup label="Elementlar" actionLabel="Hammasi">
+            <SearchResultRow type="item" title="Q2 vacation coordination" meta="Jun 12 · 2025" snippet="Step-by-step guidance on prioritising requests and aligning with project deadlines." source="#hr" />
+          </SearchSuggestionGroup>
+        </SearchSuggestions>
+        <SearchSuggestions label="Yuklanmoqda namunasi" loading loadingLabel="Natijalar yuklanmoqda" hints={null} />
+      </div>
     );
   },
   'segmented-control': () => {
