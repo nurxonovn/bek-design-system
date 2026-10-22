@@ -21,7 +21,7 @@ export type ButtonVariant =
   | 'outline-contrast'
   | 'flat-contrast';
 
-/** Balandlik: m 28 · l 36 · xl 44 · 2xl 52 · 3xl 60 px. Touch uchun kamida xl. */
+/** Balandlik: m 28 · l 36 · xl 44 · 2xl 56 · 3xl 64 px (field/height bilan juft). Touch uchun kamida xl. */
 export type ButtonSize = 'm' | 'l' | 'xl' | '2xl' | '3xl';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

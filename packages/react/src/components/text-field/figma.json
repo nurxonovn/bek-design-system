@@ -35,21 +35,40 @@
           "type": "BOOLEAN",
           "default": true
         },
-        "Variant": ["Filled", "Outlined", "Plain"],
-        "Size": ["S", "M", "L", "XL"],
+        "Prefix": {
+          "type": "TEXT",
+          "default": "UZS"
+        },
+        "Suffix": {
+          "type": "TEXT",
+          "default": ".00"
+        },
+        "Show prefix": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show suffix": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Variant": ["Filled", "Outlined", "Underlined"],
+        "Size": ["S", "M", "L", "XL", "2XL"],
         "State": ["Enabled", "Hovered", "Error", "Disabled", "Loading", "Skeleton", "Focus"],
         "Text configurations": ["Label text", "Placeholder text", "Input text"]
       },
-      "variants": 252,
+      "variants": 273,
       "size": {
         "w": 320,
         "h": 56
       },
       "tokens": {
         "color": [
+          "bg/sheet",
+          "border/accent",
           "border/danger",
+          "border/default",
           "border/focus",
-          "fill/primary",
+          "border/hairline",
           "fill/soft",
           "fill/soft-hover",
           "fill/soft-pressed",
@@ -59,37 +78,40 @@
           "text/secondary",
           "text/tertiary"
         ],
-        "text": ["Body/M", "Caption/M", "Label/Input"],
+        "text": ["Body/M", "Caption/M", "Headline/S", "Label/Input"],
         "effect": [],
         "dimension": [
+          "field/height/2xl",
+          "field/height/lg",
+          "field/height/md",
+          "field/height/sm",
+          "field/height/xl",
           "radius/control/lg",
           "radius/control/md",
           "scale/12",
           "scale/16",
           "scale/24",
           "scale/32",
-          "scale/36",
           "scale/4",
           "scale/40",
-          "scale/44",
-          "scale/56",
-          "scale/64",
           "scale/8"
         ]
       },
-      "sizes": [1, 2, 4, 5, 8, 10, 12, 14, 16, 24, 40],
+      "sizes": [1, 4, 5, 8, 10, 12, 14, 16, 24, 40],
       "rawColors": [],
       "nested": [],
-      "description": "Text input field. Variant × Size × State × Text configurations = 252 variants. Supporting text is built into the component."
+      "description": "Text input field. Variant (Filled · Outlined · Underlined) × Size (S 36 · M 44 · L 56 · XL 64, Underlined also 2XL 72) × State × Text configurations. Heights use field/height/* — a Button beside the field uses the same height (S↔Button L, M↔XL, L↔2XL, XL↔3XL). Prefix / Suffix (Show prefix, Show suffix) for currency, units, +998. Underlined L–2XL is the login / onboarding style. Supporting text is "
     }
   ],
   "doc": {
-    "3.2 Text field": {
+    "Text field": {
       "tokens": [
         "border/danger",
         "border/default",
         "border/focus",
         "control/height",
+        "control/height/",
+        "control/height/lg",
         "fill/primary",
         "radius/control/sm",
         "scale/1",

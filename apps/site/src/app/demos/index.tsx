@@ -722,6 +722,8 @@ export const demos: Record<string, ComponentType> = {
       <TextField label="Telefon" placeholder="+998 __ ___ __ __" supportingText="SMS kod yuboriladi" />
       <TextField label="Karta" error supportingText="Karta raqami noto'g'ri" defaultValue="4421" />
       <TextField variant="outlined" size="l" leadingIcon={<Search size={20} />} placeholder="Qidirish" />
+      <TextField label="Summa" prefix="UZS" suffix=".00" inputMode="decimal" />
+      <TextField variant="underlined" size="2xl" label="Telefon" prefix="+998" type="tel" />
     </Col>
   ),
   textarea: () => (
