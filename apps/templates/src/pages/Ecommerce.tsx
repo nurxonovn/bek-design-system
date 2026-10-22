@@ -4,6 +4,7 @@ import {
   AccordionItem,
   Badge,
   BekLogo,
+  BottomNavGroup,
   BottomNavigation,
   BottomNavItem,
   Button,
@@ -142,15 +143,18 @@ function Home() {
           onQuantityChange={change('mockups')}
         />
       </div>
-      <BottomNavigation variant="floating">
-        <BottomNavItem icon={<Icon name="home" />} selected>
-          Shop
-        </BottomNavItem>
-        <BottomNavItem icon={<Icon name="search" />}>Search</BottomNavItem>
-        <BottomNavItem icon={<Icon name="bag" />} badge={2}>
-          Basket
-        </BottomNavItem>
-        <BottomNavItem icon={<Icon name="user" />}>Profile</BottomNavItem>
+      <BottomNavigation>
+        <BottomNavGroup variant="dual">
+          <BottomNavItem icon={<Icon name="home" />} selected>
+            Shop
+          </BottomNavItem>
+          <BottomNavItem icon={<Icon name="search" />}>Search</BottomNavItem>
+        </BottomNavGroup>
+        <BottomNavGroup variant="solo">
+          <BottomNavItem variant="icon-only" icon={<Icon name="bag" />}>
+            Basket
+          </BottomNavItem>
+        </BottomNavGroup>
       </BottomNavigation>
     </>
   );

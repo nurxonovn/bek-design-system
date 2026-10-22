@@ -33,7 +33,6 @@
           "border/focus",
           "border/strong",
           "fill/disabled",
-          "fill/primary",
           "fill/soft-hover",
           "text/disabled",
           "text/on-color",
@@ -57,7 +56,7 @@
     }
   ],
   "doc": {
-    "3.4 Checkbox": {
+    "Checkbox": {
       "tokens": [
         "accent/default",
         "border/strong",

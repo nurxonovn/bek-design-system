@@ -1,42 +1,63 @@
-/* Bottom navigation — Figma "6.7 Bottom navigation". Bar: 64 + safe area, surface/raised,
-   Elevation/1, padding 0 8. Floating: pill, 16 px chetdan, Elevation/3.
-   Element: 56 balandlik, gap 2, radius 8, ikonka 24, nom Caption/S text/secondary;
-   Selected — text/accent; Pressed — fill/soft + text/primary; Disabled — text/disabled.
-   Dot 8 px, Count 16 px — status/danger/default. */
+/* Bottom navigation — Figma "6.7 Bottom navigation". Shaffof qator kontent ustida: padding 16 (yuqori) ·
+   24 (past, home indicator) · yon 24 (Mobile) / 64 (Tablet); boshida Dual, oxirida Solo kapsula.
+   Kapsula (Bottom nav group): surface/raised, Elevation/3, radius/full, padding 4, gap 0; Dual 240×64, Solo 64×64.
+   Element (Bottom nav item): 56 balandlik, padding 6 0, gap 4, radius/full; ikonka 24, nom Label/S;
+   Default — text/secondary; Selected — accent/soft fon + text/accent; Icon only — 56×56. */
 .bek-bottom-nav {
   position: sticky;
   bottom: 0;
   z-index: var(--bek-z-sticky);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--bek-scale-16);
   box-sizing: border-box;
-  min-height: var(--bek-scale-64);
-  padding: 0 var(--bek-scale-8) env(safe-area-inset-bottom);
-  background: var(--bek-surface-raised);
-  box-shadow: var(--bek-elevation-1);
+  padding: var(--bek-scale-16) var(--bek-scale-24)
+    max(var(--bek-scale-24), env(safe-area-inset-bottom));
   font-family: var(--bek-family-sans);
+  /* Kapsulalar orasidagi bo'sh joy kontentga bosishni o'tkazadi. */
+  pointer-events: none;
 }
 
-.bek-bottom-nav--floating {
-  bottom: max(var(--bek-scale-16), env(safe-area-inset-bottom));
-  margin: 0 var(--bek-scale-16);
-  padding-bottom: 0;
+.bek-bottom-nav--tablet {
+  padding-inline: var(--bek-scale-64);
+}
+
+.bek-bottom-nav-group {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-0);
+  box-sizing: border-box;
+  padding: var(--bek-scale-4);
   border-radius: var(--bek-radius-full);
+  background: var(--bek-surface-raised);
   box-shadow: var(--bek-elevation-3);
+  pointer-events: auto;
+}
+
+.bek-bottom-nav-group--dual {
+  min-width: var(--bek-scale-240);
+}
+
+.bek-bottom-nav-group--fill {
+  flex: 1;
+  min-width: 0;
 }
 
 .bek-bottom-nav-item {
+  position: relative;
   display: flex;
   flex: 1 1 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--bek-scale-2);
-  min-width: var(--bek-scale-48);
+  gap: var(--bek-scale-4);
+  box-sizing: border-box;
+  min-width: 0;
   height: var(--bek-scale-56);
-  padding: 0;
+  padding: var(--bek-scale-6) 0;
   border: 0;
-  border-radius: var(--bek-radius-control-md);
+  border-radius: var(--bek-radius-full);
   background: transparent;
   color: var(--bek-text-secondary);
   text-decoration: none;
@@ -44,12 +65,13 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.bek-bottom-nav-item:active:not(:disabled) {
-  background: var(--bek-fill-soft);
-  color: var(--bek-text-primary);
+.bek-bottom-nav-item--icon-only {
+  flex: 0 0 auto;
+  width: var(--bek-scale-56);
 }
 
 .bek-bottom-nav-item[data-selected] {
+  background: var(--bek-accent-soft);
   color: var(--bek-text-accent);
 }
 
@@ -62,6 +84,7 @@
 .bek-bottom-nav-item__icon {
   position: relative;
   display: inline-flex;
+  flex-shrink: 0;
   width: var(--bek-icon-lg);
   height: var(--bek-icon-lg);
 }
@@ -72,12 +95,17 @@
 }
 
 .bek-bottom-nav-item__label {
+  max-width: 100%;
+  overflow: hidden;
   font-weight: var(--bek-weight-medium);
-  font-size: var(--bek-type-caption-sm-size);
-  line-height: var(--bek-type-caption-sm-line-height);
-  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* Eski API (`badge`) — Figma 6.7 da endi yo'q, moslik uchun saqlangan. */
 .bek-bottom-nav-item__dot,
 .bek-bottom-nav-item__count {
   position: absolute;
@@ -100,7 +128,7 @@
   padding: 0 var(--bek-scale-4);
   color: var(--bek-text-on-color);
   font-weight: var(--bek-weight-semibold);
-  font-size: var(--bek-type-caption-sm-size);
+  font-size: var(--bek-type-label-sm-size);
   line-height: var(--bek-scale-16);
   text-align: center;
 }

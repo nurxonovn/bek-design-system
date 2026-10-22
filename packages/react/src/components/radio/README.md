@@ -24,4 +24,4 @@ Native `<input type="radio">`: bir guruh — bir xil `name`, guruh bitta Tab to'
 | `Show label` | `children` bo'lmasa — `aria-label` bering          |
 | `State`      | `:hover` · `:focus-visible` · `disabled`           |
 
-Tokenlar: doira `fill/primary` + `border/strong` (hover — `border/accent`), tanlangan `accent/default` (hover — `accent/hover`), nuqta `text/on-color`, radius `radius/full`, label Body/S (`l` — Body/M).
+Tokenlar: doira `bg/sheet` + `border/strong` (hover — `border/accent`), tanlangan `accent/default` (hover — `accent/hover`), nuqta `text/on-color`, radius `radius/full`, label Body/S (`l` — Body/M).

@@ -191,6 +191,33 @@ Ikkala sahifa `--strict` 0 bilan kodga o'tdi (`accepted[]` bo'sh). Figma tomonid
 - 6.9 doc tokens jadvali: tugma balandligi `control/height/lg` deyilgan, qiymati 44 (XL); CSS nomi `--bek-shadow-1`,
   to'g'risi `--bek-elevation-1`.
 
+### A12. Komponentlar sinxroni: 2.x, 3.x, 4.x, 5.x, 6.x, 9.1, 10.x (2026-10-22)
+
+Umumiy:
+
+- Set o'ramlari fonlari har xil (`bg/base`, `fill/secondary`, `fill/strong`, `surface/card`) — App bar, Bottom
+  navigation (3 set), Checkout bar, Widget · Active order, Top navigation; hammasini `bg/sheet` ga keltirish kerak.
+- Doc ≠ komponent: List item va Table cell doc'ida "Background — Default: fill/primary", komponent `bg/sheet`;
+  Slider doc "Thumb fill — fill/primary", komponent `fill/secondary` (thumb chegarasi `border/default` ga hali
+  bog'lanmagan); Textarea doc'ida variant "Underlined", komponentda "Plain"; Time slot picker tavsif/doc "60 high,
+  size/control/7", komponent 64 (`control/height/3xl`), doc radius `radius/control/md`, komponent
+  `radius/surface/lg`; Checkout bar doc'ida hali "Bar: bg/sheet · Elevation/2" va Show info / Show legal (komponent
+  endi Floating action container'dan).
+- Segmented control: prop `Style` → `Variant` qayta nomlangan, doc sarlavhalarida hali "Style × Size × …".
+- Eski token nomlari tavsiflarda: Slider, Stepper (`color/background/accent/default`, `size/field/1`,
+  `size/stepper-value/*`).
+- HTML entity (`&quot;`, `&lt;`) — Slider, Stepper, Fieldset, Link, Logo, Bottom navigation, Checkout bar,
+  Breadcrumb, Price, Tooltip, Rating, Separator tavsif/doc'larida.
+- 2.2 Logo: doc'da "Desing Studio" imlo xatosi; "Mulk Gold" misoli ostida `product="E-Store"`; tokensiz `#d9d9d9`
+  qatlam hali bor.
+- 2.3 Mascot: `📘 Mascot` freymi section ichida — Mascot message uchun sahifa doc'i bo'sh chiqadi.
+- 6.7 Bottom navigation qayta dizayn qilingan (set ID'lari almashgan: 1107:108948, 1107:108881, yangi Bottom nav
+  group 1107:108907). Bottom nav item tavsifida "State: … · Focus", variantlar faqat Default / Selected; item kengligi
+  116 va Dual kapsula 240 tokenga bog'lanmagan.
+- 6.6 Top navigation Type=Search: qidiruv maydoni hali inline (`fill/secondary`, `search-01`, `text/tertiary`) —
+  3.12 Search field instance'iga almashtirish kerak (App bar'da shunday).
+- 9.1 Slots & Helpers sahifasida `📘` doc freymi yo'q.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

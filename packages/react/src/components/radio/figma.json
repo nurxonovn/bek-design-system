@@ -28,11 +28,11 @@
         "color": [
           "accent/default",
           "accent/hover",
+          "bg/sheet",
           "border/accent",
           "border/focus",
           "border/strong",
           "fill/disabled",
-          "fill/primary",
           "fill/soft-hover",
           "text/disabled",
           "text/on-color",
@@ -49,7 +49,7 @@
     }
   ],
   "doc": {
-    "3.5 Radio": {
+    "Radio": {
       "tokens": ["accent/default", "border/strong", "radius/full", "scale/16", "scale/8"],
       "text": "\nDesign tokens\nProperty\nToken\nValue\nCircle size\nscale/16–3\n16 / 20 / 24\nDot\n—\n6 / 8 / 10\nCorner radius\nradius/full\n9999\nGap\nscale/8\n8\nBackground — selected\naccent/default\n—\nBorder — unselected\nborder/strong\n—\nLabel font\nBody/S · Body/M\n14/20 · 16/24\nProps\nProp\nType\nValues\nDefault\nSize\nvariant\nS (16), M (20), L (24)\nM\nState\nvariant\nDefault, Hover, Focused, Disabled\nDefault\nSelected\nvariant\nOff, On\nOff\nLabel\ntext\nAny text\nLabel\nShow label\nboolean\ntrue / false\ntrue\nDo / Don’t\nDo\nLabel\nLabel\nAlways keep one option selected in a group.\nNote\nLabel\nLabel\nRadio for 2–5 options; Select for more."
     }

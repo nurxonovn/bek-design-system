@@ -3,126 +3,95 @@
   "components": [
     {
       "name": "Bottom navigation",
-      "id": "783:1337",
+      "id": "1107:108948",
       "page": "6.7 Bottom navigation",
       "pageId": "782:66",
-      "props": {
-        "Style": ["Bar", "Floating"],
-        "Items": ["3", "4", "5"],
-        "Direction": ["LTR", "RTL"]
-      },
-      "variants": 12,
-      "size": {
-        "w": 390,
-        "h": 64
-      },
+      "props": { "Variant": ["Mobile", "Tablet"] },
+      "variants": 2,
+      "size": { "w": 390, "h": 104 },
       "tokens": {
-        "color": ["bg/base", "surface/raised", "text/accent", "text/secondary"],
-        "text": ["Caption/S"],
-        "effect": ["Elevation/1 Raised", "Elevation/3 Floating"],
-        "dimension": [
-          "radius/control/md",
-          "radius/full",
-          "scale/2",
-          "scale/56",
-          "scale/64",
-          "scale/8"
-        ]
+        "color": ["bg/base", "surface/raised"],
+        "text": [],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/full", "scale/0", "scale/16", "scale/24", "scale/4", "scale/64"]
       },
-      "sizes": [1, 2, 8, 16, 32, 40],
+      "sizes": [1, 4, 16, 24, 32, 40, 64],
       "rawColors": [],
       "nested": [],
-      "description": "Mobile bottom navigation with 3–5 destinations built from Bottom nav item. Each item is exposed: set its Label, Icon (any BEK - Icons style; Solid for the selected item), State and Badge directly. Style: Bar (edge to edge) or Floating (pill above content)."
+      "description": "The one bottom navigation for mobile and tablet: a Dual capsule on the leading side and a Solo round capsule on the trailing side. Variant: Mobile (390×104, side inset 24) or Tablet (834×104, side inset 64). Top 16 / bottom 24 leave room for the home indicator. Transparent — sits over content. React: <BottomNavigation device=\"tablet\" />"
+    },
+    {
+      "name": "Bottom nav group",
+      "id": "1107:108907",
+      "page": "6.7 Bottom navigation",
+      "pageId": "782:66",
+      "props": { "Variant": ["Dual", "Solo"] },
+      "variants": 2,
+      "size": { "w": 240, "h": 64 },
+      "tokens": {
+        "color": ["accent/soft", "bg/base", "surface/raised", "text/accent", "text/secondary"],
+        "text": ["Label/S"],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": ["radius/full", "scale/0", "scale/4", "scale/56", "scale/6"]
+      },
+      "sizes": [1, 4, 6, 16, 32, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Capsule inside Bottom navigation. Variant: Dual (two labelled items, 240×64) or Solo (one icon-only item, 64×64). surface/raised + Elevation/3 Floating, radius/full, padding 4, no border. Nested items are exposed."
     },
     {
       "name": "Bottom nav item",
-      "id": "971:1505",
+      "id": "1107:108881",
       "page": "6.7 Bottom navigation",
       "pageId": "782:66",
       "props": {
-        "Label": {
-          "type": "TEXT",
-          "default": "Home"
-        },
-        "Show label": {
-          "type": "BOOLEAN",
-          "default": true
-        },
-        "Count": {
-          "type": "TEXT",
-          "default": "2"
-        },
-        "Icon": {
-          "type": "INSTANCE_SWAP",
-          "default": "651:24517"
-        },
-        "State": ["Default", "Pressed", "Selected", "Focus", "Disabled"],
-        "Badge": ["None", "Dot", "Count"],
-        "Direction": ["LTR", "RTL"]
+        "Label": { "type": "TEXT", "default": "Home" },
+        "Icon": { "type": "INSTANCE_SWAP", "default": "651:24519" },
+        "Variant": ["Label", "Icon only"],
+        "State": ["Default", "Selected"]
       },
-      "variants": 30,
-      "size": {
-        "w": 72,
-        "h": 56
-      },
+      "variants": 4,
+      "size": { "w": 116, "h": 56 },
       "tokens": {
-        "color": [
-          "bg/base",
-          "border/focus",
-          "fill/soft",
-          "status/danger/default",
-          "text/accent",
-          "text/disabled",
-          "text/on-color",
-          "text/primary",
-          "text/secondary"
-        ],
-        "text": ["Caption/S"],
+        "color": ["accent/soft", "bg/base", "text/accent", "text/secondary"],
+        "text": ["Label/S"],
         "effect": [],
-        "dimension": [
-          "radius/control/md",
-          "radius/full",
-          "scale/16",
-          "scale/2",
-          "scale/4",
-          "scale/56",
-          "scale/72",
-          "scale/8"
-        ]
+        "dimension": ["radius/full", "scale/4", "scale/56", "scale/6"]
       },
-      "sizes": [1, 2, 4, 8, 10, 16],
+      "sizes": [1, 4, 6, 16, 32, 40],
       "rawColors": [],
       "nested": ["home-01"],
-      "description": "Single destination in Bottom navigation. Icon accepts any BEK - Icons style (Stroke Standard by default); use the Solid style for the Selected state. Badge: None, Dot (new content) or Count (number, max &quot;99+&quot;). Width fills the bar; min target 48."
+      "description": "One destination of Bottom navigation. Variant: Label (Solid icon 24 + label, 116×56) or Icon only (56×56). State: Default · Selected (accent/soft background, text/accent) · Focus. Swap Icon (BEK - Icons, Solid) and set Label."
     }
   ],
   "doc": {
     "6.7 Bottom navigation": {
       "tokens": [
-        "Elevation/1",
         "Elevation/3",
-        "fill/soft-pressed",
+        "accent/soft",
+        "radius/full",
         "scale/16",
+        "scale/24",
+        "scale/4",
+        "scale/6",
         "scale/64",
-        "status/danger/default",
         "surface/raised",
         "text/accent",
-        "text/on-color",
         "text/secondary"
       ],
-      "text": "NAVIGATION\nBEK\nDesign System\n6.7 Bottom navigation\n3–5 top-level destinations at the bottom of a mobile screen. 12 variants · Style (Bar / Floating) × Items × Direction.\nOverview\nAlways visible on root screens; hidden on pushed screens and in checkout.\nBar · 4\nHome\nSearch\n2\nCart\nProfile\nFull width, surface/raised, Elevation/1.\nFloating · 3\nHome\n2\nCart\nProfile\nPill inset 16, Elevation/3 — for content-heavy, photo-led apps.\nBar · 5\nHome\nSearch\n2\nCart\nSaved\nProfile\nMaximum five destinations.\nAnatomy\nHome\nSearch\n2\nCart\nProfile\n1\nitem · selected\n· Solid icon 24 + label · text/accent\n2\nitem\n· Stroke icon 24 + label · text/secondary\n3\nlabel\n· Caption/S (11/16), 1 word\n4\nbadge\n· status/danger/default · count, Caption/S · optional\n5\nbar\n· 64 (scale/64) · surface/raised · Elevation/1 Raised\nVariants\nBar — 3 · 4 · 5\n3\nHome\n2\nCart\nProfile\n4\nHome\nSearch\n2\nCart\nProfile\n5\nHome\nSearch\n2\nCart\nSaved\nProfile\nFloating — 3 · 4 · 5\n3\nHome\n2\nCart\nProfile\n4\nHome\nSearch\n2\nCart\nProfile\n5\nHome\nSearch\n2\nCart\nSaved\nProfile\nDark mode\nBar\nHome\nSearch\n2\nCart\nProfile\nFloating\nHome\nSearch\n2\nCart\nProfile\nRTL — order mirrored, first destination on the right\nBar · RTL\nالملف\n2\nالسلة\nبحث\nالرئيسية\nSizes\nPart\nValue\nToken\nNotes\nBar height\n64\nscale/64\n+ Home indicator 34 (iOS) / 24 (Android) below\nIcon\n24\nicon/lg\nSolid when selected\nItem\nequal width\nfill\nHit area ≥ 48 × 56\nFloating inset\n16\nscale/16\nFrom screen edges and home indicator\nStates\nState\nIcon\nLabel\nNotes\nDefault\nStroke · text/secondary\ntext/secondary\n—\nSelected\nSolid · text/accent\ntext/accent\nTapping again scrolls to top\nPressed\n—\n—\nfill/soft-pressed circle 48 behind icon\nWith badge\n—\n—\nCount 1–99, then 99+\nProps\nIcons are instances from BEK - Icons — swap the icon per item (Stroke for default, Solid for selected).\nProp\nType\nValues\nDefault\nStyle\nVariant\nBar · Floating\nBar\nItems\nVariant\n3 · 4 · 5\n3\nDirection\nVariant\nLTR · RTL\nLTR\nItem › Label · Icon\nText · Instance swap\nAny text · any BEK - Icons style\nHome · home-01\nItem › State · Badge\nVariant\nDefault · Pressed · Selected · Focus · Disabled / None · Dot · Count\nDefault · None\nBottom nav item\nEvery destination is a Bottom nav item, exposed in the bar. Set Label and Icon (any BEK - Icons style — switch to Solid for the selected item), State and Badge per item. Min target 48 (item 72 × 56, fills the bar).\nHome\nHome\n2\nHome\nHome\nHome\n2\nHome\nHome\nHome\n2\nHome\nHome\nHome\n2\nHome\nHome\nHome\n2\nHome\nTokens\nProperty\nToken\nLight\nDark\nBar\nsurface/raised\n#FFFFFF\n#27272B\nShadow\nElevation/1 · Elevation/3\nsoft\noff in Dark\nSelected\ntext/accent\nindigo/850\nindigo (dark)\nDefault\ntext/secondary\ngray/850\ngray/850 (dark)\nBadge\nstatus/danger/default · text/on-color\nred/650\nred/450\nDevices\nMobile · 390\nHome\nSearch\n2\nCart\nProfile\nBar 64 + Home indicator. Floating sits 16 above the indicator.\nTablet · 834\nHome\nSearch\n2\nCart\nProfile\nReplace with Nav rail · Tablet (6.2) on the left edge.\nWeb · 1440\nHome\n2\nCart\nProfile\nNot used — use Module rail and Menu panel (6.2).\nDo / Don’t\nHome\nSearch\n2\nCart\nProfile\nDo\n3–5 destinations with one-word labels; keep the same order on every screen.\nHome\nSearch\n2\nCart\nSaved\nProfile\nDon’t\nDon’t put actions (Add, Pay) in the bar or hide labels when icons are not self-explanato"
+      "text": "NAVIGATION\nBEK\nDesign System\n6.7 Bottom navigation\nThe one bottom navigation for mobile and tablet: a Dual capsule with two labelled destinations and a Solo round capsule. Bottom navigation (Mobile / Tablet) · Bottom nav group (Dual / Solo) · Bottom nav item (6).\nOverview\nRoot screens of mobile and tablet apps: two main destinations in the Dual capsule, one quick destination in the Solo capsule. Selected item: Solid icon + accent/soft background.\nMobile · 390\nHome\nCourses\nTablet · 834\nHome\nCourses\nVariants\nBottom nav item × 6 · Bottom nav group × 2 · Bottom navigation × 2. Labels are one word; the Solo item is icon-only.\nBottom nav item — Label · Default / Selected / Focus\nHome\nHome\nHome\nBottom nav item — Icon only · Default / Selected / Focus\nBottom nav group — Dual 240×64 · Solo 64×64\nHome\nCourses\nTokens\nAll values are BEK variables — Light and Dark switch automatically.\nPart\nToken\nLight\nDark\nCapsule (Bottom nav group)\nsurface/raised · Elevation/3 Floating\n#FFFFFF · soft shadow\n#27272B · shadow off\nSelected fill\naccent/soft\n#E1E7FA\n#161F3D\nSelected icon + label\ntext/accent\nindigo/850\nindigo (dark)\nDefault icon + label\ntext/secondary\ngray/850\ngray/850 (dark)\nLabel\nLabel/S\n12 / 16 · medium\nsame\nRadius · padding\nradius/full · scale/4 (capsule) · scale/6 + scale/4 (item)\n—\n—\nBar inset\nMobile scale/24 · Tablet scale/64 · top scale/16 · bottom scale/24\n—\n—\nDark mode\nSame component, Color mode = Dark.\nLight\nHome\nCourses\nDark\nHome\nCourses\nDo / Don’t\nDo\nTwo labelled destinations in Dual + one icon-only destination in Solo. Solid icons; one-word labels; same order on every screen.\nDon’t\nDon’t add a third item to Dual or a label to Solo, and don’t use Stroke icons for the selected item."
     }
   },
   "accepted": [
     {
       "rule": "token-missing",
       "match": "--bek-bg-base",
-      "reason": "bg/base — Figma'da Bottom navigation va Bottom nav item variant frame'lari ortidagi ekran foni (demo), bar o'zi surface/raised. Figma'da variant frame fonini o'chirish (yoki bg/sheet o'ramiga olish) kerak."
+      "reason": "bg/base — Figma'da Bottom navigation / Bottom nav group / Bottom nav item komponent to'plamlari (set) o'ramining foni; komponentning o'zi shaffof (kontent ustida), kapsula surface/raised. Figma'da set fonini bg/sheet ga o'tkazish kerak — shunda bu yozuv olib tashlanadi."
     },
     {
-      "rule": "token-missing",
-      "match": "--bek-border-focus",
-      "reason": "Fokus halqasi BottomNavItem'ga NavAction (navigation papkasi) orqali `.bek-focus-ring` klassi bilan beriladi — border/focus shu umumiy uslubda (styles/focus.css); shu papkada bevosita yozilmaydi."
+      "rule": "token-extra",
+      "match": "--bek-status-danger-default",
+      "reason": "BottomNavItem `badge` (dot / son) — Figma 6.7 ning 2026-10 versiyasida olib tashlangan, lekin ommaviy API buzilmasligi uchun kodda saqlangan (eski ilovalar). Figma'da badge qaytsa — spec'ga tushadi; aks holda keyingi major relizda olib tashlanadi."
     }
   ]
 }
