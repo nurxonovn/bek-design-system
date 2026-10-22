@@ -185,8 +185,16 @@ export function MindMap({
   const g = layout === 'tree' ? treeLayout(root, width, height) : radialLayout(root, width, height);
   return (
     <figure
+      // Keng kanvas gorizontal skroll qiladi — klaviaturadan ham (WCAG 2.1.1, axe scrollable-region-focusable).
+      tabIndex={0}
       {...rest}
-      className={cx('bek-diagram', 'bek-mind-map', `bek-mind-map--${layout}`, className)}
+      className={cx(
+        'bek-diagram',
+        'bek-mind-map',
+        `bek-mind-map--${layout}`,
+        'bek-focus-ring',
+        className,
+      )}
     >
       <div
         className="bek-mind-map__canvas"

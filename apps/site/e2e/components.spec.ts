@@ -30,18 +30,12 @@ async function openComponent(page: Page, dir: string) {
   return { preview, errors };
 }
 
-/**
- * Jonli namuna talab qilinadigan paketlar. Chartlar (`charts` paketi) uchun demolar hali yozilmagan —
- * ular uchun sahifa va a11y tekshiriladi, namuna talabi demolar qo'shilganda shu ro'yxatga kiradi.
- */
-const DEMO_REQUIRED = /\/react$/;
-
-for (const { dir, pkg, title } of components) {
+for (const { dir, title } of components) {
   test.describe(dir, () => {
     test('sahifa va jonli namuna xatosiz ochiladi', async ({ page }) => {
       const { preview, errors } = await openComponent(page, dir);
       await expect(page.getByRole('heading', { level: 1, name: title })).toBeVisible();
-      if (DEMO_REQUIRED.test(pkg)) await expect(preview).not.toContainText('namuna hali yozilmagan');
+      await expect(preview).not.toContainText('namuna hali yozilmagan');
       expect(errors).toEqual([]);
     });
 
