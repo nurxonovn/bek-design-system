@@ -23,7 +23,11 @@ const ROOT = {
 
 test('MindMap radial: root terminal, one node per branch, coloured links, nested SR list', () => {
   const html = render(h(MindMap, { root: ROOT, label: 'Q4 goals: 3 shox' }));
-  assert.match(html, /bek-mind-map--radial/);
+  // keng kanvas skroll qiladi — klaviaturadan fokuslanadi
+  assert.match(
+    html,
+    /^<figure tabindex="0" class="bek-diagram bek-mind-map bek-mind-map--radial bek-focus-ring"/,
+  );
   assert.match(html, /role="img" aria-label="Q4 goals: 3 shox"/);
   assert.equal(html.match(/bek-diagram-node--terminal/g).length, 1);
   assert.equal(html.match(/bek-diagram-node--process/g).length, 3);
@@ -35,6 +39,11 @@ test('MindMap radial: root terminal, one node per branch, coloured links, nested
 test('MindMap tree: leaves rendered with dots, height grows with leaf count', () => {
   const html = render(h(MindMap, { root: ROOT, layout: 'tree', label: 'x', height: 100 }));
   assert.match(html, /bek-mind-map--tree/);
+  // tashqaridan berilgan tabIndex ustun
+  assert.match(
+    render(h(MindMap, { root: ROOT, label: 'x', tabIndex: -1 })),
+    /^<figure tabindex="-1"/,
+  );
   assert.equal(html.match(/class="bek-mind-map__leaf"/g).length, 3);
   assert.equal(html.match(/class="bek-mind-map__link"/g).length, 6);
   const height = Number(html.match(/height:(\d+)px/)[1]);
@@ -78,7 +87,7 @@ test('JourneyMap default: grid with numbered stages, chips, curve, dash for empt
   const html = render(h(JourneyMap, { stages: STAGES, label: "Yo'l" }));
   assert.match(
     html,
-    /<figure[^>]*class="bek-diagram bek-journey bek-journey--default"[^>]*aria-label="Yo&#x27;l"/,
+    /<figure tabindex="0" class="bek-diagram bek-journey bek-journey--default bek-focus-ring" aria-label="Yo&#x27;l"/,
   );
   assert.match(html, /grid-template-columns:var\(--bek-scale-96\) repeat\(3, minmax\(0, 1fr\)\)/);
   assert.equal(html.match(/class="bek-journey__chip"/g).length, 3);
@@ -134,6 +143,10 @@ test('swimlanePorts: next column uses side edges, same column uses top/bottom ed
 
 test('Swimlane: nodes, connectors with Yes pill, dividers, SR list; unknown ids throw', () => {
   const html = render(h(Swimlane, { lanes: LANES, steps: STEPS, edges: EDGES, label: 'Kredit' }));
+  assert.match(
+    html,
+    /^<figure tabindex="0" class="bek-diagram bek-swimlane bek-swimlane--horizontal bek-focus-ring"/,
+  );
   assert.match(html, /bek-swimlane--horizontal/);
   assert.equal(html.match(/class="bek-swimlane__lane-name"/g).length, 3);
   assert.equal(html.match(/class="bek-swimlane__divider"/g).length, 2);
