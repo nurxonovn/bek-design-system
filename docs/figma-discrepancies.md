@@ -71,6 +71,32 @@ Bu tokenlar `@bek-ui/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
 - Demo fonlari komponent ichida: `bg/base` (Checkout bar, Bottom navigation, Bottom nav item, Date picker, Time slot) — `bg/sheet` o'ram sifatida ishlatilsa checker e'tiborsiz qoldiradi.
 - 10.2 / 10.3: nested native (iOS 27 / M3) instance'lar `static/dark`, `static/white`, `surface/card`, `surface/raised` ga bog'lanmagan.
 
+### A5. 2-bosqich: 3.16 Selector card, 4.17 Steps (2026-10)
+
+Ikkala sahifa `--strict` 0 bilan kodga o'tdi (`accepted[]` bo'sh). Figma tomonida:
+
+- 📘 doc'larda "Design tokens" sarlavhasi o'rniga "Tokens" — extractor doc matnini sahifa boshidan olib 3200 belgida
+  kesadi, Rules/Props/Tokens/Do-Don't `figma.json` ga tushmaydi. Boshqa sahifalardagidek "Design tokens" deb nomlang.
+- Selector card: `State` bitta o'qda — Selected+Hover/Disabled/Error/Focus kombinatsiyalari chizilmagan (kodda:
+  tanlangan kartada ham hover qatlami, disabled+checked `accent/soft` saqlaydi).
+- Selector card: Default karta `bg/sheet` ustida `surface/card`, chegarasiz — Light'da bosish nishoni noaniq;
+  `border/subtle` kerakmi, tasdiqlang.
+- Selector card: Switch indikatori (24) birinchi qatorga (Title/S, 20) yuqoridan tekislangan — 1.11 qoidasi bo'yicha
+  markazda bo'lishi kerak. Kod Figma'ga ergashgan.
+- Selector card: Image top varianti qat'iy 280 px (kodda suyuq, gorizontal guruhda ≥ 240); Selector group tavsifi
+  "Vertical on Mobile", doc "Mobile and Tablet".
+- Steps: chiziq (Line before/after) 2 px kengligi tokenga bog'lanmagan — `stroke/strong` (kodda shu).
+- Steps: tavsiflarda `<Steps.Item …>`, kodda `StepsItem` (`DescriptionListItem` kabi); horizontal qadam qat'iy 160 px
+  (kodda konteynerni teng bo'ladi); vertical oxirgi qadamda ham 24 px pastki padding — ataylabmi?
+- 2026-10-22 qayta tekshiruv: ikkala sahifa o'zgarmagan (props, tokenlar, o'lchamlar, doc bir xil). Qo'shimcha:
+  - Steps komponent tavsiflari HTML entity bilan saqlangan (`&lt;Steps.Item …&gt;`, `&quot;horizontal&quot;`) — oddiy
+    `<`, `>`, `"` bilan qayta yozing (spec'da ochib yozildi).
+  - Doc bo'limlari endi `📘 Selector card` / `📘 Steps` SECTION'lari — nomi set nomiga teng bo'lgani uchun extractor
+    ularni oila sahifasi (4.18 Chart) deb tushunadi va doc'ni ikki kalit ostida takrorlaydi; spec'da sahifa kaliti qoldirildi.
+    `📘 3.16 Selector card` kabi nomlash yoki "Design tokens" sarlavhasi bu muammoni ham yopadi.
+  - Tokens jadvalida yozilgan, lekin qatlamda bog'lanmagan o'lchamlar: Selector card Error chizig'i 2 px (`stroke/strong`),
+    Steps vertical pastki padding 24 (`scale/24`) va sarlavha tepasidagi 10 px, Steps chizig'i 2 px — Variables'ga bog'lang.
+
 ### A6. Variables (2026-10-22 sinxron)
 
 - Variable **description** maydonlarida apostrof va qo'shtirnoq HTML entity bo'lib saqlangan: `o&#39;lcham`,

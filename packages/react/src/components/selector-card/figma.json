@@ -1,0 +1,113 @@
+{
+  "page": "3.16 Selector card",
+  "components": [
+    {
+      "name": "Selector card",
+      "id": "1058:54784",
+      "page": "3.16 Selector card",
+      "pageId": "1058:34894",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Standard delivery"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "Courier brings the order within 2 days"
+        },
+        "Meta": {
+          "type": "TEXT",
+          "default": "Free"
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show meta": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Media": ["None", "Icon", "Image start", "Image top"],
+        "Control": ["Radio", "Checkbox", "Switch"],
+        "State": ["Default", "Hover", "Selected", "Focus", "Disabled", "Error"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 144,
+      "size": {
+        "w": 360,
+        "h": 76
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/sheet",
+          "border/danger",
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "surface/card",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Body/S", "Label/M", "Title/S"],
+        "effect": [],
+        "dimension": [
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/16",
+          "scale/4"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 14, 16],
+      "rawColors": [],
+      "nested": ["Checkbox", "Radio", "Switch"],
+      "description": "A large, explained choice: plan, delivery method, payment type, onboarding goal. The whole card is the hit target; the indicator (Radio · Checkbox · Switch) shows the selection model. Selected = accent/soft; Hover = fill/soft-hover over surface/card; Error = border/danger 2 px + a Fieldset message. Media: None · Icon (exposed _Icon) · Image start (64) · Image top (280 wide). Group cards inside a F"
+    },
+    {
+      "name": "Selector group",
+      "id": "1058:107109",
+      "page": "3.16 Selector card",
+      "pageId": "1058:34894",
+      "props": {
+        "Orientation": ["Vertical", "Horizontal"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 360,
+        "h": 324
+      },
+      "tokens": {
+        "color": ["accent/soft", "bg/sheet", "surface/card"],
+        "text": [],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/12", "scale/16"]
+      },
+      "sizes": [1, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "2–4 Selector cards that answer one question. Put it inside a Fieldset (3.19) for the label and the error message. Vertical on Mobile; Horizontal on Web when every card fits ≥ 240 px. Gap scale/12."
+    }
+  ],
+  "doc": {
+    "3.16 Selector card": {
+      "tokens": [
+        "accent/soft",
+        "border/danger",
+        "border/focus",
+        "fill/soft-hover",
+        "radius/surface/md",
+        "scale/12",
+        "scale/16",
+        "surface/card",
+        "text/accent",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.16 Selector card\nA large, explained choice — plan, delivery, payment, onboarding goal. 4 media × 3 controls × 6 states, LTR and RTL — 144 variants, plus Selector group.\nOverview\nThe indicator tells the selection model: Radio — one of many; Checkbox — any of many; Switch — on/off per card.\nRadio · delivery\nCourier\nWithin 2 hours in Tashkent\n15 000 so‘m\nPickup point\nReady tomorrow, 1 200 points\nFree\nPost\n3–5 days anywhere in Uzbekistan\n9 000 so‘m\nCheckbox · interests\nUI design\nInterfaces, components, systems\nMotion\nAnimation and prototyping\nResearch\nInterviews and testing\nSwitch · notifications\nOrder updates\nPush and SMS\nPromotions\nOnce a week\nNew lessons\nWhen a course updates\nImage top · plans (Radio)\nStarter\nPersonal projects\nFree\nPro\nEvery component and update\n99 000 so‘m / mo\nTeam\nUp to 10 seats\n249 000 so‘m / mo\nAnatomy\nIcon · Radio · Selected, meta on.\nCourier\nWithin 2 hours in Tashkent\n15 000 so‘m\n1\ncontainer\n· surface/card → accent/soft when selected · radius/surface/md · padding scale/16 · whole card is the target\n2\nmedia\n· optional · Icon 40 (accent/soft circle) · Image 64 · Image top 140 high\n3\ntitle\n· Title/S · text/primary · TEXT prop\n4\ndescription\n· Body/S · text/secondary · optional\n5\nmeta\n· Label/M · price or duration · optional\n6\nindicator\n· Radio · Checkbox · Switch, size M · mirrors the selection\nVariants\nMedia × Control, Default and Selected.\nNone\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nIcon\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nImage start\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nImage top\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStandard delivery\nCourier brings the order within 2 days\nStates\nIcon · Radio. Hover is Web only; Focus comes from the keyboard (1.13).\nDefault\nStandard delivery\nCourier brings the order within 2 days\nHover\nStandard delivery\nCourier brings the order within 2 days\nSelected\nStandard delivery\nCourier brings the order within 2 days\nFocus\nStandard delivery\nCourier brings the order within 2 days\nDisabled\nStandard delivery\nCourier brings the order within 2 days\nError\nStandard delivery\nCourier brings the order within 2 days\nError: the card shows border/danger 2 px; the message lives in the Fieldset around the group — “Choose a delivery method”.\nSelector group\nCards that answer one question, inside a Fieldset.\nDelivery method\nCourier\nWithin 2 hours in Tashkent\n15 000 so‘m\nPickup point\nReady tomorrow, 1 200 points\nFree\nPost\n3–5 days anywhere in Uzbekistan\n9 000 so‘m\nChoose a delivery method\n2–4 cards."
+    }
+  },
+  "accepted": []
+}

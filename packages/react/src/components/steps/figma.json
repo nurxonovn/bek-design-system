@@ -1,0 +1,188 @@
+{
+  "page": "4.17 Steps",
+  "components": [
+    {
+      "name": "Steps · Vertical item",
+      "id": "1060:6215",
+      "page": "4.17 Steps",
+      "pageId": "1060:5185",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Order placed"
+        },
+        "Description": {
+          "type": "TEXT",
+          "default": "We received your order"
+        },
+        "Meta": {
+          "type": "TEXT",
+          "default": "10 Oct, 14:32"
+        },
+        "Number": {
+          "type": "TEXT",
+          "default": "1"
+        },
+        "Line before": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Line after": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show description": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show action": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show meta": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Status": ["Complete", "Current", "Upcoming", "Error"],
+        "Marker": ["Dot", "Number", "Icon"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 24,
+      "size": {
+        "w": 360,
+        "h": 78
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "bg/sheet",
+          "border/default",
+          "fill/control",
+          "fill/soft",
+          "status/danger/default",
+          "text/danger",
+          "text/on-color",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/L", "Label/L", "Label/S"],
+        "effect": [],
+        "dimension": ["scale/12", "scale/4"]
+      },
+      "sizes": [1, 4, 8, 10, 12, 16, 24],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "One step of a vertical sequence — order tracking, application stages, onboarding, long-form progress. Status: Complete · Current · Upcoming · Error. Marker: Dot 8 · Number 24 · Icon 24. Turn Line before off on the first step and Line after off on the last. The line after a Complete step is accent; after anything else, border/default. React: <Steps.Item status marker>."
+    },
+    {
+      "name": "Steps · Horizontal item",
+      "id": "1060:6542",
+      "page": "4.17 Steps",
+      "pageId": "1060:5185",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Packed"
+        },
+        "Caption": {
+          "type": "TEXT",
+          "default": "10 Oct"
+        },
+        "Number": {
+          "type": "TEXT",
+          "default": "1"
+        },
+        "Line before": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Line after": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show caption": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Status": ["Complete", "Current", "Upcoming", "Error"],
+        "Marker": ["Dot", "Number", "Icon"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 24,
+      "size": {
+        "w": 160,
+        "h": 60
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "bg/sheet",
+          "border/default",
+          "fill/control",
+          "fill/soft",
+          "status/danger/default",
+          "text/danger",
+          "text/on-color",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/M", "Label/S"],
+        "effect": [],
+        "dimension": ["scale/8"]
+      },
+      "sizes": [1, 4, 8, 16],
+      "rawColors": [],
+      "nested": [],
+      "description": "One step of a horizontal timeline — order tracking on a card, checkout stages. 160 wide; lines fill to the neighbours. Line slots keep their space when the line is hidden, so markers stay aligned. React: <Steps.Item orientation=\"horizontal\">."
+    },
+    {
+      "name": "Steps",
+      "id": "1061:870",
+      "page": "4.17 Steps",
+      "pageId": "1060:5185",
+      "props": {
+        "Orientation": ["Vertical", "Horizontal"],
+        "Count": ["3", "4", "5"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 360,
+        "h": 210
+      },
+      "tokens": {
+        "color": ["bg/sheet", "text/primary", "text/secondary"],
+        "text": ["Label/M"],
+        "effect": [],
+        "dimension": ["scale/12", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Ready-made sequences of 3, 4 or 5 Number steps. Edit each item’s status and title; for more than 5 steps show a counter (“Step 3 of 8”) instead of every step."
+    }
+  ],
+  "doc": {
+    "4.17 Steps": {
+      "tokens": [
+        "accent/default",
+        "accent/soft",
+        "border/default",
+        "fill/control",
+        "fill/soft",
+        "scale/12",
+        "status/danger/default",
+        "text/danger",
+        "text/on-color",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "DATA DISPLAY\nBEK\nDesign System\n4.17 Steps\nWhere the user is in a process — order tracking, application stages, onboarding, long forms. Vertical and horizontal items (4 statuses × 3 markers, LTR and RTL — 24 each) and ready sequences of 3–5 steps. Not to be confused with 3.9 Stepper (a ± number input).\nOverview\nThree real uses.\nOrder tracking · vertical, Icon\nOrder placed\n10 Oct, 09:12\nPaid\n10 Oct, 09:13\nPacked\nCourier picks it up at 15:00\nTrack\nOn the way\nDelivered\nApplication · vertical, Dot, with error\nDocuments uploaded\nPassport, diploma\nReview\n2 days\nPayment\nCard declined — try another card\nUse another card\nCertificate\nCheckout · horizontal, Number\n1\nCart\n2\nDelivery\n3\nPayment\n4\nDone\nAnatomy\nVertical item, Current, Number, action and meta on.\n3\nPacked\nCourier picks it up at 15:00\nTrack\nToday\n1\nline before\n· 2 px · accent/default unless the step is Upcoming · off on the first step\n2\nmarker\n· Dot 8 · Number 24 · Icon 24 · Current adds a 4 px accent/soft ring\n3\nline after\n· accent after Complete, border/default otherwise · off on the last step\n4\ntitle · description\n· Label/L · Body/S text/secondary · optional description\n5\naction\n· optional · Button Normal M\n6\nmeta\n· optional · Caption/L text/tertiary · time, price, duration\nStatuses and markers\nVertical items, LTR.\nDot\nComplete\nCurrent\nUpcoming\nError\nNumber\n1\nComplete\n2\nCurrent\n3\nUpcoming\n4\nError\nIcon\nComplete\nCurrent\nUpcoming\nError\nStatus\nMarker\nTitle\nWhen\nComplete\naccent/default · check icon\ntext/primary\nDone; the line after it is accent too\nCurrent\naccent/default + accent/soft ring\ntext/primary\nExactly one at a time\nUpcoming\nfill/soft · text/secondary\ntext/secondary\nNot reached yet\nError\nstatus/danger/default · alert icon\ntext/danger\nBlocked — say why and offer an action\nHorizontal\nFor 3–5 short steps across a card or the top of a flow. 160 per step; lines fill to the neighbours.\nPlaced\nPaid\nPacked\nShipped\nProblem\n1\nPlaced\n10 Oct\n2\nPaid\n10 Oct\n3\nPacked\n10 Oct\n4\nShipped\n10 Oct\n5\nProblem\n10 Oct\nPlaced\nPaid\nPacked\nShipped\nProblem\nDevices\nVertical everywhere for detailed tracking. Horizontal only when labels are one or two short words; on Mobile keep it to 4 steps.\nMobile · 390\n1\nCart\n2\nDelivery\n3\nPayment\n4\nDone\nOrder placed\nPacked\nOn the way\nTablet · 834\n1\nCart\n2\nDelivery\n3\nPayment\n4\nDone\nOrder placed\nPacked\nOn the way\nWeb · 1440\n1\nCart\n2\nDelivery\n3\nPayment\n4\nDone\nOrder placed\nPacked\nOn the way\nDark\n1\nComplete\n2\nCurrent\n3\nUpcoming\n4\nError\n1\nComplete\n2\nCurrent\n3\nUpcoming\n4\nError\nProps\nProp\nType\nValues\nDefault\nStatus\nVariant\nComplete · Current · Upcoming · Error\nComplete\nMarker\nVariant\nDot · Number · Icon\nDot\nDirection\nVariant\nLTR · RTL\nLTR\nTitle · Number\nText\nany\n—\nDescription · Meta (vertical) · Caption (horizontal)\nText\nany\n—\nLine before · Line after\nBoolean\non / off\non\nShow description · Show action · Show meta (vertical)\nBoolean\non / off\non · off · off\nShow caption (horizontal)\nBoolean\non / off\noff\nMarker icon\nNested _Icon\nany BEK icon\ncheck · info · alert by status\nSteps · Orientation · Count\nVariant\nVertical · Horizontal · 3 · 4 · 5\nVertical · 3\nTokens\nProperty\nToken\nValue\nCSS\nLine\naccent/default · border/default\n2 px\n--bek-accent-default · --bek-border-default\nMarker · Complete / Curre"
+    }
+  },
+  "accepted": []
+}

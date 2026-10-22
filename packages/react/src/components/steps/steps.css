@@ -1,0 +1,234 @@
+/* Steps — Figma "4.17 Steps". Chiziq 2 px (accent/default · border/default); marker Dot 8 · Number 24 ·
+   Icon 24 (ikonka 16); Current — 4 px accent/soft halqa. Vertical: rail 24 → kontent 12, sarlavha Label/L,
+   tavsif Body/S text/secondary, meta Caption/L text/tertiary, qadam oralig'i — 24 pastki padding.
+   Horizontal: qadam kengligi teng, chiziq slotlari qo'shnigacha to'ladi, sarlavha Label/M, izoh Caption/M.
+   Holat ranglari qadam ildizidagi o'zgaruvchilarda; Dark — tokenlar, RTL — logical props. */
+.bek-steps {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--bek-family-sans);
+  color: var(--bek-text-primary);
+}
+
+.bek-steps--horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Holatlar: Complete (default qiymatlar) · Current · Upcoming · Error. */
+.bek-steps__item {
+  --bek-steps-marker-bg: var(--bek-accent-default);
+  --bek-steps-marker-fg: var(--bek-text-on-color);
+  --bek-steps-dot: var(--bek-steps-marker-bg);
+  --bek-steps-title: var(--bek-text-primary);
+  --bek-steps-line-before: var(--bek-accent-default);
+  --bek-steps-line-after: var(--bek-border-default);
+
+  display: flex;
+  min-width: 0;
+}
+
+.bek-steps__item--complete {
+  --bek-steps-line-after: var(--bek-accent-default);
+}
+
+.bek-steps__item--upcoming {
+  --bek-steps-marker-bg: var(--bek-fill-soft);
+  --bek-steps-marker-fg: var(--bek-text-secondary);
+  --bek-steps-dot: var(--bek-fill-control);
+  --bek-steps-title: var(--bek-text-secondary);
+  --bek-steps-line-before: var(--bek-border-default);
+}
+
+.bek-steps__item--error {
+  --bek-steps-marker-bg: var(--bek-status-danger-default);
+  --bek-steps-title: var(--bek-text-danger);
+}
+
+/* Rail: line before · marker · line after — dekorativ. */
+.bek-steps__rail {
+  display: flex;
+  align-items: center;
+}
+
+.bek-steps__line {
+  flex: none;
+  background: var(--bek-steps-line-after);
+}
+
+.bek-steps__line--before {
+  background: var(--bek-steps-line-before);
+}
+
+/* Yashirin chiziq joyini saqlaydi — markerlar bir chiziqda qoladi. */
+.bek-steps__item--no-line-before .bek-steps__line--before,
+.bek-steps__item--no-line-after .bek-steps__line--after {
+  visibility: hidden;
+}
+
+.bek-steps__marker {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--bek-scale-24);
+  height: var(--bek-scale-24);
+}
+
+.bek-steps__dot,
+.bek-steps__circle {
+  border-radius: var(--bek-radius-full);
+}
+
+/* Current — 4 px accent/soft halqa marker tashqarisida (joy egallamaydi). */
+.bek-steps__item--current .bek-steps__dot,
+.bek-steps__item--current .bek-steps__circle {
+  box-shadow: 0 0 0 var(--bek-scale-4) var(--bek-accent-soft);
+}
+
+.bek-steps__dot {
+  width: var(--bek-scale-8);
+  height: var(--bek-scale-8);
+  background: var(--bek-steps-dot);
+}
+
+.bek-steps__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--bek-steps-marker-bg);
+  color: var(--bek-steps-marker-fg);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-steps__circle > svg {
+  width: var(--bek-icon-sm);
+  height: var(--bek-icon-sm);
+}
+
+.bek-steps__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.bek-steps__title {
+  color: var(--bek-steps-title);
+  font-weight: var(--bek-weight-medium);
+  overflow-wrap: anywhere;
+}
+
+/* Vertical item: rail 24 (yuqorida 8 — line before), kontent 12 dan keyin. */
+.bek-steps__item--vertical {
+  flex-direction: row;
+  gap: var(--bek-scale-12);
+}
+
+.bek-steps__item--vertical .bek-steps__rail {
+  position: relative;
+  flex: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: var(--bek-scale-24);
+  padding-top: var(--bek-scale-8);
+}
+
+.bek-steps__item--vertical .bek-steps__line {
+  width: var(--bek-stroke-strong);
+}
+
+.bek-steps__item--vertical .bek-steps__line--before {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: var(--bek-scale-8);
+  margin-inline: auto;
+}
+
+.bek-steps__item--vertical .bek-steps__line--after {
+  flex: 1 1 auto;
+}
+
+/* Sarlavha markaz chizig'i markerga teng: 10 + 20/2 = 8 + 24/2. */
+.bek-steps__item--vertical .bek-steps__content {
+  flex: 1 1 auto;
+  gap: var(--bek-scale-4);
+  padding-top: var(--bek-scale-10);
+  padding-bottom: var(--bek-scale-24);
+}
+
+.bek-steps__item--vertical .bek-steps__title {
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-steps__description {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-steps__action {
+  display: flex;
+  padding-top: var(--bek-scale-8);
+}
+
+.bek-steps__meta {
+  flex: none;
+  padding-top: var(--bek-scale-10);
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+  white-space: nowrap;
+}
+
+/* Horizontal item: rail (chiziq slotlari 4 oraliq bilan to'ladi) · sarlavha · izoh, 8 oraliq. */
+.bek-steps__item--horizontal {
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  text-align: center;
+}
+
+.bek-steps__item--horizontal .bek-steps__rail {
+  align-self: stretch;
+  gap: var(--bek-scale-4);
+}
+
+.bek-steps__item--horizontal .bek-steps__line {
+  flex: 1 1 0;
+  height: var(--bek-stroke-strong);
+}
+
+.bek-steps__item--horizontal .bek-steps__content {
+  align-items: center;
+  gap: var(--bek-scale-8);
+  width: 100%;
+}
+
+.bek-steps__item--horizontal .bek-steps__title {
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-steps__caption {
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
