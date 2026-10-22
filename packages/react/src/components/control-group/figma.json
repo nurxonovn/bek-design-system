@@ -1,0 +1,43 @@
+{
+  "page": "3.20 Field groups",
+  "components": [
+    {
+      "name": "Control group",
+      "id": "1336:179811",
+      "page": "3.20 Field groups",
+      "pageId": "1179:80",
+      "props": {
+        "Title": { "type": "TEXT", "default": "Motion" },
+        "Show title": { "type": "BOOLEAN", "default": true },
+        "Show row 3": { "type": "BOOLEAN", "default": true },
+        "Show row 4": { "type": "BOOLEAN", "default": true },
+        "Density": ["Default", "Compact"]
+      },
+      "variants": 2,
+      "size": { "w": 320, "h": 232 },
+      "tokens": {
+        "color": ["surface/card", "text/tertiary"],
+        "text": ["Label/M", "Label/S"],
+        "effect": [],
+        "dimension": ["scale/2", "scale/4", "scale/8"]
+      },
+      "sizes": [1, 2, 4, 8, 16, 40, 80],
+      "rawColors": [],
+      "nested": ["Scrub field", "Switch field"],
+      "description": "Control group — settings panel pattern (complex component, CMP-09): an optional title and 2–4 control rows (Scrub field, Switch field, Select, Text field). Rows are exposed instances — swap or edit them. Density Default = M rows (44), gap 8; Compact = XS/S rows (32/36), gap 4 — Web/Tablet only. React: <ControlGroup title density>{children}</ControlGroup>. Props: Title, Show title, Show"
+    }
+  ],
+  "doc": {
+    "Control group": {
+      "tokens": ["scale/2", "scale/4", "scale/8", "text/tertiary"],
+      "text": "INPUTS · FIELD GROUPS\nBEK\nDesign System\n3.20 Control group\nSettings panel pattern: a short title and 2–4 control rows — Scrub field, Switch field, Select or Text field — stacked with one gap. For editors, tool panels and preference sheets.\nOverview\nGroups several settings under one heading; each row is a full component, not a nested atom (CMP-09).\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\nDefault — M rows (44), gap 8.\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\nCompact — XS/S rows (32/36), gap 4. Web / Tablet only.\nAnatomy\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\n1\nTitle\nLabel/M text/tertiary — optional (Show title)\n2\nRows 1–3\nScrub field instances — exposed, swap to Select / Text field\n3\nRow 4\nSwitch field — booleans go last\n4\nGap\nscale/8 Default · scale/4 Compact\nDensity\nDensity\nRows\nGap\nUse\nDefault\nScrub M 44 · Switch field M 44\nscale/8\nMobile, Tablet, preference sheets\nCompact\nScrub XS 32 · Switch field S 36\nscale/4\nWeb / Tablet tool panels (hit area stays 44)\nUsage\n• 2–4 rows per group; split longer lists into several groups with their own titles.\n• Order: numeric values first, toggles last, destructive actions never inside a group.\n• Changes apply instantly — no Save button. If values need Save, use a form with Fieldset (3.19).\n• Several groups side by side make a settings panel (e.g. Characters · Motion · Color · Pointer).\nPanel example\nFour groups in one Compact panel — Web 1440.\nCharacters\nSize\n12\npx\nDensity\n1.00\n×\nLine spacing\n16\npx\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nReduce motion\nColor\nOpacity\n64\n%\nHue shift\n0\n°\nContrast\n1.20\n×\nPointer\nBrightness\n100\n%\nRadius\n122\npx\nHighlight persistence\n64\n%\nPointer highlight\nDark mode\nLight\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\nDark\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\nProps\nProp\nType\nValues\nDefault\nDensity\nVariant\nDefault · Compact\nDefault\nTitle\nText\n—\nMotion\nShow title\nBoolean\ntrue · false\ntrue\nShow row 3\nBoolean\ntrue · false\ntrue\nShow row 4\nBoolean\ntrue · false\ntrue\nRow 1–4\nExposed instance\nScrub field · Switch field · Select · Text field\nScrub ×3 · Switch field\nTokens\nProperty\nToken\npx\nCSS\nGap\nscale/8 · scale/4\n8 · 4\n--bek-scale-*\nTitle gap\nscale/4 · scale/2\n4 · 2\n--bek-scale-*\nRow height\nfield/height/md · xs · sm\n44 · 32 · 36\n--bek-field-height-*\nTitle\nLabel/M · Label/S · text/tertiary\n—\n--bek-text-tertiary\nDo / Don’t\nDo\nMotion\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\nKeep a short noun title and 2–4 rows.\nDon’t\nMixed\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail persistence\n94\n%\nPointer highlight\nDon’t mix Default and Compact rows in one group — density is set on the group."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "surface/card faqat komponent set o'ramining (1336:179811) foni — Density=Default/Compact variantlarining o'zida fon yo'q (use_figma bilan tekshirildi): guruh panel ustida shaffof turadi. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+    }
+  ]
+}

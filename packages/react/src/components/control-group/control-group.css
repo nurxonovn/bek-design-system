@@ -1,0 +1,42 @@
+/* Control group — Figma "3.20 Field groups" → Control group. Sarlavha (Label/M · text/tertiary,
+   pastda scale/4) va qatorlar orasida scale/8; Compact — Label/S, scale/2, qatorlar orasida scale/4.
+   <legend> fieldset'ning flex konteyneridan tashqarida, shuning uchun sarlavha → 1-qator oralig'i
+   = gap + title gap (8 + 4 · 4 + 2). */
+.bek-control-group {
+  --bek-control-group-gap: var(--bek-scale-8);
+  --bek-control-group-title-gap: var(--bek-scale-4);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-control-group-gap);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--bek-family-sans);
+}
+
+.bek-control-group--compact {
+  --bek-control-group-gap: var(--bek-scale-4);
+  --bek-control-group-title-gap: var(--bek-scale-2);
+}
+
+.bek-control-group__title {
+  inline-size: 100%;
+  margin-block-end: calc(var(--bek-control-group-gap) + var(--bek-control-group-title-gap));
+  padding: 0;
+  overflow: hidden;
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bek-control-group--compact .bek-control-group__title {
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}

@@ -1,0 +1,177 @@
+/* Scrub field — Figma "3.21 Scrub field". Konteyner fill/soft · field/height/* · radius/control/md (L — lg),
+   padding scale/12 (XS, S) · scale/16 (M, L), gap scale/8. Matn: XS Label/S · S Label/M · M Body/M · L Body/L;
+   label text/secondary, qiymat text/primary, birlik text/tertiary (qiymat → birlik scale/2).
+   Track — neytral fill/soft-hover (hover/sudrash/fokus — fill/soft-pressed), kengligi (value − min) / (max − min);
+   handle — oxirida 2 px chiziq, balandligi konteynerning yarmi, text/tertiary (sudrash/fokus — text/primary).
+   Fokus = kiritish rejimi: kursor text/accent + _Focus ring (2 px border/focus, chetdan tashqarida). */
+.bek-scrub-field {
+  --bek-scrub-field-height: var(--bek-field-height-md);
+  --bek-scrub-field-padding: var(--bek-scale-16);
+  --bek-scrub-field-radius: var(--bek-radius-control-md);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  box-sizing: border-box;
+  min-block-size: var(--bek-scrub-field-height);
+  padding-inline: var(--bek-scrub-field-padding);
+  overflow: hidden;
+  border-radius: var(--bek-scrub-field-radius);
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-secondary);
+  font-family: var(--bek-family-sans);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-body-md-size);
+  line-height: var(--bek-type-body-md-line-height);
+  letter-spacing: var(--bek-type-body-md-tracking);
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-scrub-field--xs {
+  --bek-scrub-field-height: var(--bek-field-height-xs);
+  --bek-scrub-field-padding: var(--bek-scale-12);
+
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+}
+
+.bek-scrub-field--s {
+  --bek-scrub-field-height: var(--bek-field-height-sm);
+  --bek-scrub-field-padding: var(--bek-scale-12);
+
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+.bek-scrub-field--l {
+  --bek-scrub-field-height: var(--bek-field-height-lg);
+  --bek-scrub-field-radius: var(--bek-radius-control-lg);
+
+  font-size: var(--bek-type-body-lg-size);
+  line-height: var(--bek-type-body-lg-line-height);
+  letter-spacing: var(--bek-type-body-lg-tracking);
+}
+
+.bek-scrub-field__track {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  background: var(--bek-fill-soft-hover);
+  pointer-events: none;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-scrub-field__handle {
+  position: absolute;
+  inset-block-start: 25%;
+  inset-inline-end: 0;
+  inline-size: var(--bek-scale-2);
+  block-size: 50%;
+  border-radius: var(--bek-scale-1);
+  background: var(--bek-text-tertiary);
+}
+
+.bek-scrub-field__label {
+  position: relative;
+  flex: 1;
+  min-inline-size: 0;
+  overflow: hidden;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: inherit;
+}
+
+/* Qiymat input'i qator balandligida — bosish maydoni (target size) butun qator bo'yi. */
+.bek-scrub-field__value {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--bek-scale-2);
+}
+
+.bek-scrub-field__input {
+  align-self: stretch;
+  box-sizing: content-box;
+  field-sizing: content;
+  min-inline-size: 1ch;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--bek-text-primary);
+  font: inherit;
+  letter-spacing: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  caret-color: var(--bek-text-accent);
+  cursor: inherit;
+  outline: none;
+}
+
+.bek-scrub-field__unit {
+  color: var(--bek-text-tertiary);
+}
+
+/* Hovered · Dragging — konteyner va track bir qadam to'qroq; sudrashda handle text/primary. */
+.bek-scrub-field:not(.bek-scrub-field--disabled, .bek-scrub-field--editing):hover,
+.bek-scrub-field--dragging {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-scrub-field:not(.bek-scrub-field--disabled):hover .bek-scrub-field__track,
+.bek-scrub-field--dragging .bek-scrub-field__track,
+.bek-scrub-field--editing .bek-scrub-field__track {
+  background: var(--bek-fill-soft-pressed);
+}
+
+.bek-scrub-field--dragging .bek-scrub-field__handle,
+.bek-scrub-field--editing .bek-scrub-field__handle {
+  background: var(--bek-text-primary);
+}
+
+/* Focus — kiritish rejimi: halqa butun maydonda, kursor matn. */
+.bek-scrub-field:focus-within {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: 0;
+}
+
+.bek-scrub-field--editing .bek-scrub-field__input {
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.bek-scrub-field--disabled {
+  cursor: not-allowed;
+}
+
+.bek-scrub-field--disabled .bek-scrub-field__label,
+.bek-scrub-field--disabled .bek-scrub-field__input,
+.bek-scrub-field--disabled .bek-scrub-field__unit {
+  color: var(--bek-text-disabled);
+}
+
+.bek-scrub-field--disabled .bek-scrub-field__handle {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-scrub-field,
+  .bek-scrub-field__track {
+    transition: none;
+  }
+}

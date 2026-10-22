@@ -17,9 +17,11 @@ import {
   Carousel,
   CartPill,
   Checkbox,
+  CheckboxField,
   CheckoutBar,
   Chip,
   CodeInput,
+  ControlGroup,
   DatePicker,
   DescriptionList,
   DescriptionListItem,
@@ -57,6 +59,7 @@ import {
   SearchField,
   SegmentedControl,
   Select,
+  ScrubField,
   SelectorCard,
   SelectorGroup,
   Separator,
@@ -68,6 +71,7 @@ import {
   Steps,
   StepsItem,
   Switch,
+  SwitchField,
   Tab,
   TabList,
   TabPanel,
@@ -291,6 +295,22 @@ export const demos: Record<string, ComponentType> = {
       </Col>
     );
   },
+  'checkbox-field': () => {
+    const [remember, setRemember] = useState(false);
+    return (
+      <Col>
+        <CheckboxField
+          label="Bu qurilmani eslab qolish"
+          description="30 kun davomida bu brauzerda kod so'ralmaydi"
+          checked={remember}
+          onChange={(e) => setRemember(e.target.checked)}
+        />
+        <CheckboxField label="Yangiliklarni emailga yuborish" />
+        <CheckboxField label="Yashirin qatlamlarni ko'rsatish" size="s" controlPosition="end" defaultChecked />
+        <CheckboxField label="O'chirilgan" disabled />
+      </Col>
+    );
+  },
   'checkout-bar': () => (
     <div className="w-full max-w-sm flex flex-col gap-3">
       <CheckoutBar info={<InfoWrap icon={<Truck size={20} />}>200 000 soʻmdan bepul yetkazish</InfoWrap>} action={{ label: 'Savatga · 147 000 soʻm' }} />
@@ -316,6 +336,22 @@ export const demos: Record<string, ComponentType> = {
       </Row>
     );
   },
+  'control-group': () => (
+    <div className="grid w-full gap-6 sm:grid-cols-2">
+      <ControlGroup title="Harakat">
+        <ScrubField label="Tezlik" defaultValue={1.75} min={0.25} max={4} step={0.05} unit="×" />
+        <ScrubField label="Kadr oralig'i" defaultValue={134} max={500} unit="ms" />
+        <ScrubField label="Iz davomiyligi" defaultValue={94} unit="%" />
+        <SwitchField label="Kursor yoritilishi" defaultChecked />
+      </ControlGroup>
+      <ControlGroup title="Kursor" density="compact">
+        <ScrubField label="Yorqinlik" defaultValue={100} unit="%" />
+        <ScrubField label="Radius" defaultValue={122} max={400} unit="px" />
+        <ScrubField label="Yoritish davomiyligi" defaultValue={64} unit="%" />
+        <SwitchField label="Harakatni kamaytirish" />
+      </ControlGroup>
+    </div>
+  ),
   'date-picker': () => {
     const [date, setDate] = useState<Date | null>(null);
     return (
@@ -576,6 +612,18 @@ export const demos: Record<string, ComponentType> = {
       <Rating value={3} size="l" />
     </Row>
   ),
+  'scrub-field': () => {
+    const [speed, setSpeed] = useState(1.75);
+    return (
+      <Col>
+        <ScrubField label="Tezlik" value={speed} onChange={setSpeed} min={0.25} max={4} step={0.05} unit="×" />
+        <ScrubField label="Shaffoflik" defaultValue={64} unit="%" size="xs" />
+        <ScrubField label="Radius" defaultValue={122} max={400} unit="px" size="s" />
+        <ScrubField label="Yorqinlik" defaultValue={100} unit="%" size="l" />
+        <ScrubField label="O'chirilgan" defaultValue={40} unit="%" disabled />
+      </Col>
+    );
+  },
   'search-field': () => {
     const [q, setQ] = useState('');
     return (
@@ -700,6 +748,17 @@ export const demos: Record<string, ComponentType> = {
           Bildirishnomalar
         </Switch>
         <Switch disabled>O'chirilgan</Switch>
+      </Col>
+    );
+  },
+  'switch-field': () => {
+    const [glow, setGlow] = useState(true);
+    return (
+      <Col>
+        <SwitchField label="Kursor yoritilishi" checked={glow} onChange={(e) => setGlow(e.target.checked)} />
+        <SwitchField label="Harakatni kamaytirish" description="Fon animatsiyalarini to'xtatadi" />
+        <SwitchField label="To'rni ko'rsatish" size="s" defaultChecked />
+        <SwitchField label="O'chirilgan" disabled />
       </Col>
     );
   },

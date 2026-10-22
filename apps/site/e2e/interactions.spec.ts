@@ -128,3 +128,42 @@ test('Carousel: skroll maydoni Tab bilan fokuslanadi va → bilan suriladi', asy
   await page.keyboard.press('ArrowRight');
   await expect.poll(() => viewport.evaluate((el) => el.scrollLeft)).toBeGreaterThan(before);
 });
+
+test('ScrubField: ↑ qadam, Home/End chegara, sudrash qiymatni oshiradi, bosish — kiritish rejimi', async ({ page }) => {
+  await open(page, 'scrub-field');
+  const field = preview(page).getByRole('spinbutton', { name: 'Tezlik' });
+  await field.focus();
+  await page.keyboard.press('ArrowUp');
+  await expect(field).toHaveAttribute('aria-valuenow', '1.8');
+  await page.keyboard.press('End');
+  await expect(field).toHaveAttribute('aria-valuenow', '4');
+  await page.keyboard.press('Home');
+  await expect(field).toHaveAttribute('aria-valuenow', '0.25');
+  await field.blur();
+  const box = (await preview(page).locator('.bek-scrub-field').first().boundingBox())!;
+  const y = box.y + box.height / 2;
+  await page.mouse.move(box.x + 24, y);
+  await page.mouse.down();
+  await page.mouse.move(box.x + 24 + box.width / 2, y, { steps: 8 });
+  await page.mouse.up();
+  await expect(field).not.toBeFocused();
+  expect(Number(await field.getAttribute('aria-valuenow'))).toBeGreaterThan(1.5);
+  await page.mouse.click(box.x + 24, y);
+  await expect(field).toBeFocused();
+  await page.keyboard.type('2.5');
+  await page.keyboard.press('Enter');
+  await expect(field).toHaveAttribute('aria-valuenow', '2.5');
+});
+
+test('SwitchField: qatorning matni bosilsa ham almashadi, Space ishlaydi', async ({ page }) => {
+  await open(page, 'switch-field');
+  const sw = preview(page).getByRole('switch', { name: 'Harakatni kamaytirish' });
+  await expect(sw).not.toBeChecked();
+  // Yashirin input butun qatorni qoplaydi — matn ustidagi nuqtani sichqoncha bilan bosamiz.
+  const text = (await preview(page).getByText("Fon animatsiyalarini to'xtatadi").boundingBox())!;
+  await page.mouse.click(text.x + 8, text.y + text.height / 2);
+  await expect(sw).toBeChecked();
+  await sw.focus();
+  await page.keyboard.press('Space');
+  await expect(sw).not.toBeChecked();
+});

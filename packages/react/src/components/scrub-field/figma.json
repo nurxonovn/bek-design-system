@@ -1,0 +1,79 @@
+{
+  "page": "3.21 Scrub field",
+  "components": [
+    {
+      "name": "Scrub field",
+      "id": "1330:176767",
+      "page": "3.21 Scrub field",
+      "pageId": "1330:176618",
+      "props": {
+        "Label": { "type": "TEXT", "default": "Speed" },
+        "Value": { "type": "TEXT", "default": "1.75" },
+        "Unit": { "type": "TEXT", "default": "×" },
+        "Show unit": { "type": "BOOLEAN", "default": true },
+        "Show track": { "type": "BOOLEAN", "default": true },
+        "Size": ["XS", "S", "M", "L"],
+        "State": ["Enabled", "Hovered", "Dragging", "Focus", "Disabled"]
+      },
+      "variants": 20,
+      "size": { "w": 240, "h": 32 },
+      "tokens": {
+        "color": [
+          "bg/base",
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "text/accent",
+          "text/disabled",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/L", "Body/M", "Label/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "field/height/lg",
+          "field/height/md",
+          "field/height/sm",
+          "field/height/xs",
+          "radius/control/lg",
+          "radius/control/md",
+          "scale/12",
+          "scale/16",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 12, 16],
+      "rawColors": [],
+      "nested": [],
+      "description": "Scrub field — numeric value you change by dragging across the field (tool UI, settings panels). React: <ScrubField label value unit min max step onChange />. Drag = change value (cursor ew-resize), click / Enter = type (Focus), Shift = ×10 step, ↑↓ = step. Track width shows (value − min) / (max − min); resize the Track layer on instances. Neutral track (fill/soft-hover → fill/soft-pressed). "
+    }
+  ],
+  "doc": {
+    "Scrub field": {
+      "tokens": [
+        "border/focus",
+        "fill/soft",
+        "fill/soft-hover",
+        "fill/soft-pressed",
+        "radius/control",
+        "radius/control/md",
+        "scale/12",
+        "scale/16",
+        "scale/8",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.21 Scrub field\nA numeric field you change by dragging across it — or click to type. Built for settings panels, editors and tool UI where many values sit in a dense column.\nOverview\nLabel on the left, value and unit on the right; the neutral track behind shows where the value sits between min and max.\nSpeed\n1.75\n×\nDefault — drag left / right to change.\nOpacity\n64\n%\nWhile dragging, track and handle get stronger.\nRadius\n122\npx\nXS 32 — dense Web / Tablet panels.\nAnatomy\nSpeed\n1.75\n×\n1\nContainer\nfill/soft · field/height/* · radius/control\n2\nTrack\nNeutral fill — width = (value − min) / (max − min)\n3\nHandle\n2 px line at the end of the track; text/primary while dragging\n4\nLabel\nTruncates, never wraps\n5\nValue\nRight aligned; becomes editable on click\n6\nUnit\nOptional suffix — px, %, ms, ×\nStates\nEvery size has the same five states. Focus = typing mode (caret + focus ring).\n\nEnabled\nHovered\nDragging\nFocus\nDisabled\nXS\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nS\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nM\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nL\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSizes\nField heights are shared with Text field, Select and Button — a field and the button beside it always have the same height.\nSize\nHeight\nToken\nUse · pairs with\nXS\n32\nfield/height/xs\nWeb / Tablet only — dense panels, toolbars (hit area 44) · —\nS\n36\nfield/height/sm\nHeader search, filters · Button L (36)\nM\n44\nfield/height/md\nDefault forms and settings · Button XL (44)\nL\n56\nfield/height/lg\nMobile, touch-first panels · Button 2XL (56)\nUsage\n• Drag horizontally anywhere on the field to change the value; cursor is ew-resize (9.2 Cursor).\n• Click or press Enter to type an exact value; Enter / blur commits, Esc cancels.\n• Shift + drag or Shift + ↑↓ = ×10 step; Alt = ×0.1 step. ↑↓ change by one step while focused.\n• Show the unit whenever the number alone is ambiguous (px, %, ms).\n• On touch, horizontal drag fights page scroll — use L, drag only on the track, offer tap-to-type; for counts prefer 3.9 Stepper.\nDevices\nMobile · 390\nBrightness\n100\n%\nL (56), full width. Tap to type; drag only on the track.\nTablet · 834\nSize\n12\npx\nLine spacing\n16\npx\nS or M in side panels.\nWeb · 1440\nSpeed\n1.75\n×\nFrame interval\n134\nms\nTrail\n94\n%\nXS (32) in dense settings panels, 200–320 wide.\nDark mode\nTokens switch automatically — the neutral track stays visible on both surfaces.\nLight\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nDark\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nSpeed\n1.75\n×\nProps\nProp\nType\nValues\nDefault\nSize\nVariant\nXS · S · M · L\nM\nState\nVariant\nEnabled · Hovered · Dragging · Focus · Disabled\nEnabled\nLabel\nText\n—\nSpeed\nValue\nText\nnumber as string\n1.75\nUnit\nText\npx · % · ms · ×\n×\nShow unit\nBoolean\ntrue · false\ntrue\nShow track\nBoolean\ntrue · false\ntrue\nmin / max / step (code)\nnumber\n—\n0 / 100 / 1\nTokens\nProperty\nToken\npx\nCSS\nHeight\nfield/height/xs · sm · md · lg\n32 · 36 · 44 · 56\n--bek-field-height-*\nPadding x\nscale/12 (XS, S) · scale/16 (M, L)\n12 · 16\n--bek-scale-12 / 16\nGap\nscale/8\n8\n--bek-scale-8\nRadius\nradius/control/md · lg (L)\n8 · 12\n--bek-radius-control-*\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base faqat komponent set o'ramining (1330:176767) foni — 20 variantning hech birida ishlatilmaydi (use_figma bilan tekshirildi), bg/sheet kabi o'ram tokeni. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+    }
+  ]
+}

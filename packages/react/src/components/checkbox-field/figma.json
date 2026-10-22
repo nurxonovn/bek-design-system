@@ -1,0 +1,73 @@
+{
+  "page": "3.4 Checkbox",
+  "components": [
+    {
+      "name": "Checkbox field",
+      "id": "1333:1415",
+      "page": "3.4 Checkbox",
+      "pageId": "10:77",
+      "props": {
+        "Label": { "type": "TEXT", "default": "Remember this device" },
+        "Description": { "type": "TEXT", "default": "Skip the code on this browser for 30 days" },
+        "Show description": { "type": "BOOLEAN", "default": false },
+        "Control at start": { "type": "BOOLEAN", "default": true },
+        "Control at end": { "type": "BOOLEAN", "default": false },
+        "Size": ["S", "M"],
+        "State": ["Default", "Hover", "Focus", "Disabled"],
+        "Checked": ["Unchecked", "Checked", "Indeterminate"]
+      },
+      "variants": 24,
+      "size": { "w": 320, "h": 36 },
+      "tokens": {
+        "color": [
+          "bg/base",
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "text/disabled",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/L", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "field/height/md",
+          "field/height/sm",
+          "radius/control/md",
+          "scale/10",
+          "scale/12",
+          "scale/16",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 10, 12, 16, 36, 44],
+      "rawColors": [],
+      "nested": [],
+      "description": "Checkbox field — label (+ optional description) and a Checkbox in one tappable container; the whole row toggles. Control at start by default (forms, consent); Control at end for settings lists (turn one boolean off, the other on). React: <CheckboxField label description checked indeterminate onChange size controlPosition />. Sizes share field heights: S 36, M 44. Props: Label, Description, S"
+    }
+  ],
+  "doc": {
+    "Checkbox field": {
+      "tokens": [
+        "border/focus",
+        "fill/soft",
+        "fill/soft-hover",
+        "radius/control/md",
+        "scale/10",
+        "scale/12",
+        "scale/16",
+        "scale/8",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.4 Checkbox field\nA label, an optional description and a Checkbox in one container — the whole row is the hit area. Forms, consent and lists saved with a button.\nOverview\nControl at start in forms; control at end in settings lists.\nRemember this device\nControl at start — default.\nEmail me updates\nProduct news, once a month\nWith description.\nShow hidden layers\nControl at end — settings list, S 36.\nAnatomy\nRemember this device\nSkip the code on this browser for 30 days\n1\nContainer\nfill/soft · min-height field/height/* · radius/control/md\n2\nCheckbox\n3.4 Checkbox, label hidden — start or end (two booleans)\n3\nLabel\nBody/M text/primary\n4\nDescription\nCaption/L text/tertiary — optional\nStates\nHover tints the container; Focus ring wraps the whole row.\n\nDefault\nHover\nFocus\nDisabled\nS · Unchecked\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nS · Checked\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nS · Indeterminate\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nM · Unchecked\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nM · Checked\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nM · Indeterminate\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nSizes\nSame heights as Text field and Button.\nSize\nMin height\nCheckbox\nPairs with\nS\n36 · field/height/sm\nCheckbox S\nText field S · Button L\nM\n44 · field/height/md\nCheckbox M\nText field M · Button XL\nUsage\n• Use when the choice is saved by a Submit / Save button — otherwise Switch field.\n• Consent rows (terms, marketing) keep the control at start and are never pre-checked.\n• Indeterminate only for a parent row whose children are partly checked.\n• The whole row toggles; Space toggles when focused.\nDevices\nMobile · 390\nRemember this device\nEmail me updates\nM (44), control at start in forms.\nTablet · 834\nRemember this device\nEmail me updates\nM in sheets and forms.\nWeb · 1440\nRemember this device\nEmail me updates\nS (36), control at end in settings lists.\nDark mode\nLight\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nDark\nRemember this device\nRemember this device\nRemember this device\nRemember this device\nProps\nProp\nType\nValues\nDefault\nSize\nVariant\nS · M\nM\nState\nVariant\nDefault · Hover · Focus · Disabled\nDefault\nChecked\nVariant\nUnchecked · Checked · Indeterminate\nUnchecked\nLabel\nText\n—\nRemember this device\nDescription\nText\n—\nSkip the code…\nShow description\nBoolean\ntrue · false\nfalse\nControl at start\nBoolean\ntrue · false\ntrue\nControl at end\nBoolean\ntrue · false\nfalse\nTokens\nProperty\nToken\npx\nCSS\nMin height\nfield/height/sm · md\n36 · 44\n--bek-field-height-*\nPadding x\nscale/12 (S) · scale/16 (M)\n12 · 16\n--bek-scale-*\nPadding y\nscale/8 (S) · scale/10 (M)\n8 · 10\n--bek-scale-*\nGap\nscale/12\n12\n--bek-scale-12\nRadius\nradius/control/md\n8\n--bek-radius-control-md\nContainer\nfill/soft → fill/soft-hover\n—\n--bek-fill-soft*\nLabel · Description\ntext/primary · text/tertiary\n—\n--bek-text-*\nFocus ring\n_Focus ring · border/focus\n2\n--bek-border-focus\nDo / Don’t\nDo\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base faqat komponent set o'ramining (1333:1415) foni — variantlarda ishlatilmaydi (use_figma bilan tekshirildi), bg/sheet kabi o'ram tokeni. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+    }
+  ]
+}

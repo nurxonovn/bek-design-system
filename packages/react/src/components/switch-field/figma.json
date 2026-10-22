@@ -1,0 +1,71 @@
+{
+  "page": "3.6 Switch",
+  "components": [
+    {
+      "name": "Switch field",
+      "id": "1333:619",
+      "page": "3.6 Switch",
+      "pageId": "10:79",
+      "props": {
+        "Label": { "type": "TEXT", "default": "Pointer highlight" },
+        "Description": { "type": "TEXT", "default": "Glow follows the cursor" },
+        "Show description": { "type": "BOOLEAN", "default": false },
+        "Size": ["S", "M"],
+        "State": ["Default", "Hover", "Focus", "Disabled"],
+        "Checked": ["Off", "On"]
+      },
+      "variants": 16,
+      "size": { "w": 320, "h": 36 },
+      "tokens": {
+        "color": [
+          "bg/base",
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "text/disabled",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/L", "Label/M"],
+        "effect": [],
+        "dimension": [
+          "field/height/md",
+          "field/height/sm",
+          "radius/control/md",
+          "scale/10",
+          "scale/12",
+          "scale/16",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 8, 10, 12, 16, 36, 44],
+      "rawColors": [],
+      "nested": [],
+      "description": "Switch field — label (+ optional description) and a Switch in one tappable container; the whole row toggles. Use in settings panels and Control group. React: <SwitchField label description checked onChange size />. Sizes share field heights: S 36 (field/height/sm), M 44 (field/height/md). Props: Label, Description, Show description."
+    }
+  ],
+  "doc": {
+    "Switch field": {
+      "tokens": [
+        "border/focus",
+        "fill/soft",
+        "fill/soft-hover",
+        "radius/control/md",
+        "scale/10",
+        "scale/12",
+        "scale/16",
+        "scale/8",
+        "text/primary",
+        "text/tertiary"
+      ],
+      "text": "INPUTS\nBEK\nDesign System\n3.6 Switch field\nA label, an optional description and a Switch in one container — the whole row is the hit area. Settings panels and Control group rows.\nOverview\nUse when the switch is the whole row: settings, preferences, panel toggles.\nPointer highlight\nM 44 — default.\nReduce motion\nStops background animations\nWith description — height grows, min 44.\nShow grid\nS 36 — dense panels, pairs with Button L.\nAnatomy\nPointer highlight\nGlow follows the cursor\n1\nContainer\nfill/soft · min-height field/height/* · radius/control/md\n2\nLabel\nBody/M text/primary — short, noun phrase\n3\nDescription\nCaption/L text/tertiary — optional, one line\n4\nSwitch\n3.6 Switch instance, label hidden; S → S, M → M\nStates\nHover tints the container; Focus puts the ring on the whole row, not on the switch.\n\nDefault\nHover\nFocus\nDisabled\nS · Off\nPointer highlight\nPointer highlight\nPointer highlight\nPointer highlight\nS · On\nPointer highlight\nPointer highlight\nPointer highlight\nPointer highlight\nM · Off\nPointer highlight\nPointer highlight\nPointer highlight\nPointer highlight\nM · On\nPointer highlight\nPointer highlight\nPointer highlight\nPointer highlight\nSizes\nSame heights as Text field and Button — a Switch field next to a field or button lines up.\nSize\nMin height\nSwitch\nPairs with\nS\n36 · field/height/sm\nSwitch S\nText field S · Button L\nM\n44 · field/height/md\nSwitch M\nText field M · Button XL\nUsage\n• The setting applies immediately — no Save button. If it needs Save, use Checkbox field.\n• Click anywhere on the row toggles; Space toggles when focused.\n• Label says what turns on (\"Pointer highlight\"), not an instruction (\"Enable pointer highlight\").\n• Stack rows with 4–8 gap inside a Control group (3.20); don’t nest Switch fields in cards inside cards.\nDevices\nMobile · 390\nPointer highlight\nReduce motion\nM (44), full width — thumb friendly.\nTablet · 834\nPointer highlight\nReduce motion\nM in settings sheets.\nWeb · 1440\nPointer highlight\nReduce motion\nS (36) in side panels, 280–360 wide.\nDark mode\nLight\nPointer highlight\nPointer highlight\nPointer highlight\nPointer highlight\nDark\nPointer highlight\nPointer highlight\nPointer highlight\nPointer highlight\nProps\nProp\nType\nValues\nDefault\nSize\nVariant\nS · M\nM\nState\nVariant\nDefault · Hover · Focus · Disabled\nDefault\nChecked\nVariant\nOff · On\nOff\nLabel\nText\n—\nPointer highlight\nDescription\nText\n—\nGlow follows the cursor\nShow description\nBoolean\ntrue · false\nfalse\nTokens\nProperty\nToken\npx\nCSS\nMin height\nfield/height/sm · md\n36 · 44\n--bek-field-height-*\nPadding x\nscale/12 (S) · scale/16 (M)\n12 · 16\n--bek-scale-*\nPadding y\nscale/8 (S) · scale/10 (M)\n8 · 10\n--bek-scale-*\nGap\nscale/12\n12\n--bek-scale-12\nRadius\nradius/control/md\n8\n--bek-radius-control-md\nContainer\nfill/soft → fill/soft-hover\n—\n--bek-fill-soft*\nLabel · Description\ntext/primary · text/tertiary\n—\n--bek-text-*\nFocus ring\n_Focus ring · border/focus\n2\n--bek-border-focus\nDo / Don’t\nDo\nDark theme\nUse for settings that apply instantly.\nDon’t\nI accept the terms\nDon’t use inside a form that has a Submit button — use Checkbox field."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base faqat komponent set o'ramining (1333:619) foni — variantlarda ishlatilmaydi (use_figma bilan tekshirildi), bg/sheet kabi o'ram tokeni. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+    }
+  ]
+}
