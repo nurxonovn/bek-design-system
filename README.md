@@ -11,8 +11,8 @@
 | Package               | What it is                                                                                                          | Figma           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------- |
 | `@bek-ui/tokens`      | Design tokens generated from Figma Variables — CSS custom properties (`--bek-*`), JSON, typography, materials       | 1 · Foundations |
-| `@bek-ui/react`       | 58 React components, plain CSS on top of tokens, Light/Dark, RTL, keyboard and screen-reader support                | 3–7, 9–10       |
-| `@bek-ui/charts`      | 61 chart and diagram components (SVG + d3 modules) — bar, line, sankey, treemap, maps, mind map and more            | 4.18, 4.19      |
+| `@bek-ui/react`       | 69 React components, plain CSS on top of tokens, Light/Dark, RTL, keyboard and screen-reader support                | 3–7, 9–10       |
+| `@bek-ui/charts`      | 69 chart and diagram components (SVG + d3 modules) — bar, line, sankey, treemap, maps, mind map and more            | 4.18, 4.19      |
 | `@bek-ui/backgrounds` | 4 animated canvas backgrounds — Matrix rain, Dot field, Grain gradient, Aurora (reduced-motion safe, token colours) | 2.6 Backgrounds |
 | `apps/site`           | Documentation site — foundations, component catalogue generated from component READMEs, tokens, templates           | —               |
 | `apps/templates`      | Example screens rebuilt from the Figma 8.x templates                                                                | 8 · Templates   |
@@ -81,7 +81,7 @@ The Figma file and this codebase are developed by [Nurbek Nurxonov](https://gith
 
 ## Roadmap
 
-- **1.0-beta (now)** — tokens, 58 components, 61 charts, docs site, Figma parity checks.
+- **1.0-beta (now)** — tokens, 69 components, 69 charts, 4 backgrounds, docs site, Figma parity checks.
 - **1.0** — API freeze, full component catalogue on the site, npm release.
 - **Next** — UX patterns section, more templates, native (Compose / SwiftUI) token packages.
 
@@ -104,7 +104,7 @@ BEK is free. If it saves you time, support it from the **03 · Support us** page
 **BEK Design System** — mobil, planshet va veb uchun ochiq dizayn tizimi: Figma kutubxonasi, tokenlar, React komponentlari, chartlar va hujjat sayti. O'zbekistonda qurilgan, hamma uchun.
 
 - **Holat:** Figma — v1.0, kod — **v1.0-beta** (API hali o'zgarishi mumkin).
-- **Paketlar:** `@bek-ui/tokens` (Figma Variables → CSS/JSON), `@bek-ui/react` (58 komponent), `@bek-ui/charts` (61 chart va diagramma), `@bek-ui/backgrounds` (4 animatsiyali fon), `apps/site` (hujjat sayti), `apps/templates` (8.x namuna ekranlar).
+- **Paketlar:** `@bek-ui/tokens` (Figma Variables → CSS/JSON), `@bek-ui/react` (69 komponent), `@bek-ui/charts` (69 chart va diagramma), `@bek-ui/backgrounds` (4 animatsiyali fon), `apps/site` (hujjat sayti), `apps/templates` (8.x namuna ekranlar).
 - **Tamoyillar:** Figma — yagona manba; 3 qurilma (Mobile 390 · Tablet 834 · Web 1440); chegarasiz sirtlar; faqat tokenlar; AA kontrast va klaviatura.
 - **Ishga tushirish:** `corepack enable && pnpm install && pnpm dev`.
 - **Hissa qo'shish:** [CONTRIBUTING.md](CONTRIBUTING.md). Core maintainer va dasturchilar qidiryapmiz — `good first issue` belgili masalalardan boshlang.

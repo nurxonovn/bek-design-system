@@ -1,9 +1,20 @@
 # Figma ↔ kod farqlari — dizayner uchun ro'yxat
 
-1-bosqich yakuni (2026-10). Manba: har komponentning `figma.json → accepted[]` (hujjatlangan farqlar) va ECC
-ko'rib chiqish hisobotlari. `pnpm check:figma -- --strict` → 58 komponent, 0 ogohlantirish — ya'ni quyidagilar
-ataylab yoki Figma tomonidagi kamchilik sababli qabul qilingan. Noyabr yangilanishida Figma'da tuzatilsa,
-`/figma-sync` bilan `accepted` yozuvlari olib tashlanadi.
+1-bosqich (2026-10-12) va Figma ↔ kod moslashtirish (2026-10-22, 1.0.0-beta.1) yakuni. Manba: har komponentning
+`figma.json → accepted[]` (hujjatlangan farqlar), agent va ECC ko'rib chiqish hisobotlari. `pnpm check:figma --
+--strict` → react 69 · charts 69 · backgrounds 4 komponent, 0 ogohlantirish — ya'ni quyidagilar ataylab yoki Figma
+tomonidagi kamchilik sababli qabul qilingan. Figma'da tuzatilsa, `/figma-sync` bilan `accepted` yozuvlari olib
+tashlanadi.
+
+**Ataylab kodga kirmaydi:** 2.1 Icons (Hugeicons Pro litsenziyasi), 2.4 3D objects, 9.2 Cursor, 10.1 Devices,
+Reach zone.
+
+**Eng ko'p takrorlangan Figma kamchiliklari** (bo'limlar bo'yicha batafsil — A6–A15):
+
+1. Text, variable va komponent tavsiflarida HTML entity (`&#39;`, `&quot;`, `&amp;lt;`) — ~100 joy.
+2. Komponent set o'ramining foni `bg/sheet` emas (`bg/base`, `fill/secondary`, `surface/card` …) — ~15 set.
+3. 📘 doc freymida "Design tokens" o'rniga "Tokens" sarlavhasi — extractor tokens jadvalini ololmaydi.
+4. Doc jadvali komponentdan orqada (`fill/primary`, `scale/*` balandliklar, eski token nomlari).
 
 ## A. Figma'da tuzatish tavsiya etiladi
 
@@ -322,4 +333,4 @@ Umumiy:
 
 ## C. Statistika
 
-Jami `accepted`: 84 — prop-missing 1, token-missing 19, token-unmapped 7, token-extra 26, text-style-missing 4, variant-missing 4, px-figma 22, figma-raw-color 1.
+Jami `accepted` (2026-10-22): react 93 — token-missing 28, token-extra 25, px-figma 22, token-unmapped 7, text-style-missing 5, variant-missing 4, prop-missing 1, figma-raw-color 1; charts 140 — token-missing 91, text-style-missing 27, token-extra 16, effect-missing 3, variant-missing 3; backgrounds 1 — token-extra 1.
