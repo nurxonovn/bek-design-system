@@ -39,5 +39,5 @@ testda; rollar/aria, variant klasslari, slotlar, disabled/selected. ECC'ning 80%
 ## Hujjat va sayt
 
 README va sharhlar o'zbekcha; kod identifikatorlari inglizcha. `apps/site` katalogi `README.md + figma.json`
-dan avtomatik (`node apps/site/scripts/build-catalog.mjs`); yangi komponentga `demos/index.tsx` da demo.
+dan avtomatik (`node apps/site/scripts/build-catalog.mjs`); yangi komponentga demo: react — `demos/index.tsx`, charts — `demos/charts/{a,b,c,d}.tsx` (e2e namunasiz sahifani yiqitadi).
 `.changeset/*.md` — API o'zgarsa `minor`, uslub bo'lsa `patch`.

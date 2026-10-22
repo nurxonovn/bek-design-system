@@ -23,6 +23,9 @@ importers:
 
   apps/site:
     dependencies:
+      '@bek-ui/charts':
+        specifier: workspace:*
+        version: link:../../packages/charts
       '@bek-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
