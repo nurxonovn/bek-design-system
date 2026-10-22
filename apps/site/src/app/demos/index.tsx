@@ -95,7 +95,13 @@ import {
   TopNavigation,
   useSearchSuggestions,
   type FacetValue,
+  DropZone,
+  FileUploader,
+  FloatingActions,
+  MediaUploader,
+  ScrollArea,
 } from '@bek-ui/react';
+import type { FileRejection, UploaderFile } from '@bek-ui/react';
 import {
   ChevronRight,
   Download,
@@ -1102,6 +1108,136 @@ export const demos: Record<string, ComponentType> = {
       <TopNavigation type="large-title" title="Profil" leading="none" />
     </div>
   ),
+  'floating-actions': () => (
+    <div className="w-full max-w-sm flex flex-col gap-3">
+      {/* Namunada `position="static"`; ilovada standart `fixed` — ekran pastiga qotadi. */}
+      <FloatingActions
+        position="static"
+        homeIndicator={false}
+        info={<InfoWrap icon={<Truck size={20} />}>100 000 soʻmdan bepul yetkazish</InfoWrap>}
+        primary={{ label: 'Davom etish' }}
+      />
+      <FloatingActions
+        position="static"
+        homeIndicator={false}
+        layout="horizontal"
+        primary={{ label: "Qo'ng'iroq" }}
+        secondary={{ label: 'Yozish' }}
+      />
+      <FloatingActions
+        position="static"
+        layout="summary"
+        total="159 000 soʻm"
+        primary={{ label: "To'lash" }}
+        legal="Davom etib, shartlarga rozilik bildirasiz"
+      />
+    </div>
+  ),
+  
+  scrollbar: () => (
+    <Row>
+      <ScrollArea
+        aria-label="Buyurtmalar"
+        style={{ height: 160, width: 240, padding: 12, background: 'var(--bek-bg-sheet)' }}
+      >
+        {Array.from({ length: 12 }, (_, i) => (
+          <p key={i} style={{ margin: '0 0 8px' }}>
+            Buyurtma №{1040 + i}
+          </p>
+        ))}
+      </ScrollArea>
+      <ScrollArea
+        orientation="horizontal"
+        size="s"
+        aria-label="Kategoriyalar"
+        style={{ width: 240, paddingBlock: 8 }}
+      >
+        <div style={{ display: 'flex', gap: 8, width: 'max-content' }}>
+          {['Telefonlar', 'Noutbuklar', 'Planshetlar', 'Quloqchinlar', 'Soatlar', 'Kameralar'].map(
+            (c) => (
+              <Chip key={c}>{c}</Chip>
+            ),
+          )}
+        </div>
+      </ScrollArea>
+    </Row>
+  ),
+  
+  uploader: () => {
+    const MB = 1024 * 1024;
+    const [files, setFiles] = useState<UploaderFile[]>([
+      { id: 'p', name: 'Pasport-skan.pdf', size: 2.4 * MB, status: 'done' },
+    ]);
+    const finish = (id: string, progress: number) => {
+      setFiles((list) =>
+        list.map((f) =>
+          f.id === id ? { ...f, progress, status: progress >= 100 ? 'done' : 'uploading' } : f,
+        ),
+      );
+      if (progress < 100) setTimeout(() => finish(id, progress + 25), 400);
+    };
+    const add = (accepted: File[], rejected: FileRejection[]) => {
+      const stamp = Date.now();
+      const uploading = accepted.map((f, i) => ({
+        id: `${stamp}-${i}`,
+        name: f.name,
+        size: f.size,
+        status: 'uploading' as const,
+        progress: 0,
+      }));
+      const failed = rejected.map((r, i) => ({
+        id: `${stamp}-r${i}`,
+        name: r.file.name,
+        size: r.file.size,
+        status: 'error' as const,
+        error:
+          r.reason === 'file-too-large'
+            ? 'Yuklanmadi — fayl 10 MB dan katta'
+            : 'Yuklanmadi — bu turdagi fayl qabul qilinmaydi',
+      }));
+      setFiles((list) => [...list, ...uploading, ...failed]);
+      uploading.forEach((f) => finish(f.id, 25));
+    };
+    return (
+      <div className="flex flex-col gap-6 w-full max-w-xl">
+        <Fieldset label="Rasmlar · 3 / 10">
+          <div className="flex flex-wrap gap-3">
+            <MediaUploader size="m" status="done" alt="Muqova" coverBadge="Asosiy" onRemove={() => {}} removeLabel="O'chirish" />
+            <MediaUploader size="m" status="uploading" progress={64} uploadingLabel="Yuklanmoqda" />
+            <MediaUploader size="m" status="error" retryLabel="Qayta" />
+            <MediaUploader size="m" label="Rasm qo'shish" />
+            <MediaUploader size="m" kind="video" label="Video qo'shish" />
+          </div>
+        </Fieldset>
+        <Fieldset label="Hujjatlar" message="PDF, JPG yoki PNG · 10 MB gacha">
+          <FileUploader
+            accept=".pdf,.jpg,.png"
+            maxSize={10 * MB}
+            multiple
+            label="Fayl yuklash"
+            anotherLabel="Yana yuklash"
+            removeLabel="O'chirish"
+          />
+        </Fieldset>
+        <DropZone
+          accept=".pdf,.jpg,.png"
+          maxSize={10 * MB}
+          multiple
+          title="Fayllarni shu yerga tashlang yoki"
+          browseLabel="tanlang"
+          dropLabel="Yuklash uchun qo'yib yuboring"
+          hint="PDF, JPG yoki PNG · 10 MB gacha"
+          removeLabel="O'chirish"
+          retryLabel="Qayta urinish"
+          listLabel="Yuklangan hujjatlar"
+          files={files}
+          onFilesAdded={add}
+          onRemove={(f) => setFiles((list) => list.filter((x) => x.id !== f.id))}
+          onRetry={(f) => setFiles((list) => list.filter((x) => x.id !== f.id))}
+        />
+      </div>
+    );
+  },
 };
 
 // ToastViewport ishlatilmasa ham eksportda qolsin — hujjatlarda import ko'rsatish uchun.

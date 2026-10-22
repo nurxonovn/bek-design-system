@@ -1,0 +1,22 @@
+/* ScrollArea — Figma "4.8 Scrollbar". Ranglar va o'lchamlar umumiy `.bek-scrollbar` klassida
+   (src/styles/scrollbar.css); bu yerda faqat scroll o'qi. Gorizontal scroll — ichki konteynerda
+   (jadval, kod bloki, karusel), sahifaning o'zida emas. */
+.bek-scroll-area {
+  box-sizing: border-box;
+  max-width: 100%;
+  overscroll-behavior: contain;
+}
+
+.bek-scroll-area--vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bek-scroll-area--horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bek-scroll-area--both {
+  overflow: auto;
+}

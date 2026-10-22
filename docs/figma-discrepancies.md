@@ -175,6 +175,22 @@ Ikkala sahifa `--strict` 0 bilan kodga o'tdi (`accepted[]` bo'sh). Figma tomonid
 - "See all" / "Clear" doc'da oddiy matn (Label/S text/accent) — kodda listbox ichida `role="option"` (klaviatura);
   doc'da aniqlashtirish kerak.
 
+### A11. 3.17 Uploader, 6.9 Floating action container, 4.8 Scrollbar (2026-10-22)
+
+- 3.17 va 6.9 doc frame'larida "Design tokens" o'rniga "Tokens" — extractor jadvalni olmaydi.
+- Uploader · Media tavsifi: Remove "Normal-contrast" deyilgan, instance `Button Variant=Raised` — kod instance'ga
+  ergashadi; tavsifni tuzatish kerak.
+- Uploader · File / Drop zone tavsiflarida `state` React prop sifatida (`<FileUploader state …>`) — BEK'da holat
+  CSS/ma'lumotdan; tavsifdan olib tashlash kerak.
+- Drop zone chizig'i 6/4 dash — CSS `border-style: dashed` uzunlikni boshqarmaydi; doc'da qabul qilingan cheklov
+  sifatida yozish kerak.
+- File item / Drop zone: "browse" va "Retry" `Link` instance, lekin joyida bajariladigan amal — kodda Link
+  ko'rinishidagi `<button>`; doc'da aniqlashtirish kerak.
+- 4.8 Scrollbar: "Hit area 24 (scale/24)" native scrollbar'da imkonsiz — faqat custom scroll uchun deb belgilash;
+  tavsifdagi `size/scrollbar-thumb/min` tokeni yo'q, doc `scale/32` — moslash kerak.
+- 6.9 doc tokens jadvali: tugma balandligi `control/height/lg` deyilgan, qiymati 44 (XL); CSS nomi `--bek-shadow-1`,
+  to'g'risi `--bek-elevation-1`.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

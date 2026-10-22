@@ -1,0 +1,191 @@
+{
+  "page": "3.17 Uploader",
+  "components": [
+    {
+      "name": "File item",
+      "id": "1161:424",
+      "page": "3.17 Uploader",
+      "pageId": "1161:63",
+      "props": {
+        "Name": {
+          "type": "TEXT",
+          "default": "Passport-scan-front.pdf"
+        },
+        "Status": ["Uploading", "Done", "Error"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 360,
+        "h": 100
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "fill/secondary",
+          "status/danger/soft",
+          "text/danger",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/M"],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/12", "scale/4"]
+      },
+      "sizes": [1, 4, 12, 16],
+      "rawColors": [],
+      "nested": ["Button", "Link", "Progress bar"],
+      "description": "File item — one uploaded file inside Uploader · File or Drop zone. React: <FileItem status name meta onRemove onRetry />. Status: Uploading (Progress bar S, meta shows size · %), Done, Error (status/danger/soft row, reason in Meta, Retry link). Name truncates to one line. Type icon is exposed (swap per file type). Use inside Uploader; not a standalone list row."
+    },
+    {
+      "name": "Uploader · File",
+      "id": "1163:1638",
+      "page": "3.17 Uploader",
+      "pageId": "1161:63",
+      "props": {
+        "State": ["Default", "Hover", "Focus", "Loading", "Filled", "Error", "Disabled"],
+        "Size": ["M", "L"]
+      },
+      "variants": 14,
+      "size": {
+        "w": 360,
+        "h": 36
+      },
+      "tokens": {
+        "color": ["bg/sheet", "fill/secondary", "status/danger/soft"],
+        "text": [],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/12", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "Uploader · File — a button that opens the file picker, plus the list of chosen files. React: <FileUploader state size accept maxSize multiple />. Size M uses Button L (36), Size L uses Button XL (44). Button is exposed: change its label and icon from the panel. Files are File item instances (Uploading · Done · Error). Put it inside a Fieldset: the label, format/size limit (Helper) and error "
+    },
+    {
+      "name": "Uploader · Media",
+      "id": "1162:1214",
+      "page": "3.17 Uploader",
+      "pageId": "1161:63",
+      "props": {
+        "Show label": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Cover badge": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Kind": ["Photo", "Video"],
+        "State": ["Empty", "Hover", "Focus", "Loading", "Filled", "Error", "Disabled"],
+        "Size": ["S", "M", "L"]
+      },
+      "variants": 42,
+      "size": {
+        "w": 80,
+        "h": 80
+      },
+      "tokens": {
+        "color": [
+          "bg/overlay",
+          "bg/sheet",
+          "border/danger",
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/tertiary",
+          "status/danger/soft",
+          "text/danger",
+          "text/disabled",
+          "text/on-color",
+          "text/secondary"
+        ],
+        "text": ["Caption/M"],
+        "effect": [],
+        "dimension": ["radius/surface/md", "scale/104", "scale/128", "scale/4", "scale/80"]
+      },
+      "sizes": [1, 2, 4, 12, 14, 16],
+      "rawColors": [],
+      "nested": ["Badge", "Button"],
+      "description": "Uploader · Media — one photo or video tile. React: <MediaUploader kind state size coverBadge />. Kind: Photo · Video. Size: S 80 · M 104 · L 128 (scale/*). Empty shows the add icon and label; Hover adds fill/soft-hover; Focus uses _Focus ring; Loading shows bg/overlay + spinner + percent over the picture; Filled shows the picture with a Remove button (Normal-contrast) and optional Cover badg"
+    },
+    {
+      "name": "Uploader · Drop zone",
+      "id": "1163:1994",
+      "page": "3.17 Uploader",
+      "pageId": "1161:63",
+      "props": {
+        "Hint": {
+          "type": "TEXT",
+          "default": "PDF, JPG or PNG · up to 10 MB"
+        },
+        "State": ["Default", "Drag over", "Loading", "Filled", "Error", "Disabled"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 560,
+        "h": 158
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/sheet",
+          "border/accent",
+          "border/danger",
+          "border/default",
+          "border/strong",
+          "fill/secondary",
+          "status/danger/soft",
+          "text/accent",
+          "text/disabled",
+          "text/primary",
+          "text/tertiary"
+        ],
+        "text": ["Body/M", "Caption/L"],
+        "effect": [],
+        "dimension": [
+          "radius/surface/lg",
+          "radius/surface/md",
+          "scale/12",
+          "scale/16",
+          "scale/32",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 16, 32],
+      "rawColors": [],
+      "nested": ["Link"],
+      "description": "Uploader · Drop zone — Web drag-and-drop area with a browse link. React: <DropZone state accept maxSize multiple hint />. Dashed border is a documented exception to the border-free rule (1.7 Border): the dashed line is what tells people this is a drop target. Drag over = accent/soft + border/accent 2; Error = border/danger 2 with the failed File item below; Filled lists File items. Hint (for"
+    }
+  ],
+  "doc": {
+    "3.17 Uploader": {
+      "tokens": [
+        "accent/soft",
+        "bg/overlay",
+        "bg/sheet",
+        "border/accent",
+        "border/danger",
+        "border/focus",
+        "border/strong",
+        "fill/secondary",
+        "fill/soft",
+        "fill/soft-hover",
+        "radius/surface/lg",
+        "radius/surface/md",
+        "scale/104",
+        "scale/12",
+        "scale/128",
+        "scale/32",
+        "scale/80",
+        "status/danger/soft",
+        "text/disabled",
+        "text/on-color",
+        "text/secondary"
+      ],
+      "text": "3 · INPUTS\nBEK\nDesign System\n3.17 Uploader\nLets people add photos, videos and files. Four parts: Media tile (42 variants), File button with a file list (14), Drop zone for Web (6) and File item (6) — 68 variants in total.\nOverview\nThe four parts side by side. Pick by what is being uploaded and by device.\nMedia · Photo\nMain\nAds, profile, document scans\nMedia · Video\n0:24\nShort clips with duration\nFile\nUpload another\nPassport-scan-front.pdf\n2.4 MB\nPassport-scan-front.pdf\n2.4 MB\nCV, contracts, any document\nDrop zone · Web\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nDesktop drag and drop\nAnatomy\nMedia tile and File item — numbered layers.\nMain\n0:24\n1\nImage\n· slot — replace the fill with the picture\n2\nRemove\n· Button Raised, Icon only, M\n3\nCover badge\n· Badge Filled Neutral S “Main”, boolean\n4\nDuration\n· Badge, Video only\nPassport-scan-front.pdf\n2.4 MB · 64%\n5\nType icon\n· _Icon 24, exposed — swap per file type\n6\nName\n· Label/M, one line, truncates\n7\nMeta\n· Caption/M — size · progress or error reason\n8\nProgress\n· Progress bar S Accent\n9\nRemove\n· Button Flat, Icon only, M\nVariants\nOne row per component. Full matrix is in the Component set section.\nKind = Photo\nAdd photo\nKind = Video\nAdd video\nFile item · Uploading\nPassport-scan-front.pdf\n2.4 MB · 64%\nFile item · Done\nPassport-scan-front.pdf\n2.4 MB\nFile item · Error\nPassport-scan-front.pdf\nUpload failed — file is over 10 MB\nRetry\nFile · Default\nUpload file\nDrop zone · Default\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nFile item · RTL\nPassport-scan-front.pdf\n2.4 MB\nSizes\nMedia tile is square and bound to scale/*. File size follows the Button inside it.\nSize = S\nAdd photo\n80 × 80 · scale/80\nSize = M\nAdd photo\n104 × 104 · scale/104\nSize = L\nAdd photo\n128 × 128 · scale/128\nFile · M\nUpload file\nButton L · 36\nFile · L\nUpload file\nButton XL · 44\nStates\nHover and Pressed follow 1.13 Interaction states. Focus uses _Focus ring. Error always comes with a message in Fieldset.\nEmpty\nAdd photo\nHover\nAdd photo\nFocus\nAdd photo\nLoading\n64%\nFilled\nError\nRetry\nDisabled\nAdd photo\nDrop zone · Default\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nDrop zone · Drag over\nDrop files to upload\nPDF, JPG or PNG · up to 10 MB\nDrop zone · Loading\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nPassport-scan-front.pdf\n2.4 MB · 64%\nDrop zone · Filled\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nPassport-scan-front.pdf\n2.4 MB\nPassport-scan-front.pdf\n2.4 MB\nDrop zone · Error\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nPassport-scan-front.pdf\nUpload failed — file is over 10 MB\nRetry\nDrop zone · Disabled\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nDevices\nMobile 390 · Tablet 834 · Web 1440. Media tiles on touch devices, Drop zone only on Web.\nMobile · 390\nPhotos · 3 of 10\nMain\n64%\nAdd photo\nDocuments\nUpload another\nPassport-scan-front.pdf\n2.4 MB\nPassport-scan-front.pdf\n2.4 MB\nTablet · 834\nPhotos · 3 of 10\nMain\n64%\nAdd photo\nDocuments\nUpload another\nPassport-scan-front.pdf\n2.4 MB\nPassport-scan-front.pdf\n2.4 MB\nWeb · 1440\nPhotos · 3 of 10\nMain\n64%\nAdd photo\nDocuments\nDrag files here or\nbrowse\nPDF, JPG or PNG · up to 10 MB\nPassport-scan-front.pdf\n2.4 MB\nPassport-"
+    }
+  },
+  "accepted": []
+}

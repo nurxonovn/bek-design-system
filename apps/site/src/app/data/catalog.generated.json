@@ -2864,6 +2864,104 @@
       "readme": "# Fieldset\n\nFigma: **3.19 Fieldset** — bitta label, bitta control (yoki boshqaruvlar guruhi), bitta xabar. O'z label'i bo'lmagan istalgan control'ni o'raydi: Chip qatori, Checkbox/Radio guruhi, Segmented control, Slider, Date picker, yuklovchi. `layout`: `vertical` · `horizontal`; `status`: `helper` · `error` · `success`.\n\n```tsx\n<Fieldset label=\"Yetkazib berish\" message=\"Kuryer 2 soat ichida yetib keladi\">\n  <SegmentedControl … />\n</Fieldset>\n\n<Fieldset label=\"Promo-kod\" optional hint=\"Chek yoki xabardagi kod\" status=\"success\" message=\"−15% qo'llandi\">\n  <Chip …>BEK15</Chip>\n</Fieldset>\n\n<Fieldset label=\"Shartnoma\" status=\"error\" message=\"Davom etish uchun shartlarni qabul qiling\">\n  <Checkbox>Foydalanish shartlarini qabul qilaman</Checkbox>\n</Fieldset>\n```\n\nQoidalar (Figma doc + 1.12 Forms):\n\n- Text field va Select'ni **o'ramang** — ularning label'i ichida (Filled).\n- Bitta xabar: `helper` (format, chegara, keyin nima bo'ladi), `error` (validatsiyadan keyin, qanday tuzatishni aytadi), `success` (async tekshiruv o'tdi — promo-kod, username). Xabar almashtiriladi, ustma-ust qo'yilmaydi.\n- `optional` — kam uchraydigan ixtiyoriy maydonni belgilaydi; ko'p majburiylarga yulduzcha qo'yilmaydi.\n- `hint` — `information-circle` 16; matn `title` orqali va `<legend>` ichida ekran o'quvchiga beriladi.\n- Fieldset'ning o'z holati yo'q: hover, focus, disabled ichidagi control'dan; Error — `status=\"error\"` dan.\n- `horizontal` — faqat Web formalarida (label chapda, `--bek-fieldset-label-width`, standart 10rem ≈ 160 px); Mobile va Tablet'da `vertical`.\n- A11y: `<fieldset>` + yashirin `<legend>` (label, optional, hint); xabar `aria-describedby` bilan bog'lanadi, error'da `aria-invalid`.\n"
     },
     {
+      "dir": "floating-actions",
+      "package": "@bek-ui/react",
+      "title": "Floating action container",
+      "description": "Mobile'da asosiy amalni ushlab turadigan pastki panel. layout: single · horizontal · vertical · summary; info (Show info), legal (Show legal + Legal), homeIndicator (Home indicator space), position: fixed · sticky · static.",
+      "exports": [
+        "FloatingActions"
+      ],
+      "section": {
+        "id": 6,
+        "title": "Navigation"
+      },
+      "figma": {
+        "label": "6.9 Floating action container",
+        "pages": [
+          {
+            "name": "6.9 Floating action container",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1167-173"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Floating action container",
+            "id": "1167:686",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1167-686",
+            "variants": 8,
+            "description": "Floating action container — the sticky bottom area that holds the main action on Mobile. React: <FloatingActions layout dir showInfo showLegal homeIndicator />. Layout: Single (one Action button), Horizontal (two side by side), Vertical (two stacked), Summary (total + one Action — used by Checkout bar). Primary = Button Action XL, Secondary = Button Normal XL; both exposed. surface/raised + ",
+            "props": {
+              "Show info": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show legal": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Home indicator space": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Legal": {
+                "type": "TEXT",
+                "default": "By continuing you agree to the Terms"
+              },
+              "Layout": [
+                "Single",
+                "Horizontal",
+                "Vertical",
+                "Summary"
+              ],
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "surface/raised",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/M",
+                "Title/L"
+              ],
+              "effect": [
+                "Elevation/1 Raised"
+              ],
+              "dimension": [
+                "scale/12",
+                "scale/16",
+                "scale/8"
+              ]
+            },
+            "nested": [
+              "Button",
+              "Info wrap"
+            ]
+          }
+        ],
+        "docTokens": [
+          "Elevation/1",
+          "control/height/lg",
+          "scale/12",
+          "scale/16",
+          "scale/8",
+          "surface/raised",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Floating action container\n\nFigma: **6.9 Floating action container** — Mobile'da asosiy amalni ushlab turadigan pastki panel. `layout`: `single` · `horizontal` · `vertical` · `summary`; `info` (Show info), `legal` (Show legal + Legal), `homeIndicator` (Home indicator space), `position`: `fixed` · `sticky` · `static`.\n\n```tsx\n<FloatingActions primary={{ label: 'Davom etish', onClick: next }} />\n\n<FloatingActions\n  layout=\"horizontal\"\n  primary={{ label: \"Qo'ng'iroq\" }}\n  secondary={{ label: 'Yozish' }}\n/>\n\n<FloatingActions\n  layout=\"summary\"\n  total=\"159 000 soʻm\"\n  primary={{ label: \"To'lash\", loading: paying }}\n  legal=\"Davom etib, shartlarga rozilik bildirasiz\"\n/>\n```\n\n## Qoidalar\n\n- Bitta ekran — bitta asosiy amal: Davom etish, To'lash, Filtrlarni qo'llash, Qo'ng'iroq. Primary — Button Action XL, Secondary — Button Normal XL.\n- Ko'pi bilan ikkita amal. Uchinchisi kontentga yoki Action sheet (7.10) ga.\n- Pul bo'lsa — `summary`: jami summa amal yonida.\n- **Bottom navigation (6.7) bilan bitta ekranda emas** — vazifa ekranlarida (checkout, forma, filtr) panel uning o'rnini oladi.\n- Home indicator space iOS uchun yoqiq qoladi (`homeIndicator`). Faqat o'z safe area'si bor Bottom sheet ichida o'chiring.\n- Asosiy amal hech qachon Disabled emas (CMP-06): bosilganda tekshiring va nima yetishmayotganini ko'rsating. Kutishda — `loading`.\n- Faqat Mobile. Tablet (834) va Web (1440) da amallar forma oxirida, maydonlarning chap chetida (1.12 Forms · Actions).\n- Checkout bar (6.8) shu konteyner asosida: Cart = `single` + `info`, Checkout = `summary` + `legal`.\n\n## O'lchamlar, safe area, RTL, Dark\n\nBitta o'lcham: kenglik ekran bo'yicha, tugmalar XL (44), balandlik kontentga qarab (bitta tugma bilan 88). surface/raised + Elevation/1, padding 12 / 16, qatorlar orasida 12, tugmalar orasida 8 (`summary` — 16). Home indicator: pastda 32 yoki `env(safe-area-inset-bottom)` + 12 — qaysi katta bo'lsa; yonlarda `env(safe-area-inset-left/right)` (landshaft). `position=\"fixed\"` — ekran pastiga `z-sticky` bilan qotadi; sahifa oxiridagi kontent panel ostida qolmasligi uchun unga pastki joy qoldiring. RTL'da gorizontal amallar va jami summa tartibi o'zi aks etadi. Dark'da soya yo'q — surface/raised ostidagi ekrandan och.\n"
+    },
+    {
       "dir": "icon",
       "package": "@bek-ui/react",
       "title": "Icon",
@@ -6994,6 +7092,85 @@
       "readme": "# Rating\n\nFigma: **4.10 Rating** — faqat o'qish uchun reyting (mahsulot, kurs, joy). `variant`: `stars` (5 yulduz, 0.5 qadam) · `compact` (bitta yulduz + ball); `size`: `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<Rating value={4.5} count=\"(1 245 sharh)\" locale=\"uz\" />\n<Rating value={4.8} variant=\"compact\" size=\"s\" />\n```\n\n`role=\"img\"` + `aria-label=\"4,5 / 5\"`; Tab to'xtashi emas. Ball locale bo'yicha formatlanadi. To'liq yulduz — `status/warning/default`, bo'sh — `border/strong`.\n"
     },
     {
+      "dir": "scrollbar",
+      "package": "@bek-ui/react",
+      "title": "Scrollbar · ScrollArea",
+      "description": "brauzerning o'z scroll'i, BEK tokenlari bilan. orientation: vertical · horizontal · both; size: m (track 12, thumb 8) · s (track 8, thumb 4). Holatlar (Default · Hover · Active) — CSS'da, sudrash paytida Active.",
+      "exports": [
+        "ScrollArea"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.8 Scrollbar",
+        "pages": [
+          {
+            "name": "4.8 Scrollbar",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=359-49540"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Scrollbar",
+            "id": "360:55",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=360-55",
+            "variants": 12,
+            "description": "Scroll bar — based on standard behaviour. Track + thumb, both orientations, two widths, three states. Thumb length is calculated from the content ratio and never drops below size/scrollbar-thumb/min (32px). Colours are on the alpha (neutral-a) scale, so it works on any surface.",
+            "props": {
+              "Orientation": [
+                "Vertical",
+                "Horizontal"
+              ],
+              "Size": [
+                "M",
+                "S"
+              ],
+              "State": [
+                "Default",
+                "Hover",
+                "Active"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "border/default",
+                "fill/scrollbar",
+                "fill/scrollbar-active",
+                "fill/scrollbar-hover"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": [
+                "radius/full",
+                "scale/12",
+                "scale/2",
+                "scale/4",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "border/default",
+          "fill/scrollbar",
+          "fill/scrollbar-active",
+          "fill/scrollbar-hover",
+          "radius/full",
+          "scale/12",
+          "scale/2",
+          "scale/24",
+          "scale/32",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Scrollbar · ScrollArea\n\nFigma: **4.8 Scrollbar** — brauzerning o'z scroll'i, BEK tokenlari bilan. `orientation`: `vertical` · `horizontal` · `both`; `size`: `m` (track 12, thumb 8) · `s` (track 8, thumb 4). Holatlar (Default · Hover · Active) — CSS'da, sudrash paytida Active.\n\n```tsx\n<ScrollArea style={{ maxHeight: 320 }} aria-label=\"Buyurtmalar tarixi\">\n  {orders}\n</ScrollArea>\n\n<ScrollArea orientation=\"horizontal\" size=\"s\">\n  <Table>…</Table>\n</ScrollArea>\n```\n\nKomponentsiz ham: scroll bo'ladigan istalgan elementga `bek-scrollbar` (M) yoki `bek-scrollbar bek-scrollbar--s` (S) klassi — Modal, Bottom sheet, Nav drawer, Command palette shunday qiladi.\n\n## Tokenlar\n\nTrack — `border/default`, thumb — `fill/scrollbar` → `fill/scrollbar-hover` → `fill/scrollbar-active`, radius/full, track ichida 2 px (`scale/2`), thumb uzunligi kamida 32 px (`scale/32`). Ranglar alfa shkalada — istalgan sirt ustida ishlaydi, Light/Dark o'zi. Chegara yo'q.\n\n## Qoidalar\n\n- Kontent sig'masa scrollbar ko'rinsin. `scrollbar-width: none` bilan yashirmang — kontent kesiladi, belgisi yo'q.\n- Thumb 32 px dan qisqarmaydi — sichqoncha bilan ushlab bo'ladi.\n- Gorizontal scroll — ichki konteynerda (jadval, kod bloki, karusel). Sahifaning o'zida gorizontal scroll — deyarli doim layout xatosi.\n- S — overlay va ixcham konteynerlar uchun; doimiy ko'rinadigan scroll — M.\n\n## A11y va brauzerlar\n\n- `ScrollArea` klaviatura bilan fokuslanadi (`tabIndex=0`, `bek-focus-ring`): strelkalar, PageUp/PageDown, Home/End. `aria-label` (yoki `aria-labelledby`) berilsa `role=\"region\"`.\n- Chromium va Safari aniq o'lcham va holatlarni `::-webkit-scrollbar` dan oladi; Firefox — standart `scrollbar-color` / `scrollbar-width: thin` (hover/active ranglari va 32 px minimumi Firefox'da yo'q). Figma'dagi 24 px hit area — brauzer scroll'ining o'z maydoni; native scroll'da alohida kattalashtirilmaydi.\n"
+    },
+    {
       "dir": "scrub-field",
       "package": "@bek-ui/react",
       "title": "Scrub field",
@@ -7879,7 +8056,7 @@
     {
       "dir": "separator",
       "package": "@bek-ui/react",
-      "title": "Separator · Scrollbar",
+      "title": "Separator",
       "description": "type: line (1 px border/hairline) · block (8 px bg/base tasma guruhlar orasida) · labeled (\"yoki\"); inset: none · leading · both (16 px); orientation.",
       "exports": [
         "Separator"
@@ -7957,7 +8134,7 @@
         ]
       },
       "accepted": [],
-      "readme": "# Separator · Scrollbar\n\nFigma: **4.13 Separator** — `type`: `line` (1 px `border/hairline`) · `block` (8 px `bg/base` tasma guruhlar orasida) · `labeled` (\"yoki\"); `inset`: `none` · `leading` · `both` (16 px); `orientation`.\n\n```tsx\n<Separator inset=\"leading\" />\n<Separator type=\"labeled\" label=\"yoki\" />\n```\n\nAvval sirtlarning rang pog'onasi bilan ajrating, chiziq — oxirgi chora. Komponent ichidagi oddiy chiziq uchun `Divider` (9.1) ham bor.\n\n**Scrollbar** (Figma **4.8 Scrollbar**) — CSS klass: scroll bo'ladigan elementga `bek-scrollbar` (12 px) yoki `bek-scrollbar bek-scrollbar--s` (8 px). Track `border/default`, thumb `fill/scrollbar` → hover → active, minimal uzunlik 32 px.\n"
+      "readme": "# Separator\n\nFigma: **4.13 Separator** — `type`: `line` (1 px `border/hairline`) · `block` (8 px `bg/base` tasma guruhlar orasida) · `labeled` (\"yoki\"); `inset`: `none` · `leading` · `both` (16 px); `orientation`.\n\n```tsx\n<Separator inset=\"leading\" />\n<Separator type=\"labeled\" label=\"yoki\" />\n```\n\nAvval sirtlarning rang pog'onasi bilan ajrating, chiziq — oxirgi chora. Komponent ichidagi oddiy chiziq uchun `Divider` (9.1) ham bor.\n\n**Scrollbar** (Figma **4.8 Scrollbar**) — endi alohida: `ScrollArea` komponenti va `bek-scrollbar` klassi, [scrollbar/README](../scrollbar/README.md).\n"
     },
     {
       "dir": "skeleton",
@@ -10238,6 +10415,268 @@
         }
       ],
       "readme": "# TopNavigation\n\nFigma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).\n\n```tsx\nimport { TopNavigation } from '@bek-ui/react';\n\n<TopNavigation title=\"Product\" onLeadingClick={goBack} actions={<ShareButton />} />\n<TopNavigation type=\"large-title\" title=\"Profile\" leading=\"none\" />\n<TopNavigation type=\"search\" leading=\"menu\" onLeadingClick={openDrawer}>\n  <SearchField size=\"s\" placeholder=\"Search\" />\n</TopNavigation>\n<TopNavigation background=\"transparent\" title=\"Gallery\" />   // rasm ustida\n```\n\n| Prop                              | Qiymatlar                                         | Default    |\n| --------------------------------- | ------------------------------------------------- | ---------- |\n| `type`                            | `standard` · `large-title` · `search`             | `standard` |\n| `leading`                         | `back` · `close` · `menu` · `none`                | `back`     |\n| `onLeadingClick` · `leadingLabel` | chap tugma va uning nomi                          | —          |\n| `title`                           | Title/M markazda; Large title — Headline/L pastda | —          |\n| `actions`                         | 2 tagacha Flat XL icon tugma yoki avatar          | —          |\n| `background`                      | `solid` (`bg/sheet`) · `transparent`              | `solid`    |\n\n- Bar 56, padding 0 8, gap 8; tugmalar 44 (touch target). Transparent — tugmalar `fill/on-media`, matn `text/on-color`. Status bar ustida joylashadi; RTL'da orqaga chevron teskari.\n"
+    },
+    {
+      "dir": "uploader",
+      "package": "@bek-ui/react",
+      "title": "Uploader",
+      "description": "rasm, video va fayllarni qo'shish. To'rt qism: MediaUploader (Uploader · Media — kind: photo · video; size: s 80 · m 104 · l 128; showLabel, coverBadge), FileUploader (Uploader · File — tugma va fayllar ro'yxati; size: m · l), DropZone (Uploader · Drop zone — Web uchun drag-and-drop, hint) va FileItem (File item — status: uploading · done · error).",
+      "exports": [
+        "FileItem",
+        "FileUploader",
+        "DropZone",
+        "MediaUploader",
+        "defaultUploaderMessages",
+        "formatFileSize",
+        "matchesAccept",
+        "validateFiles"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.17 Uploader",
+        "pages": [
+          {
+            "name": "3.17 Uploader",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1161-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "File item",
+            "id": "1161:424",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1161-424",
+            "variants": 6,
+            "description": "File item — one uploaded file inside Uploader · File or Drop zone. React: <FileItem status name meta onRemove onRetry />. Status: Uploading (Progress bar S, meta shows size · %), Done, Error (status/danger/soft row, reason in Meta, Retry link). Name truncates to one line. Type icon is exposed (swap per file type). Use inside Uploader; not a standalone list row.",
+            "props": {
+              "Name": {
+                "type": "TEXT",
+                "default": "Passport-scan-front.pdf"
+              },
+              "Status": [
+                "Uploading",
+                "Done",
+                "Error"
+              ],
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "fill/secondary",
+                "status/danger/soft",
+                "text/danger",
+                "text/primary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Label/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "radius/surface/md",
+                "scale/12",
+                "scale/4"
+              ]
+            },
+            "nested": [
+              "Button",
+              "Link",
+              "Progress bar"
+            ]
+          },
+          {
+            "name": "Uploader · File",
+            "id": "1163:1638",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1163-1638",
+            "variants": 14,
+            "description": "Uploader · File — a button that opens the file picker, plus the list of chosen files. React: <FileUploader state size accept maxSize multiple />. Size M uses Button L (36), Size L uses Button XL (44). Button is exposed: change its label and icon from the panel. Files are File item instances (Uploading · Done · Error). Put it inside a Fieldset: the label, format/size limit (Helper) and error ",
+            "props": {
+              "State": [
+                "Default",
+                "Hover",
+                "Focus",
+                "Loading",
+                "Filled",
+                "Error",
+                "Disabled"
+              ],
+              "Size": [
+                "M",
+                "L"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "fill/secondary",
+                "status/danger/soft"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": [
+                "radius/surface/md",
+                "scale/12",
+                "scale/8"
+              ]
+            },
+            "nested": [
+              "Button"
+            ]
+          },
+          {
+            "name": "Uploader · Media",
+            "id": "1162:1214",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1162-1214",
+            "variants": 42,
+            "description": "Uploader · Media — one photo or video tile. React: <MediaUploader kind state size coverBadge />. Kind: Photo · Video. Size: S 80 · M 104 · L 128 (scale/*). Empty shows the add icon and label; Hover adds fill/soft-hover; Focus uses _Focus ring; Loading shows bg/overlay + spinner + percent over the picture; Filled shows the picture with a Remove button (Normal-contrast) and optional Cover badg",
+            "props": {
+              "Show label": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Cover badge": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Kind": [
+                "Photo",
+                "Video"
+              ],
+              "State": [
+                "Empty",
+                "Hover",
+                "Focus",
+                "Loading",
+                "Filled",
+                "Error",
+                "Disabled"
+              ],
+              "Size": [
+                "S",
+                "M",
+                "L"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/overlay",
+                "bg/sheet",
+                "border/danger",
+                "border/focus",
+                "fill/soft",
+                "fill/soft-hover",
+                "fill/tertiary",
+                "status/danger/soft",
+                "text/danger",
+                "text/disabled",
+                "text/on-color",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "radius/surface/md",
+                "scale/104",
+                "scale/128",
+                "scale/4",
+                "scale/80"
+              ]
+            },
+            "nested": [
+              "Badge",
+              "Button"
+            ]
+          },
+          {
+            "name": "Uploader · Drop zone",
+            "id": "1163:1994",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1163-1994",
+            "variants": 6,
+            "description": "Uploader · Drop zone — Web drag-and-drop area with a browse link. React: <DropZone state accept maxSize multiple hint />. Dashed border is a documented exception to the border-free rule (1.7 Border): the dashed line is what tells people this is a drop target. Drag over = accent/soft + border/accent 2; Error = border/danger 2 with the failed File item below; Filled lists File items. Hint (for",
+            "props": {
+              "Hint": {
+                "type": "TEXT",
+                "default": "PDF, JPG or PNG · up to 10 MB"
+              },
+              "State": [
+                "Default",
+                "Drag over",
+                "Loading",
+                "Filled",
+                "Error",
+                "Disabled"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/soft",
+                "bg/sheet",
+                "border/accent",
+                "border/danger",
+                "border/default",
+                "border/strong",
+                "fill/secondary",
+                "status/danger/soft",
+                "text/accent",
+                "text/disabled",
+                "text/primary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Body/M",
+                "Caption/L"
+              ],
+              "effect": [],
+              "dimension": [
+                "radius/surface/lg",
+                "radius/surface/md",
+                "scale/12",
+                "scale/16",
+                "scale/32",
+                "scale/4",
+                "scale/8"
+              ]
+            },
+            "nested": [
+              "Link"
+            ]
+          }
+        ],
+        "docTokens": [
+          "accent/soft",
+          "bg/overlay",
+          "bg/sheet",
+          "border/accent",
+          "border/danger",
+          "border/focus",
+          "border/strong",
+          "fill/secondary",
+          "fill/soft",
+          "fill/soft-hover",
+          "radius/surface/lg",
+          "radius/surface/md",
+          "scale/104",
+          "scale/12",
+          "scale/128",
+          "scale/32",
+          "scale/80",
+          "status/danger/soft",
+          "text/disabled",
+          "text/on-color",
+          "text/secondary"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Uploader\n\nFigma: **3.17 Uploader** — rasm, video va fayllarni qo'shish. To'rt qism: `MediaUploader` (Uploader · Media — `kind`: `photo` · `video`; `size`: `s` 80 · `m` 104 · `l` 128; `showLabel`, `coverBadge`), `FileUploader` (Uploader · File — tugma va fayllar ro'yxati; `size`: `m` · `l`), `DropZone` (Uploader · Drop zone — Web uchun drag-and-drop, `hint`) va `FileItem` (File item — `status`: `uploading` · `done` · `error`).\n\n```tsx\n<Fieldset label=\"Hujjatlar\" message=\"PDF, JPG yoki PNG · 10 MB gacha\">\n  <FileUploader accept=\".pdf,.jpg,.png\" maxSize={10 * 1024 * 1024} multiple />\n</Fieldset>\n\n<DropZone\n  accept=\".pdf,.jpg,.png\"\n  maxSize={10 * 1024 * 1024}\n  multiple\n  hint=\"PDF, JPG yoki PNG · 10 MB gacha\"\n  files={files}\n  onFilesAdded={(accepted, rejected) => upload(accepted, rejected)}\n  onRemove={(f) => remove(f.id)}\n  onRetry={(f) => retry(f.id)}\n/>\n\n<MediaUploader kind=\"photo\" size=\"m\" src={cover} coverBadge onRemove={clear} />\n```\n\n## Qaysi qismni tanlash\n\n- **Media** — odamlar rasm sifatida ko'radigan rasm va videolar (e'lon, profil, hujjat skani). Birinchi rasm — muqova: `coverBadge` (\"Main\"). Video uchun `src` — poster, `duration` — \"0:24\" badge.\n- **File** — Mobile va Tablet'da hujjatlar (CV, shartnoma). Bitta tugma; ro'yxat ostida o'sadi, `multiple` da tugma \"Upload another\" bo'ladi.\n- **Drop zone** — faqat Web, bir yoki bir nechta hujjat. Browse havolasi doim bor: sudrab tashlash ixtiyoriy. Mobile'da File yoki Media ishlating.\n\n## Qoidalar\n\n- Har doim **Fieldset (3.19)** ichida: label, format va hajm chegarasi (Helper) va xato xabari Fieldset'da, Uploader ichida emas.\n- Chegarani yuklashdan **oldin** ko'rsating (`hint`), jarayonni faylning o'zida (`progress`), xatoni ham faylda — sababi va Retry bilan. Natijani hech qachon Toast bilan bildirmang.\n- Muvaffaqiyatsiz yoki tugallanmagan yuklash submit tugmasini **disabled qilmaydi** (CMP-06) — submit'da tekshiring va faylga ishora qiling.\n- Drop zone — ko'rinadigan chegarasi bor yagona konteyner (1.7 Border istisnosi): uzuq chiziq border/strong 1, Drag over — border/accent 2 + accent/soft, Error — border/danger 2. Qolgan hammasi chegarasiz.\n\n## Prop'lar (umumiy)\n\n| Prop                               | Vazifa                                                                                                                                                      |\n| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `accept` · `multiple` · `name`     | `<input type=\"file\">` atributlari. `accept` drag-and-drop'da ham tekshiriladi.                                                                              |\n| `maxSize`                          | Eng katta hajm, baytda. Oshgani `rejected` ga `file-too-large` bilan tushadi.                                                                               |\n| `files`                            | Boshqariladigan ro'yxat (`UploaderFile[]`: `id`, `name`, `size`, `status`, `progress`, `error`). Berilmasa komponent tanlanganlarni o'zi saqlaydi (`done`). |\n| `onFilesAdded(accepted, rejected)` | Tanlangan/tashlangan fayllar. `rejected[].reason`: `file-too-large` · `file-invalid-type` · `too-many-files`.                                               |\n| `onRemove` · `onRetry`             | File item'dagi Remove tugmasi va Retry havolasi.                                                                                                            |\n| `messages`                         | `aria-live` e'lonlari va rad etish sabablari matni (lokalizatsiya).                                                                                         |\n\n`formatFileSize(bytes)` (\"2.4 MB\"), `matchesAccept(file, accept)` va `validateFiles(files, rules)` ham eksport qilinadi — server bilan bir xil tekshiruv uchun.\n\nHolatlar prop emas: Hover/Focus — CSS, Loading — `files` da `uploading` bor, Filled — ro'yxat bo'sh emas, Error — `error` holatidagi fayl, Drag over — sudrash paytida, Disabled — `disabled`.\n\n## A11y\n\n- Haqiqiy `<input type=\"file\">` ko'rinmas (`tabIndex=-1`); uni Button (File), browse havolasi (Drop zone) yoki tile (Media) ochadi — Enter/Space bilan ham ishlaydi. Drag-and-drop'ning klaviatura muqobili — browse.\n- Boshqarilmaydigan rejimda ichki input ro'yxatga sinxronlanadi — oddiy `<form>` yuborishda o'chirilgan fayllar ketmaydi.\n- Qo'shish, o'chirish, rad etish va `uploading → done/error` o'zgarishlari `role=\"status\"` (aria-live) orqali e'lon qilinadi. Remove'dan keyin fokus tugma/browse'ga qaytadi.\n- Remove tugmasi nomi fayl nomi bilan (\"Remove Passport-scan-front.pdf\"); progress — `role=\"progressbar\"`, nomi fayl nomi.\n- Media tile — butun tile bosiladigan nishon (S 80 ≥ target/min 44). `showLabel={false}` bo'lsa matn `aria-label` sifatida qoladi.\n\n## O'lchamlar va RTL\n\nFile item: padding 12, gap 12, radius/surface/md, Name Label/M (bir qatorda qisqaradi), Meta Caption/M, Progress bar S Accent, Remove — Button Flat M Icon only. File: `m` → Button L 36, `l` → Button XL 44. Drop zone: padding 32, gap 16, radius/surface/lg, ikonka 32, Title Body/M, Hint Caption/L. Media: ikonka 20 · 24 · 32, Remove — Button Raised M burchakda 6 px, badge'lar pastda 6 px. RTL — logical xossalar bilan o'zi aks etadi.\n"
     },
     {
       "dir": "agent-node",

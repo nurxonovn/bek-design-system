@@ -1,0 +1,63 @@
+{
+  "page": "6.9 Floating action container",
+  "components": [
+    {
+      "name": "Floating action container",
+      "id": "1167:686",
+      "page": "6.9 Floating action container",
+      "pageId": "1167:173",
+      "props": {
+        "Show info": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show legal": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Home indicator space": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Legal": {
+          "type": "TEXT",
+          "default": "By continuing you agree to the Terms"
+        },
+        "Layout": ["Single", "Horizontal", "Vertical", "Summary"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 8,
+      "size": {
+        "w": 390,
+        "h": 88
+      },
+      "tokens": {
+        "color": ["bg/sheet", "surface/raised", "text/primary", "text/secondary", "text/tertiary"],
+        "text": ["Caption/L", "Caption/M", "Title/L"],
+        "effect": ["Elevation/1 Raised"],
+        "dimension": ["scale/12", "scale/16", "scale/8"]
+      },
+      "sizes": [1, 8, 12, 16],
+      "rawColors": [],
+      "nested": ["Button", "Info wrap"],
+      "description": "Floating action container — the sticky bottom area that holds the main action on Mobile. React: <FloatingActions layout dir showInfo showLegal homeIndicator />. Layout: Single (one Action button), Horizontal (two side by side), Vertical (two stacked), Summary (total + one Action — used by Checkout bar). Primary = Button Action XL, Secondary = Button Normal XL; both exposed. surface/raised + "
+    }
+  ],
+  "doc": {
+    "Floating action container": {
+      "tokens": [
+        "Elevation/1",
+        "control/height/lg",
+        "scale/12",
+        "scale/16",
+        "scale/8",
+        "surface/raised",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "6 · NAVIGATION\nBEK\nDesign System\n6.9 Floating action container\nThe sticky bottom area that holds the main action on Mobile. Four layouts × LTR/RTL = 8 variants. Checkout bar (6.8) is built on it.\nOverview\nFour layouts for one or two actions.\nSingle\nFree on orders over 100 000 soʻm\nContinue\nOne main action, optional info line\nHorizontal\nCall\nWrite\nTwo equal actions (Call · Write)\nVertical\nContinue\nNot now\nMain action + a softer second one\nSummary\nTotal\n159 000 soʻm\nPay\nBy continuing you agree to the Terms\nTotal + action — Checkout bar\nAnatomy\nNumbered layers of Layout = Single with every option on.\nFree on orders over 100 000 soʻm\nContinue\nBy continuing you agree to the Terms\n1\nContainer\n· surface/raised + Elevation/1 Raised, padding 12 / 16\n2\nInfo\n· Info wrap, exposed — Show info\n3\nPrimary\n· Button Action XL 44, exposed\n4\nSecondary\n· Button Normal XL 44 (Horizontal, Vertical)\n5\nLegal\n· Caption, text/tertiary — Show legal + Legal text\n6\nHome indicator space\n· 8 → 32 at the bottom with padding (iOS)\nVariants\nLayout × Direction. RTL mirrors the order of horizontal actions and the total.\nSingle · LTR\nContinue\nHorizontal · LTR\nCall\nWrite\nVertical · LTR\nContinue\nNot now\nSummary · LTR\nTotal\n159 000 soʻm\nPay\nSingle · RTL\nContinue\nHorizontal · RTL\nWrite\nCall\nVertical · RTL\nContinue\nNot now\nSummary · RTL\nPay\nTotal\n159 000 soʻm\nSizes\nOne size. Width follows the screen; buttons are XL (44) — the same as Checkout bar.\nMobile width 390\nContinue\nHeight hugs content: 88 with one button\nNo S / M / L: a bottom action bar is a fixed pattern. Smaller buttons belong inside the content, not here.\nStates\nThe container has no states of its own — Hover, Focus and Loading live on the buttons.\nPrimary · Default\nContinue\nPrimary · Hover\nContinue\nPrimary · Focus\nContinue\nPrimary · Loading\nContinue\nAfter tap, while the request runs\nDevices\nMobile only. On Tablet (834) and Web (1440) the actions sit inside the form — see 1.12 Forms · Actions.\nMobile · 390\nDelivery details\nAddress · Tashkent, Yunusobod 4\nTime · Tomorrow, 10:00–14:00\nRecipient · Nurbek, +998 90 000 00 00\nTotal\n159 000 soʻm\nPay\nBy continuing you agree to the Terms\nTablet · 834 and Web · 1440\nNot used. Put the actions at the end of the form, left-aligned with the fields (1.12 Forms · Actions). A sticky bar on a wide screen pulls the eye away from the content.\nDark mode\nColor mode = Dark. No shadow in Dark — surface/raised is lighter than the screen below it.\nFree on orders over 100 000 soʻm\nContinue\nCall\nWrite\nContinue\nNot now\nTotal\n159 000 soʻm\nPay\nBy continuing you agree to the Terms\nUsage\nWhen to reach for it.\nOne screen, one main action: Continue, Pay, Apply filters, Call. Primary = Action, Secondary = Normal.\nTwo actions at most. A third action goes into the content or an Action sheet (7.10).\nSummary when money is involved: show the total next to the action.\nNever together with Bottom navigation (6.7) on the same screen — the bar replaces it on task screens (checkout, forms, filters).\nKeep Home indicator space on for iOS. Turn it off only when the container sits inside a Bottom sheet that already has its own safe area.\nThe primary action is never Disabled (CMP-06): on tap, validate and point to what is mi"
+    }
+  },
+  "accepted": []
+}

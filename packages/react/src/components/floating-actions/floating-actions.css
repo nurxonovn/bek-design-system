@@ -1,0 +1,91 @@
+/* Floating action container — Figma "6.9 Floating action container". surface/raised + Elevation/1
+   (Dark'da soya tokeni o'zi yo'qoladi), padding 12 / 16, qatorlar gap 12; tugmalar orasida 8
+   (Summary — 16); Summary jami: Caption/L text/secondary + Title/L text/primary; Legal — Caption/M
+   text/tertiary. Home indicator space: pastda 8 → jami 32 (iOS). Safe area insetlari jismoniy
+   (left/right/bottom) — shuning uchun yon padding'lar `env()` bilan. RTL: flex qatorlar o'zi aks etadi. */
+.bek-floating-actions {
+  --bek-floating-actions-bottom: var(--bek-scale-12);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  width: 100%;
+  padding-block-start: var(--bek-scale-12);
+  padding-bottom: max(
+    var(--bek-floating-actions-bottom),
+    calc(var(--bek-scale-12) + env(safe-area-inset-bottom, 0px))
+  );
+  padding-left: max(var(--bek-scale-16), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--bek-scale-16), env(safe-area-inset-right, 0px));
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-1);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-floating-actions--home-indicator {
+  --bek-floating-actions-bottom: var(--bek-scale-32);
+}
+
+.bek-floating-actions--fixed {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: var(--bek-z-sticky);
+}
+
+.bek-floating-actions--sticky {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--bek-z-sticky);
+}
+
+.bek-floating-actions__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+.bek-floating-actions--vertical .bek-floating-actions__actions {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.bek-floating-actions--summary .bek-floating-actions__actions {
+  gap: var(--bek-scale-16);
+}
+
+.bek-floating-actions__button {
+  flex: 1;
+  min-width: 0;
+}
+
+.bek-floating-actions__total {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.bek-floating-actions__total-label {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-lg-size);
+  line-height: var(--bek-type-caption-lg-line-height);
+  letter-spacing: var(--bek-type-caption-lg-tracking);
+}
+
+.bek-floating-actions__amount {
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-lg-size);
+  line-height: var(--bek-type-title-lg-line-height);
+  letter-spacing: var(--bek-type-title-lg-tracking);
+  white-space: nowrap;
+}
+
+.bek-floating-actions__legal {
+  margin: 0;
+  color: var(--bek-text-tertiary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
