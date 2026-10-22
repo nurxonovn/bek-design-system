@@ -165,8 +165,16 @@ export function Swimlane({
   const horizontal = direction === 'horizontal';
   return (
     <figure
+      // Keng kanvas gorizontal skroll qiladi — klaviaturadan ham (WCAG 2.1.1, axe scrollable-region-focusable).
+      tabIndex={0}
       {...rest}
-      className={cx('bek-diagram', 'bek-swimlane', `bek-swimlane--${direction}`, className)}
+      className={cx(
+        'bek-diagram',
+        'bek-swimlane',
+        `bek-swimlane--${direction}`,
+        'bek-focus-ring',
+        className,
+      )}
     >
       <div
         className="bek-swimlane__canvas"
