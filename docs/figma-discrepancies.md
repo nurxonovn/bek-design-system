@@ -238,6 +238,20 @@ Umumiy:
 - Xarita ma'lumoti: svg-maps (CC BY 4.0) — Figma'dagi soddalashtirilgan nusxa kodga ko'chirildi,
   `packages/charts/LICENSE-ASSETS.md`.
 
+### A14. 2.6 Backgrounds (2026-10-22)
+
+- **Matrix rain:** Tone variantlari tartibi `Classic, Neutral, Brand` — standart instance Classic chiqadi, doc'da
+  standart Neutral; tartibni Neutral · Brand · Classic ga keltirish kerak. Props jadvalida `opacity` standarti 64,
+  Intensity Default .7 — birlashtirish kerak. Brand'da nur ellipsi `gradient/brand-start` (.2), jadvaldagi «Pointer»
+  qatori `accent/active` — «Pointer zone» va «Pointer glow» ni ajratish kerak. Density doc'da .22 · .38 · .55,
+  variantlarda belgili kataklar .32 · .48 · .67 (kodda preset × 1.25).
+- **Grain gradient:** Noise rangi tokenga bog'lanmaydi (kodda `static/dark`, `accepted`); doc'da "SVG
+  feTurbulence", kodda canvas shovqin plitkasi — matnni yangilash kerak.
+- **Aurora:** doc "tasmalar yuqori 60 % da", Band 3 markazi ≈ 81 % — doc ≠ komponent; `position: center` va
+  `bands` 4–5 Figma'da yo'q (kodda kengaytma).
+- Doc freymlaridagi bezak belgilar qatorlari oddiy TEXT — extractor doc matnini ifloslantiradi; `_Rain` kabi
+  guruhga olish kerak.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

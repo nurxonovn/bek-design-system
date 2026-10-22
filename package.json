@@ -20,7 +20,7 @@
     "release": "turbo run build --filter=./packages/* && changeset publish",
     "release:ci": "node scripts/check-npm-auth.mjs && pnpm release",
     "dev:templates": "turbo run dev --filter=@bek-ui/templates",
-    "check:figma": "pnpm --filter @bek-ui/react --filter @bek-ui/charts check:figma"
+    "check:figma": "pnpm --filter @bek-ui/react --filter @bek-ui/charts --filter @bek-ui/backgrounds check:figma"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.7",

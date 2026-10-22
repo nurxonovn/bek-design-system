@@ -17285,6 +17285,305 @@
         }
       ],
       "readme": "# Waterfall chart\n\nFigma: **4.18 Chart · Waterfall** — boshlang'ich qiymat musbat va manfiy hissalar orqali yakuniy qiymatga qanday aylanishi (P&L, pul oqimi, byudjet ko'prigi). `variant`: `default`.\n\n```tsx\n<WaterfallChart\n  start={{ label: 'Q1', value: 60 }}\n  items={[\n    { label: 'Sales', value: 18 },\n    { label: 'Refunds', value: -14 },\n  ]}\n  end={{ label: 'Q2' }}\n  label=\"Q1 60, Sales +18, Refunds −14, Q2 64\"\n/>\n```\n\n- **Qachon:** P&L ko'prigi, pul oqimi, reja va fakt farqini tushuntirish — jami ikki davr orasida nega o'zgardi. Mustaqil kategoriyalar uchun emas — `BarChart`.\n- **Kodlash:** y0, y1 = oldingi / keyingi joriy jami, rang = ishora: jamilar `dataviz/neutral` (0 dan), o'sish `dataviz/positive`, kamayish `dataviz/negative`; uzuq bog'lovchi `dataviz/axis` joriy darajada.\n- **Qoidalar:** birinchi va oxirgi ustun — 0 dan jami, qolganlari suzadi. Yozuvlar ishorali, haqiqiy minus (−14): `text/success` · `text/danger`. Ko'pi bilan 8 qadam; kichiklarini \"Other\" ga yig'ing. `end.value` berilmasa — start + o'zgarishlar.\n- **Interaksiya:** hover — boshqa ustunlar 40%, `<title>` o'zgarish va joriy jamini aytadi. Drill-down — ota komponentda.\n- **A11y:** `role=\"img\"` + `label`, ko'rinmas jadval (qadam · o'zgarish · joriy jami).\n- **O'lchamlar:** plot `chart/height/md` (200 / 240 / 320), qalinlik `chart/bar/thickness` (16 / 24 / 32) → `barThickness`, radius `chart/bar/radius`, tick `chart/axis/tick-count` → `ticks`. Legend — `ChartLegend` (Increase · Decrease · Total, `legendLabels`).\n"
+    },
+    {
+      "dir": "aurora",
+      "package": "@bek-ui/backgrounds",
+      "title": "Aurora",
+      "description": "kanvas tepasida oqadigan yumshoq yorug' tasmalar; pastki yarmi sarlavha va tugmalar uchun tinch qoladi. Auth va landing hero'lar uchun. tone: neutral · brand; intensity: subtle · default · intense.",
+      "exports": [
+        "Aurora"
+      ],
+      "section": {
+        "id": 2,
+        "title": "Assets"
+      },
+      "figma": {
+        "label": "2.6 Backgrounds · Aurora",
+        "pages": [
+          {
+            "name": "2.6 Backgrounds",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1342-67"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Aurora",
+            "id": "1343:7075",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1343-7075",
+            "variants": 6,
+            "description": "Aurora — soft light bands flowing across the top of the canvas (2.6 Backgrounds). Decorative only (BGR-01). Tone Neutral (accent/soft + fill tokens) / Brand (gradient/brand-*). Gradient stops are bound to colour tokens. Intensity = band layer opacity (.35 · .6 · .9). Best for hero and auth screens with text in the lower half. React: <Aurora tone intensity speed bands />.",
+            "props": {
+              "Tone": [
+                "Neutral",
+                "Brand"
+              ],
+              "Intensity": [
+                "Subtle",
+                "Default",
+                "Intense"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "accent/soft",
+                "bg/base",
+                "brand/logo-solid",
+                "fill/soft-pressed",
+                "fill/strong",
+                "gradient/brand-end",
+                "gradient/brand-start"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/default",
+          "accent/soft",
+          "bg/base",
+          "fill/soft-pressed",
+          "fill/strong",
+          "gradient/brand-end",
+          "gradient/brand-start"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Aurora\n\nFigma: **2.6 Backgrounds · Aurora** — kanvas tepasida oqadigan yumshoq yorug' tasmalar; pastki yarmi sarlavha va tugmalar uchun tinch qoladi. Auth va landing hero'lar uchun. `tone`: `neutral` · `brand`; `intensity`: `subtle` · `default` · `intense`.\n\n```tsx\nimport { Aurora } from '@bek-ui/backgrounds';\n\n<main style={{ position: 'relative', minHeight: '100dvh' }}>\n  <Aurora tone=\"brand\" intensity=\"subtle\" />\n  <LoginForm style={{ position: 'relative' }} />\n</main>\n\n<Aurora bands={5} position=\"center\" speed={0.5} />\n```\n\n## Ton va tokenlar\n\nTasmalar — chiziqli gradientli burilgan ellipslar (blur 64); gradient stoplari Figma'da ham tokenga bog'langan.\n\n| Tasma | Neutral                                              | Brand                                         |\n| ----- | ---------------------------------------------------- | --------------------------------------------- |\n| 1     | `accent/soft` → `fill/soft-pressed`                  | `gradient/brand-start` → `gradient/brand-end` |\n| 2     | `fill/strong` → `accent/soft`                        | `gradient/brand-end` → `accent/default`       |\n| 3     | `accent/default` → `accent/soft`                     | `brand/logo-solid` → `gradient/brand-start`   |\n| 4–5   | kod kengaytmasi (`bands` > 3) — shu ton tokenlaridan | ←                                             |\n\nFon — `bg/base`. Tasmalar mavzu bilan almashadi; Brand qorong'i mavzuda kuchliroq porlaydi.\n\n## Prop'lar\n\n| Prop        | Figma     | Qiymat                           | Standart         |\n| ----------- | --------- | -------------------------------- | ---------------- |\n| `tone`      | Tone      | `neutral` · `brand`              | `neutral`        |\n| `intensity` | Intensity | `subtle` · `default` · `intense` | `default`        |\n| `speed`     | kod       | ×                                | 1 (sikl 15–30 s) |\n| `bands`     | kod       | 1–5                              | 3                |\n| `position`  | kod       | `top` · `center`                 | `top`            |\n| `fps`       | BGR-04    | kadr/s                           | 30               |\n\nIntensity — tasmalar qatlami shaffofligi: Subtle .35, Default .6, Intense .9 (faqat muqova).\n\n## Qoidalar\n\n- BGR-01 … BGR-06 (Matrix rain README): bezak, kontrast, `prefers-reduced-motion` → statik kadr, 30 fps + pauza, ekranda bitta fon.\n- Sarlavha va CTA — pastki yarmida; tasmalar yuqori 60 % da (`position=\"top\"`).\n- Mobil ekranda Subtle — kichik ekranda tasmalar kuchliroq ko'rinadi.\n- Sarlavhani eng yorqin tasma ustiga qo'ymang (BGR-02).\n"
+    },
+    {
+      "dir": "dot-field",
+      "package": "@bek-ui/backgrounds",
+      "title": "Dot field",
+      "description": "kursor atrofida kattalashib yorishadigan nuqtalar to'ri; bosilganda tashqariga halqa yuguradi. 2.5 Pattern · Dots ning animatsiyali juftligi. tone: neutral · brand; intensity: subtle · default · intense.",
+      "exports": [
+        "DotField"
+      ],
+      "section": {
+        "id": 2,
+        "title": "Assets"
+      },
+      "figma": {
+        "label": "2.6 Backgrounds · Dot field",
+        "pages": [
+          {
+            "name": "2.6 Backgrounds",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1342-67"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Dot field",
+            "id": "1343:6994",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1343-6994",
+            "variants": 6,
+            "description": "Dot field — animated dot grid (2.6 Backgrounds). Dots swell and light up around the pointer, a ripple ring travels outward on click. Decorative only (BGR-01). Tone Neutral (text/disabled + accent) / Brand (gradient/brand-*). Intensity = layer opacity + dot size (1.5 · 2 · 2.5). Static sibling: 2.5 Pattern · Dots. React: <DotField tone intensity gap dotSize speed pointerHighlight radius rippleOnCli",
+            "props": {
+              "Show pointer": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Tone": [
+                "Neutral",
+                "Brand"
+              ],
+              "Intensity": [
+                "Subtle",
+                "Default",
+                "Intense"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "bg/base",
+                "gradient/brand-end",
+                "gradient/brand-start",
+                "text/disabled"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/default",
+          "bg/base",
+          "gradient/brand-end",
+          "gradient/brand-start",
+          "text/disabled"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Dot field\n\nFigma: **2.6 Backgrounds · Dot field** — kursor atrofida kattalashib yorishadigan nuqtalar to'ri; bosilganda tashqariga halqa yuguradi. 2.5 Pattern · Dots ning animatsiyali juftligi. `tone`: `neutral` · `brand`; `intensity`: `subtle` · `default` · `intense`.\n\n```tsx\nimport { DotField } from '@bek-ui/backgrounds';\n\n<div style={{ position: 'relative', minHeight: 360 }}>\n  <DotField intensity=\"subtle\" />\n  <EmptyState title=\"Hali buyurtma yo'q\" />\n</div>\n\n<DotField tone=\"brand\" gap={24} radius={200} rippleOnClick={false} />\n```\n\n## Ton va tokenlar\n\n| Rol             | Neutral          | Brand                  |\n| --------------- | ---------------- | ---------------------- |\n| Fon             | `bg/base`        | `bg/base`              |\n| Nuqta           | `text/disabled`  | `gradient/brand-start` |\n| Issiq nuqta     | `accent/default` | `gradient/brand-end`   |\n| Nur (`pointer`) | `accent/default` | `gradient/brand-start` |\n\nNuqtalar va nur mavzu bilan almashadi (CSS o'zgaruvchilari `--bek-dot-field-*`).\n\n## Prop'lar\n\n| Prop                          | Figma        | Qiymat                                  | Standart                         |\n| ----------------------------- | ------------ | --------------------------------------- | -------------------------------- |\n| `tone`                        | Tone         | `neutral` · `brand`                     | `neutral`                        |\n| `intensity`                   | Intensity    | `subtle` · `default` · `intense`        | `default`                        |\n| `pointer`                     | Show pointer | boolean — kursor nuri (260 px, blur 72) | `true`                           |\n| `gap` · `dotSize`             | kod          | px                                      | 20 · `intensity` (1.5 · 2 · 2.5) |\n| `speed`                       | kod          | ×                                       | 1                                |\n| `pointerHighlight` · `radius` | kod          | bool · px                               | `true` · 150                     |\n| `rippleOnClick`               | kod          | bool                                    | `true`                           |\n| `fps`                         | BGR-04       | kadr/s                                  | 30                               |\n\nIntensity: Subtle — shaffoflik .45, nuqta 1.5 (matn ortida); Default — .7 · 2 (hero); Intense — 1 · 2.5 (bo'sh holat, yuklanish). Kursor zonasida nuqtalar +4 px gacha kattalashadi va issiq rangga o'tadi.\n\n## Qoidalar\n\n- BGR-01 … BGR-06 (Matrix rain README) — bezak (`aria-hidden`, `pointer-events: none`), kontrast, `prefers-reduced-motion` → statik kadr, 30 fps + pauza, ekranda bitta fon, zich kontent ostida emas.\n- Eng tinch kursor effekti — bo'sh holat va onboarding kabi mahsulot ekranlarida ham xavfsiz.\n- `gap` 16–24 px; kichikroq to'r mobil ekranda bezovta qiladi.\n- Sensorli ekranda zona oxirgi teginish joyida qoladi va asta so'nadi.\n- Boshqa animatsiyali fon bilan ustma-ust qo'ymang (BGR-05).\n"
+    },
+    {
+      "dir": "grain-gradient",
+      "package": "@bek-ui/backgrounds",
+      "title": "Grain gradient",
+      "description": "sekin siljiydigan yumshoq rang dog'lari va ustida mayda donadorlik. Kursor effekti yo'q — uzun o'qish sahifalari va muqovalar uchun eng tinch fon. tone: neutral · brand; intensity: subtle · default · intense.",
+      "exports": [
+        "GrainGradient"
+      ],
+      "section": {
+        "id": 2,
+        "title": "Assets"
+      },
+      "figma": {
+        "label": "2.6 Backgrounds · Grain gradient",
+        "pages": [
+          {
+            "name": "2.6 Backgrounds",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1342-67"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Grain gradient",
+            "id": "1343:7044",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1343-7044",
+            "variants": 6,
+            "description": "Grain gradient — slowly drifting soft colour blobs under a fine grain (2.6 Backgrounds). Decorative only (BGR-01). Tone Neutral (fill/soft-* + accent/soft) / Brand (gradient/brand-* + accent). Intensity = blob opacity (.35 · .6 · .9) + grain amount. Grain is a Figma Noise effect (colour not bindable — exception noted in 2.6 doc). React: <GrainGradient tone intensity speed grain blobs />.",
+            "props": {
+              "Tone": [
+                "Neutral",
+                "Brand"
+              ],
+              "Intensity": [
+                "Subtle",
+                "Default",
+                "Intense"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "accent/soft",
+                "bg/base",
+                "brand/logo-solid",
+                "fill/soft-pressed",
+                "fill/strong",
+                "gradient/brand-end",
+                "gradient/brand-start"
+              ],
+              "text": [],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/default",
+          "accent/soft",
+          "bg/base",
+          "fill/soft-pressed",
+          "fill/strong",
+          "gradient/brand-end",
+          "gradient/brand-start"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-extra",
+          "match": "--bek-static-dark",
+          "reason": "Donadorlik (grain) rangi: Figma'da Noise effekti rangi Variables'ga bog'lanmaydi (qat'iy qora — 2.6 doc'dagi istisno). Kodda tokensiz qora o'rniga doimiy `static/dark` tokeni ishlatildi. Figma'da: Noise rangini tokenga bog'lash imkoni bo'lsa `static/dark` ga bog'lang yoki doc'ning Tokens jadvalida Grain uchun kod tokenini (`--bek-static-dark`) ko'rsating."
+        }
+      ],
+      "readme": "# Grain gradient\n\nFigma: **2.6 Backgrounds · Grain gradient** — sekin siljiydigan yumshoq rang dog'lari va ustida mayda donadorlik. Kursor effekti yo'q — uzun o'qish sahifalari va muqovalar uchun eng tinch fon. `tone`: `neutral` · `brand`; `intensity`: `subtle` · `default` · `intense`.\n\n```tsx\nimport { GrainGradient } from '@bek-ui/backgrounds';\n\n<header style={{ position: 'relative', minHeight: 420 }}>\n  <GrainGradient tone=\"brand\" />\n  <h1 style={{ position: 'relative' }}>Yangi kurslar</h1>\n</header>\n\n<GrainGradient blobs={['accent/soft', 'gradient/brand-end', 'fill/strong']} grain={0.2} />\n```\n\n## Ton va tokenlar\n\n| Rol          | Neutral                                            | Brand                  |\n| ------------ | -------------------------------------------------- | ---------------------- |\n| Fon          | `bg/base`                                          | `bg/base`              |\n| Dog' 1       | `fill/soft-pressed`                                | `gradient/brand-start` |\n| Dog' 2       | `accent/soft`                                      | `gradient/brand-end`   |\n| Dog' 3       | `fill/strong`                                      | `accent/default`       |\n| Dog' 4 (.55) | `accent/default`                                   | `brand/logo-solid`     |\n| Donadorlik   | `static/dark` (Figma Noise — tokenga bog'lanmaydi) | ←                      |\n\nDog' ranglari mavzu bilan almashadi; donadorlik bir xil qoladi.\n\n## Prop'lar\n\n| Prop        | Figma     | Qiymat                               | Standart                      |\n| ----------- | --------- | ------------------------------------ | ----------------------------- |\n| `tone`      | Tone      | `neutral` · `brand`                  | `neutral`                     |\n| `intensity` | Intensity | `subtle` · `default` · `intense`     | `default`                     |\n| `speed`     | kod       | ×                                    | 1 (sikl 20–40 s)              |\n| `grain`     | kod       | 0–1                                  | `intensity` (.18 · .28 · .40) |\n| `blobs`     | kod       | token nomlari / CSS ranglar ro'yxati | ton bo'yicha 4 ta             |\n| `fps`       | BGR-04    | kadr/s                               | 30                            |\n\nIntensity — dog'lar shaffofligi: Subtle .35, Default .6, Intense .9 (faqat muqova). Dog'lar Figma'dagi to'rt ellips (blur 110) geometriyasidan; konteyner o'lchamiga moslashadi, chetlari kesiladi.\n\n## Qoidalar\n\n- BGR-01 … BGR-06 (Matrix rain README): bezak, kontrast, `prefers-reduced-motion` → statik kadr, 30 fps + pauza, ekranda bitta fon.\n- Katta sarlavhalar ortida yaxshi: matn bilan raqobat qiladigan mayda detal yo'q.\n- Donadorlik keng gradientlardagi «banding»ni yashiradi — o'chirmang.\n- Intense'ni oddiy matn ortida ishlatmang — dog'lar kontrastni tushiradi (BGR-02).\n- Figma'da donadorlik — Noise effekti (multitone, 1.2); kodda — qurilma pikselidagi takrorlanuvchi shovqin plitkasi (canvas).\n"
+    },
+    {
+      "dir": "matrix-rain",
+      "package": "@bek-ui/backgrounds",
+      "title": "Matrix rain",
+      "description": "tushayotgan belgilar ustunlari va kursorga ergashuvchi nur. tone: neutral · brand · classic; intensity: subtle · default · intense; charset: mixed · latin · cyrillic · digits yoki istalgan satr.",
+      "exports": [
+        "MatrixRain"
+      ],
+      "section": {
+        "id": 2,
+        "title": "Assets"
+      },
+      "figma": {
+        "label": "2.6 Backgrounds · Matrix rain",
+        "pages": [
+          {
+            "name": "2.6 Backgrounds",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1342-67"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Matrix rain",
+            "id": "1343:2655",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1343-2655",
+            "variants": 36,
+            "description": "Matrix rain — animated background of falling characters (2.6 Backgrounds). Decorative only (BGR-01). Tone: Neutral (text tokens + accent pointer), Brand (gradient/brand-* + accent), Classic (black + green, effect/matrix/*, same in Light and Dark). Intensity sets layer opacity and density (Subtle .4 · Default .7 · Intense 1). Charset: Mixed (Latin + Uzbek Cyrillic + digits), Latin, Cyrillic, Digits",
+            "props": {
+              "Show pointer": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Tone": [
+                "Classic",
+                "Neutral",
+                "Brand"
+              ],
+              "Intensity": [
+                "Subtle",
+                "Default",
+                "Intense"
+              ],
+              "Charset": [
+                "Mixed",
+                "Latin",
+                "Cyrillic",
+                "Digits"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/active",
+                "accent/default",
+                "bg/base",
+                "effect/matrix/bg",
+                "effect/matrix/fade",
+                "effect/matrix/head",
+                "effect/matrix/trail",
+                "gradient/brand-end",
+                "gradient/brand-start",
+                "text/disabled",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Code/S"
+              ],
+              "effect": [],
+              "dimension": []
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "accent/active",
+          "accent/default",
+          "bg/base",
+          "gradient/brand-end",
+          "gradient/brand-start",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Matrix rain\n\nFigma: **2.6 Backgrounds · Matrix rain** — tushayotgan belgilar ustunlari va kursorga ergashuvchi nur. `tone`: `neutral` · `brand` · `classic`; `intensity`: `subtle` · `default` · `intense`; `charset`: `mixed` · `latin` · `cyrillic` · `digits` yoki istalgan satr.\n\n```tsx\nimport '@bek-ui/tokens/tokens.css';\nimport '@bek-ui/backgrounds/styles.css';\nimport { MatrixRain } from '@bek-ui/backgrounds';\n\n<section style={{ position: 'relative', minHeight: 480 }}>\n  <MatrixRain intensity=\"subtle\" />\n  <h1 style={{ position: 'relative' }}>BEK bilan dizaynni o'rganing</h1>\n</section>\n\n<MatrixRain tone=\"classic\" intensity=\"intense\" charset=\"01\" speed={2.5} />\n```\n\n## Ton va tokenlar\n\n| Rol             | Neutral                | Brand                       | Classic                    |\n| --------------- | ---------------------- | --------------------------- | -------------------------- |\n| Fon (Base)      | `bg/base`              | `bg/base`                   | `effect/matrix/bg`         |\n| Bosh (Head)     | `text/primary`         | `accent/default`            | `effect/matrix/head`       |\n| Iz (Trail)      | `text/secondary`       | `gradient/brand-end`        | `effect/matrix/trail`      |\n| Shovqin (Noise) | `text/disabled`        | `gradient/brand-start`      | `effect/matrix/fade`       |\n| Kursor zonasi   | `accent/default`       | `accent/active`             | `effect/matrix/head`       |\n| Nur (`pointer`) | `accent/default` · .12 | `gradient/brand-start` · .2 | `effect/matrix/head` · .18 |\n\nBelgilar — `Code/S` (mono 12/16, `--bek-type-code-sm-*`). Neutral va Brand mavzu bilan almashadi; Classic Light va Dark'da bir xil (qora + yashil). Ranglar CSS o'zgaruvchilarida (`--bek-matrix-rain-head` …) — canvas ularni `getComputedStyle` bilan o'qiydi, shuning uchun `data-theme=\"dark\"` darhol qo'llanadi.\n\n## Prop'lar\n\n| Prop                                                   | Figma        | Qiymat                                                 | Standart                    |\n| ------------------------------------------------------ | ------------ | ------------------------------------------------------ | --------------------------- |\n| `tone`                                                 | Tone         | `neutral` · `brand` · `classic`                        | `neutral`                   |\n| `intensity`                                            | Intensity    | `subtle` · `default` · `intense`                       | `default`                   |\n| `charset`                                              | Charset      | preset yoki istalgan satr                              | `mixed`                     |\n| `pointer`                                              | Show pointer | boolean — kursor nuri                                  | `true`                      |\n| `size` · `lineSpacing`                                 | kod          | px                                                     | `Code/S` tokeni (12 · 16)   |\n| `density`                                              | kod          | 0.25–2 ×                                               | 1                           |\n| `speed` · `frameInterval`                              | kod          | × · ms                                                 | 1.75 · 134                  |\n| `trail`                                                | kod          | 0–100 %                                                | 94                          |\n| `opacity`                                              | kod          | 0–100 %                                                | `intensity` (40 · 70 · 100) |\n| `color` · `highlightColor`                             | kod          | token nomi (`accent/default`), `--bek-…` yoki CSS rang | ton bo'yicha                |\n| `pointerHighlight` · `radius` · `highlightPersistence` | kod          | bool · px · %                                          | `true` · 122 · 64           |\n| `fps`                                                  | BGR-04       | kadr/s                                                 | 30                          |\n\n`intensity` — tayyor boshlang'ich nuqta: Subtle (shaffoflik .4 · zichlik .22) matn ortida, Default (.7 · .38) hero, Intense (1 · .55) faqat muqova, 404, yuklanish. `density` shu zichlikni ko'paytiradi.\n\n## Qoidalar (BGR-01 … BGR-06)\n\n- **Bezak (BGR-01):** `<canvas aria-hidden=\"true\">`, `pointer-events: none`; kursor `window` da kuzatiladi. Ota element `position: relative` bo'lsin — fon uni to'liq qoplaydi (ResizeObserver).\n- **Kontrast (BGR-02):** ustidagi matn eng yomon kadrda ham kontrastdan o'tsin; kerak bo'lsa `bg/base` gradient pardasi qo'shing. Matnni tinch hududda (chap / past) saqlang, kursor zonasini undan uzoqroq.\n- **Harakatni kamaytirish (BGR-03):** `prefers-reduced-motion: reduce` → bitta statik kadr, kursor effektlarisiz; sozlama o'zgarishi tinglanadi.\n- **Batareya (BGR-04):** 30 fps, ekrandan tashqarida va yashirin tabda pauza, `devicePixelRatio` ≤ 2.\n- **Bitta fon (BGR-05):** ekranda bitta animatsiyali fon.\n- **Joy (BGR-06):** forma, jadval va zich kontent ostida emas — hero, auth, onboarding, bo'sh holat, 404, yuklanish, muqova.\n- Classic — kuchli brend lahzasi (muqova, 404, yuklanish); kundalik hero uchun Neutral / Brand.\n- Figma'da Charset — variant, kodda — erkin satr: `charset=\"BEK0123\"`.\n- SSR xavfsiz: render paytida `window` ishlatilmaydi; `'use client'` komponent.\n"
     }
   ],
   "tokens": {
