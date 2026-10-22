@@ -73,7 +73,7 @@ test('SelectorCard: disabled and error states, className/style on root, ref prop
   );
   assert.match(
     html,
-    /^<div class="bek-selector-card bek-selector-card--radio bek-selector-card--none bek-selector-card--error bek-selector-card--disabled extra" style="max-width:320px">/,
+    /^<div class="bek-selector-card bek-selector-card--radio bek-selector-card--none bek-selector-card--error bek-selector-card--disabled extra" style="max-width:320px" aria-disabled="true">/,
   );
   assert.match(html, /bek-radio--disabled/);
   assert.match(html, /disabled=""/);

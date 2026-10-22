@@ -1,0 +1,134 @@
+{
+  "page": "3.12 Search bar",
+  "components": [
+    {
+      "name": "Search result row",
+      "id": "1129:2319",
+      "page": "3.12 Search bar",
+      "pageId": "782:63",
+      "props": {
+        "Title": {
+          "type": "TEXT",
+          "default": "Pizza margherita"
+        },
+        "Meta": {
+          "type": "TEXT",
+          "default": "Jun 12 · 2025"
+        },
+        "Snippet": {
+          "type": "TEXT",
+          "default": "Short supporting text that explains why this result matches."
+        },
+        "Source": {
+          "type": "TEXT",
+          "default": "#source"
+        },
+        "Show meta": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show snippet": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Show source": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Type": ["Query", "Recent", "Item", "Person", "File"],
+        "State": ["Default", "Hover", "Selected"],
+        "Direction": ["LTR", "RTL"]
+      },
+      "variants": 30,
+      "size": {
+        "w": 560,
+        "h": 36
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "fill/soft",
+          "status/info/soft",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/L", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "radius/control/md",
+          "radius/control/sm",
+          "radius/full",
+          "scale/12",
+          "scale/2",
+          "scale/6",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 6, 8, 12, 24],
+      "rawColors": [],
+      "nested": ["Avatar"],
+      "description": "Search result row — one line in Search suggestions. React: <SearchResultRow type state dir />. Type: Query (suggested query, matched part in text/primary, rest text/secondary), Recent (past search), Item, Person (Avatar), File. Fill query ↖ puts the text back into the field. Selected = keyboard focus in the list (accent/soft, shows ↵ hint). Props: Title, Meta, Snippet, Source, Show meta/snip"
+    },
+    {
+      "name": "Search suggestions",
+      "id": "1130:3023",
+      "page": "3.12 Search bar",
+      "pageId": "782:63",
+      "props": {
+        "Device": ["Web", "Mobile"],
+        "Content": ["Recent", "Suggestions", "Results", "Empty", "Loading"]
+      },
+      "variants": 10,
+      "size": {
+        "w": 560,
+        "h": 245
+      },
+      "tokens": {
+        "color": [
+          "accent/soft",
+          "bg/base",
+          "border/hairline",
+          "fill/soft",
+          "surface/card",
+          "surface/raised",
+          "text/accent",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Body/S", "Caption/M", "Label/L", "Label/M", "Label/S"],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": [
+          "radius/control/md",
+          "radius/full",
+          "radius/surface/lg",
+          "scale/12",
+          "scale/16",
+          "scale/24",
+          "scale/4",
+          "scale/40",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24, 40],
+      "rawColors": [],
+      "nested": [],
+      "description": "Search suggestions — the panel that opens under Search field. React: <SearchSuggestions device content />. Web: floating surface/raised panel (Elevation/3), keyboard hints in the footer, first row Selected for keyboard focus. Mobile: full-screen surface/card with a Filled Search field and Cancel on top. Content: Recent (with Clear), Suggestions (Query rows), Results (grouped: People, Files, "
+    }
+  ],
+  "doc": {},
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base — faqat Search suggestions komponent set o'ramining (COMPONENT_SET 1130:3023) foni; variantlar surface/raised (Web) va surface/card (Mobile). Kodda talab qilinmaydi; Figma'da set o'ramini boshqa set'lar kabi bg/sheet ga bog'lash kerak."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/M",
+      "reason": "Label/M Search suggestions'ning o'zida yo'q: u Mobile variantlaridagi ichki Search field instance'ining \"Cancel\" matni va Avatar bosh harflaridan (\"NN\") keladi (use_figma bilan tekshirildi). Kodda ular SearchField (`field` slot) va Avatar komponentlarining o'z CSS'ida. Figma'da tuzatish shart emas — extractor shu sahifadagi instance ichini ham hisoblaydi."
+    }
+  ]
+}

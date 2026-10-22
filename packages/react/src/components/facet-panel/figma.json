@@ -1,0 +1,57 @@
+{
+  "page": "3.12 Search bar",
+  "components": [
+    {
+      "name": "Facet panel",
+      "id": "1131:2897",
+      "page": "3.12 Search bar",
+      "pageId": "782:63",
+      "props": {
+        "Device": ["Web", "Mobile"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 720,
+        "h": 356
+      },
+      "tokens": {
+        "color": [
+          "bg/base",
+          "border/hairline",
+          "fill/soft",
+          "surface/card",
+          "surface/raised",
+          "text/accent",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Label/L", "Label/M"],
+        "effect": ["Elevation/3 Floating"],
+        "dimension": [
+          "radius/control/md",
+          "radius/full",
+          "radius/surface/lg",
+          "radius/surface/xl",
+          "scale/12",
+          "scale/16",
+          "scale/2",
+          "scale/4",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 16, 24],
+      "rawColors": [],
+      "nested": ["Button", "Checkbox"],
+      "description": "Facet panel — filters for catalogue search, opened from the Filter slot of Search field. React: <FacetPanel device />. Web: popover with facet list on the left and Checkbox options with counts on the right, Clear all and a Show results button. Mobile: bottom-sheet content with grouped Checkbox options and a full-width apply button. Built from Checkbox and Button instances."
+    }
+  ],
+  "doc": {},
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base — faqat Facet panel komponent set o'ramining (COMPONENT_SET 1131:2897) foni; variantlar surface/raised (Web) va surface/card (Mobile). Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga bog'lash kerak."
+    }
+  ]
+}

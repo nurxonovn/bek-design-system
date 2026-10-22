@@ -105,6 +105,8 @@ export const SelectorCard = forwardRef<HTMLInputElement, SelectorCardProps>(func
         className,
       )}
       style={style}
+      // Nofaol kartaning matnlari (text/disabled) WCAG 1.4.3 istisnosi — yordamchi texnologiyaga ham bildiriladi.
+      aria-disabled={disabled || undefined}
     >
       {kind !== 'none' && (
         <span className="bek-selector-card__media" aria-hidden="true">

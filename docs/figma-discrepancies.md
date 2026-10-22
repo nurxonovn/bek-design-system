@@ -162,6 +162,19 @@ Ikkala sahifa `--strict` 0 bilan kodga o'tdi (`accepted[]` bo'sh). Figma tomonid
 - 4 ta set tavsifida HTML entity (`&lt;ScrubField … /&gt;`); doc frame'larda "Design tokens" o'rniga "Tokens".
 - 3.20 sahifasidagi **Chip group** (1179:381) va **Range field** (1179:799) set'lari kodda hali yo'q (rejada emas).
 
+### A10. 3.12 Search suggestions, Search result row, Facet panel (2026-10-22)
+
+- Search suggestions (1130:3023) va Facet panel (1131:2897) set o'ramlari `bg/base` — `bg/sheet` ga o'tkazish kerak
+  (kodda `accepted`).
+- Search suggestions → Loading: skelet chiziqlari qo'lda chizilgan (`fill/soft`) — 5.7 Skeleton instance bo'lishi
+  kerak (`fill/soft-pressed`). Kodda `Skeleton`.
+- File qatori ikonkasi `text/info` — instance ichida, hujjatda "file-01 · text/info" deb yozish kerak.
+- Results'dagi Person qatorida Avatar bosh harflari "NN", ism "Alicia Kumar" — "AK" bo'lishi kerak.
+- Tavsiflar 400 belgida kesilgan va HTML entity'li (`&lt;SearchResultRow … /&gt;`).
+- Empty holatidagi search-remove `_Icon` ichida bitta vektor tokensiz — `text/primary` ga bog'lash kerak.
+- "See all" / "Clear" doc'da oddiy matn (Label/S text/accent) — kodda listbox ichida `role="option"` (klaviatura);
+  doc'da aniqlashtirish kerak.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

@@ -21,6 +21,8 @@ export * from './components/stepper/index.js';
 export * from './components/segmented-control/index.js';
 export * from './components/base-selector/index.js';
 export * from './components/search-field/index.js';
+export * from './components/search-suggestions/index.js';
+export * from './components/facet-panel/index.js';
 export * from './components/chip/index.js';
 export * from './components/date-picker/index.js';
 export * from './components/time-slot/index.js';

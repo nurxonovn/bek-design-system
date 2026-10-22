@@ -1,0 +1,239 @@
+/* Facet panel — Figma "3.12 Search bar → Facet panel".
+   Web: popover surface/raised, radius/surface/lg (16), Elevation/3 Floating. Header padding 12 16 + border-bottom
+   border/hairline (Label/L "Filters", Flat M "Clear all"); chapda facet ro'yxati 220 (padding 8, gap 2,
+   border-inline-end), facet 36: padding 8 12, radius/control/md, Label/M text/secondary → tanlangan fill/soft
+   text/primary, son Caption/M text/accent. O'ngda variantlar: padding 8, gap 2; guruh sarlavhasi Caption/M
+   text/tertiary (padding 8 12); qator 36: Checkbox M + son Caption/M text/tertiary. Footer padding 12 16,
+   border-top: Caption/M text/secondary xulosa + Action L "Show results".
+   Mobile: bottom sheet kontenti surface/card, yuqori radius/surface/xl (24), dastak 36×4 fill/soft (padding 8),
+   header padding 8 16, guruhlar ketma-ket (sarlavha padding 8 16, ro'yxat padding-inline 4), footer padding 16 +
+   Action XL to'liq kenglik. */
+.bek-facet-panel {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 0;
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+}
+
+.bek-facet-panel--web {
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-surface-raised);
+  box-shadow: var(--bek-elevation-3);
+}
+
+.bek-facet-panel--mobile {
+  max-height: 100%;
+  border-start-start-radius: var(--bek-radius-surface-xl);
+  border-start-end-radius: var(--bek-radius-surface-xl);
+  background: var(--bek-surface-card);
+}
+
+.bek-facet-panel__handle {
+  display: block;
+  flex-shrink: 0;
+  width: var(--bek-scale-36);
+  height: var(--bek-scale-4);
+  margin: var(--bek-scale-8) auto;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-fill-soft);
+}
+
+.bek-facet-panel__header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-12) var(--bek-scale-16);
+  border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-facet-panel--mobile .bek-facet-panel__header {
+  padding: var(--bek-scale-8) var(--bek-scale-16);
+  border-bottom: 0;
+}
+
+.bek-facet-panel__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-lg-size);
+  line-height: var(--bek-type-label-lg-line-height);
+  letter-spacing: var(--bek-type-label-lg-tracking);
+}
+
+.bek-facet-panel__body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.bek-facet-panel--mobile .bek-facet-panel__body {
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Web — chap facet ro'yxati (tablist, vertikal). */
+.bek-facet-panel__facets {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--bek-scale-2);
+  box-sizing: border-box;
+  width: calc(var(--bek-scale-200) + var(--bek-scale-20));
+  padding: var(--bek-scale-8);
+  border-inline-end: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-facet-panel__facet {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  width: 100%;
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+  border: 0;
+  border-radius: var(--bek-radius-control-md);
+  background: transparent;
+  color: var(--bek-text-secondary);
+  font: inherit;
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+.bek-facet-panel__facet:hover {
+  background: var(--bek-fill-soft);
+}
+
+.bek-facet-panel__facet--selected {
+  background: var(--bek-fill-soft);
+  color: var(--bek-text-primary);
+}
+
+.bek-facet-panel__facet--selected:hover {
+  background: var(--bek-fill-soft-hover);
+}
+
+.bek-facet-panel__facet-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.bek-facet-panel__facet-count {
+  color: var(--bek-text-accent);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-facet-panel__panel {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: var(--bek-scale-8);
+}
+
+.bek-facet-panel__panel[hidden] {
+  display: none;
+}
+
+/* Guruh — fieldset + legend (1.12 Forms: group fieldset). */
+.bek-facet-panel__group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.bek-facet-panel__group-label {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  text-transform: uppercase;
+}
+
+.bek-facet-panel--mobile .bek-facet-panel__group-label {
+  padding: var(--bek-scale-8) var(--bek-scale-16);
+}
+
+.bek-facet-panel__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-2);
+}
+
+.bek-facet-panel--mobile .bek-facet-panel__options {
+  gap: 0;
+  padding-inline: var(--bek-scale-4);
+}
+
+.bek-facet-panel__option {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-8) var(--bek-scale-12);
+  border-radius: var(--bek-radius-control-md);
+}
+
+.bek-facet-panel__count {
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  color: var(--bek-text-tertiary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-facet-panel__footer {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-12) var(--bek-scale-16);
+  border-top: var(--bek-stroke-default) solid var(--bek-border-hairline);
+}
+
+.bek-facet-panel__summary {
+  flex: 1;
+  min-width: 0;
+  color: var(--bek-text-secondary);
+  font-weight: var(--bek-weight-regular);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+}
+
+.bek-facet-panel--web .bek-facet-panel__submit {
+  margin-inline-start: auto;
+}
+
+.bek-facet-panel--mobile .bek-facet-panel__footer {
+  padding: var(--bek-scale-16);
+}
+
+.bek-facet-panel--mobile .bek-facet-panel__submit {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-facet-panel__facet {
+    transition: none;
+  }
+}
