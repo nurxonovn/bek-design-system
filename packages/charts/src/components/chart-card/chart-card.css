@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--bek-scale-12);
+  gap: var(--bek-scale-16); /* Figma doc: Header · Gap scale/16 */
 }
 
 .bek-chart-card__heading {
@@ -81,4 +81,13 @@
 .bek-chart-card__header > .bek-segmented {
   flex: 0 1 auto;
   inline-size: auto;
+}
+
+/* Sarlavha amallari (eksport menyusi) — davr tanlagichdan keyin, o'ng chetda. */
+.bek-chart-card__actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  margin-inline-start: auto;
 }

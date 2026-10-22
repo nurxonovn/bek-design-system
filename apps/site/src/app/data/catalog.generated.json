@@ -11902,7 +11902,7 @@
           "reason": "Delta matni — ichki Delta komponentida."
         }
       ],
-      "readme": "# Chart card\n\nFigma: **4.18 Chart · Card** — har dashboard chartining o'ramasi: sarlavha, davr tanlagich, KPI qatori, chart sloti va manba. `state`: `default` · `loading` · `empty` · `error`.\n\n```tsx\n<ChartCard\n  title=\"Revenue\"\n  subtitle=\"Last 6 months · UZS\"\n  periods={[\n    { value: '1m', label: '1M' },\n    { value: '6m', label: '6M' },\n    { value: '1y', label: '1Y' },\n  ]}\n  period={period}\n  onPeriodChange={setPeriod}\n  kpi={{ value: '4 820 mln', delta: 12.4, comparison: 'vs previous 6 months' }}\n  footer=\"Source: Core banking · Updated 18 Oct, 09:40\"\n  state={isLoading ? 'loading' : rows.length ? 'default' : 'empty'}\n  onChangePeriod={() => setPeriod('1y')}\n>\n  <ChartContainer>\n    {(w) => <LineChart width={w} labels={months} series={series} label=\"…\" />}\n  </ChartContainer>\n</ChartCard>\n```\n\n- **Tarkib:** Title/M sarlavha + Caption/M izoh, 3.10 Segmented control (davr), KPI — Headline/M qiymat + `Delta` + taqqoslash, chart sloti, Caption/M footer (manba va yangilanish vaqti).\n- **Holatlar:** Loading — chart shaklida 5.4 Skeleton, header interaktiv qoladi (`aria-busy`); Empty — 5.3 Empty state (maskotsiz) + \"Change period\"; Error — xabar + \"Try again\" (`role=\"alert\"`), footer xato manbasini (`errorSource`) ko'rsatadi.\n- **Qachon:** dashboard yoki hisobotdagi har chart. Boshqa karta ichiga solmang — chartni to'g'ridan-to'g'ri joylang.\n- **Sirt:** `surface/card`, `radius/surface/md`, padding `chart/padding` (12 / 16 / 24), oraliq `chart/gap`; chart sloti kamida `chart/height/md`. Kenglik konteynerga to'liq moslashadi (FILL).\n"
+      "readme": "# Chart card\n\nFigma: **4.18 Chart · Card** — har dashboard chartining o'ramasi: sarlavha, davr tanlagich, KPI qatori, chart sloti va manba. `state`: `default` · `loading` · `empty` · `error`.\n\n```tsx\n<ChartCard\n  title=\"Revenue\"\n  subtitle=\"Last 6 months · UZS\"\n  periods={[\n    { value: '1m', label: '1M' },\n    { value: '6m', label: '6M' },\n    { value: '1y', label: '1Y' },\n  ]}\n  period={period}\n  onPeriodChange={setPeriod}\n  kpi={{ value: '4 820 mln', delta: 12.4, comparison: 'vs previous 6 months' }}\n  footer=\"Source: Core banking · Updated 18 Oct, 09:40\"\n  state={isLoading ? 'loading' : rows.length ? 'default' : 'empty'}\n  onChangePeriod={() => setPeriod('1y')}\n>\n  <ChartContainer>\n    {(w) => <LineChart width={w} labels={months} series={series} label=\"…\" />}\n  </ChartContainer>\n</ChartCard>\n```\n\n- **Tarkib:** Title/M sarlavha + Caption/M izoh, 3.10 Segmented control (davr), KPI — Headline/M qiymat + `Delta` + taqqoslash, chart sloti, Caption/M footer (manba va yangilanish vaqti).\n- **Holatlar:** Loading — chart shaklida 5.4 Skeleton, header interaktiv qoladi (`aria-busy`); Empty — 5.3 Empty state (maskotsiz) + \"Change period\"; Error — xabar + \"Try again\" (`role=\"alert\"`), footer xato manbasini (`errorSource`) ko'rsatadi.\n- **Amallar:** `actions` — sarlavha qatoridagi eksport / overflow menyu (davr tanlagichdan keyin). Chart interaktivligi slot ichida o'zgarishsiz ishlaydi.\n- **A11y:** karta `region` — `aria-labelledby` sarlavhaga; holat o'zgarishi ko'rinmas `role=\"status\"` orqali e'lon qilinadi (`loadingLabel`, Empty sarlavhasi), Error — `role=\"alert\"`.\n- **Qachon:** dashboard yoki hisobotdagi har chart. Boshqa karta ichiga solmang — chartni to'g'ridan-to'g'ri joylang.\n- **Sirt:** `surface/card`, `radius/surface/md`, padding `chart/padding` (12 / 16 / 24), oraliq `chart/gap`, sarlavha qatori `scale/16`; chart sloti kamida `chart/height/md`. Kenglik konteynerga to'liq moslashadi (FILL).\n"
     },
     {
       "dir": "chart-tooltip",
@@ -12621,6 +12621,165 @@
       "readme": "# Crosshair\n\nFigma: **4.18 Chart · Crosshair** — ko'rsatkich ortidan yuruvchi chiziq, eng yaqin nuqtaga yopishadi, o'qlarda qiymat teglari. SVG `<g>` bo'lagi. `variant`: `vertical` · `both`.\n\n```tsx\nconst i = crosshairNearest(points.map((p) => p.x), pointerX);\n<svg role=\"img\" aria-label=\"Revenue by day\" width={480} height={200}>\n  {/* … chiziq … */}\n  {i >= 0 && <ChartCrosshair x={points[i].x} y={points[i].y} xLabel=\"12 Oct\" left={40} />}\n</svg>\n<ChartCrosshair variant=\"both\" x={140} y={80} xLabel=\"12 Oct\" yLabel=\"4 820\" standalone right={240} />\n```\n\n- **Qachon:** Line, Area, Live va Forecast chartlarda hover o'qish; `both` — X va Y muhim bo'lgan scatter / bubble. Bar chartda emas — ustunning o'zi ajraladi.\n- **Kodlash:** x ← ko'rsatkich → eng yaqin `datum.x` (`crosshairNearest`), y ← `datum.y`. Doim ma'lumotga yopishadi, nuqtalar orasidagi qiymat ko'rsatilmaydi.\n- **Interaksiya:** bu komponent faqat ko'rinish. Chart sichqoncha harakati / uzoq bosib sudrashni (Mobile'da scroll ishlashi uchun faqat long-press) va fokusda ←/→ qadamni role=\"img\" SVG'dan tashqaridagi qatlamda ushlaydi; Esc yashiradi; bosish qulflaydi. Chart/Tooltip bilan birga: X tegi — sana, Y tegi — qiymat.\n- **A11y:** chiziq bezak (`aria-hidden`); qiymatlar `aria-live` orqali aytiladi (chart beradi).\n- **O'lchamlar:** chiziq `dataviz/axis` · `chart/grid/stroke`; nuqta Chart/Data point Active (`chart/point/size-active` + `accent/soft` halo); teglar `fill/inverse` + Label/S · `text/inverse`, padding `scale/2` × `scale/8`, `radius/full`. Plot balandligi `chart/height/md`.\n"
     },
     {
+      "dir": "data-explorer",
+      "package": "@bek-ui/charts",
+      "title": "Data explorer",
+      "description": "saralanadigan jadval ichida kichik chartlar: har qatorda Sparkline (trend), ulush chizig'i va Delta. variant: default (barcha ustunlar) · compact (trend va ulushsiz — mobil).",
+      "exports": [
+        "DataExplorer"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Data explorer",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Data explorer",
+            "id": "1305:47532",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1305-47532",
+            "variants": 2,
+            "description": "Sortable table with inline charts: Chart/Sparkline per row, a share bar (dataviz/categorical/01 on dataviz/track) and Chart/Delta. Header sorts (↓ on the active column), hairline rows, numbers right-aligned in tabular figures. Compact drops the trend and share columns for mobile. Use when readers need exact values and a quick visual scan together. React: <DataExplorer rows={[{ name, series,",
+            "props": {
+              "Variant": [
+                "Default",
+                "Compact"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "border/hairline",
+                "dataviz/categorical/01",
+                "dataviz/label",
+                "dataviz/negative",
+                "dataviz/neutral",
+                "dataviz/positive",
+                "dataviz/track",
+                "fill/tertiary",
+                "status/danger/soft",
+                "status/success/soft",
+                "surface/card",
+                "text/danger",
+                "text/primary",
+                "text/secondary",
+                "text/success"
+              ],
+              "text": [
+                "Body/S",
+                "Caption/S",
+                "Label/M",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/line/stroke",
+                "chart/sparkline/height",
+                "radius/full",
+                "radius/surface/md",
+                "scale/0",
+                "scale/12",
+                "scale/128",
+                "scale/2",
+                "scale/480",
+                "scale/6",
+                "scale/64",
+                "scale/72",
+                "scale/8",
+                "scale/80"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "bg/sheet",
+          "border/hairline",
+          "chart/sparkline/height",
+          "dataviz/label",
+          "dataviz/track",
+          "fill/tertiary",
+          "radius/full",
+          "scale/0",
+          "scale/12",
+          "scale/128",
+          "scale/2",
+          "scale/480",
+          "scale/6",
+          "scale/64",
+          "scale/72",
+          "scale/8",
+          "scale/80",
+          "status/success/soft",
+          "text/primary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-dataviz-positive",
+          "reason": "Sparkline Up chizig'i — nested Sparkline (sparkline.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-dataviz-negative",
+          "reason": "Sparkline Down chizig'i — nested Sparkline (sparkline.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-dataviz-neutral",
+          "reason": "Sparkline Neutral chizig'i — nested Sparkline (sparkline.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-status-success-soft",
+          "reason": "Delta Positive foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-status-danger-soft",
+          "reason": "Delta Negative foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-fill-tertiary",
+          "reason": "Delta Neutral foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-success",
+          "reason": "Delta Positive matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-danger",
+          "reason": "Delta Negative matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Label/S",
+          "reason": "Delta matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma'da bu token komponent set o'ramasining (specimen) fonida — komponentning o'zi shaffof, kartaga (ChartCard / KpiCard) joylanadi."
+        },
+        {
+          "rule": "token-extra",
+          "match": "--bek-bg-sheet",
+          "reason": "Hover qatori (doc States: «Hover row — bg/sheet highlight») — Figma variantlarida hover holati chizilmagan, faqat doc'da."
+        }
+      ],
+      "readme": "# Data explorer\n\nFigma: **4.18 Chart · Data explorer** — saralanadigan jadval ichida kichik chartlar: har qatorda `Sparkline` (trend), ulush chizig'i va `Delta`. `variant`: `default` (barcha ustunlar) · `compact` (trend va ulushsiz — mobil).\n\n```tsx\n<DataExplorer\n  label=\"Kurslar: o'quvchilar soni, 12 oylik trend va o'zgarish\"\n  rows={[\n    { name: 'UX/UI', series: [31, 33, 36, 40, 44, 48.2], value: 48200, share: 0.92, delta: 12.4 },\n    { name: 'SMM', series: [22, 21, 20, 19, 18.5, 18.1], value: 18100, share: 0.35, delta: -6.2 },\n  ]}\n  defaultSortBy=\"value\"\n  columns={['trend', 'share']}\n  labels={{ name: 'Kurs', trend: 'Trend, 12 oy', value: \"O'quvchilar\", share: 'Ulush' }}\n/>\n<DataExplorer variant=\"compact\" rows={rows} label=\"…\" />\n```\n\n- **Qachon:** o'quvchiga aniq qiymat ham, tezkor vizual ko'rinish ham kerak bo'lganda; 5–50 elementni (kurslar, filiallar, mahsulotlar) trend va o'zgarish bilan tartiblash; ko'p kichik chartlar devori o'rniga bitta jadval. Aniq raqamlar muhim bo'lsa — kichik chartli jadval katta chartdan yaxshi.\n- **Qoidalar:** raqamlar o'ngga tekislangan, tabular; ulush chiziqlari uchun bitta urg'u rangi (`dataviz/categorical/01` · `dataviz/track`); sparkline'lar bir xil mantiqda — har biri o'z oralig'ida (nisbiy trend); 50 qatordan ko'pida sahifalash yoki virtualizatsiya.\n- **Saralash:** sarlavha tugmasi (bosish / Enter) — faol ustunda ↓ / ↑ va `aria-sort`; boshqariladigan (`sortBy`, `sortDirection`, `onSortChange`) yoki ichki (`defaultSortBy`, standart `value` kamayish bo'yicha). `onRowClick` — nom tugmaga aylanadi (batafsil sahifa). Qator yo'q bo'lsa — `empty` (filtrlarni tiklash taklifi).\n- **A11y:** haqiqiy `<table>`: ko'rinmas `caption` (`label`), `th scope=\"col\"` / `scope=\"row\"`, `aria-sort`; sparkline `aria-label` (\"UX/UI: up\"); ulush ko'rinmas matnda (`92%`); `Delta` ishorasi matnda (`+12,4%`, `−6,2%`).\n- **Tarkib:** sarlavha Caption/S · `dataviz/label`; nom Label/M · `text/primary`; qiymat Body/S; qator chizig'i `border/hairline`; hover — `bg/sheet`. Ustunlar: trend `scale/80` (Sparkline 80 × 20), qiymat `scale/64`, ulush va Δ `scale/72`; katak oralig'i va qator paddingi `scale/12`, sarlavha `scale/8`.\n- **Ma'lumot:** `delta` — foizda (`12.4` → `+12,4%`, paketdagi `Delta` / `ChartCard` bilan bir xil); `share` — 0…1.\n"
+    },
+    {
       "dir": "data-point",
       "package": "@bek-ui/charts",
       "title": "Data point",
@@ -13054,6 +13213,104 @@
       "readme": "# Donut chart\n\nFigma: **4.18 Chart · Donut** — ulushlar halqasi, markazda jami, yonida qiymatli legend. `variant`: `default` · `progress`.\n\n```tsx\n<DonutChart\n  data={[\n    { label: 'Cards', value: 4820 },\n    { label: 'Loans', value: 2210 },\n    { label: 'Deposits', value: 1540 },\n    { label: 'Other', value: 620, color: 'var(--bek-dataviz-neutral)' },\n  ]}\n  centerLabel=\"Total, mln\"\n  label=\"Cards make up more than half of revenue\"\n/>\n<DonutChart variant=\"progress\" progress={0.72} centerLabel=\"of goal\" label=\"72% of the quarterly goal\" />\n```\n\n- **Qachon:** bitta butunning 2–5 qismi. Ko'proq bo'lsa — kichiklarini \"Other\" (`dataviz/neutral`) ga yig'ing yoki Bar ishlating.\n- **Kodlash:** burchak = ulush, rang = tartiblangan kategoriya; segmentlar kattasidan, soat 12 dan soat yo'nalishida. Markazda jami (Headline/S), izoh Caption/M.\n- **Legend majburiy** (Default): nom, qiymat va ulush — rangga tayanib qolmaslik uchun.\n- **Progress:** `dataviz/track` ustida bitta qiymat (`dataviz/categorical/01`), uchlari yumaloq; markazda foiz (Title/L).\n- **Interaksiya:** hover — segment ajraladi, qolganlari 40%; `<title>` qiymat va ulushni aytadi. Ko'rinmas `<table>`.\n- O'lcham: diametr `chart/height/sm` (140 / 160 / 200) → `size`, qalinlik `chart/donut/thickness` (20 / 24 / 28) → `thickness`.\n"
     },
     {
+      "dir": "draw-the-line",
+      "package": "@bek-ui/charts",
+      "title": "Draw the line",
+      "description": "interaktiv taxmin: qatorning boshi ko'rsatiladi, o'quvchi davomini chizadi, so'ng haqiqiy chiziq ochiladi va farq chip'da yoziladi. variant: draw (chizish) · reveal (javob darhol ochiq — hisobot, statik namuna).",
+      "exports": [
+        "DrawTheLine"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Draw the line",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Draw the line",
+            "id": "1301:47384",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1301-47384",
+            "variants": 2,
+            "description": "Interactive guess: the first part of the series is shown, the reader draws the rest in the shaded zone (dataviz/track), then the actual line is revealed with the gap as a chip. Builds intuition before the answer — for courses, reports and explainers. Pointer + keyboard drawing (arrow keys move the pen); a “Skip” action reveals without drawing. React: <DrawTheLine data={[{ x, y }]} revealFro",
+            "props": {
+              "Variant": [
+                "Draw",
+                "Reveal"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/grid",
+                "dataviz/label",
+                "dataviz/track",
+                "surface/card",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/bar/radius",
+                "chart/gap",
+                "chart/grid/stroke",
+                "chart/legend/gap",
+                "chart/line/stroke",
+                "radius/surface/md",
+                "scale/2",
+                "scale/200",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/track",
+          "scale/2",
+          "scale/200",
+          "scale/480",
+          "scale/8",
+          "surface/card",
+          "text/primary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-secondary",
+          "reason": "Legend yozuvi rangi — ichki ChartLegend/LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Line / Dashed)."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Legend yozuvi Caption/L — ichki ChartLegend/LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Line / Dashed)."
+        }
+      ],
+      "readme": "# Draw the line\n\nFigma: **4.18 Chart · Draw the line** — interaktiv taxmin: qatorning boshi ko'rsatiladi, o'quvchi davomini chizadi, so'ng haqiqiy chiziq ochiladi va farq chip'da yoziladi. `variant`: `draw` (chizish) · `reveal` (javob darhol ochiq — hisobot, statik namuna).\n\n```tsx\n<DrawTheLine\n  data={[\n    { x: 2019, y: 12 },\n    { x: 2020, y: 15 },\n    { x: 2021, y: 19 },\n    { x: 2022, y: 24 },\n    { x: 2023, y: 31 },\n    { x: 2024, y: 38 },\n    { x: 2025, y: 47 },\n    { x: 2026, y: 52 },\n  ]}\n  revealFrom={2022}\n  formatValue={(v) => `${Math.round(v)}k`}\n  onReveal={(guess) => saveGuess(guess)}\n  label=\"BEK Academy o'quvchilari 2019–2022; davomini taxmin qiling\"\n/>\n```\n\n- **Qachon:** darslar va tushuntirishlar — o'quvchi javobdan oldin taxminga bog'lansin; kutilmagan trend e'tibor talab qiladigan hisobotlar; mahsulotning o'z ma'lumoti haqida onboarding savollari.\n- **Qoidalar:** taxmin zonasidan oldin kamida 3 ma'lum nuqta; taxmin ma'lumotning x qadamlariga yopishadi; \"Skip\" doim bor — taxmin ixtiyoriy; y shkalasi qat'iy (`yDomain`), taxmindan keyin qayta masshtablanmaydi; y o'qini yashirmang. Farqni so'z va raqam bilan ko'rsating, taxminni baholamang.\n- **Holatlar:** Ready — \"Draw your guess →\" chip (`hint`); Drawing — pero ko'rsatkichga ergashadi, x qadamiga yopishadi (oraliq qadamlar chiziqli to'ldiriladi); Complete — Reveal tugmasi yoqiladi; Revealed — haqiqiy chiziq chizilib chiqadi (reduced motion'da darhol), chip \"Actual 52k · you: 40k\" (`actualLabel`, `youLabel`); Skipped — taxminsiz ochish.\n- **Kodlash:** x = vaqt, y = qiymat; ma'lum qism — `dataviz/categorical/01` yaxlit, taxmin — `dataviz/categorical/02` uzuq (6 4), haqiqiy — 01 yaxlit; taxmin zonasi `dataviz/track`, radius `chart/bar/radius`. Chip — `surface/card` · `text/primary`, Caption/S. Legend — `ChartLegend` (Line · Dashed).\n- **A11y:** chizish maydoni — `role=\"slider\"`: ←/→ — x qadami, ↑/↓ — qiymat, Enter — ochish; `aria-valuetext` jonli o'qiydi (\"2024: 34k\"). Ochilish `role=\"status\"` orqali matn bilan aytiladi; ko'rinmas jadval ochilgandan keyin taxmin ustuni bilan to'ladi (oldin — faqat ma'lum qism). Tugmalar — `Button` (Skip · Reveal).\n- **O'lchamlar:** plot `scale/480` × `scale/200`, chiziq `chart/line/stroke`, grid `chart/grid/stroke`; legend oralig'i `chart/legend/gap`.\n"
+    },
+    {
       "dir": "dumbbell-chart",
       "package": "@bek-ui/charts",
       "title": "Dumbbell chart",
@@ -13429,6 +13686,108 @@
       "readme": "# Funnel chart\n\nFigma: **4.18 Chart · Funnel** — tartiblangan bosqichlar orqali konversiya (onboarding, checkout, kredit arizasi). `variant`: `stepped` · `horizontal`.\n\n```tsx\n<FunnelChart\n  variant=\"stepped\"\n  steps={[\n    { label: 'Visited', value: 12400 },\n    { label: 'Signed up', value: 5210 },\n    { label: 'Verified', value: 3880 },\n  ]}\n  label=\"Signup funnel: biggest drop after the first visit\"\n/>\n```\n\n- **Qachon:** bir xil birlikdagi 3–7 tartiblangan bosqich. `stepped` — bosqichdan bosqichga konversiya, `horizontal` — birinchi bosqichdan ulush. Tartibsiz kategoriyalar uchun emas — `BarChart`.\n- **Kodlash:** x = bosqich tartibi, balandlik = son, yozuv = `count[i] / count[i−1]`. Ustun `dataviz/categorical/01` (`chart/bar/radius` faqat tepada), oqim maydoni `dataviz/sequential/100`.\n- **Qoidalar:** bosqichlar jarayon tartibida, qiymat bo'yicha saralanmaydi. Eng katta tushish ajratiladi (`highlightDrop`) — mahsulot ishi shu yerda; AI insight yoki annotatsiyani shu bosqichga qo'ying. Sonlar uz-UZ (12 400).\n- **Interaksiya:** hover — bosqichdan boshqalari 40%, `<title>`: son, oldingidan va birinchidan konversiya. Tushib qolganlar ro'yxati — ota komponentda.\n- **A11y:** `role=\"img\"` + `label`, ko'rinmas jadval (\"Signed up 5 210, 42% of visited\").\n- **O'lchamlar:** Stepped `height` — `chart/height/md` (200 / 240 / 320) + yozuvlar qatori; Horizontal qalinlik `chart/bar/thickness` (16 / 24 / 32) → `barThickness`, nom ustuni `scale/80`. Matn: konversiya va son Label/S · `text/primary`, Stepped nomi Caption/M, Horizontal nomi Body/S · `text/secondary`, ulush Caption/M · `text/tertiary`.\n"
     },
     {
+      "dir": "gantt",
+      "package": "@bek-ui/charts",
+      "title": "Gantt",
+      "description": "loyiha jadvali: har vazifa bitta qator, bar = boshlanish → tugash, rang = jamoa; romb — milestone, punktir chiziq — bugun. variant: default (reja) · progress (bajarilgani va reja).",
+      "exports": [
+        "Gantt"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Gantt",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Gantt",
+            "id": "1305:47319",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1305-47319",
+            "variants": 2,
+            "description": "Project schedule: one row per task, bar = start → end on a week scale, colour = team (categorical); diamond = milestone, dashed dataviz/target line = today. Progress shows the planned bar at layer opacity 0.28 with the done part solid and % outside the bar (no text on colour). 3–20 tasks; group by phase or team. React: <Gantt tasks={[{ name, team, start, end, progress }]} milestones={[{ nam",
+            "props": {
+              "Variant": [
+                "Default",
+                "Progress"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/categorical/03",
+                "dataviz/grid",
+                "dataviz/label",
+                "dataviz/target",
+                "surface/card",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/M",
+                "Caption/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/bar/radius",
+                "chart/gap",
+                "chart/grid/stroke",
+                "chart/legend/gap",
+                "radius/surface/md",
+                "scale/2",
+                "scale/200",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/negative",
+          "dataviz/target",
+          "scale/2",
+          "scale/200",
+          "scale/480",
+          "scale/8",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-extra",
+          "match": "--bek-dataviz-negative",
+          "reason": "Overdue holati (doc States: «End before today and < 100% → dataviz/negative outline») — Figma variantlarida chizilmagan, faqat doc'da; dizayner Overdue namunasini qo'shishi kerak."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Legend yozuvlari — nested ChartLegend / LegendItem (legend-item.css) Caption/L bilan chizadi."
+        }
+      ],
+      "readme": "# Gantt\n\nFigma: **4.18 Chart · Gantt** — loyiha jadvali: har vazifa bitta qator, bar = boshlanish → tugash, rang = jamoa; romb — milestone, punktir chiziq — bugun. `variant`: `default` (reja) · `progress` (bajarilgani va reja).\n\n```tsx\n<Gantt\n  label=\"Reliz rejasi: 6 vazifa, 4 dekabr holatiga\"\n  today=\"2026-12-04\"\n  tasks={[\n    { id: 'research', name: 'Research', team: 'Design', start: '2026-10-01', end: '2026-10-22', progress: 1 },\n    { id: 'ui', name: 'UI kit', team: 'Design', start: '2026-10-28', end: '2026-11-25', progress: 0.7, dependsOn: ['research'] },\n    { id: 'api', name: 'Backend API', team: 'Engineering', start: '2026-11-01', end: '2026-12-31', progress: 0.55 },\n  ]}\n  milestones={[{ name: 'Launch', date: '2027-01-27' }]}\n/>\n<Gantt variant=\"progress\" tasks={tasks} today={today} label=\"…\" labels={{ today: 'Bugun', months: UZ_MONTHS }} />\n```\n\n- **Qachon:** yo'l xaritalari, kurs ishga tushirishlari, reliz rejalari — haftalar yoki oylar bo'yicha 3–20 vazifa; jamoalar orasidagi ustma-ust tushish va kritik yo'l. Hodisalar ketma-ketligi uchun — `Timeline` (4.19 Timeline item); davomiylik va ustma-ustlik muhim bo'lsa — Gantt.\n- **Qoidalar:** boshlanish sanasi bo'yicha saralang yoki faza/jamoa bo'yicha guruhlang (tartib — `tasks` tartibi); bitta jamoa — bitta rang (`teams` yoki vazifalardagi tartib, legend bilan); Progress'da % bar tashqarisida (rang ustida matn yo'q); `today` ni doim bering — usiz jadvalni o'qib bo'lmaydi.\n- **Tarkib:** vazifa nomi Caption/M · `text/secondary` (ustun `scale/104`); bar `dataviz/categorical/0N`, radius `chart/bar/radius`; Progress — reja 0.28 shaffoflikda, bajarilgani to'liq; milestone — `dataviz/target` romb (`milestones[].task` — qaysi qatorda, standart oxirgi); bugun — punktir `dataviz/target` + `surface/card` chip; oylar Caption/S · `dataviz/label`, grid `dataviz/grid`. Muddati o'tgan (tugash < bugun va progress < 100%) — `dataviz/negative` kontur.\n- **Bog'liqliklar:** `dependsOn` (`id` yoki `name`) — oldingi vazifa oxiridan keyingisi boshigacha `dataviz/label` zinapoya chizig'i; tooltip va `aria-label` da \"Depends on\" sifatida ham.\n- **Interaktivlik:** hover / fokus — tooltip (sanalar, jamoa, progress, bog'liqliklar); `onTaskClick` — bosish, Enter yoki Space (vazifa paneli). Klaviatura: barlar `listbox` variantlari — Tab bilan kiriladi, ↑ / ↓ / Home / End tanlovni suradi, Escape tooltipni yopadi.\n- **A11y:** har bar `aria-label` (nom · jamoa · sanalar · % · muddati o'tgan · bog'liqliklar); ko'rinmas jadval (vazifa, jamoa, boshlanish, tugash, %), bugun va milestone'lar matn sifatida. Sanalar `formatDate` (standart `4 Dec`) va `labels.months` bilan lokal formatda.\n- **RTL:** joylashuv foizlarda va logical xossalarda — `dir=\"rtl\"` da vaqt o'qi o'ngdan chapga, bog'liqlik chiziqlari ko'zgu bo'ladi.\n- **O'lchamlar:** eni konteynerga ergashadi (Figma `scale/480`); qator 16 + 10 px, 6 vazifada plot `scale/200`; legend oralig'i `chart/legend/gap`, chart oralig'i `chart/gap`. Sanalar `'YYYY-MM-DD'`, `Date` yoki millisekund — kalendar kuni sifatida (vaqt mintaqasi siljitmaydi).\n"
+    },
+    {
       "dir": "gauge-chart",
       "package": "@bek-ui/charts",
       "title": "Gauge chart",
@@ -13614,7 +13973,7 @@
           "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas."
         }
       ],
-      "readme": "# Generated chart\n\nFigma: **4.18 Chart · Generated chart** — AI yordamchi foydalanuvchi ma'lumotidan yasagan chart kartasi: AI belgisi va vaqt, sarlavha, manba, chart sloti, AI insight va amallar (Table · Code · Save). Holat (`state`): `default` · `generating` · `error`.\n\n```tsx\n<GeneratedChart\n  title=\"Revenue by month, 2026\"\n  timestamp=\"Just now\"\n  source=\"Source: payments.csv · 1 240 rows\"\n  insight=\"Revenue grew 34% since January; May dipped after the price change\"\n  onShowTable={openTable}\n  onShowCode={openCode}\n  onSave={save}\n>\n  <ChartContainer>{(width) => <LineChart width={width} area labels={months} series={series} label=\"Revenue grew 34%\" />}</ChartContainer>\n</GeneratedChart>\n\n<GeneratedChart state=\"generating\" title=\"Revenue by month, 2026\" step=\"Step 2 of 3\" progressNote=\"Reading 1 240 rows from payments.csv and choosing a chart type\" />\n```\n\n- **Qachon:** chart bor chat javoblari (\"show revenue by month\"), Ask-the-chart va hisobot quruvchilar. `generating` — model hali qurayotganda.\n- **Tarkib:** sarlavha qatori — sparkles + \"Generated by BEK AI\" (Label/S · `text/secondary`) va vaqt (Caption/M · `text/tertiary`); sarlavha Title/M; manba Caption/M; chart sloti — istalgan Chart/\\*; AI insight (`dataviz/ai/soft` · `text/utility`); amallar — 3.1 Button Flat-secondary.\n- **Qoida:** manba va qatorlar sonini doim ko'rsating — foydalanuvchi tekshira olsin. Amallar: Table (raqamlarni ko'rish), Code (so'rov), Save.\n- **Generating:** chart shaklidagi 5.7 Skeleton, Spinner, \"Step 2 of 3\" va model nima qilayotgani (`role=\"status\"`); karta `aria-busy`.\n- **Error:** Chart/Card Error holati shu karta ichida — 5.3 Empty state `role=\"alert\"` + \"Try again\" (`onRetry`).\n- **O'lchamlar:** eni konteynerga ergashadi; padding `scale/20`, bo'limlar orasi `scale/16`, radius `radius/surface/md`; skeleton plot `chart/height/md`.\n"
+      "readme": "# Generated chart\n\nFigma: **4.18 Chart · Generated chart** — AI yordamchi foydalanuvchi ma'lumotidan yasagan chart kartasi: AI belgisi va vaqt, sarlavha, manba, chart sloti, AI insight va amallar (Table · Code · Save). Holat (`state`): `default` · `generating` · `error`.\n\n```tsx\n<GeneratedChart\n  title=\"Revenue by month, 2026\"\n  timestamp=\"Just now\"\n  source=\"Source: payments.csv · 1 240 rows\"\n  insight=\"Revenue grew 34% since January; May dipped after the price change\"\n  onShowTable={openTable}\n  onShowCode={openCode}\n  onSave={save}\n>\n  <ChartContainer>{(width) => <LineChart width={width} area labels={months} series={series} label=\"Revenue grew 34%\" />}</ChartContainer>\n</GeneratedChart>\n\n<GeneratedChart state=\"generating\" title=\"Revenue by month, 2026\" step=\"Step 2 of 3\" progressNote=\"Reading 1 240 rows from payments.csv and choosing a chart type\" />\n```\n\n- **Qachon:** chart bor chat javoblari (\"show revenue by month\"), Ask-the-chart va hisobot quruvchilar. `generating` — model hali qurayotganda.\n- **Tarkib:** sarlavha qatori — sparkles + \"Generated by BEK AI\" (Label/S · `text/secondary`) va vaqt (Caption/M · `text/tertiary`); sarlavha Title/M; manba Caption/M; chart sloti — istalgan Chart/\\*; AI insight (`dataviz/ai/soft` · `text/utility`); amallar — 3.1 Button Flat-secondary.\n- **Qoida:** manba va qatorlar sonini doim ko'rsating — foydalanuvchi tekshira olsin. Amallar: Table (raqamlarni ko'rish), Code (so'rov), Save.\n- **A11y:** karta nomi \"AI-generated chart: <sarlavha>\" (`aiLabel` + `title`, `aria-labelledby`); AI insight chart xulosasidan keyin o'qiladi (\"AI insight: …\").\n- **Generating:** chart shaklidagi 5.7 Skeleton, Spinner, \"Step 2 of 3\" va model nima qilayotgani (`role=\"status\"`); karta `aria-busy`.\n- **Error:** Chart/Card Error holati shu karta ichida — 5.3 Empty state `role=\"alert\"` + \"Try again\" (`onRetry`).\n- **O'lchamlar:** eni konteynerga ergashadi; padding `scale/20`, bo'limlar orasi `scale/16`, sarlavha qatori `scale/6`, radius `radius/surface/md`; skeleton plot `chart/height/md`.\n"
     },
     {
       "dir": "grid-line",
@@ -14640,7 +14999,7 @@
           "reason": "Process soyasi — nested DiagramNode (diagram-node.css) chizadi — bu komponent uni import qiladi."
         }
       ],
-      "readme": "# Mind map\n\nFigma: **4.19 Diagram · Mind map** — markaziy g'oya va uning shoxlari. `layout`: `radial` · `tree`.\n\n```tsx\n<MindMap\n  label=\"BEK Academy launch: 6 yo'nalish\"\n  root={{ label: 'BEK Academy launch', children: [{ label: 'Product' }, { label: 'Marketing' }] }}\n/>\n<MindMap\n  layout=\"tree\"\n  label=\"Q4 goals: 3 shox, 6 barg\"\n  root={{\n    label: 'Q4 goals',\n    children: [{ label: 'Product', children: [{ label: 'Mobile app' }, { label: 'AI tutor' }] }],\n  }}\n/>\n```\n\n- **Qachon:** brainstorm, loyiha doirasi, onboarding mavzulari — 3–8 shox. Ketma-ket jarayon uchun emas — `Swimlane` yoki `DiagramConnector` bilan oqim.\n- **Tarkib:** ildiz — `DiagramNode` Terminal, shoxlar — Process; Tree'da barglar nuqta + Body/S. Bog'lanishlar kubik egri, `chart/line/stroke`, har shox o'z kategorik rangida (`--bek-dataviz-categorical-01…08`).\n- **Qoidalar:** nom ≤ 3 so'z; Radial 3–8 shox (ko'p bo'lsa Tree); Tree balandligi barglar soniga qarab o'sadi, kenglik `width` (standart `scale/720`) — geometriya cho'zilmaydi, tor ekranda gorizontal scroll.\n- **A11y:** canvas `role=\"img\"` + `label`; to'liq ierarxiya ekran o'quvchi uchun ichma-ich ro'yxat (`bek-chart__sr`) sifatida takrorlanadi. Rang yagona belgi emas — shox nomi har doim yozilgan.\n- **O'lchamlar:** canvas `bg/sheet`, `radius/surface/md`, ichki chekka `scale/24`; tugun 160 × 56; nuqta `chart/point-size`.\n"
+      "readme": "# Mind map\n\nFigma: **4.19 Diagram · Mind map** — markaziy g'oya va uning shoxlari. `layout`: `radial` · `tree`.\n\n```tsx\n<MindMap\n  label=\"BEK launch: 6 yo'nalish\"\n  root={{ label: 'BEK launch', children: [{ label: 'Product' }, { label: 'Marketing' }] }}\n/>\n<MindMap\n  layout=\"tree\"\n  label=\"Q4 goals: 3 shox, 6 barg\"\n  root={{\n    label: 'Q4 goals',\n    children: [{ label: 'Product', children: [{ label: 'Mobile app' }, { label: 'AI tutor' }] }],\n  }}\n/>\n```\n\n- **Qachon:** brainstorm, loyiha doirasi, onboarding mavzulari — 3–8 shox. Ketma-ket jarayon uchun emas — `Swimlane` yoki `DiagramConnector` bilan oqim.\n- **Tarkib:** ildiz — `DiagramNode` Terminal, shoxlar — Process; Tree'da barglar nuqta + Body/S. Bog'lanishlar kubik egri, `chart/line/stroke`, har shox o'z kategorik rangida (`--bek-dataviz-categorical-01…08`).\n- **Qoidalar:** nom ≤ 3 so'z; Radial 3–8 shox (ko'p bo'lsa Tree); Tree balandligi barglar soniga qarab o'sadi, kenglik `width` (standart `scale/720`) — geometriya cho'zilmaydi, tor ekranda gorizontal scroll.\n- **Holatlar:** hover shox — shox, uning bog'lanishlari va barglari qoladi, qolganlari 0.3 ga so'nadi (CSS); `collapsed: true` shox Tree'da barglar o'rniga \"+n\" ko'rsatadi (ekran o'quvchi ro'yxatida barglar qoladi). Tahrirlash va bo'sh holat (\"Add a branch\") — ilova darajasida.\n- **A11y:** canvas `role=\"img\"` + `label`; to'liq ierarxiya ekran o'quvchi uchun ichma-ich ro'yxat (`bek-chart__sr`) sifatida takrorlanadi. Rang yagona belgi emas — shox nomi har doim yozilgan.\n- **O'lchamlar:** canvas `bg/sheet`, `radius/surface/md`, ichki chekka `scale/24`; tugun 160 × 56; nuqta `chart/point-size`.\n"
     },
     {
       "dir": "model-comparison",
@@ -14819,6 +15178,110 @@
       "readme": "# Network graph\n\nFigma: **4.18 Chart · Network graph** — entitetlar (mahsulotlar, hisoblar, xizmatlar, o'tkazmalar) orasidagi bog'lanishlar. `variant`: `default` · `focus`.\n\n```tsx\n<NetworkGraph\n  variant=\"focus\"\n  focus=\"loans\"\n  nodes={[\n    { id: 'bank', label: 'BEK Bank', group: 'Core' },\n    { id: 'cards', label: 'Cards', group: 'Payments' },\n    { id: 'loans', label: 'Loans', group: 'Lending' },\n    { id: 'mortgage', label: 'Mortgage', group: 'Lending' },\n  ]}\n  links={[\n    { source: 'bank', target: 'cards' },\n    { source: 'bank', target: 'loans' },\n    { source: 'loans', target: 'mortgage' },\n  ]}\n  label=\"Loans connect the bank with mortgage and auto lending\"\n/>\n```\n\n- **Qachon:** nima nima bilan bog'langanini ko'rsatish (mahsulot ekotizimi, hisoblar orasidagi pul oqimi); ~40 tugungacha. Ierarxiya — `Treemap` yoki Diagram/Org card.\n- **Kodlash:** tugun o'lchami ← degree yoki `size` (hajm), rang ← guruh (`seriesColor(i)`), bog'lanish ← aloqa (`dataviz/axis`, `chart/line/stroke`). Tugunda `surface/card` halqa (`stroke/strong`).\n- **Joylashuv:** har tugunda `x`/`y` bo'lsa — shu koordinatalar; aks holda d3-force sinxron `iterations` qadam (standart 300) — natija deterministik, SSR va klientda bir xil. Koordinatalar bir xil masshtab bilan plot markaziga joylanadi — geometriya cho'zilmaydi.\n- **Focus:** `variant=\"focus\"` + `focus` — tugun va qo'shnilari ajratiladi, bog'lanishlar tugun rangida, qolgani qatlam shaffofligi 25%. Bosish bilan fokus, sudrash, zoom/pan — ota komponent `focus` ni boshqaradi.\n- **Qoidalar:** yozuv faqat katta (`labelMinRadius`) yoki fokusdagi tugunlarda; 40 dan ortiq tugunni filtrlang yoki klasterlang. Mobile'da faqat tanlangan tugunning 1-daraja qo'shnilari.\n- **A11y:** `role=\"img\"` + `label`; ko'rinmas jadval — har tugun uchun qo'shnilar ro'yxati (adjacency list).\n- **O'lchamlar:** plot `scale/200` (doimiy) balandlikda; legend `chart/legend/gap`. Yozuv Caption/M · `text/secondary`, legend Caption/L (ChartLegend).\n"
     },
     {
+      "dir": "number-ticker",
+      "package": "@bek-ui/charts",
+      "title": "Number ticker",
+      "description": "jonli hisoblagich va muddat taymeri. Variant Ticker → NumberTicker (faqat o'zgargan raqamlar aylanadi), Countdown → Countdown (vaqt birliklarga bo'linadi).",
+      "exports": [
+        "NumberTicker",
+        "Countdown",
+        "countdownParts"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Number ticker",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Number ticker",
+            "id": "1305:47356",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1305-47356",
+            "variants": 2,
+            "description": "Animated number for live counters and deadlines. Ticker rolls only the changing digits (old digit slides out, new in; neighbours at layer opacity 0.3) with tabular figures so width never jumps; Countdown splits time into units on bg/sheet blocks. Respects prefers-reduced-motion (no roll), announces at most once per minute (aria-live=\"polite\"). React: <NumberTicker value={12480} fo",
+            "props": {
+              "Variant": [
+                "Ticker",
+                "Countdown"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "status/success/soft",
+                "surface/card",
+                "text/primary",
+                "text/secondary",
+                "text/success",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Caption/S",
+                "Display/M",
+                "Headline/M",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/gap",
+                "radius/full",
+                "radius/surface/md",
+                "radius/surface/sm",
+                "scale/12",
+                "scale/2",
+                "scale/480",
+                "scale/6",
+                "scale/64",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "bg/sheet",
+          "chart/gap",
+          "radius/full",
+          "scale/12",
+          "scale/2",
+          "scale/480",
+          "scale/6",
+          "scale/64",
+          "scale/8",
+          "status/success/soft",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-status-success-soft",
+          "reason": "Delta pill foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-success",
+          "reason": "Delta matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma'da bu token komponent set o'ramasining (specimen) fonida — komponentning o'zi shaffof, kartaga (ChartCard / KpiCard) joylanadi."
+        }
+      ],
+      "readme": "# Number ticker\n\nFigma: **4.18 Chart · Number ticker** — jonli hisoblagich va muddat taymeri. Variant `Ticker` → `NumberTicker` (faqat o'zgargan raqamlar aylanadi), `Countdown` → `Countdown` (vaqt birliklarga bo'linadi).\n\n```tsx\n<NumberTicker\n  value={12480}\n  format=\"uz\"\n  label=\"Active learners right now\"\n  delta={12.4}\n  context=\"vs. same time yesterday\"\n/>\n<Countdown\n  to=\"2026-10-22T18:00:00+05:00\"\n  units={['days', 'hours', 'min', 'sec']}\n  label=\"Enrolment closes in\"\n  endMessage=\"Enrolment is closed\"\n/>\n```\n\n- **Qachon:** dashboard va landing'dagi jonli hisoblagichlar (hozir onlayn o'quvchilar, bugungi to'lovlar), muddatlar (qabul yopiladi, aksiya tugaydi, vebinar boshlanadi), har necha soniyada yangilanadigan asosiy raqamlar. Statik KPI uchun — `KpiCard`, jonli chiziq uchun — `LiveChart`.\n- **Qoidalar:** raqamlar tabular (`tabular-nums`) — eni sakramaydi; faqat o'zgargan raqam aylanadi (300 ms, eskisi 0.3 shaffoflikda chiqib ketadi); uz-UZ guruhlash (`12 480`); raqamni nima sanayotgani bilan birga bering (`label`). Faqat haqiqiy o'zgarishda yangilang — to'xtovsiz ticker sahifadan diqqatni tortadi. Countdown foydalanuvchi vaqt mintaqasida; qayta boshlanadigan soxta shoshilinch taymerlar yo'q; tor joyda > 1 kun bo'lsa `sec` ni olib tashlang.\n- **A11y:** yakuniy qiymat doim ko'rinmas matnda (aylanayotgan raqamlar `aria-hidden`); o'zgarishlar `aria-live` bilan e'lon qilinadi — `live`: `polite` (standart) · `assertive` · `off`, `announceInterval` (standart 60 000 ms — daqiqada ko'pi bilan bir marta, oxirgi qiymat albatta e'lon qilinadi). Countdown matnli ekvivalentga ega (\"2 days 14 hours left\", `formatText`, `unitLabels`, `leftLabel`); tugaganda 00 va `endMessage` (`role=\"status\"`), `onEnd`.\n- **Harakat:** `prefers-reduced-motion: reduce` — raqam aylanmasdan almashadi. Countdown tab yashirin bo'lsa to'xtaydi va qaytganda yangilanadi.\n- **Tarkib:** label Caption/M · `text/secondary`; raqam Display/M · `text/primary`; `Delta` + izoh Caption/M · `text/tertiary`; Countdown birligi `bg/sheet` blok (`scale/64`, padding 8 / 12, `radius/surface/sm`), qiymat Headline/M, birlik Caption/S. Oraliq `scale/12`, meta `scale/8`.\n- **SSR:** Countdown `now` bilan boshlang'ich vaqtni oladi (gidratsiyada farq bo'lsa ham `suppressHydrationWarning`), keyin har soniyada yangilanadi.\n"
+    },
+    {
       "dir": "org-card",
       "package": "@bek-ui/charts",
       "title": "Org card",
@@ -14921,6 +15384,101 @@
       "readme": "# Org card\n\nFigma: **4.19 Diagram · Org card** — tashkiliy tuzilma va tasdiqlash zanjirlari uchun shaxs tuguni. `variant`: `default` · `collapsed` (`collapsed` prop).\n\n```tsx\n<OrgCard name=\"Dilnoza Nazarova\" role=\"Head of Retail\" team=\"Retail banking\" />\n<OrgCard name=\"Dilnoza Nazarova\" role=\"Head of Retail\" team=\"Retail banking\" reports={12} collapsed />\n// client fayl ichida — shoxni ochish/yig'ish:\n<OrgCard name=\"Dilnoza Nazarova\" reports={12} collapsed={collapsed} onToggle={() => setCollapsed(!collapsed)} nodeRole=\"treeitem\" />\n```\n\n- **Qachon:** tashkiliy tuzilma, hisobot chiziqlari, bank workflow'lardagi tasdiqlash zanjirlari. Foydalanuvchilar ro'yxati uchun emas — 4.4 List item.\n- **Tarkib:** 4.1 `Avatar` Size M (`avatar` — rasm, bo'lmasa bosh harflar), `name` Label/M, `role` Caption/M · `text/secondary`, `team` Caption/S · `text/tertiary`; Collapsed — 4.2 `Badge` \"+12\" (`reports`).\n- **Qoidalar:** ota yuqorida, bolalar pastda, `DiagramConnector` (`variant=\"elbow\" direction=\"vertical\"`); 2 darajadan chuqur shoxlar standart holda yig'ilgan; ism bir qatorda qisqaradi, to'liq ism tooltip'da (`title`).\n- **Interaksiya:** `onToggle` berilsa Badge tugmaga aylanadi (`aria-expanded`), `selected` — `border/accent` halqa (tafsilotlar paneli ochiq). Profilni ochish — ota komponent `onClick` orqali.\n- **A11y:** org chart `role=\"tree\"`; har kartaga `nodeRole=\"treeitem\"` — `aria-expanded` (bo'ysunuvchilar bo'lsa) va `aria-selected` avtomatik. `role` prop'i lavozim matni, shuning uchun ARIA roli — `nodeRole`.\n- **O'lchamlar:** eni `scale/280`, padding va gap `scale/12`, matn orasi `scale/2`, radius `radius/surface/md`, Elevation/1.\n"
     },
     {
+      "dir": "pictogram",
+      "package": "@bek-ui/charts",
+      "title": "Pictogram",
+      "description": "isotype: son takrorlanuvchi ikonkalar bilan ko'rsatiladi — \"3 in 10\" hisoblanmaydi, his qilinadi. variant: default (bitta ulush) · compare (guruh/davr bo'yicha qatorlar).",
+      "exports": [
+        "Pictogram",
+        "pictogramFraction"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Pictogram",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Pictogram",
+            "id": "1303:47437",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1303-47437",
+            "variants": 2,
+            "description": "Isotype: a count shown as repeated icons — “3 in 10” is felt, not calculated. Icons wrap to the container (auto layout), never stretch; highlighted icons dataviz/categorical/01, the rest dataviz/track; always state the unit (“1 icon = 10%”). Compare stacks rows per group or period. React: <Pictogram value={0.3} total={20} unit=\"students\" icon=\"person\" rows={[{ label, val",
+            "props": {
+              "Variant": [
+                "Default",
+                "Compare"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/track",
+                "surface/card",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/M",
+                "Headline/L",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/gap",
+                "chart/legend/gap",
+                "radius/full",
+                "radius/surface/md",
+                "scale/140",
+                "scale/16",
+                "scale/24",
+                "scale/4",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/legend/gap",
+          "dataviz/categorical/01",
+          "dataviz/track",
+          "radius/full",
+          "scale/140",
+          "scale/24",
+          "scale/4",
+          "scale/480",
+          "scale/8",
+          "text/primary",
+          "text/secondary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Birlik legendi Caption/L — ichki LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Square)."
+        }
+      ],
+      "readme": "# Pictogram\n\nFigma: **4.18 Chart · Pictogram** — isotype: son takrorlanuvchi ikonkalar bilan ko'rsatiladi — \"3 in 10\" hisoblanmaydi, his qilinadi. `variant`: `default` (bitta ulush) · `compare` (guruh/davr bo'yicha qatorlar).\n\n```tsx\n<Pictogram\n  value={0.3}\n  total={20}\n  unit=\"students\"\n  caption=\"students finish the first course within a month\"\n/>\n\n<Pictogram\n  variant=\"compare\"\n  unit=\"students\"\n  rows={[\n    { label: '2020', value: 0.2 },\n    { label: '2026', value: 0.5 },\n  ]}\n/>\n```\n\n- **Qachon:** ulushni keng auditoriyaga sezdirish — hisobotlar, ijtimoiy postlar, landing sahifalar; kichik butun sonlar (\"3 in 10\", \"1 in 4\"); ikki davr yoki guruhni qatorma-qator solishtirish. Ko'p guruhni aniq solishtirish uchun — `BarChart`.\n- **Qoidalar:** 10, 20 yoki 100 ikonka (`total`; standart Default 20, Compare 10) — tez sanalsin; bitta chartda bitta shakl (`icon`: `person` yoki o'z SVG'ingiz `currentColor` bilan), bezak emas; birlik va aniq son doim matnda (`unitLabel`, standart \"1 icon = 5% of students\"); ikonkalar o'raladi, siqilmaydi va cho'zilmaydi. 3D yoki aralash uslubdagi ikonkalar ishlatilmaydi.\n- **Kodlash:** ikonkalar soni = jami birlik; yoqilgani = qiymat (`dataviz/categorical/01`), qolgani `dataviz/track`; oxirgi ikonka kasrga qirqiladi (0,5). Sarlavha — Headline/L · `text/primary` (standart `pictogramFraction(value)`), izoh — Caption/M · `text/secondary`; Compare qiymati — Label/S · `text/primary`.\n- **Holatlar:** qator ustida — aniq qiymat va n (`title`); `animate` — birinchi ko'rinishda to'lib chiqish (reduced motion'da yo'q).\n- **A11y:** ikonkalar guruhi `role=\"img\"` + matnli qiymat (\"3 in 10 students\"), har ikonka `aria-hidden`; Compare'da ko'rinmas jadval.\n- **O'lchamlar:** ikonka 16 × 24 (Person: bosh 8, tana — yuqorisi `radius/full`, pasti `chart/bar/radius`), ikonkalar orasi `scale/8`; sarlavha ustuni `scale/140`, Body oralig'i `scale/24`; Compare qatori `scale/16`, qatorlar `scale/12`; legend `chart/legend/gap`.\n"
+    },
+    {
       "dir": "prediction-zone",
       "package": "@bek-ui/charts",
       "title": "Prediction zone",
@@ -14993,6 +15551,114 @@
         }
       ],
       "readme": "# Prediction zone\n\nFigma: **4.18 Chart · Prediction zone** — X o'qining model chiqishi bo'lgan qismi (kuzatilgan ma'lumot emas), SVG `<g>` bo'lagi. Bitta variant (`Default`).\n\n```tsx\n<svg role=\"img\" aria-label=\"Forecast from July, 80% range 64–93\" width={480} height={200}>\n  <ChartPredictionZone from={x(lastObserved)} note=\"bek-forecast-v2 · 4 months\" />\n  {/* … kuzatilgan chiziq, uzuq prognoz chizig'i, dataviz/uncertainty/* diapazoni … */}\n</svg>\n```\n\n- **Qachon:** har prognoz, proyeksiya yoki AI to'ldirgan bo'shliq — uzuq prognoz chizig'i va ishonch diapazoni (Chart/Forecast, `dataviz/uncertainty/*`) bilan birga. Odam yozgan maqsad / reja uchun emas — Target grid line.\n- **Kodlash:** x ← [`from` — oxirgi kuzatilgan nuqta, `to` — o'q oxiri].\n- **Qoidalar:** aynan oxirgi kuzatilgan nuqtadan boshlanadi; yozuv pastki-o'ngda — chiziqni yopmaydi; Mobile'da ham yashirilmaydi; prognoz uslubi haqiqiy ma'lumot bilan bir xil bo'lmasin; horizont chart sarlavhasida (\"next 4 months\").\n- **Interaksiya:** hover — `<title>` model ma'lumoti (`note`: model, horizont, o'qitish oralig'i).\n- **A11y:** chart xulosasi: \"Forecast from July, 80% range 64–93\"; sparkles belgisi bezak.\n- **O'lchamlar:** zona `dataviz/grid`, chap cheti uzuq 4/4 `dataviz/ai/accent`; yozuv sparkles 16 (`dataviz/ai/accent`) + `scale/4` + Label/S · `text/secondary`, burchakdan `scale/8`. Standart eni `scale/160`, balandligi `chart/height/md`.\n"
+    },
+    {
+      "dir": "race-chart",
+      "package": "@bek-ui/charts",
+      "title": "Race chart",
+      "description": "vaqt bo'yicha reyting animatsiyasi (bar chart race): har kadr — bitta davr, ustunlar qayta saralanadi yoki chiziqlar joriy davrgacha o'sadi; davr burchakda katta, pastda Play + progress. variant: bar · line.",
+      "exports": [
+        "RaceChart"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Race",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Race",
+            "id": "1301:47314",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1301-47314",
+            "variants": 2,
+            "description": "Animated ranking over time: each frame is one period; bars re-sort (Bar) or lines grow to the current period with end labels (Line). The period sits large in the corner, Play + progress (Button · accent/default on dataviz/track) control playback; respects prefers-reduced-motion (steps instead of tweening). 5–12 entities, each keeps its colour for the whole race. React: <RaceChart frames={[",
+            "props": {
+              "Variant": [
+                "Bar",
+                "Line"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/default",
+                "dataviz/axis",
+                "dataviz/categorical/01",
+                "dataviz/categorical/02",
+                "dataviz/categorical/03",
+                "dataviz/categorical/04",
+                "dataviz/categorical/05",
+                "dataviz/categorical/06",
+                "dataviz/categorical/07",
+                "dataviz/grid",
+                "dataviz/label",
+                "dataviz/track",
+                "surface/card",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/M",
+                "Caption/S",
+                "Headline/L"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/bar/radius",
+                "chart/gap",
+                "chart/grid/stroke",
+                "chart/line/stroke",
+                "radius/full",
+                "radius/surface/md",
+                "scale/12",
+                "scale/200",
+                "scale/4",
+                "scale/480"
+              ]
+            },
+            "nested": [
+              "Button"
+            ]
+          }
+        ],
+        "docTokens": [
+          "accent/default",
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "chart/motion",
+          "control/height/md",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/categorical/06",
+          "dataviz/categorical/07",
+          "dataviz/label",
+          "dataviz/track",
+          "fill/soft-hover",
+          "radius/control/pill",
+          "scale/12",
+          "scale/200",
+          "scale/4",
+          "scale/480",
+          "scale/8",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [],
+      "readme": "# Race chart\n\nFigma: **4.18 Chart · Race** — vaqt bo'yicha reyting animatsiyasi (bar chart race): har kadr — bitta davr, ustunlar qayta saralanadi yoki chiziqlar joriy davrgacha o'sadi; davr burchakda katta, pastda Play + progress. `variant`: `bar` · `line`.\n\n```tsx\n<RaceChart\n  frames={[\n    {\n      period: 2019,\n      values: [\n        { name: 'UX/UI', value: 12 },\n        { name: 'Frontend', value: 15 },\n      ],\n    },\n    {\n      period: 2020,\n      values: [\n        { name: 'UX/UI', value: 18 },\n        { name: 'Frontend', value: 17 },\n      ],\n    },\n  ]}\n  formatValue={(v) => `${v}k`}\n  label=\"Kurslar mashhurligi 2019–2026: UX/UI yetakchi\"\n/>\n```\n\n- **Qachon:** reyting yillar davomida qanday o'zgargani — kurslar, hududlar, mahsulotlar; harakat hikoyani ko'taradigan postlar va taqdimotlar. `line` — kesishishlar muhim bo'lgan jamlanma o'sish. Faqat oxirgi reyting kerak bo'lsa — `BarChart`.\n- **Qoidalar:** 5–12 obyekt (`top`: Bar 12 gacha, Line 5); har obyekt rangi butun poyga davomida o'zgarmaydi (birinchi uchragan tartibda `seriesColor`, yoki `colors`). Pauzada boshlanadi — `autoplay` standart `false`, dashboard'da o'zi o'ynamaydi. Hisobot uchun oxirgi kadrni statik `BarChart` sifatida bering.\n- **Holatlar:** Paused — kadr va Play; Playing — ustunlar `transform`/`width` bilan siljiydi (`motion/duration/chart-enter`), Play → Pause; Scrubbing — progress'ni sudrab istalgan davrga; End — oxirgi kadr qoladi, tugma Replay; `prefers-reduced-motion` — tween yo'q, kadrlar qadam bilan (statik reytinglar).\n- **Boshqarish:** `frame` / `defaultFrame` / `onFrameChange` (boshqariladigan yoki ichki holat), `interval` — kadr davomiyligi (ms).\n- **A11y:** Play — haqiqiy tugma (`Button` · Icon only, `aria-pressed`); progress — `role=\"slider\"` (←/→ — bir kadr, Home/End — chetga, `aria-valuetext` — davr); `role=\"status\"` har kadrda yetakchini aytadi (\"2024: UX/UI 48k\"); ko'rinmas jadval — barcha kadrlar.\n- **Kodlash:** ustun uzunligi / chiziq y = qiymat, saralash = o'rin, rang = obyekt (`dataviz/categorical`). Nom — Caption/M · `text/secondary`, qiymat — Caption/S · `text/primary` ustundan tashqarida, davr — Headline/L · `text/tertiary`; progress — `accent/default` `dataviz/track` ustida (`scale/4`), boshi/oxiri — Caption/S · `dataviz/label`. Line: \"hozir\" chizig'i `dataviz/axis` uzuq, oxirida nuqta va \"Nom qiymat\".\n- **O'lchamlar:** plot `scale/480` × `scale/200`, ustun 18, qator 25, radius `chart/bar/radius`; boshqaruv qatori oralig'i `scale/12`, Play `control/height/md`.\n"
     },
     {
       "dir": "radar-chart",
@@ -15266,6 +15932,121 @@
         }
       ],
       "readme": "# Range brush\n\nFigma: **4.18 Chart · Range brush** — uzun vaqt qatori ostidagi umumiy ko'rinish: oynani sudrab suring, tutqichni sudrab asosiy chartni kattalashtiring. Bitta variant (`Default`). Client komponent.\n\n```tsx\nconst [range, setRange] = useState({ startIndex: 180, endIndex: 240 });\n<LineChart … labels={days.slice(range.startIndex, range.endIndex + 1)} />\n<ChartBrush\n  data={revenue}\n  startIndex={range.startIndex}\n  endIndex={range.endIndex}\n  onChange={setRange}\n  minSpan={7}\n  formatIndex={(i) => days[i]}\n  label=\"Visible period\"\n/>\n```\n\n- **Qachon:** bir ekrandan uzun qatorlar (bir yillik kunlik ma'lumot, live loglar); davrni butun tarix bilan solishtirish. Mobile'da 6 oydan kam ma'lumotda emas — davr uchun SegmentedControl yetarli.\n- **Kodlash:** umumiy chiziq ← hamma ma'lumot, oyna ← [`startIndex`, `endIndex`]. Boshqariladigan (`startIndex` + `endIndex` + `onChange`) yoki `defaultStartIndex` / `defaultEndIndex` bilan.\n- **Interaksiya:** oynani sudrash — surish; tutqichni sudrash — o'lcham; ikki marta bosish — boshlang'ich holat. Fokusdagi tutqich: ←/→ — oynani suradi, Shift+←/→ — o'lchamini o'zgartiradi, Home/End — chetga. Moliyaviy ma'lumotda oynani butun davrga moslang (`minSpan`).\n- **A11y:** `role=\"group\"` + `label`; ikki `role=\"slider\"` tutqich, `aria-valuetext` \"From 1 Jul\" / \"To 31 Aug\" (`formatIndex`), `bek-focus-ring`. Umumiy chiziq SVG'si `aria-hidden`.\n- **O'lchamlar:** balandlik `scale/56`, en `scale/480` (responsiv — `ChartContainer`), asosiy chart X o'qidan 16 pastda. Trek `dataviz/grid` · `radius/surface/sm`; chiziq `dataviz/label` · `chart/grid/stroke`; oyna `accent/soft` + `border/accent`; tutqich `accent/default` 6 × 24, Elevation/1, bosish maydoni `target/min` (44).\n"
+    },
+    {
+      "dir": "region-map",
+      "package": "@bek-ui/charts",
+      "title": "Region map",
+      "description": "O'zbekistonning 14 hududi (12 viloyat, Qoraqalpog'iston Respublikasi, Toshkent shahri) bo'yicha statistika. variant: choropleth (ulush/stavka — rang) · bubble (son — doira yuzi) · hex (teng plitkalar).",
+      "exports": [
+        "RegionMap",
+        "UZ_REGIONS"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Map",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Map",
+            "id": "1300:47297",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1300-47297",
+            "variants": 3,
+            "description": "Regional statistics on a map of Uzbekistan (14 regions). Choropleth colours each region on dataviz/sequential; Bubble keeps land neutral (dataviz/track) and sizes circles by value (area); Hex is a tile-grid map — equal-size hexes so small regions (Toshkent sh.) stay visible, labels follow CMP-07. Fixed geometry: the Map frame is centred, never stretched. Map data: svg-maps by Victor Cazanave, CC B",
+            "props": {
+              "Variant": [
+                "Choropleth",
+                "Bubble",
+                "Hex"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/categorical/01",
+                "dataviz/grid",
+                "dataviz/label",
+                "dataviz/sequential/200",
+                "dataviz/sequential/300",
+                "dataviz/sequential/400",
+                "dataviz/sequential/500",
+                "dataviz/sequential/600",
+                "dataviz/sequential/700",
+                "dataviz/track",
+                "surface/card",
+                "text/inverse",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/bar/radius",
+                "chart/gap",
+                "chart/grid/stroke",
+                "chart/legend/gap",
+                "chart/legend/marker",
+                "radius/surface/md",
+                "scale/2",
+                "scale/200",
+                "scale/4",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/legend/marker",
+          "chart/line/stroke",
+          "dataviz/categorical/01",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/sequential",
+          "dataviz/sequential/200",
+          "dataviz/sequential/300",
+          "dataviz/sequential/400",
+          "dataviz/sequential/500",
+          "dataviz/sequential/600",
+          "dataviz/sequential/700",
+          "dataviz/track",
+          "scale/2",
+          "scale/200",
+          "scale/4",
+          "scale/480",
+          "scale/8",
+          "surface/card",
+          "text/primary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-secondary",
+          "reason": "Bubble legend yozuvi rangi — ichki LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Dot)."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Bubble legend yozuvi Caption/L — ichki LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Dot)."
+        }
+      ],
+      "readme": "# Region map\n\nFigma: **4.18 Chart · Map** — O'zbekistonning 14 hududi (12 viloyat, Qoraqalpog'iston Respublikasi, Toshkent shahri) bo'yicha statistika. `variant`: `choropleth` (ulush/stavka — rang) · `bubble` (son — doira yuzi) · `hex` (teng plitkalar).\n\n```tsx\n<RegionMap\n  metric=\"Mobile banking users, % of adults\"\n  formatValue={(v) => `${v}%`}\n  data={[\n    { region: 'UZ-TK', value: 82 },\n    { region: 'karakalpakstan', value: 33 },\n    // … qolgan 12 hudud\n  ]}\n  label=\"Highest: Toshkent sh. 82%, lowest: Qoraqalpog‘iston 33%\"\n/>\n\n<RegionMap variant=\"bubble\" metric=\"population, mln\" data={population} label=\"…\" />\n<RegionMap variant=\"hex\" data={coverage} label=\"…\" />\n```\n\n- **Hudud kodi:** ISO 3166-2:UZ — `UZ-AN` Andijon, `UZ-BU` Buxoro, `UZ-FA` Farg‘ona, `UZ-JI` Jizzax, `UZ-NG` Namangan, `UZ-NW` Navoiy, `UZ-QA` Qashqadaryo, `UZ-QR` Qoraqalpog‘iston, `UZ-SA` Samarqand, `UZ-SI` Sirdaryo, `UZ-SU` Surxondaryo, `UZ-TO` Toshkent viloyati, `UZ-TK` Toshkent sh., `UZ-XO` Xorazm. Figma ma'lumot shaklidagi slug'lar (`tashkent-city`, `karakalpakstan`, …) ham qabul qilinadi; ro'yxat — `UZ_REGIONS`.\n- **Qachon:** geografiya muhim bo'lgan hududiy qiymatlar — filiallar qamrovi, foydalanuvchilar, narxlar, viloyatlar bo'yicha natijalar. Son (aholi, foydalanuvchi) — `bubble`: miqdorni rang emas, yuz ko'taradi. Kichik hududlar (Toshkent sh.) ham ko'rinishi va solishtirilishi kerak bo'lsa — `hex`.\n- **Qoidalar:** Choropleth faqat stavka va ulushlar uchun — xom sonlar Bubble'da (aks holda xarita hudud kattaligini ko'rsatadi). Sinflangan shkala: Choropleth 6 qadam (`dataviz/sequential` 200–700), Hex 4 qadam (200 · 300 · 600 · 700 — kod matni CMP-07 bo'yicha `text/primary` / `text/inverse`); diapazon legendda. Rangli hudud ustiga qiymat yozilmaydi — 1–3 asosiy hudud `chips` bilan (standart: Choropleth — eng yuqori va eng past, Bubble — eng katta ikkitasi). Katta yuz ≠ katta qiymat: doim reytingli jadval yoki tooltip bilan.\n- **Holatlar:** hover / fokus — `chart/line/stroke` kontur va tooltip (hudud, qiymat, 14 tadan o'rni); bosish yoki Enter — tanlash, qolganlari 0,4 (`selected` / `onSelectChange`); ma'lumot yo'q (`value: null`) — `dataviz/track` + diagonal shtrix, \"No data\"; `loading` — xarita konturi `dataviz/track` da.\n- **Kodlash:** Choropleth — `dataviz/sequential`, chegaralar `surface/card`; Bubble — yer `dataviz/track`, doira `dataviz/categorical/01` 0,72, yuz ∝ qiymat (`scaleSqrt`); Orol dengizi — `dataviz/grid`. Value chip — `surface/card` · `text/primary`, Caption/S.\n- **A11y:** har hudud fokuslanadi (`role=\"button\"`, `aria-label`: \"Toshkent sh.: 82%, rank 1 of 14\", `aria-pressed`). Tab — reyting tartibida, strelkalar — shu yo'nalishdagi qo'shni hududga, Escape — tanlovni bekor qilish. Ko'rinmas jadval — hudud, o'rin, qiymat (reyting tartibida). Rang yolg'iz ma'no tashimaydi (chip, tooltip, jadval).\n- **O'lchamlar:** plot `scale/480` × `scale/200`; xarita ramkasi (`scale/304` × 198) markazda, bir xil masshtab — cho'zilmaydi (CMP-11). Legend oralig'i `scale/4`, marker `chart/legend/marker`.\n- **Xarita manbasi:** svg-maps (V. Cazanave, https://github.com/VictorCazanave/svg-maps), CC BY 4.0 — Figma'dagi soddalashtirilgan nusxa, kodga ko'chirilgan (`geo.ts`); o'zgarishlar va litsenziya — [`packages/charts/LICENSE-ASSETS.md`](../../../LICENSE-ASSETS.md). Xarita ko'rsatilgan sahifada manbani qayd eting.\n"
     },
     {
       "dir": "ridgeline-chart",
@@ -15773,6 +16554,106 @@
         }
       ],
       "readme": "# Streamgraph\n\nFigma: **4.18 Chart · Streamgraph** — markaz chizig'i atrofida oqadigan stacked maydonlar; kategoriyalar aralashmasi vaqt bo'yicha qanday o'sib-so'nishini ko'rsatadi. `variant`: `default` (silhouette) · `expanded` (100%).\n\n```tsx\n<Streamgraph\n  variant=\"default\"\n  series={['Mobile app', 'Web', 'Telegram bot', 'Partners', 'Offline']}\n  data={[\n    { date: 'Jan', series: 'Mobile app', value: 420 },\n    { date: 'Jan', series: 'Web', value: 260 },\n    { date: 'Feb', series: 'Mobile app', value: 470 },\n  ]}\n  label=\"Traffic by channel: Telegram bot grew fastest since May\"\n/>\n```\n\n- **Qachon:** vaqt bo'yicha aralashma (kanal bo'yicha trafik, mahsulot liniyasi bo'yicha daromad) — umumiy shakl va yangi kategoriyaning o'sishi aniq qiymatdan muhimroq. `expanded` — faqat ulushlar muhim bo'lsa (100%).\n- **Kodlash:** x ← vaqt (point), stacked y ← qiymat: `default` — d3 `stackOffsetSilhouette`, `expanded` — `stackOffsetExpand` (0 / 50 / 100% yozuvlari bilan); rang ← seriya (`dataviz/categorical/0i`, mahsulotdagi boshqa joylar bilan bir xil). Qatlamlar orasida `surface/card` ingichka chegara.\n- **Qoidalar:** 3–7 seriya, uzun dumni «Other» ga yig'ing. Eng katta yoki barqaror seriya — pastda (`expanded`) yoki markazda (`default`); tartib `series` bilan. Aniq solishtirish uchun emas — faqat pastki qatlamning asosi tekis; aniq qiymat kerak bo'lsa Line (Multi) yoki Bar (Stacked). Bitta seriya — Line (Area) ishlating.\n- **Interaksiya:** qatlam ustida hover — qolganlari 0,3, `<title>` seriya jami va ulushini aytadi. Legend toggle: `hiddenSeries` + `onToggleSeries` — yashirilgan seriya olib tashlanadi, oqimlar qayta oqadi. Sana bo'yicha crosshair + tooltip kerak bo'lsa — ota komponentda Crosshair / ChartTooltip bilan.\n- **A11y:** `role=\"img\"` + `label`; ko'rinmas jadval: har sana × seriya qiymati (`expanded` da ulush bilan) va jami. Legend matn bilan — rang yolg'iz ma'no tashimaydi.\n- **O'lchamlar:** chizma `scale/480` × `scale/200`, legend ostida (`chart/gap`, `chart/legend/gap`). Vaqt o'qi Caption/S · `dataviz/label`, o'q chizig'i `dataviz/axis`; legend Caption/L · `text/secondary` (ChartLegend).\n"
+    },
+    {
+      "dir": "survey-chart",
+      "package": "@bek-ui/charts",
+      "title": "Survey chart",
+      "description": "so'rovnoma va Likert javoblari: neytral markazli diverging stacked bar (disagree chapga, agree o'ngga) — savollar bir qarashda solishtiriladi; Net — har savol uchun agree − disagree. variant: likert · net.",
+      "exports": [
+        "SurveyChart",
+        "surveyStats"
+      ],
+      "section": {
+        "id": 4,
+        "title": "Data display"
+      },
+      "figma": {
+        "label": "4.18 Chart · Survey",
+        "pages": [
+          {
+            "name": "4.18 Chart",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1201-63"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chart/Survey",
+            "id": "1303:47293",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1303-47293",
+            "variants": 2,
+            "description": "Survey and Likert answers: diverging stacked bars centred on neutral — disagree grows left, agree right, so questions compare at a glance; Net shows agree − disagree per question. 2–12 questions, 3/5/7-point scales on dataviz/diverging. No text on colour (CMP-07) — net score sits outside the bar. React: <SurveyChart questions={[{ label, counts: number[] }]} scale={5} variant=\"likert | ",
+            "props": {
+              "Variant": [
+                "Likert",
+                "Net"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "dataviz/axis",
+                "dataviz/diverging/0",
+                "dataviz/diverging/neg-1",
+                "dataviz/diverging/neg-3",
+                "dataviz/diverging/pos-1",
+                "dataviz/diverging/pos-3",
+                "dataviz/label",
+                "surface/card",
+                "text/primary",
+                "text/secondary"
+              ],
+              "text": [
+                "Caption/L",
+                "Caption/M",
+                "Caption/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "chart/bar/radius",
+                "chart/gap",
+                "chart/grid/stroke",
+                "chart/legend/gap",
+                "radius/surface/md",
+                "scale/200",
+                "scale/480",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "dataviz/axis",
+          "dataviz/diverging/0",
+          "dataviz/diverging/neg-1",
+          "dataviz/diverging/neg-3",
+          "dataviz/diverging/pos-1",
+          "dataviz/diverging/pos-3",
+          "dataviz/label",
+          "scale/200",
+          "scale/480",
+          "scale/8",
+          "text/primary",
+          "text/secondary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Legend yozuvi Caption/L — ichki ChartLegend/LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Square)."
+        }
+      ],
+      "readme": "# Survey chart\n\nFigma: **4.18 Chart · Survey** — so'rovnoma va Likert javoblari: neytral markazli diverging stacked bar (disagree chapga, agree o'ngga) — savollar bir qarashda solishtiriladi; Net — har savol uchun agree − disagree. `variant`: `likert` · `net`.\n\n```tsx\n<SurveyChart\n  scale={5}\n  questions={[\n    { label: 'Lessons are clear', counts: [4, 8, 14, 44, 30] },\n    { label: 'Price for value', counts: [12, 18, 40, 20, 10] },\n  ]}\n  sort=\"net\"\n  label=\"2 savol; eng past — Price for value (Net 0)\"\n/>\n```\n\n- **Qachon:** kurs fikr-mulohazasi, NPS uslubidagi va HR so'rovlari (3 / 5 / 7 balli); ko'p savolni birdaniga solishtirish — qaysi biri eng zaif? `net` — savollarning ixcham reytingi.\n- **Qoidalar:** 2–12 savol; bitta chartda shkalalarni (5 va 7) aralashtirmang; 5 balli shkalada 5 rang (`dataviz/diverging` neg-3 · neg-1 · 0 · pos-1 · pos-3); savollarni net bo'yicha saralang (`sort=\"net\"` yoki `\"agree\"`); har savolga pie chart emas. Rang ustida matn yo'q (CMP-07) — net balli ustundan tashqarida.\n- **Kodlash:** y = savol, x = ulush (%) neytral atrofida; rang = javob; Net: ustun uzunligi = agree − disagree (neytral hisobga kirmaydi), musbat `pos-3`, manfiy `neg-3`. Markaz chizig'i — `dataviz/axis`. `surveyStats(counts)` — ulushlar, agree / disagree / neutral va net.\n- **Holatlar:** segment ustida — `<title>` (javob, soni, %), qolganlari 40%; legend bosilganda javob ajratiladi (qolganlari 25%); biror savolda javob 30 dan kam — \"Low sample (n < 30)\" izohi (`lowSampleLabel`).\n- **A11y:** `role=\"img\"` + `label`; ko'rinmas jadval — har javob soni va ulushi, n va Net; net balli matn sifatida; rang tartib bilan juft (chapdan o'ngga).\n- **O'lchamlar:** eni `scale/480`; savol ustuni Caption/M · `text/secondary`, segment 20, qator 34; net — Caption/S · `text/primary`; o'q yozuvlari (\"← Disagree · Agree →\", `axisLabels`) Caption/S · `dataviz/label`; legend `chart/legend/gap`.\n"
     },
     {
       "dir": "swimlane",

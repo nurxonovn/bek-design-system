@@ -1,0 +1,131 @@
+/* Body: sarlavha (scale/140) + ikonkalar, oraliq scale/24; legend chart/gap pastda (bek-chart). */
+.bek-pictogram__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--bek-scale-24);
+}
+
+.bek-pictogram__headline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  inline-size: var(--bek-scale-140);
+  flex: none;
+}
+
+/* Qiymat — Headline/L · text/primary; izoh — Caption/M · text/secondary. */
+.bek-pictogram__number {
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-headline-lg-size);
+  line-height: var(--bek-type-headline-lg-line-height);
+  letter-spacing: var(--bek-type-headline-lg-tracking);
+  font-weight: var(--bek-weight-semibold);
+}
+
+.bek-pictogram__caption,
+.bek-pictogram__group {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+/* Ikonkalar auto layout kabi o'raladi (scale/8), hech qachon cho'zilmaydi: 16 × 24. */
+.bek-pictogram__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-8);
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.bek-pictogram__icon {
+  position: relative;
+  flex: none;
+  inline-size: var(--bek-scale-16);
+  block-size: var(--bek-scale-24);
+}
+
+.bek-pictogram__glyph {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.bek-pictogram__glyph svg {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.bek-pictogram__glyph--off {
+  color: var(--bek-dataviz-track);
+}
+
+.bek-pictogram__glyph--on {
+  color: var(--bek-dataviz-categorical-01);
+}
+
+/* Oxirgi ikonka kasrga qirqiladi (masalan 0,5) — boshlanish tomondan. */
+.bek-pictogram__icon--partial .bek-pictogram__glyph--on {
+  clip-path: inset(0 calc(100% - var(--bek-pictogram-fill)) 0 0);
+}
+
+[dir='rtl'] .bek-pictogram__icon--partial .bek-pictogram__glyph--on {
+  clip-path: inset(0 0 0 calc(100% - var(--bek-pictogram-fill)));
+}
+
+/* Compare: qator = guruh · ikonkalar · qiymat (scale/16); qatorlar orasi scale/12. */
+.bek-pictogram__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+}
+
+.bek-pictogram__row {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-16);
+}
+
+.bek-pictogram__group {
+  flex: none;
+}
+
+/* Qiymat — Label/S · text/primary. */
+.bek-pictogram__value {
+  flex: none;
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-label-sm-size);
+  line-height: var(--bek-type-label-sm-line-height);
+  letter-spacing: var(--bek-type-label-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-pictogram__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-chart-legend-gap);
+}
+
+/* To'lib chiqish — faqat `animate` va harakat ruxsat etilganda. */
+@media (prefers-reduced-motion: no-preference) {
+  .bek-pictogram--animate .bek-pictogram__glyph--on {
+    animation: bek-pictogram-fill var(--bek-motion-duration-md) var(--bek-motion-easing-standard)
+      both;
+    animation-delay: calc(var(--bek-pictogram-i) * var(--bek-motion-duration-xs) / 4);
+  }
+}
+
+@keyframes bek-pictogram-fill {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

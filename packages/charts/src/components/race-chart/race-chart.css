@@ -1,0 +1,115 @@
+/* Nom — Caption/M · text/secondary; qiymat — Caption/S · text/primary (ustundan tashqarida). */
+.bek-race-chart__name {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+.bek-race-chart__value,
+.bek-race-chart__end-label {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ustun — obyekt rangi (dataviz/categorical/0N), radius chart/bar/radius. */
+.bek-race-chart__bar {
+  rx: var(--bek-chart-bar-radius);
+}
+
+.bek-race-chart__row--out {
+  opacity: 0;
+}
+
+/* Davr — Headline/L · text/tertiary, plot burchagida katta. */
+.bek-race-chart__period {
+  fill: var(--bek-text-tertiary);
+  font-size: var(--bek-type-headline-lg-size);
+  letter-spacing: var(--bek-type-headline-lg-tracking);
+  font-weight: var(--bek-weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Line: chiziq chart/line/stroke; "hozir" — dataviz/axis uzuq; oxirgi nuqta chegarasi surface/card. */
+.bek-race-chart__line {
+  fill: none;
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bek-race-chart__now {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  stroke-dasharray: 4 4;
+}
+
+.bek-race-chart__dot {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Boshqaruv: Play (Button · Icon only) · boshi · progress · oxiri — oraliq scale/12. */
+.bek-race-chart__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+}
+
+.bek-race-chart__bound {
+  flex: none;
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Progress: bosish maydoni control/height/md, ko'rinadigan trek scale/4 · dataviz/track, o'ynalgani accent/default. */
+.bek-race-chart__progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-inline-size: 0;
+  block-size: var(--bek-control-height-md);
+  border-radius: var(--bek-radius-full);
+  cursor: pointer;
+  touch-action: none;
+}
+
+.bek-race-chart__track {
+  position: relative;
+  flex: 1;
+  block-size: var(--bek-scale-4);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-dataviz-track);
+  overflow: hidden;
+}
+
+.bek-race-chart__played {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-default);
+}
+
+/* Tween — chart/motion; prefers-reduced-motion'da yo'q (kadrlar qadam bilan almashadi). */
+@media (prefers-reduced-motion: no-preference) {
+  .bek-race-chart__row,
+  .bek-race-chart__bar,
+  .bek-race-chart__value {
+    transition:
+      transform var(--bek-motion-duration-chart-enter) var(--bek-motion-easing-standard),
+      width var(--bek-motion-duration-chart-enter) var(--bek-motion-easing-standard),
+      opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+
+  .bek-race-chart__played {
+    transition: inline-size var(--bek-motion-duration-chart-enter) var(--bek-motion-easing-standard);
+  }
+}

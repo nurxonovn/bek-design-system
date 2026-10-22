@@ -1,0 +1,224 @@
+/* Figma 4.18 Chart · Gantt — label ustuni scale/104, qator 16 + 10, bar chart/bar/radius, oy grid
+   dataviz/grid · chart/grid/stroke, bugun — punktir dataviz/target + surface/card chip. Joylashuv
+   foizlarda va logical xossalarda: RTL'da vaqt o'qi o'zi teskari. */
+.bek-gantt {
+  max-inline-size: 100%;
+}
+
+.bek-gantt__plot {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--bek-scale-104) minmax(0, 1fr);
+}
+
+.bek-gantt__overlay {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.bek-gantt__gridline {
+  position: absolute;
+  inset-block: 0;
+  border-inline-start: var(--bek-chart-grid-stroke) solid var(--bek-dataviz-grid);
+}
+
+/* Oy nomlari — Caption/S · dataviz/label, grid chizig'idan scale/4 keyin */
+.bek-gantt__months {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  block-size: var(--bek-type-caption-sm-line-height);
+  margin-block-end: var(--bek-scale-6);
+}
+
+.bek-gantt__month,
+.bek-gantt__percent,
+.bek-gantt__chip {
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  white-space: nowrap;
+}
+
+.bek-gantt__month {
+  position: absolute;
+  inset-block-start: 0;
+  padding-inline-start: var(--bek-scale-4);
+  color: var(--bek-dataviz-label);
+}
+
+.bek-gantt__today {
+  position: absolute;
+  inset-block-start: var(--bek-scale-14);
+  block-size: calc(100% - var(--bek-scale-14));
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+  stroke: var(--bek-dataviz-target);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+/* Bog'liqliklar — finish → start zinapoya, dataviz/label; SVG faqat gorizontal cho'ziladi. */
+.bek-gantt__links {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  inline-size: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+[dir='rtl'] .bek-gantt__links {
+  transform: scaleX(-1);
+}
+
+.bek-gantt__link {
+  fill: none;
+  stroke: var(--bek-dataviz-label);
+  stroke-width: var(--bek-chart-grid-stroke);
+  vector-effect: non-scaling-stroke;
+}
+
+.bek-gantt__rows {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-10);
+  padding-block-end: var(--bek-scale-4);
+}
+
+.bek-gantt__row {
+  display: grid;
+  grid-template-columns: var(--bek-scale-104) minmax(0, 1fr);
+  align-items: center;
+  block-size: var(--bek-scale-16);
+}
+
+/* Vazifa nomi — Caption/M · text/secondary */
+.bek-gantt__task {
+  overflow: hidden;
+  padding-inline-end: var(--bek-scale-8);
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  line-height: var(--bek-type-caption-md-line-height);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bek-gantt__track {
+  position: relative;
+  block-size: 100%;
+}
+
+.bek-gantt__bar {
+  position: absolute;
+  inset-block: 0;
+  min-inline-size: var(--bek-scale-2);
+  border-radius: var(--bek-chart-bar-radius);
+}
+
+.bek-gantt__bar--clickable {
+  cursor: pointer;
+}
+
+.bek-gantt__planned,
+.bek-gantt__done {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  border-radius: inherit;
+  background: var(--bek-gantt-color);
+}
+
+/* Progress: reja — layer opacity 0.28, bajarilgani — to'liq rang */
+.bek-gantt__planned {
+  inset-inline-end: 0;
+  opacity: 0.28;
+}
+
+/* Muddati o'tgan (tugash < bugun va < 100%) — dataviz/negative kontur */
+.bek-gantt__bar--overdue {
+  box-shadow: 0 0 0 var(--bek-chart-line-stroke) var(--bek-dataviz-negative);
+}
+
+.bek-gantt__rows:hover .bek-gantt__bar:not(:hover) {
+  opacity: 0.6;
+}
+
+/* % — bar tashqarisida (rang ustida matn yo'q), Caption/S · text/primary */
+.bek-gantt__percent {
+  position: absolute;
+  inset-block-start: 0;
+  margin-inline-start: var(--bek-scale-6);
+  color: var(--bek-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-gantt__percent--after-milestone {
+  margin-inline-start: var(--bek-scale-12);
+}
+
+.bek-gantt__milestone {
+  position: absolute;
+  inset-block-start: 50%;
+  inline-size: var(--bek-scale-10);
+  block-size: var(--bek-scale-10);
+  background: var(--bek-dataviz-target);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+[dir='rtl'] .bek-gantt__milestone {
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.bek-gantt__chip-row {
+  position: relative;
+  grid-column: 2;
+  grid-row: 3;
+  block-size: var(--bek-scale-20);
+  margin-block-start: var(--bek-scale-4);
+}
+
+.bek-gantt__chip {
+  position: absolute;
+  inset-block-start: 0;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-chart-bar-radius);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  transform: translateX(-50%);
+}
+
+[dir='rtl'] .bek-gantt__chip {
+  transform: translateX(50%);
+}
+
+/* Tooltip — faol qator ostida, bar boshi (o'ng yarmida — oxiri) bo'yicha */
+.bek-gantt__tooltip {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: calc(
+    var(--bek-scale-40) + var(--bek-scale-2) + var(--bek-gantt-row, 0) *
+      (var(--bek-scale-16) + var(--bek-scale-10))
+  );
+  inset-inline-start: calc(
+    var(--bek-scale-104) + (100% - var(--bek-scale-104)) * var(--bek-gantt-x, 0)
+  );
+  pointer-events: none;
+}
+
+.bek-gantt__tooltip--end {
+  inset-inline-start: auto;
+  inset-inline-end: calc((100% - var(--bek-scale-104)) * var(--bek-gantt-x, 0));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-gantt__bar {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}

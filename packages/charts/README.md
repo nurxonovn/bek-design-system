@@ -17,6 +17,8 @@ import { ChartCard, ChartContainer, LineChart, formatNumber } from '@bek-ui/char
 - **Ranglar:** `seriesColor(i)` → `dataviz/categorical/0i`; matnli heatmap kataklari faqat `textCellLevel()` dagi 200 · 300 · 600 · 700 darajalarda (CMP-07).
 - **A11y:** har chart `role="img"` + `label` (qisqa xulosa) va ko'rinmas ma'lumot jadvali; rang yolg'iz ma'no tashimaydi.
 - **Dark:** alohida yozilmaydi — tokenlar `data-theme="dark"` da almashadi.
+- **Motion:** animatsiyali chartlar (`RaceChart`, `DrawTheLine`, `Pictogram animate`) `prefers-reduced-motion` ni hurmat qiladi — tween yo'q, holatlar qadam bilan.
+- **Map data:** svg-maps (https://github.com/VictorCazanave/svg-maps), CC BY 4.0 — `RegionMap` geometriyasi (soddalashtirilgan, ISO 3166-2:UZ id'lar); o'zgarishlar — [LICENSE-ASSETS.md](LICENSE-ASSETS.md).
 
 ## Komponentlar
 
@@ -83,3 +85,11 @@ import { ChartCard, ChartContainer, LineChart, formatNumber } from '@bek-ui/char
 | `MindMap`                    | 4.19 Diagram · Mind map         | [README](src/components/mind-map/README.md)           |
 | `JourneyMap`                 | 4.19 Diagram · User journey map | [README](src/components/journey-map/README.md)        |
 | `Swimlane`                   | 4.19 Diagram · Swimlane         | [README](src/components/swimlane/README.md)           |
+| `RegionMap`                  | 4.18 Chart · Map                | [README](src/components/region-map/README.md)         |
+| `RaceChart`                  | 4.18 Chart · Race               | [README](src/components/race-chart/README.md)         |
+| `DrawTheLine`                | 4.18 Chart · Draw the line      | [README](src/components/draw-the-line/README.md)      |
+| `SurveyChart`                | 4.18 Chart · Survey             | [README](src/components/survey-chart/README.md)       |
+| `Pictogram`                  | 4.18 Chart · Pictogram          | [README](src/components/pictogram/README.md)          |
+| `Gantt`                      | 4.18 Chart · Gantt              | [README](src/components/gantt/README.md)              |
+| `NumberTicker` · `Countdown` | 4.18 Chart · Number ticker      | [README](src/components/number-ticker/README.md)      |
+| `DataExplorer`               | 4.18 Chart · Data explorer      | [README](src/components/data-explorer/README.md)      |
