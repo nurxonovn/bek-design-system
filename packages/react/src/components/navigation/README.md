@@ -5,7 +5,7 @@ Figma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600)
 ## Web: ModuleRail + MenuPanel + AppHeader
 
 ```tsx
-import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek-ui/react';
+import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList, SearchField } from '@bek-ui/react';
 
 <AppShell
   header={
@@ -28,7 +28,14 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
     </ModuleRail>
   }
   menu={
-    <MenuPanel collapsed={collapsed} top={<NavItem icon={<SearchIcon />}>Search</NavItem>}
+    <MenuPanel
+      collapsed={collapsed}
+      top={
+        <>
+          <NavItem mode={collapsed ? 'collapsed' : 'expanded'} icon={<SearchIcon />}>Search</NavItem>
+          {!collapsed && <SearchField size="s" placeholder="Search products" />}  {/* Figma: Search field (3.12) */}
+        </>
+      }
       bottom={<NavItem icon={<SidebarIcon />} onClick={toggle}>Collapse</NavItem>}>
       <NavGroup title="Workspace" collapsed={collapsed}>
         <NavItem mode={collapsed ? 'collapsed' : 'expanded'} icon={<GridIcon />} href="/dash" selected>Dashboard</NavItem>
@@ -44,17 +51,18 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
 </AppShell>
 ```
 
-| Komponent    | Asosiy prop'lar                                                                                                                                                            |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                          |
-| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                             |
-| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                                  |
-| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                                                  |
-| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                                                |
-| `AppHeader`  | `start` (Menu button, Logo), `end` (Language, Theme, Notifications + Count, Profile/Avatar, Logout), `children` (Search); balandlik `layout/header/height`, `surface/card` |
-| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                        |
-| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                                                 |
+| Komponent    | Asosiy prop'lar                                                                                                                                                         |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                       |
+| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                          |
+| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                               |
+| `MenuPanel`  | `collapsed` (256 → 64 px), `top` (Search Nav item + SearchField), `bottom` (qotirilgan); `surface/card`, padding 8 12, gap 8                                            |
+| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4, boshlanish burchaklari radius 20                                                           |
+| `AppHeader`  | `device` (`web` — `fill/secondary`, padding 0 24 · `tablet` — `surface/card`, padding 0 16 0 12), `start`, `end`, `children` (Search); balandlik `layout/header/height` |
+| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                     |
+| `AppShell`   | `device` (`web`·`tablet`·`mobile`, standart slotlardan), `header`, `rail`, `menu`, `bottomNav`, `drawer`, `children` (`<main>`, padding `layout/page-margin`)           |
 
+- App shell · Web: fon `fill/secondary` (Header ham shu rangda — chegara yo'q), header va body orasida 2 px, body padding 0 20 20, panellar orasida 2 px; Module rail boshlanish, kontent (`bg/sheet`) oxirgi burchaklari radius 20 — bitta yumaloq blok. Tablet/Mobile — fon `bg/sheet`.
 - Header · Web (Figma): Logo · Language · Theme · Notifications (+ Count — tugma ustidagi Badge) · Profile (`NavProfile`: Avatar, Name, Role) · Logout — barchasi `start`/`end` slotlari orqali; Header · Tablet: Menu button · Logo · Search (`children`) · Notifications · Avatar.
 - Nav item ranglari: Default `text/secondary` · Hover `fill/tertiary` + `text/primary` · Selected `accent/soft` + `text/accent` · Module Selected `accent/default` + `text/on-color` (hover `accent/hover`) · Disabled `text/disabled`. Radius 8, ikonka 20, Label/M (Sub — Body/S).
 - `collapsed`/`module` da nom ekran o'quvchi uchun yashirin matn va hover/fokusda chip (`surface/raised`, `Elevation/3`, 8 px o'ngda).
@@ -116,7 +124,8 @@ import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubLi
 ## App shell · Tablet / Mobile (Figma 6.2)
 
 `AppShell` uchta qurilma uchun bitta: Web — `header` + `rail` + `menu`; Tablet — `header` + `rail`
-(`NavRail`); Mobile — `header` (`TopNavigation`) + `bottomNav` (`BottomNavigation`). Figma "Drawer: Closed / Open"
+(`NavRail`); Mobile — `header` (`TopNavigation`) + `bottomNav` (`BottomNavigation`). Tablet header'iga
+`<AppHeader device="tablet">` bering. Figma "Drawer: Closed / Open"
 → `drawer` slotiga `NavDrawer` (`open` prop'i); u scrim bilan panellarni ham yopadi. Kontent padding'i
 `layout/page-margin` (Mobile 16 · Tablet 24 · Web 32) — tokenning o'zi rejimga qarab o'zgaradi.
 

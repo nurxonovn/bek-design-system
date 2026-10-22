@@ -105,6 +105,25 @@ Bu tokenlar `@bek-ui/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
   - 6.5 App bar va 6.6 Top navigation qidiruv maydonini hali inline chizadi (`fill/secondary`) — "Search field"
     (Filled, S) instance'iga almashtirish kerak.
 
+### A8. 6.2 Navigation va 7.x Overlays spec qayta olindi (2026-10-22)
+
+- 6.2 sahifasida **Header · Tablet** (650:76771) hali bor va ishlatiladi (5 instance) — agar u olib tashlanishi kerak
+  bo'lsa, Figma'da o'chirish kerak; kod Figma'ga ergashadi.
+- Set o'ramlari fonlari tokeni har xil: App shell · Web — `fill/primary`, Menu panel — `fill/tertiary`, Popover —
+  `bg/base`; boshqa set'lar kabi `bg/sheet` bo'lishi kerak (kodda `accepted`).
+- Doc ≠ komponent: Command palette va Hover card doc'ida "Surface fill/primary", komponent `bg/sheet`; Modal va
+  Popover doc'ida "fill/primary + 1px hairline border", komponent `surface/raised`, chegarasiz; Dropdown menu doc
+  "Elevation/3", komponent `Elevation/2 Raised-hover`; Action/Share sheet doc "surface/raised", native instance `bg/sheet`.
+- Eskirgan tavsiflar: Menu panel "Collapsed 56 (40 + 2×8)" va flyout "surface/overlay" — aslida 64 (padding 12) va
+  `surface/raised`; Menu item "16 variants" — aslida 20 (Focus qo'shilgan).
+- Tavsiflarda mavjud bo'lmagan token nomlari: `color/background/neutral/elevated`, `background/neutral/elevated`
+  (Modal, Command palette, Hover card), `radius/7`, `shadow/3`, `size/menu/w`, `size/menu/w-sub` (Dropdown, Context
+  submenu, Popover), `size/nav-rail/*`, `size/nav-item`, `size/touch-target/min` (Rail item, Nav rail, Nav item ·
+  Touch), `color/background/overlay` (Nav drawer, App shell · Tablet).
+- Tokensiz qiymatlar: App shell · Web ildiz radiusi 16; iOS action sheet karta radiusi 34; Bottom sheet rasm
+  balandliklari 260 / 180.
+- Menu panel `Search` qismida endi nested Search field (3.12) — kodda `SearchField size="s"`.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |
