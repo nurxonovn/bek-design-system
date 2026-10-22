@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { HomeIndicator, StatusBar } from '@bek/react';
+import { HomeIndicator, StatusBar } from '@bek-ui/react';
 
 /**
  * Mobil ekran namunasi uchun ramka: 390 px, Status bar (Figma "10.2 System bars" — faqat mockup)

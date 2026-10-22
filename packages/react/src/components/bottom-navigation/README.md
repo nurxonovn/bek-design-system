@@ -3,7 +3,7 @@
 Figma: **6.7 Bottom navigation** (+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.
 
 ```tsx
-import { BottomNavigation, BottomNavItem } from '@bek/react';
+import { BottomNavigation, BottomNavItem } from '@bek-ui/react';
 
 <BottomNavigation>
   <BottomNavItem href="/" icon={<HomeIcon />} selectedIcon={<HomeSolidIcon />} selected>Home</BottomNavItem>

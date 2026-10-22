@@ -25,7 +25,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
-    // @bek/tokens Dark rejimi [data-theme="dark"] orqali almashadi
+    // @bek-ui/tokens Dark rejimi [data-theme="dark"] orqali almashadi
     root.setAttribute('data-theme', theme);
     try {
       window.localStorage.setItem('bek-theme', theme);

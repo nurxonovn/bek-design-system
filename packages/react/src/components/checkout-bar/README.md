@@ -3,7 +3,7 @@
 Figma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.
 
 ```tsx
-import { CartPill, CheckoutBar, InfoWrap } from '@bek/react';
+import { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';
 
 <CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}
   action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />

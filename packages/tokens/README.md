@@ -1,13 +1,13 @@
-# @bek/tokens
+# @bek-ui/tokens
 
 BEK Design System tokenlari: Figma variables → CSS o'zgaruvchilari (`--bek-*`) va JSON.
 
 ## Ishlatish
 
 ```css
-@import '@bek/tokens/tokens.css'; /* rang, o'lcham, shrift, soya tokenlari */
-@import '@bek/tokens/typography.css'; /* ixtiyoriy: .bek-text-* matn klasslari */
-@import '@bek/tokens/materials.css'; /* ixtiyoriy: .bek-glass-regular · -small · -clear */
+@import '@bek-ui/tokens/tokens.css'; /* rang, o'lcham, shrift, soya tokenlari */
+@import '@bek-ui/tokens/typography.css'; /* ixtiyoriy: .bek-text-* matn klasslari */
+@import '@bek-ui/tokens/materials.css'; /* ixtiyoriy: .bek-glass-regular · -small · -clear */
 ```
 
 ```html
@@ -35,7 +35,7 @@ BEK Design System tokenlari: Figma variables → CSS o'zgaruvchilari (`--bek-*`)
 `figma/` — Figma faylidagi Variables va Styles eksporti (Color, Dimension, Typography, Typography primitives, Palette, `styles.json`). Figma'da token o'zgarsa, shu JSON fayllar qayta eksport qilinadi va:
 
 ```bash
-pnpm --filter @bek/tokens build
+pnpm --filter @bek-ui/tokens build
 ```
 
 Build alias topilmasa, CSS nomi takrorlansa yoki noma'lum rejim kelsa xato bilan to'xtaydi.

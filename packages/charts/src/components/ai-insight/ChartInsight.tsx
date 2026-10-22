@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from 'react';
-import { cx, Skeleton } from '@bek/react';
+import { cx, Skeleton } from '@bek-ui/react';
 import { SparklesGlyph } from './SparklesGlyph.js';
 
 export type ChartInsightVariant = 'inline' | 'callout';

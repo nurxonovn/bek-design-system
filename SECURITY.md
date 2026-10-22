@@ -20,7 +20,7 @@ You will get an acknowledgement within 7 days and a fix or a decision within 30 
 
 ## Scope
 
-- `@bek/tokens`, `@bek/react`, `@bek/charts` published packages
+- `@bek-ui/tokens`, `@bek-ui/react`, `@bek-ui/charts` published packages
 - `apps/site` (GitHub Pages)
 - This repository's CI workflows
 

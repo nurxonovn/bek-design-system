@@ -3,7 +3,7 @@
 Figma: **6.1 Tabs** (Tab item + Tabs). Bir sahifadagi bo'limlar orasida almashish — WAI-ARIA tabs.
 
 ```tsx
-import { Tab, TabList, TabPanel, Tabs } from '@bek/react';
+import { Tab, TabList, TabPanel, Tabs } from '@bek-ui/react';
 
 <Tabs defaultValue="overview" type="underline" size="m">
   <TabList aria-label="Product" width="hug">

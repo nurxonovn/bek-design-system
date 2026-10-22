@@ -1,5 +1,5 @@
 {
-  "name": "@bek/tokens",
+  "name": "@bek-ui/tokens",
   "version": "1.0.0-beta.0",
   "description": "BEK Design System tokens — CSS custom properties, JSON, typography and materials generated from Figma Variables",
   "license": "MIT",
@@ -19,7 +19,8 @@
     "figma",
     "react",
     "uzbekistan",
-    "bek"
+    "bek",
+    "bek-ui"
   ],
   "type": "module",
   "exports": {
@@ -36,7 +37,8 @@
     "*.css"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build": "node scripts/build.mjs",

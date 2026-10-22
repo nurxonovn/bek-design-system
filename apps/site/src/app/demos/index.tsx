@@ -81,7 +81,7 @@ import {
   Tooltip,
   TooltipCallout,
   TopNavigation,
-} from '@bek/react';
+} from '@bek-ui/react';
 import {
   ChevronRight,
   Download,

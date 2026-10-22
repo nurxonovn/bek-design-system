@@ -1,5 +1,5 @@
 {
-  "name": "@bek/site",
+  "name": "@bek-ui/site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,8 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@bek/react": "workspace:*",
-    "@bek/tokens": "workspace:*",
+    "@bek-ui/react": "workspace:*",
+    "@bek-ui/tokens": "workspace:*",
     "@radix-ui/react-accordion": "1.2.3",
     "@radix-ui/react-alert-dialog": "1.1.6",
     "@radix-ui/react-aspect-ratio": "1.1.2",

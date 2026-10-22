@@ -1,6 +1,6 @@
-import '@bek/tokens/tokens.css';
-import '@bek/tokens/materials.css';
-import '@bek/react/styles.css';
+import '@bek-ui/tokens/tokens.css';
+import '@bek-ui/tokens/materials.css';
+import '@bek-ui/react/styles.css';
 import './templates.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';

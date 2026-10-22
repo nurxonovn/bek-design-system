@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from 'react';
-import { Badge, cx, Spinner, type BadgeColor } from '@bek/react';
+import { Badge, cx, Spinner, type BadgeColor } from '@bek-ui/react';
 
 export type AgentNodeStatus = 'idle' | 'running' | 'success' | 'error';
 

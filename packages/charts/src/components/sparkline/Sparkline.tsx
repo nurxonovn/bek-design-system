@@ -1,5 +1,5 @@
 import type { SVGAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { line, curveMonotoneX } from 'd3-shape';
 import { scaleLinear } from 'd3-scale';
 import { extent } from 'd3-array';

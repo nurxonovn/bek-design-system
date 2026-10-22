@@ -5,7 +5,7 @@ Figma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600)
 ## Web: ModuleRail + MenuPanel + AppHeader
 
 ```tsx
-import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek/react';
+import { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek-ui/react';
 
 <AppShell
   header={

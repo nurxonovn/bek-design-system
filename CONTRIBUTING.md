@@ -5,7 +5,7 @@ Thanks for helping. This guide covers how the project works and how to land a ch
 ## Ground rules
 
 1. **Figma is the source of truth.** A component in code mirrors a page in the [BEK Design System Figma file](https://www.figma.com/community/file/1684198240912616154/bek-design-system). Names, variant axes and sizes match Figma (`variant`, `size`: M · L · XL · 2XL · 3XL). If the design is wrong, open an issue — don't fix it in code only.
-2. **Tokens only.** No hard-coded colours, sizes, radii or fonts. Everything resolves to `--bek-*` custom properties from `@bek/tokens`.
+2. **Tokens only.** No hard-coded colours, sizes, radii or fonts. Everything resolves to `--bek-*` custom properties from `@bek-ui/tokens`.
 3. **Three devices.** Every component works at Mobile 390, Tablet 834 and Web 1440. Device-dependent values come from token modes.
 4. **Accessible.** Text contrast AA ≥ 4.5:1, `:focus-visible` ring, full keyboard control, targets ≥ 24 px (44 iOS / 48 Android on touch), RTL via `dir="rtl"` and logical properties.
 5. **States in CSS, not props.** Hover, pressed and focus are `:hover`, `:active`, `:focus-visible`.
@@ -26,9 +26,9 @@ Node 22 (`.nvmrc`), pnpm 10.
 ## Repository layout
 
 ```
-packages/tokens    @bek/tokens   figma/*.json → dist/tokens.css, typography.css, materials.css, tokens.json
-packages/react     @bek/react    src/components/<kebab>/  Component.tsx · component.css · index.ts · README.md · figma.json
-packages/charts    @bek/charts   same layout, SVG + d3 modules
+packages/tokens    @bek-ui/tokens   figma/*.json → dist/tokens.css, typography.css, materials.css, tokens.json
+packages/react     @bek-ui/react    src/components/<kebab>/  Component.tsx · component.css · index.ts · README.md · figma.json
+packages/charts    @bek-ui/charts   same layout, SVG + d3 modules
 apps/site          docs site     catalogue is generated from component README.md + figma.json (scripts/build-catalog.mjs)
 apps/templates     example screens from Figma 8.x
 docs/              figma-discrepancies.md — accepted Figma ↔ code differences
@@ -40,7 +40,7 @@ docs/              figma-discrepancies.md — accepted Figma ↔ code difference
 2. **Write the component** in `Component.tsx` + `component.css`. Props follow Figma property names; variants are a `variant` union, sizes a `size` union.
 3. **README.md** in the component folder: purpose, props table, Do/Don't, Figma page number. The docs site builds its catalogue from this file.
 4. **Tests** in `packages/react/test/<name>.test.mjs` (Node test runner): rendering, variants, keyboard behaviour.
-5. **Parity.** `pnpm --filter @bek/react check:figma <name> --strict` must pass. A deliberate difference goes into `figma.json → accepted[]` with a reason.
+5. **Parity.** `pnpm --filter @bek-ui/react check:figma <name> --strict` must pass. A deliberate difference goes into `figma.json → accepted[]` with a reason.
 6. **Export** from `src/index.ts`; the site catalogue picks it up on the next build.
 7. **Changeset.** `pnpm changeset` → pick the package, `minor` for a new component, `patch` for a fix. Write the summary in English.
 
@@ -60,7 +60,7 @@ docs/              figma-discrepancies.md — accepted Figma ↔ code difference
 
 ## Becoming a maintainer
 
-We are actively looking for core maintainers for `@bek/react` and `@bek/charts`. After a few merged PRs, say so in Discussions — maintainers get review rights, release duty and a say in the roadmap.
+We are actively looking for core maintainers for `@bek-ui/react` and `@bek-ui/charts`. After a few merged PRs, say so in Discussions — maintainers get review rights, release duty and a say in the roadmap.
 
 ## Code of conduct
 

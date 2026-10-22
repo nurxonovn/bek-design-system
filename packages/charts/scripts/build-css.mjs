@@ -16,6 +16,6 @@ const css = files
 mkdirSync(join(root, 'dist'), { recursive: true });
 writeFileSync(
   join(root, 'dist/styles.css'),
-  `/* @bek/charts — generated. Do not edit. */\n\n${css}`,
+  `/* @bek-ui/charts — generated. Do not edit. */\n\n${css}`,
 );
-console.log(`[@bek/charts] ${files.length} CSS fayl → dist/styles.css`);
+console.log(`[@bek-ui/charts] ${files.length} CSS fayl → dist/styles.css`);

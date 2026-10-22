@@ -3,7 +3,7 @@
 Figma: **5.3 Empty state**. Bo'sh ro'yxat, natija yo'q yoki oflayn holat.
 
 ```tsx
-import { EmptyState } from '@bek/react';
+import { EmptyState } from '@bek-ui/react';
 
 <EmptyState
   size="m"

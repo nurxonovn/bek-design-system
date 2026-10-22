@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { SparklesGlyph } from './glyphs.js';
 
 export interface AiInsightLineProps {

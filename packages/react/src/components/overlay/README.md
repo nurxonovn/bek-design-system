@@ -20,7 +20,7 @@ Trigger'ga bog'langan oynalar (Popover, menyular, Hover card) — `document.body
 | `ShareSheet`                                                     | 7.11 Share sheet    | `title`, `link`, `thumbnail`, `contacts` (`tone` accent · info · success · warning · utility), `targets`, `showLinkField`, `onCopy`                         |
 
 ```tsx
-import { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek/react';
+import { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek-ui/react';
 
 <Modal open={open} onClose={() => setOpen(false)} title="Edit profile"
   primaryAction={{ label: 'Save', onClick: save }} cancelAction={{ label: 'Cancel' }}>

@@ -1,5 +1,5 @@
 import { useId, type HTMLAttributes, type ReactNode } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { formatPercent } from '../../core/format.js';
 
 export type ConfidenceMeterVariant = 'high' | 'medium' | 'low';

@@ -1,4 +1,4 @@
-import { Avatar, Badge, BekLogo, Button, Card } from '@bek/react';
+import { Avatar, Badge, BekLogo, Button, Card } from '@bek-ui/react';
 import { Icon, type IconName } from '../icons';
 
 const FEATURES: { icon: IconName; title: string; text: string }[] = [

@@ -1,7 +1,7 @@
 {
-  "name": "@bek/charts",
+  "name": "@bek-ui/charts",
   "version": "1.0.0-beta.0",
-  "description": "BEK Design System charts and diagrams — 61 SVG React components on @bek/tokens",
+  "description": "BEK Design System charts and diagrams — 61 SVG React components on @bek-ui/tokens",
   "license": "MIT",
   "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",
   "repository": {
@@ -22,7 +22,8 @@
     "bek",
     "charts",
     "dataviz",
-    "d3"
+    "d3",
+    "bek-ui"
   ],
   "type": "module",
   "main": "./dist/index.js",
@@ -41,7 +42,8 @@
     "*.css"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
@@ -50,8 +52,8 @@
     "check:figma": "node ../react/scripts/check-figma.mjs --root=."
   },
   "dependencies": {
-    "@bek/react": "workspace:*",
-    "@bek/tokens": "workspace:*",
+    "@bek-ui/react": "workspace:*",
+    "@bek-ui/tokens": "workspace:*",
     "d3-array": "3.2.4",
     "d3-chord": "3.0.1",
     "d3-force": "3.0.0",

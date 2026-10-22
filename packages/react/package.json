@@ -1,5 +1,5 @@
 {
-  "name": "@bek/react",
+  "name": "@bek-ui/react",
   "version": "1.0.0-beta.0",
   "description": "BEK Design System — 58 React components on design tokens, Light/Dark, RTL, accessible",
   "license": "MIT",
@@ -19,7 +19,8 @@
     "figma",
     "react",
     "uzbekistan",
-    "bek"
+    "bek",
+    "bek-ui"
   ],
   "type": "module",
   "main": "./dist/index.js",
@@ -40,7 +41,8 @@
     "*.css"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
@@ -49,7 +51,7 @@
     "check:figma": "node scripts/check-figma.mjs"
   },
   "dependencies": {
-    "@bek/tokens": "workspace:*",
+    "@bek-ui/tokens": "workspace:*",
     "clsx": "2.1.1",
     "page-mascot": "0.1.0"
   },

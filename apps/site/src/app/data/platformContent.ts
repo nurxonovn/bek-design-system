@@ -22,27 +22,27 @@ export interface PlatformContent {
 
 export const platformContent: Record<Platform, PlatformContent> = {
   web: {
-    description: "React komponentlari (@bek/react) va CSS tokenlari (@bek/tokens) — Figma «BEK Design System» faylidan yig'ilgan, Light/Dark va RTL tayyor, Tailwind talab qilinmaydi.",
+    description: "React komponentlari (@bek-ui/react) va CSS tokenlari (@bek-ui/tokens) — Figma «BEK Design System» faylidan yig'ilgan, Light/Dark va RTL tayyor, Tailwind talab qilinmaydi.",
     installation: {
       title: "pnpm orqali o'rnatish",
       commands: [
-        "pnpm add @bek/tokens @bek/react",
-        "# yoki npm install @bek/tokens @bek/react"
+        "pnpm add @bek-ui/tokens @bek-ui/react",
+        "# yoki npm install @bek-ui/tokens @bek-ui/react"
       ],
       notes: "React 18+ kerak. Tokenlar CSS o'zgaruvchilari (--bek-*) sifatida keladi."
     },
     implementation: {
       title: "Uslublarni ulash va import",
       setup: `// main.tsx
-import '@bek/tokens/tokens.css';      // ranglar, o'lchamlar, shrift (Light/Dark: data-theme="dark")
-import '@bek/tokens/typography.css';  // .bek-text-* matn uslublari
-import '@bek/react/styles.css';       // komponent uslublari
+import '@bek-ui/tokens/tokens.css';      // ranglar, o'lchamlar, shrift (Light/Dark: data-theme="dark")
+import '@bek-ui/tokens/typography.css';  // .bek-text-* matn uslublari
+import '@bek-ui/react/styles.css';       // komponent uslublari
 
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 
 createRoot(document.getElementById('root')!).render(<App />);`,
-      example: `import { Button, Card, TextField } from '@bek/react';
+      example: `import { Button, Card, TextField } from '@bek-ui/react';
 
 export function Example() {
   return (
@@ -82,18 +82,18 @@ export function Example() {
     }
   },
   android: {
-    description: "BEK hozircha faqat React (@bek/react) va CSS (@bek/tokens) kodida. Android uchun nativ kutubxona yo'q — Figma spec (har komponentda Mobile 390 · Tablet 834 · Web 1440) va @bek/tokens ichidagi tokens.json qiymatlaridan Compose/XML temasi quriladi.",
+    description: "BEK hozircha faqat React (@bek-ui/react) va CSS (@bek-ui/tokens) kodida. Android uchun nativ kutubxona yo'q — Figma spec (har komponentda Mobile 390 · Tablet 834 · Web 1440) va @bek-ui/tokens ichidagi tokens.json qiymatlaridan Compose/XML temasi quriladi.",
     installation: {
       title: "Tokenlarni olish",
       commands: [
-        "pnpm add @bek/tokens   # tokens.json — ranglar (Light/Dark), o'lchamlar (Mobile/Tablet/Web), tipografika",
+        "pnpm add @bek-ui/tokens   # tokens.json — ranglar (Light/Dark), o'lchamlar (Mobile/Tablet/Web), tipografika",
         "# yoki Figma faylidan: Variables → Export"
       ],
       notes: "Nativ Android paketi rejada; hozircha tokens.json manba sifatida ishlatiladi."
     },
     implementation: {
       title: "Compose temasi tokens.json asosida",
-      setup: `// Theme.kt — qiymatlar @bek/tokens/tokens.json dan
+      setup: `// Theme.kt — qiymatlar @bek-ui/tokens/tokens.json dan
 val BekLightColors = lightColorScheme(
     primary = Color(0xFF3E63DD),        // accent/default
     background = Color(0xFFF1F3F6),     // bg/base
@@ -128,18 +128,18 @@ fun BekButton(text: String, onClick: () -> Unit) {
     }
   },
   ios: {
-    description: "BEK hozircha faqat React (@bek/react) va CSS (@bek/tokens) kodida. iOS uchun nativ kutubxona yo'q — Figma spec (3 qurilma) va @bek/tokens ichidagi tokens.json qiymatlaridan SwiftUI temasi quriladi.",
+    description: "BEK hozircha faqat React (@bek-ui/react) va CSS (@bek-ui/tokens) kodida. iOS uchun nativ kutubxona yo'q — Figma spec (3 qurilma) va @bek-ui/tokens ichidagi tokens.json qiymatlaridan SwiftUI temasi quriladi.",
     installation: {
       title: "Tokenlarni olish",
       commands: [
-        "pnpm add @bek/tokens   # tokens.json — ranglar (Light/Dark), o'lchamlar (Mobile/Tablet/Web), tipografika",
+        "pnpm add @bek-ui/tokens   # tokens.json — ranglar (Light/Dark), o'lchamlar (Mobile/Tablet/Web), tipografika",
         "# yoki Figma faylidan: Variables → Export"
       ],
       notes: "Nativ iOS paketi rejada; hozircha tokens.json manba sifatida ishlatiladi."
     },
     implementation: {
       title: "SwiftUI temasi tokens.json asosida",
-      setup: `// BekTheme.swift — qiymatlar @bek/tokens/tokens.json dan
+      setup: `// BekTheme.swift — qiymatlar @bek-ui/tokens/tokens.json dan
 enum BekColor {
     static let accent  = Color(hex: 0x3E63DD)   // accent/default
     static let bgBase  = Color(hex: 0xF1F3F6)   // bg/base

@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { formatPercent } from '../../core/format.js';
 
 export type DeltaVariant = 'positive' | 'negative' | 'neutral';

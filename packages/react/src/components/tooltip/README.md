@@ -7,7 +7,7 @@ Figma: **5.2 Tooltip**.
 Hover yoki fokusda chiqadigan qisqa izoh. Icon-only tugmalarda majburiy.
 
 ```tsx
-import { Tooltip, Button } from '@bek/react';
+import { Tooltip, Button } from '@bek-ui/react';
 
 <Tooltip content="Share" placement="bottom">
   <Button iconOnly startIcon={<ShareIcon />}>

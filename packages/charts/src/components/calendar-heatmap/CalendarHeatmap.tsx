@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { textCellLevel } from '../../core/color.js';
 import { formatNumber } from '../../core/format.js';
 import { DEFAULT_WIDTH, r2 } from '../../core/geometry.js';

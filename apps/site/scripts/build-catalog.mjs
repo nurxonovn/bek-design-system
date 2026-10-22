@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 // Komponentlar katalogi: packages/{react,charts}/src/components/*/{README.md, figma.json, index.ts} →
 // src/app/data/catalog.generated.json. Sayt shu fayldan Figma sahifasi, prop'lar, tokenlar va README'ni ko'rsatadi.
-// `pnpm --filter @bek/site catalog` (dev/build oldidan avtomatik ishlaydi).
+// `pnpm --filter @bek-ui/site catalog` (dev/build oldidan avtomatik ishlaydi).
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PACKAGES = [
-  ['@bek/react', join(SITE, '../../packages/react/src/components')],
-  ['@bek/charts', join(SITE, '../../packages/charts/src/components')],
+  ['@bek-ui/react', join(SITE, '../../packages/react/src/components')],
+  ['@bek-ui/charts', join(SITE, '../../packages/charts/src/components')],
 ];
 const TOKENS = join(SITE, '../../packages/tokens/dist/tokens.json');
 const OUT = join(SITE, 'src/app/data/catalog.generated.json');
@@ -38,7 +38,7 @@ for (const dir of existsSync(COMPONENTS) ? readdirSync(COMPONENTS).sort() : []) 
   const readme = read(join(base, 'README.md'));
   if (!readme) {
     if (existsSync(join(base, 'figma.json')) || existsSync(join(base, 'index.ts')))
-      throw new Error(`[@bek/site] ${dir}: README.md yo'q — komponent katalogga tushmaydi`);
+      throw new Error(`[@bek-ui/site] ${dir}: README.md yo'q — komponent katalogga tushmaydi`);
     continue;
   }
   const specRaw = read(join(base, 'figma.json'));
@@ -47,12 +47,12 @@ for (const dir of existsSync(COMPONENTS) ? readdirSync(COMPONENTS).sort() : []) 
     try {
       spec = JSON.parse(specRaw);
     } catch (e) {
-      throw new Error(`[@bek/site] ${dir}/figma.json o'qilmadi: ${e.message}`);
+      throw new Error(`[@bek-ui/site] ${dir}/figma.json o'qilmadi: ${e.message}`);
     }
     for (const c of spec.components ?? [])
       if (typeof c.id !== 'string' || typeof c.page !== 'string')
-        throw new Error(`[@bek/site] ${dir}/figma.json: components[] da id/page yo'q`);
-  } else console.warn(`[@bek/site] ${dir}: figma.json yo'q — Figma spetsifikatsiyasiz`);
+        throw new Error(`[@bek-ui/site] ${dir}/figma.json: components[] da id/page yo'q`);
+  } else console.warn(`[@bek-ui/site] ${dir}: figma.json yo'q — Figma spetsifikatsiyasiz`);
 
   const title = readme.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? dir;
   const intro = readme.split('\n').find((l) => l.startsWith('Figma:')) ?? '';
@@ -71,7 +71,7 @@ for (const dir of existsSync(COMPONENTS) ? readdirSync(COMPONENTS).sort() : []) 
 
   const pages = [...new Set((spec?.components ?? []).map((c) => c.page))];
   const sectionNo = Number((pages[0] ?? figmaLabel).match(/^(\d+)/)?.[1] ?? 0);
-  if (!SECTIONS[sectionNo]) console.warn(`[@bek/site] ${dir}: bo'lim raqami aniqlanmadi (${pages[0] ?? figmaLabel})`);
+  if (!SECTIONS[sectionNo]) console.warn(`[@bek-ui/site] ${dir}: bo'lim raqami aniqlanmadi (${pages[0] ?? figmaLabel})`);
   const pageIds = Object.fromEntries((spec?.components ?? []).map((c) => [c.page, c.pageId]));
 
   components.push({
@@ -101,9 +101,9 @@ for (const dir of existsSync(COMPONENTS) ? readdirSync(COMPONENTS).sort() : []) 
   });
 }
 
-if (!components.length) throw new Error('[@bek/site] katalog bo\'sh — packages/react/src/components topilmadi');
+if (!components.length) throw new Error('[@bek-ui/site] katalog bo\'sh — packages/react/src/components topilmadi');
 const tokens = existsSync(TOKENS) ? JSON.parse(readFileSync(TOKENS, 'utf8')) : null;
-if (!tokens) console.warn('[@bek/site] tokens.json yo\'q — avval `pnpm --filter @bek/tokens build`');
+if (!tokens) console.warn('[@bek-ui/site] tokens.json yo\'q — avval `pnpm --filter @bek-ui/tokens build`');
 
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(
@@ -119,4 +119,4 @@ writeFileSync(
     2,
   ) + '\n',
 );
-console.log(`[@bek/site] katalog: ${components.length} komponent → ${OUT.replace(SITE + '/', '')}`);
+console.log(`[@bek-ui/site] katalog: ${components.length} komponent → ${OUT.replace(SITE + '/', '')}`);

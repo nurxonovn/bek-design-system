@@ -3,7 +3,7 @@
 Figma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).
 
 ```tsx
-import { TopNavigation } from '@bek/react';
+import { TopNavigation } from '@bek-ui/react';
 
 <TopNavigation title="Product" onLeadingClick={goBack} actions={<ShareButton />} />
 <TopNavigation type="large-title" title="Profile" leading="none" />

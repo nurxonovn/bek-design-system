@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from 'react';
-import { Avatar, Badge, cx } from '@bek/react';
+import { Avatar, Badge, cx } from '@bek-ui/react';
 import { formatNumber } from '../../core/format.js';
 
 export interface OrgCardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'role'> {

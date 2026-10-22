@@ -1,5 +1,5 @@
 import { useId, type HTMLAttributes, type ReactNode } from 'react';
-import { cx, EmptyState, SegmentedControl, Skeleton, type SegmentedOption } from '@bek/react';
+import { cx, EmptyState, SegmentedControl, Skeleton, type SegmentedOption } from '@bek-ui/react';
 import { Delta } from '../delta/Delta.js';
 
 export type ChartCardState = 'default' | 'loading' | 'empty' | 'error';
@@ -38,7 +38,7 @@ export interface ChartCardProps extends Omit<HTMLAttributes<HTMLElement>, 'title
   errorSource?: ReactNode;
   /** Sarlavha darajasi — sahifa tuzilmasiga mos (standart h3). */
   headingLevel?: 2 | 3 | 4 | 5 | 6;
-  /** Chart slot — istalgan `@bek/charts` chart (odatda `ChartContainer` ichida). */
+  /** Chart slot — istalgan `@bek-ui/charts` chart (odatda `ChartContainer` ichida). */
   children?: ReactNode;
 }
 

@@ -3,7 +3,7 @@
 Figma: **5.5 Info wrap**. Forma yoki karta ichidagi kichik yordamchi izoh bloki.
 
 ```tsx
-import { InfoWrap } from '@bek/react';
+import { InfoWrap } from '@bek-ui/react';
 
 <InfoWrap icon={<TruckIcon />}>Delivery is free from 200 000 sum</InfoWrap>
 <InfoWrap emphasis title="Free delivery" onInfo={openDetails}>From 200 000 sum</InfoWrap>

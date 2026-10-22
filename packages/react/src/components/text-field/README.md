@@ -3,7 +3,7 @@
 Figma: **3.2 Text field**. Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.
 
 ```tsx
-import { TextField } from '@bek/react';
+import { TextField } from '@bek-ui/react';
 
 <TextField label="Email" type="email" />
 <TextField label="Telefon" placeholder="+998 __ ___ __ __" supportingText="SMS kod yuboriladi" />

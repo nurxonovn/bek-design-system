@@ -13,7 +13,7 @@ export interface FigmaSet {
 
 export interface CatalogComponent {
   dir: string;
-  /** Paket: '@bek/react' yoki '@bek/charts'. */
+  /** Paket: '@bek-ui/react' yoki '@bek-ui/charts'. */
   package?: string;
   title: string;
   description: string;

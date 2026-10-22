@@ -3,7 +3,7 @@
 Figma: **6.3 Breadcrumb**. Sahifaning ierarxiyadagi o'rni; oxirgi qadam — joriy sahifa.
 
 ```tsx
-import { Breadcrumb } from '@bek/react';
+import { Breadcrumb } from '@bek-ui/react';
 
 const items = [
   { label: 'Home', href: '/', icon: <HomeIcon /> },

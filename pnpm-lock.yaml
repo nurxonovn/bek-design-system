@@ -23,10 +23,10 @@ importers:
 
   apps/site:
     dependencies:
-      '@bek/react':
+      '@bek-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@bek/tokens':
+      '@bek-ui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       '@radix-ui/react-accordion':
@@ -198,10 +198,10 @@ importers:
 
   apps/templates:
     dependencies:
-      '@bek/react':
+      '@bek-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@bek/tokens':
+      '@bek-ui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -226,10 +226,10 @@ importers:
 
   packages/charts:
     dependencies:
-      '@bek/react':
+      '@bek-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@bek/tokens':
+      '@bek-ui/tokens':
         specifier: workspace:*
         version: link:../tokens
       d3-array:
@@ -290,7 +290,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@bek/tokens':
+      '@bek-ui/tokens':
         specifier: workspace:*
         version: link:../tokens
       clsx:

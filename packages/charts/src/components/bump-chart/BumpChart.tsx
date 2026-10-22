@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { max } from 'd3-array';
 import { scaleLinear, scalePoint } from 'd3-scale';
 import { curveBumpX, line } from 'd3-shape';

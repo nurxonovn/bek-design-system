@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { arc, pie } from 'd3-shape';
 import { seriesColor } from '../../core/color.js';
 import { formatNumber, formatPercent } from '../../core/format.js';

@@ -1,12 +1,12 @@
-# @bek/templates
+# @bek-ui/templates
 
-Figma **8 · Templates** ekranlari — faqat `@bek/react` komponentlari va `@bek/tokens` dan yig'ilgan
+Figma **8 · Templates** ekranlari — faqat `@bek-ui/react` komponentlari va `@bek-ui/tokens` dan yig'ilgan
 namuna sahifalar. Kutubxona emas (npm'ga chiqmaydi): komponentlar birga qanday ishlashini ko'rsatadi
 va vizual tekshiruv uchun xizmat qiladi.
 
 ```bash
-pnpm --filter @bek/templates dev      # http://localhost:5173
-pnpm --filter @bek/templates build    # dist/
+pnpm --filter @bek-ui/templates dev      # http://localhost:5173
+pnpm --filter @bek-ui/templates build    # dist/
 ```
 
 | Sahifa        | Figma               | Nimalar ishlatilgan                                                                                  |

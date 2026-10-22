@@ -75,8 +75,8 @@ standarti, hover/pressed/focus tokenlari) — `references/foundations.md`.
 ### 3. Tekshiring
 
 ```bash
-pnpm --filter @bek/react check:figma <nom> --strict   # yangi komponent: ogohlantirish ham xato
-pnpm --filter @bek/react check:figma                  # hammasi (CI shu rejimda: faqat E xato)
+pnpm --filter @bek-ui/react check:figma <nom> --strict   # yangi komponent: ogohlantirish ham xato
+pnpm --filter @bek-ui/react check:figma                  # hammasi (CI shu rejimda: faqat E xato)
 ```
 
 Qoidalar ro'yxati va ma'nosi — `references/spec.md`. Har topilma uchun uch yo'l:
@@ -100,7 +100,7 @@ ikonka tekisligi (1.11), rang kontrasti.
 
 ### 5. Yakunlash
 
-- `.changeset/*.md` (`'@bek/react': minor` yoki `patch`), `pnpm format`, `pnpm typecheck`,
+- `.changeset/*.md` (`'@bek-ui/react': minor` yoki `patch`), `pnpm format`, `pnpm typecheck`,
   `pnpm build`, `pnpm test`, `pnpm check:figma`.
 - Commit: `feat(react): <Nom> — Figma <raqam> <sahifa>`; tanada topilgan Figma farqlarini
   (`accepted` sabablarini) qisqa sanab o'ting.

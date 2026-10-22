@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Badge, Button, Link, Tab, TabList, TabPanel, Tabs, Tag } from '@bek/react';
+import { Badge, Button, Link, Tab, TabList, TabPanel, Tabs, Tag } from '@bek-ui/react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { findComponent, type FigmaSet } from '../data/catalog';
 import { demos } from '../demos';
@@ -13,7 +13,7 @@ interface CatalogDetailPageProps {
 
 const GITHUB = 'https://github.com/nurxonovn/bek-design-system/blob/main/packages';
 const sourceUrl = (pkg: string | undefined, dir: string) =>
-  `${GITHUB}/${pkg === '@bek/charts' ? 'charts' : 'react'}/src/components/${dir}`;
+  `${GITHUB}/${pkg === '@bek-ui/charts' ? 'charts' : 'react'}/src/components/${dir}`;
 
 /** Komponent sahifasi: jonli namuna · Figma spetsifikatsiyasi (prop'lar, tokenlar) · README. */
 export function CatalogDetailPage({ dir, onNavigate }: CatalogDetailPageProps) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BekLogo, Button, SegmentedControl } from '@bek/react';
+import { BekLogo, Button, SegmentedControl } from '@bek-ui/react';
 import { Icon } from './icons';
 import { Dashboard } from './pages/Dashboard';
 import { Ecommerce } from './pages/Ecommerce';

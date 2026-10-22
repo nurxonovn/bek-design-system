@@ -1,5 +1,5 @@
 import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { seriesColor } from '../../core/color.js';
 import { r2 } from '../../core/geometry.js';
 import { DIAGRAM_NODE_HEIGHT, DIAGRAM_NODE_WIDTH, DiagramNode } from '../diagram-node/index.js';

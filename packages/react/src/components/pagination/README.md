@@ -3,7 +3,7 @@
 Figma: **6.4 Pagination**.
 
 ```tsx
-import { LoadMore, Pagination } from '@bek/react';
+import { LoadMore, Pagination } from '@bek-ui/react';
 
 <Pagination page={page} pageCount={52} onPageChange={setPage}
   summary="1–24 of 1 240" pageSize={<Select size="s" … />} />   // web

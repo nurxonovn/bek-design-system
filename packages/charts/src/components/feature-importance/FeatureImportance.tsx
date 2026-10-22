@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { scaleLinear } from 'd3-scale';
 import { formatNumber } from '../../core/format.js';
 import { DEFAULT_WIDTH, r2 } from '../../core/geometry.js';

@@ -8,7 +8,7 @@ import {
   type KeyboardEvent,
   type PointerEvent,
 } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { scaleLinear } from 'd3-scale';
 import { line } from 'd3-shape';
 import { extent } from 'd3-array';
