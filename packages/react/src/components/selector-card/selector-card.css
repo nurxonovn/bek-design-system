@@ -1,0 +1,202 @@
+/* Selector card — Figma "3.16 Selector card". Konteyner surface/card, radius/surface/md, padding
+   scale/16, gap scale/12. Media: Icon 40 (accent/soft doira, ikonka 20 text/accent) · Image start 64
+   (radius/surface/sm, fill/soft) · Image top 140 balandlik. Matn: Title/S text/primary · Body/S
+   text/secondary · Label/M meta (gap scale/4). Indikator — Radio · Checkbox · Switch (M), oxirida.
+   Hover — fill/soft-hover qatlami; Selected (:checked) — accent/soft; Focus — _Focus ring; Error —
+   border/danger stroke/strong (2 px, ichkarida); Disabled — text/disabled. */
+.bek-selector-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bek-scale-12);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-md);
+  background-color: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-family: var(--bek-family-sans);
+  cursor: pointer;
+  transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+}
+
+/* Butun karta — bosish nishoni: indikator label'i karta ustiga cho'ziladi (ichma-ich label yo'q). */
+.bek-selector-card__indicator::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.bek-selector-card__body {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: var(--bek-scale-12);
+  min-width: 0;
+}
+
+.bek-selector-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  min-width: 0;
+  text-align: start;
+}
+
+.bek-selector-card__title {
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-semibold);
+  font-size: var(--bek-type-title-sm-size);
+  line-height: var(--bek-type-title-sm-line-height);
+  letter-spacing: var(--bek-type-title-sm-tracking);
+}
+
+.bek-selector-card__description {
+  color: var(--bek-text-secondary);
+  font-size: var(--bek-type-body-sm-size);
+  line-height: var(--bek-type-body-sm-line-height);
+  letter-spacing: var(--bek-type-body-sm-tracking);
+}
+
+.bek-selector-card__meta {
+  color: var(--bek-text-primary);
+  font-weight: var(--bek-weight-medium);
+  font-size: var(--bek-type-label-md-size);
+  line-height: var(--bek-type-label-md-line-height);
+  letter-spacing: var(--bek-type-label-md-tracking);
+}
+
+/* Indikator birinchi qator (Title/S) balandligida, oxirgi chetda (1.11). */
+.bek-selector-card__indicator {
+  flex-shrink: 0;
+}
+
+/* Media */
+.bek-selector-card__media {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bek-fill-soft);
+}
+
+.bek-selector-card__media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bek-selector-card--icon .bek-selector-card__media {
+  width: var(--bek-scale-40);
+  height: var(--bek-scale-40);
+  border-radius: var(--bek-radius-full);
+  background: var(--bek-accent-soft);
+  color: var(--bek-text-accent);
+}
+
+.bek-selector-card--icon .bek-selector-card__media > svg {
+  width: var(--bek-icon-md);
+  height: var(--bek-icon-md);
+}
+
+.bek-selector-card--image-start .bek-selector-card__media {
+  width: var(--bek-scale-64);
+  height: var(--bek-scale-64);
+  border-radius: var(--bek-radius-surface-sm);
+}
+
+.bek-selector-card--image-top {
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bek-selector-card--image-top .bek-selector-card__media {
+  width: 100%;
+  height: var(--bek-scale-140);
+}
+
+.bek-selector-card--image-top .bek-selector-card__body {
+  align-self: stretch;
+  padding: var(--bek-scale-16);
+}
+
+/* Holatlar (1.13). Hover faqat Web — sichqoncha bor qurilmalarda. */
+@media (hover: hover) {
+  .bek-selector-card:not(.bek-selector-card--disabled):hover {
+    background-image: linear-gradient(var(--bek-fill-soft-hover), var(--bek-fill-soft-hover));
+  }
+}
+
+.bek-selector-card:has(input:checked) {
+  background-color: var(--bek-accent-soft);
+}
+
+.bek-selector-card--icon:has(input:checked) .bek-selector-card__media {
+  background: var(--bek-surface-card);
+}
+
+/* Fokus halqasi butun kartada; indikatorning o'z halqasi o'chiriladi (Figma: indikator Default). */
+.bek-selector-card:has(input:focus-visible) {
+  outline: var(--bek-stroke-focus) solid var(--bek-border-focus);
+  outline-offset: var(--bek-scale-2);
+}
+
+.bek-selector-card .bek-radio__input:focus-visible + .bek-radio__circle,
+.bek-selector-card .bek-checkbox__input:focus-visible + .bek-checkbox__box,
+.bek-selector-card .bek-switch__input:focus-visible + .bek-switch__track {
+  outline: none;
+}
+
+/* Error — 2 px chiziq kontent (Image top rasmi) ustida, joylashuvni siljitmaydi. */
+.bek-selector-card--error::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 var(--bek-stroke-strong) var(--bek-border-danger);
+  pointer-events: none;
+}
+
+.bek-selector-card--disabled {
+  cursor: not-allowed;
+}
+
+.bek-selector-card--disabled .bek-selector-card__title,
+.bek-selector-card--disabled .bek-selector-card__description,
+.bek-selector-card--disabled .bek-selector-card__meta {
+  color: var(--bek-text-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bek-selector-card {
+    transition: none;
+  }
+}
+
+/* Selector group — Figma "Selector group": gap scale/12. Vertical — Mobile, Tablet; Horizontal — Web,
+   har karta kamida 240 px (sig'masa keyingi qatorga o'tadi). */
+.bek-selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+  min-width: 0;
+}
+
+.bek-selector-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.bek-selector-group--horizontal > .bek-selector-card {
+  flex: 1 1 var(--bek-scale-240);
+  width: auto;
+}

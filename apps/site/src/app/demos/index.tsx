@@ -57,12 +57,16 @@ import {
   SearchField,
   SegmentedControl,
   Select,
+  SelectorCard,
+  SelectorGroup,
   Separator,
   Skeleton,
   Slider,
   Spinner,
   StatusBar,
   Stepper,
+  Steps,
+  StepsItem,
   Switch,
   Tab,
   TabList,
@@ -647,6 +651,44 @@ export const demos: Record<string, ComponentType> = {
       </Row>
     );
   },
+  steps: () => (
+    <div className="flex flex-col gap-8 w-full max-w-xl">
+      <div className="w-full max-w-sm">
+        <Steps marker="icon" aria-label="Buyurtma holati">
+          <StepsItem status="complete" title="Buyurtma qabul qilindi" meta="10 okt, 09:12" />
+          <StepsItem status="complete" title="To'landi" meta="10 okt, 09:13" />
+          <StepsItem
+            status="current"
+            title="Yig'ildi"
+            description="Kuryer 15:00 da olib ketadi"
+            action={<Button size="m">Kuzatish</Button>}
+            meta="Bugun"
+          />
+          <StepsItem status="upcoming" title="Yo'lda" />
+          <StepsItem status="upcoming" title="Yetkazildi" />
+        </Steps>
+      </div>
+      <Steps orientation="horizontal" marker="number" aria-label="Rasmiylashtirish">
+        <StepsItem status="complete" title="Savat" caption="10 okt" />
+        <StepsItem status="complete" title="Yetkazish" caption="10 okt" />
+        <StepsItem status="current" title="To'lov" />
+        <StepsItem status="upcoming" title="Tayyor" />
+      </Steps>
+      <div className="w-full max-w-sm">
+        <Steps aria-label="Ariza">
+          <StepsItem status="complete" title="Hujjatlar yuklandi" description="Pasport, diplom" />
+          <StepsItem status="complete" title="Ko'rib chiqish" description="2 kun" />
+          <StepsItem
+            status="error"
+            title="To'lov"
+            description="Karta rad etildi — boshqa karta bilan urinib ko'ring"
+            action={<Button size="m">Boshqa karta</Button>}
+          />
+          <StepsItem status="upcoming" title="Sertifikat" />
+        </Steps>
+      </div>
+    </div>
+  ),
   switch: () => {
     const [on, setOn] = useState(true);
     return (
@@ -757,6 +799,55 @@ export const demos: Record<string, ComponentType> = {
           onChange={setSlot}
         />
       </div>
+    );
+  },
+  'selector-card': () => {
+    const [delivery, setDelivery] = useState('');
+    return (
+      <Col>
+        <Fieldset
+          label="Yetkazib berish usuli"
+          status={delivery ? 'helper' : 'error'}
+          message={delivery ? undefined : 'Yetkazib berish usulini tanlang'}
+        >
+          <SelectorGroup name="demo-delivery" error={!delivery}>
+            <SelectorCard
+              value="courier"
+              checked={delivery === 'courier'}
+              onChange={() => setDelivery('courier')}
+              icon={<Truck />}
+              title="Kuryer"
+              description="Toshkent bo'ylab 2 soat ichida"
+              meta="15 000 soʻm"
+            />
+            <SelectorCard
+              value="pickup"
+              checked={delivery === 'pickup'}
+              onChange={() => setDelivery('pickup')}
+              icon={<ShoppingBag />}
+              title="Topshirish punkti"
+              description="Ertaga tayyor, 1 200 ball"
+              meta="Bepul"
+            />
+            <SelectorCard value="post" disabled icon={<Home />} title="Pochta" description="Hozircha mavjud emas" />
+          </SelectorGroup>
+        </Fieldset>
+        <Fieldset label="Bildirishnomalar">
+          <SelectorGroup>
+            <SelectorCard control="switch" title="Buyurtma holati" description="Push va SMS" defaultChecked />
+            <SelectorCard control="checkbox" title="Aksiyalar" description="Haftada bir marta" />
+          </SelectorGroup>
+        </Fieldset>
+        <SelectorCard
+          name="demo-plan"
+          media="image-top"
+          image={<Photo label="Pro" />}
+          title="Pro"
+          description="Barcha komponentlar va yangilanishlar"
+          meta="99 000 soʻm / oy"
+          defaultChecked
+        />
+      </Col>
     );
   },
   toast: () => (
