@@ -52,7 +52,7 @@
   width: 100%;
   height: 100%;
   border-radius: var(--bek-radius-full);
-  background: var(--bek-fill-primary);
+  background: var(--bek-bg-sheet);
   box-shadow: inset 0 0 0 var(--bek-stroke-default) var(--bek-border-strong);
   color: var(--bek-text-on-color);
   transition: background-color var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);

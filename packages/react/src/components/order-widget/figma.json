@@ -24,7 +24,7 @@
         "color": [
           "accent/default",
           "accent/soft",
-          "bg/sheet",
+          "bg/base",
           "fill/soft-pressed",
           "status/success/default",
           "status/success/soft",
@@ -80,5 +80,11 @@
       "text": "DATA DISPLAY\nBEK\nDesign System\n4.15 Widget\nLive status cards for the home screen. Active order: 16 variants · Status × Size × Direction.\nOverview\nShow one live process the user is waiting for — an order, a delivery, a booking. One widget at a time, above the main content.\nCompact\nPreparing your order\nReady in about 12 min · #1024\nOne row: stage icon, status and ETA. Home screen above the menu.\nExpanded\nOn the way\nArrives in 15–20 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nAdds a 4-segment progress bar with stage labels. Order screen and widgets.\nAnatomy\nExpanded · On the way shown.\nOn the way\nArrives in 15–20 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\n1\nicon\n· stage icon in a 40 circle · accent/soft + text/accent\n2\nstatus\n· Title/S · text/primary\n3\neta\n· Body/S · text/secondary · “Arrives in 12–18 min”\n4\nchevron\n· optional (Show chevron) · opens tracking\n5\nprogress\n· 4 segments · accent/default done · fill/soft-hover to do · radius/full\n6\nstage labels\n· Caption/M · current = text/primary\nVariants\nStatus × Size.\nCompact\nAccepted\nOrder accepted\nRestaurant is confirming · #1024\nPreparing\nPreparing your order\nReady in about 12 min · #1024\nOn the way\nOn the way\nArrives in 15–20 min · #1024\nDelivered\nDelivered\nEnjoy your meal! Rate the order\nExpanded\nAccepted\nOrder accepted\nRestaurant is confirming · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nPreparing\nPreparing your order\nReady in about 12 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nOn the way\nOn the way\nArrives in 15–20 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nDelivered\nDelivered\nEnjoy your meal! Rate the order\nAccepted\nPreparing\nOn the way\nDelivered\nDark mode\nCompact\nPreparing your order\nReady in about 12 min · #1024\nExpanded\nOn the way\nArrives in 15–20 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nRTL — icon and chevron swap, progress fills from the right\nCompact · RTL\nجارٍ التحضير\nرقم الطلب ١٠٢٤\nExpanded · RTL\nفي الطريق\nرقم الطلب ١٠٢٤\nالتوصيل\nالطريق\nالتحضير\nالقبول\nStates\nStatus\nIcon\nProgress\nCopy\nAccepted\ncheckmark-circle-02 · accent\n1 / 4\nOrder accepted · we are starting\nPreparing\nfire · accent\n2 / 4\nBeing prepared · ETA\nOn the way\ndelivery-truck-01 · accent\n3 / 4\nCourier is on the way · ETA\nDelivered\ncheckmark-circle-02 · status/success\n4 / 4 · success\nDelivered · rate your order\nProps\nProp\nType\nValues\nDefault\nStatus\nVariant\nAccepted · Preparing · On the way · Delivered\nAccepted\nSize\nVariant\nCompact · Expanded\nCompact\nDirection\nVariant\nLTR · RTL\nLTR\nShow chevron\nBoolean\ntrue · false\ntrue\nTokens\nProperty\nToken\nValue\nCard\nsurface/card · radius/surface/lg\nno border\nIcon circle\naccent/soft · status/success/soft\n40\nProgress\naccent/default · fill/soft-hover · status/success/default\nheight 4 · radius/full\nPadding / gap\nscale/16 · scale/12\n16 · 12\nText\ntext/primary · text/secondary\nTitle/S · Body/S · Caption/M\nDevices\nMobile · 390\nPreparing your order\nReady in about 12 min · #1024\nOn the way\nArrives in 15–20 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nCompact, full width above the menu; Expanded on the order screen.\nTablet · 834\nOn the way\nArrives in 15–20 min · #1024\nAccepted\nPreparing\nOn the way\nDelivered\nExpanded, max 560 wide, pinned to the t"
     }
   },
-  "accepted": []
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-bg-base",
+      "reason": "bg/base faqat komponent set o'ramining (794:463) foni — widget o'zi surface/card, variantlarda bg/base ishlatilmaydi (use_figma bilan tekshirildi). Avval o'ram bg/sheet edi; kodda talab qilinmaydi. Figma'da set o'ramini yana bg/sheet ga qaytarish kerak (o'ram tokeni bir xil bo'lsin)."
+    }
+  ]
 }

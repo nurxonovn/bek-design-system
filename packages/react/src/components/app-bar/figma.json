@@ -7,80 +7,53 @@
       "page": "6.5 App bar",
       "pageId": "549:41827",
       "props": {
-        "Title": {
-          "type": "TEXT",
-          "default": "Title"
-        },
-        "Show back": {
-          "type": "BOOLEAN",
-          "default": true
-        },
-        "Show action 1": {
-          "type": "BOOLEAN",
-          "default": true
-        },
-        "Show action 2": {
-          "type": "BOOLEAN",
-          "default": true
-        },
-        "Show action 3": {
-          "type": "BOOLEAN",
-          "default": true
-        },
-        "Show count": {
-          "type": "BOOLEAN",
-          "default": true
-        },
+        "Title": { "type": "TEXT", "default": "Title" },
+        "Show back": { "type": "BOOLEAN", "default": true },
+        "Show action 1": { "type": "BOOLEAN", "default": true },
+        "Show action 2": { "type": "BOOLEAN", "default": true },
+        "Show action 3": { "type": "BOOLEAN", "default": true },
+        "Show count": { "type": "BOOLEAN", "default": true },
         "Variant": ["Title", "Search", "Brand"],
         "Size": ["S", "M"],
         "Scrolled": ["Off", "On"]
       },
       "variants": 12,
-      "size": {
-        "w": 390,
-        "h": 56
-      },
+      "size": { "w": 390, "h": 56 },
       "tokens": {
-        "color": [
-          "fill/primary",
-          "fill/secondary",
-          "glass/tint",
-          "glass/tint-shade",
-          "text/primary"
-        ],
+        "color": ["bg/base", "border/hairline", "fill/secondary", "surface/card", "text/primary"],
         "text": ["Title/L", "Title/M"],
-        "effect": ["Elevation/1 Raised", "Glass/Regular"],
-        "dimension": ["layout/page-margin", "scale/12", "scale/2", "scale/56", "scale/64"]
+        "effect": ["Elevation/1 Raised"],
+        "dimension": ["layout/page-margin", "scale/12", "scale/56", "scale/64", "scale/8"]
       },
-      "sizes": [1, 2, 5, 12, 16],
+      "sizes": [1, 5, 8, 12, 16],
       "rawColors": [],
-      "nested": ["Badge", "Button", "Logo", "Text field"],
-      "description": "Top app bar. Variant = Title (back + title + actions) | Search (back + search field) | Brand (logo + search + actions) × Size = S (size/nav-top/1, mobile) | M (size/nav-top/2, tablet/web) × Scrolled = Off | On = 12 variants. Scrolled=On uses Glass/Regular + Glass/Fill/Regular (1.9 Materials). Side padding = layout/page-margin (mode-aware). Actions (1 favourite, 2 notifications with Count, 3 accoun"
+      "nested": ["Avatar", "Badge", "Button", "Logo", "Search field"],
+      "description": "Top app bar. Variant = Title (back + title + actions) | Search (back + search field) | Brand (logo + search + actions) × Size = S (scale/56, mobile) | M (scale/64, tablet/web) × Scrolled = Off | On = 12 variants. Scrolled=Off: bg/base, no border, no shadow (GEN-02) — the bar is one layer with the screen. Scrolled=On: surface/card + border/hairline bottom + Elevation/1 — separation appears only whe"
     }
   ],
   "doc": {
     "6.5 App bar": {
       "tokens": [
-        "Glass/Fill",
-        "Glass/Regular",
-        "fill/primary",
-        "fill/tertiary",
+        "Elevation/1",
+        "bg/base",
+        "border/hairline",
         "layout/page-margin",
         "layout/z/sticky",
-        "radius/control/pill",
         "scale/36",
         "scale/56",
         "scale/64",
+        "scale/8",
+        "surface/card",
         "text/primary"
       ],
-      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/56 · 2\nmobile · tablet/web\nSide padding\nlayout/page-margin\n16 · 24 · 32\nSurface (Off)\nfill/primary\nno border\nSurface (On)\nGlass/Regular effect · Glass/Fill/Regular\n1.9 Materials\nTitle\nTitle/M · text/primary\n—\nSearch field\nscale/36 · 2 · radius/control/pill · fill/tertiary\n—\nLayer\nlayout/z/sticky\n1100\nDo / Don't\nDo\nTitle\n3\nKeep the title short and put at most three actions in the bar.\nDon't\nNotification settings and preferences\n3\nDon’t let a long title push the actions out — shorten it or move detail into the page."
+      "text": "\nDesign tokens\nProperty\nToken\nValue\nHeight\nscale/56 · 2\nmobile · tablet/web\nSide padding\nlayout/page-margin\n16 · 24 · 32\nSurface (Off)\nbg/base\nno border · no shadow\nSurface (On)\nsurface/card · border/hairline (bottom 1) · Elevation/1\non scroll only\nTitle\nTitle/M · text/primary\n—\nSearch field\nSearch field v2 · Filled · scale/36 · 44\n3.12 Search bar\nLayer\nlayout/z/sticky\n1100\nTargets\ntarget/min · scale/8 (gap)\n44 · Button Flat XL\nDo / Don't\nDo\nTitle\n3\nNN\nKeep the title short and put at most three actions in the bar.\nDon't\nNotification settings and preferences\n3\nNN\nDon’t let a long title push the actions out — shorten it or move detail into the page."
     }
   },
   "accepted": [
     {
       "rule": "token-missing",
       "match": "--bek-fill-secondary",
-      "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchField (3.12 Search bar · Search field) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
+      "reason": "fill/secondary — Figma'da App bar komponent to'plami (set) o'ramining foni (radius 5), bar o'zi emas: Scrolled=Off bg/base, On surface/card. Figma'da set fonini boshqa sahifalardagi kabi bg/sheet ga o'tkazish kerak — shunda bu yozuv olib tashlanadi."
     }
   ]
 }

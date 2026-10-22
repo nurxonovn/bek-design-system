@@ -7,14 +7,6 @@
       "page": "6.8 Checkout bar",
       "pageId": "793:67",
       "props": {
-        "Show info": {
-          "type": "BOOLEAN",
-          "default": true
-        },
-        "Show legal": {
-          "type": "BOOLEAN",
-          "default": true
-        },
         "Type": ["Cart", "Checkout", "Floating"],
         "Direction": ["LTR", "RTL"]
       },
@@ -24,32 +16,22 @@
         "h": 140
       },
       "tokens": {
-        "color": [
-          "accent/default",
-          "bg/base",
-          "fill/on-color-hover",
-          "surface/raised",
-          "text/on-color",
-          "text/primary",
-          "text/secondary",
-          "text/tertiary"
-        ],
-        "text": ["Caption/L", "Caption/M", "Label/L", "Title/L"],
-        "effect": ["Elevation/1 Raised", "Elevation/3 Floating"],
+        "color": ["accent/default", "bg/base", "fill/on-color-hover", "text/on-color"],
+        "text": ["Label/L"],
+        "effect": ["Elevation/3 Floating"],
         "dimension": [
           "control/height/3xl",
           "radius/full",
           "scale/12",
           "scale/16",
           "scale/24",
-          "scale/32",
           "scale/8"
         ]
       },
-      "sizes": [1, 8, 12, 16, 24, 32, 40],
+      "sizes": [1, 8, 12, 16, 24, 40],
       "rawColors": [],
-      "nested": ["Button", "Info wrap", "shopping-bag-01"],
-      "description": "Checkout bar — the sticky bottom bar that moves the order forward. Cart: Info wrap + full-width “Go to cart · total”. Checkout: total + Pay with a legal line. Floating: a compact accent pill over the menu while items are in the cart. Bottom padding includes the home indicator."
+      "nested": ["Floating action container", "shopping-bag-01"],
+      "description": "Checkout bar — the sticky bottom bar that moves the order forward. Since 2026-10-12 Cart and Checkout are built on 6.9 Floating action container (exposed): Cart = Layout Single + Info wrap, Checkout = Layout Summary (total + Pay) + legal line. Floating is a compact accent pill over the content. Show info, Show legal, Legal and Home indicator space now come from the nested Floating action container"
     }
   ],
   "doc": {
@@ -73,7 +55,7 @@
     {
       "rule": "token-missing",
       "match": "--bek-bg-base",
-      "reason": "bg/base — Figma'da Checkout bar variant frame'i ortidagi ekran foni (demo); bar o'zi surface/raised + Elevation/1. Doc'da esa \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga moslanishi kerak."
+      "reason": "bg/base — Figma'da Checkout bar komponent to'plami (set) o'ramining foni (demo), bar o'zi emas. Figma'da set fonini bg/sheet ga o'tkazish kerak. Doc'da esa hali \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga (Floating action container: surface/raised + Elevation/1) moslanishi kerak."
     }
   ]
 }

@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import { cx } from '../../utils/cx.js';
-import { Button } from '../button/Button.js';
+import { FloatingActions } from '../floating-actions/FloatingActions.js';
 
 export interface CheckoutBarAction {
   label: ReactNode;
@@ -24,8 +24,9 @@ export interface CheckoutBarProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Figma "6.8 Checkout bar": buyurtmani oldinga suradigan pastki panel. surface/raised,
- * Elevation/1, padding 12 16 (+ home indicator), gap 12.
+ * Figma "6.8 Checkout bar": buyurtmani oldinga suradigan pastki panel. Figma'da Cart va Checkout 6.9
+ * Floating action container ustiga qurilgan — kodda ham `FloatingActions` (Cart = Layout Single + Info
+ * wrap, Checkout = Layout Summary + huquqiy matn), scroll konteyner oxirida `sticky`.
  */
 export function CheckoutBar({
   type = 'cart',
@@ -37,34 +38,23 @@ export function CheckoutBar({
   className,
   ...rest
 }: CheckoutBarProps) {
-  const button = (
-    <Button
-      variant="action"
-      size="xl"
-      loading={action.loading}
-      disabled={action.disabled}
-      onClick={action.onClick}
-      className="bek-checkout-bar__button"
-    >
-      {action.label}
-    </Button>
-  );
   return (
-    <div {...rest} className={cx('bek-checkout-bar', `bek-checkout-bar--${type}`, className)}>
-      {info}
-      {type === 'checkout' ? (
-        <div className="bek-checkout-bar__row">
-          <div className="bek-checkout-bar__total">
-            <span className="bek-checkout-bar__total-label">{totalLabel}</span>
-            <span className="bek-checkout-bar__amount">{total}</span>
-          </div>
-          {button}
-        </div>
-      ) : (
-        button
-      )}
-      {legal && <p className="bek-checkout-bar__legal">{legal}</p>}
-    </div>
+    <FloatingActions
+      {...rest}
+      layout={type === 'checkout' ? 'summary' : 'single'}
+      position="sticky"
+      info={info}
+      total={total}
+      totalLabel={totalLabel}
+      legal={legal}
+      primary={{
+        label: action.label,
+        onClick: action.onClick,
+        loading: action.loading,
+        disabled: action.disabled,
+      }}
+      className={cx('bek-checkout-bar', `bek-checkout-bar--${type}`, className)}
+    />
   );
 }
 

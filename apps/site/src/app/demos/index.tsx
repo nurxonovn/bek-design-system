@@ -9,6 +9,7 @@ import {
   Badge,
   BaseSelector,
   BekLogo,
+  BottomNavGroup,
   BottomNavItem,
   BottomNavigation,
   Breadcrumb,
@@ -116,7 +117,6 @@ import {
   ShoppingBag,
   Trash2,
   Truck,
-  User,
 } from 'lucide-react';
 
 // Jonli namunalar — har komponent papkasi (dir) uchun bitta demo. README'dagi misollar asosida.
@@ -172,8 +172,9 @@ export const demos: Record<string, ComponentType> = {
   ),
   'app-bar': () => (
     <div className="w-full max-w-sm flex flex-col gap-3">
-      <AppBar title="Buyurtmalar" onBack={() => {}} actions={<Button variant="flat" size="l" iconOnly startIcon={<Heart size={20} />}>Sevimlilar</Button>} />
+      <AppBar title="Buyurtmalar" onBack={() => {}} actions={<Button variant="flat" size="xl" iconOnly startIcon={<Heart size={20} />}>Sevimlilar</Button>} />
       <AppBar scrolled title="Buyurtmalar" onBack={() => {}} />
+      <AppBar variant="search" title="Katalog" onBack={() => {}} search={{ 'aria-label': 'Katalogdan qidirish', placeholder: 'Qidirish' }} />
     </div>
   ),
   avatar: () => (
@@ -218,18 +219,19 @@ export const demos: Record<string, ComponentType> = {
   'bottom-navigation': () => (
     <div className="w-full max-w-sm">
       <BottomNavigation>
-        <BottomNavItem href="#/" icon={<Home size={24} />} selected>
-          Bosh sahifa
-        </BottomNavItem>
-        <BottomNavItem href="#/components" icon={<Search size={24} />} badge="dot">
-          Qidiruv
-        </BottomNavItem>
-        <BottomNavItem href="#/tokens" icon={<ShoppingBag size={24} />} badge={3}>
-          Savat
-        </BottomNavItem>
-        <BottomNavItem href="#/docs" icon={<User size={24} />}>
-          Profil
-        </BottomNavItem>
+        <BottomNavGroup variant="dual">
+          <BottomNavItem href="#/" icon={<Home size={24} />} selected>
+            Asosiy
+          </BottomNavItem>
+          <BottomNavItem href="#/components" icon={<Search size={24} />}>
+            Qidiruv
+          </BottomNavItem>
+        </BottomNavGroup>
+        <BottomNavGroup variant="solo">
+          <BottomNavItem href="#/tokens" variant="icon-only" icon={<ShoppingBag size={24} />}>
+            Savat
+          </BottomNavItem>
+        </BottomNavGroup>
       </BottomNavigation>
     </div>
   ),

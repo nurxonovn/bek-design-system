@@ -4,6 +4,7 @@ import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import {
   AppBar,
+  BottomNavGroup,
   BottomNavigation,
   BottomNavItem,
   Breadcrumb,
@@ -63,14 +64,20 @@ test('Pagination: current page, disabled arrows, compact position', () => {
 
 test('AppBar and TopNavigation', () => {
   const bar = r(h(AppBar, { title: 'Orders', onBack() {}, scrolled: true }));
-  assert.match(
-    bar,
-    /class="bek-app-bar bek-app-bar--s bek-app-bar--title bek-app-bar--scrolled bek-glass-regular"/,
-  );
+  assert.match(bar, /class="bek-app-bar bek-app-bar--s bek-app-bar--title bek-app-bar--scrolled"/);
+  assert.doesNotMatch(bar, /bek-glass/);
+  assert.match(bar, /bek-button--flat bek-button--xl/);
   assert.match(bar, /<h1 class="bek-app-bar__title">Orders<\/h1>/);
   const search = r(h(AppBar, { variant: 'search', title: 'Catalog' }, h('input')));
   assert.match(search, /bek-app-bar--search/);
   assert.match(search, /<h1 class="bek-visually-hidden">Catalog<\/h1><input\/>/);
+  // Figma: Search field instance — SearchField Filled, o'lchami bar bilan (S → s, M → m)
+  const field = r(h(AppBar, { variant: 'search', search: { 'aria-label': 'Search' } }));
+  assert.match(field, /bek-search-field bek-search-field--filled bek-search-field--s/);
+  const brand = r(h(AppBar, { variant: 'brand', size: 'm', search: { 'aria-label': 'Search' } }));
+  assert.match(brand, /bek-app-bar--m bek-app-bar--brand/);
+  assert.match(brand, /bek-search-field--filled bek-search-field--m/);
+  assert.doesNotMatch(r(h(AppBar, { title: 'x', search: {} })), /bek-search-field/);
   const top = r(h(TopNavigation, { type: 'large-title', title: 'Profile', leading: 'close' }));
   assert.match(top, /bek-top-nav__large-title">Profile/);
   assert.match(top, /Close/);
@@ -87,11 +94,44 @@ test('BottomNavigation items, badges and checkout bar', () => {
       h(BottomNavItem, { icon: h('svg'), badge: 'dot', hideLabel: true }, 'Search'),
     ),
   );
-  assert.match(nav, /aria-label="Main" class="bek-bottom-nav bek-bottom-nav--floating"/);
+  // Eski API: variant e'tiborsiz, to'g'ridan-to'g'ri itemlar bitta kapsulaga o'raladi
+  assert.match(
+    nav,
+    /aria-label="Main" class="bek-bottom-nav bek-bottom-nav--mobile"><div class="bek-bottom-nav-group bek-bottom-nav-group--fill">/,
+  );
+  assert.doesNotMatch(nav, /bek-bottom-nav--floating/);
   assert.match(nav, /aria-current="page"/);
   assert.match(nav, />99\+</);
   assert.match(nav, /bek-bottom-nav-item__dot/);
+  assert.match(nav, /bek-bottom-nav-item--icon-only/);
   assert.match(nav, /bek-visually-hidden">Search/);
+  // Figma 6.7: Dual + Solo kapsulalar, device=tablet
+  const capsules = r(
+    h(
+      BottomNavigation,
+      { device: 'tablet' },
+      h(
+        BottomNavGroup,
+        { variant: 'dual' },
+        h(BottomNavItem, { icon: h('svg'), selected: true, href: '/' }, 'Home'),
+        h(BottomNavItem, { icon: h('svg'), href: '/c' }, 'Courses'),
+      ),
+      h(
+        BottomNavGroup,
+        { variant: 'solo' },
+        h(BottomNavItem, { icon: h('svg'), variant: 'icon-only' }, 'Stats'),
+      ),
+    ),
+  );
+  assert.match(
+    capsules,
+    /class="bek-bottom-nav bek-bottom-nav--tablet"><div class="bek-bottom-nav-group bek-bottom-nav-group--dual">/,
+  );
+  assert.match(capsules, /bek-bottom-nav-group--solo/);
+  assert.doesNotMatch(capsules, /bek-bottom-nav-group--fill/);
+  assert.equal(capsules.match(/bek-bottom-nav-item--label/g).length, 2);
+  assert.match(capsules, /bek-bottom-nav-item__label">Home/);
+  assert.match(capsules, /bek-visually-hidden">Stats/);
   const co = r(
     h(CheckoutBar, {
       type: 'checkout',
@@ -100,7 +140,10 @@ test('BottomNavigation items, badges and checkout bar', () => {
       legal: 'Terms',
     }),
   );
-  assert.match(co, /bek-checkout-bar__amount">159 000/);
+  assert.match(co, /bek-floating-actions--summary bek-floating-actions--sticky/);
+  assert.match(co, /bek-checkout-bar bek-checkout-bar--checkout/);
+  assert.match(co, /bek-floating-actions__amount">159 000/);
+  assert.match(co, /bek-floating-actions__legal">Terms/);
   assert.match(co, /bek-button--action bek-button--xl/);
   assert.match(
     r(h(CartPill, { icon: h('svg'), label: 'Cart', total: '1' })),

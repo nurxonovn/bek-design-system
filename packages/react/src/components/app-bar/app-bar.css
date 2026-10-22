@@ -1,8 +1,9 @@
-/* App bar — Figma "6.5 App bar". S 56 · M 64; fill/primary, gap 12, yon padding
-   layout/page-margin; sarlavha Title/M (M — Title/L) text/primary; amallar gap 2.
-   Variant: Title (orqaga + sarlavha) · Search (qidiruv maydoni 36 — SearchField size="s") ·
-   Brand (logo + qidiruv). Scrolled — Glass/Regular (glass/tint + glass/tint-shade, blur 16) +
-   Elevation/1. Sticky, z/sticky. */
+/* App bar — Figma "6.5 App bar". S 56 · M 64; gap 12, yon padding layout/page-margin;
+   sarlavha Title/M (M — Title/L) text/primary; amallar gap 8 (Button Flat XL 44 + Badge + Avatar).
+   Scrolled=Off — bg/base, chegarasiz va soyasiz (bar ekran bilan bitta qatlam).
+   Scrolled=On — surface/card + border/hairline (pastki 1 px) + Elevation/1.
+   Variant: Title (orqaga + sarlavha) · Search (SearchField Filled: S 36 · M 44) · Brand (logo + qidiruv).
+   Sticky, z/sticky. */
 .bek-app-bar {
   position: sticky;
   top: 0;
@@ -13,11 +14,13 @@
   box-sizing: border-box;
   height: var(--bek-scale-56);
   padding: 0 var(--bek-layout-page-margin);
-  background: var(--bek-fill-primary);
+  border-bottom: 1px solid transparent;
+  background: var(--bek-bg-base);
   color: var(--bek-text-primary);
   font-family: var(--bek-family-sans);
   transition:
     background-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
+    border-color var(--bek-motion-duration-sm) var(--bek-motion-easing-standard),
     box-shadow var(--bek-motion-duration-sm) var(--bek-motion-easing-standard);
 }
 
@@ -25,26 +28,15 @@
   height: var(--bek-scale-64);
 }
 
-/* Scrolled=On — Glass/Regular: tint + shade ustma-ust, backdrop blur; soya Elevation/1.
-   .bek-glass-regular (materials.css) bilan birga ishlaydi, soyasini Elevation/1 bosib o'tadi. */
-.bek-app-bar.bek-app-bar--scrolled {
-  background: linear-gradient(var(--bek-glass-tint-shade) 0 0), var(--bek-glass-tint);
+.bek-app-bar--scrolled {
+  border-bottom-color: var(--bek-border-hairline);
+  background: var(--bek-surface-card);
   box-shadow: var(--bek-elevation-1);
-  -webkit-backdrop-filter: blur(var(--bek-scale-16)) saturate(180%);
-  backdrop-filter: blur(var(--bek-scale-16)) saturate(180%);
 }
 
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .bek-app-bar.bek-app-bar--scrolled {
-    background: var(--bek-fill-primary);
-  }
-}
-
-@media (prefers-reduced-transparency: reduce) {
-  .bek-app-bar.bek-app-bar--scrolled {
-    background: var(--bek-fill-primary);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+@media (prefers-reduced-motion: reduce) {
+  .bek-app-bar {
+    transition: none;
   }
 }
 
@@ -72,21 +64,17 @@
   letter-spacing: var(--bek-type-title-lg-tracking);
 }
 
-.bek-app-bar__main > :not(.bek-app-bar__title) {
+/* Search · Brand: qidiruv maydoni sarlavha o'rnida kenglikni to'ldiradi. */
+.bek-app-bar__main > :not(.bek-app-bar__title, .bek-visually-hidden) {
   flex: 1;
-}
-
-/* Search · Brand: qidiruv maydoni (SearchField size="s", 36 px pill) sarlavha o'rnida kenglikni to'ldiradi. */
-.bek-app-bar--search .bek-app-bar__main,
-.bek-app-bar--brand .bek-app-bar__main {
-  gap: var(--bek-scale-12);
+  min-width: 0;
 }
 
 .bek-app-bar__actions {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: var(--bek-scale-2);
+  gap: var(--bek-scale-8);
 }
 
 [dir='rtl'] .bek-app-bar__back svg {

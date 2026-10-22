@@ -20,5 +20,8 @@ import { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';
 | `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |
 | `legal`                | Caption/M `text/tertiary`                           | —       |
 
-- `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.
+- `FloatingActions` (6.9) asosida, `position="sticky"`: `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`. Boshqa joylashuvlar (ikki tugma, fixed) kerak bo'lsa — `FloatingActions` ni to'g'ridan-to'g'ri ishlating.
 - `CartPill` (Floating): 64 px (`control/height/3xl`) accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.
+- Figma (2026-10-12 dan): Cart va Checkout turlari **6.9 Floating action container** ustiga qurilgan — Cart =
+  Layout Single + Info wrap, Checkout = Layout Summary (jami + Pay) + huquqiy matn; `info`, `legal` va home
+  indicator joyi shu konteynerdan keladi. Kodda ham `CheckoutBar` — `FloatingActions` ustidagi yupqa o'ram (API o'zgarmadi).

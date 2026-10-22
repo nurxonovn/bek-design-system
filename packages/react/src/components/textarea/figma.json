@@ -47,9 +47,9 @@
       },
       "tokens": {
         "color": [
+          "bg/sheet",
           "border/danger",
           "border/focus",
-          "fill/primary",
           "fill/soft",
           "fill/soft-hover",
           "fill/soft-pressed",
@@ -79,7 +79,7 @@
     }
   ],
   "doc": {
-    "3.7 Textarea": {
+    "Textarea": {
       "tokens": [
         "border/danger",
         "border/default",

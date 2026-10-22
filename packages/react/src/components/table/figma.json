@@ -81,8 +81,8 @@
       "tokens": {
         "color": [
           "accent/soft",
+          "bg/sheet",
           "border/hairline",
-          "fill/primary",
           "fill/secondary",
           "fill/soft-hover",
           "text/disabled",

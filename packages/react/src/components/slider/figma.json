@@ -38,7 +38,6 @@
           "accent/hover",
           "bg/sheet",
           "border/focus",
-          "fill/primary",
           "fill/secondary",
           "fill/tertiary",
           "text/disabled",
@@ -59,11 +58,11 @@
       "sizes": [1, 2, 5, 8, 32, 40],
       "rawColors": [],
       "nested": ["Text field"],
-      "description": "Range input. Type = Single | Range × Size = S | M | L × State = Default | Hover | Disabled = 18 variants. Range has two thumbs, optional value labels above (Show value labels) and &quot;From / To&quot; Text fields below (Show inputs, exposed). Min / Max edit the labels. Existing Single instances are unchanged. Active track = color/background/accent/default (hover …/hover), so the selected value me"
+      "description": "Range input. Type = Single | Range × Size = S | M | L × State = Default | Hover | Disabled = 18 variants. Range has two thumbs, optional value labels above (Show value labels) and \"From / To\" Text fields below (Show inputs, exposed). Min / Max edit the labels. Existing Single instances are unchanged. Active track = color/background/accent/default (hover …/hover), so the selected value me"
     }
   ],
   "doc": {
-    "3.8 Slider": {
+    "Slider": {
       "tokens": [
         "accent/default",
         "border/default",

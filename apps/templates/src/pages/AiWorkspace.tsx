@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   Avatar,
   BekLogo,
+  BottomNavGroup,
   BottomNavigation,
   BottomNavItem,
   Button,
@@ -176,18 +177,19 @@ export function AiWorkspace() {
       </aside>
 
       <BottomNavigation className="tpl-mobile-only">
-        <BottomNavItem href="#/workspace" icon={<Icon name="home" />} selected>
-          Home
-        </BottomNavItem>
-        <BottomNavItem href="#/workspace" icon={<Icon name="plus" />}>
-          New task
-        </BottomNavItem>
-        <BottomNavItem href="#/workspace" icon={<Icon name="folder" />}>
-          Files
-        </BottomNavItem>
-        <BottomNavItem href="#/workspace" icon={<Icon name="user" />}>
-          Account
-        </BottomNavItem>
+        <BottomNavGroup variant="dual">
+          <BottomNavItem href="#/workspace" icon={<Icon name="home" />} selected>
+            Home
+          </BottomNavItem>
+          <BottomNavItem href="#/workspace" icon={<Icon name="folder" />}>
+            Files
+          </BottomNavItem>
+        </BottomNavGroup>
+        <BottomNavGroup variant="solo">
+          <BottomNavItem href="#/workspace" variant="icon-only" icon={<Icon name="plus" />}>
+            New task
+          </BottomNavItem>
+        </BottomNavGroup>
       </BottomNavigation>
     </div>
   );

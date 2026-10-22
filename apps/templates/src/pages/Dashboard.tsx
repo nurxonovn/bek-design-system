@@ -2,6 +2,7 @@ import {
   Avatar,
   Badge,
   BekLogo,
+  BottomNavGroup,
   BottomNavigation,
   BottomNavItem,
   Button,
@@ -238,18 +239,19 @@ export function Dashboard() {
         </main>
 
         <BottomNavigation className="tpl-mobile-only">
-          <BottomNavItem href="#/dashboard" icon={<Icon name="home" />} selected>
-            Home
-          </BottomNavItem>
-          <BottomNavItem href="#/dashboard" icon={<Icon name="book" />}>
-            Courses
-          </BottomNavItem>
-          <BottomNavItem href="#/dashboard" icon={<Icon name="clipboard" />} badge={2}>
-            Assignments
-          </BottomNavItem>
-          <BottomNavItem href="#/dashboard" icon={<Icon name="user" />}>
-            Profile
-          </BottomNavItem>
+          <BottomNavGroup variant="dual">
+            <BottomNavItem href="#/dashboard" icon={<Icon name="home" />} selected>
+              Home
+            </BottomNavItem>
+            <BottomNavItem href="#/dashboard" icon={<Icon name="book" />}>
+              Courses
+            </BottomNavItem>
+          </BottomNavGroup>
+          <BottomNavGroup variant="solo">
+            <BottomNavItem href="#/dashboard" variant="icon-only" icon={<Icon name="clipboard" />}>
+              Assignments
+            </BottomNavItem>
+          </BottomNavGroup>
         </BottomNavigation>
       </div>
     </div>

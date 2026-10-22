@@ -359,7 +359,7 @@
             "id": "557:1074",
             "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=557-1074",
             "variants": 12,
-            "description": "Top app bar. Variant = Title (back + title + actions) | Search (back + search field) | Brand (logo + search + actions) × Size = S (size/nav-top/1, mobile) | M (size/nav-top/2, tablet/web) × Scrolled = Off | On = 12 variants. Scrolled=On uses Glass/Regular + Glass/Fill/Regular (1.9 Materials). Side padding = layout/page-margin (mode-aware). Actions (1 favourite, 2 notifications with Count, 3 accoun",
+            "description": "Top app bar. Variant = Title (back + title + actions) | Search (back + search field) | Brand (logo + search + actions) × Size = S (scale/56, mobile) | M (scale/64, tablet/web) × Scrolled = Off | On = 12 variants. Scrolled=Off: bg/base, no border, no shadow (GEN-02) — the bar is one layer with the screen. Scrolled=On: surface/card + border/hairline bottom + Elevation/1 — separation appears only whe",
             "props": {
               "Title": {
                 "type": "TEXT",
@@ -401,10 +401,10 @@
             },
             "tokens": {
               "color": [
-                "fill/primary",
+                "bg/base",
+                "border/hairline",
                 "fill/secondary",
-                "glass/tint",
-                "glass/tint-shade",
+                "surface/card",
                 "text/primary"
               ],
               "text": [
@@ -412,36 +412,36 @@
                 "Title/M"
               ],
               "effect": [
-                "Elevation/1 Raised",
-                "Glass/Regular"
+                "Elevation/1 Raised"
               ],
               "dimension": [
                 "layout/page-margin",
                 "scale/12",
-                "scale/2",
                 "scale/56",
-                "scale/64"
+                "scale/64",
+                "scale/8"
               ]
             },
             "nested": [
+              "Avatar",
               "Badge",
               "Button",
               "Logo",
-              "Text field"
+              "Search field"
             ]
           }
         ],
         "docTokens": [
-          "Glass/Fill",
-          "Glass/Regular",
-          "fill/primary",
-          "fill/tertiary",
+          "Elevation/1",
+          "bg/base",
+          "border/hairline",
           "layout/page-margin",
           "layout/z/sticky",
-          "radius/control/pill",
           "scale/36",
           "scale/56",
           "scale/64",
+          "scale/8",
+          "surface/card",
           "text/primary"
         ]
       },
@@ -449,10 +449,10 @@
         {
           "rule": "token-missing",
           "match": "--bek-fill-secondary",
-          "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchField (3.12 Search bar · Search field) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
+          "reason": "fill/secondary — Figma'da App bar komponent to'plami (set) o'ramining foni (radius 5), bar o'zi emas: Scrolled=Off bg/base, On surface/card. Figma'da set fonini boshqa sahifalardagi kabi bg/sheet ga o'tkazish kerak — shunda bu yozuv olib tashlanadi."
         }
       ],
-      "readme": "# AppBar\n\nFigma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.\n`variant`: `title` · `search` · `brand`; `size`: `s` · `m`.\n\n```tsx\nimport '@bek-ui/tokens/materials.css'; // scrolled holat uchun Glass/Regular\nimport { AppBar } from '@bek-ui/react';\n\n<AppBar title=\"Orders\" onBack={goBack} scrolled={scrollY > 0}\n  actions={<Button variant=\"flat\" size=\"l\" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />\n<AppBar variant=\"search\" onBack={goBack}><SearchField size=\"s\" placeholder=\"Search\" /></AppBar>\n<AppBar variant=\"brand\" leading={<BekLogo size=\"s\" />} actions={…}><SearchField size=\"s\" placeholder=\"Search\" /></AppBar>\n// Figma \"Show count\" — bildirishnoma tugmasi ustidagi hisoblagich: actions ichida Badge\n<AppBar title=\"Inbox\" actions={<span style={{ position: 'relative' }}><Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button><Badge color=\"danger\" size=\"s\">3</Badge></span>} />\n```\n\n| Prop       | Qiymatlar                                                                            | Default |\n| ---------- | ------------------------------------------------------------------------------------ | ------- |\n| `variant`  | `title` (orqaga + sarlavha) · `search` (orqaga + qidiruv) · `brand` (logo + qidiruv) | `title` |\n| `size`     | `s` 56 (mobil) · `m` 64 (planshet, web)                                              | `s`     |\n| `scrolled` | kontent ostidan o'tganda — Glass/Regular (`glass/tint`) + `Elevation/1`              | `false` |\n| `onBack`   | orqaga tugmasi (`backLabel`)                                                         | —       |\n| `leading`  | logo va h.k.                                                                         | —       |\n| `title`    | Title/M (M — Title/L), `<h1>`                                                        | —       |\n| `children` | sarlavha o'rnida (qidiruv maydoni — `SearchField size=\"s\"`, 36 px)                   | —       |\n| `actions`  | 1–3 ta icon-only tugma                                                               | —       |\n\n- Tokenlar: `fill/primary`, gap 12, yon padding `layout/page-margin`, `z/sticky`. Scrolled=Off — chegarasiz (ajralish faqat scrollda: `glass/tint` + `glass/tint-shade`, blur 16, `Elevation/1`; `materials.css` ulansa to'liq Glass/Regular).\n- `search`/`brand` da `title` berilsa `<h1>` ekran o'quvchi uchun yashirin qoladi. Hisoblagich (`Show count`) — amal tugmasi ustidagi `Badge` (`status/danger`).\n"
+      "readme": "# AppBar\n\nFigma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.\n`variant`: `title` · `search` · `brand`; `size`: `s` · `m`.\n\n```tsx\nimport { AppBar, Avatar, Badge, Button } from '@bek-ui/react';\n\n<AppBar title=\"Orders\" onBack={goBack} scrolled={scrollY > 0}\n  actions={<Button variant=\"flat\" size=\"xl\" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />\n// Search · Brand — qidiruv maydoni Figma'dagi kabi SearchField (3.12) instance'i\n<AppBar variant=\"search\" onBack={goBack} search={{ 'aria-label': 'Search', value: q, onChange }} />\n<AppBar variant=\"brand\" size=\"m\" leading={<BekLogo size=\"s\" />} search={{ 'aria-label': 'Search' }} actions={…} />\n// Figma \"Show count\" — bildirishnoma tugmasi ustidagi hisoblagich; \"Show action 3\" — Avatar\n<AppBar title=\"Inbox\" actions={<>\n  <span style={{ position: 'relative' }}><Button variant=\"flat\" size=\"xl\" iconOnly startIcon={<BellIcon />}>Notifications</Button><Badge color=\"danger\" size=\"s\">3</Badge></span>\n  <Avatar size=\"s\" name=\"Nurbek\" />\n</>} />\n```\n\n| Prop       | Figma                       | Qiymatlar                                                                            | Default |\n| ---------- | --------------------------- | ------------------------------------------------------------------------------------ | ------- |\n| `variant`  | Variant                     | `title` (orqaga + sarlavha) · `search` (orqaga + qidiruv) · `brand` (logo + qidiruv) | `title` |\n| `size`     | Size                        | `s` 56 (mobil) · `m` 64 (planshet, web)                                              | `s`     |\n| `scrolled` | Scrolled                    | kontent ostidan o'tganda — `surface/card` + `border/hairline` + `Elevation/1`        | `false` |\n| `onBack`   | Show back                   | orqaga tugmasi (Button Flat XL 44, `backLabel`)                                      | —       |\n| `leading`  | Logo                        | logo va h.k.                                                                         | —       |\n| `title`    | Title                       | Title/M (M — Title/L), `<h1>`                                                        | —       |\n| `search`   | Search field                | `SearchField` prop'lari; Filled, o'lcham bar bilan: S → `s` 36 · M → `m` 44          | —       |\n| `children` | —                           | sarlavha o'rnida o'z mazmuningiz (`search` dan ustun)                                | —       |\n| `actions`  | Show action 1–3, Show count | 1–3 ta amal: icon-only Button Flat XL, Badge hisoblagich, Avatar                     | —       |\n\n- Tokenlar: Scrolled=Off — `bg/base`, chegarasiz va soyasiz (bar ekran bilan bitta qatlam); Scrolled=On —\n  `surface/card` + pastki 1 px `border/hairline` + `Elevation/1` (ajralish faqat scrollda). Gap 12, amallar orasi 8\n  (`scale/8`), yon padding `layout/page-margin` (16 · 24 · 32), `z/sticky`. Tegish maydoni ≥ 44.\n- Sarlavhani qisqa tuting, barda ko'pi bilan uchta amal; uzun sarlavha amallarni siqib chiqarmasin — qisqartiring\n  yoki tafsilotni sahifaga o'tkazing.\n- `search`/`brand` da `title` berilsa `<h1>` ekran o'quvchi uchun yashirin qoladi. Hisoblagich (`Show count`) —\n  amal tugmasi ustidagi `Badge` (`status/danger`). `search` ga `aria-label` bering.\n"
     },
     {
       "dir": "avatar",
@@ -774,9 +774,10 @@
       "dir": "bottom-navigation",
       "package": "@bek-ui/react",
       "title": "BottomNavigation",
-      "description": "(+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.",
+      "description": "(+ Bottom nav group, Bottom nav item). Mobil va planshet uchun yagona pastki",
       "exports": [
         "BottomNavigation",
+        "BottomNavGroup",
         "BottomNavItem"
       ],
       "section": {
@@ -794,115 +795,112 @@
         "sets": [
           {
             "name": "Bottom navigation",
-            "id": "783:1337",
-            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=783-1337",
-            "variants": 12,
-            "description": "Mobile bottom navigation with 3–5 destinations built from Bottom nav item. Each item is exposed: set its Label, Icon (any BEK - Icons style; Solid for the selected item), State and Badge directly. Style: Bar (edge to edge) or Floating (pill above content).",
+            "id": "1107:108948",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1107-108948",
+            "variants": 2,
+            "description": "The one bottom navigation for mobile and tablet: a Dual capsule on the leading side and a Solo round capsule on the trailing side. Variant: Mobile (390×104, side inset 24) or Tablet (834×104, side inset 64). Top 16 / bottom 24 leave room for the home indicator. Transparent — sits over content. React: <BottomNavigation device=\"tablet\" />",
             "props": {
-              "Style": [
-                "Bar",
-                "Floating"
-              ],
-              "Items": [
-                "3",
-                "4",
-                "5"
-              ],
-              "Direction": [
-                "LTR",
-                "RTL"
+              "Variant": [
+                "Mobile",
+                "Tablet"
               ]
             },
             "tokens": {
               "color": [
+                "bg/base",
+                "surface/raised"
+              ],
+              "text": [],
+              "effect": [
+                "Elevation/3 Floating"
+              ],
+              "dimension": [
+                "radius/full",
+                "scale/0",
+                "scale/16",
+                "scale/24",
+                "scale/4",
+                "scale/64"
+              ]
+            },
+            "nested": []
+          },
+          {
+            "name": "Bottom nav group",
+            "id": "1107:108907",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1107-108907",
+            "variants": 2,
+            "description": "Capsule inside Bottom navigation. Variant: Dual (two labelled items, 240×64) or Solo (one icon-only item, 64×64). surface/raised + Elevation/3 Floating, radius/full, padding 4, no border. Nested items are exposed.",
+            "props": {
+              "Variant": [
+                "Dual",
+                "Solo"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "accent/soft",
                 "bg/base",
                 "surface/raised",
                 "text/accent",
                 "text/secondary"
               ],
               "text": [
-                "Caption/S"
+                "Label/S"
               ],
               "effect": [
-                "Elevation/1 Raised",
                 "Elevation/3 Floating"
               ],
               "dimension": [
-                "radius/control/md",
                 "radius/full",
-                "scale/2",
+                "scale/0",
+                "scale/4",
                 "scale/56",
-                "scale/64",
-                "scale/8"
+                "scale/6"
               ]
             },
             "nested": []
           },
           {
             "name": "Bottom nav item",
-            "id": "971:1505",
-            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=971-1505",
-            "variants": 30,
-            "description": "Single destination in Bottom navigation. Icon accepts any BEK - Icons style (Stroke Standard by default); use the Solid style for the Selected state. Badge: None, Dot (new content) or Count (number, max &quot;99+&quot;). Width fills the bar; min target 48.",
+            "id": "1107:108881",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1107-108881",
+            "variants": 4,
+            "description": "One destination of Bottom navigation. Variant: Label (Solid icon 24 + label, 116×56) or Icon only (56×56). State: Default · Selected (accent/soft background, text/accent) · Focus. Swap Icon (BEK - Icons, Solid) and set Label.",
             "props": {
               "Label": {
                 "type": "TEXT",
                 "default": "Home"
               },
-              "Show label": {
-                "type": "BOOLEAN",
-                "default": true
-              },
-              "Count": {
-                "type": "TEXT",
-                "default": "2"
-              },
               "Icon": {
                 "type": "INSTANCE_SWAP",
-                "default": "651:24517"
+                "default": "651:24519"
               },
+              "Variant": [
+                "Label",
+                "Icon only"
+              ],
               "State": [
                 "Default",
-                "Pressed",
-                "Selected",
-                "Focus",
-                "Disabled"
-              ],
-              "Badge": [
-                "None",
-                "Dot",
-                "Count"
-              ],
-              "Direction": [
-                "LTR",
-                "RTL"
+                "Selected"
               ]
             },
             "tokens": {
               "color": [
+                "accent/soft",
                 "bg/base",
-                "border/focus",
-                "fill/soft",
-                "status/danger/default",
                 "text/accent",
-                "text/disabled",
-                "text/on-color",
-                "text/primary",
                 "text/secondary"
               ],
               "text": [
-                "Caption/S"
+                "Label/S"
               ],
               "effect": [],
               "dimension": [
-                "radius/control/md",
                 "radius/full",
-                "scale/16",
-                "scale/2",
                 "scale/4",
                 "scale/56",
-                "scale/72",
-                "scale/8"
+                "scale/6"
               ]
             },
             "nested": [
@@ -911,15 +909,16 @@
           }
         ],
         "docTokens": [
-          "Elevation/1",
           "Elevation/3",
-          "fill/soft-pressed",
+          "accent/soft",
+          "radius/full",
           "scale/16",
+          "scale/24",
+          "scale/4",
+          "scale/6",
           "scale/64",
-          "status/danger/default",
           "surface/raised",
           "text/accent",
-          "text/on-color",
           "text/secondary"
         ]
       },
@@ -927,15 +926,15 @@
         {
           "rule": "token-missing",
           "match": "--bek-bg-base",
-          "reason": "bg/base — Figma'da Bottom navigation va Bottom nav item variant frame'lari ortidagi ekran foni (demo), bar o'zi surface/raised. Figma'da variant frame fonini o'chirish (yoki bg/sheet o'ramiga olish) kerak."
+          "reason": "bg/base — Figma'da Bottom navigation / Bottom nav group / Bottom nav item komponent to'plamlari (set) o'ramining foni; komponentning o'zi shaffof (kontent ustida), kapsula surface/raised. Figma'da set fonini bg/sheet ga o'tkazish kerak — shunda bu yozuv olib tashlanadi."
         },
         {
-          "rule": "token-missing",
-          "match": "--bek-border-focus",
-          "reason": "Fokus halqasi BottomNavItem'ga NavAction (navigation papkasi) orqali `.bek-focus-ring` klassi bilan beriladi — border/focus shu umumiy uslubda (styles/focus.css); shu papkada bevosita yozilmaydi."
+          "rule": "token-extra",
+          "match": "--bek-status-danger-default",
+          "reason": "BottomNavItem `badge` (dot / son) — Figma 6.7 ning 2026-10 versiyasida olib tashlangan, lekin ommaviy API buzilmasligi uchun kodda saqlangan (eski ilovalar). Figma'da badge qaytsa — spec'ga tushadi; aks holda keyingi major relizda olib tashlanadi."
         }
       ],
-      "readme": "# BottomNavigation\n\nFigma: **6.7 Bottom navigation** (+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.\n\n```tsx\nimport { BottomNavigation, BottomNavItem } from '@bek-ui/react';\n\n<BottomNavigation>\n  <BottomNavItem href=\"/\" icon={<HomeIcon />} selectedIcon={<HomeSolidIcon />} selected>Home</BottomNavItem>\n  <BottomNavItem href=\"/search\" icon={<SearchIcon />} badge=\"dot\">Search</BottomNavItem>\n  <BottomNavItem href=\"/cart\" icon={<CartIcon />} badge={3}>Cart</BottomNavItem>\n</BottomNavigation>\n<BottomNavigation variant=\"floating\">…</BottomNavigation>\n```\n\n| Prop                     | Qiymatlar                                   | Default |\n| ------------------------ | ------------------------------------------- | ------- |\n| `variant`                | `bar` (chetdan-chetga) · `floating` (pill)  | `bar`   |\n| `BottomNavItem.icon`     | 24 px Stroke ikonka; `selectedIcon` — Solid | —       |\n| `BottomNavItem.badge`    | `'dot'` · son (99 dan katta — \"99+\")        | —       |\n| `BottomNavItem.selected` | `aria-current=\"page\"`, `text/accent`        | `false` |\n| `hideLabel`              | nomni vizual yashirish                      | `false` |\n\n- Bar: 64 + safe area, `surface/raised`, `Elevation/1`, padding 0 8. Floating: radius full, 16 px chetdan, `Elevation/3`. Element 56 balandlik, min 48 kenglik, nom Caption/S; Pressed `fill/soft`; badge `status/danger/default`.\n"
+      "readme": "# BottomNavigation\n\nFigma: **6.7 Bottom navigation** (+ Bottom nav group, Bottom nav item). Mobil va planshet uchun yagona pastki\nnavigatsiya: boshida **Dual** kapsula (ikki nomli manzil), oxirida **Solo** dumaloq kapsula (bitta icon-only manzil).\nFon shaffof — kontent ustida turadi.\n\n```tsx\nimport { BottomNavGroup, BottomNavItem, BottomNavigation } from '@bek-ui/react';\n\n<BottomNavigation>\n  <BottomNavGroup variant=\"dual\">\n    <BottomNavItem href=\"/\" icon={<HomeSolidIcon />} selected>Home</BottomNavItem>\n    <BottomNavItem href=\"/courses\" icon={<BookSolidIcon />}>Courses</BottomNavItem>\n  </BottomNavGroup>\n  <BottomNavGroup variant=\"solo\">\n    <BottomNavItem href=\"/stats\" variant=\"icon-only\" icon={<ChartSolidIcon />}>Statistics</BottomNavItem>\n  </BottomNavGroup>\n</BottomNavigation>\n<BottomNavigation device=\"tablet\">…</BottomNavigation>\n```\n\n| Prop                      | Figma          | Qiymatlar                                                             | Default  |\n| ------------------------- | -------------- | --------------------------------------------------------------------- | -------- |\n| `BottomNavigation.device` | Variant        | `mobile` (yon inset 24) · `tablet` (yon inset 64)                     | `mobile` |\n| `BottomNavGroup.variant`  | Variant        | `dual` (ikki nomli manzil, 240×64) · `solo` (bitta icon-only, 64×64)  | —        |\n| `BottomNavItem.variant`   | Variant        | `label` (ikonka 24 + nom, 116×56) · `icon-only` (56×56, nom yashirin) | `label`  |\n| `BottomNavItem.icon`      | Icon           | 24 px BEK Icons **Solid**; `selectedIcon` — tanlangandagi ikonka      | —        |\n| `BottomNavItem.selected`  | State=Selected | `aria-current=\"page\"`, `accent/soft` fon + `text/accent`              | `false`  |\n| `BottomNavItem.children`  | Label          | bir so'zli nom (icon-only da ham ekran o'quvchi uchun majburiy)       | —        |\n| `BottomNavItem.href`      | —              | berilsa `<a>`, aks holda `<button>`                                   | —        |\n\n- Tokenlar: kapsula `surface/raised` + `Elevation/3 Floating`, `radius/full`, padding 4 (`scale/4`); element\n  56 balandlik, padding 6 (`scale/6`), gap 4, nom Label/S (12/16 · medium); Default `text/secondary`, Selected\n  `accent/soft` + `text/accent`. Qator: yuqori 16, past 24 (home indicator; `safe-area-inset-bottom` dan kam emas),\n  yon 24 (Mobile) / 64 (Tablet). Dark — tokenlardan (soya Dark'da o'chadi).\n- Kapsulalar orasidagi bo'sh joy shaffof va bosishni kontentga o'tkazadi (`pointer-events`).\n- Fokus — `.bek-focus-ring` (Figma State=Focus). RTL — tartib avtomatik ko'zgulanadi, Dual boshlang'ich tomonda.\n\n## Qoidalar (Figma doc)\n\n- Dual'da ikki nomli manzil + Solo'da bitta icon-only manzil. Solid ikonkalar, bir so'zli nomlar, har ekranda bir xil tartib.\n- Dual'ga uchinchi element yoki Solo'ga nom qo'shmang; tanlangan element uchun Stroke ikonka ishlatmang.\n- Root ekranlarda ko'rinadi; ichki (pushed) ekranlarda va checkout'da yashiring. Web'da ishlatilmaydi — 6.2 Navigation.\n\n## Eski API\n\n- `variant=\"bar\" | \"floating\"` — **eskirgan** (Figma'da endi yo'q), e'tiborsiz qoldiriladi.\n- `BottomNavigation` ichiga to'g'ridan-to'g'ri `BottomNavItem` lar berilsa, ular bitta kapsulaga o'raladi.\n- `hideLabel` — eskirgan, `variant=\"icon-only\"` bilan bir xil. `badge` (`'dot'` · son, 99+ dan keyin \"99+\") —\n  Figma'dan olib tashlangan, moslik uchun saqlangan; yangi dizaynda ishlatmang.\n"
     },
     {
       "dir": "breadcrumb",
@@ -1757,7 +1756,6 @@
                 "border/focus",
                 "border/strong",
                 "fill/disabled",
-                "fill/primary",
                 "fill/soft-hover",
                 "text/disabled",
                 "text/on-color",
@@ -1938,16 +1936,8 @@
             "id": "797:285",
             "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=797-285",
             "variants": 6,
-            "description": "Checkout bar — the sticky bottom bar that moves the order forward. Cart: Info wrap + full-width “Go to cart · total”. Checkout: total + Pay with a legal line. Floating: a compact accent pill over the menu while items are in the cart. Bottom padding includes the home indicator.",
+            "description": "Checkout bar — the sticky bottom bar that moves the order forward. Since 2026-10-12 Cart and Checkout are built on 6.9 Floating action container (exposed): Cart = Layout Single + Info wrap, Checkout = Layout Summary (total + Pay) + legal line. Floating is a compact accent pill over the content. Show info, Show legal, Legal and Home indicator space now come from the nested Floating action container",
             "props": {
-              "Show info": {
-                "type": "BOOLEAN",
-                "default": true
-              },
-              "Show legal": {
-                "type": "BOOLEAN",
-                "default": true
-              },
               "Type": [
                 "Cart",
                 "Checkout",
@@ -1963,20 +1953,12 @@
                 "accent/default",
                 "bg/base",
                 "fill/on-color-hover",
-                "surface/raised",
-                "text/on-color",
-                "text/primary",
-                "text/secondary",
-                "text/tertiary"
+                "text/on-color"
               ],
               "text": [
-                "Caption/L",
-                "Caption/M",
-                "Label/L",
-                "Title/L"
+                "Label/L"
               ],
               "effect": [
-                "Elevation/1 Raised",
                 "Elevation/3 Floating"
               ],
               "dimension": [
@@ -1985,13 +1967,11 @@
                 "scale/12",
                 "scale/16",
                 "scale/24",
-                "scale/32",
                 "scale/8"
               ]
             },
             "nested": [
-              "Button",
-              "Info wrap",
+              "Floating action container",
               "shopping-bag-01"
             ]
           }
@@ -2013,10 +1993,10 @@
         {
           "rule": "token-missing",
           "match": "--bek-bg-base",
-          "reason": "bg/base — Figma'da Checkout bar variant frame'i ortidagi ekran foni (demo); bar o'zi surface/raised + Elevation/1. Doc'da esa \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga moslanishi kerak."
+          "reason": "bg/base — Figma'da Checkout bar komponent to'plami (set) o'ramining foni (demo), bar o'zi emas. Figma'da set fonini bg/sheet ga o'tkazish kerak. Doc'da esa hali \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga (Floating action container: surface/raised + Elevation/1) moslanishi kerak."
         }
       ],
-      "readme": "# CheckoutBar · CartPill\n\nFigma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.\n\n```tsx\nimport { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';\n\n<CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}\n  action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />\n<CheckoutBar type=\"checkout\" total=\"159 000 soʻm\" action={{ label: 'Pay', loading: paying }}\n  legal=\"By tapping Pay you agree to the terms\" />\n<CartPill icon={<BagIcon />} label=\"Cart · 3 items\" total=\"147 000 soʻm\" onClick={openCart} />\n```\n\n| Prop (`CheckoutBar`)   | Qiymatlar                                           | Default |\n| ---------------------- | --------------------------------------------------- | ------- |\n| `type`                 | `cart` · `checkout`                                 | `cart`  |\n| `info`                 | yuqoridagi izoh (InfoWrap)                          | —       |\n| `total` · `totalLabel` | jami (Title/L) va uning nomi (Caption/L)            | `Total` |\n| `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |\n| `legal`                | Caption/M `text/tertiary`                           | —       |\n\n- `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.\n- `CartPill` (Floating): 64 px (`control/height/3xl`) accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.\n"
+      "readme": "# CheckoutBar · CartPill\n\nFigma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.\n\n```tsx\nimport { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';\n\n<CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}\n  action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />\n<CheckoutBar type=\"checkout\" total=\"159 000 soʻm\" action={{ label: 'Pay', loading: paying }}\n  legal=\"By tapping Pay you agree to the terms\" />\n<CartPill icon={<BagIcon />} label=\"Cart · 3 items\" total=\"147 000 soʻm\" onClick={openCart} />\n```\n\n| Prop (`CheckoutBar`)   | Qiymatlar                                           | Default |\n| ---------------------- | --------------------------------------------------- | ------- |\n| `type`                 | `cart` · `checkout`                                 | `cart`  |\n| `info`                 | yuqoridagi izoh (InfoWrap)                          | —       |\n| `total` · `totalLabel` | jami (Title/L) va uning nomi (Caption/L)            | `Total` |\n| `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |\n| `legal`                | Caption/M `text/tertiary`                           | —       |\n\n- `FloatingActions` (6.9) asosida, `position=\"sticky\"`: `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`. Boshqa joylashuvlar (ikki tugma, fixed) kerak bo'lsa — `FloatingActions` ni to'g'ridan-to'g'ri ishlating.\n- `CartPill` (Floating): 64 px (`control/height/3xl`) accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.\n- Figma (2026-10-12 dan): Cart va Checkout turlari **6.9 Floating action container** ustiga qurilgan — Cart =\n  Layout Single + Info wrap, Checkout = Layout Summary (jami + Pay) + huquqiy matn; `info`, `legal` va home\n  indicator joyi shu konteynerdan keladi. Kodda ham `CheckoutBar` — `FloatingActions` ustidagi yupqa o'ram (API o'zgarmadi).\n"
     },
     {
       "dir": "chip",
@@ -3413,8 +3393,8 @@
             "tokens": {
               "color": [
                 "accent/soft",
+                "bg/sheet",
                 "border/focus",
-                "fill/primary",
                 "fill/soft-hover",
                 "text/accent",
                 "text/disabled",
@@ -3604,7 +3584,7 @@
             "id": "115:998",
             "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=115-998",
             "variants": 36,
-            "description": "BEK logo — one mark, one wordmark, any product name.\n\nProduct: type the product name under BEK (Design System, Academy, E-Store, Icons, Digital Legacy …). Title Case, 1–3 words, ≤ 18 characters.\nShow product: off = masterbrand &quot;BEK&quot; only.\nVariant: Horizontal (default for headers), Vertical (near-square spaces), Mark (favicon, app icon, avatars).\nSize: S 24 · M 40 · L 64 px mark.\nColor: G",
+            "description": "BEK logo — one mark, one wordmark, any product name.\n\nProduct: type the product name under BEK (Design System, Academy, E-Store, Icons, Digital Legacy …). Title Case, 1–3 words, ≤ 18 characters.\nShow product: off = masterbrand \"BEK\" only.\nVariant: Horizontal (default for headers), Vertical (near-square spaces), Mark (favicon, app icon, avatars).\nSize: S 24 · M 40 · L 64 px mark.\nColor: G",
             "props": {
               "Product": {
                 "type": "TEXT",
@@ -4914,7 +4894,7 @@
               "color": [
                 "accent/default",
                 "accent/soft",
-                "bg/sheet",
+                "bg/base",
                 "fill/soft-pressed",
                 "status/success/default",
                 "status/success/soft",
@@ -4967,7 +4947,13 @@
           "text/secondary"
         ]
       },
-      "accepted": [],
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "bg/base faqat komponent set o'ramining (794:463) foni — widget o'zi surface/card, variantlarda bg/base ishlatilmaydi (use_figma bilan tekshirildi). Avval o'ram bg/sheet edi; kodda talab qilinmaydi. Figma'da set o'ramini yana bg/sheet ga qaytarish kerak (o'ram tokeni bir xil bo'lsin)."
+        }
+      ],
       "readme": "# OrderWidget\n\nFigma: **4.15 Widget · Active order** — jarayondagi buyurtma holati (bosh ekranda). `status`: `accepted` · `preparing` · `on-the-way` · `delivered`; `size`: `compact` · `expanded` (4 bo'lakli progress + bosqich nomlari).\n\n```tsx\n<OrderWidget\n  status=\"preparing\"\n  size=\"expanded\"\n  icon={<FireIcon />}\n  title=\"Buyurtmangiz tayyorlanmoqda\"\n  subtitle=\"Taxminan 12 daqiqa\"\n  href=\"/orders/42\"\n  stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', \"Yo'lda\", 'Yetkazildi']}\n  progressLabel=\"Buyurtma holati\"\n/>\n```\n\nBosqichlar chizig'i `role=\"progressbar\"`: nomi `progressLabel` (standart \"Order status\"), qiymat matni joriy bosqich yorlig'i. `href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.\n"
     },
     {
@@ -6907,11 +6893,11 @@
               "color": [
                 "accent/default",
                 "accent/hover",
+                "bg/sheet",
                 "border/accent",
                 "border/focus",
                 "border/strong",
                 "fill/disabled",
-                "fill/primary",
                 "fill/soft-hover",
                 "text/disabled",
                 "text/on-color",
@@ -6942,7 +6928,7 @@
         ]
       },
       "accepted": [],
-      "readme": "# Radio\n\nFigma: **3.5 Radio** — bitta tanlov, o'lcham `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<fieldset>\n  <legend>Tarif</legend>\n  <Radio name=\"plan\" value=\"free\" defaultChecked>\n    Free\n  </Radio>\n  <Radio name=\"plan\" value=\"pro\">\n    Pro\n  </Radio>\n</fieldset>\n```\n\nNative `<input type=\"radio\">`: bir guruh — bir xil `name`, guruh bitta Tab to'xtashi, ↑↓ bilan almashadi. `size`: `s` · `m` · `l` (default `s`).\n\n| Figma prop   | Kod                                                |\n| ------------ | -------------------------------------------------- |\n| `Size`       | `size`: `s` 16 · `m` 20 · `l` 24                   |\n| `Selected`   | native `checked` / `defaultChecked` (On = checked) |\n| `Label`      | `children`                                         |\n| `Show label` | `children` bo'lmasa — `aria-label` bering          |\n| `State`      | `:hover` · `:focus-visible` · `disabled`           |\n\nTokenlar: doira `fill/primary` + `border/strong` (hover — `border/accent`), tanlangan `accent/default` (hover — `accent/hover`), nuqta `text/on-color`, radius `radius/full`, label Body/S (`l` — Body/M).\n"
+      "readme": "# Radio\n\nFigma: **3.5 Radio** — bitta tanlov, o'lcham `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<fieldset>\n  <legend>Tarif</legend>\n  <Radio name=\"plan\" value=\"free\" defaultChecked>\n    Free\n  </Radio>\n  <Radio name=\"plan\" value=\"pro\">\n    Pro\n  </Radio>\n</fieldset>\n```\n\nNative `<input type=\"radio\">`: bir guruh — bir xil `name`, guruh bitta Tab to'xtashi, ↑↓ bilan almashadi. `size`: `s` · `m` · `l` (default `s`).\n\n| Figma prop   | Kod                                                |\n| ------------ | -------------------------------------------------- |\n| `Size`       | `size`: `s` 16 · `m` 20 · `l` 24                   |\n| `Selected`   | native `checked` / `defaultChecked` (On = checked) |\n| `Label`      | `children`                                         |\n| `Show label` | `children` bo'lmasa — `aria-label` bering          |\n| `State`      | `:hover` · `:focus-visible` · `disabled`           |\n\nTokenlar: doira `bg/sheet` + `border/strong` (hover — `border/accent`), tanlangan `accent/default` (hover — `accent/hover`), nuqta `text/on-color`, radius `radius/full`, label Body/S (`l` — Body/M).\n"
     },
     {
       "dir": "rating",
@@ -7692,7 +7678,7 @@
                 "type": "TEXT",
                 "default": "Label 4"
               },
-              "Style": [
+              "Variant": [
                 "Solid",
                 "Overlay"
               ],
@@ -8243,7 +8229,7 @@
             "id": "299:68",
             "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=299-68",
             "variants": 24,
-            "description": "Range input. Type = Single | Range × Size = S | M | L × State = Default | Hover | Disabled = 18 variants. Range has two thumbs, optional value labels above (Show value labels) and &quot;From / To&quot; Text fields below (Show inputs, exposed). Min / Max edit the labels. Existing Single instances are unchanged. Active track = color/background/accent/default (hover …/hover), so the selected value me",
+            "description": "Range input. Type = Single | Range × Size = S | M | L × State = Default | Hover | Disabled = 18 variants. Range has two thumbs, optional value labels above (Show value labels) and \"From / To\" Text fields below (Show inputs, exposed). Min / Max edit the labels. Existing Single instances are unchanged. Active track = color/background/accent/default (hover …/hover), so the selected value me",
             "props": {
               "Show value labels": {
                 "type": "BOOLEAN",
@@ -8283,7 +8269,6 @@
                 "accent/hover",
                 "bg/sheet",
                 "border/focus",
-                "fill/primary",
                 "fill/secondary",
                 "fill/tertiary",
                 "text/disabled",
@@ -9218,8 +9203,8 @@
             "tokens": {
               "color": [
                 "accent/soft",
+                "bg/sheet",
                 "border/hairline",
-                "fill/primary",
                 "fill/secondary",
                 "fill/soft-hover",
                 "text/disabled",
@@ -9792,9 +9777,9 @@
             },
             "tokens": {
               "color": [
+                "bg/sheet",
                 "border/danger",
                 "border/focus",
-                "fill/primary",
                 "fill/soft",
                 "fill/soft-hover",
                 "fill/soft-pressed",

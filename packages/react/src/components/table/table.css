@@ -54,7 +54,7 @@
 }
 
 .bek-table__td {
-  background: var(--bek-fill-primary);
+  background: var(--bek-bg-sheet);
 }
 
 /* Tor ustunlar: Checkbox (select) va tartib raqami (index). */

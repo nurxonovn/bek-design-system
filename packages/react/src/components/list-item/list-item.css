@@ -13,7 +13,7 @@
   box-sizing: border-box;
   min-height: var(--bek-list-min);
   padding: var(--bek-list-py) var(--bek-scale-16);
-  background: var(--bek-fill-primary);
+  background: var(--bek-bg-sheet);
   color: var(--bek-text-primary);
   font-family: var(--bek-family-sans);
   text-decoration: none;
@@ -109,7 +109,7 @@
 }
 
 .bek-list-item--disabled:hover {
-  background: var(--bek-fill-primary);
+  background: var(--bek-bg-sheet);
 }
 
 .bek-list-item--disabled .bek-list-item__title,

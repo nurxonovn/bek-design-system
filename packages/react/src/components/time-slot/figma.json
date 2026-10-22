@@ -20,7 +20,7 @@
       "variants": 4,
       "size": {
         "w": 110,
-        "h": 60
+        "h": 64
       },
       "tokens": {
         "color": [
@@ -55,7 +55,7 @@
       "variants": 2,
       "size": {
         "w": 390,
-        "h": 372
+        "h": 384
       },
       "tokens": {
         "color": [
