@@ -695,3 +695,179 @@ dd {
     flex-direction: column;
   }
 }
+
+/* Dark: mockup status bar va home indicator qorong'i fonga ergashadi (Figma 10.2 Content=Light) */
+[data-theme='dark'] .tpl-phone .bek-system-bar--dark {
+  color: var(--bek-static-white);
+}
+
+/* 8.5 Finance (Mobile) — ekran foni bg/base, kartalar surface/card radius 16 (surface/lg) */
+.tpl-fin-phone {
+  background: var(--bek-bg-base);
+}
+
+.tpl-fin-phone .bek-app-bar {
+  background: var(--bek-bg-base);
+}
+
+/* Floating action container ostidagi Home indicator — Figma'dagidek panel ustida */
+.tpl-fin-phone--actions > .bek-home-indicator {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--bek-z-sticky);
+  pointer-events: none;
+}
+
+.tpl-fin-phone .bek-floating-actions,
+.tpl-fin-phone .bek-bottom-nav {
+  flex-shrink: 0;
+}
+
+.tpl-fin-content {
+  gap: var(--bek-scale-24);
+  padding: var(--bek-scale-16);
+}
+
+.tpl-fin-content--loose {
+  gap: var(--bek-scale-32);
+}
+
+.tpl-fin-content--tight {
+  gap: var(--bek-scale-12);
+}
+
+.tpl-stack-12 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-12);
+}
+
+.tpl-fin-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-16);
+  padding: var(--bek-scale-20);
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-surface-card);
+}
+
+.tpl-fin-card--s {
+  gap: var(--bek-scale-8);
+  padding: var(--bek-scale-16);
+}
+
+.tpl-fin-accent {
+  flex-shrink: 0;
+  color: var(--bek-text-accent);
+}
+
+.tpl-fin-tertiary {
+  color: var(--bek-text-tertiary);
+}
+
+.tpl-fin-end {
+  align-items: flex-end;
+}
+
+.tpl-fin-start {
+  align-self: flex-start;
+}
+
+/* Budget */
+.tpl-fin-budget__header {
+  display: grid;
+  grid-template-columns: 1fr var(--bek-scale-128);
+  column-gap: var(--bek-scale-8);
+  row-gap: var(--bek-scale-4);
+  align-items: center;
+}
+
+.tpl-fin-budget__amount {
+  grid-column: 1 / -1;
+}
+
+.tpl-fin-budget .bek-progress {
+  width: 100%;
+}
+
+.tpl-fin-list {
+  overflow: hidden;
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-surface-card);
+}
+
+/* Credit score */
+.tpl-fin-header {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-12) var(--bek-scale-16);
+}
+
+.tpl-fin-score,
+.tpl-fin-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bek-scale-8);
+  text-align: center;
+}
+
+.tpl-fin-range {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-12);
+  align-self: stretch;
+  padding-top: var(--bek-scale-16);
+}
+
+.tpl-fin-tiles,
+.tpl-fin-services {
+  align-items: start;
+}
+
+.tpl-fin-tile {
+  gap: var(--bek-scale-12);
+  padding: var(--bek-scale-16);
+}
+
+/* Confirm payment */
+.tpl-fin-parties {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+}
+
+.tpl-fin-party__values {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-8);
+}
+
+/* Payment method */
+.tpl-fin-balance {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bek-scale-4);
+  padding: var(--bek-scale-16);
+  border-radius: var(--bek-radius-surface-lg);
+  background: var(--bek-accent-soft);
+}
+
+/* Split promo */
+.tpl-fin-service {
+  gap: var(--bek-scale-4);
+}
+
+.tpl-fin-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--bek-scale-96);
+  margin-top: var(--bek-scale-8);
+  border-radius: var(--bek-radius-surface-md);
+  background: var(--bek-accent-soft);
+  color: var(--bek-text-accent);
+}

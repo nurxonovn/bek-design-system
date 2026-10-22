@@ -252,6 +252,19 @@ Umumiy:
 - Doc freymlaridagi bezak belgilar qatorlari oddiy TEXT — extractor doc matnini ifloslantiradi; `_Rain` kabi
   guruhga olish kerak.
 
+### A15. 8.5 Finance (Mobile) shabloni (2026-10-22)
+
+- Kartalar (`surface/card`, r16) Card (4.3) instance emas — Card radiusi `surface/md` 12; yo Card ishlatilsin, yo
+  radius kelishilsin. Credit score «Header» freymi ajratilgan — App bar (6.5) instance'i (leading Avatar) bo'lishi
+  kerak. «3D slot» — vaqtinchalik `_Icon`.
+- Ma'lumot nomuvofiqligi: Budget'da Progress `Value=62%`, Badge 44% (4 605 000 / 10 354 000); Credit score'da 62%,
+  (782−300)/550 ≈ 88%. Kodda haqiqiy qiymat.
+- Matn sig'maydi: Budget «Amount» freymi 182 px fixed; Split promo xizmat kartasi 180 fixed, Description `FILL` —
+  kesiladi; HUG bo'lishi kerak.
+- List item (4.4) Size=M + description: instance 56 fixed, kontent 74 — min 56 + HUG bo'lishi kerak (kod shunday).
+- Bottom nav: tanlanmagan «Courses» ikonkasi ham Solid — 6.7 doc'ga ko'ra Stroke bo'lishi kerak.
+- Avatar: Figma'dagi erkin `Initials` («UX») — kodda harflar `name` dan olinadi.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |
