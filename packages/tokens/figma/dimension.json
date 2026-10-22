@@ -869,17 +869,17 @@
       "codeSyntax": {
         "WEB": "var(--bek-control-height-2xl)"
       },
-      "description": "Tugma, input, select balandligi — 2xl.",
+      "description": "Control height 2xl = 56px — paired with field/height/lg.",
       "scopes": ["WIDTH_HEIGHT"],
       "values": {
         "Mobile": {
-          "$alias": "Dimension/scale/52"
+          "$alias": "Dimension/scale/56"
         },
         "Tablet": {
-          "$alias": "Dimension/scale/52"
+          "$alias": "Dimension/scale/56"
         },
         "Web": {
-          "$alias": "Dimension/scale/52"
+          "$alias": "Dimension/scale/56"
         }
       }
     },
@@ -889,17 +889,17 @@
       "codeSyntax": {
         "WEB": "var(--bek-control-height-3xl)"
       },
-      "description": "Tugma, input, select balandligi — 3xl.",
+      "description": "Control height 3xl = 64px — paired with field/height/xl.",
       "scopes": ["WIDTH_HEIGHT"],
       "values": {
         "Mobile": {
-          "$alias": "Dimension/scale/60"
+          "$alias": "Dimension/scale/64"
         },
         "Tablet": {
-          "$alias": "Dimension/scale/60"
+          "$alias": "Dimension/scale/64"
         },
         "Web": {
-          "$alias": "Dimension/scale/60"
+          "$alias": "Dimension/scale/64"
         }
       }
     },
@@ -1848,6 +1848,126 @@
         "Mobile": 1600,
         "Tablet": 1600,
         "Web": 1600
+      }
+    },
+    {
+      "name": "field/height/xs",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-field-height-xs)"
+      },
+      "description": "Field height XS = 32px. Buttons beside a field use the same height (see 1.12 Forms · height pairing). Compact: Web/Tablet tool UI only; hit area stays 44 (target/min).",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/32"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/32"
+        }
+      }
+    },
+    {
+      "name": "field/height/sm",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-field-height-sm)"
+      },
+      "description": "Field height SM = 36px. Buttons beside a field use the same height (see 1.12 Forms · height pairing).",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/36"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/36"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/36"
+        }
+      }
+    },
+    {
+      "name": "field/height/md",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-field-height-md)"
+      },
+      "description": "Field height MD = 44px. Buttons beside a field use the same height (see 1.12 Forms · height pairing).",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/44"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/44"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/44"
+        }
+      }
+    },
+    {
+      "name": "field/height/lg",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-field-height-lg)"
+      },
+      "description": "Field height LG = 56px. Buttons beside a field use the same height (see 1.12 Forms · height pairing).",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/56"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/56"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/56"
+        }
+      }
+    },
+    {
+      "name": "field/height/xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-field-height-xl)"
+      },
+      "description": "Field height XL = 64px. Buttons beside a field use the same height (see 1.12 Forms · height pairing).",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/64"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/64"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/64"
+        }
+      }
+    },
+    {
+      "name": "field/height/2xl",
+      "type": "FLOAT",
+      "codeSyntax": {
+        "WEB": "var(--bek-field-height-2xl)"
+      },
+      "description": "Field height 2XL = 72px. Underlined Text field only — login / onboarding hero inputs.",
+      "scopes": ["WIDTH_HEIGHT"],
+      "values": {
+        "Mobile": {
+          "$alias": "Dimension/scale/72"
+        },
+        "Tablet": {
+          "$alias": "Dimension/scale/72"
+        },
+        "Web": {
+          "$alias": "Dimension/scale/72"
+        }
       }
     }
   ]

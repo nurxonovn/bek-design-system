@@ -14931,7 +14931,11 @@
         "--bek-dataviz-axis": "#0a0a0a1e",
         "--bek-dataviz-grid": "#0a0a0a0b",
         "--bek-dataviz-label": "#656568",
-        "--bek-dataviz-track": "#e2e2e9"
+        "--bek-dataviz-track": "#e2e2e9",
+        "--bek-effect-matrix-bg": "#0e0e10",
+        "--bek-effect-matrix-head": "#80dc97",
+        "--bek-effect-matrix-trail": "#31b853",
+        "--bek-effect-matrix-fade": "#1d602e"
       },
       "dark": {
         "--bek-fill-primary": "#111111",
@@ -15070,7 +15074,11 @@
         "--bek-dataviz-axis": "#ffffff1e",
         "--bek-dataviz-grid": "#ffffff0e",
         "--bek-dataviz-label": "#acacb0",
-        "--bek-dataviz-track": "#2d2d31"
+        "--bek-dataviz-track": "#2d2d31",
+        "--bek-effect-matrix-bg": "#0e0e10",
+        "--bek-effect-matrix-head": "#80dc97",
+        "--bek-effect-matrix-trail": "#31b853",
+        "--bek-effect-matrix-fade": "#1d602e"
       }
     },
     "dimension": {
@@ -15131,8 +15139,8 @@
         "--bek-control-height-md": "28px",
         "--bek-control-height-lg": "36px",
         "--bek-control-height-xl": "44px",
-        "--bek-control-height-2xl": "52px",
-        "--bek-control-height-3xl": "60px",
+        "--bek-control-height-2xl": "56px",
+        "--bek-control-height-3xl": "64px",
         "--bek-control-padding-xs": "8px",
         "--bek-control-padding-sm": "8px",
         "--bek-control-padding-md": "12px",
@@ -15182,7 +15190,13 @@
         "--bek-chart-legend-gap": "12px",
         "--bek-chart-donut-thickness": "20px",
         "--bek-motion-duration-chart-enter": "400ms",
-        "--bek-motion-duration-live-pulse": "1600ms"
+        "--bek-motion-duration-live-pulse": "1600ms",
+        "--bek-field-height-xs": "32px",
+        "--bek-field-height-sm": "36px",
+        "--bek-field-height-md": "44px",
+        "--bek-field-height-lg": "56px",
+        "--bek-field-height-xl": "64px",
+        "--bek-field-height-2xl": "72px"
       },
       "tablet": {
         "--bek-scale-0": "0",
@@ -15241,8 +15255,8 @@
         "--bek-control-height-md": "28px",
         "--bek-control-height-lg": "36px",
         "--bek-control-height-xl": "44px",
-        "--bek-control-height-2xl": "52px",
-        "--bek-control-height-3xl": "60px",
+        "--bek-control-height-2xl": "56px",
+        "--bek-control-height-3xl": "64px",
         "--bek-control-padding-xs": "8px",
         "--bek-control-padding-sm": "8px",
         "--bek-control-padding-md": "12px",
@@ -15292,7 +15306,13 @@
         "--bek-chart-legend-gap": "16px",
         "--bek-chart-donut-thickness": "24px",
         "--bek-motion-duration-chart-enter": "400ms",
-        "--bek-motion-duration-live-pulse": "1600ms"
+        "--bek-motion-duration-live-pulse": "1600ms",
+        "--bek-field-height-xs": "32px",
+        "--bek-field-height-sm": "36px",
+        "--bek-field-height-md": "44px",
+        "--bek-field-height-lg": "56px",
+        "--bek-field-height-xl": "64px",
+        "--bek-field-height-2xl": "72px"
       },
       "web": {
         "--bek-scale-0": "0",
@@ -15351,8 +15371,8 @@
         "--bek-control-height-md": "28px",
         "--bek-control-height-lg": "36px",
         "--bek-control-height-xl": "44px",
-        "--bek-control-height-2xl": "52px",
-        "--bek-control-height-3xl": "60px",
+        "--bek-control-height-2xl": "56px",
+        "--bek-control-height-3xl": "64px",
         "--bek-control-padding-xs": "8px",
         "--bek-control-padding-sm": "8px",
         "--bek-control-padding-md": "12px",
@@ -15402,7 +15422,13 @@
         "--bek-chart-legend-gap": "16px",
         "--bek-chart-donut-thickness": "28px",
         "--bek-motion-duration-chart-enter": "400ms",
-        "--bek-motion-duration-live-pulse": "1600ms"
+        "--bek-motion-duration-live-pulse": "1600ms",
+        "--bek-field-height-xs": "32px",
+        "--bek-field-height-sm": "36px",
+        "--bek-field-height-md": "44px",
+        "--bek-field-height-lg": "56px",
+        "--bek-field-height-xl": "64px",
+        "--bek-field-height-2xl": "72px"
       }
     },
     "typography": {

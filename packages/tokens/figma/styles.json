@@ -857,6 +857,104 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Gradient/Brand",
+      "description": "Brand gradient, 135°. Hero, onboarding, premium promo. Max one per screen.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#a78bfaff"],
+            [1, "#6c9bf5ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradient/Radial/Brand",
+      "description": "Most accented. Square-ish blocks with an anchor object in one corner. Rotate the handle to the anchor corner.",
+      "paints": [
+        {
+          "t": "GRADIENT_RADIAL",
+          "o": 1,
+          "stops": [
+            [0, "#a78bfaff"],
+            [1, "#6c9bf5ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradient/Mono/Accent",
+      "description": "Least accented. Soft tint fading to the sheet. Safe with buttons and links on top.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#e1e7faff"],
+            [1, "#f8f8f9ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradient/Mono/Success",
+      "description": "Mono gradient · success.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#e0f6e5ff"],
+            [1, "#f8f8f9ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradient/Mono/Warning",
+      "description": "Mono gradient · warning.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#ffeddeff"],
+            [1, "#f8f8f9ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradient/Mono/Danger",
+      "description": "Mono gradient · danger.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#ffe0e1ff"],
+            [1, "#f8f8f9ff"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradient/Mono/Info",
+      "description": "Mono gradient · info.",
+      "paints": [
+        {
+          "t": "GRADIENT_LINEAR",
+          "o": 1,
+          "stops": [
+            [0, "#d8edffff"],
+            [1, "#f8f8f9ff"]
+          ]
+        }
+      ]
     }
   ]
 }

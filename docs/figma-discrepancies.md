@@ -71,6 +71,16 @@ Bu tokenlar `@bek-ui/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
 - Demo fonlari komponent ichida: `bg/base` (Checkout bar, Bottom navigation, Bottom nav item, Date picker, Time slot) — `bg/sheet` o'ram sifatida ishlatilsa checker e'tiborsiz qoldiradi.
 - 10.2 / 10.3: nested native (iOS 27 / M3) instance'lar `static/dark`, `static/white`, `surface/card`, `surface/raised` ga bog'lanmagan.
 
+### A6. Variables (2026-10-22 sinxron)
+
+- Variable **description** maydonlarida apostrof va qo'shtirnoq HTML entity bo'lib saqlangan: `o&#39;lcham`,
+  `&quot;Other&quot;` (`scale/*`, `icon/*`, `text/*`, `fill/*`, `_doc/*`, `dataviz/categorical/*` va boshqalar —
+  ~70 ta). Figma'da `'` va `"` ga qaytarish kerak. Eksportda kod tomonda decode qilinadi (oldingi qiymat saqlangan).
+- `effect/matrix/*` — Color kolleksiyasida, lekin faqat 2.6 Backgrounds uchun (UI emas). Light/Dark qiymati bir xil;
+  alohida kolleksiya yoki `hiddenFromPublishing` + codeSyntax bilan `effect/` guruhi aniq ajratilsa yaxshi.
+- `brand/3d-violet`, `brand/3d-blue` endi yashirin va codeSyntax'siz — `--brand-3d-*` palitra o'zgaruvchilari
+  `palette.css` dan chiqdi (kodda ishlatilmagan). Ular faqat `gradient/brand-start/end` orqali.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |
