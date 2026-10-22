@@ -7,4 +7,5 @@
 @import '@bek-ui/tokens/typography.css';
 @import '@bek-ui/tokens/materials.css';
 @import '@bek-ui/react/styles.css';
+@import '@bek-ui/charts/styles.css';
 @import './bek-bridge.css';

@@ -106,6 +106,7 @@ import {
   Truck,
   User,
 } from 'lucide-react';
+import { chartDemos } from './charts';
 
 // Jonli namunalar — har komponent papkasi (dir) uchun bitta demo. README'dagi misollar asosida.
 // Yangi komponent qo'shilganda shu ro'yxatga demo qo'shing; bo'lmasa katalog "Namuna tez orada" ko'rsatadi.
@@ -135,6 +136,7 @@ const Photo = ({ label = 'Rasm' }: { label?: string }) => (
 );
 
 export const demos: Record<string, ComponentType> = {
+  ...chartDemos,
   accordion: () => (
     <Col>
       <Accordion>

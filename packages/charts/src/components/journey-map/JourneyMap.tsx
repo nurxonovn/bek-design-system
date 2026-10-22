@@ -193,8 +193,16 @@ export function JourneyMap({
 }: JourneyMapProps) {
   return (
     <figure
+      // Keng kanvas gorizontal skroll qiladi — klaviaturadan ham (WCAG 2.1.1, axe scrollable-region-focusable).
+      tabIndex={0}
       {...rest}
-      className={cx('bek-diagram', 'bek-journey', `bek-journey--${layout}`, className)}
+      className={cx(
+        'bek-diagram',
+        'bek-journey',
+        `bek-journey--${layout}`,
+        'bek-focus-ring',
+        className,
+      )}
       aria-label={label}
     >
       {layout === 'compact' ? (
