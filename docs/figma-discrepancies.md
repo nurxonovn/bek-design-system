@@ -150,6 +150,18 @@ Ikkala sahifa `--strict` 0 bilan kodga o'tdi (`accepted[]` bo'sh). Figma tomonid
   balandliklari 260 / 180.
 - Menu panel `Search` qismida endi nested Search field (3.12) — kodda `SearchField size="s"`.
 
+### A9. Yangi inputlar: 3.21 Scrub field, 3.6 Switch field, 3.4 Checkbox field, 3.20 Control group (2026-10-22)
+
+- Set o'rami foni: Scrub/Switch/Checkbox field — `bg/base`, Control group — `surface/card`; `bg/sheet` ga o'tkazish
+  kerak (kodda `accepted`).
+- Scrub field: Label qatlamida `textTruncation = DISABLED`, doc esa "Truncates, never wraps" — "Truncate text" ni
+  yoqish kerak. L o'lchamida Focus ring radiusi 8, konteyner 12 (`radius/control/lg`) — moslash kerak.
+- Scrub field fill'lari tokenga bog'langan, lekin ustidan paint opacity (fill/soft 0.07, fill/soft-hover 0.12,
+  fill/soft-pressed 0.17) — rang token qiymatidan farq qiladi; opacity'ni olib tashlash kerak.
+- Switch field / Checkbox field doc'ida "Label Body/M", S varianti `Label/M` — doc'ga "S — Label/M · M — Body/M".
+- 4 ta set tavsifida HTML entity (`&lt;ScrubField … /&gt;`); doc frame'larda "Design tokens" o'rniga "Tokens".
+- 3.20 sahifasidagi **Chip group** (1179:381) va **Range field** (1179:799) set'lari kodda hali yo'q (rejada emas).
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

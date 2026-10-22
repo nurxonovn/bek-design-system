@@ -1,0 +1,22 @@
+/* Checkbox field — Figma "3.4 Checkbox field". Qator uslubi umumiy: src/styles/control-field.css.
+   Checkbox'ning yashirin input'i butun qatorni qoplaydi (butun qator bosish maydoni), fokus halqasi
+   belgidan qatorga ko'chadi. Belgi boshida (start) yoki oxirida (end) — DOM tartibi bilan, RTL'da
+   avtomatik aks etadi. */
+.bek-checkbox-field .bek-checkbox {
+  flex-shrink: 0;
+  block-size: var(--bek-control-field-line);
+}
+
+.bek-checkbox-field .bek-checkbox__control {
+  position: static;
+}
+
+.bek-checkbox-field .bek-checkbox__input {
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.bek-checkbox-field .bek-checkbox__input:focus-visible + .bek-checkbox__box {
+  outline: none;
+}

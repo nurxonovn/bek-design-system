@@ -1797,6 +1797,121 @@
       "readme": "# Checkbox\n\nFigma: **3.4 Checkbox** — Unchecked · Checked · Indeterminate, o'lcham `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<Checkbox name=\"terms\" required>Shartlarga roziman</Checkbox>\n<Checkbox checked={all} indeterminate={some && !all} onChange={toggleAll}>Hammasi</Checkbox>\n```\n\n| Prop            | Qiymatlar       | Default |\n| --------------- | --------------- | ------- |\n| `children`      | yorliq          | —       |\n| `size`          | `s` · `m` · `l` | `s`     |\n| `indeterminate` | `boolean`       | `false` |\n\nNative `<input type=\"checkbox\">` — `checked`, `defaultChecked`, `onChange`, `name`, `disabled` o'tadi; `ref` input'ga. Bosish maydoni kamida 24 px, yorliq ham bosiladi. Space belgilaydi; fokus — `border/focus` halqa.\n"
     },
     {
+      "dir": "checkbox-field",
+      "package": "@bek-ui/react",
+      "title": "Checkbox field",
+      "description": "label, ixtiyoriy izoh (description) va Checkbox bitta konteynerda; butun qator bosish maydoni. Formalar, rozilik va Saqlash tugmasi bilan saqlanadigan ro'yxatlar uchun. size: s · m (36 · 44, field/height/sm · md; Checkbox S 16 · M 20); controlPosition: start · end.",
+      "exports": [
+        "CheckboxField"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.4 Checkbox field",
+        "pages": [
+          {
+            "name": "3.4 Checkbox",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=10-77"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Checkbox field",
+            "id": "1333:1415",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1333-1415",
+            "variants": 24,
+            "description": "Checkbox field — label (+ optional description) and a Checkbox in one tappable container; the whole row toggles. Control at start by default (forms, consent); Control at end for settings lists (turn one boolean off, the other on). React: <CheckboxField label description checked indeterminate onChange size controlPosition />. Sizes share field heights: S 36, M 44. Props: Label, Description, S",
+            "props": {
+              "Label": {
+                "type": "TEXT",
+                "default": "Remember this device"
+              },
+              "Description": {
+                "type": "TEXT",
+                "default": "Skip the code on this browser for 30 days"
+              },
+              "Show description": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Control at start": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Control at end": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Size": [
+                "S",
+                "M"
+              ],
+              "State": [
+                "Default",
+                "Hover",
+                "Focus",
+                "Disabled"
+              ],
+              "Checked": [
+                "Unchecked",
+                "Checked",
+                "Indeterminate"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/base",
+                "border/focus",
+                "fill/soft",
+                "fill/soft-hover",
+                "text/disabled",
+                "text/primary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Body/M",
+                "Caption/L",
+                "Label/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "field/height/md",
+                "field/height/sm",
+                "radius/control/md",
+                "scale/10",
+                "scale/12",
+                "scale/16",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "radius/control/md",
+          "scale/10",
+          "scale/12",
+          "scale/16",
+          "scale/8",
+          "text/primary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "bg/base faqat komponent set o'ramining (1333:1415) foni — variantlarda ishlatilmaydi (use_figma bilan tekshirildi), bg/sheet kabi o'ram tokeni. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+        }
+      ],
+      "readme": "# Checkbox field\n\nFigma: **3.4 Checkbox field** — label, ixtiyoriy izoh (description) va Checkbox bitta konteynerda; butun qator bosish maydoni. Formalar, rozilik va Saqlash tugmasi bilan saqlanadigan ro'yxatlar uchun. `size`: `s` · `m` (36 · 44, `field/height/sm · md`; Checkbox S 16 · M 20); `controlPosition`: `start` · `end`.\n\n```tsx\n<CheckboxField label=\"Remember this device\" description=\"Skip the code on this browser for 30 days\" name=\"remember\" />\n<CheckboxField label=\"Email me updates\" description=\"Product news, once a month\" />\n<CheckboxField label=\"Show hidden layers\" size=\"s\" controlPosition=\"end\" defaultChecked />\n<CheckboxField label=\"Barcha bildirishnomalar\" checked={all} indeterminate={some && !all} onChange={toggleAll} />\n```\n\n## Qoidalar (Figma doc)\n\n- Tanlov Submit / Save tugmasi bilan saqlanganda ishlating — darhol qo'llanadigan sozlama uchun SwitchField.\n- `controlPosition=\"start\"` (Figma \"Control at start\", standart) — formalar va rozilik; `\"end\"` (Figma \"Control at end\") — sozlamalar ro'yxati (Web, S 36).\n- Rozilik qatorlari (shartlar, marketing) belgi boshida va hech qachon oldindan belgilanmaydi.\n- `indeterminate` — faqat bolalari qisman belgilangan ota qator uchun.\n- Qatorning istalgan joyini bosish almashtiradi; fokusda Space.\n- Qurilmalar: Mobile va Tablet — M (44), formalarda belgi boshida; Web — S (36), sozlamalar ro'yxatida belgi oxirida.\n- Holatlar: hover konteynerni bo'yaydi (fill/soft → fill/soft-hover); fokus halqasi butun qatorni o'raydi; disabled — label va izoh text/disabled.\n\n## A11y\n\nNative `<input type=\"checkbox\">` (Checkbox komponenti), indeterminate'da `aria-checked=\"mixed\"`; nom — `aria-labelledby`, izoh — `aria-describedby`. Input butun qatorni qoplaydi. Barcha input atributlari Checkbox'ga uzatiladi; `className` / `style` — qatorga. Belgi joyi DOM tartibi bilan beriladi, RTL'da avtomatik aks etadi.\n"
+    },
+    {
       "dir": "checkout-bar",
       "package": "@bek-ui/react",
       "title": "CheckoutBar · CartPill",
@@ -2018,6 +2133,93 @@
       },
       "accepted": [],
       "readme": "# Chip\n\nFigma: **3.13 Chip** — foydalanuvchi yoqadigan (Filter) yoki olib tashlaydigan (Input) ixcham pill. `size`: `s` 32 · `m` 40.\n\n```tsx\n<Chip selected={vegan} onClick={() => setVegan(!vegan)} count={12}>Vegan</Chip>\n<Chip variant=\"input\" onRemove={() => removeCity('tas')}>Toshkent</Chip>\n```\n\nFilter — `<button aria-pressed>`, tanlanganda `fill/inverse`. Input — × tugmasi (`aria-label=\"Remove …\"`, Delete/Backspace ham). Holat yoki kategoriya ko'rsatish uchun Tag / Badge (4.2).\n"
+    },
+    {
+      "dir": "control-group",
+      "package": "@bek-ui/react",
+      "title": "Control group",
+      "description": "→ Control group — sozlamalar paneli guruhi: qisqa sarlavha va 2–4 boshqaruv qatori (ScrubField, SwitchField, Select yoki TextField) bitta oraliq bilan. Muharrirlar, tool panellar va afzalliklar oynalari uchun. density: default · compact.",
+      "exports": [
+        "ControlGroup"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.20 Field groups",
+        "pages": [
+          {
+            "name": "3.20 Field groups",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1179-80"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Control group",
+            "id": "1336:179811",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1336-179811",
+            "variants": 2,
+            "description": "Control group — settings panel pattern (complex component, CMP-09): an optional title and 2–4 control rows (Scrub field, Switch field, Select, Text field). Rows are exposed instances — swap or edit them. Density Default = M rows (44), gap 8; Compact = XS/S rows (32/36), gap 4 — Web/Tablet only. React: <ControlGroup title density>{children}</ControlGroup>. Props: Title, Show title, Show",
+            "props": {
+              "Title": {
+                "type": "TEXT",
+                "default": "Motion"
+              },
+              "Show title": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show row 3": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show row 4": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Density": [
+                "Default",
+                "Compact"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "surface/card",
+                "text/tertiary"
+              ],
+              "text": [
+                "Label/M",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "scale/2",
+                "scale/4",
+                "scale/8"
+              ]
+            },
+            "nested": [
+              "Scrub field",
+              "Switch field"
+            ]
+          }
+        ],
+        "docTokens": [
+          "scale/2",
+          "scale/4",
+          "scale/8",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-surface-card",
+          "reason": "surface/card faqat komponent set o'ramining (1336:179811) foni — Density=Default/Compact variantlarining o'zida fon yo'q (use_figma bilan tekshirildi): guruh panel ustida shaffof turadi. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+        }
+      ],
+      "readme": "# Control group\n\nFigma: **3.20 Field groups** → Control group — sozlamalar paneli guruhi: qisqa sarlavha va 2–4 boshqaruv qatori (ScrubField, SwitchField, Select yoki TextField) bitta oraliq bilan. Muharrirlar, tool panellar va afzalliklar oynalari uchun. `density`: `default` · `compact`.\n\n```tsx\n<ControlGroup title=\"Motion\">\n  <ScrubField label=\"Speed\" defaultValue={1.75} min={0.25} max={4} step={0.05} unit=\"×\" />\n  <ScrubField label=\"Frame interval\" defaultValue={134} max={500} unit=\"ms\" />\n  <ScrubField label=\"Trail persistence\" defaultValue={94} unit=\"%\" />\n  <SwitchField label=\"Pointer highlight\" defaultChecked />\n</ControlGroup>\n\n<ControlGroup title=\"Pointer\" density=\"compact\">…</ControlGroup>\n```\n\n## Zichlik\n\n| `density` | Qatorlar                         | Oraliq    | Sarlavha                  | Qayerda                                   |\n| --------- | -------------------------------- | --------- | ------------------------- | ----------------------------------------- |\n| `default` | ScrubField M 44 · SwitchField M  | `scale/8` | Label/M, pastda `scale/4` | Mobile, Tablet, afzalliklar oynalari      |\n| `compact` | ScrubField XS 32 · SwitchField S | `scale/4` | Label/S, pastda `scale/2` | Web / Tablet tool panellari (hit area 44) |\n\nZichlik guruhda beriladi: ichidagi ScrubField va SwitchField `size` berilmasa o'lchamni shundan oladi. Select va TextField uchun `size` ni o'zingiz bering. Bitta guruhda Default va Compact qatorlarni aralashtirmang.\n\n## Qoidalar (Figma doc)\n\n- Guruhda 2–4 qator (Figma \"Show row 3\", \"Show row 4\" — React'da children); uzun ro'yxatni o'z sarlavhali bir nechta guruhga bo'ling.\n- Tartib: avval raqamli qiymatlar, toggle'lar oxirida; xavfli amallar guruh ichida hech qachon yo'q.\n- O'zgarishlar darhol qo'llanadi — Saqlash tugmasi yo'q. Saqlash kerak bo'lsa — Fieldset (3.19) bilan forma.\n- Sarlavha — qisqa ot (\"Motion\", \"Color\"); Figma \"Show title\" — `title` berilmasa sarlavha yo'q (unda `aria-label` bering).\n- Bir nechta guruh yonma-yon sozlamalar panelini tashkil qiladi (Characters · Motion · Color · Pointer).\n- Har qator — to'liq komponent, ichki atom emas (CMP-09).\n\n## A11y\n\n`<fieldset>` + `<legend>` (sarlavha): guruh nomi ekran o'quvchida har qator bilan o'qiladi. `disabled` butun guruhdagi native boshqaruvlarni o'chiradi. Fieldset atributlari (`aria-label`, `id`, `disabled`, `name`) uzatiladi.\n"
     },
     {
       "dir": "date-picker",
@@ -6710,6 +6912,127 @@
       "readme": "# Rating\n\nFigma: **4.10 Rating** — faqat o'qish uchun reyting (mahsulot, kurs, joy). `variant`: `stars` (5 yulduz, 0.5 qadam) · `compact` (bitta yulduz + ball); `size`: `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<Rating value={4.5} count=\"(1 245 sharh)\" locale=\"uz\" />\n<Rating value={4.8} variant=\"compact\" size=\"s\" />\n```\n\n`role=\"img\"` + `aria-label=\"4,5 / 5\"`; Tab to'xtashi emas. Ball locale bo'yicha formatlanadi. To'liq yulduz — `status/warning/default`, bo'sh — `border/strong`.\n"
     },
     {
+      "dir": "scrub-field",
+      "package": "@bek-ui/react",
+      "title": "Scrub field",
+      "description": "maydon bo'ylab gorizontal sudrab o'zgartiriladigan son yoki bosib aniq qiymat kiritiladigan maydon. Sozlamalar paneli, muharrir va tool UI uchun — ko'p qiymat zich ustunda turadigan joylar. size: xs · s · m · l (32 · 36 · 44 · 56, field/height/).",
+      "exports": [
+        "ScrubField"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.21 Scrub field",
+        "pages": [
+          {
+            "name": "3.21 Scrub field",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1330-176618"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Scrub field",
+            "id": "1330:176767",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1330-176767",
+            "variants": 20,
+            "description": "Scrub field — numeric value you change by dragging across the field (tool UI, settings panels). React: <ScrubField label value unit min max step onChange />. Drag = change value (cursor ew-resize), click / Enter = type (Focus), Shift = ×10 step, ↑↓ = step. Track width shows (value − min) / (max − min); resize the Track layer on instances. Neutral track (fill/soft-hover → fill/soft-pressed). ",
+            "props": {
+              "Label": {
+                "type": "TEXT",
+                "default": "Speed"
+              },
+              "Value": {
+                "type": "TEXT",
+                "default": "1.75"
+              },
+              "Unit": {
+                "type": "TEXT",
+                "default": "×"
+              },
+              "Show unit": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Show track": {
+                "type": "BOOLEAN",
+                "default": true
+              },
+              "Size": [
+                "XS",
+                "S",
+                "M",
+                "L"
+              ],
+              "State": [
+                "Enabled",
+                "Hovered",
+                "Dragging",
+                "Focus",
+                "Disabled"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/base",
+                "border/focus",
+                "fill/soft",
+                "fill/soft-hover",
+                "fill/soft-pressed",
+                "text/accent",
+                "text/disabled",
+                "text/primary",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Body/L",
+                "Body/M",
+                "Label/M",
+                "Label/S"
+              ],
+              "effect": [],
+              "dimension": [
+                "field/height/lg",
+                "field/height/md",
+                "field/height/sm",
+                "field/height/xs",
+                "radius/control/lg",
+                "radius/control/md",
+                "scale/12",
+                "scale/16",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "fill/soft-pressed",
+          "radius/control",
+          "radius/control/md",
+          "scale/12",
+          "scale/16",
+          "scale/8",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "bg/base faqat komponent set o'ramining (1330:176767) foni — 20 variantning hech birida ishlatilmaydi (use_figma bilan tekshirildi), bg/sheet kabi o'ram tokeni. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+        }
+      ],
+      "readme": "# Scrub field\n\nFigma: **3.21 Scrub field** — maydon bo'ylab gorizontal sudrab o'zgartiriladigan son yoki bosib aniq qiymat kiritiladigan maydon. Sozlamalar paneli, muharrir va tool UI uchun — ko'p qiymat zich ustunda turadigan joylar. `size`: `xs` · `s` · `m` · `l` (32 · 36 · 44 · 56, `field/height/*`).\n\n```tsx\nconst [speed, setSpeed] = useState(1.75);\n\n<ScrubField label=\"Speed\" value={speed} onChange={setSpeed} min={0.25} max={4} step={0.05} unit=\"×\" />\n<ScrubField label=\"Opacity\" defaultValue={64} unit=\"%\" size=\"xs\" />\n<ScrubField label=\"Radius\" defaultValue={122} max={400} unit=\"px\" showTrack={false} />\n```\n\nAnatomiya: konteyner (fill/soft) · track (neytral, kengligi `(value − min) / (max − min)`) · handle (track oxirida 2 px chiziq) · label (qisqaradi, hech qachon ikki qatorga o'tmaydi) · qiymat (o'ngda, bosilganda tahrirlanadi) · birlik (`unit`, ixtiyoriy).\n\n## Boshqaruv\n\n- **Sudrash** — maydonning istalgan joyida chapga/o'ngga (kursor `ew-resize`, pointer capture). To'liq kenglik ≈ butun `min…max` oralig'i, kamida 1 px = 1 qadam. Shift + sudrash — ×10 qadam, Alt — ×0.1 qadam. RTL'da yo'nalish teskari.\n- **Bosish yoki Tab** — kiritish rejimi (Focus: kursor + fokus halqasi). Enter yoki blur saqlaydi, Esc bekor qiladi.\n- **Klaviatura** (fokusda): ↑ / ↓ — bir qadam (Shift ×10, Alt ×0.1), PageUp / PageDown — ×10 qadam, Home / End — `min` / `max`. ← / → kiritilayotgan matnda kursorni siljitadi.\n- Qiymat doim `min…max` ga qisiladi; kasr xonalari `precision` yoki `step` dan (0.05 → 2 xona).\n\n## Qoidalar (Figma doc)\n\n- Birlikni son yolg'iz noaniq bo'lganda doim ko'rsating (px, %, ms).\n- O'lchamlar: XS 32 — faqat Web/Tablet zich panellari (200–320 kenglik); S 36 — header qidiruvi, filtrlar (Button L bilan); M 44 — standart formalar va sozlamalar (Button XL); L 56 — Mobile va touch panellar (Button 2XL). Maydon va yonidagi tugma balandligi bir xil.\n- Touch'da gorizontal sudrash sahifa scroll'i bilan to'qnashadi: L o'lchamni oling, tap-to-type'ni qoldiring (`touch-action: pan-y` — vertikal scroll ishlaydi). Miqdor (dona) uchun 3.9 Stepper afzal.\n- ControlGroup ichida `size` berilmasa zichlikdan olinadi: `default` → `m`, `compact` → `xs`.\n\n## A11y\n\nNative `<input type=\"text\" inputMode=\"decimal\" role=\"spinbutton\">`: `aria-valuenow` / `aria-valuemin` / `aria-valuemax`, `aria-valuetext` birlik bilan (\"1.75 ×\"), nom `<label for>` orqali. Bitta Tab to'xtashi. `name` berilsa qiymat formaga matn sifatida yuboriladi. Track va handle `aria-hidden`. `prefers-reduced-motion` da fon o'tishlari o'chadi; track kengligi animatsiyasiz (sudrash darhol aks etadi).\n"
+    },
+    {
       "dir": "search-field",
       "package": "@bek-ui/react",
       "title": "SearchField",
@@ -8089,6 +8412,112 @@
       },
       "accepted": [],
       "readme": "# Switch\n\nFigma: **3.6 Switch** — darhol kuchga kiradigan yoqish/o'chirish (saqlash tugmasisiz). Yo'lak `s` 32×20 · `m` 40×24 · `l` 48×28 px.\n\n```tsx\n<Switch checked={wifi} onChange={(e) => setWifi(e.target.checked)}>\n  Wi-Fi\n</Switch>\n```\n\nNative `<input type=\"checkbox\" role=\"switch\">`; Space almashtiradi. Formada \"Saqlash\" bosilgandan keyin kuchga kiradigan qiymat uchun Checkbox ishlating.\n"
+    },
+    {
+      "dir": "switch-field",
+      "package": "@bek-ui/react",
+      "title": "Switch field",
+      "description": "label, ixtiyoriy izoh (description) va Switch bitta konteynerda; butun qator bosish maydoni. Sozlamalar paneli, afzalliklar va ControlGroup qatorlari uchun. size: s · m (36 · 44, field/height/sm · md; ichidagi Switch S → S, M → M).",
+      "exports": [
+        "SwitchField"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.6 Switch field",
+        "pages": [
+          {
+            "name": "3.6 Switch",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=10-79"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Switch field",
+            "id": "1333:619",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1333-619",
+            "variants": 16,
+            "description": "Switch field — label (+ optional description) and a Switch in one tappable container; the whole row toggles. Use in settings panels and Control group. React: <SwitchField label description checked onChange size />. Sizes share field heights: S 36 (field/height/sm), M 44 (field/height/md). Props: Label, Description, Show description.",
+            "props": {
+              "Label": {
+                "type": "TEXT",
+                "default": "Pointer highlight"
+              },
+              "Description": {
+                "type": "TEXT",
+                "default": "Glow follows the cursor"
+              },
+              "Show description": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Size": [
+                "S",
+                "M"
+              ],
+              "State": [
+                "Default",
+                "Hover",
+                "Focus",
+                "Disabled"
+              ],
+              "Checked": [
+                "Off",
+                "On"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/base",
+                "border/focus",
+                "fill/soft",
+                "fill/soft-hover",
+                "text/disabled",
+                "text/primary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Body/M",
+                "Caption/L",
+                "Label/M"
+              ],
+              "effect": [],
+              "dimension": [
+                "field/height/md",
+                "field/height/sm",
+                "radius/control/md",
+                "scale/10",
+                "scale/12",
+                "scale/16",
+                "scale/8"
+              ]
+            },
+            "nested": []
+          }
+        ],
+        "docTokens": [
+          "border/focus",
+          "fill/soft",
+          "fill/soft-hover",
+          "radius/control/md",
+          "scale/10",
+          "scale/12",
+          "scale/16",
+          "scale/8",
+          "text/primary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-bg-base",
+          "reason": "bg/base faqat komponent set o'ramining (1333:619) foni — variantlarda ishlatilmaydi (use_figma bilan tekshirildi), bg/sheet kabi o'ram tokeni. Kodda talab qilinmaydi; Figma'da set o'ramini bg/sheet ga o'tkazish kerak."
+        }
+      ],
+      "readme": "# Switch field\n\nFigma: **3.6 Switch field** — label, ixtiyoriy izoh (description) va Switch bitta konteynerda; butun qator bosish maydoni. Sozlamalar paneli, afzalliklar va ControlGroup qatorlari uchun. `size`: `s` · `m` (36 · 44, `field/height/sm · md`; ichidagi Switch S → S, M → M).\n\n```tsx\nconst [glow, setGlow] = useState(true);\n\n<SwitchField label=\"Pointer highlight\" checked={glow} onChange={(e) => setGlow(e.target.checked)} />\n<SwitchField label=\"Reduce motion\" description=\"Stops background animations\" />\n<SwitchField label=\"Show grid\" size=\"s\" defaultChecked />\n```\n\n## Qoidalar (Figma doc)\n\n- Sozlama **darhol** qo'llanadi — Saqlash tugmasi yo'q. Saqlash kerak bo'lsa (Submit'li forma) — CheckboxField.\n- Qatorning istalgan joyini bosish almashtiradi; fokusda Space.\n- Label nima yoqilishini aytadi (\"Pointer highlight\"), buyruq emas (\"Enable pointer highlight\").\n- ControlGroup (3.20) ichida qatorlar orasida 4–8; Switch field'larni kartadagi karta ichiga joylamang.\n- Qurilmalar: Mobile — M (44), to'liq kenglik; Tablet — M; Web — S (36), 280–360 kenglikdagi yon panellarda. ControlGroup ichida `size` berilmasa zichlikdan: `default` → `m`, `compact` → `s`.\n- Holatlar: hover konteynerni bo'yaydi (fill/soft → fill/soft-hover); fokus halqasi butun qatorda, Switch'ning o'zida emas; disabled — label va izoh text/disabled.\n\n## A11y\n\nNative `<input type=\"checkbox\" role=\"switch\">` (Switch komponenti): nom — `aria-labelledby` (label), izoh — `aria-describedby`. Input butun qatorni qoplaydi, shuning uchun qator bosilganda ham, Space bilan ham almashadi. Barcha input atributlari (`checked`, `defaultChecked`, `onChange`, `name`, `disabled`) Switch'ga uzatiladi; `className` / `style` — qatorga.\n"
     },
     {
       "dir": "system-bars",

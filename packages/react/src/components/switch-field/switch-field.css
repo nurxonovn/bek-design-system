@@ -1,0 +1,21 @@
+/* Switch field — Figma "3.6 Switch field". Qator uslubi umumiy: src/styles/control-field.css.
+   Switch'ning yashirin input'i butun qatorni qoplaydi (butun qator bosish maydoni), fokus halqasi
+   yo'lakdan qatorga ko'chadi. */
+.bek-switch-field .bek-switch {
+  flex-shrink: 0;
+  block-size: var(--bek-control-field-line);
+}
+
+.bek-switch-field .bek-switch__control {
+  position: static;
+}
+
+.bek-switch-field .bek-switch__input {
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.bek-switch-field .bek-switch__input:focus-visible + .bek-switch__track {
+  outline: none;
+}
