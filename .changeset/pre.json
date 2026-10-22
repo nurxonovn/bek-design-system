@@ -9,14 +9,27 @@
     "@bek-ui/tokens": "0.0.0"
   },
   "changesets": [
+    "charts-scroll-focus",
     "charts-w1",
     "charts-w2",
     "charts-w3",
+    "e2e-a11y-fixes",
     "figma-foundations",
     "figma-parity-skill",
     "figma-sections-next",
+    "inputs-new",
     "public-beta",
     "rsc-use-client-skeleton-fill",
-    "tokens-dataviz"
+    "search-field",
+    "search",
+    "selector-card-aria-disabled",
+    "selector-card",
+    "steps",
+    "sync-components",
+    "sync-inputs-v2",
+    "sync-specs",
+    "sync-tokens-field-height",
+    "tokens-dataviz",
+    "uploader-fac"
   ]
 }

@@ -1,5 +1,25 @@
 # @bek-ui/charts
 
+## 1.0.0-beta.1
+
+### Patch Changes
+
+- 53b29d7: `MindMap`, `Swimlane` va `JourneyMap`: keng kanvas gorizontal skroll qiladigan ildiz endi klaviaturadan fokuslanadi (`tabIndex=0` + fokus halqasi, WCAG 2.1.1). Tashqaridan berilgan `tabIndex` ustun.
+- Updated dependencies [f5769cb]
+- Updated dependencies [5e075c2]
+- Updated dependencies [e1098b4]
+- Updated dependencies [94d8d00]
+- Updated dependencies [1aab026]
+- Updated dependencies [68b5d48]
+- Updated dependencies [68b5d48]
+- Updated dependencies [ccde9dd]
+- Updated dependencies [15bdeec]
+- Updated dependencies [977180f]
+- Updated dependencies [6b36ba0]
+- Updated dependencies [b6ff019]
+  - @bek-ui/react@1.0.0-beta.1
+  - @bek-ui/tokens@1.0.0-beta.1
+
 ## 1.0.0-beta.0
 
 ### Major Changes
