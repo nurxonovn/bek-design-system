@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { extent, max as d3max, median, min as d3min } from 'd3-array';
 import { scaleLinear } from 'd3-scale';
 import { seriesColor } from '../../core/color.js';

@@ -12,7 +12,7 @@ import {
   SearchBar,
   Tag,
   type TagColor,
-} from '@bek/react';
+} from '@bek-ui/react';
 import { Icon, type IconName } from '../icons';
 import { Placeholder } from '../Phone';
 

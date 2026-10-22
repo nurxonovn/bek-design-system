@@ -1,5 +1,5 @@
 {
-  "name": "@bek/site",
+  "name": "@bek-ui/site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,11 +8,12 @@
     "build": "node scripts/build-catalog.mjs && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "catalog": "node scripts/build-catalog.mjs"
+    "catalog": "node scripts/build-catalog.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@bek/react": "workspace:*",
-    "@bek/tokens": "workspace:*",
+    "@bek-ui/react": "workspace:*",
+    "@bek-ui/tokens": "workspace:*",
     "@radix-ui/react-accordion": "1.2.3",
     "@radix-ui/react-alert-dialog": "1.1.6",
     "@radix-ui/react-aspect-ratio": "1.1.2",
@@ -61,6 +62,8 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.56.1",
     "@tailwindcss/vite": "4.1.12",
     "@types/node": "22.18.10",
     "@types/react": "18.3.26",

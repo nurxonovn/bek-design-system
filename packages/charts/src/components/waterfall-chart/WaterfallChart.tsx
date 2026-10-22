@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { scaleBand } from 'd3-scale';
 import { formatNumber, MINUS } from '../../core/format.js';
 import {

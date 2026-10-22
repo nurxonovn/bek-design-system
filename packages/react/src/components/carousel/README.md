@@ -25,4 +25,4 @@ Figma: **4.11 Carousel** — `controls`: `arrows` · `dots` (Figma "Dots only") 
 </Carousel>
 ```
 
-CSS scroll-snap: touch'da surish, sichqonchada strelkalar (Raised icon-only Button), nuqtalar sichqoncha uchun (Tab'da emas — 1.6 Accessibility). Har slayd `role="group"` + "2 / 5" nomi; RTL qo'llab-quvvatlanadi.
+CSS scroll-snap: touch'da surish, sichqonchada strelkalar (Raised icon-only Button), nuqtalar sichqoncha uchun (Tab'da emas — 1.6 Accessibility). Skroll maydoni fokuslanadi (`tabIndex=0`): Tab bilan kirib, ←/→ bilan suriladi. Har slayd `role="group"` + "2 / 5" nomi; RTL qo'llab-quvvatlanadi.

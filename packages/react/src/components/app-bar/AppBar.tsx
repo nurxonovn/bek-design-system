@@ -13,7 +13,7 @@ export interface AppBarProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> 
   variant?: AppBarVariant;
   /** S — 56 px (mobil) · M — 64 px (planshet, web). */
   size?: 's' | 'm';
-  /** Kontent ostidan o'tganda — Glass/Regular (glass/tint + Elevation/1; blur `@bek/tokens/materials.css` bilan). */
+  /** Kontent ostidan o'tganda — Glass/Regular (glass/tint + Elevation/1; blur `@bek-ui/tokens/materials.css` bilan). */
   scrolled?: boolean;
   /** Berilsa — orqaga tugmasi. */
   onBack?: () => void;

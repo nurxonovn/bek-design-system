@@ -6,7 +6,7 @@ import { useTheme } from './ThemeProvider';
 import { useTranslation, Language } from './TranslationProvider';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from './ui/dropdown-menu';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { BekLogo } from '@bek/react';
+import { BekLogo } from '@bek-ui/react';
 
 interface HeaderProps {
   currentPage: string;

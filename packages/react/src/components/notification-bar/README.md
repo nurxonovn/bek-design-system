@@ -3,7 +3,7 @@
 Figma: **5.6 Notification bar**. Mobil snackbar — ekran pastida bir qatorli xabar.
 
 ```tsx
-import { NotificationBar } from '@bek/react';
+import { NotificationBar } from '@bek-ui/react';
 
 <NotificationBar tone="success" action={{ label: 'Undo', onClick: undo }}>
   Item moved to archive

@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from 'react';
-import { Chip, Tab, TabList, TabPanel, Tabs } from '@bek/react';
+import { Chip, Tab, TabList, TabPanel, Tabs } from '@bek-ui/react';
 import { ExternalLink } from 'lucide-react';
 import { catalog } from '../data/catalog';
 
 const FIGMA = catalog.figmaFile;
 
-/** Foundations — @bek/tokens (Figma Variables'dan yig'ilgan) dan jonli: ranglar, o'lchamlar, tipografika, soya. */
+/** Foundations — @bek-ui/tokens (Figma Variables'dan yig'ilgan) dan jonli: ranglar, o'lchamlar, tipografika, soya. */
 export function TokensPage({ initialTab = 'colors' }: { initialTab?: string }) {
   const t = catalog.tokens;
   if (!t) return <div className="container mx-auto px-4 py-8">Tokenlar topilmadi — `pnpm build` ni ishga tushiring.</div>;
@@ -15,7 +15,7 @@ export function TokensPage({ initialTab = 'colors' }: { initialTab?: string }) {
       <header className="space-y-2">
         <h1 className="text-3xl md:text-4xl font-semibold">Foundations · Tokenlar</h1>
         <p className="text-muted-foreground max-w-3xl">
-          Figma Variables → <code>@bek/tokens</code>: CSS o'zgaruvchilari (<code>--bek-*</code>), Light/Dark va Mobile/Tablet/Web rejimlari.
+          Figma Variables → <code>@bek-ui/tokens</code>: CSS o'zgaruvchilari (<code>--bek-*</code>), Light/Dark va Mobile/Tablet/Web rejimlari.
           Qiymatlar <code>tokens.json</code> dan to'g'ridan-to'g'ri o'qiladi — Figma o'zgarsa, sayt ham o'zgaradi.{' '}
           <a className="inline-flex items-center gap-1 text-primary underline" href={FIGMA} target="_blank" rel="noreferrer">
             Figma fayli <ExternalLink size={14} />

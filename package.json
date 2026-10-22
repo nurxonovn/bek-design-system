@@ -8,7 +8,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "turbo run dev --filter=@bek/site",
+    "dev": "turbo run dev --filter=@bek-ui/site",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",
@@ -18,8 +18,9 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=./packages/* && changeset publish",
-    "dev:templates": "turbo run dev --filter=@bek/templates",
-    "check:figma": "pnpm --filter @bek/react --filter @bek/charts check:figma"
+    "release:ci": "node scripts/check-npm-auth.mjs && pnpm release",
+    "dev:templates": "turbo run dev --filter=@bek-ui/templates",
+    "check:figma": "pnpm --filter @bek-ui/react --filter @bek-ui/charts check:figma"
   },
   "devDependencies": {
     "@changesets/cli": "2.29.7",

@@ -10,9 +10,9 @@
 
 | Package          | What it is                                                                                                    | Figma           |
 | ---------------- | ------------------------------------------------------------------------------------------------------------- | --------------- |
-| `@bek/tokens`    | Design tokens generated from Figma Variables — CSS custom properties (`--bek-*`), JSON, typography, materials | 1 · Foundations |
-| `@bek/react`     | 58 React components, plain CSS on top of tokens, Light/Dark, RTL, keyboard and screen-reader support          | 3–7, 9–10       |
-| `@bek/charts`    | 61 chart and diagram components (SVG + d3 modules) — bar, line, sankey, treemap, maps, mind map and more      | 4.18, 4.19      |
+| `@bek-ui/tokens` | Design tokens generated from Figma Variables — CSS custom properties (`--bek-*`), JSON, typography, materials | 1 · Foundations |
+| `@bek-ui/react`  | 58 React components, plain CSS on top of tokens, Light/Dark, RTL, keyboard and screen-reader support          | 3–7, 9–10       |
+| `@bek-ui/charts` | 61 chart and diagram components (SVG + d3 modules) — bar, line, sankey, treemap, maps, mind map and more      | 4.18, 4.19      |
 | `apps/site`      | Documentation site — foundations, component catalogue generated from component READMEs, tokens, templates     | —               |
 | `apps/templates` | Example screens rebuilt from the Figma 8.x templates                                                          | 8 · Templates   |
 
@@ -28,16 +28,16 @@
 ## Quick start
 
 ```bash
-pnpm add @bek/tokens @bek/react        # charts: pnpm add @bek/charts
+pnpm add @bek-ui/tokens @bek-ui/react        # charts: pnpm add @bek-ui/charts
 ```
 
 ```tsx
 // main.tsx
-import '@bek/tokens/tokens.css'; // colours, sizes, fonts — Light/Dark via data-theme="dark"
-import '@bek/tokens/typography.css'; // .bek-text-* text styles
-import '@bek/react/styles.css'; // component styles
+import '@bek-ui/tokens/tokens.css'; // colours, sizes, fonts — Light/Dark via data-theme="dark"
+import '@bek-ui/tokens/typography.css'; // .bek-text-* text styles
+import '@bek-ui/react/styles.css'; // component styles
 
-import { Button, Card, TextField } from '@bek/react';
+import { Button, Card, TextField } from '@bek-ui/react';
 
 export function Example() {
   return (
@@ -68,7 +68,7 @@ Node 22 (`.nvmrc`), pnpm 10, Turborepo. CI runs format · typecheck · build · 
 
 BEK is built in public by one designer with AI assistance (see below). To grow it into a community project we need:
 
-- **Core maintainers** for `@bek/react` and `@bek/charts` — review PRs, own releases, keep Figma ↔ code parity.
+- **Core maintainers** for `@bek-ui/react` and `@bek-ui/charts` — review PRs, own releases, keep Figma ↔ code parity.
 - **Contributors** — pick a [`good first issue`](https://github.com/nurxonovn/bek-design-system/labels/good%20first%20issue), add a component from a Figma page, improve accessibility, write tests.
 - **Designers** — use the Figma library and report what breaks.
 
@@ -103,7 +103,7 @@ BEK is free. If it saves you time, support it from the **03 · Support us** page
 **BEK Design System** — mobil, planshet va veb uchun ochiq dizayn tizimi: Figma kutubxonasi, tokenlar, React komponentlari, chartlar va hujjat sayti. O'zbekistonda qurilgan, hamma uchun.
 
 - **Holat:** Figma — v1.0, kod — **v1.0-beta** (API hali o'zgarishi mumkin).
-- **Paketlar:** `@bek/tokens` (Figma Variables → CSS/JSON), `@bek/react` (58 komponent), `@bek/charts` (61 chart va diagramma), `apps/site` (hujjat sayti), `apps/templates` (8.x namuna ekranlar).
+- **Paketlar:** `@bek-ui/tokens` (Figma Variables → CSS/JSON), `@bek-ui/react` (58 komponent), `@bek-ui/charts` (61 chart va diagramma), `apps/site` (hujjat sayti), `apps/templates` (8.x namuna ekranlar).
 - **Tamoyillar:** Figma — yagona manba; 3 qurilma (Mobile 390 · Tablet 834 · Web 1440); chegarasiz sirtlar; faqat tokenlar; AA kontrast va klaviatura.
 - **Ishga tushirish:** `corepack enable && pnpm install && pnpm dev`.
 - **Hissa qo'shish:** [CONTRIBUTING.md](CONTRIBUTING.md). Core maintainer va dasturchilar qidiryapmiz — `good first issue` belgili masalalardan boshlang.

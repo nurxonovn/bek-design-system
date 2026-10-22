@@ -9,7 +9,7 @@ ataylab yoki Figma tomonidagi kamchilik sababli qabul qilingan. Noyabr yangilani
 
 ### A1. Variables → Code syntax (WEB) to'ldirilmagan tokenlar
 
-Bu tokenlar `@bek/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
+Bu tokenlar `@bek-ui/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
 
 - `accent/soft-hover` — button (3.1 Button)
 - `status/danger/soft-hover` — button (3.1 Button)

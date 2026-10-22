@@ -1,6 +1,6 @@
-# @bek/react
+# @bek-ui/react
 
-BEK Design System React komponentlari. Uslub — oddiy CSS va `@bek/tokens` o'zgaruvchilari (`--bek-*`); iste'molchidan Tailwind talab qilinmaydi.
+BEK Design System React komponentlari. Uslub — oddiy CSS va `@bek-ui/tokens` o'zgaruvchilari (`--bek-*`); iste'molchidan Tailwind talab qilinmaydi.
 
 - Holatlar (hover, pressed, focus) — CSS (`:hover`, `:active`, `:focus-visible`), prop emas.
 - RTL — `dir="rtl"` va CSS logical properties.
@@ -9,9 +9,9 @@ BEK Design System React komponentlari. Uslub — oddiy CSS va `@bek/tokens` o'zg
 ## Ishlatish
 
 ```tsx
-import '@bek/tokens/tokens.css';
-import '@bek/react/styles.css';
-import { Badge, BekLogo, Button, Tag } from '@bek/react';
+import '@bek-ui/tokens/tokens.css';
+import '@bek-ui/react/styles.css';
+import { Badge, BekLogo, Button, Tag } from '@bek-ui/react';
 ```
 
 ## Komponentlar

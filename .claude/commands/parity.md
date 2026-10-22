@@ -12,7 +12,7 @@ argument-hint: "[komponent nomlari | bo'sh = hammasi] [--strict]"
      sabab aniq va o'zbekcha; `components`/`doc` ga tegmang.
 3. Noto'g'ri ogohlantirish 2+ komponentda takrorlansa — `scripts/check-figma.mjs` evristikasini tuzating,
    `accepted` bilan yashirmang.
-4. `pnpm --filter @bek/react build && pnpm --filter @bek/react test`; yakunda `pnpm check:figma -- --strict` → 0.
+4. `pnpm --filter @bek-ui/react build && pnpm --filter @bek-ui/react test`; yakunda `pnpm check:figma -- --strict` → 0.
 5. Hisobot: komponent bo'yicha kod/accepted; dizaynerga Figma'da tuzatish ro'yxati.
 
 Katta ro'yxat → komponent guruhlari bo'yicha `figma-parity` subagentlariga parallel bering (papkalar kesishmasin).

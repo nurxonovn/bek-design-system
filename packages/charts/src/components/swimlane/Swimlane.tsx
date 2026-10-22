@@ -1,5 +1,5 @@
 import type { CSSProperties, HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { r2 } from '../../core/geometry.js';
 import {
   DIAGRAM_NODE_GAP,

@@ -1,5 +1,5 @@
 import type { HTMLAttributes, LiHTMLAttributes, ReactNode } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 
 export type TimelineItemState = 'done' | 'current' | 'upcoming';
 

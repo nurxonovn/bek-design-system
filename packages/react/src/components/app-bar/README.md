@@ -4,8 +4,8 @@ Figma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki q
 `variant`: `title` · `search` · `brand`; `size`: `s` · `m`.
 
 ```tsx
-import '@bek/tokens/materials.css'; // scrolled holat uchun Glass/Regular
-import { AppBar } from '@bek/react';
+import '@bek-ui/tokens/materials.css'; // scrolled holat uchun Glass/Regular
+import { AppBar } from '@bek-ui/react';
 
 <AppBar title="Orders" onBack={goBack} scrolled={scrollY > 0}
   actions={<Button variant="flat" size="l" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />

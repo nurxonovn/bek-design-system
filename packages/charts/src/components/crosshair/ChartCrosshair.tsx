@@ -1,5 +1,5 @@
 import type { SVGAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { DEFAULT_HEIGHT, DEFAULT_WIDTH, r2 } from '../../core/geometry.js';
 import { PartFrame, type ChartPartFrameProps } from '../chart-axis/PartFrame.js';
 import { ChartTag, TAG_H, tagWidth } from '../annotation/ChartTag.js';

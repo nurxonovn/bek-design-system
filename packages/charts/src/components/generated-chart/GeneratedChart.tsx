@@ -1,5 +1,5 @@
 import { useId, type HTMLAttributes, type ReactNode } from 'react';
-import { Button, cx, EmptyState, Skeleton, Spinner } from '@bek/react';
+import { Button, cx, EmptyState, Skeleton, Spinner } from '@bek-ui/react';
 import { AiInsightLine } from './AiInsightLine.js';
 import { BookmarkGlyph, CodeGlyph, SparklesGlyph, TableGlyph } from './glyphs.js';
 
@@ -36,7 +36,7 @@ export interface GeneratedChartProps extends Omit<HTMLAttributes<HTMLElement>, '
   onRetry?: () => void;
   /** Sarlavha darajasi — sahifa tuzilmasiga mos (standart h3). */
   headingLevel?: 2 | 3 | 4 | 5 | 6;
-  /** Chart sloti — istalgan `@bek/charts` chart (odatda `ChartContainer` ichida). */
+  /** Chart sloti — istalgan `@bek-ui/charts` chart (odatda `ChartContainer` ichida). */
   children?: ReactNode;
 }
 

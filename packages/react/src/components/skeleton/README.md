@@ -3,7 +3,7 @@
 Figma: **5.7 Loading → Skeleton**. Ma'lumot yuklanguncha haqiqiy maketni takrorlovchi joy egallovchi.
 
 ```tsx
-import { Skeleton } from '@bek/react';
+import { Skeleton } from '@bek-ui/react';
 
 <section aria-busy="true">
   <Skeleton shape="list-row" />

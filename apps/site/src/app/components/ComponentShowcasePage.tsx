@@ -745,23 +745,23 @@ export function ComponentShowcasePage({ onNavigate }: ComponentShowcasePageProps
                   <div>
                     <Label className="mb-2 block">Installation</Label>
                     <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
-                      <code>pnpm add @bek/tokens @bek/react</code>
+                      <code>pnpm add @bek-ui/tokens @bek-ui/react</code>
                     </pre>
                   </div>
                   
                   <div>
                     <Label className="mb-2 block">Import styles</Label>
                     <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
-                      <code>{`import '@bek/tokens/tokens.css';
-import '@bek/tokens/typography.css';
-import '@bek/react/styles.css';`}</code>
+                      <code>{`import '@bek-ui/tokens/tokens.css';
+import '@bek-ui/tokens/typography.css';
+import '@bek-ui/react/styles.css';`}</code>
                     </pre>
                   </div>
 
                   <div>
                     <Label className="mb-2 block">Usage Example</Label>
                     <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
-                      <code>{`import { Button } from '@bek/react';
+                      <code>{`import { Button } from '@bek-ui/react';
 
 <Button variant="action" size="l" onClick={handleClick}>
   Click me

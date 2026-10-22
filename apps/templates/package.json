@@ -1,9 +1,9 @@
 {
-  "name": "@bek/templates",
+  "name": "@bek-ui/templates",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "Figma \"8 · Templates\" ekranlari — @bek/react komponentlaridan yig'ilgan namunalar",
+  "description": "Figma \"8 · Templates\" ekranlari — @bek-ui/react komponentlaridan yig'ilgan namunalar",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,8 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@bek/react": "workspace:*",
-    "@bek/tokens": "workspace:*",
+    "@bek-ui/react": "workspace:*",
+    "@bek-ui/tokens": "workspace:*",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },

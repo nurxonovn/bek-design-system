@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { hierarchy, treemap, treemapSquarify } from 'd3-hierarchy';
 import { seriesColor } from '../../core/color.js';
 import { formatNumber, formatPercent } from '../../core/format.js';

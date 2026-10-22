@@ -8,7 +8,7 @@ Trek + yoy ko'rinishidagi yuklanish indikatori (Figma "Spinner"). Tugma va input
 sakkiz nurli belgi — [`Spinner`](../spinner/README.md).
 
 ```tsx
-import { Loader } from '@bek/react';
+import { Loader } from '@bek-ui/react';
 
 <Loader />                          // 24 · default · cheksiz
 <Loader size={40} label="Loading orders" />

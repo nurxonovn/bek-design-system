@@ -174,7 +174,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         <div className="text-center mb-16">
           <h2 className="font-medium mb-6" style={{ fontSize: 'var(--text-5xl)' }}>BEK Design System nima?</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed text-center" style={{ fontSize: 'var(--text-lg)' }}>
-            BEK mahsulotlari uchun yagona dizayn-tizim: Figma manba, @bek/tokens va @bek/react — bitta haqiqat.
+            BEK mahsulotlari uchun yagona dizayn-tizim: Figma manba, @bek-ui/tokens va @bek-ui/react — bitta haqiqat.
             Har komponent Figma spetsifikatsiyasi bilan avtomatik tekshiriladi.
           </p>
         </div>

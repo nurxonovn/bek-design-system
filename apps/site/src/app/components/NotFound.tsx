@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, MascotMessage } from '@bek/react';
+import { Button, MascotMessage } from '@bek-ui/react';
 
 /** Noma'lum hash-manzil — Figma 2.3 Mascot "Error / 404 → dizzy". */
 export function NotFound({ onNavigate }: { onNavigate: (page: string) => void }) {

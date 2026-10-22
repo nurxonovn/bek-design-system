@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, type HTMLAttributes, type ReactNode } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { extent } from 'd3-array';
 import { formatNumber } from '../../core/format.js';
 import { DEFAULT_HEIGHT, DEFAULT_WIDTH, r2 } from '../../core/geometry.js';

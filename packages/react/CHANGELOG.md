@@ -1,4 +1,4 @@
-# @bek/react
+# @bek-ui/react
 
 ## 1.0.0-beta.0
 
@@ -19,4 +19,4 @@
 - Updated dependencies [79ae5de]
 - Updated dependencies
 - Updated dependencies [70c9f08]
-  - @bek/tokens@1.0.0-beta.0
+  - @bek-ui/tokens@1.0.0-beta.0

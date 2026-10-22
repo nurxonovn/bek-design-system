@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { ChartSvg } from '../../core/svg.js';
 
 /** Chart qismlari uchun umumiy prop'lar: SVG `<g>` bo'lagi yoki mustaqil ko'rinish. */

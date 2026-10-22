@@ -110,7 +110,7 @@ export function FallbackApp() {
                 </p>
                 <h3 className="text-lg font-semibold mb-2">Installation</h3>
                 <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-                  pnpm add @bek/tokens @bek/react
+                  pnpm add @bek-ui/tokens @bek-ui/react
                 </div>
               </CardContent>
             </Card>

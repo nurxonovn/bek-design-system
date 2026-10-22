@@ -334,7 +334,7 @@ writeFileSync(join(distDir, 'tokens.json'), JSON.stringify(tokensJson, null, 2) 
 
 const count = (c) => publicVars(c).length;
 console.log(
-  `[@bek/tokens] ${count(collections.Color)} color, ${count(collections.Dimension)} dimension, ` +
+  `[@bek-ui/tokens] ${count(collections.Color)} color, ${count(collections.Dimension)} dimension, ` +
     `${count(collections.Typography)} typography, ${elevations.length} elevation, ` +
     `${styles.textStyles.length} text style, ${collections.Palette.variables.length} palette → dist/`,
 );

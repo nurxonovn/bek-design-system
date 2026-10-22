@@ -1,5 +1,5 @@
 import type { SVGAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { r2 } from '../../core/geometry.js';
 
 export type DiagramConnectorVariant = 'straight' | 'dashed' | 'elbow' | 'labeled';

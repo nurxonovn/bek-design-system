@@ -12,7 +12,7 @@ import {
   TabList,
   Tabs,
   Tooltip,
-} from '@bek/react';
+} from '@bek-ui/react';
 import { Icon, type IconName } from '../icons';
 
 const TASKS = [

@@ -3,7 +3,7 @@
 Figma: **4.2 Badge → Badge**. Qisqa holat yoki son: pill shaklida, 1–2 so'z.
 
 ```tsx
-import { Badge } from '@bek/react';
+import { Badge } from '@bek-ui/react';
 
 <Badge>Label</Badge>                                   // filled · neutral · m
 <Badge variant="subtle" color="success" dot>Active</Badge>

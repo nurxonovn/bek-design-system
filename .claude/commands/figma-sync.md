@@ -23,7 +23,7 @@ tekshirish uchun avval `figma.root.children` ro'yxatini olib, yangi (kodda yo'q)
    (codeSyntax yo'q, tokensiz rang) alohida — dizaynerga.
 4. **Kod.** `figma-component` skilli bo'yicha tuzating: token/variant/prop, README, testlar.
    Yangi sahifa → `/new-component`. O'chirilgan → deprecate (export saqlanadi, README'da belgi, changeset `minor`).
-5. **Tekshiruv.** `pnpm --filter @bek/react check:figma <nomlar> --strict` → 0 ogohlantirish;
+5. **Tekshiruv.** `pnpm --filter @bek-ui/react check:figma <nomlar> --strict` → 0 ogohlantirish;
    `pnpm format && pnpm typecheck && pnpm build && pnpm test`.
 6. **Sayt.** `node apps/site/scripts/build-catalog.mjs`; yangi komponent bo'lsa `apps/site/src/app/demos/index.tsx` ga demo.
 7. **Yakun.** `.changeset/*.md` (API o'zgarsa `minor`, faqat uslub bo'lsa `patch`), commit

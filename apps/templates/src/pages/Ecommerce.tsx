@@ -18,7 +18,7 @@ import {
   Stepper,
   TextField,
   TopNavigation,
-} from '@bek/react';
+} from '@bek-ui/react';
 import { Icon } from '../icons';
 import { Phone, Placeholder } from '../Phone';
 

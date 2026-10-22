@@ -45,7 +45,7 @@
   "components": [
     {
       "dir": "accordion",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Accordion",
       "description": "yig'iladigan bo'limlar. variant: plain (ajratuvchi chiziq) · card (fill/secondary); size: s 48 · m 56 px.",
       "exports": [
@@ -211,7 +211,7 @@
     },
     {
       "dir": "alert",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Alert",
       "description": "Sahifa ichidagi doimiy xabar: nima bo'ldi, nega va keyingi qadam.",
       "exports": [
@@ -331,11 +331,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Alert\n\nFigma: **5.4 Alert**. Sahifa ichidagi doimiy xabar: nima bo'ldi, nega va keyingi qadam.\n\n```tsx\nimport { Alert } from '@bek/react';\n\n<Alert tone=\"danger\" title=\"Payment failed\" primaryAction={{ label: 'Retry', onClick: retry }}\n  secondaryAction={{ label: 'Later' }} onClose={dismiss}>\n  Your card was declined. Try another card.\n</Alert>\n<Alert variant=\"solid\" tone=\"warning\" layout=\"stacked\" title=\"Low balance\">Add funds to continue.</Alert>\n```\n\n| Prop              | Qiymatlar                                                | Default  |\n| ----------------- | -------------------------------------------------------- | -------- |\n| `variant`         | `subtle` · `solid`                                       | `subtle` |\n| `tone`            | `neutral` · `info` · `success` · `warning` · `danger`    | `info`   |\n| `layout`          | `inline` (amallar yonida) · `stacked` (matn ostida)      | `inline` |\n| `title`           | Title/S                                                  | —        |\n| `children`        | izoh, Body/S                                             | —        |\n| `primaryAction`   | `{ label, onClick }` — `action` (danger: `danger`) tugma | —        |\n| `secondaryAction` | `{ label, onClick }` — `flat` tugma                      | —        |\n| `onClose`         | berilsa — yopish tugmasi                                 | —        |\n| `icon`            | holat ikonkasi o'rniga; `null` — ikonkasiz               | holat    |\n\n- Tokenlar: Subtle — fon `status/{tone}/soft` (neutral `fill/tertiary`), Stroke ikonka 20 `text/{tone}`, sarlavha `text/primary`, izoh `text/secondary`. Solid — fon `status/{tone}/default` (neutral `fill/inverse`), matn `text/on-color` (warning `text/on-warning`), asosiy tugma `normal-contrast`. Padding 16, gap 12, radius `surface/md`.\n- A11y: `warning`/`danger` — `role=\"alert\"`, qolganlari — `role=\"status\"`.\n\n## Do / Don't\n\n- ✅ Sabab va yechim: \"Card declined — try another card\". ❌ Faqat \"Error\".\n- ✅ Bitta blokda bitta Alert. ❌ Bir nechta Alert'ni ketma-ket qalashtirish.\n"
+      "readme": "# Alert\n\nFigma: **5.4 Alert**. Sahifa ichidagi doimiy xabar: nima bo'ldi, nega va keyingi qadam.\n\n```tsx\nimport { Alert } from '@bek-ui/react';\n\n<Alert tone=\"danger\" title=\"Payment failed\" primaryAction={{ label: 'Retry', onClick: retry }}\n  secondaryAction={{ label: 'Later' }} onClose={dismiss}>\n  Your card was declined. Try another card.\n</Alert>\n<Alert variant=\"solid\" tone=\"warning\" layout=\"stacked\" title=\"Low balance\">Add funds to continue.</Alert>\n```\n\n| Prop              | Qiymatlar                                                | Default  |\n| ----------------- | -------------------------------------------------------- | -------- |\n| `variant`         | `subtle` · `solid`                                       | `subtle` |\n| `tone`            | `neutral` · `info` · `success` · `warning` · `danger`    | `info`   |\n| `layout`          | `inline` (amallar yonida) · `stacked` (matn ostida)      | `inline` |\n| `title`           | Title/S                                                  | —        |\n| `children`        | izoh, Body/S                                             | —        |\n| `primaryAction`   | `{ label, onClick }` — `action` (danger: `danger`) tugma | —        |\n| `secondaryAction` | `{ label, onClick }` — `flat` tugma                      | —        |\n| `onClose`         | berilsa — yopish tugmasi                                 | —        |\n| `icon`            | holat ikonkasi o'rniga; `null` — ikonkasiz               | holat    |\n\n- Tokenlar: Subtle — fon `status/{tone}/soft` (neutral `fill/tertiary`), Stroke ikonka 20 `text/{tone}`, sarlavha `text/primary`, izoh `text/secondary`. Solid — fon `status/{tone}/default` (neutral `fill/inverse`), matn `text/on-color` (warning `text/on-warning`), asosiy tugma `normal-contrast`. Padding 16, gap 12, radius `surface/md`.\n- A11y: `warning`/`danger` — `role=\"alert\"`, qolganlari — `role=\"status\"`.\n\n## Do / Don't\n\n- ✅ Sabab va yechim: \"Card declined — try another card\". ❌ Faqat \"Error\".\n- ✅ Bitta blokda bitta Alert. ❌ Bir nechta Alert'ni ketma-ket qalashtirish.\n"
     },
     {
       "dir": "app-bar",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "AppBar",
       "description": "Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.",
       "exports": [
@@ -452,11 +452,11 @@
           "reason": "Variant=Search/Brand qidiruv maydoni (36 px pill) fill/secondary fonli — kodda SearchBar (3.12) komponenti `children` orqali; token unga tegishli. Doc'da esa \"Search field: fill/tertiary\" deyilgan — doc va komponentni bir xil tokenga keltirish kerak."
         }
       ],
-      "readme": "# AppBar\n\nFigma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.\n`variant`: `title` · `search` · `brand`; `size`: `s` · `m`.\n\n```tsx\nimport '@bek/tokens/materials.css'; // scrolled holat uchun Glass/Regular\nimport { AppBar } from '@bek/react';\n\n<AppBar title=\"Orders\" onBack={goBack} scrolled={scrollY > 0}\n  actions={<Button variant=\"flat\" size=\"l\" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />\n<AppBar variant=\"search\" onBack={goBack}><SearchBar placeholder=\"Search\" /></AppBar>\n<AppBar variant=\"brand\" leading={<BekLogo size=\"s\" />} actions={…}><SearchBar placeholder=\"Search\" /></AppBar>\n// Figma \"Show count\" — bildirishnoma tugmasi ustidagi hisoblagich: actions ichida Badge\n<AppBar title=\"Inbox\" actions={<span style={{ position: 'relative' }}><Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button><Badge color=\"danger\" size=\"s\">3</Badge></span>} />\n```\n\n| Prop       | Qiymatlar                                                                            | Default |\n| ---------- | ------------------------------------------------------------------------------------ | ------- |\n| `variant`  | `title` (orqaga + sarlavha) · `search` (orqaga + qidiruv) · `brand` (logo + qidiruv) | `title` |\n| `size`     | `s` 56 (mobil) · `m` 64 (planshet, web)                                              | `s`     |\n| `scrolled` | kontent ostidan o'tganda — Glass/Regular (`glass/tint`) + `Elevation/1`              | `false` |\n| `onBack`   | orqaga tugmasi (`backLabel`)                                                         | —       |\n| `leading`  | logo va h.k.                                                                         | —       |\n| `title`    | Title/M (M — Title/L), `<h1>`                                                        | —       |\n| `children` | sarlavha o'rnida (qidiruv maydoni — SearchBar, 36 px, `fill/secondary`)              | —       |\n| `actions`  | 1–3 ta icon-only tugma                                                               | —       |\n\n- Tokenlar: `fill/primary`, gap 12, yon padding `layout/page-margin`, `z/sticky`. Scrolled=Off — chegarasiz (ajralish faqat scrollda: `glass/tint` + `glass/tint-shade`, blur 16, `Elevation/1`; `materials.css` ulansa to'liq Glass/Regular).\n- `search`/`brand` da `title` berilsa `<h1>` ekran o'quvchi uchun yashirin qoladi. Hisoblagich (`Show count`) — amal tugmasi ustidagi `Badge` (`status/danger`).\n"
+      "readme": "# AppBar\n\nFigma: **6.5 App bar**. Ekran yuqorisidagi sticky panel: orqaga, sarlavha yoki qidiruv, amallar.\n`variant`: `title` · `search` · `brand`; `size`: `s` · `m`.\n\n```tsx\nimport '@bek-ui/tokens/materials.css'; // scrolled holat uchun Glass/Regular\nimport { AppBar } from '@bek-ui/react';\n\n<AppBar title=\"Orders\" onBack={goBack} scrolled={scrollY > 0}\n  actions={<Button variant=\"flat\" size=\"l\" iconOnly startIcon={<HeartIcon />}>Favourites</Button>} />\n<AppBar variant=\"search\" onBack={goBack}><SearchBar placeholder=\"Search\" /></AppBar>\n<AppBar variant=\"brand\" leading={<BekLogo size=\"s\" />} actions={…}><SearchBar placeholder=\"Search\" /></AppBar>\n// Figma \"Show count\" — bildirishnoma tugmasi ustidagi hisoblagich: actions ichida Badge\n<AppBar title=\"Inbox\" actions={<span style={{ position: 'relative' }}><Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button><Badge color=\"danger\" size=\"s\">3</Badge></span>} />\n```\n\n| Prop       | Qiymatlar                                                                            | Default |\n| ---------- | ------------------------------------------------------------------------------------ | ------- |\n| `variant`  | `title` (orqaga + sarlavha) · `search` (orqaga + qidiruv) · `brand` (logo + qidiruv) | `title` |\n| `size`     | `s` 56 (mobil) · `m` 64 (planshet, web)                                              | `s`     |\n| `scrolled` | kontent ostidan o'tganda — Glass/Regular (`glass/tint`) + `Elevation/1`              | `false` |\n| `onBack`   | orqaga tugmasi (`backLabel`)                                                         | —       |\n| `leading`  | logo va h.k.                                                                         | —       |\n| `title`    | Title/M (M — Title/L), `<h1>`                                                        | —       |\n| `children` | sarlavha o'rnida (qidiruv maydoni — SearchBar, 36 px, `fill/secondary`)              | —       |\n| `actions`  | 1–3 ta icon-only tugma                                                               | —       |\n\n- Tokenlar: `fill/primary`, gap 12, yon padding `layout/page-margin`, `z/sticky`. Scrolled=Off — chegarasiz (ajralish faqat scrollda: `glass/tint` + `glass/tint-shade`, blur 16, `Elevation/1`; `materials.css` ulansa to'liq Glass/Regular).\n- `search`/`brand` da `title` berilsa `<h1>` ekran o'quvchi uchun yashirin qoladi. Hisoblagich (`Show count`) — amal tugmasi ustidagi `Badge` (`status/danger`).\n"
     },
     {
       "dir": "avatar",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Avatar",
       "description": "size: s 32 · m 40 · l 48 · xl 64 px; status: online · away · busy.",
       "exports": [
@@ -556,7 +556,7 @@
     },
     {
       "dir": "badge",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Badge",
       "description": "Qisqa holat yoki son: pill shaklida, 1–2 so'z.",
       "exports": [
@@ -670,11 +670,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Badge\n\nFigma: **4.2 Badge → Badge**. Qisqa holat yoki son: pill shaklida, 1–2 so'z.\n\n```tsx\nimport { Badge } from '@bek/react';\n\n<Badge>Label</Badge>                                   // filled · neutral · m\n<Badge variant=\"subtle\" color=\"success\" dot>Active</Badge>\n<Badge variant=\"outline\" color=\"danger\" size=\"s\">Overdue</Badge>\n<Badge color=\"accent\" icon={<StarIcon />}>New</Badge>\n```\n\n| Prop       | Qiymatlar                                                        | Default   |\n| ---------- | ---------------------------------------------------------------- | --------- |\n| `variant`  | `filled` · `subtle` · `outline`                                  | `filled`  |\n| `color`    | `neutral` · `accent` · `success` · `warning` · `danger` · `info` | `neutral` |\n| `size`     | `s` 20 · `m` 24 · `l` 28 px                                      | `m`       |\n| `dot`      | `boolean` — 6 px nuqta                                           | `false`   |\n| `icon`     | `ReactNode` — s/m 12 px, l 16 px                                 | —         |\n| `children` | matn                                                             | —         |\n\n- **Filled** — kuchli signal (yangi, son). **Subtle** — ro'yxat va jadvaldagi holatlar. **Outline** — sokin meta yorliq.\n- Tokenlar: fon `status/{tone}/default` (Filled) yoki `status/{tone}/soft`; matn `text/on-color` yoki `text/{tone}`; Outline chegarasi `border/{tone}`, 1 px; radius `radius/full`; shrift Label/S (L — Label/M).\n- **Qurilmalar:** Mobile — ro'yxat sarlavhasi yonida `m`; Tablet — ro'yxat va kartalarda `m`, zich jadvalda `s`; Web — jadval katakchasi va menyu hisoblagichida `s`.\n\n## Do / Don't\n\n- ✅ Qisqa matn: \"Active\", \"Pending\". ❌ Uzun gap (\"Payment pending, please check your card\").\n- ✅ Rang ma'noga mos: success — muvaffaqiyat, danger — xato. ❌ Rangni bezak uchun tanlash.\n- Holat faqat rang bilan ko'rsatilmaydi — matn doim bor.\n"
+      "readme": "# Badge\n\nFigma: **4.2 Badge → Badge**. Qisqa holat yoki son: pill shaklida, 1–2 so'z.\n\n```tsx\nimport { Badge } from '@bek-ui/react';\n\n<Badge>Label</Badge>                                   // filled · neutral · m\n<Badge variant=\"subtle\" color=\"success\" dot>Active</Badge>\n<Badge variant=\"outline\" color=\"danger\" size=\"s\">Overdue</Badge>\n<Badge color=\"accent\" icon={<StarIcon />}>New</Badge>\n```\n\n| Prop       | Qiymatlar                                                        | Default   |\n| ---------- | ---------------------------------------------------------------- | --------- |\n| `variant`  | `filled` · `subtle` · `outline`                                  | `filled`  |\n| `color`    | `neutral` · `accent` · `success` · `warning` · `danger` · `info` | `neutral` |\n| `size`     | `s` 20 · `m` 24 · `l` 28 px                                      | `m`       |\n| `dot`      | `boolean` — 6 px nuqta                                           | `false`   |\n| `icon`     | `ReactNode` — s/m 12 px, l 16 px                                 | —         |\n| `children` | matn                                                             | —         |\n\n- **Filled** — kuchli signal (yangi, son). **Subtle** — ro'yxat va jadvaldagi holatlar. **Outline** — sokin meta yorliq.\n- Tokenlar: fon `status/{tone}/default` (Filled) yoki `status/{tone}/soft`; matn `text/on-color` yoki `text/{tone}`; Outline chegarasi `border/{tone}`, 1 px; radius `radius/full`; shrift Label/S (L — Label/M).\n- **Qurilmalar:** Mobile — ro'yxat sarlavhasi yonida `m`; Tablet — ro'yxat va kartalarda `m`, zich jadvalda `s`; Web — jadval katakchasi va menyu hisoblagichida `s`.\n\n## Do / Don't\n\n- ✅ Qisqa matn: \"Active\", \"Pending\". ❌ Uzun gap (\"Payment pending, please check your card\").\n- ✅ Rang ma'noga mos: success — muvaffaqiyat, danger — xato. ❌ Rangni bezak uchun tanlash.\n- Holat faqat rang bilan ko'rsatilmaydi — matn doim bor.\n"
     },
     {
       "dir": "base-selector",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "BaseSelector",
       "description": "qisqa variantlar ro'yxatini (xamir, o'lcham, muz, qovurish) ‹ › bilan birma-bir aylantirish, rasm bilan.",
       "exports": [
@@ -772,7 +772,7 @@
     },
     {
       "dir": "bottom-navigation",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "BottomNavigation",
       "description": "(+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.",
       "exports": [
@@ -935,11 +935,11 @@
           "reason": "Fokus halqasi BottomNavItem'ga NavAction (navigation papkasi) orqali `.bek-focus-ring` klassi bilan beriladi — border/focus shu umumiy uslubda (styles/focus.css); shu papkada bevosita yozilmaydi."
         }
       ],
-      "readme": "# BottomNavigation\n\nFigma: **6.7 Bottom navigation** (+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.\n\n```tsx\nimport { BottomNavigation, BottomNavItem } from '@bek/react';\n\n<BottomNavigation>\n  <BottomNavItem href=\"/\" icon={<HomeIcon />} selectedIcon={<HomeSolidIcon />} selected>Home</BottomNavItem>\n  <BottomNavItem href=\"/search\" icon={<SearchIcon />} badge=\"dot\">Search</BottomNavItem>\n  <BottomNavItem href=\"/cart\" icon={<CartIcon />} badge={3}>Cart</BottomNavItem>\n</BottomNavigation>\n<BottomNavigation variant=\"floating\">…</BottomNavigation>\n```\n\n| Prop                     | Qiymatlar                                   | Default |\n| ------------------------ | ------------------------------------------- | ------- |\n| `variant`                | `bar` (chetdan-chetga) · `floating` (pill)  | `bar`   |\n| `BottomNavItem.icon`     | 24 px Stroke ikonka; `selectedIcon` — Solid | —       |\n| `BottomNavItem.badge`    | `'dot'` · son (99 dan katta — \"99+\")        | —       |\n| `BottomNavItem.selected` | `aria-current=\"page\"`, `text/accent`        | `false` |\n| `hideLabel`              | nomni vizual yashirish                      | `false` |\n\n- Bar: 64 + safe area, `surface/raised`, `Elevation/1`, padding 0 8. Floating: radius full, 16 px chetdan, `Elevation/3`. Element 56 balandlik, min 48 kenglik, nom Caption/S; Pressed `fill/soft`; badge `status/danger/default`.\n"
+      "readme": "# BottomNavigation\n\nFigma: **6.7 Bottom navigation** (+ Bottom nav item). Mobil pastki navigatsiya: 3–5 manzil.\n\n```tsx\nimport { BottomNavigation, BottomNavItem } from '@bek-ui/react';\n\n<BottomNavigation>\n  <BottomNavItem href=\"/\" icon={<HomeIcon />} selectedIcon={<HomeSolidIcon />} selected>Home</BottomNavItem>\n  <BottomNavItem href=\"/search\" icon={<SearchIcon />} badge=\"dot\">Search</BottomNavItem>\n  <BottomNavItem href=\"/cart\" icon={<CartIcon />} badge={3}>Cart</BottomNavItem>\n</BottomNavigation>\n<BottomNavigation variant=\"floating\">…</BottomNavigation>\n```\n\n| Prop                     | Qiymatlar                                   | Default |\n| ------------------------ | ------------------------------------------- | ------- |\n| `variant`                | `bar` (chetdan-chetga) · `floating` (pill)  | `bar`   |\n| `BottomNavItem.icon`     | 24 px Stroke ikonka; `selectedIcon` — Solid | —       |\n| `BottomNavItem.badge`    | `'dot'` · son (99 dan katta — \"99+\")        | —       |\n| `BottomNavItem.selected` | `aria-current=\"page\"`, `text/accent`        | `false` |\n| `hideLabel`              | nomni vizual yashirish                      | `false` |\n\n- Bar: 64 + safe area, `surface/raised`, `Elevation/1`, padding 0 8. Floating: radius full, 16 px chetdan, `Elevation/3`. Element 56 balandlik, min 48 kenglik, nom Caption/S; Pressed `fill/soft`; badge `status/danger/default`.\n"
     },
     {
       "dir": "breadcrumb",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Breadcrumb",
       "description": "Sahifaning ierarxiyadagi o'rni; oxirgi qadam — joriy sahifa.",
       "exports": [
@@ -1068,11 +1068,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Breadcrumb\n\nFigma: **6.3 Breadcrumb**. Sahifaning ierarxiyadagi o'rni; oxirgi qadam — joriy sahifa.\n\n```tsx\nimport { Breadcrumb } from '@bek/react';\n\nconst items = [\n  { label: 'Home', href: '/', icon: <HomeIcon /> },\n  { label: 'Catalog', href: '/catalog' },\n  { label: 'Phones', href: '/catalog/phones' },\n  { label: 'iPhone 16' },\n];\n\n<Breadcrumb items={items} />                                        // web\n<Breadcrumb items={items} layout=\"collapsed\" onOverflowClick={openMenu} /> // planshet\n<Breadcrumb items={items} layout=\"back\" />                          // mobil: ‹ Phones\n```\n\n| Prop              | Qiymatlar                                             | Default             |\n| ----------------- | ----------------------------------------------------- | ------------------- |\n| `items`           | `{ label, href?, icon?, onClick? }[]`                 | —                   |\n| `size`            | `s` Body/S · `m` Body/M                               | `s`                 |\n| `layout`          | `full` · `collapsed` (\"…\" yashirin qadamlar) · `back` | `full`              |\n| `onOverflowClick` | `(hidden, event)` — Dropdown menu ochish uchun        | —                   |\n| `overflowLabel`   | \"…\" tugmasi nomi                                      | `Show hidden pages` |\n\n- Tokenlar: havola `text/secondary` (hover — `text/primary` + tagiga chiziq), joriy — `text/primary` Strong (`aria-current=\"page\"`), ajratuvchi chevron 16 `text/tertiary`, \"…\" hover `fill/tertiary`. Qadamlar gap 2, element padding 0 4, radius 4.\n- `<nav aria-label=\"Breadcrumb\">` + `<ol>`; RTL'da chevronlar teskari.\n\n## Do / Don't\n\n- ✅ Uy ikonkasi faqat birinchi qadamda. ❌ Breadcrumb'ni asosiy navigatsiya o'rnida ishlatish.\n"
+      "readme": "# Breadcrumb\n\nFigma: **6.3 Breadcrumb**. Sahifaning ierarxiyadagi o'rni; oxirgi qadam — joriy sahifa.\n\n```tsx\nimport { Breadcrumb } from '@bek-ui/react';\n\nconst items = [\n  { label: 'Home', href: '/', icon: <HomeIcon /> },\n  { label: 'Catalog', href: '/catalog' },\n  { label: 'Phones', href: '/catalog/phones' },\n  { label: 'iPhone 16' },\n];\n\n<Breadcrumb items={items} />                                        // web\n<Breadcrumb items={items} layout=\"collapsed\" onOverflowClick={openMenu} /> // planshet\n<Breadcrumb items={items} layout=\"back\" />                          // mobil: ‹ Phones\n```\n\n| Prop              | Qiymatlar                                             | Default             |\n| ----------------- | ----------------------------------------------------- | ------------------- |\n| `items`           | `{ label, href?, icon?, onClick? }[]`                 | —                   |\n| `size`            | `s` Body/S · `m` Body/M                               | `s`                 |\n| `layout`          | `full` · `collapsed` (\"…\" yashirin qadamlar) · `back` | `full`              |\n| `onOverflowClick` | `(hidden, event)` — Dropdown menu ochish uchun        | —                   |\n| `overflowLabel`   | \"…\" tugmasi nomi                                      | `Show hidden pages` |\n\n- Tokenlar: havola `text/secondary` (hover — `text/primary` + tagiga chiziq), joriy — `text/primary` Strong (`aria-current=\"page\"`), ajratuvchi chevron 16 `text/tertiary`, \"…\" hover `fill/tertiary`. Qadamlar gap 2, element padding 0 4, radius 4.\n- `<nav aria-label=\"Breadcrumb\">` + `<ol>`; RTL'da chevronlar teskari.\n\n## Do / Don't\n\n- ✅ Uy ikonkasi faqat birinchi qadamda. ❌ Breadcrumb'ni asosiy navigatsiya o'rnida ishlatish.\n"
     },
     {
       "dir": "button",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Button",
       "description": "Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.",
       "exports": [
@@ -1303,11 +1303,11 @@
           "reason": "Contrast oilasi pressed/selected holati — fill/on-color-pressed; Figma'da Pressed varianti yo'q (doc: 'Pressed (code)')."
         }
       ],
-      "readme": "# Button\n\nFigma: **3.1 Button**. Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.\n\n```tsx\nimport { Button } from '@bek/react';\n\n<Button variant=\"action\">Save changes</Button>\n<Button variant=\"outline-danger\" size=\"l\" startIcon={<TrashIcon />}>Delete</Button>\n<Button loading>Saving</Button>\n<Button variant=\"flat\" pressed={isBold} onClick={toggleBold}>Bold</Button>\n<Button variant=\"flat\" iconOnly startIcon={<CloseIcon />}>Close</Button>   // \"Close\" — ekran o'quvchi uchun\n```\n\n| Prop        | Qiymatlar                                                                                                                                                                                                          | Default  |\n| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |\n| `variant`   | `normal` · `action` · `danger` · `raised` · `outline` · `outline-{action·info·success·warning·danger·utility}` · `flat` · `flat-{…}` · `flat-secondary` · `normal-contrast` · `outline-contrast` · `flat-contrast` | `normal` |\n| `size`      | `m` 28 · `l` 36 · `xl` 44 · `2xl` 52 · `3xl` 60 px                                                                                                                                                                 | `m`      |\n| `startIcon` | `ReactNode` — o'lchami tugmaga qarab: 16 · 16 · 20 · 24 · 24 px                                                                                                                                                    | —        |\n| `endIcon`   | `ReactNode`                                                                                                                                                                                                        | —        |\n| `loading`   | spinner start icon o'rnida, `aria-busy`, bosish bloklanadi, ranglar saqlanadi                                                                                                                                      | `false`  |\n| `pressed`   | toggle — `aria-pressed` (Figma: State=Selected)                                                                                                                                                                    | —        |\n| `iconOnly`  | faqat ikonka; `children` ko'rinmas nom bo'lib qoladi                                                                                                                                                               | `false`  |\n\nQolgan `<button>` atributlari (`disabled`, `type`, `onClick`, `aria-*`) o'tadi; `type` default — `button`. Focus — `.bek-focus-ring` (faqat klaviatura).\n\n## Qachon qaysi variant\n\n- **Action** — hududdagi bitta asosiy amal (Save, Pay, Continue).\n- **Normal, Outline** — asosiy amal yonidagi ikkinchi darajali (Cancel, Back, Export).\n- **Flat** — toolbar, jadval qatori, \"Show more\".\n- **Danger / Outline-danger / Flat-danger** — qaytarib bo'lmaydigan amal; Alert dialog (7.6) bilan tasdiqlang.\n- info / success / warning / utility ohanglari — faqat ma'no tashisa. **Raised** — xarita yoki media ustida. **Contrast** — faqat to'q yoki rasm fon ustida.\n\n## O'lcham va qurilma\n\n- Mobile: default **xl** (44 px), asosiy amal **2xl** va to'liq kenglik; touch'da xl dan kichik emas.\n- Tablet: touch'da xl, pointer toolbarida l.\n- Web: formalarda **l**, zich UI'da (jadval, filtr) **m**; xl–3xl faqat marketing CTA.\n- Guruhdagi oraliq: m/l — 8 px, xl–3xl — 12 px. Bir guruhda bitta o'lcham, ko'pi bilan 3 tugma.\n\n## Matn\n\nFe'l bilan boshlang va natijani ayting: \"Save changes\", \"Create project\". 1–3 so'z, gap shaklida, nuqtasiz, bir qatorda. Sahifani almashtirsa — bu havola, tugma emas.\n"
+      "readme": "# Button\n\nFigma: **3.1 Button**. Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.\n\n```tsx\nimport { Button } from '@bek-ui/react';\n\n<Button variant=\"action\">Save changes</Button>\n<Button variant=\"outline-danger\" size=\"l\" startIcon={<TrashIcon />}>Delete</Button>\n<Button loading>Saving</Button>\n<Button variant=\"flat\" pressed={isBold} onClick={toggleBold}>Bold</Button>\n<Button variant=\"flat\" iconOnly startIcon={<CloseIcon />}>Close</Button>   // \"Close\" — ekran o'quvchi uchun\n```\n\n| Prop        | Qiymatlar                                                                                                                                                                                                          | Default  |\n| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |\n| `variant`   | `normal` · `action` · `danger` · `raised` · `outline` · `outline-{action·info·success·warning·danger·utility}` · `flat` · `flat-{…}` · `flat-secondary` · `normal-contrast` · `outline-contrast` · `flat-contrast` | `normal` |\n| `size`      | `m` 28 · `l` 36 · `xl` 44 · `2xl` 52 · `3xl` 60 px                                                                                                                                                                 | `m`      |\n| `startIcon` | `ReactNode` — o'lchami tugmaga qarab: 16 · 16 · 20 · 24 · 24 px                                                                                                                                                    | —        |\n| `endIcon`   | `ReactNode`                                                                                                                                                                                                        | —        |\n| `loading`   | spinner start icon o'rnida, `aria-busy`, bosish bloklanadi, ranglar saqlanadi                                                                                                                                      | `false`  |\n| `pressed`   | toggle — `aria-pressed` (Figma: State=Selected)                                                                                                                                                                    | —        |\n| `iconOnly`  | faqat ikonka; `children` ko'rinmas nom bo'lib qoladi                                                                                                                                                               | `false`  |\n\nQolgan `<button>` atributlari (`disabled`, `type`, `onClick`, `aria-*`) o'tadi; `type` default — `button`. Focus — `.bek-focus-ring` (faqat klaviatura).\n\n## Qachon qaysi variant\n\n- **Action** — hududdagi bitta asosiy amal (Save, Pay, Continue).\n- **Normal, Outline** — asosiy amal yonidagi ikkinchi darajali (Cancel, Back, Export).\n- **Flat** — toolbar, jadval qatori, \"Show more\".\n- **Danger / Outline-danger / Flat-danger** — qaytarib bo'lmaydigan amal; Alert dialog (7.6) bilan tasdiqlang.\n- info / success / warning / utility ohanglari — faqat ma'no tashisa. **Raised** — xarita yoki media ustida. **Contrast** — faqat to'q yoki rasm fon ustida.\n\n## O'lcham va qurilma\n\n- Mobile: default **xl** (44 px), asosiy amal **2xl** va to'liq kenglik; touch'da xl dan kichik emas.\n- Tablet: touch'da xl, pointer toolbarida l.\n- Web: formalarda **l**, zich UI'da (jadval, filtr) **m**; xl–3xl faqat marketing CTA.\n- Guruhdagi oraliq: m/l — 8 px, xl–3xl — 12 px. Bir guruhda bitta o'lcham, ko'pi bilan 3 tugma.\n\n## Matn\n\nFe'l bilan boshlang va natijani ayting: \"Save changes\", \"Create project\". 1–3 so'z, gap shaklida, nuqtasiz, bir qatorda. Sahifani almashtirsa — bu havola, tugma emas.\n"
     },
     {
       "dir": "card",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Card",
       "description": "variant: elevated · outlined · filled; size: s · m · l (padding 16 / 24 / 32).",
       "exports": [
@@ -1461,7 +1461,7 @@
     },
     {
       "dir": "carousel",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Carousel",
       "description": "controls: arrows · dots (Figma \"Dots only\") · none; placement: inside · below; peek — keyingi slayd cheti; onMedia — rasm ustidagi oq nuqtalar. Indikator (indicator): dots · fraction (\"1 / 5\") · progress · thumbnails (thumbnails — kichik rasmlar, orientation: horizontal · vertical, thumbSize: s 56 · m 64).",
       "exports": [
@@ -1693,11 +1693,11 @@
           "reason": "Figma doc \"Thumb Hover ring — border/strong (2 px)\" deydi, lekin .Carousel/Thumb komponentida hover halqasi variable'ga bog'lanmagan (tokens.color: faqat border/focus, fill/tertiary). Figma'da Hover holat stroke'ini border/strong ga bog'lash kerak."
         }
       ],
-      "readme": "# Carousel\n\nFigma: **4.11 Carousel** — `controls`: `arrows` · `dots` (Figma \"Dots only\") · `none`; `placement`: `inside` · `below`; `peek` — keyingi slayd cheti; `onMedia` — rasm ustidagi oq nuqtalar. Indikator (`indicator`): `dots` · `fraction` (\"1 / 5\") · `progress` · `thumbnails` (`thumbnails` — kichik rasmlar, `orientation`: `horizontal` · `vertical`, `thumbSize`: `s` 56 · `m` 64).\n\n```tsx\n<Carousel aria-label=\"Aksiyalar\" peek>\n  <img src=\"/promo-1.jpg\" alt=\"Pitsa −20%\" />\n  <img src=\"/promo-2.jpg\" alt=\"Bepul yetkazish\" />\n</Carousel>\n```\n\n```tsx\n<Carousel\n  aria-label=\"Mahsulot rasmlari\"\n  controls=\"dots\"\n  indicator=\"thumbnails\"\n  orientation=\"vertical\"\n  thumbnails={photos.map((p) => (\n    <img src={p.thumb} alt=\"\" />\n  ))}\n>\n  {photos.map((p) => (\n    <img key={p.id} src={p.src} alt={p.alt} />\n  ))}\n</Carousel>\n```\n\nCSS scroll-snap: touch'da surish, sichqonchada strelkalar (Raised icon-only Button), nuqtalar sichqoncha uchun (Tab'da emas — 1.6 Accessibility). Har slayd `role=\"group\"` + \"2 / 5\" nomi; RTL qo'llab-quvvatlanadi.\n"
+      "readme": "# Carousel\n\nFigma: **4.11 Carousel** — `controls`: `arrows` · `dots` (Figma \"Dots only\") · `none`; `placement`: `inside` · `below`; `peek` — keyingi slayd cheti; `onMedia` — rasm ustidagi oq nuqtalar. Indikator (`indicator`): `dots` · `fraction` (\"1 / 5\") · `progress` · `thumbnails` (`thumbnails` — kichik rasmlar, `orientation`: `horizontal` · `vertical`, `thumbSize`: `s` 56 · `m` 64).\n\n```tsx\n<Carousel aria-label=\"Aksiyalar\" peek>\n  <img src=\"/promo-1.jpg\" alt=\"Pitsa −20%\" />\n  <img src=\"/promo-2.jpg\" alt=\"Bepul yetkazish\" />\n</Carousel>\n```\n\n```tsx\n<Carousel\n  aria-label=\"Mahsulot rasmlari\"\n  controls=\"dots\"\n  indicator=\"thumbnails\"\n  orientation=\"vertical\"\n  thumbnails={photos.map((p) => (\n    <img src={p.thumb} alt=\"\" />\n  ))}\n>\n  {photos.map((p) => (\n    <img key={p.id} src={p.src} alt={p.alt} />\n  ))}\n</Carousel>\n```\n\nCSS scroll-snap: touch'da surish, sichqonchada strelkalar (Raised icon-only Button), nuqtalar sichqoncha uchun (Tab'da emas — 1.6 Accessibility). Skroll maydoni fokuslanadi (`tabIndex=0`): Tab bilan kirib, ←/→ bilan suriladi. Har slayd `role=\"group\"` + \"2 / 5\" nomi; RTL qo'llab-quvvatlanadi.\n"
     },
     {
       "dir": "checkbox",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Checkbox",
       "description": "Unchecked · Checked · Indeterminate, o'lcham s 16 · m 20 · l 24 px.",
       "exports": [
@@ -1798,7 +1798,7 @@
     },
     {
       "dir": "checkout-bar",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "CheckoutBar · CartPill",
       "description": "Buyurtmani oldinga suradigan sticky pastki panel.",
       "exports": [
@@ -1901,11 +1901,11 @@
           "reason": "bg/base — Figma'da Checkout bar variant frame'i ortidagi ekran foni (demo); bar o'zi surface/raised + Elevation/1. Doc'da esa \"Bar: bg/sheet · Elevation/2\" deyilgan — doc komponentga moslanishi kerak."
         }
       ],
-      "readme": "# CheckoutBar · CartPill\n\nFigma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.\n\n```tsx\nimport { CartPill, CheckoutBar, InfoWrap } from '@bek/react';\n\n<CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}\n  action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />\n<CheckoutBar type=\"checkout\" total=\"159 000 soʻm\" action={{ label: 'Pay', loading: paying }}\n  legal=\"By tapping Pay you agree to the terms\" />\n<CartPill icon={<BagIcon />} label=\"Cart · 3 items\" total=\"147 000 soʻm\" onClick={openCart} />\n```\n\n| Prop (`CheckoutBar`)   | Qiymatlar                                           | Default |\n| ---------------------- | --------------------------------------------------- | ------- |\n| `type`                 | `cart` · `checkout`                                 | `cart`  |\n| `info`                 | yuqoridagi izoh (InfoWrap)                          | —       |\n| `total` · `totalLabel` | jami (Title/L) va uning nomi (Caption/L)            | `Total` |\n| `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |\n| `legal`                | Caption/M `text/tertiary`                           | —       |\n\n- `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.\n- `CartPill` (Floating): 60 px accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.\n"
+      "readme": "# CheckoutBar · CartPill\n\nFigma: **6.8 Checkout bar**. Buyurtmani oldinga suradigan sticky pastki panel.\n\n```tsx\nimport { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';\n\n<CheckoutBar info={<InfoWrap>Free delivery from 200 000 soʻm</InfoWrap>}\n  action={{ label: 'Go to cart · 147 000 soʻm', onClick: openCart }} />\n<CheckoutBar type=\"checkout\" total=\"159 000 soʻm\" action={{ label: 'Pay', loading: paying }}\n  legal=\"By tapping Pay you agree to the terms\" />\n<CartPill icon={<BagIcon />} label=\"Cart · 3 items\" total=\"147 000 soʻm\" onClick={openCart} />\n```\n\n| Prop (`CheckoutBar`)   | Qiymatlar                                           | Default |\n| ---------------------- | --------------------------------------------------- | ------- |\n| `type`                 | `cart` · `checkout`                                 | `cart`  |\n| `info`                 | yuqoridagi izoh (InfoWrap)                          | —       |\n| `total` · `totalLabel` | jami (Title/L) va uning nomi (Caption/L)            | `Total` |\n| `action`               | `{ label, onClick, loading, disabled }` — Action XL | —       |\n| `legal`                | Caption/M `text/tertiary`                           | —       |\n\n- `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.\n- `CartPill` (Floating): 60 px accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.\n"
     },
     {
       "dir": "chip",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Chip",
       "description": "foydalanuvchi yoqadigan (Filter) yoki olib tashlaydigan (Input) ixcham pill. size: s 32 · m 40.",
       "exports": [
@@ -2021,7 +2021,7 @@
     },
     {
       "dir": "date-picker",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "DatePicker",
       "description": "Type=Single va Type=Range. Dushanbadan boshlanadigan oy to'ri, bugun nuqtasi, oraliq tasmasi; mobil'da Bottom sheet, web'da Popover ichida.",
       "exports": [
@@ -2168,7 +2168,7 @@
     },
     {
       "dir": "description-list",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Description list",
       "description": "term · qiymat juftliklari: xususiyatlar, cheklar, buyurtma tafsilotlari. Table'dan yengil. layout: justified · columns · inline; size: s (Body/S) · m (Body/M) · l (Body/L).",
       "exports": [
@@ -2322,7 +2322,7 @@
     },
     {
       "dir": "divider",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Divider",
       "description": "Yagona ajratuvchi chiziq: border/hairline, 1 px (stroke/default). List, Menu, Card ichida.",
       "exports": [
@@ -2374,7 +2374,7 @@
     },
     {
       "dir": "empty-state",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "EmptyState",
       "description": "Bo'sh ro'yxat, natija yo'q yoki oflayn holat.",
       "exports": [
@@ -2478,11 +2478,11 @@
           "reason": "L varianti (butun ekran) maksimal kengligi 560 — Figma doc \"Text width follows variant width\", spec sizes kenglikni olmaydi; scale/560 tokeni yo'q."
         }
       ],
-      "readme": "# EmptyState\n\nFigma: **5.3 Empty state**. Bo'sh ro'yxat, natija yo'q yoki oflayn holat.\n\n```tsx\nimport { EmptyState } from '@bek/react';\n\n<EmptyState\n  size=\"m\"\n  media={<img src={mascotSleepy} alt=\"\" />}\n  title=\"Nothing here yet\"\n  description=\"When you add something, it will appear here.\"\n  primaryAction={{ label: 'Add item', onClick: add }}\n  secondaryAction={{ label: 'Learn more' }}\n/>;\n```\n\n| Prop              | Qiymatlar                                               | Default |\n| ----------------- | ------------------------------------------------------- | ------- |\n| `size`            | `s` karta ichida · `m` sahifa bo'limi · `l` butun ekran | `m`     |\n| `media`           | maskot/illyustratsiya: s 64 · m 96 · l 200 px           | —       |\n| `title`           | s Title/M · m Headline/S · l Headline/M                 | —       |\n| `description`     | s Body/S · m/l Body/M, `text/secondary`                 | —       |\n| `primaryAction`   | `{ label, onClick }` — `action` tugma (s: M, m/l: L)    | —       |\n| `secondaryAction` | `{ label, onClick }` — `outline` tugma                  | —       |\n\n- Kenglik: s 320 · m 440 · l 560; padding 16 / 24 / 32; gap 16.\n- Maskot (2.3) litsenziyali asset — paketga kiritilmagan, `media` orqali bering. Pose: `sleepy` — bo'sh, `dizzy` — xato/oflayn, `success` — yakun. Dark rejimda maskotni `neutral/default` yoki `elevated` fon ustiga qo'ymang.\n\n## Do / Don't\n\n- ✅ Bitta qisqa gap va aniq keyingi qadam. ❌ Uzun matn yoki ikkitadan ortiq tugma.\n"
+      "readme": "# EmptyState\n\nFigma: **5.3 Empty state**. Bo'sh ro'yxat, natija yo'q yoki oflayn holat.\n\n```tsx\nimport { EmptyState } from '@bek-ui/react';\n\n<EmptyState\n  size=\"m\"\n  media={<img src={mascotSleepy} alt=\"\" />}\n  title=\"Nothing here yet\"\n  description=\"When you add something, it will appear here.\"\n  primaryAction={{ label: 'Add item', onClick: add }}\n  secondaryAction={{ label: 'Learn more' }}\n/>;\n```\n\n| Prop              | Qiymatlar                                               | Default |\n| ----------------- | ------------------------------------------------------- | ------- |\n| `size`            | `s` karta ichida · `m` sahifa bo'limi · `l` butun ekran | `m`     |\n| `media`           | maskot/illyustratsiya: s 64 · m 96 · l 200 px           | —       |\n| `title`           | s Title/M · m Headline/S · l Headline/M                 | —       |\n| `description`     | s Body/S · m/l Body/M, `text/secondary`                 | —       |\n| `primaryAction`   | `{ label, onClick }` — `action` tugma (s: M, m/l: L)    | —       |\n| `secondaryAction` | `{ label, onClick }` — `outline` tugma                  | —       |\n\n- Kenglik: s 320 · m 440 · l 560; padding 16 / 24 / 32; gap 16.\n- Maskot (2.3) litsenziyali asset — paketga kiritilmagan, `media` orqali bering. Pose: `sleepy` — bo'sh, `dizzy` — xato/oflayn, `success` — yakun. Dark rejimda maskotni `neutral/default` yoki `elevated` fon ustiga qo'ymang.\n\n## Do / Don't\n\n- ✅ Bitta qisqa gap va aniq keyingi qadam. ❌ Uzun matn yoki ikkitadan ortiq tugma.\n"
     },
     {
       "dir": "fieldset",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Fieldset",
       "description": "bitta label, bitta control (yoki boshqaruvlar guruhi), bitta xabar. O'z label'i bo'lmagan istalgan control'ni o'raydi: Chip qatori, Checkbox/Radio guruhi, Segmented control, Slider, Date picker, yuklovchi. layout: vertical · horizontal; status: helper · error · success.",
       "exports": [
@@ -2581,7 +2581,7 @@
     },
     {
       "dir": "icon",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Icon",
       "description": "Ikonka uchun o'lchamli slot; ikonkalarning o'zi — alohida BEK Icons kutubxonasidan (Style=Stroke, Type=Standard).",
       "exports": [
@@ -2639,7 +2639,7 @@
     },
     {
       "dir": "info-wrap",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "InfoWrap",
       "description": "Forma yoki karta ichidagi kichik yordamchi izoh bloki.",
       "exports": [
@@ -2735,11 +2735,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# InfoWrap\n\nFigma: **5.5 Info wrap**. Forma yoki karta ichidagi kichik yordamchi izoh bloki.\n\n```tsx\nimport { InfoWrap } from '@bek/react';\n\n<InfoWrap icon={<TruckIcon />}>Delivery is free from 200 000 sum</InfoWrap>\n<InfoWrap emphasis title=\"Free delivery\" onInfo={openDetails}>From 200 000 sum</InfoWrap>\n```\n\n| Prop        | Qiymatlar                                     | Default     |\n| ----------- | --------------------------------------------- | ----------- |\n| `emphasis`  | `true` — `fill/tertiary` fon                  | `false`     |\n| `icon`      | boshidagi (leading) 16 px ikonka              | —           |\n| `title`     | ikki qatorli ko'rinish, Label/M `text/accent` | —           |\n| `children`  | matn, Caption/L `text/primary`                | —           |\n| `onInfo`    | berilsa — oxirida \"info\" tugmasi (16 px)      | —           |\n| `infoLabel` | info tugmasi nomi                             | `More info` |\n\n- Tokenlar: fon `fill/secondary`, padding 12 × 16, gap 8, radius `surface/xl`.\n\n## Do / Don't\n\n- ✅ Bir-ikki qatorli maslahat. ❌ Xato yoki ogohlantirish — ular uchun Alert.\n"
+      "readme": "# InfoWrap\n\nFigma: **5.5 Info wrap**. Forma yoki karta ichidagi kichik yordamchi izoh bloki.\n\n```tsx\nimport { InfoWrap } from '@bek-ui/react';\n\n<InfoWrap icon={<TruckIcon />}>Delivery is free from 200 000 sum</InfoWrap>\n<InfoWrap emphasis title=\"Free delivery\" onInfo={openDetails}>From 200 000 sum</InfoWrap>\n```\n\n| Prop        | Qiymatlar                                     | Default     |\n| ----------- | --------------------------------------------- | ----------- |\n| `emphasis`  | `true` — `fill/tertiary` fon                  | `false`     |\n| `icon`      | boshidagi (leading) 16 px ikonka              | —           |\n| `title`     | ikki qatorli ko'rinish, Label/M `text/accent` | —           |\n| `children`  | matn, Caption/L `text/primary`                | —           |\n| `onInfo`    | berilsa — oxirida \"info\" tugmasi (16 px)      | —           |\n| `infoLabel` | info tugmasi nomi                             | `More info` |\n\n- Tokenlar: fon `fill/secondary`, padding 12 × 16, gap 8, radius `surface/xl`.\n\n## Do / Don't\n\n- ✅ Bir-ikki qatorli maslahat. ❌ Xato yoki ogohlantirish — ular uchun Alert.\n"
     },
     {
       "dir": "keyboard",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Keyboard",
       "description": "ekran maketlari uchun tizim klaviaturasi (iOS 27 / Material 3 Gboard) BEK tokenlarida. Faqat mockup: haqiqiy klaviaturani OS chizadi; bu komponent maydon fokusda bo'lganda ko'rinadigan maydonni tekshirish uchun. platform: ios · android; type: alphabet · numeric.",
       "exports": [
@@ -2842,7 +2842,7 @@
     },
     {
       "dir": "link",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Link",
       "description": "foydalanuvchini boshqa joyga olib boradigan matn havolasi. variant: inherit · accent · neutral · subtle; size: s (Body/S) · m (Body/M) · l (Body/L). Padding va fon yo'q — bu matn, tugma emas.",
       "exports": [
@@ -2953,7 +2953,7 @@
     },
     {
       "dir": "list-item",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "ListItem",
       "description": "ro'yxat qatori, chap (leading: Checkbox, Icon, Avatar) va o'ng (trailing: Badge, Switch, qiymat; chevron) slotlar bilan. size: s 48 · m 56 · l 72 px (min).",
       "exports": [
@@ -3088,7 +3088,7 @@
     },
     {
       "dir": "loader",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Loader · PullToRefresh",
       "description": "",
       "exports": [
@@ -3194,11 +3194,11 @@
           "reason": "Figma Size nomlari S16/M24/L40 — kodda `size` raqamli (16 · 24 · 40, `bek-loader--40`), piksel qiymati nomning o'zi."
         }
       ],
-      "readme": "# Loader · PullToRefresh\n\nFigma: **5.7 Loading**.\n\n## Loader\n\nTrek + yoy ko'rinishidagi yuklanish indikatori (Figma \"Spinner\"). Tugma va input ichidagi kichik\nsakkiz nurli belgi — [`Spinner`](../spinner/README.md).\n\n```tsx\nimport { Loader } from '@bek/react';\n\n<Loader />                          // 24 · default · cheksiz\n<Loader size={40} label=\"Loading orders\" />\n<Loader tone=\"on-color\" size={16} />\n<Loader value={0.6} />              // aniq jarayon, aylanmaydi\n```\n\n| Prop    | Qiymatlar                                                 | Default   |\n| ------- | --------------------------------------------------------- | --------- |\n| `size`  | `16` matn ichida · `24` ro'yxat, tugma · `40` butun ekran | `24`      |\n| `tone`  | `default` · `on-color`                                    | `default` |\n| `value` | `0–1` — aniq jarayon; berilmasa cheksiz aylanish          | —         |\n| `label` | ekran o'quvchi matni; `null` — yashirin                   | `Loading` |\n\n- Tokenlar: trek `fill/soft-hover`, yoy `accent/default`; On color — `fill/on-color-hover` + `static/white`. Halqa 11 % (ichki radius 0.78), yoy 135°, aylanish 800 ms linear.\n- A11y: cheksiz — `role=\"status\"`; `value` bilan — `role=\"progressbar\"` va `aria-valuenow`.\n\n## PullToRefresh\n\nRo'yxat ustidagi 64 px indikator. Ishora (gesture) mantiqi ilovada.\n\n```tsx\n<PullToRefresh state={state} progress={distance / 64} />\n```\n\n| Prop       | Qiymatlar                         | Default |\n| ---------- | --------------------------------- | ------- |\n| `state`    | `pull` · `release` · `refreshing` | `pull`  |\n| `progress` | `pull` holatida 0–1 (yoy o'sadi)  | `0`     |\n| `labels`   | holat matnlari                    | EN      |\n\n- Pull: spinner 40 % shaffof, matn `text/tertiary`; Release (64 px chegarasi) va Refreshing: matn `text/secondary`, Caption/L. Release'da haptik signal bering.\n\n## Do / Don't\n\n- ✅ Butun ekran yuklanishida `size={40}`. ❌ Bitta blokda Loader va Skeleton birga.\n"
+      "readme": "# Loader · PullToRefresh\n\nFigma: **5.7 Loading**.\n\n## Loader\n\nTrek + yoy ko'rinishidagi yuklanish indikatori (Figma \"Spinner\"). Tugma va input ichidagi kichik\nsakkiz nurli belgi — [`Spinner`](../spinner/README.md).\n\n```tsx\nimport { Loader } from '@bek-ui/react';\n\n<Loader />                          // 24 · default · cheksiz\n<Loader size={40} label=\"Loading orders\" />\n<Loader tone=\"on-color\" size={16} />\n<Loader value={0.6} />              // aniq jarayon, aylanmaydi\n```\n\n| Prop    | Qiymatlar                                                 | Default   |\n| ------- | --------------------------------------------------------- | --------- |\n| `size`  | `16` matn ichida · `24` ro'yxat, tugma · `40` butun ekran | `24`      |\n| `tone`  | `default` · `on-color`                                    | `default` |\n| `value` | `0–1` — aniq jarayon; berilmasa cheksiz aylanish          | —         |\n| `label` | ekran o'quvchi matni; `null` — yashirin                   | `Loading` |\n\n- Tokenlar: trek `fill/soft-hover`, yoy `accent/default`; On color — `fill/on-color-hover` + `static/white`. Halqa 11 % (ichki radius 0.78), yoy 135°, aylanish 800 ms linear.\n- A11y: cheksiz — `role=\"status\"`; `value` bilan — `role=\"progressbar\"` va `aria-valuenow`.\n\n## PullToRefresh\n\nRo'yxat ustidagi 64 px indikator. Ishora (gesture) mantiqi ilovada.\n\n```tsx\n<PullToRefresh state={state} progress={distance / 64} />\n```\n\n| Prop       | Qiymatlar                         | Default |\n| ---------- | --------------------------------- | ------- |\n| `state`    | `pull` · `release` · `refreshing` | `pull`  |\n| `progress` | `pull` holatida 0–1 (yoy o'sadi)  | `0`     |\n| `labels`   | holat matnlari                    | EN      |\n\n- Pull: spinner 40 % shaffof, matn `text/tertiary`; Release (64 px chegarasi) va Refreshing: matn `text/secondary`, Caption/L. Release'da haptik signal bering.\n\n## Do / Don't\n\n- ✅ Butun ekran yuklanishida `size={40}`. ❌ Bitta blokda Loader va Skeleton birga.\n"
     },
     {
       "dir": "logo",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "BekLogo",
       "description": "Belgi (to'rt gulbarg) + \"BEK\" wordmark + mahsulot nomi.",
       "exports": [
@@ -3297,11 +3297,11 @@
           "reason": "L mahsulot nomi font-size (23 px = wordmark 46 ning 50 %i, Figma doc qoidasi) — matn o'lchami, scale/23 tokeni yo'q."
         }
       ],
-      "readme": "# BekLogo\n\nFigma: **2.2 Logo & Brand → Logo**. Belgi (to'rt gulbarg) + \"BEK\" wordmark + mahsulot nomi.\n\n```tsx\nimport { BekLogo } from '@bek/react';\n\n<BekLogo product=\"Academy\" />                       // horizontal · s · gradient\n<BekLogo product=\"Digital Legacy\" size=\"m\" />\n<BekLogo variant=\"mark\" size=\"l\" />                 // favicon, app icon\n<BekLogo color=\"mono\" />                            // masterbrand BEK\n\n<a href=\"/\" aria-label=\"BEK Academy — home\">\n  <BekLogo product=\"Academy\" aria-hidden />\n</a>\n```\n\n| Prop      | Qiymatlar                                  | Default      | Figma                  |\n| --------- | ------------------------------------------ | ------------ | ---------------------- |\n| `product` | `string` · `null`                          | `null` (BEK) | Product · Show product |\n| `variant` | `horizontal` · `vertical` · `mark`         | `horizontal` | Variant                |\n| `size`    | `s` 24 · `m` 40 · `l` 64 (belgi, px)       | `s`          | Size                   |\n| `color`   | `gradient` · `solid` · `mono` · `reversed` | `gradient`   | Color                  |\n\nRanglar faqat tokenlardan: `--bek-brand-logo-start` / `-end` (gradient), `--bek-brand-logo-solid`, `--bek-text-primary` (mono), `--bek-text-on-color` (reversed). Brend rangini o'zgartirish — CSS'da bitta qator.\n\n## Qoidalar\n\n- **Mahsulot nomi:** Title Case, 1–3 so'z, ≤ 18 belgi; \"BEK\" nomga qo'shilmaydi (`Academy`, `BEK Academy` emas); tarjima qilinmaydi.\n- **Bo'sh joy:** har tomonda kamida belgi kengligining 0.44 qismi.\n- **Minimal o'lcham:** belgi — ekranda 24 px (favicon 16 px); horizontal lockup — 120 px kenglik; vertical — 96 px.\n- **Qurilmalar:** Mobile va Tablet header'da `horizontal · s`; Web'da ilovada `s`, landing va footer'da `m`.\n- **Mumkin emas:** cho'zish, rangini o'zgartirish, burish, soya qo'shish, oraliqni o'zgartirish, notekis fon ustiga qo'yish.\n\n## Accessibility\n\nKomponent `role=\"img\"` va `aria-label=\"BEK <mahsulot>\"` bilan chiqadi. Havola ichida bo'lsa, nomni havolaga bering va logoga `aria-hidden` qo'ying.\n"
+      "readme": "# BekLogo\n\nFigma: **2.2 Logo & Brand → Logo**. Belgi (to'rt gulbarg) + \"BEK\" wordmark + mahsulot nomi.\n\n```tsx\nimport { BekLogo } from '@bek-ui/react';\n\n<BekLogo product=\"Academy\" />                       // horizontal · s · gradient\n<BekLogo product=\"Digital Legacy\" size=\"m\" />\n<BekLogo variant=\"mark\" size=\"l\" />                 // favicon, app icon\n<BekLogo color=\"mono\" />                            // masterbrand BEK\n\n<a href=\"/\" aria-label=\"BEK Academy — home\">\n  <BekLogo product=\"Academy\" aria-hidden />\n</a>\n```\n\n| Prop      | Qiymatlar                                  | Default      | Figma                  |\n| --------- | ------------------------------------------ | ------------ | ---------------------- |\n| `product` | `string` · `null`                          | `null` (BEK) | Product · Show product |\n| `variant` | `horizontal` · `vertical` · `mark`         | `horizontal` | Variant                |\n| `size`    | `s` 24 · `m` 40 · `l` 64 (belgi, px)       | `s`          | Size                   |\n| `color`   | `gradient` · `solid` · `mono` · `reversed` | `gradient`   | Color                  |\n\nRanglar faqat tokenlardan: `--bek-brand-logo-start` / `-end` (gradient), `--bek-brand-logo-solid`, `--bek-text-primary` (mono), `--bek-text-on-color` (reversed). Brend rangini o'zgartirish — CSS'da bitta qator.\n\n## Qoidalar\n\n- **Mahsulot nomi:** Title Case, 1–3 so'z, ≤ 18 belgi; \"BEK\" nomga qo'shilmaydi (`Academy`, `BEK Academy` emas); tarjima qilinmaydi.\n- **Bo'sh joy:** har tomonda kamida belgi kengligining 0.44 qismi.\n- **Minimal o'lcham:** belgi — ekranda 24 px (favicon 16 px); horizontal lockup — 120 px kenglik; vertical — 96 px.\n- **Qurilmalar:** Mobile va Tablet header'da `horizontal · s`; Web'da ilovada `s`, landing va footer'da `m`.\n- **Mumkin emas:** cho'zish, rangini o'zgartirish, burish, soya qo'shish, oraliqni o'zgartirish, notekis fon ustiga qo'yish.\n\n## Accessibility\n\nKomponent `role=\"img\"` va `aria-label=\"BEK <mahsulot>\"` bilan chiqadi. Havola ichida bo'lsa, nomni havolaga bering va logoga `aria-hidden` qo'ying.\n"
     },
     {
       "dir": "mascot",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Mascot",
       "description": "BEK maskoti, panda: Mascot (sprite-sheet kadri) va MascotMessage (maskot + sarlavha + tavsif + tugma). pose: idle + 8 qarash (look-up, look-down-right …) + 9 his (happy, love, success, celebrate, wink, surprised, shy, sleepy, dizzy); size: xs 32 · s 48 · m 64 · l 96 · xl 140 · 2xl 200.",
       "exports": [
@@ -3443,11 +3443,11 @@
           "reason": "Mascot message sarlavhasi — komponentda Headline/S, doc jadvalida Title/L; kod komponentga ergashadi (.bek-mascot-message__title Headline/S). Figma doc yangilanishi kerak."
         }
       ],
-      "readme": "# Mascot\n\nFigma: **2.3 Mascot** — BEK maskoti, panda: `Mascot` (sprite-sheet kadri) va `MascotMessage` (maskot + sarlavha + tavsif + tugma). `pose`: `idle` + 8 qarash (`look-up`, `look-down-right` …) + 9 his (`happy`, `love`, `success`, `celebrate`, `wink`, `surprised`, `shy`, `sleepy`, `dizzy`); `size`: `xs` 32 · `s` 48 · `m` 64 · `l` 96 · `xl` 140 · `2xl` 200.\n\n```tsx\n<Mascot pose=\"sleepy\" />                       // L 96, bezak (aria-hidden)\n<Mascot pose=\"wink\" size=\"m\" label=\"BEK panda\" />\n<Mascot interactive size=\"xl\" />                // kursorga qaraydi, bosganda reaksiya — landing, onboarding, 404\n\n<MascotMessage pose=\"sleepy\" title=\"Hali kurslar yo'q\" description=\"Birinchi kursni qo'shing — tarix shu yerda ko'rinadi.\" action={{ label: \"Kurs qo'shish\", onClick: add }} />\n<MascotMessage layout=\"inline\" pose=\"love\" size=\"m\" title=\"Sevimlilarga qo'shildi\" description=\"Saqlangan darslar Sevimlilar bo'limida.\" />\n```\n\nVaraqlar: panda `page-mascot` (MIT © Kamran Ahmed) dan, paket ichida (`@bek/react/assets/mascot/panda-{directions,reactions}.webp`) — standart holatda avtomatik yuklanadi; `directions` / `reactions` prop'lari bilan boshqa personaj berish mumkin. Bundler (Vite, webpack) varaqlarni o'zi oladi; bundler'siz Node SSR'da yoki Vite dev'da paket pre-bundle qilinsa (`optimizeDeps.exclude: ['@bek/react']`) — URL'larni prop bilan bering.\n\nQoidalar (Figma doc):\n\n- Maskot **doim matn bilan**: maskot hisni, matn ma'noni tashiydi. Ekranda bitta maskot, hislar aralashtirilmaydi.\n- His ekran ma'nosiga mos: bo'sh holat → `sleepy`, xato / 404 / aloqa uzildi → `dizzy`, muvaffaqiyat → `success`, onboarding → `wink`, yangilik → `surprised`, sevimlilar / rahmat → `love`.\n- Statik holatda qarash pozalari ishlatilmaydi (faqat `idle` yoki his); qarashlar `interactive` rejim uchun.\n- Rasm ranglari o'zgartirilmaydi, fon shaffof. Dark rejimda `fill/tertiary-hover` yoki undan yorug' yuzaga qo'ying — eng qorong'i yuzada qora quloqlar ko'rinmaydi.\n- O'lchamlar: XS chat/inline · S toast, list item · M karta · L empty state · XL hero, onboarding · 2XL 404, to'liq ekran. Minimum XS 32.\n- `label` berilmasa bezak (`aria-hidden`); yolg'iz yoki interaktiv bo'lsa `label=\"BEK panda\"`.\n- `MascotMessage`: `surface/card`, padding 32, gap 24, sarlavha ↔ tavsif 8; tugma `Button · action · m`. Figma doc jadvalida sarlavha Title/L, komponentda Headline/S — kod komponentga ergashadi.\n"
+      "readme": "# Mascot\n\nFigma: **2.3 Mascot** — BEK maskoti, panda: `Mascot` (sprite-sheet kadri) va `MascotMessage` (maskot + sarlavha + tavsif + tugma). `pose`: `idle` + 8 qarash (`look-up`, `look-down-right` …) + 9 his (`happy`, `love`, `success`, `celebrate`, `wink`, `surprised`, `shy`, `sleepy`, `dizzy`); `size`: `xs` 32 · `s` 48 · `m` 64 · `l` 96 · `xl` 140 · `2xl` 200.\n\n```tsx\n<Mascot pose=\"sleepy\" />                       // L 96, bezak (aria-hidden)\n<Mascot pose=\"wink\" size=\"m\" label=\"BEK panda\" />\n<Mascot interactive size=\"xl\" />                // kursorga qaraydi, bosganda reaksiya — landing, onboarding, 404\n\n<MascotMessage pose=\"sleepy\" title=\"Hali kurslar yo'q\" description=\"Birinchi kursni qo'shing — tarix shu yerda ko'rinadi.\" action={{ label: \"Kurs qo'shish\", onClick: add }} />\n<MascotMessage layout=\"inline\" pose=\"love\" size=\"m\" title=\"Sevimlilarga qo'shildi\" description=\"Saqlangan darslar Sevimlilar bo'limida.\" />\n```\n\nVaraqlar: panda `page-mascot` (MIT © Kamran Ahmed) dan, paket ichida (`@bek-ui/react/assets/mascot/panda-{directions,reactions}.webp`) — standart holatda avtomatik yuklanadi; `directions` / `reactions` prop'lari bilan boshqa personaj berish mumkin. Bundler (Vite, webpack) varaqlarni o'zi oladi; bundler'siz Node SSR'da yoki Vite dev'da paket pre-bundle qilinsa (`optimizeDeps.exclude: ['@bek-ui/react']`) — URL'larni prop bilan bering.\n\nQoidalar (Figma doc):\n\n- Maskot **doim matn bilan**: maskot hisni, matn ma'noni tashiydi. Ekranda bitta maskot, hislar aralashtirilmaydi.\n- His ekran ma'nosiga mos: bo'sh holat → `sleepy`, xato / 404 / aloqa uzildi → `dizzy`, muvaffaqiyat → `success`, onboarding → `wink`, yangilik → `surprised`, sevimlilar / rahmat → `love`.\n- Statik holatda qarash pozalari ishlatilmaydi (faqat `idle` yoki his); qarashlar `interactive` rejim uchun.\n- Rasm ranglari o'zgartirilmaydi, fon shaffof. Dark rejimda `fill/tertiary-hover` yoki undan yorug' yuzaga qo'ying — eng qorong'i yuzada qora quloqlar ko'rinmaydi.\n- O'lchamlar: XS chat/inline · S toast, list item · M karta · L empty state · XL hero, onboarding · 2XL 404, to'liq ekran. Minimum XS 32.\n- `label` berilmasa bezak (`aria-hidden`); yolg'iz yoki interaktiv bo'lsa `label=\"BEK panda\"`.\n- `MascotMessage`: `surface/card`, padding 32, gap 24, sarlavha ↔ tavsif 8; tugma `Button · action · m`. Figma doc jadvalida sarlavha Title/L, komponentda Headline/S — kod komponentga ergashadi.\n"
     },
     {
       "dir": "navigation",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Navigation",
       "description": "Web (≥ 1024), Tablet (600–1023) va Mobile (< 600) uchun ilova navigatsiyasi.",
       "exports": [
@@ -4362,11 +4362,11 @@
           "reason": "App shell Tablet/Mobile Drawer=Closed/Open — kodda `drawer` slotidagi NavDrawer `open` prop'i (false = Closed); alohida variant klassi yo'q."
         }
       ],
-      "readme": "# Navigation\n\nFigma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600) uchun ilova navigatsiyasi.\n\n## Web: ModuleRail + MenuPanel + AppHeader\n\n```tsx\nimport { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek/react';\n\n<AppShell\n  header={\n    <AppHeader\n      start={<BekLogo size=\"s\" />}\n      end={\n        <>\n          <Button variant=\"flat\" size=\"l\">EN</Button>                                {/* Language */}\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<MoonIcon />}>Theme</Button>\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button>\n          <NavProfile avatar={<Avatar name=\"Alex Brown\" size=\"s\" />} name=\"Alex Brown\" role=\"Administrator\" />\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<LogoutIcon />}>Log out</Button>\n        </>\n      }\n    />\n  }\n  rail={\n    <ModuleRail title=\"Apps\" bottom={<NavItem mode=\"module\" icon={<SettingsIcon />}>Settings</NavItem>}>\n      <NavItem mode=\"module\" icon={<HomeIcon />} href=\"/\" selected>Home</NavItem>\n    </ModuleRail>\n  }\n  menu={\n    <MenuPanel collapsed={collapsed} top={<NavItem icon={<SearchIcon />}>Search</NavItem>}\n      bottom={<NavItem icon={<SidebarIcon />} onClick={toggle}>Collapse</NavItem>}>\n      <NavGroup title=\"Workspace\" collapsed={collapsed}>\n        <NavItem mode={collapsed ? 'collapsed' : 'expanded'} icon={<GridIcon />} href=\"/dash\" selected>Dashboard</NavItem>\n        <NavItem icon={<FolderIcon />} expanded={open} aria-controls=\"p-subs\" onClick={…}>Projects</NavItem>\n        <NavSubList id=\"p-subs\" open={open}>\n          <NavItem mode=\"sub\" href=\"/p/alpha\">Alpha</NavItem>\n        </NavSubList>\n      </NavGroup>\n    </MenuPanel>\n  }\n>\n  {page}\n</AppShell>\n```\n\n| Komponent    | Asosiy prop'lar                                                                                                                                                            |\n| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                          |\n| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                             |\n| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                                  |\n| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                                                  |\n| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                                                |\n| `AppHeader`  | `start` (Menu button, Logo), `end` (Language, Theme, Notifications + Count, Profile/Avatar, Logout), `children` (Search); balandlik `layout/header/height`, `surface/card` |\n| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                        |\n| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                                                 |\n\n- Header · Web (Figma): Logo · Language · Theme · Notifications (+ Count — tugma ustidagi Badge) · Profile (`NavProfile`: Avatar, Name, Role) · Logout — barchasi `start`/`end` slotlari orqali; Header · Tablet: Menu button · Logo · Search (`children`) · Notifications · Avatar.\n- Nav item ranglari: Default `text/secondary` · Hover `fill/tertiary` + `text/primary` · Selected `accent/soft` + `text/accent` · Module Selected `accent/default` + `text/on-color` (hover `accent/hover`) · Disabled `text/disabled`. Radius 8, ikonka 20, Label/M (Sub — Body/S).\n- `collapsed`/`module` da nom ekran o'quvchi uchun yashirin matn va hover/fokusda chip (`surface/raised`, `Elevation/3`, 8 px o'ngda).\n- `href` berilsa — `<a>`, aks holda `<button>`; `selected` → `aria-current=\"page\"`; `expanded` → `aria-expanded` + aylanadigan chevron.\n\n## Tablet: NavRail + RailItem\n\n```tsx\n<NavRail bottom={<RailItem icon={<SettingsIcon />}>Settings</RailItem>}>\n  <RailItem icon={<HomeIcon />} href=\"/\" selected>\n    Home\n  </RailItem>\n  <RailItem icon={<BoxIcon />} badge={3}>\n    Orders\n  </RailItem>\n</NavRail>\n```\n\n- 72 px, `surface/raised`; element 56 kenglik, 56×32 pill indikator (ikonka 24), nom Label/S doim ko'rinadi. Selected — `accent/default` pill + `text/on-color` ikonka, nom `text/accent`; Pressed — `fill/tertiary`. 6 tagacha modul — qolgani drawer'da.\n\n## Tablet / Mobile: NavDrawer + DrawerItem\n\n```tsx\n<NavDrawer\n  open={open}\n  onClose={() => setOpen(false)}\n  header={<BekLogo size=\"s\" />}\n  footer={\n    <>\n      <NavProfile\n        avatar={<Avatar name=\"Alex Brown\" size=\"s\" />}\n        name=\"Alex Brown\"\n        role=\"Administrator\"\n      />\n      <DrawerItem icon={<LogoutIcon />}>Log out</DrawerItem>\n    </>\n  }\n>\n  <NavGroup title=\"Menu\" variant=\"touch\">\n    <DrawerItem icon={<HomeIcon />} href=\"/\" selected>\n      Home\n    </DrawerItem>\n    <DrawerItem icon={<BoxIcon />} badge={4}>\n      Orders\n    </DrawerItem>\n  </NavGroup>\n</NavDrawer>\n```\n\n- Kenglik `layout/drawer/width` (Tablet 360 · Mobile 304 — token qurilmaga ko'ra o'zgaradi, Figma `Device` prop'i kodda alohida emas), `surface/card`, `Elevation/4`; sarlavha `layout/header/height`; body scroll (padding 8 12, gap 16); footer `surface/raised` qotirilgan (profil — `NavProfile`, Settings, Log out).\n- DrawerItem: `item` 48 px (ikonka 24, Label/L) · `sub` 44 px (Body/M); radius 12; Pressed `fill/tertiary`, Selected `accent/soft` + `text/accent`.\n- Native `<dialog>` (`showModal`): fokus ichida, Esc va scrim (`bg/overlay`) bosilganda `onClose`; ochilish — chapdan siljish (`motion/overlay/slide`).\n\n## Do / Don't\n\n- ✅ Joriy sahifa doim `selected`. ❌ Bir vaqtda ikkita tanlangan element.\n- ✅ Header sahifadan sirt rangi bilan ajraladi. ❌ Header ostiga chegara chizig'i.\n\n## App shell · Tablet / Mobile (Figma 6.2)\n\n`AppShell` uchta qurilma uchun bitta: Web — `header` + `rail` + `menu`; Tablet — `header` + `rail`\n(`NavRail`); Mobile — `header` (`TopNavigation`) + `bottomNav` (`BottomNavigation`). Figma \"Drawer: Closed / Open\"\n→ `drawer` slotiga `NavDrawer` (`open` prop'i); u scrim bilan panellarni ham yopadi. Kontent padding'i\n`layout/page-margin` (Mobile 16 · Tablet 24 · Web 32) — tokenning o'zi rejimga qarab o'zgaradi.\n\n```tsx\n<AppShell\n  header={<TopNavigation title=\"BEK\" leading=\"menu\" onLeadingClick={() => setOpen(true)} />}\n  bottomNav={<BottomNavigation>…</BottomNavigation>}\n  drawer={\n    <NavDrawer open={open} onClose={() => setOpen(false)}>\n      …\n    </NavDrawer>\n  }\n>\n  …\n</AppShell>\n```\n"
+      "readme": "# Navigation\n\nFigma: **6.2 Navigation**. Web (≥ 1024), Tablet (600–1023) va Mobile (< 600) uchun ilova navigatsiyasi.\n\n## Web: ModuleRail + MenuPanel + AppHeader\n\n```tsx\nimport { AppHeader, AppShell, MenuPanel, ModuleRail, NavGroup, NavItem, NavSubList } from '@bek-ui/react';\n\n<AppShell\n  header={\n    <AppHeader\n      start={<BekLogo size=\"s\" />}\n      end={\n        <>\n          <Button variant=\"flat\" size=\"l\">EN</Button>                                {/* Language */}\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<MoonIcon />}>Theme</Button>\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<BellIcon />}>Notifications</Button>\n          <NavProfile avatar={<Avatar name=\"Alex Brown\" size=\"s\" />} name=\"Alex Brown\" role=\"Administrator\" />\n          <Button variant=\"flat\" size=\"l\" iconOnly startIcon={<LogoutIcon />}>Log out</Button>\n        </>\n      }\n    />\n  }\n  rail={\n    <ModuleRail title=\"Apps\" bottom={<NavItem mode=\"module\" icon={<SettingsIcon />}>Settings</NavItem>}>\n      <NavItem mode=\"module\" icon={<HomeIcon />} href=\"/\" selected>Home</NavItem>\n    </ModuleRail>\n  }\n  menu={\n    <MenuPanel collapsed={collapsed} top={<NavItem icon={<SearchIcon />}>Search</NavItem>}\n      bottom={<NavItem icon={<SidebarIcon />} onClick={toggle}>Collapse</NavItem>}>\n      <NavGroup title=\"Workspace\" collapsed={collapsed}>\n        <NavItem mode={collapsed ? 'collapsed' : 'expanded'} icon={<GridIcon />} href=\"/dash\" selected>Dashboard</NavItem>\n        <NavItem icon={<FolderIcon />} expanded={open} aria-controls=\"p-subs\" onClick={…}>Projects</NavItem>\n        <NavSubList id=\"p-subs\" open={open}>\n          <NavItem mode=\"sub\" href=\"/p/alpha\">Alpha</NavItem>\n        </NavSubList>\n      </NavGroup>\n    </MenuPanel>\n  }\n>\n  {page}\n</AppShell>\n```\n\n| Komponent    | Asosiy prop'lar                                                                                                                                                            |\n| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `NavItem`    | `mode`: `expanded` 240×40 · `collapsed` 40×40 · `module` 40×40 · `sub` 32; `icon`, `badge`, `chevron`, `expanded`, `selected`, `disabled`, `href`                          |\n| `NavGroup`   | `title` (UPPERCASE Caption/S `text/tertiary`), `collapsed`, `variant` `web`·`touch`, `divider`                                                                             |\n| `NavSubList` | `open`, `variant` (`web` — 32, `touch` — 40 px chekinish)                                                                                                                  |\n| `MenuPanel`  | `collapsed` (256 → 56 px), `top`, `bottom` (qotirilgan); `surface/card`, padding 8, gap 8                                                                                  |\n| `ModuleRail` | `title`, `bottom`, `showLabels`; 64 px, `surface/raised`, padding 12, gap 4                                                                                                |\n| `AppHeader`  | `start` (Menu button, Logo), `end` (Language, Theme, Notifications + Count, Profile/Avatar, Logout), `children` (Search); balandlik `layout/header/height`, `surface/card` |\n| `NavProfile` | `avatar`, `name` (Label/M), `role` (Caption/M `text/tertiary`), `action` — Header `end` va NavDrawer `footer` uchun                                                        |\n| `AppShell`   | `header`, `rail`, `menu`, `bottomNav`, `children` (`<main>`, padding `layout/page-margin`)                                                                                 |\n\n- Header · Web (Figma): Logo · Language · Theme · Notifications (+ Count — tugma ustidagi Badge) · Profile (`NavProfile`: Avatar, Name, Role) · Logout — barchasi `start`/`end` slotlari orqali; Header · Tablet: Menu button · Logo · Search (`children`) · Notifications · Avatar.\n- Nav item ranglari: Default `text/secondary` · Hover `fill/tertiary` + `text/primary` · Selected `accent/soft` + `text/accent` · Module Selected `accent/default` + `text/on-color` (hover `accent/hover`) · Disabled `text/disabled`. Radius 8, ikonka 20, Label/M (Sub — Body/S).\n- `collapsed`/`module` da nom ekran o'quvchi uchun yashirin matn va hover/fokusda chip (`surface/raised`, `Elevation/3`, 8 px o'ngda).\n- `href` berilsa — `<a>`, aks holda `<button>`; `selected` → `aria-current=\"page\"`; `expanded` → `aria-expanded` + aylanadigan chevron.\n\n## Tablet: NavRail + RailItem\n\n```tsx\n<NavRail bottom={<RailItem icon={<SettingsIcon />}>Settings</RailItem>}>\n  <RailItem icon={<HomeIcon />} href=\"/\" selected>\n    Home\n  </RailItem>\n  <RailItem icon={<BoxIcon />} badge={3}>\n    Orders\n  </RailItem>\n</NavRail>\n```\n\n- 72 px, `surface/raised`; element 56 kenglik, 56×32 pill indikator (ikonka 24), nom Label/S doim ko'rinadi. Selected — `accent/default` pill + `text/on-color` ikonka, nom `text/accent`; Pressed — `fill/tertiary`. 6 tagacha modul — qolgani drawer'da.\n\n## Tablet / Mobile: NavDrawer + DrawerItem\n\n```tsx\n<NavDrawer\n  open={open}\n  onClose={() => setOpen(false)}\n  header={<BekLogo size=\"s\" />}\n  footer={\n    <>\n      <NavProfile\n        avatar={<Avatar name=\"Alex Brown\" size=\"s\" />}\n        name=\"Alex Brown\"\n        role=\"Administrator\"\n      />\n      <DrawerItem icon={<LogoutIcon />}>Log out</DrawerItem>\n    </>\n  }\n>\n  <NavGroup title=\"Menu\" variant=\"touch\">\n    <DrawerItem icon={<HomeIcon />} href=\"/\" selected>\n      Home\n    </DrawerItem>\n    <DrawerItem icon={<BoxIcon />} badge={4}>\n      Orders\n    </DrawerItem>\n  </NavGroup>\n</NavDrawer>\n```\n\n- Kenglik `layout/drawer/width` (Tablet 360 · Mobile 304 — token qurilmaga ko'ra o'zgaradi, Figma `Device` prop'i kodda alohida emas), `surface/card`, `Elevation/4`; sarlavha `layout/header/height`; body scroll (padding 8 12, gap 16); footer `surface/raised` qotirilgan (profil — `NavProfile`, Settings, Log out).\n- DrawerItem: `item` 48 px (ikonka 24, Label/L) · `sub` 44 px (Body/M); radius 12; Pressed `fill/tertiary`, Selected `accent/soft` + `text/accent`.\n- Native `<dialog>` (`showModal`): fokus ichida, Esc va scrim (`bg/overlay`) bosilganda `onClose`; ochilish — chapdan siljish (`motion/overlay/slide`).\n\n## Do / Don't\n\n- ✅ Joriy sahifa doim `selected`. ❌ Bir vaqtda ikkita tanlangan element.\n- ✅ Header sahifadan sirt rangi bilan ajraladi. ❌ Header ostiga chegara chizig'i.\n\n## App shell · Tablet / Mobile (Figma 6.2)\n\n`AppShell` uchta qurilma uchun bitta: Web — `header` + `rail` + `menu`; Tablet — `header` + `rail`\n(`NavRail`); Mobile — `header` (`TopNavigation`) + `bottomNav` (`BottomNavigation`). Figma \"Drawer: Closed / Open\"\n→ `drawer` slotiga `NavDrawer` (`open` prop'i); u scrim bilan panellarni ham yopadi. Kontent padding'i\n`layout/page-margin` (Mobile 16 · Tablet 24 · Web 32) — tokenning o'zi rejimga qarab o'zgaradi.\n\n```tsx\n<AppShell\n  header={<TopNavigation title=\"BEK\" leading=\"menu\" onLeadingClick={() => setOpen(true)} />}\n  bottomNav={<BottomNavigation>…</BottomNavigation>}\n  drawer={\n    <NavDrawer open={open} onClose={() => setOpen(false)}>\n      …\n    </NavDrawer>\n  }\n>\n  …\n</AppShell>\n```\n"
     },
     {
       "dir": "notification-bar",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "NotificationBar",
       "description": "Mobil snackbar — ekran pastida bir qatorli xabar.",
       "exports": [
@@ -4479,11 +4479,11 @@
           "reason": "Kodda `tone` umumiy StatusTone (Toast/Alert bilan bir xil) bo'lgani uchun warning holati ham bor; Figma Notification bar'da Warning varianti yo'q — ataylab qo'shimcha."
         }
       ],
-      "readme": "# NotificationBar\n\nFigma: **5.6 Notification bar**. Mobil snackbar — ekran pastida bir qatorli xabar.\n\n```tsx\nimport { NotificationBar } from '@bek/react';\n\n<NotificationBar tone=\"success\" action={{ label: 'Undo', onClick: undo }}>\n  Item moved to archive\n</NotificationBar>;\n```\n\n| Prop       | Qiymatlar                                                       | Default   |\n| ---------- | --------------------------------------------------------------- | --------- |\n| `tone`     | `neutral` · `info` · `success` · `warning` · `danger` (= error) | `neutral` |\n| `children` | bir qatorli xabar, Body/S                                       | —         |\n| `action`   | `{ label, onClick }`, Label/S                                   | —         |\n| `icon`     | holat ikonkasi o'rniga; `null` — ikonkasiz                      | holat     |\n\n- Doim Dark rejimda (`data-theme=\"dark\"` o'zi qo'yiladi): `surface/raised`, `Elevation/3`, padding 12 × 16, gap 8, radius `surface/xl`, Solid ikonka 20.\n- `role=\"status\"`. Taxminan 4 s dan keyin yashiring (taymer ilovada).\n\n## Do / Don't\n\n- ✅ Qisqa tasdiq: \"Copied\", \"Item moved to archive\". ❌ Xato tafsilotlari — ular uchun Alert.\n"
+      "readme": "# NotificationBar\n\nFigma: **5.6 Notification bar**. Mobil snackbar — ekran pastida bir qatorli xabar.\n\n```tsx\nimport { NotificationBar } from '@bek-ui/react';\n\n<NotificationBar tone=\"success\" action={{ label: 'Undo', onClick: undo }}>\n  Item moved to archive\n</NotificationBar>;\n```\n\n| Prop       | Qiymatlar                                                       | Default   |\n| ---------- | --------------------------------------------------------------- | --------- |\n| `tone`     | `neutral` · `info` · `success` · `warning` · `danger` (= error) | `neutral` |\n| `children` | bir qatorli xabar, Body/S                                       | —         |\n| `action`   | `{ label, onClick }`, Label/S                                   | —         |\n| `icon`     | holat ikonkasi o'rniga; `null` — ikonkasiz                      | holat     |\n\n- Doim Dark rejimda (`data-theme=\"dark\"` o'zi qo'yiladi): `surface/raised`, `Elevation/3`, padding 12 × 16, gap 8, radius `surface/xl`, Solid ikonka 20.\n- `role=\"status\"`. Taxminan 4 s dan keyin yashiring (taymer ilovada).\n\n## Do / Don't\n\n- ✅ Qisqa tasdiq: \"Copied\", \"Item moved to archive\". ❌ Xato tafsilotlari — ular uchun Alert.\n"
     },
     {
       "dir": "order-widget",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "OrderWidget",
       "description": "jarayondagi buyurtma holati (bosh ekranda). status: accepted · preparing · on-the-way · delivered; size: compact · expanded (4 bo'lakli progress + bosqich nomlari).",
       "exports": [
@@ -4586,11 +4586,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# OrderWidget\n\nFigma: **4.15 Widget · Active order** — jarayondagi buyurtma holati (bosh ekranda). `status`: `accepted` · `preparing` · `on-the-way` · `delivered`; `size`: `compact` · `expanded` (4 bo'lakli progress + bosqich nomlari).\n\n```tsx\n<OrderWidget\n  status=\"preparing\"\n  size=\"expanded\"\n  icon={<FireIcon />}\n  title=\"Buyurtmangiz tayyorlanmoqda\"\n  subtitle=\"Taxminan 12 daqiqa\"\n  href=\"/orders/42\"\n  stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', \"Yo'lda\", 'Yetkazildi']}\n/>\n```\n\n`href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.\n"
+      "readme": "# OrderWidget\n\nFigma: **4.15 Widget · Active order** — jarayondagi buyurtma holati (bosh ekranda). `status`: `accepted` · `preparing` · `on-the-way` · `delivered`; `size`: `compact` · `expanded` (4 bo'lakli progress + bosqich nomlari).\n\n```tsx\n<OrderWidget\n  status=\"preparing\"\n  size=\"expanded\"\n  icon={<FireIcon />}\n  title=\"Buyurtmangiz tayyorlanmoqda\"\n  subtitle=\"Taxminan 12 daqiqa\"\n  href=\"/orders/42\"\n  stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', \"Yo'lda\", 'Yetkazildi']}\n  progressLabel=\"Buyurtma holati\"\n/>\n```\n\nBosqichlar chizig'i `role=\"progressbar\"`: nomi `progressLabel` (standart \"Order status\"), qiymat matni joriy bosqich yorlig'i. `href` yoki `onClick` — kuzatish sahifasiga o'tadi. `delivered` — success ranglar.\n"
     },
     {
       "dir": "overlay",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Overlays",
       "description": "(7.1–7.11). Barcha bloklovchi oynalar native <dialog> (showModal) ustida:",
       "exports": [
@@ -5720,11 +5720,11 @@
           "reason": "iOS 27 action sheet kartasining radiusi (34) — Figma'da native iOS instance ichida, spec sizes'ga tushmagan; scale/34 tokeni yo'q. Figma'da radiusni tokenga bog'lash yoki doc'dagi \"12 (cards)\" qiymatini native kartaga moslash kerak."
         }
       ],
-      "readme": "# Overlays\n\nFigma: **7 · Overlays** (7.1–7.11). Barcha bloklovchi oynalar native `<dialog>` (`showModal`) ustida:\nfokus ichida ushlanadi, fon `inert`, Esc va scrim (`bg/overlay`) yopadi (Alert dialog'dan tashqari).\nTrigger'ga bog'langan oynalar (Popover, menyular, Hover card) — `document.body` ga portal,\n`position: fixed`, sig'masa teskari tomonga o'tadi; tashqariga bosish va Esc yopadi, fokus trigger'ga qaytadi.\n\n| Komponent                                                        | Figma               | Asosiy prop'lar                                                                                                                                             |\n| ---------------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `Modal`                                                          | 7.1 Modal           | `open`, `onClose`, `size` s 480 · m 720 · l 900, `variant` default · danger, `title`, `description`, `primaryAction`, `cancelAction`, `footer`, `hideClose` |\n| `BottomSheet`                                                    | 7.1 Sheet · 7.9     | `type` default · content · promo, `title`, `description`, `media`, `primaryAction`, `secondaryAction`, `showHandle`, `showClose`                            |\n| `Drawer`                                                         | 7.2 Drawer          | `side` right · left, `size` s 360 · m 480 · l 640, `divider` + Modal prop'lari                                                                              |\n| `Popover`                                                        | 7.3 Popover         | `trigger`, `open`/`defaultOpen`/`onOpenChange`, `placement`, `size` s 280 · l 360, `tail`, `title`, `description`, `primaryAction`, `secondaryAction`       |\n| `DropdownMenu` · `MenuItem` · `MenuGroupLabel` · `MenuSeparator` | 7.4 Dropdown menu   | `trigger`, `placement`, `size` s 32 · m 40; MenuItem: `icon`, `hotkey`, `danger`, `disabled`, `selected`, `onSelect`, `submenu`                             |\n| `ContextMenu`                                                    | 7.5 Context menu    | `menu` (MenuItem'lar), `children` — o'ng tugma / uzoq bosish (500 ms) hududi                                                                                |\n| `AlertDialog`                                                    | 7.6 Alert dialog    | `variant` info · success · warning · danger, `layout` inline · stacked, `confirmAction`, `cancelAction`, `icon`                                             |\n| `CommandPalette` · `CommandGroup` · `CommandItem`                | 7.7 Command palette | `query`, `onQueryChange`, `placeholder`, `empty`, `hints`; CommandItem: `icon`, `hotkey`, `onSelect`, `closeOnSelect`                                       |\n| `HoverCard`                                                      | 7.8 Hover card      | `trigger`, `variant` profile · link, `title`, `subtitle`, `description`, `avatar`, `preview`, `stats`, `placement`, `openDelay` 500, `closeDelay` 300       |\n| `ActionSheet`                                                    | 7.10 Action sheet   | `actions` `{ label, icon, onSelect, destructive, disabled }[]`, `title`, `message`, `platform` android · ios                                                |\n| `ShareSheet`                                                     | 7.11 Share sheet    | `title`, `link`, `thumbnail`, `contacts` (`tone` accent · info · success · warning · utility), `targets`, `showLinkField`, `onCopy`                         |\n\n```tsx\nimport { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek/react';\n\n<Modal open={open} onClose={() => setOpen(false)} title=\"Edit profile\"\n  primaryAction={{ label: 'Save', onClick: save }} cancelAction={{ label: 'Cancel' }}>\n  …\n</Modal>\n\n<DropdownMenu trigger={<Button variant=\"outline\">Actions</Button>} aria-label=\"Order actions\">\n  <MenuItem icon={<EditIcon />} hotkey=\"⌘E\" onSelect={edit}>Edit</MenuItem>\n  <MenuItem icon={<ExportIcon />} submenu={<><MenuItem>PDF</MenuItem><MenuItem>CSV</MenuItem></>}>Export</MenuItem>\n  <MenuSeparator />\n  <MenuItem icon={<TrashIcon />} danger onSelect={askDelete}>Delete</MenuItem>\n</DropdownMenu>\n\n<HoverCard trigger={<a href=\"/u/alex\">@alex</a>} variant=\"profile\" avatar={<Avatar name=\"Alex\" size=\"l\" />}\n  title=\"Alex Brown\" subtitle=\"Product designer\" description=\"Designs BEK components.\"\n  stats={[{ value: '128', label: 'Projects' }, { value: '2.4k', label: 'Followers' }]} />\n\n<AlertDialog open={confirm} onClose={() => setConfirm(false)} variant=\"danger\"\n  title=\"Delete this order?\" description=\"This cannot be undone.\"\n  confirmAction={{ label: 'Delete', onClick: remove }} cancelAction={{ label: 'Cancel' }} />\n```\n\n## Tokenlar\n\n- Dialog sirti: `surface/raised`, chegarasiz, `Elevation/4`; Modal/Drawer/Alert radius 16; sarlavha Headline/S (Alert — Title/L), izoh Body/S `text/secondary`; header padding 24 24 16, footer 24 (gap 12, o'ngda). Yopish tugmasi 32, radius 8, hover `fill/tertiary`.\n- Bottom sheet: yuqori radius 24, dastak 36×4 `fill/control`, footer Action XL + Flat secondary XL, home indicator hisobga olinadi.\n- Popover: radius 12, `Elevation/2`, padding 16, gap 12, dum 12×6. Menu: 240 (submenu 200, ota menyudan 4 px), radius 8, padding 4, `Elevation/2`; element hover `fill/tertiary-hover`, selected `fill/strong`, danger `text/danger` + `status/danger/soft`.\n- Command palette: 640, `fill/primary`, radius 16, `Elevation/4`; < 600 px — to'liq kenglik, yuqorida, ishoralarsiz.\n- Hover card: 320, `fill/primary`, radius 12, `Elevation/3`, `z/dropdown`; touch'da ochilmaydi, fokusda ochiladi. `profile` — Avatar 48 + Title/S + Caption/M + Body/S + statistika (Label/M + Caption/L); `link` — 16:9 preview (`fill/tertiary-hover`) + sarlavha + izoh.\n- Action sheet: `platform` `ios` (native iOS 27 karta: `bg/sheet`, `fill/tertiary` pill amallar, radius 34, 8 px chetdan) · `android` (Material 3 sheet: `bg/sheet`, yuqori radius `radius/surface/xl`, dastak `fill/strong`). Share sheet: `bg/sheet`, kontakt doiralari `accent/soft`/`status/*/soft`, ilovalar va havola maydoni `fill/secondary`, Copy — `surface/raised` pill.\n- Harakat: Modal/Alert/Command — `scale-enter` 0.96 + fade (`motion/overlay/modal/enter`); Drawer va sheet'lar — siljish (`motion/overlay/slide`); anchored — `motion/overlay/anchored/enter`. `prefers-reduced-motion` da o'chadi.\n\n## Klaviatura\n\n- Dropdown/Context menu: ↓ ↑ Home End, Enter/Space — tanlash, → submenu ochadi, ← yopadi, Esc — yopib fokusni trigger'ga qaytaradi, Tab — yopadi. Trigger'da ↓/↑ ham ochadi.\n- Command palette: input'da ↑ ↓ (`aria-activedescendant`), Enter — tanlash, Esc — yopish.\n- Alert dialog: Esc va scrim **yopmaydi** — faqat tugmalar (`role=\"alertdialog\"`).\n\n## Do / Don't\n\n- ✅ Modal — bitta vazifa, ikki tugmagacha. ❌ Modal ustida Modal.\n- ✅ Qaytarib bo'lmaydigan amal — AlertDialog, savol shaklidagi sarlavha. ❌ Danger amal uchun oddiy Modal'siz tasdiqlash.\n- ✅ Hover card faqat o'qish uchun. ❌ Ichida tugmalar — buning uchun Popover.\n"
+      "readme": "# Overlays\n\nFigma: **7 · Overlays** (7.1–7.11). Barcha bloklovchi oynalar native `<dialog>` (`showModal`) ustida:\nfokus ichida ushlanadi, fon `inert`, Esc va scrim (`bg/overlay`) yopadi (Alert dialog'dan tashqari).\nTrigger'ga bog'langan oynalar (Popover, menyular, Hover card) — `document.body` ga portal,\n`position: fixed`, sig'masa teskari tomonga o'tadi; tashqariga bosish va Esc yopadi, fokus trigger'ga qaytadi.\n\n| Komponent                                                        | Figma               | Asosiy prop'lar                                                                                                                                             |\n| ---------------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `Modal`                                                          | 7.1 Modal           | `open`, `onClose`, `size` s 480 · m 720 · l 900, `variant` default · danger, `title`, `description`, `primaryAction`, `cancelAction`, `footer`, `hideClose` |\n| `BottomSheet`                                                    | 7.1 Sheet · 7.9     | `type` default · content · promo, `title`, `description`, `media`, `primaryAction`, `secondaryAction`, `showHandle`, `showClose`                            |\n| `Drawer`                                                         | 7.2 Drawer          | `side` right · left, `size` s 360 · m 480 · l 640, `divider` + Modal prop'lari                                                                              |\n| `Popover`                                                        | 7.3 Popover         | `trigger`, `open`/`defaultOpen`/`onOpenChange`, `placement`, `size` s 280 · l 360, `tail`, `title`, `description`, `primaryAction`, `secondaryAction`       |\n| `DropdownMenu` · `MenuItem` · `MenuGroupLabel` · `MenuSeparator` | 7.4 Dropdown menu   | `trigger`, `placement`, `size` s 32 · m 40; MenuItem: `icon`, `hotkey`, `danger`, `disabled`, `selected`, `onSelect`, `submenu`                             |\n| `ContextMenu`                                                    | 7.5 Context menu    | `menu` (MenuItem'lar), `children` — o'ng tugma / uzoq bosish (500 ms) hududi                                                                                |\n| `AlertDialog`                                                    | 7.6 Alert dialog    | `variant` info · success · warning · danger, `layout` inline · stacked, `confirmAction`, `cancelAction`, `icon`                                             |\n| `CommandPalette` · `CommandGroup` · `CommandItem`                | 7.7 Command palette | `query`, `onQueryChange`, `placeholder`, `empty`, `hints`; CommandItem: `icon`, `hotkey`, `onSelect`, `closeOnSelect`                                       |\n| `HoverCard`                                                      | 7.8 Hover card      | `trigger`, `variant` profile · link, `title`, `subtitle`, `description`, `avatar`, `preview`, `stats`, `placement`, `openDelay` 500, `closeDelay` 300       |\n| `ActionSheet`                                                    | 7.10 Action sheet   | `actions` `{ label, icon, onSelect, destructive, disabled }[]`, `title`, `message`, `platform` android · ios                                                |\n| `ShareSheet`                                                     | 7.11 Share sheet    | `title`, `link`, `thumbnail`, `contacts` (`tone` accent · info · success · warning · utility), `targets`, `showLinkField`, `onCopy`                         |\n\n```tsx\nimport { AlertDialog, DropdownMenu, MenuItem, MenuSeparator, Modal } from '@bek-ui/react';\n\n<Modal open={open} onClose={() => setOpen(false)} title=\"Edit profile\"\n  primaryAction={{ label: 'Save', onClick: save }} cancelAction={{ label: 'Cancel' }}>\n  …\n</Modal>\n\n<DropdownMenu trigger={<Button variant=\"outline\">Actions</Button>} aria-label=\"Order actions\">\n  <MenuItem icon={<EditIcon />} hotkey=\"⌘E\" onSelect={edit}>Edit</MenuItem>\n  <MenuItem icon={<ExportIcon />} submenu={<><MenuItem>PDF</MenuItem><MenuItem>CSV</MenuItem></>}>Export</MenuItem>\n  <MenuSeparator />\n  <MenuItem icon={<TrashIcon />} danger onSelect={askDelete}>Delete</MenuItem>\n</DropdownMenu>\n\n<HoverCard trigger={<a href=\"/u/alex\">@alex</a>} variant=\"profile\" avatar={<Avatar name=\"Alex\" size=\"l\" />}\n  title=\"Alex Brown\" subtitle=\"Product designer\" description=\"Designs BEK components.\"\n  stats={[{ value: '128', label: 'Projects' }, { value: '2.4k', label: 'Followers' }]} />\n\n<AlertDialog open={confirm} onClose={() => setConfirm(false)} variant=\"danger\"\n  title=\"Delete this order?\" description=\"This cannot be undone.\"\n  confirmAction={{ label: 'Delete', onClick: remove }} cancelAction={{ label: 'Cancel' }} />\n```\n\n## Tokenlar\n\n- Dialog sirti: `surface/raised`, chegarasiz, `Elevation/4`; Modal/Drawer/Alert radius 16; sarlavha Headline/S (Alert — Title/L), izoh Body/S `text/secondary`; header padding 24 24 16, footer 24 (gap 12, o'ngda). Yopish tugmasi 32, radius 8, hover `fill/tertiary`.\n- Bottom sheet: yuqori radius 24, dastak 36×4 `fill/control`, footer Action XL + Flat secondary XL, home indicator hisobga olinadi.\n- Popover: radius 12, `Elevation/2`, padding 16, gap 12, dum 12×6. Menu: 240 (submenu 200, ota menyudan 4 px), radius 8, padding 4, `Elevation/2`; element hover `fill/tertiary-hover`, selected `fill/strong`, danger `text/danger` + `status/danger/soft`.\n- Command palette: 640, `fill/primary`, radius 16, `Elevation/4`; < 600 px — to'liq kenglik, yuqorida, ishoralarsiz.\n- Hover card: 320, `fill/primary`, radius 12, `Elevation/3`, `z/dropdown`; touch'da ochilmaydi, fokusda ochiladi. `profile` — Avatar 48 + Title/S + Caption/M + Body/S + statistika (Label/M + Caption/L); `link` — 16:9 preview (`fill/tertiary-hover`) + sarlavha + izoh.\n- Action sheet: `platform` `ios` (native iOS 27 karta: `bg/sheet`, `fill/tertiary` pill amallar, radius 34, 8 px chetdan) · `android` (Material 3 sheet: `bg/sheet`, yuqori radius `radius/surface/xl`, dastak `fill/strong`). Share sheet: `bg/sheet`, kontakt doiralari `accent/soft`/`status/*/soft`, ilovalar va havola maydoni `fill/secondary`, Copy — `surface/raised` pill.\n- Harakat: Modal/Alert/Command — `scale-enter` 0.96 + fade (`motion/overlay/modal/enter`); Drawer va sheet'lar — siljish (`motion/overlay/slide`); anchored — `motion/overlay/anchored/enter`. `prefers-reduced-motion` da o'chadi.\n\n## Klaviatura\n\n- Dropdown/Context menu: ↓ ↑ Home End, Enter/Space — tanlash, → submenu ochadi, ← yopadi, Esc — yopib fokusni trigger'ga qaytaradi, Tab — yopadi. Trigger'da ↓/↑ ham ochadi.\n- Command palette: input'da ↑ ↓ (`aria-activedescendant`), Enter — tanlash, Esc — yopish.\n- Alert dialog: Esc va scrim **yopmaydi** — faqat tugmalar (`role=\"alertdialog\"`).\n\n## Do / Don't\n\n- ✅ Modal — bitta vazifa, ikki tugmagacha. ❌ Modal ustida Modal.\n- ✅ Qaytarib bo'lmaydigan amal — AlertDialog, savol shaklidagi sarlavha. ❌ Danger amal uchun oddiy Modal'siz tasdiqlash.\n- ✅ Hover card faqat o'qish uchun. ❌ Ichida tugmalar — buning uchun Popover.\n"
     },
     {
       "dir": "pagination",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Pagination · LoadMore",
       "description": "",
       "exports": [
@@ -5879,11 +5879,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Pagination · LoadMore\n\nFigma: **6.4 Pagination**.\n\n```tsx\nimport { LoadMore, Pagination } from '@bek/react';\n\n<Pagination page={page} pageCount={52} onPageChange={setPage}\n  summary=\"1–24 of 1 240\" pageSize={<Select size=\"s\" … />} />   // web\n<Pagination variant=\"compact\" page={3} pageCount={52} onPageChange={setPage} />  // planshet\n<LoadMore loaded={24} total={120} onLoadMore={fetchMore} label=\"Showing 24 of 120\" />  // mobil\n```\n\n| Prop (`Pagination`)                         | Qiymatlar                                 | Default    |\n| ------------------------------------------- | ----------------------------------------- | ---------- |\n| `page` · `pageCount` · `onPageChange`       | 1 dan boshlanadi                          | —          |\n| `variant`                                   | `numbered` · `compact` (‹ 3 / 52 ›)       | `numbered` |\n| `size`                                      | `s` 36 · `m` 44 px                        | `s`        |\n| `summary`                                   | chapdagi xulosa (Body/S `text/secondary`) | —          |\n| `pageSize`                                  | o'ngdagi Select (24 / 48 / 96)            | —          |\n| `siblings`                                  | joriy sahifa atrofidagi qo'shnilar        | `1`        |\n| `previousLabel` · `nextLabel` · `pageLabel` | ekran o'quvchi matnlari                   | EN         |\n\n- Element: min-width = balandlik, radius 8, Label/M (M — Label/L); Hover `fill/tertiary`; Selected `accent/default` + `text/on-color` (`aria-current=\"page\"`); \"…\" `text/secondary`. Previous/Next — Flat icon Button.\n- `paginationRange(page, count, siblings)` — sahifalar ro'yxati (doim bir xil uzunlik, \"…\" bilan).\n- `LoadMore`: ProgressBar S + to'liq kenglikdagi Outline tugma (`loading` bilan); hammasi yuklanganda tugma yashiriladi.\n"
+      "readme": "# Pagination · LoadMore\n\nFigma: **6.4 Pagination**.\n\n```tsx\nimport { LoadMore, Pagination } from '@bek-ui/react';\n\n<Pagination page={page} pageCount={52} onPageChange={setPage}\n  summary=\"1–24 of 1 240\" pageSize={<Select size=\"s\" … />} />   // web\n<Pagination variant=\"compact\" page={3} pageCount={52} onPageChange={setPage} />  // planshet\n<LoadMore loaded={24} total={120} onLoadMore={fetchMore} label=\"Showing 24 of 120\" />  // mobil\n```\n\n| Prop (`Pagination`)                         | Qiymatlar                                 | Default    |\n| ------------------------------------------- | ----------------------------------------- | ---------- |\n| `page` · `pageCount` · `onPageChange`       | 1 dan boshlanadi                          | —          |\n| `variant`                                   | `numbered` · `compact` (‹ 3 / 52 ›)       | `numbered` |\n| `size`                                      | `s` 36 · `m` 44 px                        | `s`        |\n| `summary`                                   | chapdagi xulosa (Body/S `text/secondary`) | —          |\n| `pageSize`                                  | o'ngdagi Select (24 / 48 / 96)            | —          |\n| `siblings`                                  | joriy sahifa atrofidagi qo'shnilar        | `1`        |\n| `previousLabel` · `nextLabel` · `pageLabel` | ekran o'quvchi matnlari                   | EN         |\n\n- Element: min-width = balandlik, radius 8, Label/M (M — Label/L); Hover `fill/tertiary`; Selected `accent/default` + `text/on-color` (`aria-current=\"page\"`); \"…\" `text/secondary`. Previous/Next — Flat icon Button.\n- `paginationRange(page, count, siblings)` — sahifalar ro'yxati (doim bir xil uzunlik, \"…\" bilan).\n- `LoadMore`: ProgressBar S + to'liq kenglikdagi Outline tugma (`loading` bilan); hammasi yuklanganda tugma yashiriladi.\n"
     },
     {
       "dir": "pattern",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Pattern",
       "description": "empty state, promo sheet, onboarding va karta fonlari uchun bezak plitka (320 × 320, takrorlanadi). type: dots · grid · diagonal · logo-petals; tone: subtle · accent.",
       "exports": [
@@ -5949,7 +5949,7 @@
     },
     {
       "dir": "pincode",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "CodeInput · Pinpad",
       "description": "PIN nuqtalari (CodeInput, 4 yoki 6) va raqamli klaviatura (Pinpad).",
       "exports": [
@@ -6155,7 +6155,7 @@
     },
     {
       "dir": "price",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Price",
       "description": "narx, valyuta, eski narx, chegirma va izoh. size: s · m · l · xl; layout: inline · stacked.",
       "exports": [
@@ -6263,7 +6263,7 @@
     },
     {
       "dir": "product-card",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "ProductCard",
       "description": "rasm, nom, tavsif, narx va qo'shish amali. layout: vertical (2 ustunli to'r) · horizontal (menyu ro'yxati) · featured (aksiya, tavsiya).",
       "exports": [
@@ -6372,7 +6372,7 @@
     },
     {
       "dir": "progress",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "ProgressBar",
       "description": "chiziqli jarayon (yuklash, kurs, profil to'ldirish). size: s 4 · m 6 · l 8 px; status: neutral · accent · success · warning · danger.",
       "exports": [
@@ -6466,11 +6466,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# ProgressBar\n\nFigma: **4.6 Progress** — chiziqli jarayon (yuklash, kurs, profil to'ldirish). `size`: `s` 4 · `m` 6 · `l` 8 px; `status`: `neutral` · `accent` · `success` · `warning` · `danger`.\n\n```tsx\n<ProgressBar value={uploaded} max={total} label=\"Yuklanmoqda\" showValue />\n```\n\n`role=\"progressbar\"` + `aria-valuenow`. `showValue`: `true` — foiz, yoki istalgan matn (\"3 / 5\"). Davomiyligi noma'lum kutish uchun — `Spinner`.\n"
+      "readme": "# ProgressBar\n\nFigma: **4.6 Progress** — chiziqli jarayon (yuklash, kurs, profil to'ldirish). `size`: `s` 4 · `m` 6 · `l` 8 px; `status`: `neutral` · `accent` · `success` · `warning` · `danger`.\n\n```tsx\n<ProgressBar value={uploaded} max={total} label=\"Yuklanmoqda\" showValue />\n```\n\n`role=\"progressbar\"` + `aria-valuenow`. `label` bo'lmasa `aria-label` bering — nomsiz progress ekran o'quvchiga tushunarsiz. `showValue`: `true` — foiz, yoki istalgan matn (\"3 / 5\"). Davomiyligi noma'lum kutish uchun — `Spinner`.\n"
     },
     {
       "dir": "radio",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Radio",
       "description": "bitta tanlov, o'lcham s 16 · m 20 · l 24 px.",
       "exports": [
@@ -6563,7 +6563,7 @@
     },
     {
       "dir": "rating",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Rating",
       "description": "faqat o'qish uchun reyting (mahsulot, kurs, joy). variant: stars (5 yulduz, 0.5 qadam) · compact (bitta yulduz + ball); size: s 16 · m 20 · l 24 px.",
       "exports": [
@@ -6710,7 +6710,7 @@
     },
     {
       "dir": "search-bar",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "SearchBar",
       "description": "ro'yxat va katalog uchun pill qidiruv. size: m 36 (zich UI) · l 44 (touch).",
       "exports": [
@@ -6811,7 +6811,7 @@
     },
     {
       "dir": "segmented-control",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "SegmentedControl",
       "description": "2–4 o'zaro istisno ko'rinish yoki rejim (davr, o'lcham). size: m · l; variant: solid · overlay (rasm/video ustida).",
       "exports": [
@@ -6925,7 +6925,7 @@
     },
     {
       "dir": "select",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Select",
       "description": "ro'yxatdan tanlash. Native <select> (klaviatura, mobil picker, autofill tayyor) TextField qobig'ida.",
       "exports": [
@@ -7063,7 +7063,7 @@
     },
     {
       "dir": "separator",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Separator · Scrollbar",
       "description": "type: line (1 px border/hairline) · block (8 px bg/base tasma guruhlar orasida) · labeled (\"yoki\"); inset: none · leading · both (16 px); orientation.",
       "exports": [
@@ -7146,7 +7146,7 @@
     },
     {
       "dir": "skeleton",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Skeleton",
       "description": "Ma'lumot yuklanguncha haqiqiy maketni takrorlovchi joy egallovchi.",
       "exports": [
@@ -7222,11 +7222,11 @@
           "reason": "Card suyagining kengligi 168 — Figma Card variantining kengligi (resizable); sizes kenglikni olmaydi, scale/168 tokeni yo'q."
         }
       ],
-      "readme": "# Skeleton\n\nFigma: **5.7 Loading → Skeleton**. Ma'lumot yuklanguncha haqiqiy maketni takrorlovchi joy egallovchi.\n\n```tsx\nimport { Skeleton } from '@bek/react';\n\n<section aria-busy=\"true\">\n  <Skeleton shape=\"list-row\" />\n  <Skeleton shape=\"list-row\" />\n</section>\n<Skeleton shape=\"text\" lines={2} />\n<Skeleton shape=\"circle\" style={{ width: 56 }} />\n```\n\n| Prop    | Qiymatlar                                                  | Default |\n| ------- | ---------------------------------------------------------- | ------- |\n| `shape` | `text` · `title` · `circle` · `rect` · `list-row` · `card` | `text`  |\n| `lines` | `text` uchun qatorlar soni (oxirgisi 2/3)                  | `3`     |\n\n- O'lchamlar: Text 12 px qatorlar (gap 8) · Title 24 × 180 · Circle 40 · Rect 140 balandlik · List row 48 · Card — konteyner kengligini to'ldiradi, media nisbati 168:140 (Figma'da 168 kenglik). Kenglik/balandlikni `style` bilan o'zgartirish mumkin.\n- Tokenlar: suyaklar `fill/soft-pressed`; shimmer — shaffoflik 1 → 0.5 → 1, 1.2 s ease-in-out (`prefers-reduced-motion` da o'chadi).\n- A11y: Skeleton `aria-hidden`; yuklanayotgan blokka `aria-busy=\"true\"` bering.\n\n## Do / Don't\n\n- ✅ Haqiqiy maketga mos shakl. ❌ Skeleton va spinner'ni bitta blokda aralashtirish.\n"
+      "readme": "# Skeleton\n\nFigma: **5.7 Loading → Skeleton**. Ma'lumot yuklanguncha haqiqiy maketni takrorlovchi joy egallovchi.\n\n```tsx\nimport { Skeleton } from '@bek-ui/react';\n\n<section aria-busy=\"true\">\n  <Skeleton shape=\"list-row\" />\n  <Skeleton shape=\"list-row\" />\n</section>\n<Skeleton shape=\"text\" lines={2} />\n<Skeleton shape=\"circle\" style={{ width: 56 }} />\n```\n\n| Prop    | Qiymatlar                                                  | Default |\n| ------- | ---------------------------------------------------------- | ------- |\n| `shape` | `text` · `title` · `circle` · `rect` · `list-row` · `card` | `text`  |\n| `lines` | `text` uchun qatorlar soni (oxirgisi 2/3)                  | `3`     |\n\n- O'lchamlar: Text 12 px qatorlar (gap 8) · Title 24 × 180 · Circle 40 · Rect 140 balandlik · List row 48 · Card — konteyner kengligini to'ldiradi, media nisbati 168:140 (Figma'da 168 kenglik). Kenglik/balandlikni `style` bilan o'zgartirish mumkin.\n- Tokenlar: suyaklar `fill/soft-pressed`; shimmer — shaffoflik 1 → 0.5 → 1, 1.2 s ease-in-out (`prefers-reduced-motion` da o'chadi).\n- A11y: Skeleton `aria-hidden`; yuklanayotgan blokka `aria-busy=\"true\"` bering.\n\n## Do / Don't\n\n- ✅ Haqiqiy maketga mos shakl. ❌ Skeleton va spinner'ni bitta blokda aralashtirish.\n"
     },
     {
       "dir": "slider",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Slider · RangeSlider",
       "description": "Type=Single → Slider, Type=Range → RangeSlider. O'lcham s · m · l (yo'lak 6/8/10, thumb 14/16/20 px).",
       "exports": [
@@ -7345,7 +7345,7 @@
     },
     {
       "dir": "spinner",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Spinner",
       "description": "Yuklanish belgisi; Button va Input ichida ham ishlatiladi.",
       "exports": [
@@ -7409,7 +7409,7 @@
     },
     {
       "dir": "stepper",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Stepper",
       "description": "miqdor tanlash. variant: filled · outline; size: s 36 · m 44 · l 56 px.",
       "exports": [
@@ -7521,7 +7521,7 @@
     },
     {
       "dir": "switch",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Switch",
       "description": "darhol kuchga kiradigan yoqish/o'chirish (saqlash tugmasisiz). Yo'lak s 32×20 · m 40×24 · l 48×28 px.",
       "exports": [
@@ -7623,7 +7623,7 @@
     },
     {
       "dir": "system-bars",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "System bars",
       "description": "StatusBar va HomeIndicator: iOS va Android tizim panellari faqat mockup va shablonlar uchun (haqiqiy qurilmada OS chizadi). platform: ios · android; content: dark (yorug' fon) · light (qorong'i fon, rasm).",
       "exports": [
@@ -7757,7 +7757,7 @@
     },
     {
       "dir": "table",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Table",
       "description": "native <table> + TableHeaderCell (saralash), TableRow (tanlangan / o'chirilgan), TableCell (tavsif, raqam). size: s 40 · m 48 · l 56 px; zebra.",
       "exports": [
@@ -7936,7 +7936,7 @@
     },
     {
       "dir": "tabs",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Tabs",
       "description": "(Tab item + Tabs). Bir sahifadagi bo'limlar orasida almashish — WAI-ARIA tabs.",
       "exports": [
@@ -8100,11 +8100,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Tabs\n\nFigma: **6.1 Tabs** (Tab item + Tabs). Bir sahifadagi bo'limlar orasida almashish — WAI-ARIA tabs.\n\n```tsx\nimport { Tab, TabList, TabPanel, Tabs } from '@bek/react';\n\n<Tabs defaultValue=\"overview\" type=\"underline\" size=\"m\">\n  <TabList aria-label=\"Product\" width=\"hug\">\n    <Tab value=\"overview\">Overview</Tab>\n    <Tab value=\"reviews\" badge={12}>\n      Reviews\n    </Tab>\n    <Tab value=\"faq\" disabled>\n      FAQ\n    </Tab>\n  </TabList>\n  <TabPanel value=\"overview\">…</TabPanel>\n  <TabPanel value=\"reviews\">…</TabPanel>\n</Tabs>;\n```\n\n| Komponent  | Prop                                       | Qiymatlar                                        | Default     |\n| ---------- | ------------------------------------------ | ------------------------------------------------ | ----------- |\n| `Tabs`     | `value` · `defaultValue` · `onValueChange` | tanlangan tab                                    | —           |\n| `Tabs`     | `type`                                     | `underline` · `pill` · `segmented`               | `underline` |\n| `Tabs`     | `size`                                     | `s` 32 · `m` 40 · `l` 48 px                      | `m`         |\n| `TabList`  | `width`                                    | `hug` · `fill`                                   | `hug`       |\n| `Tab`      | `value` · `icon` · `badge` · `disabled`    | ikonka s 16 · m 20 · l 24; badge Subtle Accent S | —           |\n| `TabPanel` | `value` · `keepMounted`                    | tanlanmagan panelni DOM'da saqlash               | `false`     |\n\n- **Underline** — sahifa bo'limlari: qator gap 24, pastda `border/default`; Active — `text/accent` + 2 px `accent/default` indikator; Hover — `fill/soft` + `fill/control` indikator.\n- **Pill** — filtrlar qatori: gap 8; Active — `accent/default` + `text/on-color`; Hover — `fill/soft-hover`.\n- **Segmented** — ixcham almashtirgich: konteyner `fill/soft-hover`, padding 2, radius 8; Active — `surface/raised` + `Elevation/1`.\n- Matn Label/M (L — Label/L); Disabled — `text/disabled`. Padding s 12 · m/l 16; gap s/m 8 · l 12.\n- Klaviatura: ← → (RTL'da teskari), Home, End — fokus bilan birga tanlanadi (roving tabindex). Panel `aria-labelledby` bilan bog'langan.\n\n## Do / Don't\n\n- ✅ 2–5 ta qisqa nom. ❌ Sahifalar orasida navigatsiya uchun Tabs (buning uchun Navigation).\n- ✅ Ko'p tab bo'lsa — gorizontal scroll. ❌ Ikki qatorga o'tkazish.\n"
+      "readme": "# Tabs\n\nFigma: **6.1 Tabs** (Tab item + Tabs). Bir sahifadagi bo'limlar orasida almashish — WAI-ARIA tabs.\n\n```tsx\nimport { Tab, TabList, TabPanel, Tabs } from '@bek-ui/react';\n\n<Tabs defaultValue=\"overview\" type=\"underline\" size=\"m\">\n  <TabList aria-label=\"Product\" width=\"hug\">\n    <Tab value=\"overview\">Overview</Tab>\n    <Tab value=\"reviews\" badge={12}>\n      Reviews\n    </Tab>\n    <Tab value=\"faq\" disabled>\n      FAQ\n    </Tab>\n  </TabList>\n  <TabPanel value=\"overview\">…</TabPanel>\n  <TabPanel value=\"reviews\">…</TabPanel>\n</Tabs>;\n```\n\n| Komponent  | Prop                                       | Qiymatlar                                        | Default     |\n| ---------- | ------------------------------------------ | ------------------------------------------------ | ----------- |\n| `Tabs`     | `value` · `defaultValue` · `onValueChange` | tanlangan tab                                    | —           |\n| `Tabs`     | `type`                                     | `underline` · `pill` · `segmented`               | `underline` |\n| `Tabs`     | `size`                                     | `s` 32 · `m` 40 · `l` 48 px                      | `m`         |\n| `TabList`  | `width`                                    | `hug` · `fill`                                   | `hug`       |\n| `Tab`      | `value` · `icon` · `badge` · `disabled`    | ikonka s 16 · m 20 · l 24; badge Subtle Accent S | —           |\n| `TabPanel` | `value` · `keepMounted`                    | tanlanmagan panelni DOM'da saqlash               | `false`     |\n\n- **Underline** — sahifa bo'limlari: qator gap 24, pastda `border/default`; Active — `text/accent` + 2 px `accent/default` indikator; Hover — `fill/soft` + `fill/control` indikator.\n- **Pill** — filtrlar qatori: gap 8; Active — `accent/default` + `text/on-color`; Hover — `fill/soft-hover`.\n- **Segmented** — ixcham almashtirgich: konteyner `fill/soft-hover`, padding 2, radius 8; Active — `surface/raised` + `Elevation/1`.\n- Matn Label/M (L — Label/L); Disabled — `text/disabled`. Padding s 12 · m/l 16; gap s/m 8 · l 12.\n- Klaviatura: ← → (RTL'da teskari), Home, End — fokus bilan birga tanlanadi (roving tabindex). Panel `aria-labelledby` bilan bog'langan.\n\n## Do / Don't\n\n- ✅ 2–5 ta qisqa nom. ❌ Sahifalar orasida navigatsiya uchun Tabs (buning uchun Navigation).\n- ✅ Ko'p tab bo'lsa — gorizontal scroll. ❌ Ikki qatorga o'tkazish.\n"
     },
     {
       "dir": "tag",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Tag",
       "description": "Metama'lumot yorlig'i (kategoriya, mavzu). Badge'dan farqi: holat emas, ma'lumot; shakli — yumaloq burchakli to'rtburchak (radius/control/md).",
       "exports": [
@@ -8203,11 +8203,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Tag\n\nFigma: **4.2 Badge → Tag**. Metama'lumot yorlig'i (kategoriya, mavzu). Badge'dan farqi: holat emas, ma'lumot; shakli — yumaloq burchakli to'rtburchak (`radius/control/md`).\n\n```tsx\nimport { Tag } from '@bek/react';\n\n<Tag>Design</Tag>                                     // subtle · neutral · s\n<Tag variant=\"outline\" color=\"utility\" size=\"m\">Beta</Tag>\n```\n\n| Prop      | Qiymatlar                                                                    | Default   |\n| --------- | ---------------------------------------------------------------------------- | --------- |\n| `variant` | `subtle` · `outline`                                                         | `subtle`  |\n| `color`   | `neutral` · `accent` · `success` · `warning` · `danger` · `info` · `utility` | `neutral` |\n| `size`    | `s` 20 · `m` 24 px                                                           | `s`       |\n| `icon`    | `ReactNode` — s 12 px, m 16 px                                               | —         |\n\nShrift Caption/M; ranglar Badge bilan bir xil ohang tokenlaridan (`src/styles/tone.css`).\n"
+      "readme": "# Tag\n\nFigma: **4.2 Badge → Tag**. Metama'lumot yorlig'i (kategoriya, mavzu). Badge'dan farqi: holat emas, ma'lumot; shakli — yumaloq burchakli to'rtburchak (`radius/control/md`).\n\n```tsx\nimport { Tag } from '@bek-ui/react';\n\n<Tag>Design</Tag>                                     // subtle · neutral · s\n<Tag variant=\"outline\" color=\"utility\" size=\"m\">Beta</Tag>\n```\n\n| Prop      | Qiymatlar                                                                    | Default   |\n| --------- | ---------------------------------------------------------------------------- | --------- |\n| `variant` | `subtle` · `outline`                                                         | `subtle`  |\n| `color`   | `neutral` · `accent` · `success` · `warning` · `danger` · `info` · `utility` | `neutral` |\n| `size`    | `s` 20 · `m` 24 px                                                           | `s`       |\n| `icon`    | `ReactNode` — s 12 px, m 16 px                                               | —         |\n\nShrift Caption/M; ranglar Badge bilan bir xil ohang tokenlaridan (`src/styles/tone.css`).\n"
     },
     {
       "dir": "text-field",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "TextField",
       "description": "Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.",
       "exports": [
@@ -8347,11 +8347,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# TextField\n\nFigma: **3.2 Text field**. Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.\n\n```tsx\nimport { TextField } from '@bek/react';\n\n<TextField label=\"Email\" type=\"email\" />\n<TextField label=\"Telefon\" placeholder=\"+998 __ ___ __ __\" supportingText=\"SMS kod yuboriladi\" />\n<TextField label=\"Karta\" error supportingText=\"Karta raqami noto'g'ri\" />\n<TextField variant=\"outlined\" size=\"l\" leadingIcon={<SearchIcon />} loading />\n```\n\n| Prop             | Qiymatlar                                    | Default  |\n| ---------------- | -------------------------------------------- | -------- |\n| `label`          | `string`                                     | —        |\n| `supportingText` | `ReactNode` — yordam yoki xato matni         | —        |\n| `error`          | `boolean` — `aria-invalid`, qizil chegara    | `false`  |\n| `variant`        | `filled` · `outlined` · `plain`              | `filled` |\n| `size`           | `s` 36 · `m` 44 · `l` 56 · `xl` 64 px        | `m`      |\n| `leadingIcon`    | `ReactNode` — slot 32 (s, m) · 40 (l, xl)    | —        |\n| `trailingIcon`   | `ReactNode` — tozalash, ko'rsatish, kalendar | —        |\n| `loading`        | o'ngda spinner                               | `false`  |\n| `skeleton`       | faqat maydon shakli                          | `false`  |\n\nQolgan `<input>` atributlari (`value`, `onChange`, `type`, `name`, `disabled` …) input'ga o'tadi; `ref` — input'ga; `className` — tashqi o'ramga.\n\n- **Filled** — default, kulrang fon. **Outlined** — focus'da `fill/primary` fon. **Plain** — fonsiz, hover'da yumshoq fon.\n- Focus — `border/focus` 2 px halqa, 2 px oraliq. Xato — `border/danger` 1 px + qizil yordamchi matn; xato faqat rang bilan emas, matn bilan ham aytiladi.\n- Mobile va Tablet'da qiymat 16 px (iOS zoom qilmasligi uchun) — `s` o'lchamda `Label/Input` tokeni shuni ta'minlaydi.\n- Maydon qobig'i (`.bek-field*`) Select va Textarea bilan umumiy: `src/styles/field.css`.\n"
+      "readme": "# TextField\n\nFigma: **3.2 Text field**. Matn kiritish maydoni: label maydon ichida (bo'sh holatda katta, qiymat yoki focus bo'lganda yuqoriga ko'tariladi), yordamchi matn pastda.\n\n```tsx\nimport { TextField } from '@bek-ui/react';\n\n<TextField label=\"Email\" type=\"email\" />\n<TextField label=\"Telefon\" placeholder=\"+998 __ ___ __ __\" supportingText=\"SMS kod yuboriladi\" />\n<TextField label=\"Karta\" error supportingText=\"Karta raqami noto'g'ri\" />\n<TextField variant=\"outlined\" size=\"l\" leadingIcon={<SearchIcon />} loading />\n```\n\n| Prop             | Qiymatlar                                    | Default  |\n| ---------------- | -------------------------------------------- | -------- |\n| `label`          | `string`                                     | —        |\n| `supportingText` | `ReactNode` — yordam yoki xato matni         | —        |\n| `error`          | `boolean` — `aria-invalid`, qizil chegara    | `false`  |\n| `variant`        | `filled` · `outlined` · `plain`              | `filled` |\n| `size`           | `s` 36 · `m` 44 · `l` 56 · `xl` 64 px        | `m`      |\n| `leadingIcon`    | `ReactNode` — slot 32 (s, m) · 40 (l, xl)    | —        |\n| `trailingIcon`   | `ReactNode` — tozalash, ko'rsatish, kalendar | —        |\n| `loading`        | o'ngda spinner                               | `false`  |\n| `skeleton`       | faqat maydon shakli                          | `false`  |\n\nQolgan `<input>` atributlari (`value`, `onChange`, `type`, `name`, `disabled` …) input'ga o'tadi; `ref` — input'ga; `className` — tashqi o'ramga.\n\n- **Filled** — default, kulrang fon. **Outlined** — focus'da `fill/primary` fon. **Plain** — fonsiz, hover'da yumshoq fon.\n- Focus — `border/focus` 2 px halqa, 2 px oraliq. Xato — `border/danger` 1 px + qizil yordamchi matn; xato faqat rang bilan emas, matn bilan ham aytiladi.\n- Mobile va Tablet'da qiymat 16 px (iOS zoom qilmasligi uchun) — `s` o'lchamda `Label/Input` tokeni shuni ta'minlaydi.\n- Maydon qobig'i (`.bek-field*`) Select va Textarea bilan umumiy: `src/styles/field.css`.\n"
     },
     {
       "dir": "textarea",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Textarea",
       "description": "ko'p qatorli matn, yordamchi qatorning o'ng tomonida belgi hisoblagichi.",
       "exports": [
@@ -8482,7 +8482,7 @@
     },
     {
       "dir": "time-slot",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "TimeSlotPicker",
       "description": "+ Time slot — yetkazish yoki band qilish oynasini tanlash: kun (SegmentedControl) + oynalar to'ri (qatorda 3 ta) + izoh. Express oyna birinchi.",
       "exports": [
@@ -8628,7 +8628,7 @@
     },
     {
       "dir": "toast",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Toast",
       "description": "Amal natijasi haqida qisqa vaqtli xabar (\"Saved\", \"Payment failed\").",
       "exports": [
@@ -8756,11 +8756,11 @@
           "reason": "Subtle variantdagi amal matni text/accent — Figma'da amal nested Button (Flat) orqali, uning tokeni Toast spec'ida ko'rinmaydi. Figma'da Subtle toast amalining rangi Button Flat bilan bir xil (text/accent)."
         }
       ],
-      "readme": "# Toast\n\nFigma: **5.1 Toast**. Amal natijasi haqida qisqa vaqtli xabar (\"Saved\", \"Payment failed\").\n\n```tsx\nimport { Toast, ToastViewport } from '@bek/react';\n\n<ToastViewport placement=\"bottom-end\">\n  <Toast\n    tone=\"success\"\n    title=\"Changes saved\"\n    action={{ label: 'Undo', onClick: undo }}\n    onClose={close}\n  />\n  <Toast variant=\"subtle\" tone=\"danger\" title=\"Payment failed\" description=\"Try another card.\" />\n</ToastViewport>;\n```\n\n| Prop          | Qiymatlar                                             | Default   |\n| ------------- | ----------------------------------------------------- | --------- |\n| `variant`     | `solid` · `subtle`                                    | `solid`   |\n| `tone`        | `neutral` · `info` · `success` · `warning` · `danger` | `neutral` |\n| `title`       | qisqa natija                                          | —         |\n| `description` | ixtiyoriy izoh                                        | —         |\n| `action`      | `{ label, onClick }` — bitta amal (Undo, Retry)       | —         |\n| `onClose`     | berilsa — yopish tugmasi                              | —         |\n| `icon`        | standart holat ikonkasi o'rniga; `null` — ikonkasiz   | holat     |\n\n`ToastViewport` — `position: fixed` qatlam, `z/toast`; `placement`: `bottom` · `top` · `bottom-end` · `top-end` (keng ekranda burchakda).\n\n- Tokenlar: Solid — fon `status/{tone}/default` (neutral `fill/inverse`), matn `text/on-color` (warning `text/on-warning`, neutral `text/inverse`). Subtle — fon `status/{tone}/soft` (neutral `fill/soft-hover`), sarlavha `text/{tone}`, izoh `text/secondary`, amal `text/accent`. Padding 16, gap 12, radius `surface/sm`, `Elevation/3`.\n- A11y: `warning`/`danger` — `role=\"alert\"`, qolganlari — `role=\"status\"`. Yopish tugmasi `closeLabel` bilan nomlanadi.\n- Taymer (odatda 4–6 s) ilovada; amal bor toast'ni hover/fokusda to'xtating.\n\n## Do / Don't\n\n- ✅ Bitta toast — bitta xabar va ko'pi bilan bitta amal. ❌ Toast ichida forma yoki bir nechta tugma.\n- ✅ Muhim xatoni Alert yoki dialog bilan ham ko'rsating. ❌ Qaytarib bo'lmaydigan ma'lumotni faqat toast'da berish.\n"
+      "readme": "# Toast\n\nFigma: **5.1 Toast**. Amal natijasi haqida qisqa vaqtli xabar (\"Saved\", \"Payment failed\").\n\n```tsx\nimport { Toast, ToastViewport } from '@bek-ui/react';\n\n<ToastViewport placement=\"bottom-end\">\n  <Toast\n    tone=\"success\"\n    title=\"Changes saved\"\n    action={{ label: 'Undo', onClick: undo }}\n    onClose={close}\n  />\n  <Toast variant=\"subtle\" tone=\"danger\" title=\"Payment failed\" description=\"Try another card.\" />\n</ToastViewport>;\n```\n\n| Prop          | Qiymatlar                                             | Default   |\n| ------------- | ----------------------------------------------------- | --------- |\n| `variant`     | `solid` · `subtle`                                    | `solid`   |\n| `tone`        | `neutral` · `info` · `success` · `warning` · `danger` | `neutral` |\n| `title`       | qisqa natija                                          | —         |\n| `description` | ixtiyoriy izoh                                        | —         |\n| `action`      | `{ label, onClick }` — bitta amal (Undo, Retry)       | —         |\n| `onClose`     | berilsa — yopish tugmasi                              | —         |\n| `icon`        | standart holat ikonkasi o'rniga; `null` — ikonkasiz   | holat     |\n\n`ToastViewport` — `position: fixed` qatlam, `z/toast`; `placement`: `bottom` · `top` · `bottom-end` · `top-end` (keng ekranda burchakda).\n\n- Tokenlar: Solid — fon `status/{tone}/default` (neutral `fill/inverse`), matn `text/on-color` (warning `text/on-warning`, neutral `text/inverse`). Subtle — fon `status/{tone}/soft` (neutral `fill/soft-hover`), sarlavha `text/{tone}`, izoh `text/secondary`, amal `text/accent`. Padding 16, gap 12, radius `surface/sm`, `Elevation/3`.\n- A11y: `warning`/`danger` — `role=\"alert\"`, qolganlari — `role=\"status\"`. Yopish tugmasi `closeLabel` bilan nomlanadi.\n- Taymer (odatda 4–6 s) ilovada; amal bor toast'ni hover/fokusda to'xtating.\n\n## Do / Don't\n\n- ✅ Bitta toast — bitta xabar va ko'pi bilan bitta amal. ❌ Toast ichida forma yoki bir nechta tugma.\n- ✅ Muhim xatoni Alert yoki dialog bilan ham ko'rsating. ❌ Qaytarib bo'lmaydigan ma'lumotni faqat toast'da berish.\n"
     },
     {
       "dir": "tooltip",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "Tooltip · TooltipCallout",
       "description": "",
       "exports": [
@@ -8911,11 +8911,11 @@
         ]
       },
       "accepted": [],
-      "readme": "# Tooltip · TooltipCallout\n\nFigma: **5.2 Tooltip**.\n\n## Tooltip\n\nHover yoki fokusda chiqadigan qisqa izoh. Icon-only tugmalarda majburiy.\n\n```tsx\nimport { Tooltip, Button } from '@bek/react';\n\n<Tooltip content=\"Share\" placement=\"bottom\">\n  <Button iconOnly startIcon={<ShareIcon />}>\n    Share\n  </Button>\n</Tooltip>;\n```\n\n| Prop          | Qiymatlar                           | Default |\n| ------------- | ----------------------------------- | ------- |\n| `content`     | Label/M                             | —       |\n| `description` | ikkinchi qator, Caption/M           | —       |\n| `variant`     | `dark` · `light`                    | `dark`  |\n| `placement`   | `top` · `bottom` · `left` · `right` | `top`   |\n| `arrow`       | strelka (10 px, 45°)                | `true`  |\n| `children`    | bitta fokuslanadigan element        | —       |\n\n- Tokenlar: Dark — `fill/inverse`, `text/inverse`, izoh `text/disabled`; Light — `surface/raised`, `text/primary`, `text/secondary`. Padding 12, gap 4, radius `surface/sm`, `Elevation/2`, `z/tooltip`.\n- A11y: `role=\"tooltip\"`, trigger'ga `aria-describedby`; pointer, fokus va Escape bilan boshqariladi. Ichida interaktiv element bo'lmaydi.\n- Joylashuv trigger atrofida CSS bilan (`position: absolute`); ekran chetidagi holatlar uchun `placement` ni tanlang.\n\n## TooltipCallout\n\nYangi yoki yashirin funksiyani tushuntiruvchi \"fikr pufagi\" ko'rinishidagi ishora.\n\n```tsx\n<TooltipCallout tip=\"bottom-left\" action={{ label: 'Got it', onClick: dismiss }}>\n  Swipe left to delete an item\n</TooltipCallout>\n```\n\n| Prop       | Qiymatlar                                                                                  | Default         |\n| ---------- | ------------------------------------------------------------------------------------------ | --------------- |\n| `size`     | `m` (280, Body/S) · `s` (240, Caption/M)                                                   | `m`             |\n| `tip`      | `top-left` · `top-center` · `top-right` · `bottom-left` · `bottom-center` · `bottom-right` | `bottom-center` |\n| `children` | bir-ikki qatorli matn                                                                      | —               |\n| `action`   | `{ label, onClick }` — \"Got it\", `text/accent`                                             | —               |\n\n- Doim Dark (`surface/raised`), `Elevation/3`, padding 8 × 12, radius `surface/md`. Ekranda bittadan; amal yoki tashqariga bosish bilan yopiladi.\n\n## Do / Don't\n\n- ✅ Tooltip — 1–5 so'z. ❌ Muhim ma'lumotni faqat tooltip'da berish (touch'da hover yo'q).\n"
+      "readme": "# Tooltip · TooltipCallout\n\nFigma: **5.2 Tooltip**.\n\n## Tooltip\n\nHover yoki fokusda chiqadigan qisqa izoh. Icon-only tugmalarda majburiy.\n\n```tsx\nimport { Tooltip, Button } from '@bek-ui/react';\n\n<Tooltip content=\"Share\" placement=\"bottom\">\n  <Button iconOnly startIcon={<ShareIcon />}>\n    Share\n  </Button>\n</Tooltip>;\n```\n\n| Prop          | Qiymatlar                           | Default |\n| ------------- | ----------------------------------- | ------- |\n| `content`     | Label/M                             | —       |\n| `description` | ikkinchi qator, Caption/M           | —       |\n| `variant`     | `dark` · `light`                    | `dark`  |\n| `placement`   | `top` · `bottom` · `left` · `right` | `top`   |\n| `arrow`       | strelka (10 px, 45°)                | `true`  |\n| `children`    | bitta fokuslanadigan element        | —       |\n\n- Tokenlar: Dark — `fill/inverse`, `text/inverse`, izoh `text/disabled`; Light — `surface/raised`, `text/primary`, `text/secondary`. Padding 12, gap 4, radius `surface/sm`, `Elevation/2`, `z/tooltip`.\n- A11y: `role=\"tooltip\"`, trigger'ga `aria-describedby`; pointer, fokus va Escape bilan boshqariladi. Ichida interaktiv element bo'lmaydi.\n- Joylashuv trigger atrofida CSS bilan (`position: absolute`); ekran chetidagi holatlar uchun `placement` ni tanlang.\n\n## TooltipCallout\n\nYangi yoki yashirin funksiyani tushuntiruvchi \"fikr pufagi\" ko'rinishidagi ishora.\n\n```tsx\n<TooltipCallout tip=\"bottom-left\" action={{ label: 'Got it', onClick: dismiss }}>\n  Swipe left to delete an item\n</TooltipCallout>\n```\n\n| Prop       | Qiymatlar                                                                                  | Default         |\n| ---------- | ------------------------------------------------------------------------------------------ | --------------- |\n| `size`     | `m` (280, Body/S) · `s` (240, Caption/M)                                                   | `m`             |\n| `tip`      | `top-left` · `top-center` · `top-right` · `bottom-left` · `bottom-center` · `bottom-right` | `bottom-center` |\n| `children` | bir-ikki qatorli matn                                                                      | —               |\n| `action`   | `{ label, onClick }` — \"Got it\", `text/accent`                                             | —               |\n\n- Doim Dark (`surface/raised`), `Elevation/3`, padding 8 × 12, radius `surface/md`. Ekranda bittadan; amal yoki tashqariga bosish bilan yopiladi.\n\n## Do / Don't\n\n- ✅ Tooltip — 1–5 so'z. ❌ Muhim ma'lumotni faqat tooltip'da berish (touch'da hover yo'q).\n"
     },
     {
       "dir": "top-navigation",
-      "package": "@bek/react",
+      "package": "@bek-ui/react",
       "title": "TopNavigation",
       "description": "Mobil/planshet ekran yuqorisidagi panel. Web uchun — AppHeader (6.2).",
       "exports": [
@@ -9047,11 +9047,11 @@
           "reason": "Body/M — qidiruv maydoni matni, SearchBar komponentida; TopNavigation'ning o'z matnlari Title/M va Headline/L."
         }
       ],
-      "readme": "# TopNavigation\n\nFigma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).\n\n```tsx\nimport { TopNavigation } from '@bek/react';\n\n<TopNavigation title=\"Product\" onLeadingClick={goBack} actions={<ShareButton />} />\n<TopNavigation type=\"large-title\" title=\"Profile\" leading=\"none\" />\n<TopNavigation type=\"search\" leading=\"menu\" onLeadingClick={openDrawer}>\n  <SearchBar placeholder=\"Search\" />\n</TopNavigation>\n<TopNavigation background=\"transparent\" title=\"Gallery\" />   // rasm ustida\n```\n\n| Prop                              | Qiymatlar                                         | Default    |\n| --------------------------------- | ------------------------------------------------- | ---------- |\n| `type`                            | `standard` · `large-title` · `search`             | `standard` |\n| `leading`                         | `back` · `close` · `menu` · `none`                | `back`     |\n| `onLeadingClick` · `leadingLabel` | chap tugma va uning nomi                          | —          |\n| `title`                           | Title/M markazda; Large title — Headline/L pastda | —          |\n| `actions`                         | 2 tagacha Flat XL icon tugma yoki avatar          | —          |\n| `background`                      | `solid` (`bg/sheet`) · `transparent`              | `solid`    |\n\n- Bar 56, padding 0 8, gap 8; tugmalar 44 (touch target). Transparent — tugmalar `fill/on-media`, matn `text/on-color`. Status bar ustida joylashadi; RTL'da orqaga chevron teskari.\n"
+      "readme": "# TopNavigation\n\nFigma: **6.6 Top navigation**. Mobil/planshet ekran yuqorisidagi panel. Web uchun — `AppHeader` (6.2).\n\n```tsx\nimport { TopNavigation } from '@bek-ui/react';\n\n<TopNavigation title=\"Product\" onLeadingClick={goBack} actions={<ShareButton />} />\n<TopNavigation type=\"large-title\" title=\"Profile\" leading=\"none\" />\n<TopNavigation type=\"search\" leading=\"menu\" onLeadingClick={openDrawer}>\n  <SearchBar placeholder=\"Search\" />\n</TopNavigation>\n<TopNavigation background=\"transparent\" title=\"Gallery\" />   // rasm ustida\n```\n\n| Prop                              | Qiymatlar                                         | Default    |\n| --------------------------------- | ------------------------------------------------- | ---------- |\n| `type`                            | `standard` · `large-title` · `search`             | `standard` |\n| `leading`                         | `back` · `close` · `menu` · `none`                | `back`     |\n| `onLeadingClick` · `leadingLabel` | chap tugma va uning nomi                          | —          |\n| `title`                           | Title/M markazda; Large title — Headline/L pastda | —          |\n| `actions`                         | 2 tagacha Flat XL icon tugma yoki avatar          | —          |\n| `background`                      | `solid` (`bg/sheet`) · `transparent`              | `solid`    |\n\n- Bar 56, padding 0 8, gap 8; tugmalar 44 (touch target). Transparent — tugmalar `fill/on-media`, matn `text/on-color`. Status bar ustida joylashadi; RTL'da orqaga chevron teskari.\n"
     },
     {
       "dir": "agent-node",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Agent node",
       "description": "avtomatlashtirish yoki AI-agent oqimining bitta qadami va uning jonli holati. status: idle · running · success · error.",
       "exports": [
@@ -9164,7 +9164,7 @@
     },
     {
       "dir": "ai-insight",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "AI insight",
       "description": "chart haqida model yozgan jumla; doim sparkles belgisi va dataviz/ai/ ranglari bilan. variant: inline · callout.",
       "exports": [
@@ -9249,7 +9249,7 @@
     },
     {
       "dir": "annotation",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Annotation",
       "description": "ma'lumotdagi lahzani tushuntiradi, SVG <g> bo'lagi. variant: marker · point · range.",
       "exports": [
@@ -9346,7 +9346,7 @@
     },
     {
       "dir": "anomaly-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Anomaly chart",
       "description": "model g'ayrioddiy qiymatlarni belgilaydigan vaqt seriyasi; izoh AI insight qatorida. variant: default · band (model o'rgangan kutilgan oraliq).",
       "exports": [
@@ -9473,7 +9473,7 @@
     },
     {
       "dir": "bar-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Bar chart",
       "description": "kategoriyalar bo'yicha qiymatlarni solishtirish; ustun doim 0 dan. variant: vertical · grouped · stacked · horizontal.",
       "exports": [
@@ -9568,7 +9568,7 @@
     },
     {
       "dir": "beeswarm-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Beeswarm chart",
       "description": "har qiymat alohida nuqta, guruh bo'yicha qatorlarda, ustma-ust tushmasdan yoyilgan. variant: default (yagona).",
       "exports": [
@@ -9645,7 +9645,7 @@
     },
     {
       "dir": "box-plot",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Box plot",
       "description": "har guruh uchun besh sonli xulosa (min, Q1, mediana, Q3, max) va chetlanishlar; guruhlar qator bo'lib chiziladi. variant: box · violin · box-points (Figma «Box + points»).",
       "exports": [
@@ -9727,7 +9727,7 @@
     },
     {
       "dir": "bullet-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Bullet chart",
       "description": "bitta KPI maqsadga nisbatan, sifat oraliqlari bilan; dashboard'larda gauge o'rniga. variant: default.",
       "exports": [
@@ -9815,7 +9815,7 @@
     },
     {
       "dir": "bump-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Bump chart",
       "description": "reyting vaqt bo'yicha qanday o'zgargani: har element bitta chiziq, #1 tepada. variant: default.",
       "exports": [
@@ -9916,7 +9916,7 @@
     },
     {
       "dir": "calendar-heatmap",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Calendar heatmap",
       "description": "kunlik faollik yil yoki oy bo'yicha, rang — miqdor. variant: year · month.",
       "exports": [
@@ -10006,7 +10006,7 @@
     },
     {
       "dir": "candlestick-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Candlestick chart",
       "description": "davr bo'yicha narx harakati: tana = ochilish → yopilish, pilik = yuqori → past. variant: default · volume.",
       "exports": [
@@ -10101,7 +10101,7 @@
     },
     {
       "dir": "chart-axis",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Axis",
       "description": "qiymat (Y) va kategoriya / vaqt (X) o'qi yozuvlari, SVG <g> bo'lagi. variant: y · x.",
       "exports": [
@@ -10169,7 +10169,7 @@
     },
     {
       "dir": "chart-card",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Chart card",
       "description": "har dashboard chartining o'ramasi: sarlavha, davr tanlagich, KPI qatori, chart sloti va manba. state: default · loading · empty · error.",
       "exports": [
@@ -10292,7 +10292,7 @@
     },
     {
       "dir": "chart-tooltip",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Chart tooltip",
       "description": "chart ustidagi qiymat kartochkasi. rows soni bo'yicha: 1 — single, 2+ — multi (ko'pi bilan 6).",
       "exports": [
@@ -10383,7 +10383,7 @@
     },
     {
       "dir": "chord-diagram",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Chord diagram",
       "description": "guruhlar orasidagi ikki tomonlama oqim: tashqi yoy — guruhning chiquvchi jami, lenta — juftlik orasidagi oqim (d3-chord). variant: default · focus.",
       "exports": [
@@ -10467,7 +10467,7 @@
     },
     {
       "dir": "circle-packing",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Circle packing",
       "description": "qiymat doira maydoni bilan, doiralar ustma-ust tushmasdan joylashadi (d3-hierarchy pack). variant: flat · nested.",
       "exports": [
@@ -10555,7 +10555,7 @@
     },
     {
       "dir": "cluster-map",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Cluster map",
       "description": "embedding / segmentatsiya ko'rinishi: har nuqta 2D ga proyeksiya qilingan element (UMAP, t-SNE), rang = klaster, yumshoq hull 10%. variant: default (legend) · labeled (AI bergan klaster nomlari).",
       "exports": [
@@ -10655,7 +10655,7 @@
     },
     {
       "dir": "cohort-heatmap",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Cohort heatmap",
       "description": "ro'yxatdan o'tish kogortasi bo'yicha saqlanish: qatorlar — kogortalar, ustunlar — boshlanishdan keyingi oylar (M0 = 100%). variant: percent · absolute.",
       "exports": [
@@ -10745,7 +10745,7 @@
     },
     {
       "dir": "confidence-meter",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Confidence meter",
       "description": "model AI javobi, prognoz yoki yaratilgan chartga qanchalik ishonishi: 5 segment, daraja matni va bir qatorlik sabab. variant: high · medium · low (berilmasa value dan).",
       "exports": [
@@ -10832,7 +10832,7 @@
     },
     {
       "dir": "confusion-matrix",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Confusion matrix",
       "description": "klassifikator baholash: qatorlar — haqiqiy sinf, ustunlar — bashorat, diagonal — to'g'ri javoblar. variant: counts · normalized.",
       "exports": [
@@ -10921,7 +10921,7 @@
     },
     {
       "dir": "crosshair",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Crosshair",
       "description": "ko'rsatkich ortidan yuruvchi chiziq, eng yaqin nuqtaga yopishadi, o'qlarda qiymat teglari. SVG <g> bo'lagi. variant: vertical · both.",
       "exports": [
@@ -11008,7 +11008,7 @@
     },
     {
       "dir": "data-point",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Data point",
       "description": "chiziq yoki scatter'dagi bitta qiymat (SVG <g> bo'lagi). variant: default · active · anomaly.",
       "exports": [
@@ -11075,7 +11075,7 @@
     },
     {
       "dir": "delta",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Delta",
       "description": "o'zgarish pill'i: o'q va +12,4%. variant qiymatdan hisoblanadi: positive · negative · neutral.",
       "exports": [
@@ -11158,7 +11158,7 @@
     },
     {
       "dir": "diagram-connector",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Diagram connector",
       "description": "ikki diagramma tuguni orasidagi strelka. variant: straight · dashed · elbow · labeled.",
       "exports": [
@@ -11244,7 +11244,7 @@
     },
     {
       "dir": "diagram-node",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Diagram node",
       "description": "oqim diagrammasi tuguni (jarayon xaritasi, bank workflow, onboarding). variant: process · terminal · note · subprocess · decision · data.",
       "exports": [
@@ -11348,7 +11348,7 @@
     },
     {
       "dir": "donut-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Donut chart",
       "description": "ulushlar halqasi, markazda jami, yonida qiymatli legend. variant: default · progress.",
       "exports": [
@@ -11441,7 +11441,7 @@
     },
     {
       "dir": "dumbbell-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Dumbbell chart",
       "description": "har qatorda ikki qiymat trek bilan ulangan: reja va fakt, oldin va keyin; farq — asosiy gap. variant: default.",
       "exports": [
@@ -11525,7 +11525,7 @@
     },
     {
       "dir": "feature-importance",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Feature importance",
       "description": "bitta model qarorini tushuntiradi (SHAP): qaysi kirishlar ballni oshirdi yoki pasaytirdi. variant: bar (nol atrofida ishorali hissalar) · waterfall (base rate → har kirish → prediction).",
       "exports": [
@@ -11619,7 +11619,7 @@
     },
     {
       "dir": "forecast-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Forecast chart",
       "description": "kuzatilgan seriya (to'liq chiziq) va model prognozi (uzuq, dataviz/ai/accent) Prediction zone ichida, 80% va 95% ishonch oraliqlari bilan. variant: default · target (maqsad chizig'i).",
       "exports": [
@@ -11730,7 +11730,7 @@
     },
     {
       "dir": "funnel-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Funnel chart",
       "description": "tartiblangan bosqichlar orqali konversiya (onboarding, checkout, kredit arizasi). variant: stepped · horizontal.",
       "exports": [
@@ -11816,7 +11816,7 @@
     },
     {
       "dir": "gauge-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Gauge chart",
       "description": "chegaralangan shkaladagi bitta qiymat, oraliqning o'zi muhim bo'lganda (kredit reytingi, risk darajasi). variant: default · zones.",
       "exports": [
@@ -11900,7 +11900,7 @@
     },
     {
       "dir": "generated-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Generated chart",
       "description": "AI yordamchi foydalanuvchi ma'lumotidan yasagan chart kartasi: AI belgisi va vaqt, sarlavha, manba, chart sloti, AI insight va amallar (Table · Code · Save). Holat (state): default · generating · error.",
       "exports": [
@@ -12004,7 +12004,7 @@
     },
     {
       "dir": "grid-line",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Grid line",
       "description": "gorizontal yo'naltiruvchi chiziq, SVG <g> bo'lagi. variant: solid · baseline · target.",
       "exports": [
@@ -12074,7 +12074,7 @@
     },
     {
       "dir": "horizon-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Horizon chart",
       "description": "zich vaqt qatorlari: har qator qiymatini 3 ta teng balandlikdagi rang bandiga buklaydi, ko'p seriya kam joyga sig'adi. variant: positive · diverging.",
       "exports": [
@@ -12174,7 +12174,7 @@
     },
     {
       "dir": "journey-map",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "User journey map",
       "description": "bir persona yo'li: bosqichlar bo'yicha harakat, aloqa nuqtalari, emotsiya chizig'i, og'riq va imkoniyatlar. layout: default · compact.",
       "exports": [
@@ -12277,7 +12277,7 @@
     },
     {
       "dir": "kpi-card",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "KPI card",
       "description": "dashboard yuqori qatoridagi asosiy raqam. variant: default · compact · progress.",
       "exports": [
@@ -12389,7 +12389,7 @@
     },
     {
       "dir": "legend-item",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Legend item",
       "description": "seriya markeri va nomi; ChartLegend ularni qatorga teradi. variant: dot · square · line · dashed.",
       "exports": [
@@ -12473,7 +12473,7 @@
     },
     {
       "dir": "line-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Line chart",
       "description": "vaqt bo'yicha trend. Figma variantlari: Single (1 seriya), Multi (2–5 seriya + legend), Area (area), Hover — interaksiya holati (Crosshair + Tooltip), alohida prop emas.",
       "exports": [
@@ -12618,7 +12618,7 @@
     },
     {
       "dir": "live-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Live chart",
       "description": "real vaqt oqimi: oyna chapga siljiydi, bosh nuqta pulsatsiyalanadi, LIVE badge yangilikni ko'rsatadi. variant: default; status: live · paused · stale.",
       "exports": [
@@ -12736,7 +12736,7 @@
     },
     {
       "dir": "lollipop-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Lollipop chart",
       "description": "ko'p kategoriyali reyting: ingichka poya va nuqta og'ir ustunlardan tezroq o'qiladi. variant: default.",
       "exports": [
@@ -12815,7 +12815,7 @@
     },
     {
       "dir": "marimekko-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Marimekko chart",
       "description": "ikki yo'nalishli ulush: ustun eni = segmentning jamidagi ulushi, ustun balandligi kategoriyalarga bo'linadi — bozor hajmi va tarkibi bitta ko'rinishda. variant: default · labeled.",
       "exports": [
@@ -12909,7 +12909,7 @@
     },
     {
       "dir": "mind-map",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Mind map",
       "description": "markaziy g'oya va uning shoxlari. layout: radial · tree.",
       "exports": [
@@ -13030,7 +13030,7 @@
     },
     {
       "dir": "model-comparison",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Model comparison",
       "description": "2–4 AI model (vendor, prompt) muhim metrikalar bo'yicha bitta 0–100 shkalada. Har metrika — qator, har model — nuqta, eng yaxshi qiymat yozilgan. variant: faqat default.",
       "exports": [
@@ -13119,7 +13119,7 @@
     },
     {
       "dir": "network-graph",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Network graph",
       "description": "entitetlar (mahsulotlar, hisoblar, xizmatlar, o'tkazmalar) orasidagi bog'lanishlar. variant: default · focus.",
       "exports": [
@@ -13206,7 +13206,7 @@
     },
     {
       "dir": "org-card",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Org card",
       "description": "tashkiliy tuzilma va tasdiqlash zanjirlari uchun shaxs tuguni. variant: default · collapsed (collapsed prop).",
       "exports": [
@@ -13308,7 +13308,7 @@
     },
     {
       "dir": "prediction-zone",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Prediction zone",
       "description": "X o'qining model chiqishi bo'lgan qismi (kuzatilgan ma'lumot emas), SVG <g> bo'lagi. Bitta variant (Default).",
       "exports": [
@@ -13382,7 +13382,7 @@
     },
     {
       "dir": "radar-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Radar chart",
       "description": "5–8 sifat o'lchovi bo'yicha profil, hammasi bitta 0–100 shkalada. variant: single · compare.",
       "exports": [
@@ -13474,7 +13474,7 @@
     },
     {
       "dir": "radial-bar-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Radial bar chart",
       "description": "ixcham progress solishtiruvi: har kategoriya bitta halqa, hammasi bir xil 0–100% shkalada. variant: default · progress.",
       "exports": [
@@ -13573,7 +13573,7 @@
     },
     {
       "dir": "range-brush",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Range brush",
       "description": "uzun vaqt qatori ostidagi umumiy ko'rinish: oynani sudrab suring, tutqichni sudrab asosiy chartni kattalashtiring. Bitta variant (Default). Client komponent.",
       "exports": [
@@ -13655,7 +13655,7 @@
     },
     {
       "dir": "ridgeline-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Ridgeline chart",
       "description": "tartibli guruhlar bo'yicha bir oz ustma-ust tushgan zichlik egri chiziqlari; taqsimot vaqt bo'yicha qanday siljiganini ko'rsatadi. variant: default · highlight.",
       "exports": [
@@ -13733,7 +13733,7 @@
     },
     {
       "dir": "sankey-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Sankey chart",
       "description": "miqdorning bosqichlar orasidagi oqimi: daromad → xarajat → toifalar, manbalar → sahifalar (d3-sankey). variant: default.",
       "exports": [
@@ -13816,7 +13816,7 @@
     },
     {
       "dir": "scatter-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Scatter chart",
       "description": "ikki son o'zgaruvchi orasidagi bog'liqlik; Bubble uchinchisini qo'shadi, Trend line — regressiya va uning oralig'i. variant: default · bubble · trend-line.",
       "exports": [
@@ -13909,7 +13909,7 @@
     },
     {
       "dir": "slope-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Slope chart",
       "description": "3–10 element uchun aynan ikki nuqta orasidagi o'zgarish; uchlaridagi yozuvlar o'q o'rnini bosadi. variant: default · highlight.",
       "exports": [
@@ -13994,7 +13994,7 @@
     },
     {
       "dir": "sparkline",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Sparkline",
       "description": "o'q va yozuvsiz mikro-chart (KPI karta, jadval qatori). Figma variantlari Up · Down · Neutral — trend (qiymatdan avtomatik), Bars — variant=\"bars\".",
       "exports": [
@@ -14068,7 +14068,7 @@
     },
     {
       "dir": "streamgraph",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Streamgraph",
       "description": "markaz chizig'i atrofida oqadigan stacked maydonlar; kategoriyalar aralashmasi vaqt bo'yicha qanday o'sib-so'nishini ko'rsatadi. variant: default (silhouette) · expanded (100%).",
       "exports": [
@@ -14162,7 +14162,7 @@
     },
     {
       "dir": "swimlane",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Swimlane",
       "description": "bir necha ishtirokchi (odam, tizim, AI agent) o'rtasidagi jarayon. direction: horizontal · vertical.",
       "exports": [
@@ -14294,7 +14294,7 @@
     },
     {
       "dir": "timeline-item",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Timeline item",
       "description": "vertikal voqealar tarixi yoki yo'l xaritasi (ariza holati, yetkazib berish, loyiha bosqichlari). state: done · current · upcoming.",
       "exports": [
@@ -14401,7 +14401,7 @@
     },
     {
       "dir": "treemap-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Treemap chart",
       "description": "ierarxik ulush maydon bilan; eng katta katak chap-yuqorida (squarified, d3-hierarchy). variant: default.",
       "exports": [
@@ -14502,7 +14502,7 @@
     },
     {
       "dir": "usage-meter",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Usage meter",
       "description": "kvota yoki AI token sarfi va reset sanasigacha prognoz. variant: normal · warning · limit (berilmasa qiymatlardan).",
       "exports": [
@@ -14589,7 +14589,7 @@
     },
     {
       "dir": "waffle-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Waffle chart",
       "description": "100 katak, bitta katak 1%; yaqin ulushlarni pie'dan aniqroq ko'rsatadi va Mobile'da yaxshi o'qiladi. variant: default.",
       "exports": [
@@ -14684,7 +14684,7 @@
     },
     {
       "dir": "waterfall-chart",
-      "package": "@bek/charts",
+      "package": "@bek-ui/charts",
       "title": "Waterfall chart",
       "description": "boshlang'ich qiymat musbat va manfiy hissalar orqali yakuniy qiymatga qanday aylanishi (P&L, pul oqimi, byudjet ko'prigi). variant: default.",
       "exports": [

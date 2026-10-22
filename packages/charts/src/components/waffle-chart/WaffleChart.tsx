@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { seriesColor } from '../../core/color.js';
 import { formatPercent } from '../../core/format.js';
 import { DataTable } from '../../core/svg.js';

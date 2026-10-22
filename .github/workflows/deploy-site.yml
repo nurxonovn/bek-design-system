@@ -27,8 +27,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @bek/tokens --filter @bek/react build
-      - run: pnpm --filter @bek/site build
+      - run: pnpm --filter @bek-ui/tokens --filter @bek-ui/react build
+      - run: pnpm --filter @bek-ui/site build
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
       - run: cp apps/site/dist/index.html apps/site/dist/404.html

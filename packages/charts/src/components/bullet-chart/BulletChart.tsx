@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { scaleLinear } from 'd3-scale';
 import { seriesColor, type SequentialLevel } from '../../core/color.js';
 import { formatNumber, formatPercent } from '../../core/format.js';

@@ -3,7 +3,7 @@
 Figma: **5.1 Toast**. Amal natijasi haqida qisqa vaqtli xabar ("Saved", "Payment failed").
 
 ```tsx
-import { Toast, ToastViewport } from '@bek/react';
+import { Toast, ToastViewport } from '@bek-ui/react';
 
 <ToastViewport placement="bottom-end">
   <Toast

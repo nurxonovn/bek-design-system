@@ -1,0 +1,41 @@
+name: Release
+
+# main'ga yangi changeset tushganda changesets/action "chore: version packages" PR ochadi (versiya + CHANGELOG).
+# Kutilayotgan changeset bo'lmasa (Version PR merge qilingan) — @bek-ui/* paketlari npm'ga provenance bilan chiqadi.
+# Pre-rejim (.changeset/pre.json, tag `beta`): `npm i @bek-ui/react@beta`.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: release-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write # npm provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test
+      - uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          publish: pnpm release:ci
+          title: 'chore: version packages'
+          commit: 'chore: version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

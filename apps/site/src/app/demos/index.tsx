@@ -81,7 +81,7 @@ import {
   Tooltip,
   TooltipCallout,
   TopNavigation,
-} from '@bek/react';
+} from '@bek-ui/react';
 import {
   ChevronRight,
   Download,
@@ -469,6 +469,7 @@ export const demos: Record<string, ComponentType> = {
         subtitle="Taxminan 12 daqiqa"
         href="#/components/order-widget"
         stageLabels={['Qabul qilindi', 'Tayyorlanmoqda', "Yo'lda", 'Yetkazildi']}
+        progressLabel="Buyurtma holati"
       />
     </div>
   ),
@@ -547,7 +548,7 @@ export const demos: Record<string, ComponentType> = {
   progress: () => (
     <Col>
       <ProgressBar value={62} max={100} label="Yuklanmoqda" showValue />
-      <ProgressBar value={30} status="success" size="s" />
+      <ProgressBar value={30} status="success" size="s" aria-label="Profil to'ldirilgan" />
       <ProgressBar value={80} status="danger" size="l" label="Xotira" showValue />
     </Col>
   ),
@@ -799,7 +800,8 @@ export const demos: Record<string, ComponentType> = {
   ),
   'system-bars': () => (
     <div className="w-full max-w-sm flex flex-col gap-3">
-      <div style={{ background: 'var(--bek-bg-sheet)', borderRadius: 16 }}>
+      {/* content="dark" — doim yorug' fon ustida; rang mavzuga emas, orqadagi fonga ergashadi. */}
+      <div style={{ background: 'var(--bek-static-white)', borderRadius: 16 }}>
         <StatusBar />
         <HomeIndicator />
       </div>

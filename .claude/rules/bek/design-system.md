@@ -25,7 +25,9 @@ Figma «BEK Design System» — yagona haqiqat manbai; kod uning aksi. ECC umumi
 ## Darvozalar (har push oldidan)
 
 `pnpm format:check && pnpm typecheck && pnpm build && pnpm test && pnpm check:figma` — CI shu.
-Yangi/o'zgargan komponent: `pnpm --filter @bek/react check:figma <nom> --strict` → 0 ogohlantirish.
+Komponent yoki demo o'zgarsa: `pnpm --filter @bek-ui/site test:e2e` (CI `e2e` job) — axe topilmasi komponentda
+tuzatiladi; `ACCEPTED`ga faqat axe'ning noto'g'ri topilmasi, sababi bilan.
+Yangi/o'zgargan komponent: `pnpm --filter @bek-ui/react check:figma <nom> --strict` → 0 ogohlantirish.
 PostToolUse hook komponent fayli yozilganda tekshiruvni o'zi ishga tushiradi — chiqishini e'tiborsiz qoldirmang.
 
 ## Testlar

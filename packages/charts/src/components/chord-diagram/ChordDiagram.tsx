@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import { cx } from '@bek/react';
+import { cx } from '@bek-ui/react';
 import { chord, ribbon, type Chord } from 'd3-chord';
 import { arc } from 'd3-shape';
 import { seriesColor } from '../../core/color.js';

@@ -1,7 +1,7 @@
 import type { SVGAttributes } from 'react';
 
 // AI guruhi uchun mahalliy glyph'lar (Figma `_Icon` · Sparkles, Table, Code, Bookmark). Bezak — aria-hidden;
-// rangi `currentColor` dan. @bek/react ikonka to'plamida hali yo'q, shuning uchun shu papkada.
+// rangi `currentColor` dan. @bek-ui/react ikonka to'plamida hali yo'q, shuning uchun shu papkada.
 
 type GlyphProps = SVGAttributes<SVGSVGElement>;
 

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Badge, Chip, SearchBar } from '@bek/react';
+import { Badge, Chip, SearchBar } from '@bek-ui/react';
 import { bySection, catalog, type CatalogComponent } from '../data/catalog';
 import { demos } from '../demos';
 
@@ -30,7 +30,7 @@ export function CatalogPage({ onNavigate }: CatalogPageProps) {
         <p className="text-muted-foreground max-w-3xl">
           Har bir komponent Figma sahifasining aynan o'zi: tokenlar, variantlar va qoidalar{' '}
           <code>figma.json</code> spetsifikatsiyasi bo'yicha avtomatik tekshiriladi. Jonli namunalar
-          <code> @bek/react</code> paketidan, Light/Dark rejim yuqoridagi tugma bilan.
+          <code> @bek-ui/react</code> paketidan, Light/Dark rejim yuqoridagi tugma bilan.
         </p>
         <div className="max-w-xl">
           <SearchBar

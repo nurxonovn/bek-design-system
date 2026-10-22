@@ -3,7 +3,7 @@
 Figma: **3.1 Button**. Har qanday amal uchun bitta komponent: 22 Variant × 5 o'lcham, pill shakli.
 
 ```tsx
-import { Button } from '@bek/react';
+import { Button } from '@bek-ui/react';
 
 <Button variant="action">Save changes</Button>
 <Button variant="outline-danger" size="l" startIcon={<TrashIcon />}>Delete</Button>

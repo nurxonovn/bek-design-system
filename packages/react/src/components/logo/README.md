@@ -3,7 +3,7 @@
 Figma: **2.2 Logo & Brand → Logo**. Belgi (to'rt gulbarg) + "BEK" wordmark + mahsulot nomi.
 
 ```tsx
-import { BekLogo } from '@bek/react';
+import { BekLogo } from '@bek-ui/react';
 
 <BekLogo product="Academy" />                       // horizontal · s · gradient
 <BekLogo product="Digital Legacy" size="m" />

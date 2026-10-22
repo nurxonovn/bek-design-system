@@ -3,7 +3,7 @@
 Figma: **5.4 Alert**. Sahifa ichidagi doimiy xabar: nima bo'ldi, nega va keyingi qadam.
 
 ```tsx
-import { Alert } from '@bek/react';
+import { Alert } from '@bek-ui/react';
 
 <Alert tone="danger" title="Payment failed" primaryAction={{ label: 'Retry', onClick: retry }}
   secondaryAction={{ label: 'Later' }} onClose={dismiss}>

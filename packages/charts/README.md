@@ -1,14 +1,14 @@
-# @bek/charts
+# @bek-ui/charts
 
-BEK Design System chartlari va diagrammalari — Figma **4.18 Chart** va **4.19 Diagram** sahifalarining React (SVG) nusxasi. Ranglar va o'lchamlar faqat `@bek/tokens` dan (`--bek-dataviz-*`, `--bek-chart-*`); geometriyani d3 modullari hisoblaydi (`d3-scale`, `d3-shape`, `d3-array`), chizish va uslub — BEK.
+BEK Design System chartlari va diagrammalari — Figma **4.18 Chart** va **4.19 Diagram** sahifalarining React (SVG) nusxasi. Ranglar va o'lchamlar faqat `@bek-ui/tokens` dan (`--bek-dataviz-*`, `--bek-chart-*`); geometriyani d3 modullari hisoblaydi (`d3-scale`, `d3-shape`, `d3-array`), chizish va uslub — BEK.
 
 ## Ishlatish
 
 ```tsx
-import '@bek/tokens/tokens.css';
-import '@bek/react/styles.css';
-import '@bek/charts/styles.css';
-import { ChartCard, ChartContainer, LineChart, formatNumber } from '@bek/charts';
+import '@bek-ui/tokens/tokens.css';
+import '@bek-ui/react/styles.css';
+import '@bek-ui/charts/styles.css';
+import { ChartCard, ChartContainer, LineChart, formatNumber } from '@bek-ui/charts';
 ```
 
 - **Responsiv:** chart SVG koordinatalarini `width` / `height` raqamlarida chizadi; `ChartContainer` konteyner enini o'lchab (ResizeObserver) beradi — geometriya cho'zilmaydi (Figma CMP-11).

@@ -12,7 +12,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// `--root=<paket>` — boshqa paketni tekshirish (masalan `@bek/charts`: `--root=.`); standart — @bek/react.
+// `--root=<paket>` — boshqa paketni tekshirish (masalan `@bek-ui/charts`: `--root=.`); standart — @bek-ui/react.
 const rootArg = process.argv.find((a) => a.startsWith('--root='));
 const ROOT = rootArg
   ? resolve(process.cwd(), rootArg.slice('--root='.length))
@@ -382,7 +382,7 @@ if (flag('--hook')) {
     const { results } = run([name]);
     const findings = results[0].findings;
     if (findings.length) {
-      const text = `figma-component tekshiruvi (${format(name, findings)}). Xatolarni tuzating; Figma bilan ataylab farq bo'lsa figma.json → accepted[] ga sabab bilan yozing. Hammasi: pnpm --filter @bek/react check:figma ${name} --strict`;
+      const text = `figma-component tekshiruvi (${format(name, findings)}). Xatolarni tuzating; Figma bilan ataylab farq bo'lsa figma.json → accepted[] ga sabab bilan yozing. Hammasi: pnpm --filter @bek-ui/react check:figma ${name} --strict`;
       process.stdout.write(
         JSON.stringify({
           hookSpecificOutput: { hookEventName: 'PostToolUse', additionalContext: text },

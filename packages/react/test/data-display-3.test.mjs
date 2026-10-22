@@ -76,6 +76,8 @@ test('Carousel: region with labelled slides, arrows and dots', () => {
   assert.match(html, /<section aria-roledescription="carousel" aria-label="Promos"/);
   assert.equal(html.match(/aria-roledescription="slide"/g).length, 3);
   assert.match(html, /aria-label="2 \/ 3"/);
+  // skroll maydoni klaviaturadan ochiq
+  assert.match(html, /tabindex="0" class="bek-carousel__viewport bek-focus-ring"/);
   assert.equal(html.match(/bek-carousel__dot/g).length, 3 + 1);
   assert.match(html, /Previous slide/);
   assert.match(html, /class="bek-carousel bek-carousel--inside bek-carousel--dots"/);
@@ -140,5 +142,15 @@ test('OrderWidget: expanded progress marks reached stages', () => {
     /^<a href="\/o\/1" class="bek-order-widget bek-order-widget--expanded bek-order-widget--preparing"/,
   );
   assert.equal(html.match(/bek-order-widget__step is-done/g).length, 2);
-  assert.match(html, /aria-valuenow="2"/);
+  assert.match(html, /aria-valuenow="2" aria-label="Order status" aria-valuetext="Preparing"/);
+  const uz = r(
+    h(OrderWidget, {
+      status: 'accepted',
+      size: 'expanded',
+      title: 'T',
+      progressLabel: 'Buyurtma holati',
+      stageLabels: ['Qabul qilindi', 'B', 'C', 'D'],
+    }),
+  );
+  assert.match(uz, /aria-label="Buyurtma holati" aria-valuetext="Qabul qilindi"/);
 });
