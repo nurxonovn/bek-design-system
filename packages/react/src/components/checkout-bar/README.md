@@ -21,4 +21,4 @@ import { CartPill, CheckoutBar, InfoWrap } from '@bek-ui/react';
 | `legal`                | Caption/M `text/tertiary`                           | —       |
 
 - `surface/raised`, `Elevation/1`, padding 12 16 + home indicator (`safe-area-inset-bottom`), gap 12, `z/sticky`.
-- `CartPill` (Floating): 60 px accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.
+- `CartPill` (Floating): 64 px (`control/height/3xl`) accent pill, `Elevation/3`, ikonka doirasi 44 `fill/on-color-hover`, matn Label/L `text/on-color`. Savatda mahsulot bo'lgandagina ko'rsating.

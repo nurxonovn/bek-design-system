@@ -15,7 +15,7 @@ export interface TopNavigationProps extends Omit<HTMLAttributes<HTMLElement>, 't
   /** Chap tugma nomi (standart: Back / Close / Menu). */
   leadingLabel?: string;
   title?: ReactNode;
-  /** `search` turida — qidiruv maydoni (masalan, SearchBar). */
+  /** `search` turida — qidiruv maydoni (masalan, SearchField). */
   children?: ReactNode;
   /** O'ngdagi 1–2 ta icon-only tugma yoki avatar. */
   actions?: ReactNode;

@@ -1,6 +1,6 @@
 /* Checkout bar — Figma "6.8 Checkout bar". surface/raised, Elevation/1, gap 12,
    padding 12 16 + home indicator. Checkout: jami Caption/L text/secondary + Title/L,
-   qator gap 16; huquqiy matn Caption/M text/tertiary. Floating pill: 60 balandlik,
+   qator gap 16; huquqiy matn Caption/M text/tertiary. Floating pill: 64 (control/height/3xl) balandlik,
    accent/default, padding 0 24 0 8, gap 12, Elevation/3; ikonka doirasi 44 fill/on-color-hover;
    matn Label/L text/on-color. */
 .bek-checkout-bar {

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Badge, Chip, SearchBar } from '@bek-ui/react';
+import { Badge, Chip, SearchField } from '@bek-ui/react';
 import { bySection, catalog, type CatalogComponent } from '../data/catalog';
 import { demos } from '../demos';
 
@@ -33,7 +33,8 @@ export function CatalogPage({ onNavigate }: CatalogPageProps) {
           <code> @bek-ui/react</code> paketidan, Light/Dark rejim yuqoridagi tugma bilan.
         </p>
         <div className="max-w-xl">
-          <SearchBar
+          <SearchField
+            size="s"
             aria-label="Komponent qidirish"
             placeholder="Komponent qidirish — Button, 3.1, Figma nomi…"
             value={query}

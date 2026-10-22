@@ -81,6 +81,30 @@ Bu tokenlar `@bek-ui/tokens` ga eksport bo'lmaydi; kod fallback bilan ishlaydi.
 - `brand/3d-violet`, `brand/3d-blue` endi yashirin va codeSyntax'siz — `--brand-3d-*` palitra o'zgaruvchilari
   `palette.css` dan chiqdi (kodda ishlatilmagan). Ular faqat `gradient/brand-start/end` orqali.
 
+### A7. Inputs v2: 3.1 Button, 3.2 Text field, 3.3 Select, 3.12 Search field (2026-10-22)
+
+- **Text field** 📘 doc eskirgan: Size jadvalida 2XL (72) yo'q, Prefix/Suffix prop'lari yo'q, "Background — Outlined
+  fill/primary" (komponent `bg/sheet`), balandlik `scale/36–4` (komponent `field/height/*`); token nomlari buzilgan
+  (`scale/36–4`, `scale/2–3`, `scale/32–2`, `control/height/`).
+- **Select** doc: Variant "Filled, Outlined, Underlined" deyilgan, komponentda **Plain** (Underlined yo'q); radius
+  "10 / 12 / 16 / 20", komponent 8 / 12 (`radius/control/md · lg`); balandlik `scale/*`, komponent `field/height/*`.
+- **Textarea** Outlined foni hali `fill/primary` (deprecated alias) — `bg/sheet` ga bog'lash kerak (kodda
+  `accepted`).
+- **Button** komponent tavsifi: "2XL · 3XL (52 / 60 px)" — variable endi 56 / 64.
+- **Search field**:
+  - doc Tokens jadvalida balandlik `scale/36 · 44 · 56`, komponent `field/height/sm|md|lg`.
+  - doc frame'da "Design tokens" sarlavhasi yo'q ("Tokens") — extractor matnni boshidan kesadi, boshqa sahifalar
+    bilan bir xil sarlavha kerak.
+  - On-media Disabled Default'dan farq qilmaydi (doc: `text/disabled`); Disabled'da Scope `text/secondary`, Shortcut
+    `text/disabled` — bir xil bo'lishi kerak. Kodda doc qoidasi.
+  - Loading `_Spinner` hamma variantda `text/primary` — On-media'da `text/on-color` bo'lishi kerak; `_Spinner`
+    (loading-03) ichida tokensiz `#323233`.
+  - Komponent set foni `bg/base` (boshqa sahifalarda `bg/sheet`) — kodda `accepted`.
+  - Tavsifda `&amp;lt;SearchField … /&amp;gt;` — ikki marta HTML-kodlangan.
+  - On-media Hover Default bilan bir xil — ataylab bo'lsa doc'da yozish kerak.
+  - 6.5 App bar va 6.6 Top navigation qidiruv maydonini hali inline chizadi (`fill/secondary`) — "Search field"
+    (Filled, S) instance'iga almashtirish kerak.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

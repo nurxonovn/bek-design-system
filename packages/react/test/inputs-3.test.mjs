@@ -2,15 +2,81 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Chip, DatePicker, SearchBar, TimeSlotPicker } from '../dist/index.js';
+import { Chip, DatePicker, SearchBar, SearchField, TimeSlotPicker } from '../dist/index.js';
 
 const r = (C, p, c) => renderToStaticMarkup(h(C, p, c));
 
-test('SearchBar: role=search, type=search, clear only with a value', () => {
-  assert.doesNotMatch(r(SearchBar, { 'aria-label': 'Search' }), /bek-search__clear/);
+test('SearchField: role=search, type=search, filled/m by default, clear only with a value', () => {
+  const empty = r(SearchField, { 'aria-label': 'Search' });
+  assert.match(
+    empty,
+    /role="search" class="bek-search-field bek-search-field--filled bek-search-field--m"/,
+  );
+  assert.match(empty, /type="search"/);
+  assert.match(empty, /placeholder="Search"/);
+  assert.doesNotMatch(empty, /bek-search-field__clear|bek-search-field__cancel|<kbd/);
+  const html = r(SearchField, { defaultValue: 'Pizza', 'aria-label': 'Search' });
+  assert.match(html, /value="Pizza"/);
+  assert.match(html, /aria-label="Clear"/);
+});
+
+test('SearchField: variants and sizes map to Figma classes; on-media uses Glass/Small', () => {
+  assert.match(
+    r(SearchField, { variant: 'elevated', size: 'l' }),
+    /bek-search-field--elevated bek-search-field--l"/,
+  );
+  const media = r(SearchField, { variant: 'on-media', size: 's' });
+  assert.match(media, /bek-search-field--on-media bek-search-field--s"/);
+  assert.match(media, /class="bek-search-field__field bek-glass-small"/);
+  assert.doesNotMatch(r(SearchField, {}), /bek-glass-small/);
+});
+
+test('SearchField: scope, voice, shortcut and filter slots', () => {
+  const html = r(SearchField, {
+    scope: 'All',
+    shortcut: '⌘K',
+    onVoice: () => {},
+    onFilter: () => {},
+    voiceLabel: 'Ovozli qidiruv',
+  });
+  const scopeId = html.match(/<span id="([^"]+)" class="bek-search-field__scope">All<\/span>/)?.[1];
+  assert.ok(scopeId);
+  assert.match(html, new RegExp(`aria-describedby="${scopeId}"`));
+  assert.match(html, /aria-keyshortcuts="Meta\+K"/);
+  assert.match(html, /<kbd class="bek-search-field__shortcut" aria-hidden="true">⌘K<\/kbd>/);
+  assert.match(html, /aria-label="Ovozli qidiruv"/);
+  assert.match(html, /aria-label="Filters"/);
+  assert.match(r(SearchField, { shortcut: 'Ctrl+K' }), /aria-keyshortcuts="Control\+K"/);
+});
+
+test('SearchField: loading replaces clear with a spinner; disabled hides clear', () => {
+  const loading = r(SearchField, { defaultValue: 'Pizza', loading: true, size: 'l' });
+  assert.match(loading, /aria-busy="true"/);
+  assert.match(
+    loading,
+    /role="status" aria-label="Loading" class="bek-spinner bek-spinner--24 bek-search-field__spinner"/,
+  );
+  assert.doesNotMatch(loading, /bek-search-field__clear/);
+  const disabled = r(SearchField, { defaultValue: 'Pizza', disabled: true, onVoice: () => {} });
+  assert.match(disabled, /bek-search-field--disabled/);
+  assert.match(disabled, /<input[^>]*disabled=""/);
+  assert.doesNotMatch(disabled, /bek-search-field__clear/);
+});
+
+test('SearchField: dir goes to the search wrapper', () => {
+  assert.match(r(SearchField, { dir: 'rtl' }), /^<div role="search" dir="rtl"/);
+});
+
+test('SearchBar (deprecated alias): legacy m/l sizes map to SearchField s/m', () => {
+  assert.match(
+    r(SearchBar, { 'aria-label': 'Search' }),
+    /bek-search-field--filled bek-search-field--s"/,
+  );
   const html = r(SearchBar, { defaultValue: 'Pizza', size: 'l', 'aria-label': 'Search' });
-  assert.match(html, /role="search" class="bek-search bek-search--l"/);
-  assert.match(html, /type="search"/);
+  assert.match(
+    html,
+    /role="search" class="bek-search-field bek-search-field--filled bek-search-field--m"/,
+  );
   assert.match(html, /aria-label="Clear"/);
 });
 

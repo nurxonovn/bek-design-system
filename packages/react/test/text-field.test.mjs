@@ -42,3 +42,29 @@ test('size, variant, disabled and className go to the wrapper', () => {
   assert.match(html, /bek-field--outlined bek-field--s bek-field--disabled w"/);
   assert.match(html, / disabled=""/);
 });
+
+test('underlined variant and 2xl size (Figma 3.2: Plain → Underlined, 2XL 72)', () => {
+  const html = r({ label: 'Telefon', variant: 'underlined', size: '2xl' });
+  assert.match(html, /bek-field--underlined/);
+  assert.match(html, /bek-field--2xl/);
+});
+
+test('deprecated plain variant renders as underlined', () => {
+  const html = r({ label: 'Email', variant: 'plain' });
+  assert.match(html, /bek-field--underlined/);
+  assert.doesNotMatch(html, /bek-field--plain/);
+});
+
+test('prefix and suffix are rendered and described for screen readers', () => {
+  const html = r({
+    id: 'sum',
+    label: 'Summa',
+    prefix: 'UZS',
+    suffix: '.00',
+    supportingText: 'Hint',
+  });
+  assert.match(html, /<span id="sum-prefix" class="bek-field__affix">UZS<\/span>/);
+  assert.match(html, /<span id="sum-suffix" class="bek-field__affix">.00<\/span>/);
+  assert.match(html, /aria-describedby="sum-prefix sum-suffix sum-support"/);
+  assert.match(html, /bek-field--floating/);
+});

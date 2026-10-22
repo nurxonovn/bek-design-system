@@ -54,7 +54,7 @@ import {
   Radio,
   RangeSlider,
   Rating,
-  SearchBar,
+  SearchField,
   SegmentedControl,
   Select,
   Separator,
@@ -572,12 +572,15 @@ export const demos: Record<string, ComponentType> = {
       <Rating value={3} size="l" />
     </Row>
   ),
-  'search-bar': () => {
+  'search-field': () => {
     const [q, setQ] = useState('');
     return (
-      <div className="w-full max-w-sm">
-        <SearchBar aria-label="Mahsulot qidirish" placeholder="Mahsulot qidirish" value={q} onChange={(e) => setQ(e.target.value)} onClear={() => setQ('')} onCancel={() => setQ('')} cancelLabel="Bekor qilish" />
-      </div>
+      <Col>
+        <SearchField aria-label="Mahsulot qidirish" placeholder="Mahsulot qidirish" value={q} onChange={(e) => setQ(e.target.value)} onClear={() => setQ('')} onCancel={() => setQ('')} cancelLabel="Bekor qilish" />
+        <SearchField aria-label="Katalog qidiruvi" variant="elevated" size="l" scope="All" shortcut="⌘K" onVoice={() => {}} voiceLabel="Ovozli qidiruv" onFilter={() => {}} filterLabel="Filtrlar" />
+        <SearchField aria-label="Qidiruv (yuklanmoqda)" size="s" defaultValue="Pizza" loading loadingLabel="Yuklanmoqda" />
+        <SearchField aria-label="Qidiruv (o'chirilgan)" size="s" disabled />
+      </Col>
     );
   },
   'segmented-control': () => {
@@ -722,6 +725,8 @@ export const demos: Record<string, ComponentType> = {
       <TextField label="Telefon" placeholder="+998 __ ___ __ __" supportingText="SMS kod yuboriladi" />
       <TextField label="Karta" error supportingText="Karta raqami noto'g'ri" defaultValue="4421" />
       <TextField variant="outlined" size="l" leadingIcon={<Search size={20} />} placeholder="Qidirish" />
+      <TextField label="Summa" prefix="UZS" suffix=".00" inputMode="decimal" />
+      <TextField variant="underlined" size="2xl" label="Telefon" prefix="+998" type="tel" />
     </Col>
   ),
   textarea: () => (
