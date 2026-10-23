@@ -1,0 +1,91 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Race",
+      "id": "1301:47314",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Bar", "Line"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 240
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "dataviz/axis",
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/categorical/04",
+          "dataviz/categorical/05",
+          "dataviz/categorical/06",
+          "dataviz/categorical/07",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S", "Headline/L"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/line/stroke",
+          "radius/full",
+          "radius/surface/md",
+          "scale/12",
+          "scale/200",
+          "scale/4",
+          "scale/480"
+        ]
+      },
+      "sizes": [1, 2, 4, 12, 40, 48],
+      "rawColors": [],
+      "nested": ["Button"],
+      "description": "Animated ranking over time: each frame is one period; bars re-sort (Bar) or lines grow to the current period with end labels (Line). The period sits large in the corner, Play + progress (Button · accent/default on dataviz/track) control playback; respects prefers-reduced-motion (steps instead of tweening). 5–12 entities, each keeps its colour for the whole race. React: <RaceChart frames={["
+    }
+  ],
+  "doc": {
+    "Chart/Race": {
+      "tokens": [
+        "accent/default",
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/line/stroke",
+        "chart/motion",
+        "control/height/md",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/categorical/04",
+        "dataviz/categorical/05",
+        "dataviz/categorical/06",
+        "dataviz/categorical/07",
+        "dataviz/label",
+        "dataviz/track",
+        "fill/soft-hover",
+        "radius/control/pill",
+        "scale/12",
+        "scale/200",
+        "scale/4",
+        "scale/480",
+        "scale/8",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Race\nAnimated ranking over time: bars re-sort or lines grow frame by frame, with the period large in the corner and Play + progress below. 2 variants.\nOverview\nWhat it is and when to reach for it.\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\nWhen to use\nShow how a ranking changed over years — course popularity, regions, products.\nSocial posts and presentations where motion carries the story.\nLine for cumulative growth where crossings matter.\nAnatomy\nNumbered layers of the default variant.\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\n1\nEntity bar / line\nOne categorical colour per entity for the whole race\n2\nValue label\nCaption/S outside the bar\n3\nPeriod\nHeadline/L · text/tertiary\n4\nPlay\nButton · Icon only · play\n5\nProgress\naccent/default on dataviz/track\nVariants\n2 variants · Variant = Bar | Line\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\nBar\nBars re-sort\n0\n25\n50\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nUX/UI 48k\nFrontend 42k\nData 37k\nEnglish 29k\n2019\n2026\nLine\nLines grow\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nPaused\nFrame shown, Play visible.\nPlaying\nBars tween (chart/motion), Play → Pause.\nScrubbing\nDrag progress to any period.\nEnd\nLast frame stays; Replay.\nReduced motion\nSteps between frames, no tween.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\nTablet · 834\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\nWeb · 1440\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nUX/UI\n48k\nFrontend\n42k\nData\n37k\nPython\n33k\nEnglish\n29k\nMarketing\n21k\nSMM\n18k\n2024\n2019\n2026\nBar\n0\n25\n50\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nUX/UI 48k\nFrontend 42k\nData 37k\nEnglish 29k\n2019\n2026\nLine\nUsage\nRules that keep the chart honest and readable.\n5–12 entities; more becomes noise.\nKeep each entity’s colour fixed across frames.\nStart paused — never autoplay with sound or on load in dashboards.\nOffer the final frame as a static bar chart for reports.\nMotion is the story\nA race explains change. If only the final ranking matters, use Chart/Bar.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nAnimated ranking over time: bars re-sort or lines grow frame by frame, with the period large in the corner and Play + progress below.\nEncoding\nframe = period; bar length / line y = value; sort = rank (Bar); colour = entity (categorical, stable).\nInteraction\nPlay / Pause, scrub the progress, ←/→ st"
+    }
+  },
+  "accepted": []
+}

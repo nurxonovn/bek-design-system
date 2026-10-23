@@ -1,0 +1,106 @@
+.bek-draw-the-line__stage {
+  position: relative;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  border-radius: var(--bek-chart-bar-radius);
+  touch-action: none;
+}
+
+/* Taxmin zonasi — dataviz/track, radius chart/bar/radius. */
+.bek-draw-the-line__zone {
+  fill: var(--bek-dataviz-track);
+  rx: var(--bek-chart-bar-radius);
+}
+
+.bek-draw-the-line__hit {
+  fill: transparent;
+  cursor: crosshair;
+}
+
+/* Ma'lum qism va haqiqiy chiziq — dataviz/categorical/01; taxmin — categorical/02, uzuq 6 4. */
+.bek-draw-the-line__known,
+.bek-draw-the-line__actual,
+.bek-draw-the-line__guess {
+  fill: none;
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bek-draw-the-line__known,
+.bek-draw-the-line__actual {
+  stroke: var(--bek-dataviz-categorical-01);
+}
+
+.bek-draw-the-line__guess {
+  stroke: var(--bek-dataviz-categorical-02);
+  stroke-dasharray: 6 4;
+}
+
+/* Pero va haqiqiy oxiri — nuqta, chegarasi surface/card. */
+.bek-draw-the-line__pen,
+.bek-draw-the-line__end {
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-chart-grid-stroke);
+}
+
+.bek-draw-the-line__pen {
+  fill: var(--bek-dataviz-categorical-02);
+}
+
+.bek-draw-the-line__end {
+  fill: var(--bek-dataviz-categorical-01);
+}
+
+/* Chip — surface/card, padding scale/2 × scale/8, Caption/S · text/primary. */
+.bek-draw-the-line__chip {
+  position: absolute;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-chart-bar-radius);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+[dir='rtl'] .bek-draw-the-line__chip {
+  transform: translate(50%, -50%);
+}
+
+/* Legend (chart/legend/gap) va amallar bir qatorda. */
+.bek-draw-the-line__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bek-chart-legend-gap);
+}
+
+.bek-draw-the-line__actions {
+  display: flex;
+  gap: var(--bek-scale-8);
+}
+
+/* Ochilish: haqiqiy chiziq chizilib chiqadi (chart/motion); reduced motion — darhol. */
+@media (prefers-reduced-motion: no-preference) {
+  .bek-draw-the-line__actual {
+    stroke-dasharray: 1;
+    animation: bek-draw-the-line-reveal var(--bek-motion-duration-chart-enter)
+      var(--bek-motion-easing-standard) both;
+  }
+}
+
+@keyframes bek-draw-the-line-reveal {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

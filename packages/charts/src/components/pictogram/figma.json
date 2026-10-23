@@ -1,0 +1,78 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Pictogram",
+      "id": "1303:47437",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Compare"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 100
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Headline/L", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "chart/legend/gap",
+          "radius/full",
+          "radius/surface/md",
+          "scale/140",
+          "scale/16",
+          "scale/24",
+          "scale/4",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 16, 24, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Isotype: a count shown as repeated icons — “3 in 10” is felt, not calculated. Icons wrap to the container (auto layout), never stretch; highlighted icons dataviz/categorical/01, the rest dataviz/track; always state the unit (“1 icon = 10%”). Compare stacks rows per group or period. React: <Pictogram value={0.3} total={20} unit=\"students\" icon=\"person\" rows={[{ label, val"
+    }
+  ],
+  "doc": {
+    "Chart/Pictogram": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/legend/gap",
+        "dataviz/categorical/01",
+        "dataviz/track",
+        "radius/full",
+        "scale/140",
+        "scale/24",
+        "scale/4",
+        "scale/480",
+        "scale/8",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Composition\nBEK\nDesign System\nChart/Pictogram\nIsotype: a count shown as repeated icons — “3 in 10” is felt, not calculated. Compare stacks rows per group or period. 2 variants.\nOverview\nWhat it is and when to reach for it.\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\nWhen to use\nMake a share tangible for a broad audience — reports, social posts, landing pages.\nSmall whole numbers (“3 in 10”, “1 in 4”).\nCompare two periods or groups row by row.\nAnatomy\nNumbered layers of the default variant.\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\n1\nHeadline\nValue · Headline/L + caption Caption/M\n2\nIcon\nPerson glyph 16 × 24, wraps in auto layout\n3\nOn / off\ndataviz/categorical/01 / dataviz/track\n4\nUnit legend\n“1 icon = 10%” — always stated\nVariants\n2 variants · Variant = Default | Compare\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\nDefault\nSingle share\n2020\n20%\n2026\n50%\n1 icon = 10% of students\nCompare\nRows per group\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nchart/gap\n12 px\n16 px\n16 px\nscale/8\n8 px\n8 px\n8 px\nscale/140\n140 px\n140 px\n140 px\nchart/legend/gap\n12 px\n16 px\n16 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nIcons filled up to the value.\nPartial\nLast icon clipped to the fraction (e.g. 0,5).\nHover row\nTooltip with exact value and n.\nLoading\nAll icons dataviz/track.\nReduced motion\nNo fill-in animation.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\nTablet · 834\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\nWeb · 1440\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n3 in 10\nstudents finish the first course within a month\n1 icon = 5% of students\nDefault\n2020\n20%\n2026\n50%\n1 icon = 10% of students\nCompare\nUsage\nRules that keep the chart honest and readable.\n10, 20 or 100 icons — the reader should count fast.\nOne icon shape per chart; meaning, not decoration.\nAlways show the unit and the exact number in text.\nIcons wrap; never squash or stretch them.\nFelt, not calculated\nUse when the audience must feel the share. For precise comparison of many groups use Bar.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nIsotype: a count shown as repeated icons — “3 in 10” is felt, not calculated. Compare stacks rows per group or period.\nEncoding\nicon count = total units; filled icons = value (rounded, last icon may be partial); colour = on/off; rows = groups.\nInteraction\nHover → tooltip; optional fill-in animation on first view.\nAccessibility\nrole=\"img\" + text value (“3 in 10 students”); icons aria-hidden; reduced motion respected.\nComponent\n<Pictogram value={0.3} total={20} unit=\"students\" icon=\"person\" rows={[{ label, value }]} />\n"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Birlik legendi Caption/L — ichki LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Square)."
+    }
+  ]
+}

@@ -3,6 +3,8 @@ import { chartDemosA } from './a';
 import { chartDemosB } from './b';
 import { chartDemosC } from './c';
 import { chartDemosD } from './d';
+import { chartDemosGeoStory } from './geo-story';
+import { chartDemosSchedule } from './schedule';
 
 // @bek-ui/charts jonli namunalari — katalogdagi papka nomi (dir) bo'yicha.
 export const chartDemos: Record<string, ComponentType> = {
@@ -10,4 +12,6 @@ export const chartDemos: Record<string, ComponentType> = {
   ...chartDemosB,
   ...chartDemosC,
   ...chartDemosD,
+  ...chartDemosGeoStory,
+  ...chartDemosSchedule,
 };

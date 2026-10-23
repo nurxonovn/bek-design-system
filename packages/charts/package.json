@@ -1,7 +1,7 @@
 {
   "name": "@bek-ui/charts",
   "version": "1.0.0-beta.0",
-  "description": "BEK Design System charts and diagrams — 61 SVG React components on @bek-ui/tokens",
+  "description": "BEK Design System charts and diagrams — 69 SVG React components on @bek-ui/tokens",
   "license": "MIT",
   "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",
   "repository": {
@@ -36,7 +36,8 @@
     "./styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE-ASSETS.md"
   ],
   "sideEffects": [
     "*.css"

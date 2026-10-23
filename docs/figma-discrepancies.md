@@ -218,6 +218,26 @@ Umumiy:
   3.12 Search field instance'iga almashtirish kerak (App bar'da shunday).
 - 9.1 Slots & Helpers sahifasida `📘` doc freymi yo'q.
 
+### A13. 4.18 Chart / 4.19 Diagram — 4-to'lqin (2026-10-22)
+
+- Yangi set'lar tavsiflarida HTML entity (`&amp;lt;`, `&quot;`); doc'larda «Component» matni `&lt;…&gt;` bilan.
+- **Map:** hex plitka kodlari ISO 3166-2:UZ ga mos emas (NV/NW, TV/TO, TS/TK, NM/NG, XR/XO, BX/BU, SM/SA, JZ/JI,
+  SR/SI, FR/FA, QQ/QA, SX/SU) — kodda id ISO, yorliq Figma'dagidek; birxillashtirish kerak. Spec'dagi
+  `tashkent-city` slug'i svg-maps'da yo'q — ISO id'larga o'tkazish kerak. Bubble chip "Toshkent · 3,0 mln" —
+  viloyatmi, shaharmi noaniq. Hover konturi va "No data" shtrixi rangi tokenda ko'rsatilmagan.
+- **Race:** doc'dagi `chart/motion` tokeni Variables'da yo'q (kodda `motion/duration/chart-enter`); Pause va
+  Replay ikonkalari BEK Icons'da yo'q.
+- **Draw the line:** Skip va Reveal tugmalari States jadvalida bor, variantlarda chizilmagan.
+- **Survey:** faqat 5 balli palitra; 3 va 7 balli shkala ranglari va Net variantida 0 chizig'i qoidasi yo'q.
+  Survey va Pictogram Loading holati kodda hali yo'q.
+- **Data explorer:** doc tokens jadvalida Sparkline `scale/128 × chart/sparkline/height`, anatomiya va instance
+  80×20 — moslab tokenga bog'lash kerak. Hover row holati faqat doc'da.
+- **Gantt:** Overdue, Hover task, Collapsed group holatlari faqat doc jadvalida; "Today" chipi radiusi 4 tokensiz.
+- **Number ticker:** 300 ms roll uchun motion tokeni yo'q; ichki Chart/Delta `nested` ga tushmaydi.
+- **Mind map:** shox/barg nuqtalari 10×10 — `chart/point/size` (8) ga bog'lanmagan.
+- Xarita ma'lumoti: svg-maps (CC BY 4.0) — Figma'dagi soddalashtirilgan nusxa kodga ko'chirildi,
+  `packages/charts/LICENSE-ASSETS.md`.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |
