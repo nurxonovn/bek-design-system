@@ -1,0 +1,143 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Data explorer",
+      "id": "1305:47532",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Compact"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 258
+      },
+      "tokens": {
+        "color": [
+          "border/hairline",
+          "dataviz/categorical/01",
+          "dataviz/label",
+          "dataviz/negative",
+          "dataviz/neutral",
+          "dataviz/positive",
+          "dataviz/track",
+          "fill/tertiary",
+          "status/danger/soft",
+          "status/success/soft",
+          "surface/card",
+          "text/danger",
+          "text/primary",
+          "text/secondary",
+          "text/success"
+        ],
+        "text": ["Body/S", "Caption/S", "Label/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/line/stroke",
+          "chart/sparkline/height",
+          "radius/full",
+          "radius/surface/md",
+          "scale/0",
+          "scale/12",
+          "scale/128",
+          "scale/2",
+          "scale/480",
+          "scale/6",
+          "scale/64",
+          "scale/72",
+          "scale/8",
+          "scale/80"
+        ]
+      },
+      "sizes": [0.5, 1, 1.5, 2, 6, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Sortable table with inline charts: Chart/Sparkline per row, a share bar (dataviz/categorical/01 on dataviz/track) and Chart/Delta. Header sorts (↓ on the active column), hairline rows, numbers right-aligned in tabular figures. Compact drops the trend and share columns for mobile. Use when readers need exact values and a quick visual scan together. React: <DataExplorer rows={[{ name, series,"
+    }
+  ],
+  "doc": {
+    "Chart/Data explorer": {
+      "tokens": [
+        "bg/sheet",
+        "border/hairline",
+        "chart/sparkline/height",
+        "dataviz/label",
+        "dataviz/track",
+        "fill/tertiary",
+        "radius/full",
+        "scale/0",
+        "scale/12",
+        "scale/128",
+        "scale/2",
+        "scale/480",
+        "scale/6",
+        "scale/64",
+        "scale/72",
+        "scale/8",
+        "scale/80",
+        "status/success/soft",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Card\nBEK\nDesign System\nChart/Data explorer\nSortable table with inline charts — sparkline, share bar and delta per row; Compact drops trend and share for mobile. 2 variants.\nOverview\nWhat it is and when to reach for it.\nCourse ↓\nTrend, 12 mo\nLearners\nShare\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nWhen to use\nReaders need exact values and a quick visual scan together.\nRank 5–50 items (courses, branches, products) with trend and change.\nReplace a wall of small multiples with one table.\nAnatomy\nNumbered layers of the default variant.\nCourse ↓\nTrend, 12 mo\nLearners\nShare\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\n1\nHeader\nCaption/S · dataviz/label, ↓ on the sorted column\n2\nName\nLabel/M · text/primary\n3\nSparkline\nChart/Sparkline at 80 px\n4\nValue\nBody/S, right-aligned\n5\nShare bar\ncategorical/01 on dataviz/track\n6\nDelta\nChart/Delta\n7\nRow divider\nborder/hairline\nVariants\n2 variants · Variant = Default | Compact\nCourse ↓\nTrend, 12 mo\nLearners\nShare\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nDefault\nAll columns\nCourse ↓\nLearners\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nCompact\nMobile\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/80\n80 px\n80 px\n80 px\nscale/64\n64 px\n64 px\n64 px\nscale/72\n72 px\n72 px\n72 px\nscale/12\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nSorted by value.\nSorted\nClick header → ↑ / ↓.\nHover row\nbg/sheet highlight; sparkline tooltip.\nEmpty\nEmpty state with reset filters.\nLoading\nSkeleton rows.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nCourse ↓\nLearners\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nTablet · 834\nCourse ↓\nTrend, 12 mo\nLearners\nShare\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nWeb · 1440\nCourse ↓\nTrend, 12 mo\nLearners\nShare\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nCourse ↓\nTrend, 12 mo\nLearners\nShare\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nDefault\nCourse ↓\nLearners\nΔ\nUX/UI\n48 200\n+12,4%\nFrontend\n42 100\n+8,1%\nData\n37 400\n+21,6%\nEnglish\n29 300\n0,4%\nSMM\n18 100\n−6,2%\nCompact\nUsage\nRules that keep the chart honest and readable.\nRight-align numbers, tabular figures.\nOne accent colour for share bars.\nSparklines share the same y logic per column (relative trend).\nPaginate or virtualise beyond 50 rows.\nTable first\nWhen exact numbers matter, a table with small charts beats a big chart.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nSortable table with inline charts — sparklin"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-dataviz-positive",
+      "reason": "Sparkline Up chizig'i — nested Sparkline (sparkline.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-dataviz-negative",
+      "reason": "Sparkline Down chizig'i — nested Sparkline (sparkline.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-dataviz-neutral",
+      "reason": "Sparkline Neutral chizig'i — nested Sparkline (sparkline.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-status-success-soft",
+      "reason": "Delta Positive foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-status-danger-soft",
+      "reason": "Delta Negative foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-fill-tertiary",
+      "reason": "Delta Neutral foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-success",
+      "reason": "Delta Positive matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-danger",
+      "reason": "Delta Negative matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/S",
+      "reason": "Delta matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma'da bu token komponent set o'ramasining (specimen) fonida — komponentning o'zi shaffof, kartaga (ChartCard / KpiCard) joylanadi."
+    },
+    {
+      "rule": "token-extra",
+      "match": "--bek-bg-sheet",
+      "reason": "Hover qatori (doc States: «Hover row — bg/sheet highlight») — Figma variantlarida hover holati chizilmagan, faqat doc'da."
+    }
+  ]
+}

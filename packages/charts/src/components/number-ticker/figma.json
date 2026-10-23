@@ -1,0 +1,85 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Number ticker",
+      "id": "1305:47356",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Ticker", "Countdown"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 96
+      },
+      "tokens": {
+        "color": [
+          "bg/sheet",
+          "status/success/soft",
+          "surface/card",
+          "text/primary",
+          "text/secondary",
+          "text/success",
+          "text/tertiary"
+        ],
+        "text": ["Caption/M", "Caption/S", "Display/M", "Headline/M", "Label/S"],
+        "effect": [],
+        "dimension": [
+          "chart/gap",
+          "radius/full",
+          "radius/surface/md",
+          "radius/surface/sm",
+          "scale/12",
+          "scale/2",
+          "scale/480",
+          "scale/6",
+          "scale/64",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 6, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Animated number for live counters and deadlines. Ticker rolls only the changing digits (old digit slides out, new in; neighbours at layer opacity 0.3) with tabular figures so width never jumps; Countdown splits time into units on bg/sheet blocks. Respects prefers-reduced-motion (no roll), announces at most once per minute (aria-live=\"polite\"). React: <NumberTicker value={12480} fo"
+    }
+  ],
+  "doc": {
+    "Chart/Number ticker": {
+      "tokens": [
+        "bg/sheet",
+        "chart/gap",
+        "radius/full",
+        "scale/12",
+        "scale/2",
+        "scale/480",
+        "scale/6",
+        "scale/64",
+        "scale/8",
+        "status/success/soft",
+        "text/primary",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "4.18 Chart · Card\nBEK\nDesign System\nChart/Number ticker\nAnimated number for live counters and deadlines: Ticker rolls only the changing digits, Countdown splits time into units. 2 variants.\nOverview\nWhat it is and when to reach for it.\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\nWhen to use\nLive counters on dashboards and landing pages (learners online, payments today).\nDeadlines: enrolment closes, sale ends, webinar starts.\nHero numbers that update every few seconds.\nAnatomy\nNumbered layers of the default variant.\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\n1\nLabel\nCaption/M · text/secondary\n2\nNumber\nDisplay/M · tabular figures\n3\nRolling digit\nClipped column, neighbours at layer opacity 0.3\n4\nDelta\nChart/Delta + context\n5\nCountdown unit\nHeadline/M on bg/sheet, unit Caption/S\nVariants\n2 variants · Variant = Ticker | Countdown\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\nTicker\nLive counter\nEnrolment closes in\n02\ndays\n:\n14\nhours\n:\n37\nmin\n:\n09\nsec\nCountdown\nTime left\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nchart/gap\n12 px\n16 px\n16 px\nscale/64\n64 px\n64 px\n64 px\nscale/8\n8 px\n8 px\n8 px\nscale/12\n12 px\n12 px\n12 px\nStates\nInteractive and data states.\nState\nBehaviour\nIdle\nStatic value.\nUpdating\nChanged digits roll (300 ms).\nCountdown end\nShows 00 and a status message.\nOffline\nLast value + “updated 5 min ago”.\nReduced motion\nValue swaps without roll.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\nTablet · 834\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\nWeb · 1440\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nActive learners right now\n12 48\n9\n0\n1\n+12,4%\nvs. same time yesterday\nTicker\nEnrolment closes in\n02\ndays\n:\n14\nhours\n:\n37\nmin\n:\n09\nsec\nCountdown\nUsage\nRules that keep the chart honest and readable.\nTabular figures so the width never jumps.\nRoll only the digits that change.\nAnnounce changes politely, at most once a minute.\nCountdown in the user’s time zone; hide seconds when > 1 day if space is tight.\nMotion with restraint\nA ticker that never stops pulls attention from the rest of the page — update on real changes only.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nAnimated number for live counters and deadlines: Ticker rolls only the changing digits, Countdown splits time into units.\nEncoding\nnumber = value (formatted uz-UZ); motion = change; Countdown units = days / hours / minutes / seconds.\nInteraction\nNo direct interaction; pauses when tab is hidden.\nAccessibility\naria-live=\"polite\" with throttling; reduced motion; countdown has a text equivalent (“2 days 14 hours left”).\nComponent\n<NumberTicker value={12480} format=\"uz\" /> · <Countdown to={date} units={[\"days\",\"hours\",\"min\",\"sec\"]} />\nDa"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-status-success-soft",
+      "reason": "Delta pill foni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-success",
+      "reason": "Delta matni — nested Delta (delta.css) chizadi — bu komponent uni import qiladi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma'da bu token komponent set o'ramasining (specimen) fonida — komponentning o'zi shaffof, kartaga (ChartCard / KpiCard) joylanadi."
+    }
+  ]
+}

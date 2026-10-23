@@ -1,12 +1,18 @@
 name: Bug report
-description: Something in @bek-ui/tokens, @bek-ui/react, @bek-ui/charts or the docs site is broken
+description: Something in @bek-ui/tokens, @bek-ui/react, @bek-ui/charts, @bek-ui/backgrounds or the docs site is broken
 labels: [bug]
 body:
   - type: dropdown
     id: package
     attributes:
       label: Package
-      options: ['@bek-ui/react', '@bek-ui/charts', '@bek-ui/tokens', 'docs site', 'other']
+      options:
+        - '@bek-ui/react'
+        - '@bek-ui/charts'
+        - '@bek-ui/backgrounds'
+        - '@bek-ui/tokens'
+        - 'docs site'
+        - 'other'
     validations: { required: true }
   - type: input
     id: component

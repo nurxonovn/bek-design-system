@@ -1,0 +1,54 @@
+{
+  "page": "2.6 Backgrounds",
+  "components": [
+    {
+      "name": "Aurora",
+      "id": "1343:7075",
+      "page": "2.6 Backgrounds",
+      "pageId": "1342:67",
+      "props": {
+        "Tone": ["Neutral", "Brand"],
+        "Intensity": ["Subtle", "Default", "Intense"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 720,
+        "h": 405
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "bg/base",
+          "brand/logo-solid",
+          "fill/soft-pressed",
+          "fill/strong",
+          "gradient/brand-end",
+          "gradient/brand-start"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "Aurora — soft light bands flowing across the top of the canvas (2.6 Backgrounds). Decorative only (BGR-01). Tone Neutral (accent/soft + fill tokens) / Brand (gradient/brand-*). Gradient stops are bound to colour tokens. Intensity = band layer opacity (.35 · .6 · .9). Best for hero and auth screens with text in the lower half. React: <Aurora tone intensity speed bands />."
+    }
+  ],
+  "doc": {
+    "Aurora": {
+      "tokens": [
+        "accent/default",
+        "accent/soft",
+        "bg/base",
+        "fill/soft-pressed",
+        "fill/strong",
+        "gradient/brand-end",
+        "gradient/brand-start"
+      ],
+      "text": "ASSETS · BACKGROUNDS\nBEK\nDesign System\n2.6 Backgrounds · Aurora\nSoft light bands flowing across the top of the canvas. Leaves the lower half calm for headlines and actions — made for auth and landing heroes.\nOverview\nTwo tones × three intensities (6 variants).\nNeutral\nBands from accent/soft, fill/soft-pressed, fill/strong and accent/default.\nBrand\nBands from gradient/brand-start → gradient/brand-end and accent/default.\nAnatomy\nBase\nbg/base\nBands\nThree rotated ellipses with linear gradients — stops bound to colour tokens\nBlur\nLayer blur 64 per band\nFlow\nIn code bands slide and sway on slow loops (15–30 s)\nIntensity\nPreset strength. In code every value is a prop; presets are starting points.\nSubtle\nbands opacity .35.\nDefault\nbands opacity .6.\nIntense\nbands opacity .9 — covers only.\nUsage\nRules BGR-01 … BGR-06 (see Matrix rain) apply to every background on this page.\n• Put headline and CTA in the lower half; bands sit in the upper 60 %.\n• On mobile use Subtle — bands read stronger on small screens.\n• Gradient stops are token-bound, so Brand updates with the brand palette.\nDevices\nInstances resize freely — content scales, edges clip. Keep text in a calm area (BGR-02).\nMobile · 390\nLearn design with BEK\nCourses, practice and a career path in one place.\nAuth / onboarding hero, Subtle.\nTablet · 834\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero, Subtle or Default.\nWeb · 1440\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero / cover, Default.\nDark mode\nBands switch with the theme — Brand glows more on dark.\nLight\nDark\nProps\nFigma variants cover presets; code props control everything.\nProp\nWhere\nValues\nDefault\nTone\nVariant\nNeutral · Brand\nNeutral\nIntensity\nVariant\nSubtle · Default · Intense\nDefault\nspeed\ncode\n×\n1\nbands\ncode\n1 – 5\n3\nposition\ncode\ntop · center\ntop\nTokens\nRole\nToken\nTone\nCSS\nBase\nbg/base\nboth\n--bek-bg-base\nBands (Neutral)\naccent/soft · fill/soft-pressed · fill/strong · accent/default\nN\n--bek-…\nBands (Brand)\ngradient/brand-start · gradient/brand-end · accent/default · brand/logo-solid\nB\n--bek-gradient-brand-*\nDo / Don’t\nDo\nKeep text and buttons in the calm lower half.\nDon’t\nDon’t place a headline across the brightest band (BGR-02)."
+    }
+  },
+  "accepted": []
+}

@@ -38,6 +38,10 @@ export interface ChartCardProps extends Omit<HTMLAttributes<HTMLElement>, 'title
   errorSource?: ReactNode;
   /** Sarlavha darajasi — sahifa tuzilmasiga mos (standart h3). */
   headingLevel?: 2 | 3 | 4 | 5 | 6;
+  /** Sarlavha amallari — eksport uchun overflow menyu (Figma Spec: "overflow menu for export"). */
+  actions?: ReactNode;
+  /** Loading holati e'loni (`role="status"`, ko'rinmas). Standart: "Loading chart…". */
+  loadingLabel?: string;
   /** Chart slot — istalgan `@bek-ui/charts` chart (odatda `ChartContainer` ichida). */
   children?: ReactNode;
 }
@@ -63,6 +67,8 @@ export function ChartCard({
   onRetry,
   errorSource,
   headingLevel = 3,
+  actions,
+  loadingLabel = 'Loading chart…',
   children,
   className,
   ...rest
@@ -92,7 +98,12 @@ export function ChartCard({
             aria-label="Period"
           />
         )}
+        {actions != null && <div className="bek-chart-card__actions">{actions}</div>}
       </header>
+      {/* Holat o'zgarishi e'loni (Figma Spec: "state changes announced via aria-live"); Error — role="alert". */}
+      <span className="bek-chart__sr" role="status">
+        {state === 'loading' ? loadingLabel : state === 'empty' ? emptyTitle : null}
+      </span>
 
       {state === 'default' && kpi && (
         <div className="bek-chart-card__kpi">

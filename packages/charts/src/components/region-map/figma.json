@@ -1,0 +1,99 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Map",
+      "id": "1300:47297",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Choropleth", "Bubble", "Hex"]
+      },
+      "variants": 3,
+      "size": {
+        "w": 480,
+        "h": 228
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/sequential/200",
+          "dataviz/sequential/300",
+          "dataviz/sequential/400",
+          "dataviz/sequential/500",
+          "dataviz/sequential/600",
+          "dataviz/sequential/700",
+          "dataviz/track",
+          "surface/card",
+          "text/inverse",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/legend/marker",
+          "radius/surface/md",
+          "scale/2",
+          "scale/200",
+          "scale/4",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [0.5, 1, 2, 3, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Regional statistics on a map of Uzbekistan (14 regions). Choropleth colours each region on dataviz/sequential; Bubble keeps land neutral (dataviz/track) and sizes circles by value (area); Hex is a tile-grid map — equal-size hexes so small regions (Toshkent sh.) stay visible, labels follow CMP-07. Fixed geometry: the Map frame is centred, never stretched. Map data: svg-maps by Victor Cazanave, CC B"
+    }
+  ],
+  "doc": {
+    "Chart/Map": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/legend/gap",
+        "chart/legend/marker",
+        "chart/line/stroke",
+        "dataviz/categorical/01",
+        "dataviz/grid",
+        "dataviz/label",
+        "dataviz/sequential",
+        "dataviz/sequential/200",
+        "dataviz/sequential/300",
+        "dataviz/sequential/400",
+        "dataviz/sequential/500",
+        "dataviz/sequential/600",
+        "dataviz/sequential/700",
+        "dataviz/track",
+        "scale/2",
+        "scale/200",
+        "scale/4",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Geo\nBEK\nDesign System\nChart/Map\nRegional statistics on a map of Uzbekistan: Choropleth colours regions, Bubble sizes circles by value on neutral land, Hex shows every region as an equal tile. 3 variants.\nOverview\nWhat it is and when to reach for it.\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\nWhen to use\nValues per region where geography matters — branch coverage, users, prices, results by viloyat.\nBubble for counts (population, users): area, not colour, carries the amount.\nHex when small regions (Toshkent sh.) must stay visible and comparable.\nAnatomy\nNumbered layers of the default variant.\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\n1\nMap frame\nCentred, fixed geometry (CMP-11) — never stretched\n2\nRegion\ndataviz/sequential (Choropleth) or dataviz/track (Bubble); borders surface/card\n3\nWater\nOrol dengizi · dataviz/grid\n4\nBubble\ndataviz/categorical/01, layer opacity 0.72, area ∝ value\n5\nHex tile\nsequential 200 · 300 · 600 · 700 + 2-letter code (CMP-07)\n6\nValue chip\nsurface/card · text/primary\nVariants\n3 variants · Variant = Choropleth | Bubble | Hex\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\nChoropleth\nRate / share\nSamarqand · 4,2 mln\nToshkent · 3,0 mln\nCircle area = population, mln\nBubble\nCounts\nQR\nNV\nTV\nTS\nNM\nXR\nBX\nSM\nJZ\nSR\nFR\nAN\nQQ\nSX\n33%\n82%\nHex\nEqual-size tiles\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/legend/marker\n8 px\n8 px\n8 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll regions coloured.\nHover region\nOutline chart/line/stroke, tooltip: region, value, rank of 14.\nSelected\nRegion keeps colour, others dim to 0.4; side panel or table filters.\nNo data\nRegion dataviz/track with diagonal hatch, tooltip “No data”.\nLoading\nMap outline on dataviz/track (Skeleton).\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\nTablet · 834\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\nWeb · 1440\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nToshkent sh. · 82%\nQoraqalpog‘iston · 33%\n33%\n82%\nChoropleth\nSamarqand · 4,2 mln\nToshkent · 3,0 mln\nCircle area = population, mln\nBubble\nQR\nNV\nTV\nTS\nNM\nXR\nBX\nSM\nJZ\nSR\nFR\nAN\nQQ\nSX\n33%\n82%\nHex\nUsage\nRules that keep the chart honest and readable.\nChoropleth only for rates and shares — counts belong on Bubble.\nClassed scale (5–6 steps) with the range shown in the legend.\nAlways pair with a ranked table or tooltip: area misleads (Qoraqalpog‘iston looks huge).\nCredit the map source: svg-maps (V. Cazanave), CC BY 4.0.\nBig area ≠ big value\nLarge regions dominate a choropleth. Use Hex or Bubble when Toshkent sh. or other small regions carry the story.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nRegional statistics on a map of Uzbekistan: Choropleth colours regions, Bubbl"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Bubble legend yozuvi rangi — ichki LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Dot)."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Bubble legend yozuvi Caption/L — ichki LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Dot)."
+    }
+  ]
+}

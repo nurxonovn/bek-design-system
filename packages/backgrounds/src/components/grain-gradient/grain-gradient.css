@@ -1,0 +1,18 @@
+/* Grain gradient (Figma 2.6 Backgrounds). Dog' ranglari — tokenlar; `blobs` prop'i inline o'zgaruvchilarni almashtiradi. */
+.bek-grain-gradient {
+  --bek-grain-gradient-base: var(--bek-bg-base);
+  --bek-grain-gradient-blob-1: var(--bek-fill-soft-pressed);
+  --bek-grain-gradient-blob-2: var(--bek-accent-soft);
+  --bek-grain-gradient-blob-3: var(--bek-fill-strong);
+  --bek-grain-gradient-blob-4: var(--bek-accent-default);
+  /* Figma Noise effekti rangi tokenga bog'lanmaydi (qora) — kodda doimiy to'q token. */
+  --bek-grain-gradient-grain: var(--bek-static-dark);
+  background: var(--bek-grain-gradient-base);
+}
+
+.bek-grain-gradient--brand {
+  --bek-grain-gradient-blob-1: var(--bek-gradient-brand-start);
+  --bek-grain-gradient-blob-2: var(--bek-gradient-brand-end);
+  --bek-grain-gradient-blob-3: var(--bek-accent-default);
+  --bek-grain-gradient-blob-4: var(--bek-brand-logo-solid);
+}

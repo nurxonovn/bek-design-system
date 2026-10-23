@@ -61,3 +61,34 @@
   letter-spacing: var(--bek-type-body-sm-tracking);
   font-weight: var(--bek-weight-regular);
 }
+
+/* Yig'ilgan shox — barglar o'rniga "+n" */
+.bek-mind-map__leaf--more {
+  font-weight: var(--bek-weight-medium);
+}
+
+/* Hover shox (Figma State "Hover branch"): shox va uning bog'lanishlari qoladi, qolganlari 0.3. */
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='0']:hover)
+  [data-branch]:not([data-branch='0']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='1']:hover)
+  [data-branch]:not([data-branch='1']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='2']:hover)
+  [data-branch]:not([data-branch='2']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='3']:hover)
+  [data-branch]:not([data-branch='3']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='4']:hover)
+  [data-branch]:not([data-branch='4']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='5']:hover)
+  [data-branch]:not([data-branch='5']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='6']:hover)
+  [data-branch]:not([data-branch='6']),
+.bek-mind-map__canvas:has(.bek-mind-map__node[data-branch='7']:hover)
+  [data-branch]:not([data-branch='7']) {
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-mind-map [data-branch] {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}
