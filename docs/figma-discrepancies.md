@@ -1,9 +1,20 @@
 # Figma ↔ kod farqlari — dizayner uchun ro'yxat
 
-1-bosqich yakuni (2026-10). Manba: har komponentning `figma.json → accepted[]` (hujjatlangan farqlar) va ECC
-ko'rib chiqish hisobotlari. `pnpm check:figma -- --strict` → 58 komponent, 0 ogohlantirish — ya'ni quyidagilar
-ataylab yoki Figma tomonidagi kamchilik sababli qabul qilingan. Noyabr yangilanishida Figma'da tuzatilsa,
-`/figma-sync` bilan `accepted` yozuvlari olib tashlanadi.
+1-bosqich (2026-10-12) va Figma ↔ kod moslashtirish (2026-10-22, 1.0.0-beta.1) yakuni. Manba: har komponentning
+`figma.json → accepted[]` (hujjatlangan farqlar), agent va ECC ko'rib chiqish hisobotlari. `pnpm check:figma --
+--strict` → react 69 · charts 69 · backgrounds 4 komponent, 0 ogohlantirish — ya'ni quyidagilar ataylab yoki Figma
+tomonidagi kamchilik sababli qabul qilingan. Figma'da tuzatilsa, `/figma-sync` bilan `accepted` yozuvlari olib
+tashlanadi.
+
+**Ataylab kodga kirmaydi:** 2.1 Icons (Hugeicons Pro litsenziyasi), 2.4 3D objects, 9.2 Cursor, 10.1 Devices,
+Reach zone.
+
+**Eng ko'p takrorlangan Figma kamchiliklari** (bo'limlar bo'yicha batafsil — A6–A15):
+
+1. Text, variable va komponent tavsiflarida HTML entity (`&#39;`, `&quot;`, `&amp;lt;`) — ~100 joy.
+2. Komponent set o'ramining foni `bg/sheet` emas (`bg/base`, `fill/secondary`, `surface/card` …) — ~15 set.
+3. 📘 doc freymida "Design tokens" o'rniga "Tokens" sarlavhasi — extractor tokens jadvalini ololmaydi.
+4. Doc jadvali komponentdan orqada (`fill/primary`, `scale/*` balandliklar, eski token nomlari).
 
 ## A. Figma'da tuzatish tavsiya etiladi
 
@@ -218,6 +229,53 @@ Umumiy:
   3.12 Search field instance'iga almashtirish kerak (App bar'da shunday).
 - 9.1 Slots & Helpers sahifasida `📘` doc freymi yo'q.
 
+### A13. 4.18 Chart / 4.19 Diagram — 4-to'lqin (2026-10-22)
+
+- Yangi set'lar tavsiflarida HTML entity (`&amp;lt;`, `&quot;`); doc'larda «Component» matni `&lt;…&gt;` bilan.
+- **Map:** hex plitka kodlari ISO 3166-2:UZ ga mos emas (NV/NW, TV/TO, TS/TK, NM/NG, XR/XO, BX/BU, SM/SA, JZ/JI,
+  SR/SI, FR/FA, QQ/QA, SX/SU) — kodda id ISO, yorliq Figma'dagidek; birxillashtirish kerak. Spec'dagi
+  `tashkent-city` slug'i svg-maps'da yo'q — ISO id'larga o'tkazish kerak. Bubble chip "Toshkent · 3,0 mln" —
+  viloyatmi, shaharmi noaniq. Hover konturi va "No data" shtrixi rangi tokenda ko'rsatilmagan.
+- **Race:** doc'dagi `chart/motion` tokeni Variables'da yo'q (kodda `motion/duration/chart-enter`); Pause va
+  Replay ikonkalari BEK Icons'da yo'q.
+- **Draw the line:** Skip va Reveal tugmalari States jadvalida bor, variantlarda chizilmagan.
+- **Survey:** faqat 5 balli palitra; 3 va 7 balli shkala ranglari va Net variantida 0 chizig'i qoidasi yo'q.
+  Survey va Pictogram Loading holati kodda hali yo'q.
+- **Data explorer:** doc tokens jadvalida Sparkline `scale/128 × chart/sparkline/height`, anatomiya va instance
+  80×20 — moslab tokenga bog'lash kerak. Hover row holati faqat doc'da.
+- **Gantt:** Overdue, Hover task, Collapsed group holatlari faqat doc jadvalida; "Today" chipi radiusi 4 tokensiz.
+- **Number ticker:** 300 ms roll uchun motion tokeni yo'q; ichki Chart/Delta `nested` ga tushmaydi.
+- **Mind map:** shox/barg nuqtalari 10×10 — `chart/point/size` (8) ga bog'lanmagan.
+- Xarita ma'lumoti: svg-maps (CC BY 4.0) — Figma'dagi soddalashtirilgan nusxa kodga ko'chirildi,
+  `packages/charts/LICENSE-ASSETS.md`.
+
+### A14. 2.6 Backgrounds (2026-10-22)
+
+- **Matrix rain:** Tone variantlari tartibi `Classic, Neutral, Brand` — standart instance Classic chiqadi, doc'da
+  standart Neutral; tartibni Neutral · Brand · Classic ga keltirish kerak. Props jadvalida `opacity` standarti 64,
+  Intensity Default .7 — birlashtirish kerak. Brand'da nur ellipsi `gradient/brand-start` (.2), jadvaldagi «Pointer»
+  qatori `accent/active` — «Pointer zone» va «Pointer glow» ni ajratish kerak. Density doc'da .22 · .38 · .55,
+  variantlarda belgili kataklar .32 · .48 · .67 (kodda preset × 1.25).
+- **Grain gradient:** Noise rangi tokenga bog'lanmaydi (kodda `static/dark`, `accepted`); doc'da "SVG
+  feTurbulence", kodda canvas shovqin plitkasi — matnni yangilash kerak.
+- **Aurora:** doc "tasmalar yuqori 60 % da", Band 3 markazi ≈ 81 % — doc ≠ komponent; `position: center` va
+  `bands` 4–5 Figma'da yo'q (kodda kengaytma).
+- Doc freymlaridagi bezak belgilar qatorlari oddiy TEXT — extractor doc matnini ifloslantiradi; `_Rain` kabi
+  guruhga olish kerak.
+
+### A15. 8.5 Finance (Mobile) shabloni (2026-10-22)
+
+- Kartalar (`surface/card`, r16) Card (4.3) instance emas — Card radiusi `surface/md` 12; yo Card ishlatilsin, yo
+  radius kelishilsin. Credit score «Header» freymi ajratilgan — App bar (6.5) instance'i (leading Avatar) bo'lishi
+  kerak. «3D slot» — vaqtinchalik `_Icon`.
+- Ma'lumot nomuvofiqligi: Budget'da Progress `Value=62%`, Badge 44% (4 605 000 / 10 354 000); Credit score'da 62%,
+  (782−300)/550 ≈ 88%. Kodda haqiqiy qiymat.
+- Matn sig'maydi: Budget «Amount» freymi 182 px fixed; Split promo xizmat kartasi 180 fixed, Description `FILL` —
+  kesiladi; HUG bo'lishi kerak.
+- List item (4.4) Size=M + description: instance 56 fixed, kontent 74 — min 56 + HUG bo'lishi kerak (kod shunday).
+- Bottom nav: tanlanmagan «Courses» ikonkasi ham Solid — 6.7 doc'ga ko'ra Stroke bo'lishi kerak.
+- Avatar: Figma'dagi erkin `Initials` («UX») — kodda harflar `name` dan olinadi.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |
@@ -275,4 +333,4 @@ Umumiy:
 
 ## C. Statistika
 
-Jami `accepted`: 84 — prop-missing 1, token-missing 19, token-unmapped 7, token-extra 26, text-style-missing 4, variant-missing 4, px-figma 22, figma-raw-color 1.
+Jami `accepted` (2026-10-22): react 93 — token-missing 28, token-extra 25, px-figma 22, token-unmapped 7, text-style-missing 5, variant-missing 4, prop-missing 1, figma-raw-color 1; charts 140 — token-missing 91, text-style-missing 27, token-extra 16, effect-missing 3, variant-missing 3; backgrounds 1 — token-extra 1.

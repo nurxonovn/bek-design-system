@@ -1,0 +1,64 @@
+{
+  "page": "2.6 Backgrounds",
+  "components": [
+    {
+      "name": "Matrix rain",
+      "id": "1343:2655",
+      "page": "2.6 Backgrounds",
+      "pageId": "1342:67",
+      "props": {
+        "Show pointer": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Tone": ["Classic", "Neutral", "Brand"],
+        "Intensity": ["Subtle", "Default", "Intense"],
+        "Charset": ["Mixed", "Latin", "Cyrillic", "Digits"]
+      },
+      "variants": 36,
+      "size": {
+        "w": 720,
+        "h": 405
+      },
+      "tokens": {
+        "color": [
+          "accent/active",
+          "accent/default",
+          "bg/base",
+          "effect/matrix/bg",
+          "effect/matrix/fade",
+          "effect/matrix/head",
+          "effect/matrix/trail",
+          "gradient/brand-end",
+          "gradient/brand-start",
+          "text/disabled",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Code/S"],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "Matrix rain — animated background of falling characters (2.6 Backgrounds). Decorative only (BGR-01). Tone: Neutral (text tokens + accent pointer), Brand (gradient/brand-* + accent), Classic (black + green, effect/matrix/*, same in Light and Dark). Intensity sets layer opacity and density (Subtle .4 · Default .7 · Intense 1). Charset: Mixed (Latin + Uzbek Cyrillic + digits), Latin, Cyrillic, Digits"
+    }
+  ],
+  "doc": {
+    "Matrix rain": {
+      "tokens": [
+        "accent/active",
+        "accent/default",
+        "bg/base",
+        "gradient/brand-end",
+        "gradient/brand-start",
+        "text/disabled",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "ASSETS · BACKGROUNDS\nBEK\nDesign System\n2.6 Backgrounds · Matrix rain\nFalling columns of characters with a glow that follows the pointer. Neutral and Brand follow the theme; Classic is the black-and-green look, the same in Light and Dark.\nOverview\nThree tones × three intensities × four character sets (36 variants). Show pointer toggles the glow.\nNeutral\ntext/primary heads, text/secondary trails, text/disabled noise; pointer accent/default.\nBrand\naccent/default heads, gradient/brand-end trails, gradient/brand-start noise; pointer accent/active.\nClassic\neffect/matrix/* — near-black base, green heads and trails. Mode-independent.\nAnatomy\nBase\nFill — bg/base, or effect/matrix/bg in Classic\nRain\nOne mono text column per 14 px; layer opacity = intensity\nHead · Trail · Noise\nThree colour roles per column\nPointer zone\nCharacters near the pointer switch to the pointer colour\nPointer glow\nBlurred ellipse, Show pointer\nIntensity\nPreset strength. In code every value is a prop; presets are starting points.\nSubtle\nopacity .4 · density .22 — behind text.\nDefault\nopacity .7 · density .38 — hero.\nIntense\nopacity 1 · density .55 — cover, 404, loading only.\nCharset\nMixed is the default: Latin + Uzbek Cyrillic + digits and symbols. In code charset is any string.\nMixed\nLatin\nCyrillic\nDigits\nUsage\nRules BGR-01 … BGR-06 apply to every background on this page.\nRule\nWhat\nWhy\nBGR-01\nDecorative only: aria-hidden, pointer-events none (pointer tracked on window)\nScreen readers and clicks ignore it\nBGR-02\nText on top passes contrast on the worst frame — add a bg/base gradient scrim when needed\nMoving content changes contrast\nBGR-03\nprefers-reduced-motion → one static frame, no pointer effects\nMotion sensitivity\nBGR-04\nDefault 30 fps, pause off-screen or in a hidden tab, devicePixelRatio ≤ 2\nBattery and CPU\nBGR-05\nOne animated background per screen\nFocus and performance\nBGR-06\nNever under forms, tables or dense content — hero, auth, onboarding, empty, 404, loading, cover only\nReadability\n• Charset is a variant in Figma (Mixed, Latin, Cyrillic, Digits) and a free string prop in code — any characters.\n• Classic is a strong brand moment: cover, 404, loading. Neutral / Brand for everyday heroes.\n• Keep text in a calm area (left / bottom) and the pointer zone away from it.\nDevices\nInstances resize freely — content scales, edges clip. Keep text in a calm area (BGR-02).\nMobile · 390\nLearn design with BEK\nCourses, practice and a career path in one place.\nAuth / onboarding hero, Subtle.\nTablet · 834\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero, Subtle or Default.\nWeb · 1440\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero / cover, Default.\nDark mode\nNeutral and Brand switch with the theme; Classic stays black and green.\nLight\nDark\nProps\nFigma variants cover presets; code props control everything.\nProp\nWhere\nValues\nDefault\nTone\nVariant\nNeutral · Brand · Classic\nNeutral\nIntensity\nVariant\nSubtle · Default · Intense\nDefault\nCharset\nVariant · code string\nMixed · Latin · Cyrillic · Digits · custom\nMixed\nShow pointer\nBoolean\ntrue · false\ntrue\nsize · lineSpacing\ncode\npx\n12 · 16\ndensity\ncode\n0.25 – 2 ×\n1.00\nspeed · f"
+    }
+  },
+  "accepted": []
+}

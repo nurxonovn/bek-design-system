@@ -1,0 +1,64 @@
+{
+  "name": "@bek-ui/backgrounds",
+  "version": "1.0.0-beta.1",
+  "description": "BEK Design System animated backgrounds — Matrix rain, Dot field, Grain gradient, Aurora (canvas React components on @bek-ui/tokens)",
+  "license": "MIT",
+  "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurxonovn/bek-design-system.git",
+    "directory": "packages/backgrounds"
+  },
+  "homepage": "https://nurxonovn.github.io/bek-design-system/",
+  "bugs": {
+    "url": "https://github.com/nurxonovn/bek-design-system/issues"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "figma",
+    "react",
+    "uzbekistan",
+    "bek",
+    "background",
+    "canvas",
+    "animation",
+    "bek-ui"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/*.test.mjs\"",
+    "check:figma": "node ../react/scripts/check-figma.mjs --root=."
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@bek-ui/tokens": "workspace:*",
+    "@types/react": "18.3.26",
+    "@types/react-dom": "18.3.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

@@ -26,5 +26,7 @@ Figma: **4.18 Chart · Card** — har dashboard chartining o'ramasi: sarlavha, d
 
 - **Tarkib:** Title/M sarlavha + Caption/M izoh, 3.10 Segmented control (davr), KPI — Headline/M qiymat + `Delta` + taqqoslash, chart sloti, Caption/M footer (manba va yangilanish vaqti).
 - **Holatlar:** Loading — chart shaklida 5.4 Skeleton, header interaktiv qoladi (`aria-busy`); Empty — 5.3 Empty state (maskotsiz) + "Change period"; Error — xabar + "Try again" (`role="alert"`), footer xato manbasini (`errorSource`) ko'rsatadi.
+- **Amallar:** `actions` — sarlavha qatoridagi eksport / overflow menyu (davr tanlagichdan keyin). Chart interaktivligi slot ichida o'zgarishsiz ishlaydi.
+- **A11y:** karta `region` — `aria-labelledby` sarlavhaga; holat o'zgarishi ko'rinmas `role="status"` orqali e'lon qilinadi (`loadingLabel`, Empty sarlavhasi), Error — `role="alert"`.
 - **Qachon:** dashboard yoki hisobotdagi har chart. Boshqa karta ichiga solmang — chartni to'g'ridan-to'g'ri joylang.
-- **Sirt:** `surface/card`, `radius/surface/md`, padding `chart/padding` (12 / 16 / 24), oraliq `chart/gap`; chart sloti kamida `chart/height/md`. Kenglik konteynerga to'liq moslashadi (FILL).
+- **Sirt:** `surface/card`, `radius/surface/md`, padding `chart/padding` (12 / 16 / 24), oraliq `chart/gap`, sarlavha qatori `scale/16`; chart sloti kamida `chart/height/md`. Kenglik konteynerga to'liq moslashadi (FILL).

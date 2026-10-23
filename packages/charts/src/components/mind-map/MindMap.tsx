@@ -12,6 +12,8 @@ export interface MindMapNode {
   /** Qisqa nom (≤ 3 so'z — xarita hujjat emas, xulosa). */
   label: string;
   children?: MindMapNode[];
+  /** Yig'ilgan shox (Figma State "Collapsed"): Tree'da barglar o'rniga "+n". Ekran o'quvchi ro'yxatida barglar qoladi. */
+  collapsed?: boolean;
 }
 
 export interface MindMapProps extends Omit<HTMLAttributes<HTMLElement>, 'children'> {
@@ -47,12 +49,14 @@ interface Placed {
   color: string;
   /** Shox nuqtasi (Radial) — tugunning ildizga qaragan cheti. */
   dot?: DiagramPoint;
+  branch: number;
 }
 
 interface Link {
   key: string;
   d: string;
   color: string;
+  branch: number;
 }
 
 interface Leaf {
@@ -61,6 +65,9 @@ interface Leaf {
   x: number;
   y: number;
   color: string;
+  branch: number;
+  /** Yig'ilgan shox belgisi ("+n"). */
+  more?: boolean;
 }
 
 interface Layout {
@@ -107,8 +114,8 @@ function radialLayout(root: MindMapNode, width: number, height: number): Layout 
         ? { x, y: y < c.y ? y + HALF_H : y - HALF_H }
         : { x: dx > 0 ? x - HALF_W : x + HALF_W, y };
     const side = Math.abs(dot.y - c.y) < 1;
-    links.push({ key: `l${i}`, d: side ? cubicH(c, dot) : cubicV(c, dot), color });
-    branches.push({ key: `b${i}`, label: kid.label, x, y, color, dot });
+    links.push({ key: `l${i}`, d: side ? cubicH(c, dot) : cubicV(c, dot), color, branch: i });
+    branches.push({ key: `b${i}`, label: kid.label, x, y, color, dot, branch: i });
   });
   return { width, height, root: c, branches, links, leaves: [] };
 }
@@ -116,9 +123,9 @@ function radialLayout(root: MindMapNode, width: number, height: number): Layout 
 /** Tree: ildiz chapda, shoxlar ustuni, barglar nuqta + matn bilan. Balandlik barglar soniga qarab. */
 function treeLayout(root: MindMapNode, width: number, height: number): Layout {
   const kids = root.children ?? [];
-  const blocks = kids.map((k) =>
-    Math.max(DIAGRAM_NODE_HEIGHT, (k.children?.length ?? 0) * LEAF_PITCH),
-  );
+  const shown = (k: MindMapNode) =>
+    k.collapsed && k.children?.length ? 1 : (k.children?.length ?? 0);
+  const blocks = kids.map((k) => Math.max(DIAGRAM_NODE_HEIGHT, shown(k) * LEAF_PITCH));
   const content = blocks.reduce((s, b) => s + b, 0) + Math.max(0, kids.length - 1) * BRANCH_GAP;
   const h = Math.max(height, content + PAD * 2);
   const rootPt = { x: PAD + HALF_W, y: h / 2 };
@@ -131,21 +138,33 @@ function treeLayout(root: MindMapNode, width: number, height: number): Layout {
   kids.forEach((kid, i) => {
     const y = top + blocks[i] / 2;
     const color = seriesColor(i);
-    branches.push({ key: `b${i}`, label: kid.label, x: branchX, y, color });
+    branches.push({ key: `b${i}`, label: kid.label, x: branchX, y, color, branch: i });
     links.push({
       key: `l${i}`,
       d: cubicH({ x: rootPt.x + HALF_W, y: rootPt.y }, { x: branchX - HALF_W, y }),
       color,
+      branch: i,
     });
-    const leafKids = kid.children ?? [];
+    const all = kid.children ?? [];
+    const leafKids: { label: string; more?: boolean }[] =
+      kid.collapsed && all.length ? [{ label: `+${all.length}`, more: true }] : all;
     leafKids.forEach((leaf, j) => {
       const ly = y + (j - (leafKids.length - 1) / 2) * LEAF_PITCH;
       links.push({
         key: `l${i}-${j}`,
         d: cubicH({ x: branchX + HALF_W, y }, { x: dotX, y: ly }),
         color,
+        branch: i,
       });
-      leaves.push({ key: `f${i}-${j}`, label: leaf.label, x: dotX, y: ly, color });
+      leaves.push({
+        key: `f${i}-${j}`,
+        label: leaf.label,
+        x: dotX,
+        y: ly,
+        color,
+        branch: i,
+        more: leaf.more,
+      });
     });
     top += blocks[i] + BRANCH_GAP;
   });
@@ -211,7 +230,13 @@ export function MindMap({
           focusable="false"
         >
           {g.links.map((l) => (
-            <path key={l.key} className="bek-mind-map__link" d={l.d} style={{ stroke: l.color }} />
+            <path
+              key={l.key}
+              className="bek-mind-map__link"
+              d={l.d}
+              style={{ stroke: l.color }}
+              data-branch={l.branch}
+            />
           ))}
         </svg>
         <DiagramNode
@@ -226,6 +251,7 @@ export function MindMap({
             className="bek-mind-map__node"
             label={b.label}
             style={at(b.x - HALF_W, b.y - HALF_H)}
+            data-branch={b.branch}
           />
         ))}
         {g.branches.map(
@@ -235,11 +261,17 @@ export function MindMap({
                 key={`d${b.key}`}
                 className="bek-mind-map__dot"
                 style={{ ...at(b.dot.x, b.dot.y), background: b.color }}
+                data-branch={b.branch}
               />
             ),
         )}
         {g.leaves.map((f) => (
-          <span key={f.key} className="bek-mind-map__leaf" style={at(f.x - DOT / 2, f.y)}>
+          <span
+            key={f.key}
+            className={cx('bek-mind-map__leaf', f.more && 'bek-mind-map__leaf--more')}
+            style={at(f.x - DOT / 2, f.y)}
+            data-branch={f.branch}
+          >
             <span className="bek-mind-map__leaf-dot" style={{ background: f.color }} />
             <span className="bek-mind-map__leaf-label">{f.label}</span>
           </span>

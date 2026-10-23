@@ -1,0 +1,29 @@
+/* Aurora (Figma 2.6 Backgrounds). Tasma gradient stoplari — tokenlar (Figma'da ham stoplar tokenga bog'langan).
+   Band 1–3 — Figma; Band 4–5 — `bands` prop'i uchun kod kengaytmasi (shu ton tokenlaridan). */
+.bek-aurora {
+  --bek-aurora-base: var(--bek-bg-base);
+  --bek-aurora-band-1-start: var(--bek-accent-soft);
+  --bek-aurora-band-1-end: var(--bek-fill-soft-pressed);
+  --bek-aurora-band-2-start: var(--bek-fill-strong);
+  --bek-aurora-band-2-end: var(--bek-accent-soft);
+  --bek-aurora-band-3-start: var(--bek-accent-default);
+  --bek-aurora-band-3-end: var(--bek-accent-soft);
+  --bek-aurora-band-4-start: var(--bek-accent-soft);
+  --bek-aurora-band-4-end: var(--bek-fill-strong);
+  --bek-aurora-band-5-start: var(--bek-fill-soft-pressed);
+  --bek-aurora-band-5-end: var(--bek-accent-default);
+  background: var(--bek-aurora-base);
+}
+
+.bek-aurora--brand {
+  --bek-aurora-band-1-start: var(--bek-gradient-brand-start);
+  --bek-aurora-band-1-end: var(--bek-gradient-brand-end);
+  --bek-aurora-band-2-start: var(--bek-gradient-brand-end);
+  --bek-aurora-band-2-end: var(--bek-accent-default);
+  --bek-aurora-band-3-start: var(--bek-brand-logo-solid);
+  --bek-aurora-band-3-end: var(--bek-gradient-brand-start);
+  --bek-aurora-band-4-start: var(--bek-accent-default);
+  --bek-aurora-band-4-end: var(--bek-gradient-brand-start);
+  --bek-aurora-band-5-start: var(--bek-gradient-brand-end);
+  --bek-aurora-band-5-end: var(--bek-brand-logo-solid);
+}

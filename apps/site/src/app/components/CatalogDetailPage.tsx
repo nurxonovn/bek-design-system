@@ -12,8 +12,9 @@ interface CatalogDetailPageProps {
 }
 
 const GITHUB = 'https://github.com/nurxonovn/bek-design-system/blob/main/packages';
+// '@bek-ui/charts' → packages/charts, '@bek-ui/backgrounds' → packages/backgrounds; standart — react.
 const sourceUrl = (pkg: string | undefined, dir: string) =>
-  `${GITHUB}/${pkg === '@bek-ui/charts' ? 'charts' : 'react'}/src/components/${dir}`;
+  `${GITHUB}/${pkg?.startsWith('@bek-ui/') ? pkg.slice('@bek-ui/'.length) : 'react'}/src/components/${dir}`;
 
 /** Komponent sahifasi: jonli namuna · Figma spetsifikatsiyasi (prop'lar, tokenlar) · README. */
 export function CatalogDetailPage({ dir, onNavigate }: CatalogDetailPageProps) {

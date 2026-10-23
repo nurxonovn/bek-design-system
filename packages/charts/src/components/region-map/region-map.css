@@ -1,0 +1,180 @@
+/* Plot + legend — chart/gap (bek-chart ildizida). Xarita ramkasi markazda, geometriya cho'zilmaydi. */
+.bek-region-map__stage {
+  position: relative;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+}
+
+/* Sinf ranglari — dataviz/sequential (Choropleth 200–700, Hex 200 · 300 · 600 · 700). */
+.bek-region-map {
+  --bek-region-map-fill: var(--bek-dataviz-track);
+}
+
+.bek-region-map__l200 {
+  --bek-region-map-fill: var(--bek-dataviz-sequential-200);
+}
+
+.bek-region-map__l300 {
+  --bek-region-map-fill: var(--bek-dataviz-sequential-300);
+}
+
+.bek-region-map__l400 {
+  --bek-region-map-fill: var(--bek-dataviz-sequential-400);
+}
+
+.bek-region-map__l500 {
+  --bek-region-map-fill: var(--bek-dataviz-sequential-500);
+}
+
+.bek-region-map__l600 {
+  --bek-region-map-fill: var(--bek-dataviz-sequential-600);
+}
+
+.bek-region-map__l700 {
+  --bek-region-map-fill: var(--bek-dataviz-sequential-700);
+}
+
+/* Hudud: chegarasi surface/card · chart/grid/stroke (masshtabdan qat'i nazar 1 px). */
+path.bek-region-map__region {
+  fill: var(--bek-region-map-fill);
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-chart-grid-stroke);
+  vector-effect: non-scaling-stroke;
+}
+
+.bek-region-map__region {
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hex plitkasi — chegarasiz, kod Caption/S (rang darajaga qarab: text/primary yoki text/inverse). */
+.bek-region-map__tile {
+  fill: var(--bek-region-map-fill);
+  stroke: none;
+}
+
+.bek-region-map__code {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  pointer-events: none;
+}
+
+/* CMP-07: 600 / 700 plitkada kod text/inverse. */
+.bek-region-map__l600 .bek-region-map__code,
+.bek-region-map__l700 .bek-region-map__code {
+  fill: var(--bek-text-inverse);
+}
+
+/* Orol dengizi — dataviz/grid. */
+.bek-region-map__water {
+  fill: var(--bek-dataviz-grid);
+}
+
+/* Ma'lumot yo'q — dataviz/track ustida diagonal shtrix. */
+.bek-region-map__hatch-bg {
+  fill: var(--bek-dataviz-track);
+}
+
+.bek-region-map__hatch {
+  stroke: var(--bek-dataviz-label);
+  stroke-width: var(--bek-chart-grid-stroke);
+  opacity: 0.4;
+}
+
+/* Bubble — dataviz/categorical/01, qatlam shaffofligi 0,72, chegara surface/card. */
+.bek-region-map__bubble {
+  fill: var(--bek-dataviz-categorical-01);
+  fill-opacity: 0.72;
+  stroke: var(--bek-surface-card);
+  stroke-width: var(--bek-chart-grid-stroke);
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+}
+
+/* Hover — chart/line/stroke kontur; fokus — border/focus. */
+.bek-region-map__outline {
+  fill: none;
+  stroke: var(--bek-text-primary);
+  stroke-width: var(--bek-chart-line-stroke);
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.bek-region-map__outline--focus {
+  stroke: var(--bek-border-focus);
+}
+
+/* Tanlangan hudud rangini saqlaydi, qolganlari 0,4. */
+.bek-region-map--has-selection .bek-region-map__region:not(.bek-region-map__region--selected),
+.bek-region-map--has-selection .bek-region-map__bubble:not(.bek-region-map__bubble--selected) {
+  opacity: 0.4;
+}
+
+.bek-region-map--loading .bek-region-map__region {
+  cursor: default;
+}
+
+/* Value chip — surface/card, padding scale/2 × scale/8, radius chart/bar/radius, Caption/S · text/primary. */
+.bek-region-map__chip {
+  position: absolute;
+  padding: var(--bek-scale-2) var(--bek-scale-8);
+  border-radius: var(--bek-chart-bar-radius);
+  background: var(--bek-surface-card);
+  color: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+[dir='rtl'] .bek-region-map__chip {
+  transform: translate(50%, -50%);
+}
+
+.bek-region-map__tooltip {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Sinflangan shkala: Low · qadamlar (chart/legend/marker, radius chart/bar/radius) · High; oraliq scale/4. */
+.bek-region-map__scale {
+  display: flex;
+  align-items: center;
+  gap: var(--bek-scale-4);
+}
+
+.bek-region-map__step {
+  flex: none;
+  inline-size: var(--bek-chart-legend-marker);
+  block-size: var(--bek-chart-legend-marker);
+  border-radius: var(--bek-chart-bar-radius);
+  background: var(--bek-region-map-fill);
+}
+
+.bek-region-map__bound {
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.bek-region-map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-chart-legend-gap);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bek-region-map__region,
+  .bek-region-map__bubble {
+    transition: opacity var(--bek-motion-duration-xs) var(--bek-motion-easing-standard);
+  }
+}

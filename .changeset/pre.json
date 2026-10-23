@@ -4,19 +4,37 @@
   "initialVersions": {
     "@bek-ui/site": "0.0.0",
     "@bek-ui/templates": "0.0.0",
+    "@bek-ui/backgrounds": "1.0.0-beta.0",
     "@bek-ui/charts": "0.0.0",
     "@bek-ui/react": "0.0.0",
     "@bek-ui/tokens": "0.0.0"
   },
   "changesets": [
+    "backgrounds",
+    "charts-scroll-focus",
     "charts-w1",
     "charts-w2",
     "charts-w3",
+    "charts-w4-maps",
+    "charts-w4-misc",
+    "e2e-a11y-fixes",
     "figma-foundations",
     "figma-parity-skill",
     "figma-sections-next",
+    "floating-actions-vertical",
+    "inputs-new",
     "public-beta",
     "rsc-use-client-skeleton-fill",
-    "tokens-dataviz"
+    "search-field",
+    "search",
+    "selector-card-aria-disabled",
+    "selector-card",
+    "steps",
+    "sync-components",
+    "sync-inputs-v2",
+    "sync-specs",
+    "sync-tokens-field-height",
+    "tokens-dataviz",
+    "uploader-fac"
   ]
 }

@@ -1,0 +1,84 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Survey",
+      "id": "1303:47293",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Likert", "Net"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 264
+      },
+      "tokens": {
+        "color": [
+          "dataviz/axis",
+          "dataviz/diverging/0",
+          "dataviz/diverging/neg-1",
+          "dataviz/diverging/neg-3",
+          "dataviz/diverging/pos-1",
+          "dataviz/diverging/pos-3",
+          "dataviz/label",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Survey and Likert answers: diverging stacked bars centred on neutral — disagree grows left, agree right, so questions compare at a glance; Net shows agree − disagree per question. 2–12 questions, 3/5/7-point scales on dataviz/diverging. No text on colour (CMP-07) — net score sits outside the bar. React: <SurveyChart questions={[{ label, counts: number[] }]} scale={5} variant=\"likert | "
+    }
+  ],
+  "doc": {
+    "Chart/Survey": {
+      "tokens": [
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/axis",
+        "dataviz/diverging/0",
+        "dataviz/diverging/neg-1",
+        "dataviz/diverging/neg-3",
+        "dataviz/diverging/pos-1",
+        "dataviz/diverging/pos-3",
+        "dataviz/label",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Comparison\nBEK\nDesign System\nChart/Survey\nSurvey and Likert answers as diverging stacked bars centred on neutral; Net shows agree minus disagree per question. 2 variants.\nOverview\nWhat it is and when to reach for it.\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\nWhen to use\nCourse feedback, NPS-style and HR surveys with 3/5/7-point scales.\nCompare many questions at once — which one is weakest?\nNet for a compact ranking of questions.\nAnatomy\nNumbered layers of the default variant.\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\n1\nQuestion\nCaption/M · text/secondary\n2\nScale segments\ndiverging neg-3 · neg-1 · 0 · pos-1 · pos-3\n3\nCentre line\ndataviz/axis at neutral\n4\nNet score\nCaption/S outside the bar\n5\nLegend\nScale labels\nVariants\n2 variants · Variant = Likert | Net\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\nLikert\nFull distribution\nLessons are clear\n+62\nMentor support\n+48\nPace of the course\n+18\nPrice for value\n0\nWould recommend\n+71\n← Disagree\nAgree →\nNet agree (agree − disagree)\nNet disagree\nNet\nAgree − disagree\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll questions.\nHover segment\nTooltip: answer, count, %.\nSorted\nBy net score or agree share.\nFew answers\nn < 30 → note “low sample”.\nLoading\nSkeleton bars.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\nTablet · 834\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\nWeb · 1440\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nLessons are clear\nNet +62\nMentor support\nNet +48\nPace of the course\nNet +18\nPrice for value\nNet 0\nWould recommend\nNet +71\n← Disagree\nAgree →\nStrongly disagree\nDisagree\nNeutral\nAgree\nStrongly agree\nLikert\nLessons are clear\n+62\nMentor support\n+48\nPace of the course\n+18\nPrice for value\n0\nWould recommend\n+71\n← Disagree\nAgree →\nNet agree (agree − disagree)\nNet disagree\nNet\nUs"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-surface-card",
+      "reason": "Figma set o'ramasi (specimen) foni — komponentning o'zi emas; kodda chart ota kartochkada (ChartCard) turadi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend yozuvi Caption/L — ichki ChartLegend/LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Square)."
+    }
+  ]
+}

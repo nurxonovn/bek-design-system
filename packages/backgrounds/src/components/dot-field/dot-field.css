@@ -1,0 +1,15 @@
+/* Dot field (Figma 2.6 Backgrounds). Canvas ranglarni shu custom property'lardan o'qiydi. */
+.bek-dot-field {
+  --bek-dot-field-base: var(--bek-bg-base);
+  --bek-dot-field-dot: var(--bek-text-disabled);
+  --bek-dot-field-hot: var(--bek-accent-default);
+  --bek-dot-field-glow: var(--bek-accent-default);
+  --bek-dot-field-glow-opacity: 0.14;
+  background: var(--bek-dot-field-base);
+}
+
+.bek-dot-field--brand {
+  --bek-dot-field-dot: var(--bek-gradient-brand-start);
+  --bek-dot-field-hot: var(--bek-gradient-brand-end);
+  --bek-dot-field-glow: var(--bek-gradient-brand-start);
+}
