@@ -119,6 +119,7 @@ import {
   Truck,
 } from 'lucide-react';
 import { chartDemos } from './charts';
+import { backgroundDemos } from './backgrounds';
 
 // Jonli namunalar — har komponent papkasi (dir) uchun bitta demo. README'dagi misollar asosida.
 // Yangi komponent qo'shilganda shu ro'yxatga demo qo'shing; bo'lmasa katalog "Namuna tez orada" ko'rsatadi.
@@ -149,6 +150,8 @@ const Photo = ({ label = 'Rasm' }: { label?: string }) => (
 
 export const demos: Record<string, ComponentType> = {
   ...chartDemos,
+  // @bek-ui/backgrounds — o'yin maydonchalari (ControlGroup + ScrubField / SwitchField / Select).
+  ...backgroundDemos,
   accordion: () => (
     <Col>
       <Accordion>

@@ -36,6 +36,8 @@ export interface GeneratedChartProps extends Omit<HTMLAttributes<HTMLElement>, '
   onRetry?: () => void;
   /** Sarlavha darajasi — sahifa tuzilmasiga mos (standart h3). */
   headingLevel?: 2 | 3 | 4 | 5 | 6;
+  /** Karta nomi oldidagi prefiks — "AI-generated chart: <title>" (Figma Spec Accessibility). */
+  aiLabel?: string;
   /** Chart sloti — istalgan `@bek-ui/charts` chart (odatda `ChartContainer` ichida). */
   children?: ReactNode;
 }
@@ -62,12 +64,14 @@ export function GeneratedChart({
   errorDescription = 'Check the data source and try again.',
   onRetry,
   headingLevel = 3,
+  aiLabel = 'AI-generated chart:',
   children,
   className,
   ...rest
 }: GeneratedChartProps) {
   const Heading = `h${headingLevel}` as const;
   const titleId = useId();
+  const prefixId = useId();
   const generating = state === 'generating';
   const hasActions = onShowTable || onShowCode || onSave || actions != null;
 
@@ -75,9 +79,12 @@ export function GeneratedChart({
     <section
       {...rest}
       className={cx('bek-generated-chart', `bek-generated-chart--${state}`, className)}
-      aria-labelledby={titleId}
+      aria-labelledby={`${prefixId} ${titleId}`}
       aria-busy={generating || undefined}
     >
+      <span id={prefixId} hidden>
+        {aiLabel}
+      </span>
       <header className="bek-generated-chart__header">
         <span className="bek-generated-chart__status">
           {generating ? (

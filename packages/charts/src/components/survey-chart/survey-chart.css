@@ -1,0 +1,41 @@
+/* Savol — Caption/M · text/secondary; net — Caption/S · text/primary (ustundan tashqarida, CMP-07). */
+.bek-survey-chart__question {
+  fill: var(--bek-text-secondary);
+  font-size: var(--bek-type-caption-md-size);
+  letter-spacing: var(--bek-type-caption-md-tracking);
+  font-weight: var(--bek-weight-regular);
+}
+
+.bek-survey-chart__value {
+  fill: var(--bek-text-primary);
+  font-size: var(--bek-type-caption-sm-size);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Markaz chizig'i — neytral o'rtasida, dataviz/axis · chart/grid/stroke. */
+.bek-survey-chart__zero {
+  stroke: var(--bek-dataviz-axis);
+  stroke-width: var(--bek-chart-grid-stroke);
+  shape-rendering: crispEdges;
+}
+
+/* Hover — boshqa segmentlar 40%; legend bilan ajratilgan javob — qolganlari 25%. */
+.bek-survey-chart svg:hover .bek-survey-chart__segment:not(:hover) {
+  opacity: 0.4;
+}
+
+.bek-survey-chart--isolated .bek-survey-chart__segment:not(.bek-survey-chart__segment--active) {
+  opacity: 0.25;
+}
+
+/* Kam javob izohi — Caption/S · dataviz/label. */
+.bek-survey-chart__note {
+  margin: 0;
+  color: var(--bek-dataviz-label);
+  font-size: var(--bek-type-caption-sm-size);
+  line-height: var(--bek-type-caption-sm-line-height);
+  letter-spacing: var(--bek-type-caption-sm-tracking);
+  font-weight: var(--bek-weight-medium);
+}

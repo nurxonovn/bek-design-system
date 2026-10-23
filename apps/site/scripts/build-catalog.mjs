@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Komponentlar katalogi: packages/{react,charts}/src/components/*/{README.md, figma.json, index.ts} →
+// Komponentlar katalogi: packages/{react,charts,backgrounds}/src/components/*/{README.md, figma.json, index.ts} →
 // src/app/data/catalog.generated.json. Sayt shu fayldan Figma sahifasi, prop'lar, tokenlar va README'ni ko'rsatadi.
 // `pnpm --filter @bek-ui/site catalog` (dev/build oldidan avtomatik ishlaydi).
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -10,6 +10,7 @@ const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PACKAGES = [
   ['@bek-ui/react', join(SITE, '../../packages/react/src/components')],
   ['@bek-ui/charts', join(SITE, '../../packages/charts/src/components')],
+  ['@bek-ui/backgrounds', join(SITE, '../../packages/backgrounds/src/components')],
 ];
 const TOKENS = join(SITE, '../../packages/tokens/dist/tokens.json');
 const OUT = join(SITE, 'src/app/data/catalog.generated.json');

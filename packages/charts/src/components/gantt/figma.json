@@ -1,0 +1,87 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Gantt",
+      "id": "1305:47319",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Default", "Progress"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/categorical/03",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/target",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/M", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "radius/surface/md",
+          "scale/2",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Project schedule: one row per task, bar = start → end on a week scale, colour = team (categorical); diamond = milestone, dashed dataviz/target line = today. Progress shows the planned bar at layer opacity 0.28 with the done part solid and % outside the bar (no text on colour). 3–20 tasks; group by phase or team. React: <Gantt tasks={[{ name, team, start, end, progress }]} milestones={[{ nam"
+    }
+  ],
+  "doc": {
+    "Chart/Gantt": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/categorical/03",
+        "dataviz/grid",
+        "dataviz/label",
+        "dataviz/negative",
+        "dataviz/target",
+        "scale/2",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary",
+        "text/secondary"
+      ],
+      "text": "4.18 Chart · Flow\nBEK\nDesign System\nChart/Gantt\nProject schedule: bars from start to end on a week scale, colour by team, milestones and a today line; Progress shows done vs. planned. 2 variants.\nOverview\nWhat it is and when to reach for it.\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nWhen to use\nRoadmaps, course launches, release plans — 3–20 tasks over weeks or months.\nShow overlaps and the critical path between teams.\nProgress for status meetings.\nAnatomy\nNumbered layers of the default variant.\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\n1\nTask label\nCaption/M · text/secondary\n2\nBar\ncategorical by team, radius chart/bar/radius\n3\nPlanned / done\nLayer opacity 0.28 / solid\n4\nMilestone\nDiamond · dataviz/target\n5\nToday\nDashed dataviz/target + chip\n6\nTime axis\nMonths · grid lines\nVariants\n2 variants · Variant = Default | Progress\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nDefault\nSchedule\nOct\nNov\nDec\nJan\nResearch\n100%\nWireframes\n100%\nUI kit\n70%\nBackend API\n55%\nFrontend\n40%\nQA & launch\n0%\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nProgress\nDone vs. planned\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nDefault\nAll tasks.\nHover task\nTooltip: dates, owner, progress, dependencies.\nOverdue\nEnd before today and < 100% → dataviz/negative outline.\nCollapsed group\nPhase row summarises its tasks.\nLoading\nSkeleton rows.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nTablet · 834\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nWeb · 1440\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\nOct\nNov\nDec\nJan\nResearch\nWireframes\nUI kit\nBackend API\nFrontend\nQA & launch\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nDefault\nOct\nNov\nDec\nJan\nResearch\n100%\nWireframes\n100%\nUI kit\n70%\nBackend API\n55%\nFrontend\n40%\nQA & launch\n0%\nToday · 4 Dec\nDesign\nEngineering\nQA\nToday · milestone\nProgress\nUsage\nRules that keep the chart honest and readable.\nSort by start date or group by phase/team.\nOne colour per team, explained in the legend.\nProgress % outside the bar (no text on colour).\nShow today; without it a schedule cannot be read.\nTimeline vs. Gantt\nUse Diagram/Timeline item for a sequence of events; Gantt when durations and overlaps matter.\nSpec\nLibrary-neutral cont"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-dataviz-negative",
+      "reason": "Overdue holati (doc States: «End before today and < 100% → dataviz/negative outline») — Figma variantlarida chizilmagan, faqat doc'da; dizayner Overdue namunasini qo'shishi kerak."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend yozuvlari — nested ChartLegend / LegendItem (legend-item.css) Caption/L bilan chizadi."
+    }
+  ]
+}

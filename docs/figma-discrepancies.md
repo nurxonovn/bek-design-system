@@ -218,6 +218,53 @@ Umumiy:
   3.12 Search field instance'iga almashtirish kerak (App bar'da shunday).
 - 9.1 Slots & Helpers sahifasida `📘` doc freymi yo'q.
 
+### A13. 4.18 Chart / 4.19 Diagram — 4-to'lqin (2026-10-22)
+
+- Yangi set'lar tavsiflarida HTML entity (`&amp;lt;`, `&quot;`); doc'larda «Component» matni `&lt;…&gt;` bilan.
+- **Map:** hex plitka kodlari ISO 3166-2:UZ ga mos emas (NV/NW, TV/TO, TS/TK, NM/NG, XR/XO, BX/BU, SM/SA, JZ/JI,
+  SR/SI, FR/FA, QQ/QA, SX/SU) — kodda id ISO, yorliq Figma'dagidek; birxillashtirish kerak. Spec'dagi
+  `tashkent-city` slug'i svg-maps'da yo'q — ISO id'larga o'tkazish kerak. Bubble chip "Toshkent · 3,0 mln" —
+  viloyatmi, shaharmi noaniq. Hover konturi va "No data" shtrixi rangi tokenda ko'rsatilmagan.
+- **Race:** doc'dagi `chart/motion` tokeni Variables'da yo'q (kodda `motion/duration/chart-enter`); Pause va
+  Replay ikonkalari BEK Icons'da yo'q.
+- **Draw the line:** Skip va Reveal tugmalari States jadvalida bor, variantlarda chizilmagan.
+- **Survey:** faqat 5 balli palitra; 3 va 7 balli shkala ranglari va Net variantida 0 chizig'i qoidasi yo'q.
+  Survey va Pictogram Loading holati kodda hali yo'q.
+- **Data explorer:** doc tokens jadvalida Sparkline `scale/128 × chart/sparkline/height`, anatomiya va instance
+  80×20 — moslab tokenga bog'lash kerak. Hover row holati faqat doc'da.
+- **Gantt:** Overdue, Hover task, Collapsed group holatlari faqat doc jadvalida; "Today" chipi radiusi 4 tokensiz.
+- **Number ticker:** 300 ms roll uchun motion tokeni yo'q; ichki Chart/Delta `nested` ga tushmaydi.
+- **Mind map:** shox/barg nuqtalari 10×10 — `chart/point/size` (8) ga bog'lanmagan.
+- Xarita ma'lumoti: svg-maps (CC BY 4.0) — Figma'dagi soddalashtirilgan nusxa kodga ko'chirildi,
+  `packages/charts/LICENSE-ASSETS.md`.
+
+### A14. 2.6 Backgrounds (2026-10-22)
+
+- **Matrix rain:** Tone variantlari tartibi `Classic, Neutral, Brand` — standart instance Classic chiqadi, doc'da
+  standart Neutral; tartibni Neutral · Brand · Classic ga keltirish kerak. Props jadvalida `opacity` standarti 64,
+  Intensity Default .7 — birlashtirish kerak. Brand'da nur ellipsi `gradient/brand-start` (.2), jadvaldagi «Pointer»
+  qatori `accent/active` — «Pointer zone» va «Pointer glow» ni ajratish kerak. Density doc'da .22 · .38 · .55,
+  variantlarda belgili kataklar .32 · .48 · .67 (kodda preset × 1.25).
+- **Grain gradient:** Noise rangi tokenga bog'lanmaydi (kodda `static/dark`, `accepted`); doc'da "SVG
+  feTurbulence", kodda canvas shovqin plitkasi — matnni yangilash kerak.
+- **Aurora:** doc "tasmalar yuqori 60 % da", Band 3 markazi ≈ 81 % — doc ≠ komponent; `position: center` va
+  `bands` 4–5 Figma'da yo'q (kodda kengaytma).
+- Doc freymlaridagi bezak belgilar qatorlari oddiy TEXT — extractor doc matnini ifloslantiradi; `_Rain` kabi
+  guruhga olish kerak.
+
+### A15. 8.5 Finance (Mobile) shabloni (2026-10-22)
+
+- Kartalar (`surface/card`, r16) Card (4.3) instance emas — Card radiusi `surface/md` 12; yo Card ishlatilsin, yo
+  radius kelishilsin. Credit score «Header» freymi ajratilgan — App bar (6.5) instance'i (leading Avatar) bo'lishi
+  kerak. «3D slot» — vaqtinchalik `_Icon`.
+- Ma'lumot nomuvofiqligi: Budget'da Progress `Value=62%`, Badge 44% (4 605 000 / 10 354 000); Credit score'da 62%,
+  (782−300)/550 ≈ 88%. Kodda haqiqiy qiymat.
+- Matn sig'maydi: Budget «Amount» freymi 182 px fixed; Split promo xizmat kartasi 180 fixed, Description `FILL` —
+  kesiladi; HUG bo'lishi kerak.
+- List item (4.4) Size=M + description: instance 56 fixed, kontent 74 — min 56 + HUG bo'lishi kerak (kod shunday).
+- Bottom nav: tanlanmagan «Courses» ikonkasi ham Solid — 6.7 doc'ga ko'ra Stroke bo'lishi kerak.
+- Avatar: Figma'dagi erkin `Initials` («UX») — kodda harflar `name` dan olinadi.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

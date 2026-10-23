@@ -1,0 +1,53 @@
+{
+  "page": "2.6 Backgrounds",
+  "components": [
+    {
+      "name": "Dot field",
+      "id": "1343:6994",
+      "page": "2.6 Backgrounds",
+      "pageId": "1342:67",
+      "props": {
+        "Show pointer": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Tone": ["Neutral", "Brand"],
+        "Intensity": ["Subtle", "Default", "Intense"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 720,
+        "h": 405
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "bg/base",
+          "gradient/brand-end",
+          "gradient/brand-start",
+          "text/disabled"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "Dot field — animated dot grid (2.6 Backgrounds). Dots swell and light up around the pointer, a ripple ring travels outward on click. Decorative only (BGR-01). Tone Neutral (text/disabled + accent) / Brand (gradient/brand-*). Intensity = layer opacity + dot size (1.5 · 2 · 2.5). Static sibling: 2.5 Pattern · Dots. React: <DotField tone intensity gap dotSize speed pointerHighlight radius rippleOnCli"
+    }
+  ],
+  "doc": {
+    "Dot field": {
+      "tokens": [
+        "accent/default",
+        "bg/base",
+        "gradient/brand-end",
+        "gradient/brand-start",
+        "text/disabled"
+      ],
+      "text": "ASSETS · BACKGROUNDS\nBEK\nDesign System\n2.6 Backgrounds · Dot field\nA quiet dot grid that swells and lights up around the pointer; a ripple ring travels outward on click. The animated sibling of 2.5 Pattern · Dots.\nOverview\nTwo tones × three intensities (6 variants). Show pointer toggles the glow.\nNeutral\ntext/disabled dots, accent/default near the pointer.\nBrand\ngradient/brand-start dots, gradient/brand-end near the pointer.\nAnatomy\nBase\nbg/base\nDots\n20 px grid; dot size = intensity (1.5 · 2 · 2.5)\nPointer zone\nDots grow up to +4 px and take the hot colour within 150 px\nRipple ring\nOn click a ring of brighter dots moves outward\nPointer glow\nBlurred ellipse, Show pointer\nIntensity\nPreset strength. In code every value is a prop; presets are starting points.\nSubtle\nopacity .45 · dot 1.5 — behind text.\nDefault\nopacity .7 · dot 2 — hero.\nIntense\nopacity 1 · dot 2.5 — empty states, loading.\nUsage\nRules BGR-01 … BGR-06 (see Matrix rain) apply to every background on this page.\n• The calmest pointer effect — safe for product screens like empty states and onboarding.\n• Use gap 16–24 px; smaller gaps get busy on mobile.\n• On touch devices the pointer zone follows the last tap and fades.\nDevices\nInstances resize freely — content scales, edges clip. Keep text in a calm area (BGR-02).\nMobile · 390\nLearn design with BEK\nCourses, practice and a career path in one place.\nAuth / onboarding hero, Subtle.\nTablet · 834\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero, Subtle or Default.\nWeb · 1440\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero / cover, Default.\nDark mode\nDots and glow switch with the theme.\nLight\nDark\nProps\nFigma variants cover presets; code props control everything.\nProp\nWhere\nValues\nDefault\nTone\nVariant\nNeutral · Brand\nNeutral\nIntensity\nVariant\nSubtle · Default · Intense\nDefault\nShow pointer\nBoolean\ntrue · false\ntrue\ngap · dotSize\ncode\npx\n20 · 2\nspeed\ncode\n×\n1\npointerHighlight · radius\ncode\nbool · px\ntrue · 150\nrippleOnClick\ncode\nbool\ntrue\nTokens\nRole\nToken\nTone\nCSS\nBase\nbg/base\nboth\n--bek-bg-base\nDot\ntext/disabled · gradient/brand-start\nN · B\n--bek-…\nHot dot\naccent/default · gradient/brand-end\nN · B\n--bek-…\nGlow\naccent/default · gradient/brand-start\nN · B\n--bek-…\nDo / Don’t\nDo\nUse behind empty states and onboarding illustrations.\nDon’t\nDon’t stack Dot field with another animated background (BGR-05)."
+    }
+  },
+  "accepted": []
+}

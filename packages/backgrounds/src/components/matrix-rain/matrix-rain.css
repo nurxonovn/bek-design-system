@@ -1,0 +1,36 @@
+/* Matrix rain (Figma 2.6 Backgrounds). Canvas ranglarni shu custom property'lardan o'qiydi (getComputedStyle),
+   shuning uchun Light/Dark va ton almashinuvi tokenlar orqali ishlaydi. Belgilar — Code/S (mono 12/16). */
+.bek-matrix-rain {
+  --bek-matrix-rain-base: var(--bek-bg-base);
+  --bek-matrix-rain-head: var(--bek-text-primary);
+  --bek-matrix-rain-trail: var(--bek-text-secondary);
+  --bek-matrix-rain-noise: var(--bek-text-disabled);
+  --bek-matrix-rain-highlight: var(--bek-accent-default);
+  --bek-matrix-rain-glow: var(--bek-accent-default);
+  --bek-matrix-rain-glow-opacity: 0.12;
+  font-family: var(--bek-family-mono);
+  font-size: var(--bek-type-code-sm-size);
+  line-height: var(--bek-type-code-sm-line-height);
+  letter-spacing: var(--bek-type-code-sm-tracking);
+  background: var(--bek-matrix-rain-base);
+}
+
+.bek-matrix-rain--brand {
+  --bek-matrix-rain-head: var(--bek-accent-default);
+  --bek-matrix-rain-trail: var(--bek-gradient-brand-end);
+  --bek-matrix-rain-noise: var(--bek-gradient-brand-start);
+  --bek-matrix-rain-highlight: var(--bek-accent-active);
+  --bek-matrix-rain-glow: var(--bek-gradient-brand-start);
+  --bek-matrix-rain-glow-opacity: 0.2;
+}
+
+/* Classic — qora + yashil, Light va Dark'da bir xil (effect/matrix/*). */
+.bek-matrix-rain--classic {
+  --bek-matrix-rain-base: var(--bek-effect-matrix-bg);
+  --bek-matrix-rain-head: var(--bek-effect-matrix-head);
+  --bek-matrix-rain-trail: var(--bek-effect-matrix-trail);
+  --bek-matrix-rain-noise: var(--bek-effect-matrix-fade);
+  --bek-matrix-rain-highlight: var(--bek-effect-matrix-head);
+  --bek-matrix-rain-glow: var(--bek-effect-matrix-head);
+  --bek-matrix-rain-glow-opacity: 0.18;
+}

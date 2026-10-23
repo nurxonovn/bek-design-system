@@ -4,6 +4,7 @@
   "initialVersions": {
     "@bek-ui/site": "0.0.0",
     "@bek-ui/templates": "0.0.0",
+    "@bek-ui/backgrounds": "1.0.0-beta.0",
     "@bek-ui/charts": "0.0.0",
     "@bek-ui/react": "0.0.0",
     "@bek-ui/tokens": "0.0.0"

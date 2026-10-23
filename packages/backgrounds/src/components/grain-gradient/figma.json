@@ -1,0 +1,60 @@
+{
+  "page": "2.6 Backgrounds",
+  "components": [
+    {
+      "name": "Grain gradient",
+      "id": "1343:7044",
+      "page": "2.6 Backgrounds",
+      "pageId": "1342:67",
+      "props": {
+        "Tone": ["Neutral", "Brand"],
+        "Intensity": ["Subtle", "Default", "Intense"]
+      },
+      "variants": 6,
+      "size": {
+        "w": 720,
+        "h": 405
+      },
+      "tokens": {
+        "color": [
+          "accent/default",
+          "accent/soft",
+          "bg/base",
+          "brand/logo-solid",
+          "fill/soft-pressed",
+          "fill/strong",
+          "gradient/brand-end",
+          "gradient/brand-start"
+        ],
+        "text": [],
+        "effect": [],
+        "dimension": []
+      },
+      "sizes": [1, 5],
+      "rawColors": [],
+      "nested": [],
+      "description": "Grain gradient — slowly drifting soft colour blobs under a fine grain (2.6 Backgrounds). Decorative only (BGR-01). Tone Neutral (fill/soft-* + accent/soft) / Brand (gradient/brand-* + accent). Intensity = blob opacity (.35 · .6 · .9) + grain amount. Grain is a Figma Noise effect (colour not bindable — exception noted in 2.6 doc). React: <GrainGradient tone intensity speed grain blobs />."
+    }
+  ],
+  "doc": {
+    "Grain gradient": {
+      "tokens": [
+        "accent/default",
+        "accent/soft",
+        "bg/base",
+        "fill/soft-pressed",
+        "fill/strong",
+        "gradient/brand-end",
+        "gradient/brand-start"
+      ],
+      "text": "ASSETS · BACKGROUNDS\nBEK\nDesign System\n2.6 Backgrounds · Grain gradient\nSoft colour blobs drifting slowly under a fine grain. No pointer effect — the calmest background for long reading pages and covers.\nOverview\nTwo tones × three intensities (6 variants).\nNeutral\nfill/soft-pressed, accent/soft, fill/strong and a touch of accent/default.\nBrand\ngradient/brand-start, gradient/brand-end, accent/default, brand/logo-solid — the BEK violet → blue.\nAnatomy\nBase\nbg/base\nBlobs\nFour blurred ellipses (blur 110), colours from tokens\nDrift\nIn code blobs move on slow loops (20–40 s)\nGrain\nFigma Noise effect (multitone, size 1.2); in code an SVG feTurbulence overlay\nIntensity\nPreset strength. In code every value is a prop; presets are starting points.\nSubtle\nblob opacity .35 · grain .18.\nDefault\nblob opacity .6 · grain .28.\nIntense\nblob opacity .9 · grain .40 — covers only.\nUsage\nRules BGR-01 … BGR-06 (see Matrix rain) apply to every background on this page.\n• Good behind large headlines: no high-frequency detail competes with text.\n• Grain hides banding on wide gradients — keep it on.\n• Exception: the Noise effect colour cannot be bound to a token in Figma (fixed black, opacity per intensity).\nDevices\nInstances resize freely — content scales, edges clip. Keep text in a calm area (BGR-02).\nMobile · 390\nLearn design with BEK\nCourses, practice and a career path in one place.\nAuth / onboarding hero, Subtle.\nTablet · 834\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero, Subtle or Default.\nWeb · 1440\nLearn design with BEK\nCourses, practice and a career path in one place.\nLanding hero / cover, Default.\nDark mode\nBlob colours switch with the theme; grain stays the same.\nLight\nDark\nProps\nFigma variants cover presets; code props control everything.\nProp\nWhere\nValues\nDefault\nTone\nVariant\nNeutral · Brand\nNeutral\nIntensity\nVariant\nSubtle · Default · Intense\nDefault\nspeed\ncode\n×\n1\ngrain\ncode\n0 – 1\n.28\nblobs\ncode\ntoken list\ntone preset\nTokens\nRole\nToken\nTone\nCSS\nBase\nbg/base\nboth\n--bek-bg-base\nBlob 1–4 (Neutral)\nfill/soft-pressed · accent/soft · fill/strong · accent/default\nN\n--bek-…\nBlob 1–4 (Brand)\ngradient/brand-start · gradient/brand-end · accent/default · brand/logo-solid\nB\n--bek-gradient-brand-*\nGrain\nNoise effect (not bindable)\nboth\n—\nDo / Don’t\nDo\nUse Brand on covers and promo heroes.\nDon’t\nDon’t use Intense behind body copy — blobs drop contrast (BGR-02)."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-extra",
+      "match": "--bek-static-dark",
+      "reason": "Donadorlik (grain) rangi: Figma'da Noise effekti rangi Variables'ga bog'lanmaydi (qat'iy qora — 2.6 doc'dagi istisno). Kodda tokensiz qora o'rniga doimiy `static/dark` tokeni ishlatildi. Figma'da: Noise rangini tokenga bog'lash imkoni bo'lsa `static/dark` ga bog'lang yoki doc'ning Tokens jadvalida Grain uchun kod tokenini (`--bek-static-dark`) ko'rsating."
+    }
+  ]
+}

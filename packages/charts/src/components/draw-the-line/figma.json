@@ -1,0 +1,84 @@
+{
+  "page": "4.18 Chart",
+  "components": [
+    {
+      "name": "Chart/Draw the line",
+      "id": "1301:47384",
+      "page": "4.18 Chart",
+      "pageId": "1201:63",
+      "props": {
+        "Variant": ["Draw", "Reveal"]
+      },
+      "variants": 2,
+      "size": {
+        "w": 480,
+        "h": 232
+      },
+      "tokens": {
+        "color": [
+          "dataviz/categorical/01",
+          "dataviz/categorical/02",
+          "dataviz/grid",
+          "dataviz/label",
+          "dataviz/track",
+          "surface/card",
+          "text/primary",
+          "text/secondary"
+        ],
+        "text": ["Caption/L", "Caption/S"],
+        "effect": [],
+        "dimension": [
+          "chart/bar/radius",
+          "chart/gap",
+          "chart/grid/stroke",
+          "chart/legend/gap",
+          "chart/line/stroke",
+          "radius/surface/md",
+          "scale/2",
+          "scale/200",
+          "scale/480",
+          "scale/8"
+        ]
+      },
+      "sizes": [1, 2, 4, 8, 12, 40, 48],
+      "rawColors": [],
+      "nested": [],
+      "description": "Interactive guess: the first part of the series is shown, the reader draws the rest in the shaded zone (dataviz/track), then the actual line is revealed with the gap as a chip. Builds intuition before the answer — for courses, reports and explainers. Pointer + keyboard drawing (arrow keys move the pen); a “Skip” action reveals without drawing. React: <DrawTheLine data={[{ x, y }]} revealFro"
+    }
+  ],
+  "doc": {
+    "Chart/Draw the line": {
+      "tokens": [
+        "chart/bar/radius",
+        "chart/gap",
+        "chart/grid/stroke",
+        "chart/legend/gap",
+        "chart/line/stroke",
+        "dataviz/categorical/01",
+        "dataviz/categorical/02",
+        "dataviz/grid",
+        "dataviz/label",
+        "dataviz/track",
+        "scale/2",
+        "scale/200",
+        "scale/480",
+        "scale/8",
+        "surface/card",
+        "text/primary"
+      ],
+      "text": "4.18 Chart · Trend\nBEK\nDesign System\nChart/Draw the line\nInteractive guess: the start of a series is shown, the reader draws the rest, then the actual line is revealed with the gap. 2 variants.\nOverview\nWhat it is and when to reach for it.\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\nWhen to use\nLessons and explainers — make the learner commit to a guess before the answer.\nReports where a surprising trend deserves attention.\nOnboarding quizzes about the product’s own data.\nAnatomy\nNumbered layers of the default variant.\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\n1\nKnown line\ndataviz/categorical/01\n2\nGuess zone\ndataviz/track, radius chart/bar/radius\n3\nYour guess\ndataviz/categorical/02, dashed\n4\nPen\nPoint at the end of the guess\n5\nReveal chip\nActual vs. you · surface/card\nVariants\n2 variants · Variant = Draw | Reveal\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\nDraw\nDrawing in progress\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nActual 52k · you: 40k\nActual\nYour guess\nReveal\nAnswer shown\nSizes\nWidth follows the container; device-dependent values come from Dimension tokens (Mobile / Tablet / Web).\nToken\nMobile\nTablet\nWeb\nscale/480\n480 px\n480 px\n480 px\nscale/200\n200 px\n200 px\n200 px\nchart/gap\n12 px\n16 px\n16 px\nchart/grid/stroke\n1 px\n1 px\n1 px\nchart/line/stroke\n2 px\n2 px\n2 px\nStates\nInteractive and data states.\nState\nBehaviour\nReady\nHint chip “Draw your guess →”.\nDrawing\nPen follows pointer, snaps to x steps.\nComplete\nReveal button enabled.\nRevealed\nActual line animates in, gap chip.\nSkipped\nReveal without guess.\nDevices\nSame instance in each Dimension + Typography mode — heights, paddings and type scale switch automatically.\nMobile · 390\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\nTablet · 834\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\nWeb · 1440\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\nDark mode\nEvery token flips; contrast stays above 3:1 for marks and 4.5:1 for text.\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nDraw your guess →\nActual\nYour guess\nDraw\n0\n20\n40\n60\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\nActual 52k · you: 40k\nActual\nYour guess\nReveal\nUsage\nRules that keep the chart honest and readable.\nShow at least 3 known points before the guess zone.\nSnap the guess to the x steps of the data.\nAlways allow “Skip” — guessing must be optional.\nKeep the y scale fixed; never rescale after the guess.\nWhy it works\nCommitting to a guess makes the real answer memorable — ideal for BEK Academy lessons.\nSpec\nLibrary-neutral contract — maps to Recharts, ECharts, D3, Visx, SwiftUI Charts or Compose.\nField\nDefinition\nPurpose\nInteractive guess: the start of a series is shown, the reader draws the rest, then the actual line is revealed with the gap.\nEncoding\nx = time, y = value; known part solid, guess dashed (second colour), actual revealed solid; guess zone = track background.\nInteraction\nPointer/touch draw; keyboard: ←/→ choose x, ↑/↓ set y, Enter reveals; Skip button.\nAccessibility\nKeybo"
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Legend yozuvi rangi — ichki ChartLegend/LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Line / Dashed)."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Legend yozuvi Caption/L — ichki ChartLegend/LegendItem (legend-item.css) beradi (Figma: Legend · Chart/Legend item · Line / Dashed)."
+    }
+  ]
+}
