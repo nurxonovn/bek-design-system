@@ -1,5 +1,11 @@
 # @bek-ui/tokens
 
+## 1.0.0-beta.1
+
+### Minor Changes
+
+- 6b36ba0: Figma Variables qayta eksport qilindi: yangi `--bek-field-height-{xs…2xl}` (32 · 36 · 44 · 56 · 64 · 72) va `--bek-effect-matrix-*` (2.6 Backgrounds). `--bek-control-height-2xl` 52 → 56, `--bek-control-height-3xl` 60 → 64 (field/lg · field/xl bilan juft). `brand/3d-*` palitra o'zgaruvchilari yashirildi (`palette.css` dan chiqdi). Figma paint styles: Gradient/Brand, Gradient/Radial/Brand, Gradient/Mono/\*.
+
 ## 1.0.0-beta.0
 
 ### Major Changes
