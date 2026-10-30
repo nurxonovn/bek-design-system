@@ -1,6 +1,6 @@
 {
   "name": "@bek-ui/backgrounds",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "BEK Design System animated backgrounds — Matrix rain, Dot field, Grain gradient, Aurora (canvas React components on @bek-ui/tokens)",
   "license": "MIT",
   "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",

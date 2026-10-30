@@ -1,6 +1,6 @@
 {
   "name": "@bek-ui/tokens",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "BEK Design System tokens — CSS custom properties, JSON, typography and materials generated from Figma Variables",
   "license": "MIT",
   "author": "Nurbek Nurxonov (https://github.com/nurxonovn)",

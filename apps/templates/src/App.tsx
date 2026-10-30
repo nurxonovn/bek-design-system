@@ -5,12 +5,14 @@ import { Dashboard } from './pages/Dashboard';
 import { Ecommerce } from './pages/Ecommerce';
 import { Landing } from './pages/Landing';
 import { AiWorkspace } from './pages/AiWorkspace';
+import { Finance } from './pages/Finance';
 
 const PAGES = {
   dashboard: { label: '8.1 Dashboard', Component: Dashboard },
   ecommerce: { label: '8.2 E-commerce', Component: Ecommerce },
   landing: { label: '8.3 Landing', Component: Landing },
   workspace: { label: '8.4 AI Workspace', Component: AiWorkspace },
+  finance: { label: '8.5 Finance', Component: Finance },
 } as const;
 
 type PageKey = keyof typeof PAGES;

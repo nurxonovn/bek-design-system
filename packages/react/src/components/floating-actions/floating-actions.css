@@ -52,6 +52,11 @@
   align-items: stretch;
 }
 
+/* Ustunda flex-basis 0 tugmani XL (44) balandligidan siqib qo'yadi — vertikalda o'z balandligida. */
+.bek-floating-actions--vertical .bek-floating-actions__button {
+  flex: none;
+}
+
 .bek-floating-actions--summary .bek-floating-actions__actions {
   gap: var(--bek-scale-16);
 }

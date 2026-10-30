@@ -6,7 +6,7 @@ pnpm 10 + Turborepo. Javoblar va hujjatlar **o'zbekcha**, kod identifikatorlari 
 ## Tuzilma
 
 - `packages/tokens` — `@bek-ui/tokens`: Figma Variables (`figma/*.json`) → `dist/tokens.css`, `typography.css`, `materials.css`, `tokens.json`.
-- `packages/react` — `@bek-ui/react`: 58 komponent, `src/components/<kebab>/` (tsx · css · index · README · figma.json), testlar `test/*.test.mjs`, `scripts/check-figma.mjs`.
+- `packages/react` — `@bek-ui/react`: 69 komponent, `src/components/<kebab>/` (tsx · css · index · README · figma.json), testlar `test/*.test.mjs`, `scripts/check-figma.mjs`.
 - `apps/site` — hujjat sayti (e2e: `apps/site/e2e/*.spec.ts`, Playwright 1.56.1 + axe; asosli istisnolar `ACCEPTED`da) (Vite; katalog `scripts/build-catalog.mjs` bilan README + figma.json dan). GitHub Pages: `.github/workflows/deploy-site.yml`.
 - `apps/templates` — Figma 8.x namuna ekranlar.
 - `.claude/skills/figma-component` — Figma ↔ kod skili (extractor, konventsiyalar, foundations, tekshiruv qoidalari).
@@ -20,7 +20,7 @@ pnpm check:figma                 # Figma ↔ kod (CI: faqat xatolar)
 pnpm check:figma -- --strict     # ogohlantirish ham xato
 pnpm --filter @bek-ui/react check:figma <nom> --strict
 pnpm --filter @bek-ui/site dev      # sayt
-pnpm build && pnpm --filter @bek-ui/site test:e2e   # brauzer: 58 sahifa, axe WCAG 2.2 AA, klaviatura
+pnpm build && pnpm --filter @bek-ui/site test:e2e   # brauzer: 142 sahifa (react · charts · backgrounds), axe WCAG 2.2 AA, klaviatura
 ```
 
 ## Ish oqimi (ECC)
