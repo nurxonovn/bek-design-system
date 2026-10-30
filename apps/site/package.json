@@ -12,6 +12,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@bek-ui/backgrounds": "workspace:*",
     "@bek-ui/charts": "workspace:*",
     "@bek-ui/react": "workspace:*",
     "@bek-ui/tokens": "workspace:*",

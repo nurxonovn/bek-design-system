@@ -8,4 +8,5 @@
 @import '@bek-ui/tokens/materials.css';
 @import '@bek-ui/react/styles.css';
 @import '@bek-ui/charts/styles.css';
+@import '@bek-ui/backgrounds/styles.css';
 @import './bek-bridge.css';

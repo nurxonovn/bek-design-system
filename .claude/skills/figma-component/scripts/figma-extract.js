@@ -70,11 +70,20 @@ async function collect(root, pageName) {
         return;
       }
     }
-    for (const key of ['fills', 'strokes']) {
-      const paints = n[key];
+    // Matn bo'laklari turli rangda bo'lsa `fills` — figma.mixed: ranglar segmentlardan olinadi.
+    const fillSets = [n.fills, n.strokes];
+    if (n.type === 'TEXT' && !Array.isArray(n.fills))
+      for (const seg of n.getStyledTextSegments(['fills'])) fillSets.push(seg.fills);
+    for (const paints of fillSets) {
       if (!Array.isArray(paints)) continue;
       for (const p of paints) {
         if (p.visible === false) continue;
+        // Gradient: har stop o'z rang tokeniga bog'langan bo'lishi mumkin (2.6 Aurora).
+        for (const s of p.gradientStops || []) {
+          const sb = s.boundVariables && s.boundVariables.color;
+          const nm = sb ? await varName(sb.id) : null;
+          if (nm) color.add(nm);
+        }
         const b = p.boundVariables && p.boundVariables.color;
         if (b) {
           const nm = await varName(b.id);
@@ -162,7 +171,14 @@ for (const id of INPUT.sets) {
     variants: node.type === 'COMPONENT_SET' ? node.children.length : 1,
     size: { w: Math.round(first.width), h: Math.round(first.height) },
     ...(await collect(node, pageName)),
-    description: (node.description || '').slice(0, 400),
+    // Figma tavsifida `<`, `>` HTML entity sifatida saqlanadi (`&lt;MatrixRain /&gt;`).
+    description: (node.description || '')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&amp;/g, '&')
+      .slice(0, 400),
   });
   // Oila sahifasi (4.18 Chart, 4.19 Diagram): har set o'z `📘 <set nomi>` freymiga ega — doc shu freymdan,
   // kaliti set nomi. Oddiy sahifada — sahifadagi `📘` freym(lar), kaliti sahifa nomi.

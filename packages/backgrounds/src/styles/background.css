@@ -1,0 +1,11 @@
+/* Umumiy fon qatlami (Figma 2.6 BGR-01): bezak — konteynerni to'liq qoplaydi, bosishlarni o'tkazib yuboradi.
+   Ota element `position: relative` (yoki boshqa positioned) bo'lishi kerak; matn fon ustida, keyingi qatlamda. */
+.bek-background {
+  position: absolute;
+  inset: 0;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  pointer-events: none;
+  user-select: none;
+}
