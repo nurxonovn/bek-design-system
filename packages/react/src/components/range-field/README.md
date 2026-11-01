@@ -30,7 +30,7 @@ Figma: **3.20 Field groups** → Range field — bitta label ostida ikki Text fi
 | `Direction`     | `dir="rtl"`          | To · From tartibi avtomatik teskari                                                              |
 | From · To       | `from`, `to`         | `TextField` prop'lari (value, onChange, name, inputMode, prefix …); standart label "From" / "To" |
 
-O'lcham (`l`), variant (`filled`), `error` va `supportingText` guruhdan keladi — maydonlarga alohida bermang.
+O'lcham (`l`), variant (`filled`), `error` va `supportingText` guruhdan keladi — maydonlarga alohida bermang. Standart label'lar inglizcha ("From" / "To") — o'zbekcha interfeysda `from.label` / `to.label` bering. Guruh `disabled` ikkala maydonni o'chiradi.
 
 ## Qoidalar (Figma doc)
 
@@ -42,4 +42,4 @@ O'lcham (`l`), variant (`filled`), `error` va `supportingText` guruhdan keladi �
 
 ## A11y
 
-`<fieldset>` + yashirin `<legend>` — guruh nomi ("Narx, soʻm") har maydon bilan o'qiladi; har maydonning o'z label'i bor (From / To). Xabar `aria-describedby` bilan fieldset'ga bog'lanadi, error'da fieldset va ikkala input'da `aria-invalid`.
+`<fieldset>` + yashirin `<legend>` — guruh nomi ("Narx, soʻm") har maydon bilan o'qiladi; har maydonning o'z label'i bor (From / To). Umumiy xabar fieldset'ga ham, **har ikkala input**'ga ham `aria-describedby` bilan bog'lanadi — "To" maydoniga o'tganda ham xato sababi o'qiladi; error'da ikkala input'da `aria-invalid`.

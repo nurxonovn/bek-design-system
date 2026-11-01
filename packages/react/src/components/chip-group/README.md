@@ -12,7 +12,7 @@ Figma: **3.20 Field groups** → Chip group — bitta label ostida Filter chip'l
     { value: 'team', label: 'Jamoa' },
     { value: 'lifetime', label: 'Umrbod' },
   ]}
-  defaultValue={['monthly']}
+  defaultValue="monthly"
 />
 
 <ChipGroup
@@ -38,7 +38,7 @@ Figma: **3.20 Field groups** → Chip group — bitta label ostida Filter chip'l
 | `Direction`     | `dir="rtl"`                     | logical properties — chip'lar tartibi teskari                          |
 | Chips (nested)  | `options`, `selection`, `value` | har biri haqiqiy `Chip` (Filter, S); `disabled`, `count`, `icon`       |
 
-`selection`: `single` (standart — bittasi tanlanadi, tanlanganini bosish uni o'chirmaydi) · `multiple`. Boshqariladigan (`value` + `onValueChange`) yoki boshqarilmaydigan (`defaultValue`). `chipSize="m"` — faqat touch qatorlari kerak bo'lsa; Figma'da doim S.
+`selection`: `single` (standart) — qiymat `string | null`, bittasi tanlanadi, tanlanganini qayta bosish uni o'chirmaydi ("aynan bittasini tanlang" ekanini xabar matnida ayting, chip'lar `aria-pressed` tugmalar); `multiple` — qiymat `string[]`. Boshqariladigan (`value` + `onValueChange`) yoki boshqarilmaydigan (`defaultValue`). Guruh `disabled` — hamma chip'lar o'chiq ko'rinadi. Chip'lar forma `FormData`siga tushmaydi — qiymatni `onValueChange` orqali oling. `chipSize="m"` — faqat touch qatorlari kerak bo'lsa; Figma'da doim S.
 
 ## Qoidalar (Figma doc)
 

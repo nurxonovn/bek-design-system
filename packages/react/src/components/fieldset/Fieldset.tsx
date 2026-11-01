@@ -15,6 +15,8 @@ export interface FieldsetProps extends Omit<FieldsetHTMLAttributes<HTMLFieldSetE
   message?: ReactNode;
   /** Figma "Message": helper (text/tertiary) · error (text/danger + alert-circle) · success (text/success + checkmark-circle). */
   status?: 'helper' | 'error' | 'success';
+  /** Xabar elementining id'si — ichki control'lar (`aria-describedby`) unga bog'lanishi uchun; berilmasa avtomatik. */
+  messageId?: string;
   /** Control — label'i bo'lmagan istalgan boshqaruv: Chip qatori, Checkbox/Radio guruhi, Segmented control, Slider, Date picker. */
   children: ReactNode;
 }
@@ -31,12 +33,13 @@ export function Fieldset({
   layout = 'vertical',
   message,
   status = 'helper',
+  messageId: messageIdProp,
   className,
   children,
   ...rest
 }: FieldsetProps) {
   const id = useId().replace(/:/g, '');
-  const messageId = `bek-fieldset-msg-${id}`;
+  const messageId = messageIdProp ?? `bek-fieldset-msg-${id}`;
   const optionalText = optional === true ? 'Optional' : optional || null;
 
   return (

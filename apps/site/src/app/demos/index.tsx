@@ -364,7 +364,7 @@ export const demos: Record<string, ComponentType> = {
         <ChipGroup
           label="Reja"
           message="Bitta rejani tanlang"
-          defaultValue={['monthly']}
+          defaultValue="monthly"
           options={[
             { value: 'monthly', label: 'Oylik' },
             { value: 'yearly', label: 'Yillik' },

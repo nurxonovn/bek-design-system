@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { ChipGroup, RangeField } from '../dist/index.js';
+import { nextChipSelection } from '../dist/components/chip-group/ChipGroup.js';
 
 const plans = [
   { value: 'monthly', label: 'Monthly' },
@@ -13,7 +14,7 @@ const plans = [
 
 test('ChipGroup: Fieldset anatomy, chip row of Filter S chips, selected → aria-pressed', () => {
   const html = renderToStaticMarkup(
-    h(ChipGroup, { label: 'Plan', options: plans, defaultValue: ['yearly'] }),
+    h(ChipGroup, { label: 'Plan', options: plans, defaultValue: 'yearly' }),
   );
   assert.match(html, /^<fieldset class="bek-fieldset bek-fieldset--vertical bek-chip-group"/);
   assert.match(html, /<legend class="bek-visually-hidden">Plan<\/legend>/);
@@ -93,4 +94,51 @@ test('RangeField: error turns both fields to Error, one shared message', () => {
 test('RangeField: error status without message does not mark fields invalid', () => {
   const html = renderToStaticMarkup(h(RangeField, { label: 'Age', status: 'error' }));
   assert.doesNotMatch(html, /aria-invalid/);
+});
+
+test('ChipGroup: single selection never shows more than one pressed chip', () => {
+  const html = renderToStaticMarkup(h(ChipGroup, { label: 'Plan', options: plans, value: 'team' }));
+  assert.equal((html.match(/aria-pressed="true"/g) || []).length, 1);
+});
+
+test('ChipGroup: group disabled → every chip looks and is disabled', () => {
+  const html = renderToStaticMarkup(
+    h(ChipGroup, { label: 'Plan', options: plans, disabled: true }),
+  );
+  assert.equal((html.match(/bek-chip--disabled/g) || []).length, 4);
+  assert.match(html, /^<fieldset[^>]*disabled=""/);
+});
+
+test('nextChipSelection: single replaces, re-click keeps; multiple adds and removes', () => {
+  const one = ['a'];
+  assert.deepEqual(nextChipSelection([], 'a', 'single'), ['a']);
+  assert.deepEqual(nextChipSelection(one, 'b', 'single'), ['b']);
+  assert.equal(nextChipSelection(one, 'a', 'single'), one);
+  assert.deepEqual(nextChipSelection(['a'], 'b', 'multiple'), ['a', 'b']);
+  assert.deepEqual(nextChipSelection(['a', 'b'], 'a', 'multiple'), ['b']);
+});
+
+test('RangeField: shared message is linked to both inputs; caller describedby merged', () => {
+  const html = renderToStaticMarkup(
+    h(RangeField, {
+      label: 'Price',
+      status: 'error',
+      message: 'From must be lower',
+      from: { 'aria-describedby': 'extra', label: undefined },
+    }),
+  );
+  const msgId = html.match(/class="bek-fieldset__message" id="([^"]+)"/)[1];
+  const inputs = html.match(/<input[^>]*>/g);
+  assert.equal(inputs.length, 2);
+  for (const i of inputs) assert.match(i, new RegExp(`aria-describedby="[^"]*${msgId}`));
+  assert.match(inputs[0], /aria-describedby="[^"]*extra/);
+  assert.match(html, />From</);
+});
+
+test('RangeField: group disabled → both fields disabled; supportingText from JS ignored', () => {
+  const html = renderToStaticMarkup(
+    h(RangeField, { label: 'Age', disabled: true, from: { supportingText: 'second message' } }),
+  );
+  assert.equal((html.match(/bek-field--disabled/g) || []).length, 2);
+  assert.doesNotMatch(html, /second message/);
 });

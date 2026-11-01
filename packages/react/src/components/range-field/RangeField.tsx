@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { cx } from '../../utils/cx.js';
 import { Fieldset, type FieldsetProps } from '../fieldset/Fieldset.js';
 import { TextField, type TextFieldProps } from '../text-field/TextField.js';
@@ -27,20 +28,46 @@ export function RangeField({
   to,
   status = 'helper',
   message,
+  disabled,
   className,
   ...rest
 }: RangeFieldProps) {
+  const messageId = `bek-range-msg-${useId().replace(/:/g, '')}`;
   const error = status === 'error' && Boolean(message);
+
+  const field = (input: RangeFieldInputProps | undefined, fallbackLabel: string) => {
+    // `supportingText` tipda yo'q, lekin JS'dan kelsa ham ikkinchi xabar chizilmaydi — xabar guruhda bitta.
+    const {
+      label,
+      supportingText: _supportingText,
+      'aria-describedby': describedBy,
+      ...inputRest
+    } = (input ?? {}) as TextFieldProps;
+    return (
+      <TextField
+        {...inputRest}
+        label={label ?? fallbackLabel}
+        aria-describedby={cx(message ? messageId : undefined, describedBy) || undefined}
+        disabled={disabled || inputRest.disabled}
+        size="l"
+        variant="filled"
+        error={error}
+      />
+    );
+  };
+
   return (
     <Fieldset
       {...rest}
       message={message}
+      messageId={messageId}
+      disabled={disabled}
       status={status}
       className={cx('bek-range-field', className)}
     >
       <div className="bek-range-field__row">
-        <TextField label="From" {...from} size="l" variant="filled" error={error} />
-        <TextField label="To" {...to} size="l" variant="filled" error={error} />
+        {field(from, 'From')}
+        {field(to, 'To')}
       </div>
     </Fieldset>
   );
