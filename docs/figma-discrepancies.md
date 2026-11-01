@@ -276,6 +276,24 @@ Umumiy:
 - Bottom nav: tanlanmagan «Courses» ikonkasi ham Solid — 6.7 doc'ga ko'ra Stroke bo'lishi kerak.
 - Avatar: Figma'dagi erkin `Initials` («UX») — kodda harflar `name` dan olinadi.
 
+### A16. To'liq Figma ↔ kod auditi (2026-11-01)
+
+Figma'dagi 85 sahifadagi barcha 209 komponent set'i ID bo'yicha kod spec'lari bilan solishtirildi: prop'lar, variant
+soni, tokenlar, o'lchamlar va ichki komponentlar; 5 ta Variables kolleksiyasi (Color 145, Typography 74, Palette 654,
+Typography primitives 30, Dimension 114) va 25 matn · 9 effekt uslubi qiymatlari bilan — `@bek-ui/tokens` bilan 1:1.
+Kodga kirmagan 2 set — 3.20 **Chip group** va **Range field** — `ChipGroup` va `RangeField` sifatida qo'shildi.
+Figma tomonida:
+
+- **6.2 App shell · Tablet**, `Drawer=Closed`: header va body orasida tokenga bog'lanmagan `itemSpacing` 2
+  (body 1128, `Drawer=Open` da 1130 va gap 0). Ehtimol tasodifiy — gap'ni 0 ga, body'ni 1130 ga qaytaring.
+- **4.16 Description list**: Total qatori endi `Description list item` instance'i, Body/M Strong esa matn uslubi
+  override'i — extractor ichma-ich instance override'ini ko'rmaydi. Kod Body Strong'da qoladi (doc qoidasi).
+- **3.20 Field groups**: 📘 doc'da "Design tokens" o'rniga "Tokens" sarlavhasi; Chip group va Range field'ning o'z
+  `📘 <nom>` freymi yo'q (Control group'da bor).
+- Kodga ataylab kirmaydiganlar (o'zgarishsiz): 2.1 Icons, 2.4 3D objects, 9.2 Cursor, 10.1 Devices, 1.6 Reach zone,
+  9.1 `_Measure`/`Doc/*` hujjat yordamchilari, 7.10/7.11/10.2 dagi native iOS/Android manba instance'lari
+  (`Action Sheet - iPhone`, `Status bar - iPhone 17 Pro` …) — ular `Platform` varianti ichida.
+
 ## B. Kodda ataylab qabul qilingan farqlar (Figma'ga tegilmaydi)
 
 | Komponent         | Qoida              | Mos                    | Sabab                                                                                                                                                                                                                                                       |

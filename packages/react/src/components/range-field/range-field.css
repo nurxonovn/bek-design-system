@@ -1,0 +1,15 @@
+/* Range field — Figma "3.20 Field groups". Sarlavha, hint, Optional va xabar Fieldset'dan (3.19:
+   Label/M · text/secondary, Caption/L · text/tertiary / text/danger, scale/4 · scale/8). Bu yerda faqat
+   juftlik: ikki Text field L (56, control/height/xl) FILL kenglikda, gap scale/12. Juda tor ekranda
+   maydonlar kichraytirilmaydi — ustma-ust tushadi (Figma doc: "stack the range on very narrow screens"). */
+.bek-range-field__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-12);
+  min-width: 0;
+}
+
+.bek-range-field__row > * {
+  flex: 1 1 0;
+  min-width: min(100%, 9rem);
+}

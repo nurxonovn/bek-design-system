@@ -81,7 +81,7 @@ The Figma file and this codebase are developed by [Nurbek Nurxonov](https://gith
 
 ## Roadmap
 
-- **1.0-beta (now)** — tokens, 69 components, 69 charts, 4 backgrounds, docs site, Figma parity checks.
+- **1.0-beta (now)** — tokens, 71 components, 69 charts, 4 backgrounds, docs site, Figma parity checks.
 - **1.0** — API freeze, full component catalogue on the site, npm release.
 - **Next** — UX patterns section, more templates, native (Compose / SwiftUI) token packages.
 
@@ -104,7 +104,7 @@ BEK is free. If it saves you time, support it from the **03 · Support us** page
 **BEK Design System** — mobil, planshet va veb uchun ochiq dizayn tizimi: Figma kutubxonasi, tokenlar, React komponentlari, chartlar va hujjat sayti. O'zbekistonda qurilgan, hamma uchun.
 
 - **Holat:** Figma — v1.0, kod — **v1.0-beta** (API hali o'zgarishi mumkin).
-- **Paketlar:** `@bek-ui/tokens` (Figma Variables → CSS/JSON), `@bek-ui/react` (69 komponent), `@bek-ui/charts` (69 chart va diagramma), `@bek-ui/backgrounds` (4 animatsiyali fon), `apps/site` (hujjat sayti), `apps/templates` (8.x namuna ekranlar).
+- **Paketlar:** `@bek-ui/tokens` (Figma Variables → CSS/JSON), `@bek-ui/react` (71 komponent), `@bek-ui/charts` (69 chart va diagramma), `@bek-ui/backgrounds` (4 animatsiyali fon), `apps/site` (hujjat sayti), `apps/templates` (8.x namuna ekranlar).
 - **Tamoyillar:** Figma — yagona manba; 3 qurilma (Mobile 390 · Tablet 834 · Web 1440); chegarasiz sirtlar; faqat tokenlar; AA kontrast va klaviatura.
 - **Ishga tushirish:** `corepack enable && pnpm install && pnpm dev`.
 - **Hissa qo'shish:** [CONTRIBUTING.md](CONTRIBUTING.md). Core maintainer va dasturchilar qidiryapmiz — `good first issue` belgili masalalardan boshlang.

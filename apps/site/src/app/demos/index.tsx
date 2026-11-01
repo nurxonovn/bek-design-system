@@ -18,6 +18,7 @@ import {
   Carousel,
   CartPill,
   Checkbox,
+  ChipGroup,
   CheckboxField,
   CheckoutBar,
   Chip,
@@ -56,6 +57,7 @@ import {
   ProductCard,
   ProgressBar,
   Radio,
+  RangeField,
   RangeSlider,
   Rating,
   SearchField,
@@ -355,6 +357,41 @@ export const demos: Record<string, ComponentType> = {
       </Row>
     );
   },
+  'chip-group': () => {
+    const [cats, setCats] = useState<string[]>([]);
+    return (
+      <div className="grid w-full max-w-md gap-6">
+        <ChipGroup
+          label="Reja"
+          message="Bitta rejani tanlang"
+          defaultValue="monthly"
+          options={[
+            { value: 'monthly', label: 'Oylik' },
+            { value: 'yearly', label: 'Yillik' },
+            { value: 'team', label: 'Jamoa' },
+            { value: 'lifetime', label: 'Umrbod' },
+          ]}
+        />
+        <ChipGroup
+          label="Kategoriyalar"
+          selection="multiple"
+          optional
+          value={cats}
+          onValueChange={setCats}
+          status={cats.length ? 'helper' : 'error'}
+          message={
+            cats.length ? `${cats.length} ta tanlandi` : 'Davom etish uchun kamida bittasini tanlang'
+          }
+          options={[
+            { value: 'food', label: 'Taomlar', count: 24 },
+            { value: 'drinks', label: 'Ichimliklar', count: 12 },
+            { value: 'desserts', label: 'Shirinliklar', count: 8 },
+            { value: 'vegan', label: 'Vegan', disabled: true },
+          ]}
+        />
+      </div>
+    );
+  },
   'control-group': () => (
     <div className="grid w-full gap-6 sm:grid-cols-2">
       <ControlGroup title="Harakat">
@@ -371,6 +408,36 @@ export const demos: Record<string, ComponentType> = {
       </ControlGroup>
     </div>
   ),
+  'range-field': () => {
+    const [from, setFrom] = useState('5000000');
+    const [to, setTo] = useState('1000000');
+    const invalid = from !== '' && to !== '' && Number(from) > Number(to);
+    return (
+      <div className="w-full max-w-md">
+        <RangeField
+          label="Narx, soʻm"
+          status={invalid ? 'error' : 'helper'}
+          message={
+            invalid
+              ? '“Dan” qiymati “Gacha”dan kichik bo\'lishi kerak'
+              : '“Gacha” bo\'sh qolsa — yuqori chegara yo\'q'
+          }
+          from={{
+            label: 'Dan',
+            inputMode: 'numeric',
+            value: from,
+            onChange: (e) => setFrom(e.target.value.replace(/\D/g, '')),
+          }}
+          to={{
+            label: 'Gacha',
+            inputMode: 'numeric',
+            value: to,
+            onChange: (e) => setTo(e.target.value.replace(/\D/g, '')),
+          }}
+        />
+      </div>
+    );
+  },
   'date-picker': () => {
     const [date, setDate] = useState<Date | null>(null);
     return (

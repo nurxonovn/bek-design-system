@@ -2115,6 +2115,113 @@
       "readme": "# Chip\n\nFigma: **3.13 Chip** — foydalanuvchi yoqadigan (Filter) yoki olib tashlaydigan (Input) ixcham pill. `size`: `s` 32 · `m` 40.\n\n```tsx\n<Chip selected={vegan} onClick={() => setVegan(!vegan)} count={12}>Vegan</Chip>\n<Chip variant=\"input\" onRemove={() => removeCity('tas')}>Toshkent</Chip>\n```\n\nFilter — `<button aria-pressed>`, tanlanganda `fill/inverse`. Input — × tugmasi (`aria-label=\"Remove …\"`, Delete/Backspace ham). Holat yoki kategoriya ko'rsatish uchun Tag / Badge (4.2).\n"
     },
     {
+      "dir": "chip-group",
+      "package": "@bek-ui/react",
+      "title": "Chip group",
+      "description": "→ Chip group — bitta label ostida Filter chip'lar to'plami va bitta umumiy xabar (reja, kategoriya, chastota). Anatomiyasi Fieldset (3.19) bilan bir xil: sarlavha (Label/M + hint + Optional) → chip'lar qatori (Chip S, gap scale/8, sig'masa keyingi qatorga) → xabar (Caption/L).",
+      "exports": [
+        "ChipGroup"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.20 Field groups",
+        "pages": [
+          {
+            "name": "3.20 Field groups",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1179-80"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Chip group",
+            "id": "1179:381",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1179-381",
+            "variants": 6,
+            "description": "Chip group — a labelled set of Filter chips with one shared message (plan, category, frequency). React: <ChipGroup label message selection=\"single|multiple\" dir />. Composite: header (Label/M + Hint + Optional) → wrap row of Chip S (gap scale/8) → message (Helper text/tertiary, Error text/danger + icon). Chips are real Chip instances — change labels, count and states per instance. Same anatomy as Fieldset (3.19); use this instead of putting chips in a Fieldset slot.",
+            "props": {
+              "Label": {
+                "type": "TEXT",
+                "default": "Plan"
+              },
+              "Message": [
+                "None",
+                "Helper",
+                "Error"
+              ],
+              "Show hint": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show optional": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "text/danger",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/L",
+                "Label/M"
+              ],
+              "effect": []
+            },
+            "nested": [
+              "Chip"
+            ]
+          }
+        ],
+        "docTokens": [
+          "control/height/xl",
+          "scale/12",
+          "scale/4",
+          "scale/8",
+          "text/danger",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-secondary",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-tertiary",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-danger",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Label/M",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        }
+      ],
+      "readme": "# Chip group\n\nFigma: **3.20 Field groups** → Chip group — bitta label ostida Filter chip'lar to'plami va bitta umumiy xabar (reja, kategoriya, chastota). Anatomiyasi Fieldset (3.19) bilan bir xil: sarlavha (Label/M + hint + Optional) → chip'lar qatori (Chip S, gap `scale/8`, sig'masa keyingi qatorga) → xabar (Caption/L).\n\n```tsx\n<ChipGroup\n  label=\"Reja\"\n  message=\"Bitta rejani tanlang\"\n  options={[\n    { value: 'monthly', label: 'Oylik' },\n    { value: 'yearly', label: 'Yillik' },\n    { value: 'team', label: 'Jamoa' },\n    { value: 'lifetime', label: 'Umrbod' },\n  ]}\n  defaultValue=\"monthly\"\n/>\n\n<ChipGroup\n  label=\"Kategoriyalar\"\n  selection=\"multiple\"\n  optional\n  status=\"error\"\n  message=\"Davom etish uchun kamida bitta kategoriya tanlang\"\n  options={categories}\n  value={value}\n  onValueChange={setValue}\n/>\n```\n\n## Prop'lar (Figma → React)\n\n| Figma           | React                           | Izoh                                                                   |\n| --------------- | ------------------------------- | ---------------------------------------------------------------------- |\n| `Label`         | `label`                         | Label/M · text/secondary                                               |\n| `Message`       | `message` + `status`            | `helper` (text/tertiary) · `error` (text/danger + ikonka); None — yo'q |\n| `Show hint`     | `hint`                          | information-circle 16, matn `title` va `<legend>` orqali               |\n| `Show optional` | `optional`                      | \"Optional\" (Caption/L · text/tertiary) yoki o'z matningiz              |\n| `Direction`     | `dir=\"rtl\"`                     | logical properties — chip'lar tartibi teskari                          |\n| Chips (nested)  | `options`, `selection`, `value` | har biri haqiqiy `Chip` (Filter, S); `disabled`, `count`, `icon`       |\n\n`selection`: `single` (standart) — qiymat `string | null`, bittasi tanlanadi, tanlanganini qayta bosish uni o'chirmaydi (\"aynan bittasini tanlang\" ekanini xabar matnida ayting, chip'lar `aria-pressed` tugmalar); `multiple` — qiymat `string[]`. Boshqariladigan (`value` + `onValueChange`) yoki boshqarilmaydigan (`defaultValue`). Guruh `disabled` — hamma chip'lar o'chiq ko'rinadi. Chip'lar forma `FormData`siga tushmaydi — qiymatni `onValueChange` orqali oling. `chipSize=\"m\"` — faqat touch qatorlari kerak bo'lsa; Figma'da doim S.\n\n## Qoidalar (Figma doc)\n\n- 2–8 qisqa variant, hammasi ekranga sig'adi; 8 dan ko'p — Select yoki Bottom sheet ro'yxati.\n- Fieldset bitta control'ni o'raydi; birga tekshiriladigan chip'lar to'plami uchun — Chip group. Chip group'ni **Fieldset ichiga o'ramang** (ikki label, ikki xabar bo'lib qoladi).\n- Guruhning o'z holati yo'q: Hover, Focus, Disabled har chip'da; Error — guruhda (`status=\"error\"`), xabar bitta.\n- Chip'lar kichraytirilmaydi — qatorga sig'masa keyingisiga o'tadi. Kenglik forma ustunidan (Mobile 358, Web 480 gacha).\n- Bir nechta tanlov va tushuntirishli katta variantlar uchun — Selector card (3.16).\n\n## A11y\n\n`<fieldset>` + yashirin `<legend>` (label, optional, hint) — guruh nomi har chip bilan o'qiladi. Har chip — `aria-pressed` li `<button>`; xabar `aria-describedby` bilan bog'lanadi, error'da `aria-invalid`. `disabled` (fieldset) butun guruhni o'chiradi.\n"
+    },
+    {
       "dir": "control-group",
       "package": "@bek-ui/react",
       "title": "Control group",
@@ -2466,7 +2573,6 @@
               ],
               "text": [
                 "Body/M",
-                "Body/M Strong",
                 "Title/M"
               ],
               "effect": [],
@@ -6929,6 +7035,113 @@
       },
       "accepted": [],
       "readme": "# Radio\n\nFigma: **3.5 Radio** — bitta tanlov, o'lcham `s` 16 · `m` 20 · `l` 24 px.\n\n```tsx\n<fieldset>\n  <legend>Tarif</legend>\n  <Radio name=\"plan\" value=\"free\" defaultChecked>\n    Free\n  </Radio>\n  <Radio name=\"plan\" value=\"pro\">\n    Pro\n  </Radio>\n</fieldset>\n```\n\nNative `<input type=\"radio\">`: bir guruh — bir xil `name`, guruh bitta Tab to'xtashi, ↑↓ bilan almashadi. `size`: `s` · `m` · `l` (default `s`).\n\n| Figma prop   | Kod                                                |\n| ------------ | -------------------------------------------------- |\n| `Size`       | `size`: `s` 16 · `m` 20 · `l` 24                   |\n| `Selected`   | native `checked` / `defaultChecked` (On = checked) |\n| `Label`      | `children`                                         |\n| `Show label` | `children` bo'lmasa — `aria-label` bering          |\n| `State`      | `:hover` · `:focus-visible` · `disabled`           |\n\nTokenlar: doira `bg/sheet` + `border/strong` (hover — `border/accent`), tanlangan `accent/default` (hover — `accent/hover`), nuqta `text/on-color`, radius `radius/full`, label Body/S (`l` — Body/M).\n"
+    },
+    {
+      "dir": "range-field",
+      "package": "@bek-ui/react",
+      "title": "Range field",
+      "description": "→ Range field — bitta label ostida ikki Text field (From · To), birga tekshiriladi va bitta umumiy xabarga ega: narx, sana, yosh. Anatomiyasi Fieldset (3.19) bilan bir xil: sarlavha → ikki Text field L Filled (56, FILL kenglik, gap scale/12) → xabar.",
+      "exports": [
+        "RangeField"
+      ],
+      "section": {
+        "id": 3,
+        "title": "Inputs"
+      },
+      "figma": {
+        "label": "3.20 Field groups",
+        "pages": [
+          {
+            "name": "3.20 Field groups",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1179-80"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Range field",
+            "id": "1179:799",
+            "url": "https://www.figma.com/design/6ADJMMCbBHzYiIW0MBxJqh/BEK-Design-System?node-id=1179-799",
+            "variants": 6,
+            "description": "Range field — two Text fields (From · To) under one label, validated together with one shared message (price, dates, age). React: <RangeField label from to message dir />. Fields are exposed Text field L Filled instances, FILL width, gap scale/12. Error turns both fields to State=Error and shows a single message under the pair — never one error per field. Same anatomy as Fieldset (3.19).",
+            "props": {
+              "Label": {
+                "type": "TEXT",
+                "default": "Price, soʻm"
+              },
+              "Message": [
+                "None",
+                "Helper",
+                "Error"
+              ],
+              "Show hint": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Show optional": {
+                "type": "BOOLEAN",
+                "default": false
+              },
+              "Direction": [
+                "LTR",
+                "RTL"
+              ]
+            },
+            "tokens": {
+              "color": [
+                "bg/sheet",
+                "text/danger",
+                "text/secondary",
+                "text/tertiary"
+              ],
+              "text": [
+                "Caption/L",
+                "Label/M"
+              ],
+              "effect": []
+            },
+            "nested": [
+              "Text field"
+            ]
+          }
+        ],
+        "docTokens": [
+          "control/height/xl",
+          "scale/12",
+          "scale/4",
+          "scale/8",
+          "text/danger",
+          "text/secondary",
+          "text/tertiary"
+        ]
+      },
+      "accepted": [
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-secondary",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-tertiary",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "token-missing",
+          "match": "--bek-text-danger",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Label/M",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        },
+        {
+          "rule": "text-style-missing",
+          "match": "Caption/L",
+          "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+        }
+      ],
+      "readme": "# Range field\n\nFigma: **3.20 Field groups** → Range field — bitta label ostida ikki Text field (From · To), birga tekshiriladi va bitta umumiy xabarga ega: narx, sana, yosh. Anatomiyasi Fieldset (3.19) bilan bir xil: sarlavha → ikki Text field L Filled (56, FILL kenglik, gap `scale/12`) → xabar.\n\n```tsx\n<RangeField\n  label=\"Narx, soʻm\"\n  message=\"“Gacha” bo'sh qolsa — yuqori chegara yo'q\"\n  from={{ label: 'Dan', inputMode: 'numeric', name: 'price_from' }}\n  to={{ label: 'Gacha', inputMode: 'numeric', name: 'price_to' }}\n/>\n\n<RangeField\n  label=\"Narx, soʻm\"\n  status=\"error\"\n  message=\"“Dan” qiymati “Gacha”dan kichik bo'lishi kerak\"\n  from={{ value: '5 000 000', onChange: … }}\n  to={{ value: '1 000 000', onChange: … }}\n/>\n```\n\n## Prop'lar (Figma → React)\n\n| Figma           | React                | Izoh                                                                                             |\n| --------------- | -------------------- | ------------------------------------------------------------------------------------------------ |\n| `Label`         | `label`              | Label/M · text/secondary; birlikni label'ga yozing (\"Narx, soʻm\")                                |\n| `Message`       | `message` + `status` | `helper` · `error` — Error ikkala maydonni Error holatiga o'tkazadi                              |\n| `Show hint`     | `hint`               | information-circle 16                                                                            |\n| `Show optional` | `optional`           | \"Optional\" yoki o'z matningiz                                                                    |\n| `Direction`     | `dir=\"rtl\"`          | To · From tartibi avtomatik teskari                                                              |\n| From · To       | `from`, `to`         | `TextField` prop'lari (value, onChange, name, inputMode, prefix …); standart label \"From\" / \"To\" |\n\nO'lcham (`l`), variant (`filled`), `error` va `supportingText` guruhdan keladi — maydonlarga alohida bermang. Standart label'lar inglizcha (\"From\" / \"To\") — o'zbekcha interfeysda `from.label` / `to.label` bering. Guruh `disabled` ikkala maydonni o'chiradi.\n\n## Qoidalar (Figma doc)\n\n- Bir xil turdagi ikki qiymat. Bitta label, bitta xabar; birlik har maydonda emas, label'da.\n- Juftlikni bitta deb tekshiring: From > To bo'lsa ikkala maydon Error va **bitta** xabar tushuntiradi. Har maydon ostida bir xil xatoni takrorlamang.\n- Range field'ni Fieldset ichiga o'ramang — guruhda label ham, xabar ham bor.\n- Maydonlar kichraytirilmaydi (L, 56); juda tor ekranda ustma-ust tushadi. Kenglik forma ustunidan (Mobile 358, Web 480 gacha).\n- Guruhning o'z holati yo'q: Hover, Focus, Disabled har maydonda; Error — guruhda.\n\n## A11y\n\n`<fieldset>` + yashirin `<legend>` — guruh nomi (\"Narx, soʻm\") har maydon bilan o'qiladi; har maydonning o'z label'i bor (From / To). Umumiy xabar fieldset'ga ham, **har ikkala input**'ga ham `aria-describedby` bilan bog'lanadi — \"To\" maydoniga o'tganda ham xato sababi o'qiladi; error'da ikkala input'da `aria-invalid`.\n"
     },
     {
       "dir": "rating",

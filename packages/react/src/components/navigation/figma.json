@@ -720,7 +720,7 @@
           "scale/8"
         ]
       },
-      "sizes": [1, 4, 8, 12, 16, 24, 64],
+      "sizes": [1, 2, 4, 8, 12, 16, 24, 64],
       "rawColors": [],
       "nested": [],
       "description": "Tablet app shell (600–1023 px), 834 × 1194: Header + Nav rail + Content. Drawer: Closed / Open — the drawer and a color/background/overlay scrim cover everything, including the header. Content padding layout/page-margin (24 on Tablet)."

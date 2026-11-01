@@ -1,0 +1,90 @@
+{
+  "page": "3.20 Field groups",
+  "components": [
+    {
+      "name": "Chip group",
+      "id": "1179:381",
+      "props": {
+        "Label": {
+          "type": "TEXT",
+          "default": "Plan"
+        },
+        "Message": ["None", "Helper", "Error"],
+        "Show hint": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Show optional": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Direction": ["LTR", "RTL"]
+      },
+      "size": {
+        "w": 360,
+        "h": 60
+      },
+      "tokens": {
+        "color": ["bg/sheet", "text/danger", "text/secondary", "text/tertiary"],
+        "text": ["Caption/L", "Label/M"],
+        "effect": []
+      },
+      "sizes": [1, 4, 8, 16],
+      "nested": ["Chip"],
+      "page": "3.20 Field groups",
+      "pageId": "1179:80",
+      "variants": 6,
+      "rawColors": [],
+      "description": "Chip group — a labelled set of Filter chips with one shared message (plan, category, frequency). React: <ChipGroup label message selection=\"single|multiple\" dir />. Composite: header (Label/M + Hint + Optional) → wrap row of Chip S (gap scale/8) → message (Helper text/tertiary, Error text/danger + icon). Chips are real Chip instances — change labels, count and states per instance. Same anatomy as Fieldset (3.19); use this instead of putting chips in a Fieldset slot.",
+      "variantNames": [
+        "Message=None, Direction=LTR",
+        "Message=Helper, Direction=LTR",
+        "Message=Error, Direction=LTR",
+        "Message=None, Direction=RTL",
+        "Message=Helper, Direction=RTL",
+        "Message=Error, Direction=RTL"
+      ]
+    }
+  ],
+  "doc": {
+    "3.20 Field groups": {
+      "tokens": [
+        "control/height/xl",
+        "scale/12",
+        "scale/4",
+        "scale/8",
+        "text/danger",
+        "text/secondary",
+        "text/tertiary"
+      ],
+      "text": "Usage\nWhen to use a field group instead of a Fieldset.\nFieldset (3.19) wraps ONE control. When the control is a group of things validated together — a set of chips, a from–to pair — use a field group.\nChip group: 2–8 short options that all fit on screen. Single or multiple choice is set per chip state; more than 8 → Select or a Bottom sheet list.\nRange field: two values of the same kind. One label, one message; put the unit in the label (“Price, soʻm”), not in each field.\nValidate the pair as one: if From > To, both fields turn Error and one message explains it.\nDo not add a Fieldset around a field group — the group already has its label and message.\nAnatomy: Header → controls → one message. Identical spacing to Fieldset (3.19). 1 Label · Label/M, text/secondary. 2 Hint · _Icon 16, opens a Tooltip — Show hint. 3 Optional · Caption/L, text/tertiary — Show optional. 4 Controls · Chip S wrap row (gap 8) or two Text field L (gap 12). 5 Message · Caption/L — Helper text/tertiary, Error text/danger + icon.\nSizes: One size. Width follows the form column (Mobile 358, Web up to 480); controls inside keep their own sizes. Chip size stays S; text fields stay L (56). Do not shrink controls to fit — wrap chips, and stack the range on very narrow screens.\nStates: The group has no states of its own; each chip or field keeps its own (Hover, Focus, Disabled). Error is set on the group.\nProps: Message Variant None · Helper · Error (None) · Direction Variant LTR · RTL (LTR) · Label Text (Plan · Price, soʻm) · Message Text · Show hint Boolean Off · Show optional Boolean Off · Chips (Chip group) Nested instances 4 × Filter S · From · To (Range field) Nested (exposed) Text field Filled L.\nTokens: Header → controls → message gap scale/8 8 --bek-scale-8 · Header items gap scale/4 4 --bek-scale-4 · Chip gap (both axes) scale/8 8 --bek-scale-8 · Range field gap scale/12 12 --bek-scale-12 · Label text/secondary · Label/M --bek-text-secondary · Optional · Helper text/tertiary · Caption/L --bek-text-tertiary · Error text/danger · Caption/L --bek-text-danger · Field height control/height/xl (Text field L) 56 --bek-control-height-xl\nDo / Don’t: Do — One message for the pair, under both fields. Don’t repeat the same error under each field — people read it twice and still don’t know which to fix. Do — Short options in one wrap row, one label. Don’t wrap a field group in a Fieldset — two labels, two messages."
+    }
+  },
+  "accepted": [
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-secondary",
+      "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-tertiary",
+      "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+    },
+    {
+      "rule": "token-missing",
+      "match": "--bek-text-danger",
+      "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Label/M",
+      "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+    },
+    {
+      "rule": "text-style-missing",
+      "match": "Caption/L",
+      "reason": "Fieldset (3.19) orqali — ChipGroup/RangeField sarlavha, hint, Optional va xabarni Fieldset komponentidan oladi (Figma doc: \"Same anatomy as Fieldset (3.19)\"); token fieldset.css da, shu papkada qayta yozilmaydi."
+    }
+  ]
+}

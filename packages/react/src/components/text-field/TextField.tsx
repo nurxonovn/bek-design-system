@@ -68,6 +68,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function T
     id,
     className,
     disabled,
+    'aria-describedby': ariaDescribedBy,
     ...rest
   },
   ref,
@@ -77,7 +78,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function T
   const supportId = supportingText ? `${inputId}-support` : undefined;
   const prefixId = prefix != null ? `${inputId}-prefix` : undefined;
   const suffixId = suffix != null ? `${inputId}-suffix` : undefined;
-  const describedBy = [prefixId, suffixId, supportId].filter(Boolean).join(' ') || undefined;
+  // Tashqi `aria-describedby` (masalan, RangeField'ning umumiy xabari) ichki id'lar bilan birlashtiriladi.
+  const describedBy =
+    [prefixId, suffixId, supportId, ariaDescribedBy].filter(Boolean).join(' ') || undefined;
   const affixed = prefixId !== undefined || suffixId !== undefined;
   const look = variant === 'plain' ? 'underlined' : variant;
   const trailing = loading ? <Spinner size={ICON_SPINNER[size]} label={null} /> : trailingIcon;
