@@ -1,5 +1,12 @@
 # @bek-ui/charts
 
+## 1.0.0-beta.2
+
+### Patch Changes
+
+- Updated dependencies [d2504e7]
+  - @bek-ui/react@1.0.0-beta.2
+
 ## 1.0.0-beta.1
 
 ### Minor Changes
