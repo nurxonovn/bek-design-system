@@ -74,7 +74,7 @@
       },
       "tokens": {
         "color": ["bg/sheet", "border/hairline", "text/primary", "text/secondary"],
-        "text": ["Body/M", "Body/M Strong", "Title/M"],
+        "text": ["Body/M", "Title/M"],
         "effect": [],
         "dimension": ["scale/4", "scale/8"]
       },

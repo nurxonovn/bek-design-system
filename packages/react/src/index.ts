@@ -31,6 +31,8 @@ export * from './components/uploader/index.js';
 export * from './components/link/index.js';
 export * from './components/fieldset/index.js';
 export * from './components/control-group/index.js';
+export * from './components/chip-group/index.js';
+export * from './components/range-field/index.js';
 export * from './components/scrub-field/index.js';
 export * from './components/avatar/index.js';
 export * from './components/card/index.js';

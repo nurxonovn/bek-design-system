@@ -1,0 +1,9 @@
+/* Chip group — Figma "3.20 Field groups". Sarlavha, hint, Optional va xabar Fieldset'dan (3.19:
+   Label/M · text/secondary, Caption/L · text/tertiary / text/danger, scale/4 · scale/8). Bu yerda faqat
+   chip'lar qatori: Chip S, ikkala o'qda gap scale/8, sig'masa keyingi qatorga o'tadi. */
+.bek-chip-group__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bek-scale-8);
+  min-width: 0;
+}
