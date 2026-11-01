@@ -27,7 +27,8 @@
       "tokens": {
         "color": ["bg/sheet", "text/danger", "text/secondary", "text/tertiary"],
         "text": ["Caption/L", "Label/M"],
-        "effect": []
+        "effect": [],
+        "dimension": ["scale/12", "scale/4", "scale/8"]
       },
       "sizes": [1, 4, 8, 12, 16],
       "nested": ["Text field"],

@@ -1,0 +1,18 @@
+# Kim nimani tasdiqlaydi. `main` himoyasida "Require review from Code Owners" yoqilganda shu fayl ishlaydi
+# (docs/ACCESS.md). Jamoa kengaygach, shaxs o'rniga GitHub jamoalarini yozing: @org/design-system-core.
+
+# Standart — hamma narsa
+*                                   @nurxonovn
+
+# Nashr qilinadigan paketlar va reliz
+/packages/                          @nurxonovn
+/.changeset/                        @nurxonovn
+/.github/workflows/                 @nurxonovn
+/scripts/                           @nurxonovn
+
+# Tokenlar — Figma Variables eksporti, faqat Figma ↔ kod sinxronida o'zgaradi
+/packages/tokens/figma/             @nurxonovn
+
+# Agent qoidalari va skill'lar
+/.claude/                           @nurxonovn
+/CLAUDE.md                          @nurxonovn
