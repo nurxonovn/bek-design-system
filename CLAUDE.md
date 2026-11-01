@@ -19,6 +19,7 @@ pnpm build · pnpm typecheck · pnpm test · pnpm format · pnpm format:check
 pnpm check:figma                 # Figma ↔ kod (CI: faqat xatolar)
 pnpm check:figma -- --strict     # ogohlantirish ham xato
 pnpm --filter @bek-ui/react check:figma <nom> --strict
+node scripts/figma-audit.mjs <fayl>  # jonli Figma ↔ kod auditi (/figma-audit: figma-audit.js chiqishi)
 pnpm --filter @bek-ui/site dev      # sayt
 pnpm build && pnpm --filter @bek-ui/site test:e2e   # brauzer: 144 sahifa (react · charts · backgrounds), axe WCAG 2.2 AA, klaviatura
 ```
@@ -26,7 +27,8 @@ pnpm build && pnpm --filter @bek-ui/site test:e2e   # brauzer: 144 sahifa (react
 ## Ish oqimi (ECC)
 
 1. `/plan` — murakkab ish oldidan reja, tasdiq.
-2. Yangi Figma bo'limi → `/new-component`; Figma yangilanishi → `/figma-sync <sahifalar>`; moslik → `/parity`.
+2. Yangi Figma bo'limi → `/new-component`; Figma yangilanishi → `/figma-sync <sahifalar>`; moslik → `/parity`;
+   Figma'da nima o'zgargani noma'lum yoki oylik tekshiruv → `/figma-audit`.
 3. Kod → `/react-review` yoki `/code-review`; build xato → `/build-fix`; xavfsizlik → `/security-scan`.
 4. Darvozalar: format · typecheck · build · test · check:figma → commit (Conventional Commits, tana o'zbekcha) → push → `/pr`.
 5. Reliz → `/release`.
@@ -44,7 +46,7 @@ e2e-testing, postgres-patterns, security-review, conventional-commit-review).
 
 ## Figma yangilanishi (oylik)
 
-Foydalanuvchi qaysi sahifa/komponent o'zgarganini aytadi → `/figma-sync`. Spec (`figma.json`) qayta olinadi,
+Foydalanuvchi qaysi sahifa/komponent o'zgarganini aytadi → `/figma-sync`; aytmasa — avval `/figma-audit`. Spec (`figma.json`) qayta olinadi,
 farq ko'rsatiladi, kod tuzatiladi, `--strict` 0, sayt katalogi qayta yig'iladi, changeset, commit.
 Figma'ning o'zidagi kamchiliklar (codeSyntax yo'q, tokensiz rang, doc ≠ komponent) dizaynerga ro'yxat sifatida.
 

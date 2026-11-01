@@ -31,7 +31,8 @@ packages/react     @bek-ui/react    src/components/<kebab>/  Component.tsx · co
 packages/charts    @bek-ui/charts   same layout, SVG + d3 modules
 apps/site          docs site     catalogue is generated from component README.md + figma.json (scripts/build-catalog.mjs)
 apps/templates     example screens from Figma 8.x
-docs/              figma-discrepancies.md — accepted Figma ↔ code differences
+docs/              figma-discrepancies.md — accepted Figma ↔ code differences · ACCESS.md — roles (npm, GitHub, Figma)
+scripts/           figma-audit.mjs — full live-Figma ↔ code audit (/figma-audit) · check-npm-auth.mjs
 ```
 
 ## Adding or changing a component
