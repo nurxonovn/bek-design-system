@@ -30,6 +30,13 @@
   letter-spacing: var(--bek-type-label-md-tracking);
 }
 
+/* Dark · Solid: Figma'da surface/raised = fill/secondary = #27272B va Elevation/1 ko'rinmaydi —
+   tanlangan pill yo'lakka qo'shilib ketardi. Shu sabab tanlangan — fill/strong ("active segment"), soya yo'q. */
+[data-theme='dark'] .bek-segmented--solid {
+  --bek-segmented-selected: var(--bek-fill-strong);
+  --bek-segmented-shadow: none;
+}
+
 .bek-segmented--overlay {
   --bek-segmented-track: var(--bek-fill-on-media);
   --bek-segmented-selected: var(--bek-static-white);

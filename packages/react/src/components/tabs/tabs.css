@@ -167,3 +167,9 @@
   box-shadow: var(--bek-elevation-1);
   color: var(--bek-text-primary);
 }
+
+/* Dark: surface/raised (#27272B) fill/soft-hover yo'lagidan ajralmaydi — Segmented control kabi fill/strong. */
+[data-theme='dark'] .bek-tab-list--segmented > .bek-tab[aria-selected='true'] {
+  background: var(--bek-fill-strong);
+  box-shadow: none;
+}

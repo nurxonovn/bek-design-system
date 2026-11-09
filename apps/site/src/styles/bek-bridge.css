@@ -129,3 +129,13 @@
   border-bottom: var(--bek-stroke-default) solid var(--bek-border-hairline);
   text-align: start;
 }
+
+/* Hujjat sarlavhasidagi platforma tanlagich — Segmented control kontent kengligida. */
+.bek-site-segment-picker {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.bek-site-segment-picker > .bek-segmented__item {
+  flex: 1 0 auto;
+}
